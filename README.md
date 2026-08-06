@@ -1,22 +1,19 @@
-# NackaSidan 2026 – Sprint 2
+# NackaSidan 2026 – Sprint 3
 
-Sprint 2 bygger vidare på Sprint 1 med:
+Sprint 3 bygger vidare på den fungerande Vercel-versionen och lägger till:
 
-- ny, luftigare premiumstartsida
-- Världen som ny avdelning
-- utbyggda Sverige- och Kultursidor
-- Kulturdebatt som egen sida
-- Ekonomi, Vetenskap & AI och Sport som nya grundsidor
-- återanvändbara komponenter för analys, fakta och redaktionella kort
-- förbättrad mobilanpassning
+- premium-artikelsida med metadata, kunskapskort, fakta, analys, konsekvenser och källtransparens
+- första temasidan: `/tema/ai`
+- centralt artikelregister i `content/articles.ts`
+- redaktionell innehållsöversikt på `/redaktion`
+- automatisk generering av artikelsidor från artikelregistret
 
-## Lokal körning
+## Publicera en ny artikel
 
-```bash
-npm install
-npm run dev
-```
+1. Öppna `content/articles.ts`.
+2. Kopiera ett befintligt artikelobjekt.
+3. Ändra slug, rubrik, ingress, text, kunskapskort, fakta, källor och relaterade artiklar.
+4. Ladda upp ändringen till GitHub.
+5. Vercel bygger och publicerar automatiskt.
 
-## Publicering på GitHub Pages
-
-Ladda upp hela projektets innehåll till repositoryt. Välj **GitHub Actions** under Settings → Pages. Workflow-filen bygger och publicerar webbplatsen automatiskt.
+Detta är ett kodbaserat mini-CMS. Nästa steg är att koppla samma innehållsmodell till ett visuellt CMS som Sanity när redaktionens fält och arbetsflöde är godkända.

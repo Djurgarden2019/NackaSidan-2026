@@ -98,6 +98,19 @@ export default function Home() {
           </div>
         </section>
 
+        <section className="section insight-home">
+          <SectionIntro eyebrow="NackaSidan Insight" title="Utforska ämnet AI" text="Ett kunskapsnav med tidslinje, ordlista, fakta och fördjupningar." />
+          <div className="insight-promo">
+            <div>
+              <div className="kicker">Tema</div>
+              <h3>AI förändrar arbete, demokrati och kultur</h3>
+              <p>Gå från den senaste nyheten till bakgrund, begrepp och längre analyser – samlat på en enda temasida.</p>
+              <Link className="button" href="/tema/ai">Utforska AI</Link>
+            </div>
+            <div className="insight-list"><span>01 · Arbetsmarknad</span><span>02 · Val & demokrati</span><span>03 · Kultur & upphovsrätt</span><span>04 · Reglering</span></div>
+          </div>
+        </section>
+
         <section className="section culture-home">
           <SectionIntro title="Kultur" text="Veckans utvalda böcker, filmer, TV-serier, musik och kulturdebatt." />
           <div className="culture-grid">
