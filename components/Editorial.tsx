@@ -1,3 +1,4 @@
+import type { ReactNode } from 'react';
 import Link from 'next/link';
 
 export type Feature = { section:string; title:string; summary:string; href?:string; image?:string; meta?:string };
@@ -9,7 +10,7 @@ export function FeatureCard({item,large=false}:{item:Feature;large?:boolean}){
   </article>
 }
 
-export function AnalysisBox({children}:{children:React.ReactNode}){return <div className="analysis-box"><strong>Redaktionens analys:</strong> {children}</div>}
+export function AnalysisBox({children}:{children:ReactNode}){return <div className="analysis-box"><strong>Redaktionens analys:</strong> {children}</div>}
 
 export function FactStrip({items}:{items:{label:string,value:string}[]}){return <div className="fact-strip">{items.map(x=><div key={x.label}><span>{x.label}</span><strong>{x.value}</strong></div>)}</div>}
 

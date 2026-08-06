@@ -1,3 +1,44 @@
-import {swedenStories} from '@/content/data';
-import {AnalysisBox, FactStrip} from '@/components/Editorial';
-export default function Sweden(){return <main><div className="shell"><div className="page-hero"><div className="kicker">Sverige</div><h1>Val, jobb och förtroende</h1><p>Den svenska veckan präglas av en ekonomi som förbättras ojämnt, ett val som blir mer digitalt och institutioner som måste förklara sig tydligare.</p></div><div className="article-list">{swedenStories.map((s,i)=><article className="article-row" key={s.title}><div className="meta">{String(i+1).padStart(2,'0')} · {s.section}</div><div><h2>{s.title}</h2><p>{s.summary}</p><AnalysisBox>{i%2===0?'Utvecklingen skapar möjligheter, men också ett tydligt krav på verifiering och långsiktighet. Den politiska effekten avgörs av om förändringen märks i vardagen.':'Det kortsiktiga läget är bara en del av bilden. Den större frågan är om Sverige lyckas minska glappet mellan institutionernas beslut och medborgarnas upplevelse.'}</AnalysisBox></div></article>)}</div><section className="section"><FactStrip items={[{label:'Huvudfrågor',value:'6'},{label:'Fördjupningar',value:'6'},{label:'Perspektiv',value:'Ekonomi'},{label:'Nästa steg',value:'Valet'}]}/></section></div></main>}
+import { swedenStories } from '../../content/data';
+import { AnalysisBox, FactStrip } from '../../components/Editorial';
+
+export default function Sweden() {
+  return (
+    <main>
+      <div className="shell">
+        <div className="page-hero">
+          <div className="kicker">Sverige</div>
+          <h1>Val, jobb och förtroende</h1>
+          <p>Den svenska veckan präglas av en ekonomi som förbättras ojämnt, ett val som blir mer digitalt och institutioner som måste förklara sig tydligare.</p>
+        </div>
+
+        <div className="article-list">
+          {swedenStories.map((story, index) => (
+            <article className="article-row" key={story.title}>
+              <div className="meta">{String(index + 1).padStart(2, '0')} · {story.section}</div>
+              <div>
+                <h2>{story.title}</h2>
+                <p>{story.summary}</p>
+                <AnalysisBox>
+                  {index % 2 === 0
+                    ? 'Utvecklingen skapar möjligheter, men också ett tydligt krav på verifiering och långsiktighet. Den politiska effekten avgörs av om förändringen märks i vardagen.'
+                    : 'Det kortsiktiga läget är bara en del av bilden. Den större frågan är om Sverige lyckas minska glappet mellan institutionernas beslut och medborgarnas upplevelse.'}
+                </AnalysisBox>
+              </div>
+            </article>
+          ))}
+        </div>
+
+        <section className="section">
+          <FactStrip
+            items={[
+              { label: 'Huvudfrågor', value: '6' },
+              { label: 'Fördjupningar', value: '6' },
+              { label: 'Perspektiv', value: 'Ekonomi' },
+              { label: 'Nästa steg', value: 'Valet' },
+            ]}
+          />
+        </section>
+      </div>
+    </main>
+  );
+}

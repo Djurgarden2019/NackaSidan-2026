@@ -1,17 +1,138 @@
 import Link from 'next/link';
-import {StoryCard} from '@/components/Cards';
-import {FeatureCard, FactStrip, SectionIntro} from '@/components/Editorial';
-import {lead,topStories} from '@/content/data';
-const editorial=[
-{section:'Ekonomi',title:'Lägre inflation ändrar hushållens kalkyl',summary:'Räntor och köpkraft utvecklas åt rätt håll, men arbetsmarknaden bromsar optimismen.',href:'/ekonomi'},
-{section:'Vetenskap & AI',title:'AI går från experiment till samhällsinfrastruktur',summary:'Frågan är inte längre om tekniken används, utan hur den granskas och styrs.',href:'/vetenskap'},
-{section:'Sport',title:'Resultat, ekonomi och publik hör allt tydligare ihop',summary:'Den moderna idrotten måste förstås både på planen och i styrelserummet.',href:'/sport'}
+import { StoryCard } from '../components/Cards';
+import { FeatureCard, FactStrip, SectionIntro } from '../components/Editorial';
+import { lead, topStories } from '../content/data';
+
+const editorial = [
+  {
+    section: 'Ekonomi',
+    title: 'Lägre inflation ändrar hushållens kalkyl',
+    summary: 'Räntor och köpkraft utvecklas åt rätt håll, men arbetsmarknaden bromsar optimismen.',
+    href: '/ekonomi',
+  },
+  {
+    section: 'Vetenskap & AI',
+    title: 'AI går från experiment till samhällsinfrastruktur',
+    summary: 'Frågan är inte längre om tekniken används, utan hur den granskas och styrs.',
+    href: '/vetenskap',
+  },
+  {
+    section: 'Sport',
+    title: 'Resultat, ekonomi och publik hör allt tydligare ihop',
+    summary: 'Den moderna idrotten måste förstås både på planen och i styrelserummet.',
+    href: '/sport',
+  },
 ];
-export default function Home(){return <main><div className="shell">
-<section className="hero hero-sprint2"><div className="hero-media"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/Stockholm_City_Hall-147793.jpg?width=1800" alt="Stockholms stadshus vid vattnet"/><div className="caption">Stockholms stadshus. Foto: Josve05a/Wikimedia Commons.</div></div><div><div className="kicker">{lead.section}</div><h1>{lead.title}</h1><p className="lead">{lead.summary}</p><Link className="button" href={lead.href!}>Läs hela analysen</Link></div></section>
-<section className="section"><SectionIntro title="Veckans viktigaste" text="Tre händelser som tillsammans säger något om Sverige, världen och kulturen just nu."/><div className="grid-3">{topStories.map((s,i)=><StoryCard key={s.title} story={s} red={i===0}/>)}</div></section>
-<section className="section briefing premium-briefing"><div><div className="kicker">NackaSidan Briefing</div><h2>Veckan på 10 minuter</h2><p>Fyra frågor räcker för att förstå veckans riktning – och vad som kan förändras härnäst.</p><Link className="button" href="/artikel/veckan-pa-tio-minuter">Öppna briefingen</Link></div><div className="brief-list">{[['01','Mellanöstern','Diplomatin har bromsat upptrappningen, men handelsvägarna är fortsatt sårbara.'],['02','Svensk ekonomi','Inflationen faller, medan arbetsmarknaden återhämtar sig långsammare.'],['03','AI och valet','Snabb verifiering och källkritik blir en demokratisk kärnfråga.'],['04','Kultur','Litteratur, film och idédebatt flyttar fokus från tempo till eftertanke.']].map(x=><div className="brief-item" key={x[0]}><div className="num">{x[0]}</div><div><h3>{x[1]}</h3><p>{x[2]}</p></div></div>)}</div></section>
-<section className="section"><SectionIntro eyebrow="Redaktionens val" title="Tre vägar vidare" text="Fördjupningar som visar hur ekonomi, teknik och sport påverkar vardagen."/><div className="feature-grid">{editorial.map((x,i)=><FeatureCard key={x.title} item={x} large={i===0}/>)}</div></section>
-<section className="section culture-home"><SectionIntro title="Kultur" text="Veckans utvalda böcker, filmer, TV-serier, musik och kulturdebatt."/><div className="culture-grid"><article className="culture-main"><div className="kicker">Veckans bok</div><h3>Litteraturen återtar rollen som långsam motkraft</h3><p className="lead">När nyhetsflödet blir snabbare växer intresset för berättelser som kräver tid, närvaro och eftertanke.</p><Link className="button" href="/kultur">Till kulturen</Link></article><article className="culture-small"><div className="kicker">Film & TV</div><h3>Nya berättelser mellan bio och streaming</h3><p>Premiärer, adaptioner och en bransch i förändring.</p></article><article className="culture-small"><div className="kicker">Kulturdebatt</div><h3>Vem får tillgång till offentligheten?</h3><p>Bibliotek, public service, kulturstöd och AI.</p><Link className="text-link" href="/kulturdebatt">Läs debatten</Link></article></div></section>
-<section className="section"><SectionIntro title="Veckans siffror" text="En redaktionell ögonblicksbild – inte en livepanel."/><FactStrip items={[{label:'Inflation',value:'0,7 %'},{label:'Styrränta',value:'2,00 %'},{label:'Huvudartiklar',value:'18'},{label:'Fördjupningar',value:'12'}]}/></section>
-</div></main>}
+
+export default function Home() {
+  return (
+    <main>
+      <div className="shell">
+        <section className="hero hero-sprint2">
+          <div className="hero-media">
+            <img
+              src="https://commons.wikimedia.org/wiki/Special:FilePath/Stockholm_City_Hall-147793.jpg?width=1800"
+              alt="Stockholms stadshus vid vattnet"
+            />
+            <div className="caption">Stockholms stadshus. Foto: Josve05a/Wikimedia Commons.</div>
+          </div>
+          <div>
+            <div className="kicker">{lead.section}</div>
+            <h1>{lead.title}</h1>
+            <p className="lead">{lead.summary}</p>
+            <Link className="button" href={lead.href ?? '/artikel/veckans-analys'}>
+              Läs hela analysen
+            </Link>
+          </div>
+        </section>
+
+        <section className="section">
+          <SectionIntro
+            title="Veckans viktigaste"
+            text="Tre händelser som tillsammans säger något om Sverige, världen och kulturen just nu."
+          />
+          <div className="grid-3">
+            {topStories.map((story, index) => (
+              <StoryCard key={story.title} story={story} red={index === 0} />
+            ))}
+          </div>
+        </section>
+
+        <section className="section briefing premium-briefing">
+          <div>
+            <div className="kicker">NackaSidan Briefing</div>
+            <h2>Veckan på 10 minuter</h2>
+            <p>Fyra frågor räcker för att förstå veckans riktning – och vad som kan förändras härnäst.</p>
+            <Link className="button" href="/artikel/veckan-pa-tio-minuter">
+              Öppna briefingen
+            </Link>
+          </div>
+          <div className="brief-list">
+            {[
+              ['01', 'Mellanöstern', 'Diplomatin har bromsat upptrappningen, men handelsvägarna är fortsatt sårbara.'],
+              ['02', 'Svensk ekonomi', 'Inflationen faller, medan arbetsmarknaden återhämtar sig långsammare.'],
+              ['03', 'AI och valet', 'Snabb verifiering och källkritik blir en demokratisk kärnfråga.'],
+              ['04', 'Kultur', 'Litteratur, film och idédebatt flyttar fokus från tempo till eftertanke.'],
+            ].map(([number, title, text]) => (
+              <div className="brief-item" key={number}>
+                <div className="num">{number}</div>
+                <div>
+                  <h3>{title}</h3>
+                  <p>{text}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </section>
+
+        <section className="section">
+          <SectionIntro
+            eyebrow="Redaktionens val"
+            title="Tre vägar vidare"
+            text="Fördjupningar som visar hur ekonomi, teknik och sport påverkar vardagen."
+          />
+          <div className="feature-grid">
+            {editorial.map((item, index) => (
+              <FeatureCard key={item.title} item={item} large={index === 0} />
+            ))}
+          </div>
+        </section>
+
+        <section className="section culture-home">
+          <SectionIntro title="Kultur" text="Veckans utvalda böcker, filmer, TV-serier, musik och kulturdebatt." />
+          <div className="culture-grid">
+            <article className="culture-main">
+              <div className="kicker">Veckans bok</div>
+              <h3>Litteraturen återtar rollen som långsam motkraft</h3>
+              <p className="lead">När nyhetsflödet blir snabbare växer intresset för berättelser som kräver tid, närvaro och eftertanke.</p>
+              <Link className="button" href="/kultur">Till kulturen</Link>
+            </article>
+            <article className="culture-small">
+              <div className="kicker">Film & TV</div>
+              <h3>Nya berättelser mellan bio och streaming</h3>
+              <p>Premiärer, adaptioner och en bransch i förändring.</p>
+            </article>
+            <article className="culture-small">
+              <div className="kicker">Kulturdebatt</div>
+              <h3>Vem får tillgång till offentligheten?</h3>
+              <p>Bibliotek, public service, kulturstöd och AI.</p>
+              <Link className="text-link" href="/kulturdebatt">Läs debatten</Link>
+            </article>
+          </div>
+        </section>
+
+        <section className="section">
+          <SectionIntro title="Veckans siffror" text="En redaktionell ögonblicksbild – inte en livepanel." />
+          <FactStrip
+            items={[
+              { label: 'Inflation', value: '0,7 %' },
+              { label: 'Styrränta', value: '2,00 %' },
+              { label: 'Huvudartiklar', value: '18' },
+              { label: 'Fördjupningar', value: '12' },
+            ]}
+          />
+        </section>
+      </div>
+    </main>
+  );
+}

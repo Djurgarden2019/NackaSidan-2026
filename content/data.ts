@@ -1,5 +1,5 @@
-import type { Story } from '@/components/Cards';
-import type { Feature } from '@/components/Editorial';
+import type { Story } from '../components/Cards';
+import type { Feature } from '../components/Editorial';
 export const lead:Story={section:'Veckans stora analys',title:'Iran uppger överenskommelse om Hormuzsundet',summary:'Efter en vecka av hot, militära signaler och intensiv diplomati uppger Iran att en preliminär överenskommelse nåtts. Nu avgörs allt av om orden följs av säker sjöfart och mätbara eftergifter.',href:'/artikel/veckans-analys'};
 export const topStories:Story[]=[
 {section:'Sverige',title:'Valrörelsen flyttar in i AI-eran',summary:'Myndigheter och medier förbereder sig för manipulerade bilder, röster och texter inför valet.',href:'/sverige'},
