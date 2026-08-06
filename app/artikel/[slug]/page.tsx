@@ -1,5 +1,7 @@
 import { notFound } from 'next/navigation';
 import { ArticleMeta, KnowledgeCard, RelatedArticles, SourcePanel } from '../../../components/Knowledge';
+import { ReadingProgress, ShareTools } from '../../../components/Interactive';
+import Link from 'next/link';
 import { articleBySlug, articles } from '../../../content/articles';
 
 export function generateStaticParams() {
@@ -13,13 +15,13 @@ export default async function ArticlePage({ params }: { params: Promise<{ slug: 
   const titleBySlug = Object.fromEntries(articles.map((item) => [item.slug, item.title]));
 
   return (
-    <main>
+    <main><ReadingProgress />
       <div className="shell">
         <article className="article article-premium">
           <div className="kicker">{article.section}</div>
           <h1>{article.title}</h1>
           <p className="intro">{article.intro}</p>
-          <ArticleMeta article={article} />
+          <ArticleMeta article={article} /><div className="article-actions"><Link href="/forfattare/redaktionen">Om författaren</Link><ShareTools title={article.title} /></div>
           {article.image && (
             <figure className="article-hero-image">
               <img src={article.image} alt="" />

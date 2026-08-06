@@ -17,3 +17,6 @@ Sprint 3 bygger vidare på den fungerande Vercel-versionen och lägger till:
 5. Vercel bygger och publicerar automatiskt.
 
 Detta är ett kodbaserat mini-CMS. Nästa steg är att koppla samma innehållsmodell till ett visuellt CMS som Sanity när redaktionens fält och arbetsflöde är godkända.
+
+## Sprint 4
+Sprint 4 lägger till sökning, ämnessidor, författarsida, delning och läsprogress. Se `docs/SPRINT-4.md`.
