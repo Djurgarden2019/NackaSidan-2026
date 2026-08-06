@@ -1,0 +1,1 @@
+export function Footer(){return <footer className="footer"><div className="shell footer-grid"><div><strong>NackaSidan 2026</strong><p>Vi hjälper dig att förstå veckan – inte bara följa den.</p></div><div><p>En designprototyp för ett digitalt veckomagasin. Byggd med Next.js, TypeScript och ett återanvändbart designsystem.</p></div></div></footer>}
