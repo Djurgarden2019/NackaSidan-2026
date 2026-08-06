@@ -1,27 +1,22 @@
-# NackaSidan 2026 – Sprint 1
+# NackaSidan 2026 – Sprint 2
 
-En klickbar Next.js-prototyp för ett svenskt digitalt veckomagasin.
+Sprint 2 bygger vidare på Sprint 1 med:
 
-## Innehåll
-- Ny, bred och luftig startsida
-- Återanvändbart designsystem
-- Sverige-sida
-- Kultur-sida i ordningen böcker, film, TV, musik, kulturdebatt
-- Artikelmallar
-- Statisk export för GitHub Pages
-- GitHub Actions-workflow för automatisk publicering
+- ny, luftigare premiumstartsida
+- Världen som ny avdelning
+- utbyggda Sverige- och Kultursidor
+- Kulturdebatt som egen sida
+- Ekonomi, Vetenskap & AI och Sport som nya grundsidor
+- återanvändbara komponenter för analys, fakta och redaktionella kort
+- förbättrad mobilanpassning
 
-## Lokalt
+## Lokal körning
+
 ```bash
 npm install
 npm run dev
 ```
-Öppna `http://localhost:3000`.
 
-## GitHub Pages
-1. Ladda upp allt i repositoryt `NackaSidan-2026`.
-2. Öppna Settings → Pages.
-3. Under Source, välj **GitHub Actions**.
-4. En push till `main` bygger och publicerar webbplatsen.
+## Publicering på GitHub Pages
 
-> Om repositoryts exakta URL-namn skiljer sig från `NackaSidan-2026`, ändra `basePath` och `assetPrefix` i `next.config.mjs` till det exakta repositorynamnet.
+Ladda upp hela projektets innehåll till repositoryt. Välj **GitHub Actions** under Settings → Pages. Workflow-filen bygger och publicerar webbplatsen automatiskt.
