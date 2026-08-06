@@ -2,6 +2,8 @@ import Link from 'next/link';
 import { StoryCard } from '../components/Cards';
 import { FeatureCard, FactStrip, SectionIntro } from '../components/Editorial';
 import { lead, topStories } from '../content/data';
+import { articles } from '../content/articles';
+import { NewsDashboard, NewsletterSignup } from '../components/HomeModules';
 
 const editorial = [
   {
@@ -111,6 +113,8 @@ export default function Home() {
           </div>
         </section>
 
+        <NewsDashboard articles={articles} />
+
         <section className="section culture-home">
           <SectionIntro title="Kultur" text="Veckans utvalda böcker, filmer, TV-serier, musik och kulturdebatt." />
           <div className="culture-grid">
@@ -133,6 +137,8 @@ export default function Home() {
             </article>
           </div>
         </section>
+
+        <NewsletterSignup />
 
         <section className="section">
           <SectionIntro title="Veckans siffror" text="En redaktionell ögonblicksbild – inte en livepanel." />

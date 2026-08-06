@@ -1,6 +1,7 @@
 import { notFound } from 'next/navigation';
 import { ArticleMeta, KnowledgeCard, RelatedArticles, SourcePanel } from '../../../components/Knowledge';
 import { ReadingProgress, ShareTools } from '../../../components/Interactive';
+import { IntelligencePanel } from '../../../components/Intelligence';
 import Link from 'next/link';
 import { articleBySlug, articles } from '../../../content/articles';
 
@@ -29,6 +30,7 @@ export default async function ArticlePage({ params }: { params: Promise<{ slug: 
             </figure>
           )}
           <KnowledgeCard article={article} />
+          <IntelligencePanel article={article} />
           {article.body.map((section) => (
             <section className="article-section" key={section.heading ?? section.paragraphs[0]}>
               {section.heading && <h2>{section.heading}</h2>}

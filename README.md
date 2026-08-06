@@ -1,4 +1,4 @@
-# NackaSidan 2026 – Sprint 3
+# NackaSidan 2026 – Sprint 5
 
 Sprint 3 bygger vidare på den fungerande Vercel-versionen och lägger till:
 
@@ -20,3 +20,6 @@ Detta är ett kodbaserat mini-CMS. Nästa steg är att koppla samma innehållsmo
 
 ## Sprint 4
 Sprint 4 lägger till sökning, ämnessidor, författarsida, delning och läsprogress. Se `docs/SPRINT-4.md`.
+
+## Sprint 5
+Sprint 5 lägger till NackaPedia, kunskapssidor, redaktionella läslägen i artiklar, startsidedashboard och nyhetsbrevskomponent. Se `docs/SPRINT-5.md`.
