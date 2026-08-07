@@ -5,12 +5,12 @@ export default function LivePage() {
     <main>
       <div className="shell">
         <section className="live-hero live-hero-s11">
-          <div className="kicker">Nacka Intelligence · Sprint 11.3</div>
+          <div className="kicker">Nacka Intelligence · Sprint 12</div>
           <h1>Nyhetsradarn</h1>
           <p>
-            LIVE-sidan är nu helt frikopplad från Vercels byggprocess. Den statiska sidan publiceras först;
-            därefter försöker webbläsaren hämta de aktuella RSS-signalerna. Ett fel hos en extern källa kan
-            därför inte stoppa publiceringen av NackaSidan.
+            Nyhetsradarn har fått ett redaktionellt beslutsstöd. Signaler poängsätts, liknande händelser grupperas och
+            redaktionen får en föreslagen vinkel, källkort och arbetsflöde från bevakning till faktakontroll.
+            Inget publiceras automatiskt.
           </p>
         </section>
         <LiveRadarBrowser />
