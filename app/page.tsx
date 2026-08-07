@@ -7,6 +7,7 @@ import { NewsDashboard, NewsletterSignup } from '../components/HomeModules';
 import { LatestNewsFeed } from '../components/Newsroom';
 import { latestNews } from '../content/news';
 import { EditorialIntake } from '../components/LiveDesk';
+import AutoPublishedFrontpage from '../components/AutoPublishedFrontpage';
 
 const editorial = [
   {
@@ -59,6 +60,8 @@ export default function Home() {
           <p>Huvudfrågan, fyra snabba nyheter, dagens siffra och det redaktionen följer.</p>
           <Link href="/daily" className="daily-ribbon-link">Läs dagens briefing →</Link>
         </section>
+
+        <AutoPublishedFrontpage />
 
         <LatestNewsFeed items={latestNews.slice(0, 3)} compact />
 
