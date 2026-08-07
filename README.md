@@ -38,3 +38,11 @@ Riktiga RSS-källor är nu anslutna på `/live`. Se `docs/SPRINT-10.md`.
 
 ## Sprint 11
 Nyhetsradarn utökar `/live` med Sveriges Radio Ekot, automatisk ämnessortering, redaktionell prioritet, kategorifilter och liveöversikt. Se `docs/SPRINT-11.md`.
+
+
+## Sprint 11.2
+Nyhetsradarn är nu kompatibel med `output: 'export'`: klientbaserad kategorifiltrering utan dynamiska `searchParams`. Se `docs/SPRINT-11-2.md`.
+
+
+## Sprint 11.3
+LIVE är nu helt frikopplad från builden: statisk `/live`, klienthämtning efter sidladdning och säkert felläge om externa källor inte svarar. Se `docs/SPRINT-11-3.md`.

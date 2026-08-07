@@ -18,7 +18,7 @@ export default function EditorialPage() {
       <div className="shell">
         <section className="editorial-command-hero">
           <div>
-            <div className="kicker">Nacka Studio · Sprint 10</div>
+            <div className="kicker">Nacka Studio · Sprint 11.3</div>
             <h1>Redaktionens kontrollcenter</h1>
             <p>En samlad prototyp för publicering, planering, kunskapsnav och kvalitetskontroll. Allt bygger fortfarande på projektets centrala innehållsfiler.</p>
           </div>
@@ -26,7 +26,7 @@ export default function EditorialPage() {
         </section>
 
         <section className="editorial-live-callout">
-          <div><div className="kicker">Nacka Intelligence · Live</div><h2>Riktiga källor är nu anslutna</h2><p>RSS-flöden hämtas server-side och cachelagras i cirka 15 minuter. Inkommande poster markeras som ej verifierade tills redaktionen har granskat dem.</p></div>
+          <div><div className="kicker">Nacka Intelligence · Live</div><h2>Riktiga källor är nu anslutna</h2><p>LIVE hämtas efter sidladdning i webbläsaren. Externa källfel kan därför inte stoppa Vercel-bygget. Inkommande poster markeras som ej verifierade tills redaktionen har granskat dem.</p></div>
           <Link className="button" href="/live">Öppna Livekällor</Link>
         </section>
 

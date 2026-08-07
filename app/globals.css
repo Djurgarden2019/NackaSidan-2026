@@ -188,3 +188,23 @@ html,body{max-width:100%;overflow-x:hidden}
 .radar-legend{display:flex;align-items:center;flex-wrap:wrap;gap:16px;padding:13px 0 22px;color:var(--muted);font-size:.72rem}.radar-legend span{display:flex;align-items:center;gap:6px;font-weight:700}.radar-legend em{font-style:normal;margin-left:auto}.priority-dot{display:inline-block;width:8px;height:8px;border-radius:50%}.priority-high{background:#9f1d20}.priority-medium{background:#b8791b}.priority-low{background:#718071}.live-row-s11{grid-template-columns:150px minmax(0,1fr) 150px}.radar-review{display:flex;flex-direction:column;align-items:flex-end;gap:7px;font-size:.62rem;text-transform:uppercase;letter-spacing:.07em;color:var(--muted)}.priority-pill{min-width:62px;text-align:center;padding:4px 8px;color:#fff;font-weight:800}.priority-pill.priority-high{background:#9f1d20}.priority-pill.priority-medium{background:#9b691b}.priority-pill.priority-low{background:#657565}
 @media(max-width:1050px){.live-status-grid-s11{grid-template-columns:1fr 1fr}.radar-stats{grid-template-columns:1fr 1fr}}
 @media(max-width:700px){.live-status-grid-s11,.radar-stats{grid-template-columns:1fr}.live-row-s11{grid-template-columns:1fr}.radar-review{align-items:flex-start}.radar-legend em{width:100%;margin-left:0}}
+
+
+/* Sprint 11.2 — static-export-safe live filters */
+.radar-filters button{
+  appearance:none;background:transparent;border:0;color:inherit;font:inherit;cursor:pointer;
+}
+.radar-filters button:focus-visible{outline:2px solid var(--red);outline-offset:3px}
+
+
+/* Sprint 11.3 — live without build risk */
+.live-dot-wait{background:#c99a2e}
+.live-refresh-box{display:flex;gap:16px;align-items:center;justify-content:flex-end}
+.live-refresh-box p{margin:0;max-width:620px}
+.live-refresh-button{
+  appearance:none;border:1px solid var(--line);background:transparent;padding:10px 14px;
+  font-size:.7rem;font-weight:800;text-transform:uppercase;letter-spacing:.08em;cursor:pointer;white-space:nowrap
+}
+.live-refresh-button:hover{border-color:var(--red);color:var(--red)}
+.live-refresh-button:disabled{opacity:.55;cursor:wait}
+@media(max-width:900px){.live-refresh-box{align-items:flex-start;flex-direction:column}}
