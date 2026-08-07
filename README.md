@@ -24,9 +24,13 @@ Sprint 4 lägger till sökning, ämnessidor, författarsida, delning och läspro
 ## Sprint 5
 Sprint 5 lägger till NackaPedia, kunskapssidor, redaktionella läslägen i artiklar, startsidedashboard och nyhetsbrevskomponent. Se `docs/SPRINT-5.md`.
 
-## Sprint 9
-Sprint 9 introducerar Nacka Daily, förbättrad artikelnavigering och Redaktionens kontrollcenter 2.0. Se `docs/SPRINT-6.md`.
+## Sprint 10
+Sprint 10 introducerar Nacka Daily, förbättrad artikelnavigering och Redaktionens kontrollcenter 2.0. Se `docs/SPRINT-6.md`.
 
 
-## Sprint 9
-Sprint 9 lägger till ett redaktionellt publiceringsflöde på `/senaste`, transparens kring uppdateringar och källor samt förbättrad naturlig rubrikbrytning. Se `docs/SPRINT-8.md`.
+## Sprint 10
+Sprint 10 lägger till ett redaktionellt publiceringsflöde på `/senaste`, transparens kring uppdateringar och källor samt förbättrad naturlig rubrikbrytning. Se `docs/SPRINT-8.md`.
+
+
+## Sprint 10
+Riktiga RSS-källor är nu anslutna på `/live`. Se `docs/SPRINT-10.md`.

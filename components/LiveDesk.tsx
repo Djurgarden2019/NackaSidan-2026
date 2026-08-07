@@ -8,9 +8,9 @@ export function EditorialIntake({ compact = false }: { compact?: boolean }) {
     <section className="intake">
       <div className="intake-head">
         <div><div className="kicker">Nacka Intelligence</div><h2>Nyhetsdesk</h2></div>
-        <span className="intake-badge">Redaktionell kö · Sprint 9</span>
+        <span className="intake-badge">Redaktionell kö · Sprint 10</span>
       </div>
-      <p className="intake-note">Detta är arbetsflödet för inkommande signaler. Externa källor är definierade och anslutningsklara, men hämtas inte automatiskt ännu – därför visas inga påhittade livehändelser.</p>
+      <p className="intake-note">Detta är arbetsflödet för inkommande signaler. De första externa RSS-källorna är nu anslutna automatiskt. Den här kön är fortfarande redaktionens arbetsyta: råa liveposter publiceras aldrig automatiskt som NackaSidan-artiklar.</p>
       <div className="intake-list">
         {items.map(item => (
           <article key={item.id}>

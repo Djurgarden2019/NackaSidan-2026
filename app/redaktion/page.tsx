@@ -18,11 +18,16 @@ export default function EditorialPage() {
       <div className="shell">
         <section className="editorial-command-hero">
           <div>
-            <div className="kicker">Nacka Studio · Sprint 8</div>
+            <div className="kicker">Nacka Studio · Sprint 10</div>
             <h1>Redaktionens kontrollcenter</h1>
             <p>En samlad prototyp för publicering, planering, kunskapsnav och kvalitetskontroll. Allt bygger fortfarande på projektets centrala innehållsfiler.</p>
           </div>
           <Link className="button" href="/daily">Förhandsvisa Nacka Daily</Link>
+        </section>
+
+        <section className="editorial-live-callout">
+          <div><div className="kicker">Nacka Intelligence · Live</div><h2>Riktiga källor är nu anslutna</h2><p>RSS-flöden hämtas server-side och cachelagras i cirka 15 minuter. Inkommande poster markeras som ej verifierade tills redaktionen har granskat dem.</p></div>
+          <Link className="button" href="/live">Öppna Livekällor</Link>
         </section>
 
         <section className="editorial-kpis">
@@ -65,7 +70,7 @@ export default function EditorialPage() {
 
         <section className="section cms-guide">
           <div><div className="kicker">Så publicerar du</div><h2>En artikel på ett ställe</h2><ol><li>Kopiera ett artikelobjekt i <code>content/articles.ts</code>.</li><li>Ändra slug, rubrik, ingress, brödtext, kunskapskort och källor.</li><li>Ladda upp ändringen till GitHub.</li><li>Vercel bygger och publicerar automatiskt.</li></ol></div>
-          <div className="cms-note"><strong>Nästa CMS-steg</strong><p>När arbetsflödet är godkänt kan samma fält kopplas till Sanity. Sprint 8 förbereder strukturen men skapar inget externt beroende.</p></div>
+          <div className="cms-note"><strong>Nästa CMS-steg</strong><p>När arbetsflödet är godkänt kan samma fält kopplas till Sanity. Sprint 10 har nu kopplat in de första RSS-källorna; nästa steg är fler källor och redaktionella åtgärder men skapar inget externt beroende.</p></div>
         </section>
         <EditorialIntake />
         <SourceRegistry />
