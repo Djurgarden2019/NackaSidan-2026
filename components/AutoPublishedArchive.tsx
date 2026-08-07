@@ -1,3 +1,78 @@
-"use client";import{useEffect,useState}from"react";
-type A={id:string;title:string;lead:string;body:string;section:string;source:string;sourceUrl:string;publishedAt:string;risk:string;score:number};
-export default function AutoPublishedArchive(){const[a,setA]=useState<A[]>([]);const load=()=>fetch('/api/autopublished',{cache:'no-store'}).then(r=>r.ok?r.json():[]).then(setA).catch(()=>{});useEffect(load,[]);const remove=async(id:string)=>{await fetch('/api/autopublished?id='+encodeURIComponent(id),{method:'DELETE'});load()};return <section className="s14-archive"><div className="kicker">Sprint 16 · Permanent arkiv</div><h1>Autopublicerat</h1><p className="lead">Det gemensamma publiceringsarkivet visas för alla besökare. Dubbletter stoppas före lagring.</p>{!a.length?<div className="live-empty"><strong>Inga permanenta artiklar ännu.</strong></div>:a.map(x=><article className="s14-published" key={x.id}><div className="feed-meta"><span>{x.section}</span><span>{x.score}/100</span><span>{new Date(x.publishedAt).toLocaleString('sv-SE')}</span></div><h2>{x.title}</h2><p><strong>{x.lead}</strong></p><p className="s14-body">{x.body}</p><div className="s14-pubactions"><a href={x.sourceUrl} target="_blank" rel="noreferrer">Originalkälla ↗</a><button onClick={()=>remove(x.id)}>Avpublicera</button></div></article>)}</section>}
+"use client";
+
+import { useEffect, useState } from "react";
+
+type A = {
+  id: string;
+  title: string;
+  lead: string;
+  body: string;
+  section: string;
+  source: string;
+  sourceUrl: string;
+  publishedAt: string;
+  risk: string;
+  score: number;
+};
+
+export default function AutoPublishedArchive() {
+  const [a, setA] = useState<A[]>([]);
+
+  const load = () =>
+    fetch("/api/autopublished", { cache: "no-store" })
+      .then((r) => (r.ok ? r.json() : []))
+      .then(setA)
+      .catch(() => {});
+
+  useEffect(() => {
+    load();
+  }, []);
+
+  const remove = async (id: string) => {
+    await fetch("/api/autopublished?id=" + encodeURIComponent(id), {
+      method: "DELETE",
+    });
+    load();
+  };
+
+  return (
+    <section className="s14-archive">
+      <div className="kicker">Sprint 16 · Permanent arkiv</div>
+      <h1>Autopublicerat</h1>
+
+      <p className="lead">
+        Det gemensamma publiceringsarkivet visas för alla besökare. Dubbletter
+        stoppas före lagring.
+      </p>
+
+      {!a.length ? (
+        <div className="live-empty">
+          <strong>Inga permanenta artiklar ännu.</strong>
+        </div>
+      ) : (
+        a.map((x) => (
+          <article className="s14-published" key={x.id}>
+            <div className="feed-meta">
+              <span>{x.section}</span>
+              <span>{x.score}/100</span>
+              <span>{new Date(x.publishedAt).toLocaleString("sv-SE")}</span>
+            </div>
+
+            <h2>{x.title}</h2>
+            <p>
+              <strong>{x.lead}</strong>
+            </p>
+            <p className="s14-body">{x.body}</p>
+
+            <div className="s14-pubactions">
+              <a href={x.sourceUrl} target="_blank" rel="noreferrer">
+                Originalkälla ↗
+              </a>
+              <button onClick={() => remove(x.id)}>Avpublicera</button>
+            </div>
+          </article>
+        ))
+      )}
+    </section>
+  );
+}
