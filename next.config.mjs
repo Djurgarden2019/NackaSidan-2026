@@ -4,7 +4,6 @@ const isGitHubPages = Boolean(process.env.GITHUB_ACTIONS && repoName);
 const basePath = isGitHubPages ? `/${repoName}` : '';
 
 const nextConfig = {
-  output: 'export',
   trailingSlash: true,
   images: { unoptimized: true },
   basePath,
