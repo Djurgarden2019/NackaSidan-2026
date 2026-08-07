@@ -2,6 +2,7 @@ import Link from 'next/link';
 import { getLiveNews } from '../../lib/liveNews';
 
 export const revalidate = 900;
+export const dynamic = 'force-dynamic';
 
 function swedishTime(value: string) {
   const d = new Date(value);
