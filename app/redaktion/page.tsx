@@ -1,3 +1,4 @@
+import { EditorialIntake, SourceRegistry } from '../../components/LiveDesk';
 import Link from 'next/link';
 import { articles } from '../../content/articles';
 import { knowledgeEntries } from '../../content/knowledge';
@@ -66,6 +67,8 @@ export default function EditorialPage() {
           <div><div className="kicker">Så publicerar du</div><h2>En artikel på ett ställe</h2><ol><li>Kopiera ett artikelobjekt i <code>content/articles.ts</code>.</li><li>Ändra slug, rubrik, ingress, brödtext, kunskapskort och källor.</li><li>Ladda upp ändringen till GitHub.</li><li>Vercel bygger och publicerar automatiskt.</li></ol></div>
           <div className="cms-note"><strong>Nästa CMS-steg</strong><p>När arbetsflödet är godkänt kan samma fält kopplas till Sanity. Sprint 8 förbereder strukturen men skapar inget externt beroende.</p></div>
         </section>
+        <EditorialIntake />
+        <SourceRegistry />
       </div>
     </main>
   );

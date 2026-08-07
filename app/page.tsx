@@ -6,6 +6,7 @@ import { articles } from '../content/articles';
 import { NewsDashboard, NewsletterSignup } from '../components/HomeModules';
 import { LatestNewsFeed } from '../components/Newsroom';
 import { latestNews } from '../content/news';
+import { EditorialIntake } from '../components/LiveDesk';
 
 const editorial = [
   {
@@ -60,6 +61,8 @@ export default function Home() {
         </section>
 
         <LatestNewsFeed items={latestNews.slice(0, 3)} compact />
+
+        <EditorialIntake compact />
 
         <section className="section">
           <SectionIntro
