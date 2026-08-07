@@ -34,3 +34,7 @@ Sprint 10 lägger till ett redaktionellt publiceringsflöde på `/senaste`, tran
 
 ## Sprint 10
 Riktiga RSS-källor är nu anslutna på `/live`. Se `docs/SPRINT-10.md`.
+
+
+## Sprint 11
+Nyhetsradarn utökar `/live` med Sveriges Radio Ekot, automatisk ämnessortering, redaktionell prioritet, kategorifilter och liveöversikt. Se `docs/SPRINT-11.md`.
