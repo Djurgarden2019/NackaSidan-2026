@@ -23,3 +23,6 @@ Sprint 4 lägger till sökning, ämnessidor, författarsida, delning och läspro
 
 ## Sprint 5
 Sprint 5 lägger till NackaPedia, kunskapssidor, redaktionella läslägen i artiklar, startsidedashboard och nyhetsbrevskomponent. Se `docs/SPRINT-5.md`.
+
+## Sprint 7
+Sprint 7 introducerar Nacka Daily, förbättrad artikelnavigering och Redaktionens kontrollcenter 2.0. Se `docs/SPRINT-6.md`.

@@ -48,6 +48,15 @@ export default function Home() {
           </div>
         </section>
 
+        <section className="daily-ribbon" aria-label="Nacka Daily">
+          <div>
+            <span className="daily-ribbon-label">Nacka Daily · 07.00</span>
+            <strong>Dagens viktigaste på fem minuter</strong>
+          </div>
+          <p>Huvudfrågan, fyra snabba nyheter, dagens siffra och det redaktionen följer.</p>
+          <Link href="/daily" className="daily-ribbon-link">Läs dagens briefing →</Link>
+        </section>
+
         <section className="section">
           <SectionIntro
             title="Veckans viktigaste"
@@ -111,6 +120,17 @@ export default function Home() {
             </div>
             <div className="insight-list"><span>01 · Arbetsmarknad</span><span>02 · Val & demokrati</span><span>03 · Kultur & upphovsrätt</span><span>04 · Reglering</span></div>
           </div>
+        </section>
+
+
+        <section className="section daily-home-promo">
+          <div>
+            <div className="kicker">Nyhet · Sprint 6</div>
+            <h2>Nacka Daily</h2>
+            <p>Det viktigaste på fem minuter: dagens huvudfråga, fyra nyheter, en siffra och det redaktionen följer härnäst.</p>
+            <Link className="button" href="/daily">Öppna morgonbriefingen</Link>
+          </div>
+          <div className="daily-home-list"><span>07.00 · Dagens huvudfråga</span><span>Sverige · Ekonomi · AI · Kultur</span><span>Dagens siffra</span><span>Detta följer vi</span></div>
         </section>
 
         <NewsDashboard articles={articles} />

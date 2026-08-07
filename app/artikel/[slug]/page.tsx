@@ -2,6 +2,7 @@ import { notFound } from 'next/navigation';
 import { ArticleMeta, KnowledgeCard, RelatedArticles, SourcePanel } from '../../../components/Knowledge';
 import { ReadingProgress, ShareTools } from '../../../components/Interactive';
 import { IntelligencePanel } from '../../../components/Intelligence';
+import { ArticleTopics, NextArticle } from '../../../components/ArticleNavigation';
 import Link from 'next/link';
 import { articleBySlug, articles } from '../../../content/articles';
 
@@ -51,7 +52,9 @@ export default async function ArticlePage({ params }: { params: Promise<{ slug: 
             <ul>{article.consequences.map((item) => <li key={item}>{item}</li>)}</ul>
           </section>
           <SourcePanel article={article} />
+          <ArticleTopics article={article} />
           <RelatedArticles article={article} titleBySlug={titleBySlug} />
+          <NextArticle current={article} articles={articles} />
         </article>
       </div>
     </main>
