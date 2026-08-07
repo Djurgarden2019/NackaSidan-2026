@@ -3,6 +3,7 @@ import { ArticleMeta, KnowledgeCard, RelatedArticles, SourcePanel } from '../../
 import { ReadingProgress, ShareTools } from '../../../components/Interactive';
 import { IntelligencePanel } from '../../../components/Intelligence';
 import { ArticleTopics, NextArticle } from '../../../components/ArticleNavigation';
+import { ArticleTrustBar } from '../../../components/Newsroom';
 import Link from 'next/link';
 import { articleBySlug, articles } from '../../../content/articles';
 
@@ -23,7 +24,7 @@ export default async function ArticlePage({ params }: { params: Promise<{ slug: 
           <div className="kicker">{article.section}</div>
           <h1>{article.title}</h1>
           <p className="intro">{article.intro}</p>
-          <ArticleMeta article={article} /><div className="article-actions"><Link href="/forfattare/redaktionen">Om författaren</Link><ShareTools title={article.title} /></div>
+          <ArticleMeta article={article} /><ArticleTrustBar article={article} /><div className="article-actions"><Link href="/forfattare/redaktionen">Om författaren</Link><ShareTools title={article.title} /></div>
           {article.image && (
             <figure className="article-hero-image">
               <img src={article.image} alt="" />

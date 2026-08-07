@@ -4,6 +4,8 @@ import { FeatureCard, FactStrip, SectionIntro } from '../components/Editorial';
 import { lead, topStories } from '../content/data';
 import { articles } from '../content/articles';
 import { NewsDashboard, NewsletterSignup } from '../components/HomeModules';
+import { LatestNewsFeed } from '../components/Newsroom';
+import { latestNews } from '../content/news';
 
 const editorial = [
   {
@@ -56,6 +58,8 @@ export default function Home() {
           <p>Huvudfrågan, fyra snabba nyheter, dagens siffra och det redaktionen följer.</p>
           <Link href="/daily" className="daily-ribbon-link">Läs dagens briefing →</Link>
         </section>
+
+        <LatestNewsFeed items={latestNews.slice(0, 3)} compact />
 
         <section className="section">
           <SectionIntro

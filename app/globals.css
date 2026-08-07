@@ -108,3 +108,26 @@ html,body{max-width:100%;overflow-x:hidden}
   .daily-ribbon{grid-template-columns:1fr;gap:12px;padding:18px 0}
   .daily-ribbon p{max-width:34rem}
 }
+
+/* Sprint 8: editorial news flow, freshness and source transparency */
+.hero-sprint2 h1,.hero h1,.page-hero h1,.daily-hero h1,.topic-hero h1,.topic-page-hero h1,.knowledge-library-hero h1,.knowledge-topic-hero h1{hyphens:none;word-break:normal;overflow-wrap:normal;text-wrap:balance}
+.hero-sprint2 h1{max-width:12ch}
+.latest-feed{padding:54px 0;border-bottom:1px solid var(--line)}
+.latest-feed-compact{padding:26px 0 34px}
+.latest-feed-heading{display:flex;align-items:end;justify-content:space-between;gap:30px;margin-bottom:22px}
+.latest-feed-heading h2{font-family:Georgia,serif;font-size:clamp(2rem,3vw,3.1rem);line-height:1;margin:0}
+.feed-disclosure{max-width:340px;text-align:right;color:var(--muted);font-size:.72rem;text-transform:uppercase;letter-spacing:.08em}
+.latest-feed-list{border-top:4px solid var(--ink)}
+.latest-feed-list article{display:grid;grid-template-columns:125px minmax(0,1fr) 35px;gap:22px;align-items:start;padding:22px 0;border-bottom:1px solid var(--line)}
+.latest-feed-list time{font-size:.72rem;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:var(--red)}
+.latest-feed-list h3{font-family:Georgia,serif;font-size:1.55rem;line-height:1.05;margin:4px 0 7px;text-wrap:balance}
+.latest-feed-list p{margin:0;color:var(--muted);max-width:780px}
+.feed-meta{display:flex;gap:8px 14px;font-size:.67rem;letter-spacing:.09em;text-transform:uppercase;color:var(--muted)}
+.feed-arrow{font-family:Georgia,serif;font-size:1.8rem;line-height:1;text-align:right}
+.latest-feed-compact .latest-feed-heading{margin-bottom:14px}.latest-feed-compact .latest-feed-heading h2{font-size:1.8rem}.latest-feed-compact .latest-feed-list article{padding:14px 0}.latest-feed-compact .latest-feed-list h3{font-size:1.2rem}.latest-feed-compact .text-link{margin-top:18px}
+.latest-page-hero{max-width:1100px}.latest-note{max-width:900px;margin:45px 0 0;padding:28px;background:var(--soft)}.latest-note strong{font-family:Georgia,serif;font-size:1.5rem}.latest-note p{margin-bottom:0}
+.article-trust-bar{display:flex;flex-wrap:wrap;gap:8px 22px;margin:-16px 0 24px;padding:13px 0;border-bottom:1px solid var(--line);font-size:.72rem;color:var(--muted)}.article-trust-bar strong{color:var(--ink)}.article-trust-bar .trust-state{color:#456447;font-weight:700}
+.daily-source-note{max-width:1000px;margin:48px 0 0;padding:30px 34px;border-left:5px solid #42647a;background:#e9eef0}.daily-source-note h2{font-family:Georgia,serif;font-size:2rem;margin:0 0 10px}.daily-source-note p{margin:0;max-width:850px;color:#43515a}
+.editorial-live-panel{display:grid;grid-template-columns:.75fr 1.25fr;gap:55px;padding:38px 0 60px;border-bottom:1px solid var(--line)}.editorial-live-panel h2{font-family:Georgia,serif;font-size:2.8rem;line-height:1;margin:0 0 14px}.editorial-live-panel p{color:var(--muted)}.editorial-live-list{border-top:4px solid var(--red)}.editorial-live-list>div{display:grid;grid-template-columns:110px 1fr;gap:8px 20px;padding:15px 0;border-bottom:1px solid var(--line)}.editorial-live-list span{font-size:.7rem;text-transform:uppercase;color:var(--red);font-weight:800}.editorial-live-list strong{font-family:Georgia,serif}.editorial-live-list small{grid-column:2;color:var(--muted)}
+@media(max-width:900px){.latest-feed-heading{display:block}.feed-disclosure{text-align:left;margin-top:10px}.editorial-live-panel{grid-template-columns:1fr}.hero-sprint2 h1{max-width:15ch}}
+@media(max-width:600px){.latest-feed-list article{grid-template-columns:1fr 28px;gap:8px 14px}.latest-feed-list time{grid-column:1}.latest-feed-list article>div{grid-column:1}.feed-arrow{grid-column:2;grid-row:1/3}.article-trust-bar{display:grid}.daily-source-note{padding:24px}.hero-sprint2 h1{font-size:clamp(2.35rem,11.5vw,3.45rem);max-width:none}.editorial-live-list>div{grid-template-columns:1fr}.editorial-live-list small{grid-column:1}}

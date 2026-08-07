@@ -15,7 +15,7 @@ export default function DailyPage() {
           <div className="kicker">Nacka Daily</div>
           <h1>{dailyEdition.title}</h1>
           <p>{dailyEdition.intro}</p>
-          <div className="daily-meta"><span>5 min läsning</span><span>Uppdaterad 07.00</span><span>Gratis briefing</span></div>
+          <div className="daily-meta"><span>5 min läsning</span><span>Uppdaterad 07.00</span><span>Gratis briefing</span><span>Redaktionellt urval</span></div>
         </section>
 
         <section className="daily-lead">
@@ -39,6 +39,8 @@ export default function DailyPage() {
             </article>
           ))}
         </section>
+
+        <section className="daily-source-note"><div className="kicker">Transparens</div><h2>Så är briefingen byggd</h2><p>Nacka Daily sammanfattar och länkar vidare till NackaSidans publicerade analyser och ämnessidor. Sprint 8 använder ingen extern automatisk nyhetswire; innehållet uppdateras redaktionellt i projektets innehållsfiler.</p></section>
 
         <section className="daily-insights">
           <div className="daily-number">

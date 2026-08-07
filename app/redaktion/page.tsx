@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import { articles } from '../../content/articles';
 import { knowledgeEntries } from '../../content/knowledge';
+import { latestNews } from '../../content/news';
 
 const planned = [
   ['07 aug', 'Nacka Daily', 'Planerad', 'Briefing'],
@@ -16,7 +17,7 @@ export default function EditorialPage() {
       <div className="shell">
         <section className="editorial-command-hero">
           <div>
-            <div className="kicker">Nacka Studio · Sprint 6</div>
+            <div className="kicker">Nacka Studio · Sprint 8</div>
             <h1>Redaktionens kontrollcenter</h1>
             <p>En samlad prototyp för publicering, planering, kunskapsnav och kvalitetskontroll. Allt bygger fortfarande på projektets centrala innehållsfiler.</p>
           </div>
@@ -28,6 +29,16 @@ export default function EditorialPage() {
           <div><span>Kunskapssidor</span><strong>{knowledgeEntries.length}</strong></div>
           <div><span>Ämnen och taggar</span><strong>{tagCount}</strong></div>
           <div><span>Redovisade källor</span><strong>{sourceCount}</strong></div>
+        </section>
+
+
+        <section className="editorial-live-panel">
+          <div>
+            <div className="kicker">Publiceringsflöde</div>
+            <h2>Senaste redaktionella aktivitet</h2>
+            <p>Det här är samma datalager som visas för läsaren på sidan Senaste.</p>
+          </div>
+          <div className="editorial-live-list">{latestNews.map((item) => <div key={item.title}><span>{item.time}</span><strong>{item.title}</strong><small>{item.section} · {item.type}</small></div>)}</div>
         </section>
 
         <section className="editorial-workspace">
@@ -53,7 +64,7 @@ export default function EditorialPage() {
 
         <section className="section cms-guide">
           <div><div className="kicker">Så publicerar du</div><h2>En artikel på ett ställe</h2><ol><li>Kopiera ett artikelobjekt i <code>content/articles.ts</code>.</li><li>Ändra slug, rubrik, ingress, brödtext, kunskapskort och källor.</li><li>Ladda upp ändringen till GitHub.</li><li>Vercel bygger och publicerar automatiskt.</li></ol></div>
-          <div className="cms-note"><strong>Nästa CMS-steg</strong><p>När arbetsflödet är godkänt kan samma fält kopplas till Sanity. Sprint 6 förbereder strukturen men skapar inget externt beroende.</p></div>
+          <div className="cms-note"><strong>Nästa CMS-steg</strong><p>När arbetsflödet är godkänt kan samma fält kopplas till Sanity. Sprint 8 förbereder strukturen men skapar inget externt beroende.</p></div>
         </section>
       </div>
     </main>
