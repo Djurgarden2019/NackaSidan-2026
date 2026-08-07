@@ -8,6 +8,7 @@ type DeskState = "Ny" | "Bevaka" | "Skriv" | "Kontrollera" | "Avfärda";
 type LiveItem = { title:string; link:string; published:string; source:string; section:string; priority:Priority; local:boolean };
 type FeedStatus = FeedDefinition & { status:"Väntar"|"Ansluten"|"Otillgänglig"; count:number };
 type Story = LiveItem & { score:number; reason:string; angle:string; cluster:number; sources:string[]; state:DeskState };
+type DraftForm = { headline:string; lead:string; body:string; notes:string; checks:Record<string,boolean>; savedAt?:string };
 
 const sections=["Alla","Nacka/Lokalt","Sverige","Världen","Ekonomi","Kultur","Vetenskap","Sport"];
 const rules=[
@@ -31,11 +32,32 @@ export default function LiveRadarBrowser(){
  const[items,setItems]=useState<LiveItem[]>([]),[feeds,setFeeds]=useState<FeedStatus[]>(liveFeeds.map(f=>({...f,status:"Väntar",count:0})));
  const[selected,setSelected]=useState("Alla"),[loading,setLoading]=useState(true),[checkedAt,setCheckedAt]=useState(""),[refreshNo,setRefreshNo]=useState(0);
  const[states,setStates]=useState<Record<string,DeskState>>({}),[draft,setDraft]=useState<Story|null>(null);
+ const[draftForm,setDraftForm]=useState<DraftForm|null>(null),[saveMessage,setSaveMessage]=useState("");
  const load=useCallback(async()=>{setLoading(true);const results=await Promise.all(liveFeeds.map(async feed=>{try{return{feed,items:await fetchFeed(feed),ok:true as const}}catch{return{feed,items:[] as LiveItem[],ok:false as const}}}));const merged=results.flatMap(r=>r.items);setItems(Array.from(new Map(merged.map(i=>[i.link||i.title,i])).values()).sort((a,b)=>(Date.parse(b.published)||0)-(Date.parse(a.published)||0)));setFeeds(results.map(r=>({...r.feed,status:r.ok?"Ansluten":"Otillgänglig",count:r.items.length})));setCheckedAt(new Date().toISOString());setLoading(false)},[]);
  useEffect(()=>{load();const timer=window.setInterval(load,15*60*1000);return()=>window.clearInterval(timer)},[load,refreshNo]);
  const stories=useMemo(()=>items.map((item,i)=>{const score=scoreFor(item);const peers=items.filter((x,j)=>j!==i&&similarity(item.title,x.title)>=.45);const ed=editorial(item,score);return{...item,score,...ed,cluster:1+peers.length,sources:Array.from(new Set([item.source,...peers.map(x=>x.source)])),state:states[item.link]||"Ny"} as Story}).sort((a,b)=>b.score-a.score),[items,states]);
  const visible=selected==="Alla"?stories:stories.filter(i=>i.section===selected);const counts=Object.fromEntries(sections.map(s=>[s,s==="Alla"?stories.length:stories.filter(i=>i.section===s).length]));
  const high=stories.filter(i=>i.score>=75).length,local=stories.filter(i=>i.local).length,connected=feeds.filter(f=>f.status==="Ansluten").length;
+ const openWorkshop=(s:Story)=>{
+   setDraft(s); setStates(v=>({...v,[s.link]:"Skriv"})); setSaveMessage("");
+   const key=`nackasidan-draft-${s.link}`;
+   let saved:DraftForm|null=null;
+   try{const raw=localStorage.getItem(key); if(raw)saved=JSON.parse(raw)}catch{}
+   setDraftForm(saved||{
+     headline:s.title,
+     lead:s.angle,
+     body:`${s.title}.\n\nDetta är ett redaktionellt arbetsutkast baserat på den anslutna originalkällan. Skriv om och komplettera texten till en självständig artikel.\n\nBakgrund och betydelse: ${s.reason}\n\nNästa steg: kontrollera kärnuppgiften, namn, siffror, tidpunkt och berörda parter mot originalkällan och helst ytterligare en oberoende källa.`,
+     notes:"",
+     checks:{source:false,names:false,numbers:false,time:false,secondSource:false}
+   });
+   setTimeout(()=>document.getElementById("artikelverkstad")?.scrollIntoView({behavior:"smooth",block:"start"}),50);
+ };
+ const saveDraft=()=>{
+   if(!draft||!draftForm)return;
+   const saved={...draftForm,savedAt:new Date().toISOString()};
+   try{localStorage.setItem(`nackasidan-draft-${draft.link}`,JSON.stringify(saved));setDraftForm(saved);setSaveMessage("Utkast sparat i den här webbläsaren.")}catch{setSaveMessage("Kunde inte spara lokalt.")}
+ };
+ const allChecked=Boolean(draftForm&&Object.values(draftForm.checks).every(Boolean));
  return <>
   <section className="radar-stats"><article><strong>{loading?"…":stories.length}</strong><span>signaler inne</span></article><article><strong>{loading?"…":local}</strong><span>lokala signaler</span></article><article><strong>{loading?"…":high}</strong><span>redaktionell prio 75+</span></article><article><strong>{loading?"…":`${connected}/${feeds.length}`}</strong><span>källor anslutna</span></article></section>
   <section className="live-status-grid live-status-grid-s11">{feeds.map(f=><article key={f.name}><span className={f.status==="Ansluten"?"live-dot live-dot-ok":f.status==="Väntar"?"live-dot live-dot-wait":"live-dot"}/><div><strong>{f.name}</strong><small>{f.section} · {f.status} · {f.count} poster</small>{f.note&&<small>{f.note}</small>}<a href={f.homepage} target="_blank" rel="noreferrer">Originalkälla ↗</a></div></article>)}</section>
@@ -45,15 +67,38 @@ export default function LiveRadarBrowser(){
   {loading&&!stories.length?<div className="live-empty"><strong>Bygger redaktionell kö…</strong></div>:visible.slice(0,30).map((s,i)=><article className="s12-story" key={s.link+i}>
     <div className={`s12-score ${s.score>=75?"hot":s.score>=60?"warm":""}`}><strong>{s.score}</strong><span>/100</span></div>
     <div className="s12-copy"><div className="feed-meta"><span>{s.section}</span><span>{s.source}</span><span>{swedishTime(s.published)}</span>{s.cluster>1&&<span>{s.cluster} liknande signaler</span>}</div><h3><a href={s.link} target="_blank" rel="noreferrer">{s.title}</a></h3><p><b>Varför viktig:</b> {s.reason}</p><p><b>Föreslagen vinkel:</b> {s.angle}</p><small>Källkort: {s.sources.join(" · ")}</small></div>
-    <div className="s12-actions"><label>Status<select value={s.state} onChange={e=>setStates(v=>({...v,[s.link]:e.target.value as DeskState}))}>{["Ny","Bevaka","Skriv","Kontrollera","Avfärda"].map(x=><option key={x}>{x}</option>)}</select></label><button type="button" onClick={()=>{setDraft(s);setStates(v=>({...v,[s.link]:"Skriv"}))}}>Skapa artikelutkast</button></div>
+    <div className="s12-actions"><label>Status<select value={s.state} onChange={e=>setStates(v=>({...v,[s.link]:e.target.value as DeskState}))}>{["Ny","Bevaka","Skriv","Kontrollera","Avfärda"].map(x=><option key={x}>{x}</option>)}</select></label><button type="button" onClick={()=>openWorkshop(s)}>Skapa artikelutkast</button></div>
   </article>)}
   </section>
-  {draft&&<section className="s121-workshop" id="artikelverkstad"><div className="kicker">Sprint 12.1 · Artikelverkstad · Ej publicerat</div><div className="s121-head"><h2>Artikelverkstad</h2><button type="button" onClick={()=>setDraft(null)}>Stäng verkstaden ×</button></div><label>Rubrik<textarea defaultValue={draft.title}/></label><label>Ingress<textarea defaultValue={draft.angle}/></label><label>Artikelutkast<textarea className="s121-body" defaultValue={`${draft.title}.
-
-Detta är ett redaktionellt arbetsutkast baserat på den anslutna originalkällan. Kontrollera kärnuppgiften, komplettera med bakgrund och berörda parter och skriv om texten till en självständig NackaSidan-artikel.
-
-Varför nyheten är viktig: ${draft.reason}
-
-Före publicering: verifiera namn, siffror, tidpunkt och centrala påståenden mot originalkällan och helst ytterligare en oberoende källa.`}/></label><div className="s12-sourcecard"><strong>Källkort</strong><span>{draft.sources.join(" · ")}</span><a href={draft.link} target="_blank" rel="noreferrer">Öppna originaluppgiften ↗</a></div><div className="s121-buttons"><button type="button" className="s12-primary" onClick={()=>setStates(v=>({...v,[draft.link]:"Kontrollera"}))}>Markera för faktakontroll</button><span>Publicering sker aldrig automatiskt.</span></div></section>}
+  {draft&&draftForm&&<section className="s121-workshop s131-workshop" id="artikelverkstad">
+    <div className="kicker">Sprint 13.1 · Artikelverkstad · Ej publicerat</div>
+    <div className="s121-head"><div><h2>Artikelverkstad</h2><p>Signal → utkast → faktakontroll. Alla fält är redigerbara.</p></div><button type="button" onClick={()=>{setDraft(null);setDraftForm(null)}}>Stäng verkstaden ×</button></div>
+    <div className="s131-grid">
+      <div className="s131-editor">
+        <label>Rubrik<input value={draftForm.headline} onChange={e=>setDraftForm(v=>v?{...v,headline:e.target.value}:v)}/></label>
+        <label>Ingress<textarea value={draftForm.lead} onChange={e=>setDraftForm(v=>v?{...v,lead:e.target.value}:v)}/></label>
+        <label>Artikelutkast<textarea className="s121-body" value={draftForm.body} onChange={e=>setDraftForm(v=>v?{...v,body:e.target.value}:v)}/></label>
+        <label>Redaktionella anteckningar<textarea value={draftForm.notes} placeholder="Intervjuer att göra, frågor, bakgrund, länkar…" onChange={e=>setDraftForm(v=>v?{...v,notes:e.target.value}:v)}/></label>
+        <div className="s121-buttons">
+          <button type="button" className="s12-primary" onClick={saveDraft}>Spara utkast</button>
+          <button type="button" onClick={()=>setStates(v=>({...v,[draft.link]:"Kontrollera"}))}>Skicka till faktakontroll</button>
+          {saveMessage&&<span>{saveMessage}</span>}
+        </div>
+      </div>
+      <aside className="s131-sidebar">
+        <div className="s12-sourcecard"><strong>Källkort</strong><span>{draft.sources.join(" · ")}</span><a href={draft.link} target="_blank" rel="noreferrer">Öppna originaluppgiften ↗</a><small>{draft.cluster>1?`${draft.cluster} liknande signaler hittades.`:"En signal hittad – sök gärna en oberoende andrakälla."}</small></div>
+        <div className="s131-factcheck"><strong>Faktakontroll före publicering</strong>
+          {[
+            ["source","Kärnuppgiften kontrollerad mot originalkällan"],
+            ["names","Namn, titlar och organisationer kontrollerade"],
+            ["numbers","Siffror, belopp och procent kontrollerade"],
+            ["time","Datum, tid och händelseförlopp kontrollerade"],
+            ["secondSource","Oberoende andrakälla sökt/kontrollerad"]
+          ].map(([key,label])=><label key={key}><input type="checkbox" checked={Boolean(draftForm.checks[key])} onChange={e=>setDraftForm(v=>v?{...v,checks:{...v.checks,[key]:e.target.checked}}:v)}/><span>{label}</span></label>)}
+        </div>
+        <div className={`s131-readiness ${allChecked?"ready":""}`}><strong>{allChecked?"Klar för redaktionell slutgranskning":"Inte klar för publicering"}</strong><p>{allChecked?"Checklistan är komplett. En människa måste fortfarande slutgranska och fatta publiceringsbeslut.":"Slutför faktakontrollen. Artikelverkstaden publicerar aldrig automatiskt."}</p></div>
+      </aside>
+    </div>
+  </section>}
  </>
 }

@@ -46,3 +46,7 @@ Nyhetsradarn är nu kompatibel med `output: 'export'`: klientbaserad kategorifil
 
 ## Sprint 11.3
 LIVE är nu helt frikopplad från builden: statisk `/live`, klienthämtning efter sidladdning och säkert felläge om externa källor inte svarar. Se `docs/SPRINT-11-3.md`.
+
+
+## Sprint 13.1
+Artikelverkstaden är nu fullt interaktiv med redigering, lokal sparning, källkort och faktachecklista. Se `docs/SPRINT-13-1.md`.
