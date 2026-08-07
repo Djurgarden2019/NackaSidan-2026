@@ -52,8 +52,8 @@ export default function LiveRadarBrowser(){
  const[autoPublish,setAutoPublish]=useState(false),[published,setPublished]=useState<PublishedArticle[]>([]);
  const load=useCallback(async()=>{setLoading(true);const results=await Promise.all(liveFeeds.map(async feed=>{try{return{feed,items:await fetchFeed(feed),ok:true as const}}catch{return{feed,items:[] as LiveItem[],ok:false as const}}}));const merged=results.flatMap(r=>r.items);setItems(Array.from(new Map(merged.map(i=>[i.link||i.title,i])).values()).sort((a,b)=>(Date.parse(b.published)||0)-(Date.parse(a.published)||0)));setFeeds(results.map(r=>({...r.feed,status:r.ok?"Ansluten":"Otillgänglig",count:r.items.length})));setCheckedAt(new Date().toISOString());setLoading(false)},[]);
  useEffect(()=>{load();const timer=window.setInterval(load,15*60*1000);return()=>window.clearInterval(timer)},[load,refreshNo]);
- useEffect(()=>{try{setAutoPublish(localStorage.getItem("nackasidan-autopublish")==="on");const raw=localStorage.getItem("nackasidan-published");if(raw)setPublished(JSON.parse(raw))}catch{}},[]);
- const persistPublished=(next:PublishedArticle[])=>{setPublished(next);try{localStorage.setItem("nackasidan-published",JSON.stringify(next))}catch{}};
+ useEffect(()=>{try{setAutoPublish(localStorage.getItem("nackasidan-autopublish")==="on")}catch{};fetch("/api/autopublished",{cache:"no-store"}).then(r=>r.ok?r.json():[]).then(setPublished).catch(()=>{})},[]);
+ const persistPublished=async(next:PublishedArticle[])=>{try{const r=await fetch("/api/autopublished",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify(next)});const d=await r.json();if(r.ok)setPublished(d.articles||[])}catch{}};
  const toggleAuto=()=>setAutoPublish(v=>{const n=!v;try{localStorage.setItem("nackasidan-autopublish",n?"on":"off")}catch{};return n});
  const stories=useMemo(()=>items.map((item,i)=>{const score=scoreFor(item);const peers=items.filter((x,j)=>j!==i&&similarity(item.title,x.title)>=.45);const ed=editorial(item,score);return{...item,score,...ed,cluster:1+peers.length,sources:Array.from(new Set([item.source,...peers.map(x=>x.source)])),state:states[item.link]||"Ny"} as Story}).sort((a,b)=>b.score-a.score),[items,states]);
  useEffect(()=>{
@@ -68,7 +68,7 @@ export default function LiveRadarBrowser(){
        existing.add(s.link);
      }
    });
-   if(additions.length)persistPublished([...additions,...published].slice(0,100));
+   if(additions.length)persistPublished(additions);
  },[autoPublish,stories.length]);
  const visible=selected==="Alla"?stories:stories.filter(i=>i.section===selected);const counts=Object.fromEntries(sections.map(s=>[s,s==="Alla"?stories.length:stories.filter(i=>i.section===s).length]));
  const high=stories.filter(i=>i.score>=75).length,local=stories.filter(i=>i.local).length,connected=feeds.filter(f=>f.status==="Ansluten").length;
@@ -96,9 +96,9 @@ export default function LiveRadarBrowser(){
   <section className="radar-stats"><article><strong>{loading?"…":stories.length}</strong><span>signaler inne</span></article><article><strong>{loading?"…":local}</strong><span>lokala signaler</span></article><article><strong>{loading?"…":high}</strong><span>redaktionell prio 75+</span></article><article><strong>{loading?"…":`${connected}/${feeds.length}`}</strong><span>källor anslutna</span></article></section>
   <section className="live-status-grid live-status-grid-s11">{feeds.map(f=><article key={f.name}><span className={f.status==="Ansluten"?"live-dot live-dot-ok":f.status==="Väntar"?"live-dot live-dot-wait":"live-dot"}/><div><strong>{f.name}</strong><small>{f.section} · {f.status} · {f.count} poster</small>{f.note&&<small>{f.note}</small>}<a href={f.homepage} target="_blank" rel="noreferrer">Originalkälla ↗</a></div></article>)}</section>
   <section className="s14-control">
-    <div><div className="kicker">Sprint 15 · Autopublicering – nyhetsflöde</div><h2>Automatisk publiceringsmotor</h2><p>Gröna signaler kan publiceras automatiskt i pilotens lokala publiceringsarkiv. Gula stannar för mer källstöd. Röda stannar alltid för mänsklig kontroll.</p></div>
+    <div><div className="kicker">Sprint 16 · Permanent autopublicering</div><h2>Automatisk publiceringsmotor</h2><p>Gröna signaler publiceras till ett gemensamt permanent arkiv för alla besökare. Dubbletter stoppas centralt. Gula och röda signaler publiceras inte automatiskt.</p></div>
     <button type="button" className={autoPublish?"s14-toggle on":"s14-toggle"} onClick={toggleAuto}>{autoPublish?"Autopublicering PÅ":"Autopublicering AV"}</button>
-    <div className="s14-count"><strong>{published.length}</strong><span>pilotpublicerade</span></div>
+    <div className="s14-count"><strong>{published.length}</strong><span>permanent publicerade</span></div>
   </section>
   <section className="live-stream"><div className="section-heading section-heading-stack"><div><div className="kicker">Sprint 12 · Redaktionell AI-motor</div><h2>Redaktionens nyhetskö</h2></div><div className="live-refresh-box"><p>{checkedAt?`Senast kontrollerat ${swedishTime(checkedAt)}.`:"Kontrollerar källorna."} Signalerna poängsätts och grupperas lokalt i webbläsaren.</p><button className="live-refresh-button" onClick={()=>setRefreshNo(v=>v+1)} disabled={loading}>{loading?"Hämtar…":"Uppdatera nu"}</button></div></div>
   <nav className="radar-filters">{sections.map(s=><button className={selected===s?"active":""} key={s} onClick={()=>setSelected(s)}>{s}<b>{counts[s]??0}</b></button>)}</nav>
