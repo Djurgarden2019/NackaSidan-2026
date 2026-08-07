@@ -50,3 +50,7 @@ LIVE är nu helt frikopplad från builden: statisk `/live`, klienthämtning efte
 
 ## Sprint 13.1
 Artikelverkstaden är nu fullt interaktiv med redigering, lokal sparning, källkort och faktachecklista. Se `docs/SPRINT-13-1.md`.
+
+
+## Sprint 14
+Autopubliceringspilot med grön/gul/röd riskklassning och lokalt publiceringsarkiv på `/autopublicerat`. Se `docs/SPRINT-14.md`.

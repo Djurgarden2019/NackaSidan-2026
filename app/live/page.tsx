@@ -5,7 +5,7 @@ export default function LivePage() {
     <main>
       <div className="shell">
         <section className="live-hero live-hero-s11">
-          <div className="kicker">Nacka Intelligence · Sprint 13.1</div>
+          <div className="kicker">Nacka Intelligence · Sprint 14</div>
           <h1>Nyhetsradarn</h1>
           <p>
             Nyhetsradarn är nu kopplad till Artikelverkstaden. Signaler poängsätts, liknande händelser grupperas och
