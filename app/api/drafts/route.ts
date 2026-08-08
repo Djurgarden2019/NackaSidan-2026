@@ -1,5 +1,5 @@
 import { NextRequest, NextResponse } from "next/server";
-import { list, put } from "@vercel/blob";
+import { get, put } from "@vercel/blob";
 
 export const dynamic = "force-dynamic";
 
@@ -17,13 +17,15 @@ const PATH = "nackasidan/drafts.json";
 
 async function read(): Promise<Draft[]> {
   try {
-    const r = await list({ prefix: PATH });
-    const b = r.blobs.find((x) => x.pathname === PATH);
+    const result = await get(PATH, {
+      access: "private",
+      useCache: false,
+    });
 
-    if (!b) return [];
+    if (!result) return [];
 
-    const q = await fetch(b.url, { cache: "no-store" });
-    return q.ok ? await q.json() : [];
+    const text = await new Response(result.stream).text();
+    return JSON.parse(text);
   } catch {
     return [];
   }
@@ -31,8 +33,9 @@ async function read(): Promise<Draft[]> {
 
 async function write(drafts: Draft[]) {
   await put(PATH, JSON.stringify(drafts), {
-  access: "private",
+    access: "private",
     addRandomSuffix: false,
+    allowOverwrite: true,
     contentType: "application/json",
   });
 }
@@ -56,7 +59,9 @@ export async function POST(req: NextRequest) {
     await write(next);
 
     return NextResponse.json({ ok: true });
-  } catch {
+  } catch (error) {
+    console.error("Draft save error:", error);
+
     return NextResponse.json(
       { ok: false, error: "Kunde inte spara utkastet" },
       { status: 500 }
