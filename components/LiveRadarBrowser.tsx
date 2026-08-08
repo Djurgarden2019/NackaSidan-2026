@@ -55,7 +55,7 @@ export default function LiveRadarBrowser(){
  useEffect(()=>{try{setAutoPublish(localStorage.getItem("nackasidan-autopublish")==="on")}catch{};fetch("/api/autopublished",{cache:"no-store"}).then(r=>r.ok?r.json():[]).then(setPublished).catch(()=>{})},[]);
  const persistPublished=async(next:PublishedArticle[])=>{try{const r=await fetch("/api/autopublished",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify(next)});const d=await r.json();if(r.ok)setPublished(d.articles||[])}catch{}};
  const toggleAuto=()=>setAutoPublish(v=>{const n=!v;try{localStorage.setItem("nackasidan-autopublish",n?"on":"off")}catch{};return n});
- const stories=useMemo(()=>items.map((item,i)=>{const score=scoreFor(item);const peers=items.filter((x,j)=>j!==i&&similarity(item.title,x.title)>=.45);const ed=editorial(item,score);return{...item,score,...ed,cluster:1+peers.length,sources:Array.from(new Set([item.source,...peers.map(x=>x.source)])),state:states[item.link]||"Ny"} as Story}).sort((a,b)=>b.score-a.score),[items,states]);
+ const stories=useMemo(()=>items.map((item,i)=>{const score=scoreFor(item);const peers=items.filter((x,j)=>j!==i&&similarity(item.title,x.title)>=.30);const ed=editorial(item,score);return{...item,score,...ed,cluster:1+peers.length,sources:Array.from(new Set([item.source,...peers.map(x=>x.source)])),state:states[item.link]||"Ny"} as Story}).sort((a,b)=>b.score-a.score),[items,states]);
  useEffect(()=>{
    if(!autoPublish||!stories.length)return;
    const existing=new Set(published.map(a=>a.sourceUrl));
