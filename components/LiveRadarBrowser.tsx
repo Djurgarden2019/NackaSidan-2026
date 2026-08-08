@@ -86,11 +86,31 @@ export default function LiveRadarBrowser(){
    });
    setTimeout(()=>document.getElementById("artikelverkstad")?.scrollIntoView({behavior:"smooth",block:"start"}),50);
  };
- const saveDraft=()=>{
-   if(!draft||!draftForm)return;
-   const saved={...draftForm,savedAt:new Date().toISOString()};
-   try{localStorage.setItem(`nackasidan-draft-${draft.link}`,JSON.stringify(saved));setDraftForm(saved);setSaveMessage("Utkast sparat i den här webbläsaren.")}catch{setSaveMessage("Kunde inte spara lokalt.")}
- };
+ const saveDraft=async()=>{
+  if(!draft||!draftForm)return;
+
+  const saved={
+    ...draftForm,
+    id:draft.link,
+    sourceUrl:draft.link,
+    savedAt:new Date().toISOString()
+  };
+
+  try{
+    const r=await fetch("/api/drafts",{
+      method:"POST",
+      headers:{"Content-Type":"application/json"},
+      body:JSON.stringify(saved)
+    });
+
+    if(!r.ok) throw new Error();
+
+    setDraftForm(saved);
+    setSaveMessage("Utkast sparat permanent.");
+  }catch{
+    setSaveMessage("Kunde inte spara utkastet.");
+  }
+};
  const allChecked=Boolean(draftForm&&Object.values(draftForm.checks).every(Boolean));
  return <>
   <section className="radar-stats"><article><strong>{loading?"…":stories.length}</strong><span>signaler inne</span></article><article><strong>{loading?"…":local}</strong><span>lokala signaler</span></article><article><strong>{loading?"…":high}</strong><span>redaktionell prio 75+</span></article><article><strong>{loading?"…":`${connected}/${feeds.length}`}</strong><span>källor anslutna</span></article></section>
