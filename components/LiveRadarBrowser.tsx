@@ -72,11 +72,18 @@ export default function LiveRadarBrowser(){
  },[autoPublish,stories.length]);
  const visible=selected==="Alla"?stories:stories.filter(i=>i.section===selected);const counts=Object.fromEntries(sections.map(s=>[s,s==="Alla"?stories.length:stories.filter(i=>i.section===s).length]));
  const high=stories.filter(i=>i.score>=75).length,local=stories.filter(i=>i.local).length,connected=feeds.filter(f=>f.status==="Ansluten").length;
- const openWorkshop=(s:Story)=>{
+ const openWorkshop=async(s:Story)=>{
    setDraft(s); setStates(v=>({...v,[s.link]:"Skriv"})); setSaveMessage("");
-   const key=`nackasidan-draft-${s.link}`;
-   let saved:DraftForm|null=null;
-   try{const raw=localStorage.getItem(key); if(raw)saved=JSON.parse(raw)}catch{}
+  let saved: DraftForm | null = null;
+try {
+  const r = await fetch("/api/drafts", { cache: "no-store" });
+  if (r.ok) {
+    const drafts = await r.json();
+    saved = drafts.find((d:DraftForm & { sourceUrl?: string; id?: string }) =>
+      d.sourceUrl === s.link || d.id === s.link
+    ) || null;
+  }
+} catch {}
    setDraftForm(saved||{
      headline:s.title,
      lead:s.angle,
