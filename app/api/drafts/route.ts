@@ -10,6 +10,7 @@ type Draft = {
   body: string;
   notes: string;
   sourceUrl: string;
+  status?: "draft" | "factcheck" | "approved";
   savedAt: string;
 };
 
