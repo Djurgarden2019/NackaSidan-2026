@@ -31,7 +31,7 @@ async function read(): Promise<Draft[]> {
 
 async function write(drafts: Draft[]) {
   await put(PATH, JSON.stringify(drafts), {
-   access: "private",
+   access: "public",
     addRandomSuffix: false,
     contentType: "application/json",
   });
