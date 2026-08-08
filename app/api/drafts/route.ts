@@ -22,7 +22,7 @@ async function read(): Promise<Draft[]> {
       useCache: false,
     });
 
-    if (!result) return [];
+   if (!result || result.statusCode !== 200) return [];
 
     const text = await new Response(result.stream).text();
     return JSON.parse(text);
