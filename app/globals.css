@@ -273,3 +273,11 @@ html,body{max-width:100%;overflow-x:hidden}
 
 /* External editorial images: no artificial placeholder background */
 .article-hero-image img,.story-card-image img{background:transparent}
+
+/* Main 13: tighter editorial image treatment */
+.article-hero-image{margin:10px 0 46px}
+.article-hero-image img{width:100%;aspect-ratio:16/7;max-height:430px;object-fit:cover;object-position:center}
+.article-hero-image figcaption{max-width:92%;margin-top:10px;font-size:.72rem;line-height:1.5;color:var(--muted);font-style:italic}
+.story-card-image img{aspect-ratio:16/9;object-fit:cover}
+.story-card-image figcaption{font-size:.68rem;line-height:1.4;color:var(--muted);margin-top:7px}
+@media(max-width:700px){.article-hero-image img{aspect-ratio:16/9;max-height:none}.article-hero-image figcaption{max-width:100%}}
