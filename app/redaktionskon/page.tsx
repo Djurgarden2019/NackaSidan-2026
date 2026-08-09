@@ -2,6 +2,7 @@ import { runVerificationPipeline } from '../../lib/verificationPipeline';
 import { checkSourceIndependence } from '../../lib/sourceIndependence';
 import { runFinalControl } from '../../lib/finalControl';
 import { buildEditorialQueue, editorialQueueSummary } from '../../lib/editorialQueue';
+import EditorialDecisionPanel from './EditorialDecisionPanel';
 
 export const revalidate = 900;
 
@@ -33,19 +34,12 @@ export default async function RedaktionskonPage() {
   const rows = buildEditorialQueue(queueInput);
   const summary = editorialQueueSummary(rows);
 
-  const label = (status: string) =>
-    status === 'REDO_FOR_REDAKTION'
-      ? 'REDO FÖR REDAKTION'
-      : status === 'KRAVER_MANUELL_KONTROLL'
-        ? 'KRÄVER MANUELL KONTROLL'
-        : 'STOPPAD';
-
   return (
     <main style={{ maxWidth: 1120, margin: '0 auto', padding: '72px 28px 100px' }}>
-      <p style={{ color: '#a61919', fontWeight: 800, letterSpacing: 2, fontSize: 13 }}>MAIN 27 · REDAKTIONSKÖN</p>
-      <h1 style={{ fontFamily: 'Georgia,serif', fontSize: 'clamp(54px,8vw,94px)', lineHeight: .95, margin: '12px 0 22px' }}>Från verifiering till redaktionellt beslut</h1>
+      <p style={{ color: '#a61919', fontWeight: 800, letterSpacing: 2, fontSize: 13 }}>MAIN 28 · REDAKTÖRENS BESLUT</p>
+      <h1 style={{ fontFamily: 'Georgia,serif', fontSize: 'clamp(54px,8vw,94px)', lineHeight: .95, margin: '12px 0 22px' }}>Redaktionen tar över där maskinen slutar</h1>
       <p style={{ maxWidth: 840, fontFamily: 'Georgia,serif', fontSize: 20, lineHeight: 1.45 }}>
-        Här samlas kandidater efter Källjägaren, Händelsematcharen, den oberoende källkontrollen och Slutkontrollen. Kön prioriterar vad redaktionen bör arbeta med först. Ingen artikel publiceras automatiskt.
+        Verifieringskedjan prioriterar kandidater och visar varför. Main 28 lägger det mänskliga redaktionella beslutet ovanpå systemet: godkänn för publiceringsförberedelse, skicka till manuell kontroll eller avvisa.
       </p>
 
       <section style={{ display: 'grid', gridTemplateColumns: 'repeat(4,1fr)', borderTop: '1px solid #bbb', borderBottom: '3px solid #111', marginTop: 42 }}>
@@ -63,37 +57,13 @@ export default async function RedaktionskonPage() {
       </section>
 
       <div style={{ marginTop: 18, padding: '14px 18px', background: '#f1eadf', borderLeft: '3px solid #a61919', fontSize: 13 }}>
-        <strong>Publiceringsregel:</strong> Redo för redaktion betyder inte publicerad. Slutligt publiceringsbeslut fattas alltid redaktionellt.
+        <strong>Publiceringsregel:</strong> Godkänd betyder godkänd för publiceringsförberedelse. Main 28 publicerar fortfarande ingenting automatiskt.
       </div>
 
-      <section style={{ marginTop: 42 }}>
-        {rows.map((row, i) => {
-          const ready = row.queueStatus === 'REDO_FOR_REDAKTION';
-          const stopped = row.queueStatus === 'STOPPAD';
-          return (
-            <article key={row.id} style={{ display: 'grid', gridTemplateColumns: '64px 1fr 240px', gap: 22, padding: '28px 0', borderTop: '1px solid #ccc' }}>
-              <div style={{ fontFamily: 'Georgia,serif', fontSize: 24, color: '#a61919' }}>{String(i + 1).padStart(2, '0')}</div>
-              <div>
-                <div style={{ fontSize: 12, fontWeight: 800, letterSpacing: 1.2, color: '#777' }}>{row.section} · {row.source}</div>
-                <h2 style={{ fontFamily: 'Georgia,serif', fontSize: 27, margin: '7px 0 10px' }}>{row.title}</h2>
-                <div style={{ padding: '12px 15px', background: '#f6f2e9', fontSize: 14 }}>
-                  {row.finalControl.reasons.map((reason) => <div key={reason}>• {reason}</div>)}
-                </div>
-              </div>
-              <div>
-                <div style={{ fontFamily: 'Georgia,serif', fontSize: 38, fontWeight: 700 }}>{row.priority}/100</div>
-                <div style={{ display: 'inline-block', marginTop: 7, padding: '7px 10px', border: `1px solid ${ready ? '#27834a' : stopped ? '#a61919' : '#a47b24'}`, fontWeight: 800, fontSize: 12 }}>
-                  {label(row.queueStatus)}
-                </div>
-                <div style={{ marginTop: 9, fontSize: 12, color: '#666' }}>Slutkontroll: {row.finalControl.status.replaceAll('_', ' ')}</div>
-              </div>
-            </article>
-          );
-        })}
-      </section>
+      <EditorialDecisionPanel rows={rows} />
 
       <footer style={{ borderTop: '3px solid #111', paddingTop: 18, marginTop: 30, fontSize: 12 }}>
-        NYHETSRADARN → KÄLLJÄGAREN → HÄNDELSEMATCHAREN → OBEROENDE KÄLLKONTROLL → SLUTKONTROLL → REDAKTIONSKÖ
+        NYHETSRADARN → KÄLLJÄGAREN → HÄNDELSEMATCHAREN → OBEROENDE KÄLLKONTROLL → SLUTKONTROLL → REDAKTIONSKÖ → REDAKTÖRENS BESLUT
       </footer>
     </main>
   );
