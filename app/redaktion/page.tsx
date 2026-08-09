@@ -10,6 +10,15 @@ const planned = [
   ['09 aug', 'Veckans kulturval', 'Idé', 'Kultur'],
 ];
 
+const editorialNav = [
+  ['Redaktionskö', '/redaktionskon', 'Kandidater som väntar på redaktionell hantering.'],
+  ['Publicerade', '/publicerade', 'Publicerade artiklar med revisionsspår.'],
+  ['Driftpanel', '/driftpanel', 'Nyckeltal för flöde, verifiering och publicering.'],
+  ['Larm & avvikelser', '/larm', 'Källfel, matchningsproblem och publiceringsfel.'],
+  ['Hälsokontroll', '/halsokontroll', 'Samlad systemstatus: OK, VARNING eller KRITISK.'],
+  ['Förhandsgranskning', '/forhandsgranskning', 'Sista läsarvyn före publiceringsbeslut.'],
+];
+
 export default function EditorialPage() {
   const sourceCount = articles.reduce((sum, article) => sum + article.sources.length, 0);
   const tagCount = new Set(articles.flatMap((article) => article.tags)).size;
@@ -18,11 +27,28 @@ export default function EditorialPage() {
       <div className="shell">
         <section className="editorial-command-hero">
           <div>
-            <div className="kicker">Nacka Studio · Sprint 11.3</div>
+            <div className="kicker">Main 37 · Central redaktionsöversikt</div>
             <h1>Redaktionens kontrollcenter</h1>
-            <p>En samlad prototyp för publicering, planering, kunskapsnav och kvalitetskontroll. Allt bygger fortfarande på projektets centrala innehållsfiler.</p>
+            <p>En samlad startsida för arbetskö, publicering, drift, larm, hälsokontroll, planering och kvalitetskontroll.</p>
           </div>
           <Link className="button" href="/daily">Förhandsvisa Nacka Daily</Link>
+        </section>
+
+        <section style={{ margin: '28px 0 42px' }}>
+          <div className="section-heading section-heading-stack">
+            <div className="kicker">Redaktionens nav</div>
+            <h2>Allt viktigt på ett ställe</h2>
+            <p>Öppna rätt arbetsyta direkt. Översikten visar vägen men fattar inga redaktionella beslut.</p>
+          </div>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit,minmax(240px,1fr))', gap: 16 }}>
+            {editorialNav.map(([title, href, text]) => (
+              <Link key={href} href={href} style={{ display: 'block', border: '1px solid #d5d5d5', padding: 20, color: 'inherit', textDecoration: 'none', minHeight: 150 }}>
+                <div className="kicker">Öppna</div>
+                <h3 style={{ fontFamily: 'Georgia,serif', fontSize: 24, margin: '8px 0 10px' }}>{title}</h3>
+                <p style={{ margin: 0, lineHeight: 1.5 }}>{text}</p>
+              </Link>
+            ))}
+          </div>
         </section>
 
         <section className="editorial-live-callout">
@@ -36,7 +62,6 @@ export default function EditorialPage() {
           <div><span>Ämnen och taggar</span><strong>{tagCount}</strong></div>
           <div><span>Redovisade källor</span><strong>{sourceCount}</strong></div>
         </section>
-
 
         <section className="editorial-live-panel">
           <div>
