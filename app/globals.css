@@ -281,3 +281,14 @@ html,body{max-width:100%;overflow-x:hidden}
 .story-card-image img{aspect-ratio:16/9;object-fit:cover}
 .story-card-image figcaption{font-size:.68rem;line-height:1.4;color:var(--muted);margin-top:7px}
 @media(max-width:700px){.article-hero-image img{aspect-ratio:16/9;max-height:none}.article-hero-image figcaption{max-width:100%}}
+
+/* Main 14 — editorial image hierarchy */
+.grid-3 .card:first-child .story-card-image img { aspect-ratio: 16 / 10; }
+.story-card-image { margin: 0 0 18px; overflow: hidden; }
+.story-card-image img { width: 100%; aspect-ratio: 16 / 9; object-fit: cover; display: block; }
+.story-card-image figcaption { margin-top: 6px; font-size: 11px; line-height: 1.35; color: #777; }
+.feature-grid .feature-card img, .feature-grid article img { width: 100%; aspect-ratio: 16 / 9; object-fit: cover; display:block; }
+.feature-grid > :first-child img { aspect-ratio: 16 / 10; }
+@media (max-width: 760px) {
+  .story-card-image img, .grid-3 .card:first-child .story-card-image img { aspect-ratio: 16 / 9; }
+}

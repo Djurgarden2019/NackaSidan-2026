@@ -15,18 +15,21 @@ const editorial = [
     title: 'Lägre inflation ändrar hushållens kalkyl',
     summary: 'Räntor och köpkraft utvecklas åt rätt håll, men arbetsmarknaden bromsar optimismen.',
     href: '/ekonomi',
+    image: 'https://commons.wikimedia.org/wiki/Special:FilePath/Stockholm_City_Hall-147793.jpg?width=1200',
   },
   {
     section: 'Vetenskap & AI',
     title: 'AI går från experiment till samhällsinfrastruktur',
     summary: 'Frågan är inte längre om tekniken används, utan hur den granskas och styrs.',
     href: '/vetenskap',
+    image: 'https://commons.wikimedia.org/wiki/Special:FilePath/Artificial_Intelligence_%26_AI_%26_Machine_Learning_-_30212411048.jpg?width=1200',
   },
   {
     section: 'Sport',
     title: 'Resultat, ekonomi och publik hör allt tydligare ihop',
     summary: 'Den moderna idrotten måste förstås både på planen och i styrelserummet.',
     href: '/sport',
+    image: 'https://commons.wikimedia.org/wiki/Special:FilePath/Friends_Arena_Stockholm.jpg?width=1200',
   },
 ];
 

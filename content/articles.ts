@@ -147,6 +147,8 @@ export const articles: Article[] = [
     published: '9 augusti 2026',
     updated: '9 augusti 2026 kl. 13.30',
     readingTime: '6 min',
+    image: 'https://commons.wikimedia.org/wiki/Special:FilePath/Artificial_intelligence_prompt_completion_by_dalle_mini.jpg?width=1400',
+    imageCaption: 'Generativ AI har blivit en del av den digitala offentligheten. Illustration: Wikimedia Commons.',
     body: [
       { heading: 'Ett val i en ny informationsmiljö', paragraphs: ['Generativ AI gör det enklare att skapa text, bilder, ljud och video som ser trovärdiga ut. Det ger väljare nya verktyg för att söka och sammanfatta information, men gör också avsändare och ursprung svårare att bedöma.', 'Valmyndigheten beskriver desinformation som en växande risk för valgenomförandet och har inför 2026 fått ett tydligare ansvar för att samordna skyddet av valen. Myndigheten betonar samtidigt att det svenska systemet är decentraliserat, transparent och bygger på offentlig rösträkning.'] },
       { heading: 'AI förändrar källkritiken', paragraphs: ['Mediemyndigheten konstaterar att generativ AI snabbt förändrar medielandskapet och att tekniken kan användas både för legitim innehållsproduktion och för desinformation. Forskningen om nordiska förhållanden är fortfarande begränsad.', 'För väljaren blir den praktiska frågan därför mindre om ett budskap ”ser äkta ut” och mer om uppgiften går att kontrollera hos en identifierbar primärkälla. Datum, avsändare och originalmaterial blir viktigare när syntetiskt innehåll blir billigare att producera.'] },
@@ -178,6 +180,8 @@ export const articles: Article[] = [
     published: '9 augusti 2026',
     updated: '9 augusti 2026 kl. 13.30',
     readingTime: '6 min',
+    image: 'https://commons.wikimedia.org/wiki/Special:FilePath/Port_of_Odessa.jpg?width=1400',
+    imageCaption: 'Odessas hamn vid Svarta havet. Foto: Wikimedia Commons.',
     body: [
       { heading: 'Nya angrepp under natten', paragraphs: ['Ryska robotangrepp träffade under natten mål i bland annat Odesa och Kharkiv. Enligt Associated Press dödades människor och flera civila skadades. Ryssland uppgav att anfallen riktades mot bland annat bränsle- och drönarrelaterad infrastruktur.', 'Uppgifterna kommer samtidigt som Ukraina genomför egna långdistansangrepp mot mål i Ryssland. Kriget fortsätter därmed att flytta trycket långt bortom den omedelbara frontlinjen.'] },
       { heading: 'Varför Odesa är strategiskt', paragraphs: ['Odesa är en av Ukrainas viktigaste portar mot Svarta havet. Hamnarna i regionen är centrala för export, import och landets ekonomiska förbindelser med omvärlden.', 'Angrepp mot hamn-, energi- och transportinfrastruktur får därför två effekter samtidigt: de påverkar Ukrainas militära och logistiska kapacitet och kan dessutom slå mot civil ekonomi, elförsörjning och handel.'] },
@@ -207,6 +211,8 @@ export const articles: Article[] = [
     published: '9 augusti 2026',
     updated: '9 augusti 2026 kl. 13.30',
     readingTime: '5 min',
+    image: 'https://commons.wikimedia.org/wiki/Special:FilePath/The_Weeknd_Cannes_2023.png?width=1400',
+    imageCaption: 'The Weeknd under filmfestivalen i Cannes. Foto: Wikimedia Commons.',
     body: [
       { heading: 'Tre kvällar på Strawberry Arena', paragraphs: ['The Weeknd spelar på Strawberry Arena den 8, 9 och 10 augusti. Arenan och Visit Stockholm listar tre konsertdatum, med Playboi Carti som special guest på Europadelen av turnén.', 'Stockholmsstoppen ingår i After Hours Til Dawn Stadium Tour, som under 2026 går vidare genom stora arenor i bland annat Europa och Storbritannien.'] },
       { heading: 'En turné byggd kring tre album', paragraphs: ['Turnéns nuvarande upplaga knyter samman albumen After Hours från 2020, Dawn FM från 2022 och Hurry Up Tomorrow från 2025. Samtidigt rymmer konserterna material från en längre karriär som gjort Abel Tesfaye till en av 2010- och 2020-talens största globala popartister.', 'Formatet är uttalat storskaligt: stadionproduktion, stora visuella element och en repertoar som är byggd för en publik på tiotusentals personer.'] },
