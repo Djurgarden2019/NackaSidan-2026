@@ -1,10 +1,10 @@
 import type { Story } from '../components/Cards';
 import type { Feature } from '../components/Editorial';
-export const lead:Story={section:'Veckans stora analys',title:'Iran uppger överenskommelse om Hormuzsundet',summary:'Efter en vecka av hot, militära signaler och intensiv diplomati uppger Iran att en preliminär överenskommelse nåtts. Nu avgörs allt av om orden följs av säker sjöfart och mätbara eftergifter.',href:'/artikel/veckans-analys'};
+export const lead:Story={section:'Världen',title:'Hormuzavtal närmar sig – men sundet förblir stängt',summary:'Iran uppger att förhandlingarna med Oman är inne i ett slutskede. Ett avtal kan ändra sjöfartslederna genom Hormuzsundet, men innebär ännu inte att den strategiska vattenvägen öppnas för normal trafik.',href:'/artikel/veckans-analys'};
 export const topStories:Story[]=[
-{section:'Sverige',title:'Valrörelsen flyttar in i AI-eran',summary:'Myndigheter och medier förbereder sig för manipulerade bilder, röster och texter inför valet.',href:'/sverige'},
-{section:'Världen',title:'Diplomati under press i flera konflikter',summary:'Militära signaler och samtal pågår parallellt när stormakter försöker undvika nya kedjereaktioner.',href:'/varlden'},
-{section:'Kultur',title:'Läsningen tar plats i sensommarens kulturutbud',summary:'Böcker, filmatiseringar och kulturdebatt ger den långsamma läsningen förnyad tyngd.',href:'/kultur'}
+{section:'Sverige',title:'AI får större roll i valrörelsen',summary:'Inför riksdagsvalet använder väljare AI för att jämföra politik och söka svar. Samtidigt växer frågorna om manipulation, källkritik och hur tekniken påverkar valdebatten.',href:'/sverige'},
+{section:'Världen',title:'Ny rysk attack mot Odesas hamn',summary:'Ryssland har slagit mot hamn- och energiinfrastruktur i Odesa. Attacken skadade hamnen och orsakade omfattande strömavbrott i regionen.',href:'/varlden'},
+{section:'Kultur',title:'The Weeknd fyller Stockholm under tre konsertkvällar',summary:'The Weeknd spelar tre kvällar i Solna under sin rekordstora världsturné. Stockholm är turnéns enda nordiska stopp.',href:'/kultur'}
 ];
 export const swedenStories:Story[]=[
 {section:'Demokrati',title:'Det första svenska valet i en vardag präglad av generativ AI',summary:'Valmyndigheter och medier ställs inför ett nytt slags påverkansrisk när övertygande falskt material kan skapas på några minuter.'},
