@@ -176,7 +176,6 @@ const publishUpdated = async () => {
   }
 };
 
-const allChecked=Boolean(draftForm&&Object.values(draftForm.checks).every(Boolean));
  return <>
   <section className="radar-stats"><article><strong>{loading?"…":stories.length}</strong><span>signaler inne</span></article><article><strong>{loading?"…":local}</strong><span>lokala signaler</span></article><article><strong>{loading?"…":high}</strong><span>redaktionell prio 75+</span></article><article><strong>{loading?"…":`${connected}/${feeds.length}`}</strong><span>källor anslutna</span></article></section>
   <section className="live-status-grid live-status-grid-s11">{feeds.map(f=><article key={f.name}><span className={f.status==="Ansluten"?"live-dot live-dot-ok":f.status==="Väntar"?"live-dot live-dot-wait":"live-dot"}/><div><strong>{f.name}</strong><small>{f.section} · {f.status} · {f.count} poster</small>{f.note&&<small>{f.note}</small>}<a href={f.homepage} target="_blank" rel="noreferrer">Originalkälla ↗</a></div></article>)}</section>
