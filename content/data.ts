@@ -23,7 +23,7 @@ export const cultureStories:Story[]=[
 {section:'Kulturdebatt',title:'Vem får definiera den gemensamma kulturen?',summary:'Debatten om bibliotek, public service, kulturstöd och AI handlar i grunden om vem som får tillgång till offentligheten.',href:'/kulturdebatt'}
 ];
 export const worldFeatures:Feature[]=[
-{section:'Mellanöstern',title:'Hormuzsundet blir testet på om diplomatin håller',summary:'Försäkringskostnader, oljepriser och militär närvaro visar snabbt om en preliminär överenskommelse faktiskt förändrar riskbilden.',image:'https://commons.wikimedia.org/wiki/Special:FilePath/Strait_of_Hormuz_map.png?width=1000',meta:'6 min läsning'},
+{section:'Mellanöstern',title:'Hormuzsundet blir testet på om diplomatin håller',summary:'Försäkringskostnader, oljepriser och militär närvaro visar snabbt om en preliminär överenskommelse faktiskt förändrar riskbilden.',image:'https://commons.wikimedia.org/wiki/Special:FilePath/Hormuz_map.png?width=1000',meta:'6 min läsning'},
 {section:'Europa',title:'Ukraina går in i ännu en höst med osäker strategisk riktning',summary:'Frontläge, materiel och politisk uthållighet väger allt tyngre när snabba genombrott uteblir.',meta:'5 min läsning'},
 {section:'USA',title:'Valåret skärper konflikten om ekonomi och institutioner',summary:'Debatten om priser, migration och rättssystem får allt tydligare internationella följder.',meta:'4 min läsning'},
 {section:'Asien',title:'Kina balanserar svagare efterfrågan mot tekniska ambitioner',summary:'Industripolitik och export blir viktiga verktyg när hushållens konsumtion utvecklas försiktigt.',meta:'5 min läsning'},

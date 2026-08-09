@@ -40,7 +40,7 @@ export const articles: Article[] = [
     published: '6 augusti 2026',
     updated: '6 augusti 2026 kl. 18.30',
     readingTime: '9 min',
-    image: 'https://commons.wikimedia.org/wiki/Special:FilePath/Strait_of_Hormuz_map.png?width=1400',
+    image: 'https://commons.wikimedia.org/wiki/Special:FilePath/Hormuz_map.png?width=1400',
     imageCaption: 'Hormuzsundet är en av världshandelns mest strategiska passager. Karta: Wikimedia Commons.',
     body: [
       {
@@ -119,7 +119,7 @@ export const articles: Article[] = [
     published: '6 augusti 2026',
     updated: '6 augusti 2026 kl. 16.15',
     readingTime: '8 min',
-    image: 'https://commons.wikimedia.org/wiki/Special:FilePath/Artificial_intelligence_%26_AI_%26_machine_learning_-_30212411048.jpg?width=1400',
+    image: 'https://commons.wikimedia.org/wiki/Special:FilePath/Artificial_Intelligence_%26_AI_%26_Machine_Learning_-_30212411048.jpg?width=1400',
     imageCaption: 'AI blir ett allt vanligare verktyg i kunskapsarbete. Foto: Mike MacKenzie/Wikimedia Commons.',
     body: [
       { heading: 'Från enskilda tester till arbetsflöden', paragraphs: ['Företag går från att låta medarbetare prova fristående AI-tjänster till att bygga in tekniken i kundservice, analys, dokumenthantering och programmering.', 'Det förändrar inte bara produktiviteten utan också vem som ansvarar för kvalitet, granskning och beslut.'] },
