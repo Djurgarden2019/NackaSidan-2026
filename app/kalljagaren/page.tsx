@@ -1,12 +1,20 @@
 type HuntMatch = { title: string; link: string; source: string; published: string; score: number };
 type HuntResult = { query: string; matches: HuntMatch[]; independentSources: string[]; status: string };
 type HuntRow = { item: { title: string; source: string; category?: string; published?: string }; result: HuntResult };
+type HuntData = { generatedAt: string; checked: number; secondSourceFound: number; results: HuntRow[] };
 
-async function getHunt() {
-  const base = process.env.VERCEL_URL ? `https://${process.env.VERCEL_URL}` : 'http://localhost:3000';
-  const res = await fetch(`${base}/api/source-hunt`, { next: { revalidate: 900 } });
-  if (!res.ok) return { generatedAt: '', checked: 0, secondSourceFound: 0, results: [] as HuntRow[] };
-  return res.json();
+async function getHunt(): Promise<HuntData> {
+  const empty: HuntData = { generatedAt: '', checked: 0, secondSourceFound: 0, results: [] };
+  try {
+    const base = process.env.VERCEL_URL ? `https://${process.env.VERCEL_URL}` : 'http://localhost:3000';
+    const res = await fetch(`${base}/api/source-hunt`, { next: { revalidate: 900 } });
+    if (!res.ok) return empty;
+    const contentType = res.headers.get('content-type') || '';
+    if (!contentType.includes('application/json')) return empty;
+    return await res.json();
+  } catch {
+    return empty;
+  }
 }
 
 export default async function KalljagarenPage() {
