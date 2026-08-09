@@ -44,7 +44,7 @@ export default function Home() {
           </div>
           <div>
             <div className="kicker">{lead.section}</div>
-            <h1>{lead.title}</h1>
+            <Link href={lead.href ?? '/artikel/veckans-analys'}><h1>{lead.title}</h1></Link>
             <p className="lead">{lead.summary}</p>
             <Link className="button" href={lead.href ?? '/artikel/veckans-analys'}>
               Läs hela analysen
