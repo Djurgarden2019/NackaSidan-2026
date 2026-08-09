@@ -253,3 +253,10 @@ html,body{max-width:100%;overflow-x:hidden}
 @media(max-width:800px){.s14-control{grid-template-columns:1fr}.s14-count{text-align:left}}
 /* Sprint 15 — automatiskt publicerade artiklar i ordinarie nyhetsflöde */
 .s15-front{border-top:3px solid #ad1f1f;padding-top:28px}.s15-heading{display:flex;align-items:end;justify-content:space-between;border-bottom:1px solid #d8d0c3;padding-bottom:14px}.s15-heading h2{font-size:42px;margin:0}.s15-heading a,.s15-front a{color:inherit;text-decoration:none}.s15-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:0;border-bottom:1px solid #d8d0c3}.s15-grid article{padding:22px;border-right:1px solid #d8d0c3}.s15-grid article:nth-child(3n){border-right:0}.s15-grid h3{font-family:Georgia,serif;font-size:25px;line-height:1.05;margin:8px 0}.s15-grid p{line-height:1.45}.s15-source{font-size:11px;text-transform:uppercase;letter-spacing:.05em;color:#706b64}.s15-lead{grid-column:span 2}.s15-lead h3{font-size:36px}.s15-article{max-width:900px;padding-top:70px;padding-bottom:100px}.s15-article h1{font-family:Georgia,serif;font-size:68px;line-height:.98;margin:12px 0 24px}.s15-article .lead{font-family:Georgia,serif;font-size:23px;line-height:1.4}.s15-copy{font-family:Georgia,serif;font-size:20px;line-height:1.65;max-width:720px}.s15-sourcebox{margin-top:45px;border-top:3px solid #111;padding-top:18px;max-width:720px}.s15-sourcebox a{color:#9d1b1b;font-weight:700}@media(max-width:800px){.s15-grid{grid-template-columns:1fr}.s15-lead{grid-column:auto}.s15-grid article{border-right:0}.s15-article h1{font-size:44px}}
+
+/* Article typography refinement — 2026-08-09 */
+.article-premium .article-body{max-width:720px;margin-left:auto;margin-right:auto}
+.article-premium .article-body p{font-size:1.08rem;line-height:1.78;font-weight:400;margin:0 0 1.35em}
+.article-premium .article-body h2{line-height:1.12;margin-top:2.1em;margin-bottom:.55em}
+.article-premium .article-section+ .article-section{margin-top:2.2rem}
+@media(max-width:600px){.article-premium .article-body{max-width:100%}.article-premium .article-body p{font-size:1.04rem;line-height:1.72}}
