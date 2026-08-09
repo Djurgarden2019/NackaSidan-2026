@@ -1,18 +1,20 @@
 import LiveRadarBrowser from "../../components/LiveRadarBrowser";
+import EditorialDesk19 from "../../components/EditorialDesk19";
 
 export default function LivePage() {
   return (
     <main>
       <div className="shell">
         <section className="live-hero live-hero-s11">
-          <div className="kicker">Nacka Intelligence · Sprint 14</div>
+          <div className="kicker">Nacka Intelligence · Main 19</div>
           <h1>Nyhetsradarn</h1>
           <p>
             Nyhetsradarn är nu kopplad till Artikelverkstaden. Signaler poängsätts, liknande händelser grupperas och
             redaktionen får en föreslagen vinkel, källkort och arbetsflöde från bevakning till faktakontroll.
-            Inget publiceras automatiskt.
+            Main 19 prioriterar kandidater och kräver källkontroll innan publicering.
           </p>
         </section>
+        <EditorialDesk19 />
         <LiveRadarBrowser />
       </div>
     </main>

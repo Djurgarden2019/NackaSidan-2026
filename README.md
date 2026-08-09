@@ -66,3 +66,7 @@ Startsidan och artikelsidorna delar nu en gemensam artikelmodell. Se `docs/MAIN-
 
 ## Main 18
 Startsidan har nu ett serverbaserat liveflöde från anslutna RSS-källor med 15 minuters uppdateringsintervall. Se `docs/MAIN-18.md`.
+
+
+## Main 19
+Nyhetsradarn har nu ett redaktionellt prioriterings- och källkontrollager. Se `docs/MAIN-19.md`.
