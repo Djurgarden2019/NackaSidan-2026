@@ -309,3 +309,14 @@ html,body{max-width:100%;overflow-x:hidden}
 .culture-home{border-top:1px solid var(--line)}
 @media(max-width:900px){.grid-3{grid-template-columns:1fr 1fr}.grid-3 .card:first-child{grid-column:1/-1}.hero-sprint2{padding-top:38px}}
 @media(max-width:600px){.grid-3{grid-template-columns:1fr}.grid-3 .card:first-child{grid-column:auto}.hero-sprint2{padding-top:28px;padding-bottom:40px}}
+
+/* Main-16: restrained editorial polish */
+.grid-3{grid-template-columns:1.22fr 1fr 1fr;gap:32px}
+.grid-3 .card:first-child h3{font-size:2.05rem}
+.grid-3 .card:first-child p{font-size:1.01rem;line-height:1.55}
+.premium-briefing{box-shadow:inset 0 1px 0 var(--line),inset 0 -1px 0 var(--line)}
+.insight-promo{border-top-width:4px}
+.feature-grid{align-items:start}
+.feature-grid .feature-card:first-child h3{font-size:2rem}
+@media(max-width:900px){.grid-3{grid-template-columns:1fr 1fr}.grid-3 .card:first-child{grid-column:1/-1}}
+@media(max-width:600px){.grid-3{grid-template-columns:1fr}.grid-3 .card:first-child{grid-column:auto}}

@@ -26,7 +26,7 @@ const editorial = [
     title: 'Resultat, ekonomi och publik hör allt tydligare ihop',
     summary: 'Den moderna idrotten måste förstås både på planen och i styrelserummet.',
     href: '/sport',
-    image: 'https://commons.wikimedia.org/wiki/Special:FilePath/Friends_Arena_Stockholm.jpg?width=1200',
+    image: 'https://commons.wikimedia.org/wiki/Special:FilePath/Strawberry%20Arena.jpg?width=1200',
   },
 ];
 

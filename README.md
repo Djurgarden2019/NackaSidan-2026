@@ -54,3 +54,7 @@ Artikelverkstaden är nu fullt interaktiv med redigering, lokal sparning, källk
 
 ## Sprint 14
 Autopubliceringspilot med grön/gul/röd riskklassning och lokalt publiceringsarkiv på `/autopublicerat`. Se `docs/SPRINT-14.md`.
+
+
+## Main-16
+Polering av startsidans redaktionella hierarki och reparerad sportbild (Strawberry Arena, Wikimedia Commons). Artikeltypografin är oförändrad.
