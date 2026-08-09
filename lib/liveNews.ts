@@ -120,10 +120,28 @@ export async function getLiveNews() {
     }
   }));
 
-  const items = settled.flatMap(x => x.items).sort((a,b) => {
-    const at = Date.parse(a.published) || 0;
-    const bt = Date.parse(b.published) || 0;
-    return bt - at;
+  const now = Date.now();
+  const maxAgeMs = 72 * 60 * 60 * 1000;
+
+  const fresh = settled
+    .flatMap(x => x.items)
+    .filter(item => {
+      const time = Date.parse(item.published);
+      return !time || now - time <= maxAgeMs;
+    })
+    .sort((a,b) => {
+      const at = Date.parse(a.published) || 0;
+      const bt = Date.parse(b.published) || 0;
+      return bt - at;
+    });
+
+  // Dubbletter från flera RSS-källor stoppas innan de når startsidan.
+  const seen = new Set<string>();
+  const items = fresh.filter(item => {
+    const key = item.link.replace(/[?#].*$/, '') || item.title.toLowerCase();
+    if (seen.has(key)) return false;
+    seen.add(key);
+    return true;
   });
 
   const sections = ['Alla','Nacka/Lokalt','Sverige','Världen','Ekonomi','Kultur','Vetenskap','Sport'];

@@ -62,3 +62,7 @@ Polering av startsidans redaktionella hierarki och reparerad sportbild (Strawber
 
 ## Main 17
 Startsidan och artikelsidorna delar nu en gemensam artikelmodell. Se `docs/MAIN-17.md`.
+
+
+## Main 18
+Startsidan har nu ett serverbaserat liveflöde från anslutna RSS-källor med 15 minuters uppdateringsintervall. Se `docs/MAIN-18.md`.

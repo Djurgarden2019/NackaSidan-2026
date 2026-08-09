@@ -5,6 +5,8 @@ import { leadStory, topStories } from '../content/home';
 import { articles } from '../content/articles';
 import { NewsDashboard, NewsletterSignup } from '../components/HomeModules';
 import AutoPublishedFrontpage from '../components/AutoPublishedFrontpage';
+import LiveFrontpage from '../components/LiveFrontpage';
+import { getLiveNews } from '../lib/liveNews';
 
 const editorial = [
   {
@@ -30,7 +32,10 @@ const editorial = [
   },
 ];
 
-export default function Home() {
+export const revalidate = 900;
+
+export default async function Home() {
+  const live = await getLiveNews();
   return (
     <main>
       <div className="shell">
@@ -61,8 +66,9 @@ export default function Home() {
           <Link href="/daily" className="daily-ribbon-link">Läs dagens briefing →</Link>
         </section>
 
-        <AutoPublishedFrontpage />
+        <LiveFrontpage items={live.items} fetchedAt={live.fetchedAt} />
 
+        <AutoPublishedFrontpage />
 
         <section className="section">
           <SectionIntro
