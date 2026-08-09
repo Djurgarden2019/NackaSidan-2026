@@ -9,6 +9,13 @@ export type KnowledgePoint = {
   text: string;
 };
 
+export type ArticleStatus = 'draft' | 'review' | 'published' | 'archived';
+
+export type HomepagePlacement = {
+  role: 'lead' | 'top' | 'feature';
+  order: number;
+};
+
 export type Article = {
   slug: string;
   section: string;
@@ -17,6 +24,12 @@ export type Article = {
   author: string;
   published: string;
   updated: string;
+  publishedAt: string;
+  updatedAt: string;
+  status: ArticleStatus;
+  homepage?: HomepagePlacement;
+  teaserTitle?: string;
+  teaserSummary?: string;
   readingTime: string;
   image?: string;
   imageCaption?: string;
@@ -39,6 +52,12 @@ export const articles: Article[] = [
     author: 'NackaSidans redaktion',
     published: '6 augusti 2026',
     updated: '6 augusti 2026 kl. 18.30',
+    publishedAt: '2026-08-06T18:30:00+02:00',
+    updatedAt: '2026-08-06T18:30:00+02:00',
+    status: 'published',
+    homepage: { role: 'lead', order: 0 },
+    teaserTitle: 'Hormuzavtal närmar sig – men sundet förblir stängt',
+    teaserSummary: 'Iran uppger att förhandlingarna med Oman är inne i ett slutskede. Ett avtal kan ändra sjöfartslederna genom Hormuzsundet, men innebär ännu inte att den strategiska vattenvägen öppnas för normal trafik.',
     readingTime: '9 min',
     image: 'https://commons.wikimedia.org/wiki/Special:FilePath/Hormuz_map.png?width=1400',
     imageCaption: 'Hormuzsundet är en av världshandelns mest strategiska passager. Karta: Wikimedia Commons.',
@@ -91,6 +110,9 @@ export const articles: Article[] = [
     author: 'NackaSidans redaktion',
     published: '6 augusti 2026',
     updated: '6 augusti 2026 kl. 17.00',
+    publishedAt: '2026-08-06T17:00:00+02:00',
+    updatedAt: '2026-08-06T17:00:00+02:00',
+    status: 'published',
     readingTime: '10 min',
     body: [
       { heading: 'Mellanöstern', paragraphs: ['Diplomatin kring Hormuzsundet har dämpat den omedelbara risken, men marknaden väntar på konkreta bevis på att trafiken normaliseras.'] },
@@ -118,6 +140,10 @@ export const articles: Article[] = [
     author: 'NackaSidans redaktion',
     published: '6 augusti 2026',
     updated: '6 augusti 2026 kl. 16.15',
+    publishedAt: '2026-08-06T16:15:00+02:00',
+    updatedAt: '2026-08-06T16:15:00+02:00',
+    status: 'published',
+    homepage: { role: 'feature', order: 1 },
     readingTime: '8 min',
     image: 'https://commons.wikimedia.org/wiki/Special:FilePath/Artificial_Intelligence_%26_AI_%26_Machine_Learning_-_30212411048.jpg?width=1400',
     imageCaption: 'AI blir ett allt vanligare verktyg i kunskapsarbete. Foto: Mike MacKenzie/Wikimedia Commons.',
@@ -146,6 +172,12 @@ export const articles: Article[] = [
     author: 'NackaSidans redaktion',
     published: '9 augusti 2026',
     updated: '9 augusti 2026 kl. 13.30',
+    publishedAt: '2026-08-09T09:00:00+02:00',
+    updatedAt: '2026-08-09T09:00:00+02:00',
+    status: 'published',
+    homepage: { role: 'top', order: 1 },
+    teaserTitle: 'AI får större roll i valrörelsen',
+    teaserSummary: 'Inför riksdagsvalet använder väljare AI för att jämföra politik och söka svar. Samtidigt växer frågorna om manipulation, källkritik och hur tekniken påverkar valdebatten.',
     readingTime: '6 min',
     image: 'https://commons.wikimedia.org/wiki/Special:FilePath/Artificial_intelligence_prompt_completion_by_dalle_mini.jpg?width=1400',
     imageCaption: 'Generativ AI har blivit en del av den digitala offentligheten. Illustration: Wikimedia Commons.',
@@ -179,6 +211,12 @@ export const articles: Article[] = [
     author: 'NackaSidans redaktion',
     published: '9 augusti 2026',
     updated: '9 augusti 2026 kl. 13.30',
+    publishedAt: '2026-08-09T08:30:00+02:00',
+    updatedAt: '2026-08-09T08:30:00+02:00',
+    status: 'published',
+    homepage: { role: 'top', order: 2 },
+    teaserTitle: 'Ny rysk attack mot Odesas hamn',
+    teaserSummary: 'Ryssland har slagit mot hamn- och energiinfrastruktur i Odesa. Attacken skadade hamnen och orsakade omfattande strömavbrott i regionen.',
     readingTime: '6 min',
     image: 'https://commons.wikimedia.org/wiki/Special:FilePath/Port_of_Odessa.jpg?width=1400',
     imageCaption: 'Odessas hamn vid Svarta havet. Foto: Wikimedia Commons.',
@@ -210,6 +248,12 @@ export const articles: Article[] = [
     author: 'NackaSidans redaktion',
     published: '9 augusti 2026',
     updated: '9 augusti 2026 kl. 13.30',
+    publishedAt: '2026-08-09T08:00:00+02:00',
+    updatedAt: '2026-08-09T08:00:00+02:00',
+    status: 'published',
+    homepage: { role: 'top', order: 3 },
+    teaserTitle: 'The Weeknd fyller Stockholm under tre konsertkvällar',
+    teaserSummary: 'The Weeknd spelar tre kvällar i Solna under sin rekordstora världsturné. Stockholm är turnéns enda nordiska stopp.',
     readingTime: '5 min',
     image: 'https://commons.wikimedia.org/wiki/Special:FilePath/The_Weeknd_Cannes_2023.png?width=1400',
     imageCaption: 'The Weeknd under filmfestivalen i Cannes. Foto: Wikimedia Commons.',
@@ -237,4 +281,18 @@ export const articles: Article[] = [
 
 ];
 
-export const articleBySlug = Object.fromEntries(articles.map((article) => [article.slug, article]));
+
+
+export const publishedArticles = articles
+  .filter((article) => article.status === 'published')
+  .sort((a, b) => Date.parse(b.publishedAt) - Date.parse(a.publishedAt));
+
+export const articleBySlug: Record<string, Article> = Object.fromEntries(
+  articles.map((article) => [article.slug, article])
+);
+
+export function homepageArticles(role: HomepagePlacement['role']) {
+  return publishedArticles
+    .filter((article) => article.homepage?.role === role)
+    .sort((a, b) => (a.homepage?.order ?? 999) - (b.homepage?.order ?? 999));
+}

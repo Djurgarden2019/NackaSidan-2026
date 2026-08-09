@@ -320,12 +320,3 @@ html,body{max-width:100%;overflow-x:hidden}
 .feature-grid .feature-card:first-child h3{font-size:2rem}
 @media(max-width:900px){.grid-3{grid-template-columns:1fr 1fr}.grid-3 .card:first-child{grid-column:1/-1}}
 @media(max-width:600px){.grid-3{grid-template-columns:1fr}.grid-3 .card:first-child{grid-column:auto}}
-
-/* Main 16.1 — restrained hero polish */
-@media(min-width:901px){
-  .hero-sprint2{grid-template-columns:minmax(0,1.12fr) minmax(350px,.88fr);gap:clamp(36px,4.25vw,68px);align-items:center}
-  .hero-sprint2 .hero-media img{aspect-ratio:16/8.6;object-fit:cover;object-position:center}
-  .hero-sprint2>div:last-child{padding-top:0}
-  .hero-sprint2 h1{max-width:13ch;font-size:clamp(2.85rem,4.45vw,5.05rem);line-height:.94}
-  .hero-sprint2 .lead{max-width:36rem}
-}

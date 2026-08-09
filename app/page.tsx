@@ -1,7 +1,7 @@
 import Link from 'next/link';
 import { StoryCard } from '../components/Cards';
 import { FeatureCard, FactStrip, SectionIntro } from '../components/Editorial';
-import { lead, topStories } from '../content/data';
+import { leadStory, topStories } from '../content/home';
 import { articles } from '../content/articles';
 import { NewsDashboard, NewsletterSignup } from '../components/HomeModules';
 import AutoPublishedFrontpage from '../components/AutoPublishedFrontpage';
@@ -43,10 +43,10 @@ export default function Home() {
             <div className="caption">Hormuzsundet – en strategisk passage för världshandeln. Karta: Wikimedia Commons.</div>
           </div>
           <div>
-            <div className="kicker">{lead.section}</div>
-            <Link href={lead.href ?? '/artikel/veckans-analys'}><h1>{lead.title}</h1></Link>
-            <p className="lead">{lead.summary}</p>
-            <Link className="button" href={lead.href ?? '/artikel/veckans-analys'}>
+            <div className="kicker">{leadStory?.section ?? 'NackaSidan'}</div>
+            <Link href={leadStory?.href ?? '/artikel/veckans-analys'}><h1>{leadStory?.title ?? 'Veckans analys'}</h1></Link>
+            <p className="lead">{leadStory?.summary ?? ''}</p>
+            <Link className="button" href={leadStory?.href ?? '/artikel/veckans-analys'}>
               Läs hela analysen
             </Link>
           </div>
@@ -70,16 +70,13 @@ export default function Home() {
             text="Tre händelser som tillsammans säger något om Sverige, världen och kulturen just nu."
           />
           <div className="grid-3">
-            {topStories.map((story, index) => {
-              const linkedArticle = articles.find((article) => story.href === `/artikel/${article.slug}`);
-              return (
-                <StoryCard
-                  key={story.title}
-                  story={{ ...story, image: linkedArticle?.image, imageCaption: linkedArticle?.imageCaption }}
-                  red={index === 0}
-                />
-              );
-            })}
+            {topStories.map((story, index) => (
+              <StoryCard
+                key={story.title}
+                story={story}
+                red={index === 0}
+              />
+            ))}
           </div>
         </section>
 

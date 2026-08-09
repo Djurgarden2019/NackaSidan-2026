@@ -58,3 +58,7 @@ Autopubliceringspilot med grön/gul/röd riskklassning och lokalt publiceringsar
 
 ## Main-16
 Polering av startsidans redaktionella hierarki och reparerad sportbild (Strawberry Arena, Wikimedia Commons). Artikeltypografin är oförändrad.
+
+
+## Main 17
+Startsidan och artikelsidorna delar nu en gemensam artikelmodell. Se `docs/MAIN-17.md`.
