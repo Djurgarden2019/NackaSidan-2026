@@ -25,6 +25,12 @@ export default async function ArticlePage({ params }: { params: Promise<{ slug: 
           <h1>{article.title}</h1>
           <p className="intro">{article.intro}</p>
           <ArticleMeta article={article} /><ArticleTrustBar article={article} /><div className="article-actions"><Link href="/forfattare/redaktionen">Om författaren</Link><ShareTools title={article.title} /></div>
+          {article.image && (
+            <figure className="article-hero-image">
+              <img src={article.image} alt={article.imageCaption || article.title} />
+              {article.imageCaption && <figcaption>{article.imageCaption}</figcaption>}
+            </figure>
+          )}
           <div className="article-body">
             {article.body.map((section) => (
               <section className="article-section" key={section.heading ?? section.paragraphs[0]}>

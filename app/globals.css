@@ -260,3 +260,13 @@ html,body{max-width:100%;overflow-x:hidden}
 .article-premium .article-body h2{line-height:1.12;margin-top:2.1em;margin-bottom:.55em}
 .article-premium .article-section+ .article-section{margin-top:2.2rem}
 @media(max-width:600px){.article-premium .article-body{max-width:100%}.article-premium .article-body p{font-size:1.04rem;line-height:1.72}}
+
+
+/* Editorial image presentation */
+.article-hero-image{margin:8px 0 52px}
+.article-hero-image img{display:block;width:100%;aspect-ratio:16/9;max-height:none;object-fit:cover;background:#e9e5dc}
+.article-hero-image figcaption,.story-card-image figcaption{font-size:.72rem;line-height:1.45;color:var(--muted);margin-top:9px}
+.story-card-image{margin:0 0 20px}
+.story-card-image img{display:block;width:100%;aspect-ratio:16/9;object-fit:cover;background:#e9e5dc}
+.card.red .story-card-image{margin:-1px -1px 20px}
+@media(max-width:600px){.article-hero-image{margin:4px 0 36px}}

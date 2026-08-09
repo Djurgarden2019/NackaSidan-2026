@@ -73,9 +73,16 @@ export default function Home() {
             text="Tre händelser som tillsammans säger något om Sverige, världen och kulturen just nu."
           />
           <div className="grid-3">
-            {topStories.map((story, index) => (
-              <StoryCard key={story.title} story={story} red={index === 0} />
-            ))}
+            {topStories.map((story, index) => {
+              const linkedArticle = articles.find((article) => story.href === `/artikel/${article.slug}`);
+              return (
+                <StoryCard
+                  key={story.title}
+                  story={{ ...story, image: linkedArticle?.image, imageCaption: linkedArticle?.imageCaption }}
+                  red={index === 0}
+                />
+              );
+            })}
           </div>
         </section>
 
