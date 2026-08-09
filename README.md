@@ -70,3 +70,7 @@ Startsidan har nu ett serverbaserat liveflöde från anslutna RSS-källor med 15
 
 ## Main 19
 Nyhetsradarn har nu ett redaktionellt prioriterings- och källkontrollager. Se `docs/MAIN-19.md`.
+
+
+## Main 21
+Källjägaren söker aktivt efter en andra oberoende publicering för olösta nyhetssignaler. Se `docs/MAIN-21.md`.

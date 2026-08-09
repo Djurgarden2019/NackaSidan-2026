@@ -1,13 +1,14 @@
 import LiveRadarBrowser from "../../components/LiveRadarBrowser";
 import EditorialDesk19 from "../../components/EditorialDesk19";
 import SourceVerification20 from "../../components/SourceVerification20";
+import SourceHunter21 from "../../components/SourceHunter21";
 
 export default function LivePage() {
   return (
     <main>
       <div className="shell">
         <section className="live-hero live-hero-s11">
-          <div className="kicker">Nacka Intelligence · Main 20</div>
+          <div className="kicker">Nacka Intelligence · Main 21</div>
           <h1>Nyhetsradarn</h1>
           <p>
             Nyhetsradarn är nu kopplad till Artikelverkstaden. Signaler poängsätts, liknande händelser grupperas och
@@ -17,6 +18,7 @@ export default function LivePage() {
         </section>
         <EditorialDesk19 />
         <SourceVerification20 />
+        <SourceHunter21 />
         <LiveRadarBrowser />
       </div>
     </main>
