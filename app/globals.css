@@ -292,3 +292,20 @@ html,body{max-width:100%;overflow-x:hidden}
 @media (max-width: 760px) {
   .story-card-image img, .grid-3 .card:first-child .story-card-image img { aspect-ratio: 16 / 9; }
 }
+
+
+/* Main 15 — cleaner public magazine front page */
+.hero-sprint2{padding-top:52px;padding-bottom:58px;border-bottom:1px solid var(--line)}
+.hero-sprint2 .hero-media img{aspect-ratio:16/10;object-fit:cover;object-position:center}
+.hero-sprint2 .caption{margin-top:8px;font-size:.68rem;line-height:1.4;color:var(--muted);font-style:italic}
+.hero-sprint2 h1{letter-spacing:-.045em}
+.daily-ribbon{margin-top:0}
+.grid-3{grid-template-columns:1.18fr 1fr 1fr;gap:30px}
+.grid-3 .card:first-child h3{font-size:2rem}
+.premium-briefing{margin-top:10px;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.feature-grid{gap:30px}
+.feature-grid .feature-card{padding-top:14px}
+.home-dashboard{border-top:1px solid var(--line);padding-top:58px}
+.culture-home{border-top:1px solid var(--line)}
+@media(max-width:900px){.grid-3{grid-template-columns:1fr 1fr}.grid-3 .card:first-child{grid-column:1/-1}.hero-sprint2{padding-top:38px}}
+@media(max-width:600px){.grid-3{grid-template-columns:1fr}.grid-3 .card:first-child{grid-column:auto}.hero-sprint2{padding-top:28px;padding-bottom:40px}}

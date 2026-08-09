@@ -4,9 +4,6 @@ import { FeatureCard, FactStrip, SectionIntro } from '../components/Editorial';
 import { lead, topStories } from '../content/data';
 import { articles } from '../content/articles';
 import { NewsDashboard, NewsletterSignup } from '../components/HomeModules';
-import { LatestNewsFeed } from '../components/Newsroom';
-import { latestNews } from '../content/news';
-import { EditorialIntake } from '../components/LiveDesk';
 import AutoPublishedFrontpage from '../components/AutoPublishedFrontpage';
 
 const editorial = [
@@ -40,10 +37,10 @@ export default function Home() {
         <section className="hero hero-sprint2">
           <div className="hero-media">
             <img
-              src="https://commons.wikimedia.org/wiki/Special:FilePath/Stockholm_City_Hall-147793.jpg?width=1800"
-              alt="Stockholms stadshus vid vattnet"
+              src="https://commons.wikimedia.org/wiki/Special:FilePath/Hormuz_map.png?width=1800"
+              alt="Karta över Hormuzsundet och Persiska viken"
             />
-            <div className="caption">Stockholms stadshus. Foto: Josve05a/Wikimedia Commons.</div>
+            <div className="caption">Hormuzsundet – en strategisk passage för världshandeln. Karta: Wikimedia Commons.</div>
           </div>
           <div>
             <div className="kicker">{lead.section}</div>
@@ -66,9 +63,6 @@ export default function Home() {
 
         <AutoPublishedFrontpage />
 
-        <LatestNewsFeed items={latestNews.slice(0, 3)} compact />
-
-        <EditorialIntake compact />
 
         <section className="section">
           <SectionIntro
