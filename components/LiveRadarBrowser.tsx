@@ -118,7 +118,34 @@ try {
     setSaveMessage("Kunde inte spara utkastet.");
   }
 };
- const allChecked=Boolean(draftForm&&Object.values(draftForm.checks).every(Boolean));
+  const sendToFactcheck=async()=>{
+  if(!draft||!draftForm)return;
+
+  const saved={
+    ...draftForm,
+    id:draft.link,
+    sourceUrl:draft.link,
+    status:"factcheck",
+    savedAt:new Date().toISOString()
+  };
+
+  try{
+    const r=await fetch("/api/drafts",{
+      method:"POST",
+      headers:{"Content-Type":"application/json"},
+      body:JSON.stringify(saved)
+    });
+
+    if(!r.ok) throw new Error();
+
+    setDraftForm(saved);
+    setStates(v=>({...v,[draft.link]:"Kontrollera"}));
+    setSaveMessage("Utkast skickat till faktakontroll.");
+  }catch{
+    setSaveMessage("Kunde inte skicka till faktakontroll.");
+  }
+};
+  const allChecked=Boolean(draftForm&&Object.values(draftForm.checks).every(Boolean));
  return <>
   <section className="radar-stats"><article><strong>{loading?"…":stories.length}</strong><span>signaler inne</span></article><article><strong>{loading?"…":local}</strong><span>lokala signaler</span></article><article><strong>{loading?"…":high}</strong><span>redaktionell prio 75+</span></article><article><strong>{loading?"…":`${connected}/${feeds.length}`}</strong><span>källor anslutna</span></article></section>
   <section className="live-status-grid live-status-grid-s11">{feeds.map(f=><article key={f.name}><span className={f.status==="Ansluten"?"live-dot live-dot-ok":f.status==="Väntar"?"live-dot live-dot-wait":"live-dot"}/><div><strong>{f.name}</strong><small>{f.section} · {f.status} · {f.count} poster</small>{f.note&&<small>{f.note}</small>}<a href={f.homepage} target="_blank" rel="noreferrer">Originalkälla ↗</a></div></article>)}</section>
@@ -147,7 +174,7 @@ try {
         <label>Redaktionella anteckningar<textarea value={draftForm.notes} placeholder="Intervjuer att göra, frågor, bakgrund, länkar…" onChange={e=>setDraftForm(v=>v?{...v,notes:e.target.value}:v)}/></label>
         <div className="s121-buttons">
           <button type="button" className="s12-primary" onClick={saveDraft}>Spara utkast</button>
-          <button type="button" onClick={()=>setStates(v=>({...v,[draft.link]:"Kontrollera"}))}>Skicka till faktakontroll</button>
+        <button type="button" onClick={sendToFactcheck}>Skicka till faktakontroll</button>
           {saveMessage&&<span>{saveMessage}</span>}
         </div>
       </div>
