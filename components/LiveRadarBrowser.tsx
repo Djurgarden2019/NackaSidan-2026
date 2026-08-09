@@ -157,7 +157,7 @@ const publishUpdated = async () => {
     source: draft.sources.join(" · "),
     sourceUrl: draft.link,
     publishedAt: new Date().toISOString(),
-    risk: draft.risk,
+   risk: riskFor(draft, draft.score, draft.cluster),
     score: draft.score
   };
 
