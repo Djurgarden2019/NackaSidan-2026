@@ -17,6 +17,7 @@ function roleForEmail(email?: string | null): EditorialRole {
 }
 
 export const { handlers, auth, signIn, signOut } = NextAuth({
+  secret: process.env.AUTH_SECRET,
   providers: [GitHub],
   session: { strategy: 'jwt', maxAge: 60 * 60 * 8 },
   callbacks: {
