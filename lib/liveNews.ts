@@ -84,10 +84,24 @@ function sourceWeight(source: string) {
   return 1;
 }
 
+function priorityWeight(priority: LiveNewsItem['priority']) {
+  return priority === 'Hög' ? 3 : priority === 'Medel' ? 2 : 1;
+}
+
+function editorialScore(item: LiveNewsItem, now: number) {
+  const published = Date.parse(item.published);
+  const ageHours = published ? Math.max(0, (now - published) / 3600000) : 240;
+  const freshness = Math.max(0, 72 - Math.min(ageHours, 72));
+  const localBoost = item.local ? 24 : 0;
+  const swedishBoost = sourceWeight(item.source) * 8;
+  const priorityBoost = priorityWeight(item.priority) * 12;
+  return freshness + localBoost + swedishBoost + priorityBoost;
+}
+
 export async function getLiveNews() {
   const settled = await Promise.all(liveFeeds.map(async feed => {
     try {
-      const res = await fetch(feed.url, { next: { revalidate: 900 }, headers: { 'User-Agent': 'NackaSidan/1.3 editorial RSS reader' } });
+      const res = await fetch(feed.url, { next: { revalidate: 900 }, headers: { 'User-Agent': 'NackaSidan/1.4 editorial RSS reader' } });
       if (!res.ok) throw new Error(`HTTP ${res.status}`);
       return { feed, items: parse(await res.text(), feed), ok: true as const };
     } catch {
@@ -101,9 +115,9 @@ export async function getLiveNews() {
     const time = Date.parse(item.published);
     return !time || (now - time >= 0 && now - time <= maxAgeMs);
   }).sort((a,b) => {
-    const timeDiff = (Date.parse(b.published) || 0) - (Date.parse(a.published) || 0);
-    if (Math.abs(timeDiff) > 60 * 60 * 1000) return timeDiff;
-    return sourceWeight(b.source) - sourceWeight(a.source);
+    const scoreDiff = editorialScore(b, now) - editorialScore(a, now);
+    if (scoreDiff !== 0) return scoreDiff;
+    return (Date.parse(b.published) || 0) - (Date.parse(a.published) || 0);
   });
 
   const seen = new Set<string>();
