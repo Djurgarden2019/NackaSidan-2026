@@ -40,10 +40,24 @@ function publishedTime(value: string) {
   return Number.isNaN(date.getTime()) ? 0 : date.getTime();
 }
 
-function isLocal(item: LiveNewsItem) {
-  if (item.section === 'Nacka/Lokalt') return true;
+function localPlace(item: LiveNewsItem) {
   const haystack = `${item.title} ${item.source}`.toLowerCase();
-  return ['nacka', 'saltsjöbaden', 'stockholm', 'värmdö', 'sickla', 'fisksätra', 'älta'].some((term) => haystack.includes(term));
+  const places = [
+    ['saltsjöbaden', 'Saltsjöbaden'],
+    ['fisksätra', 'Fisksätra'],
+    ['sickla', 'Sickla'],
+    ['älta', 'Älta'],
+    ['värmdö', 'Värmdö'],
+    ['nacka', 'Nacka'],
+    ['stockholm', 'Stockholm'],
+  ] as const;
+  const match = places.find(([term]) => haystack.includes(term));
+  if (match) return match[1];
+  return item.section === 'Nacka/Lokalt' ? 'Nacka' : null;
+}
+
+function isLocal(item: LiveNewsItem) {
+  return localPlace(item) !== null;
 }
 
 function sourceLabel(source: string) {
@@ -65,10 +79,11 @@ function FreshnessBadge({ value, now }: { value: string; now: number | null }) {
 }
 
 function LocalBadge({ item }: { item: LiveNewsItem }) {
-  if (!isLocal(item)) return null;
+  const place = localPlace(item);
+  if (!place) return null;
   return (
-    <span style={{marginLeft:'7px',padding:'2px 5px',background:'#9f1d20',color:'#fff',fontSize:'.62rem',fontWeight:800,letterSpacing:'.06em'}}>
-      Lokalt
+    <span title="Lokal nyhet" style={{marginLeft:'7px',padding:'2px 5px',background:'#9f1d20',color:'#fff',fontSize:'.62rem',fontWeight:800,letterSpacing:'.06em'}}>
+      {place}
     </span>
   );
 }
@@ -195,7 +210,7 @@ export default function LiveFrontpage({ items, fetchedAt }: { items: LiveNewsIte
       )}
 
       <div style={{display:'flex',justifyContent:'space-between',gap:'24px',alignItems:'center',marginTop:'22px',paddingTop:'16px',borderTop:'1px solid #d8d2c6',fontSize:'.76rem',color:'#69645c'}}>
-        <p style={{margin:0,maxWidth:'760px'}}>Välj Just nu för allt från de senaste två timmarna eller Lokalt nu för enbart färska Nacka/Stockholm-nyheter. Båda visas i strikt tidsordning och länkar till originalpubliceringen.</p>
+        <p style={{margin:0,maxWidth:'760px'}}>Välj Just nu för allt från de senaste två timmarna eller Lokalt nu för enbart färska Nacka/Stockholm-nyheter. Lokala etiketter visar område när det kan identifieras, och flödena ligger fortsatt i strikt tidsordning.</p>
         <a className="button" href="/live">Se hela nyhetsradarn</a>
       </div>
     </section>
