@@ -31,6 +31,10 @@ function freshnessStatus(value: string, now: number | null) {
   return 'Äldre';
 }
 
+function isFresh(value: string, now: number | null) {
+  return freshnessStatus(value, now) === 'Färsk';
+}
+
 function sourceLabel(source: string) {
   const normalized = source.toLowerCase();
   if (normalized.includes('svt')) return 'SVT';
@@ -49,7 +53,7 @@ function FreshnessBadge({ value, now }: { value: string; now: number | null }) {
   );
 }
 
-const FILTERS = ['Alla', 'Nacka/Lokalt', 'Sverige', 'Världen', 'Ekonomi', 'Kultur', 'Vetenskap', 'Sport'];
+const FILTERS = ['Alla', 'Just nu', 'Nacka/Lokalt', 'Sverige', 'Världen', 'Ekonomi', 'Kultur', 'Vetenskap', 'Sport'];
 
 export default function LiveFrontpage({ items, fetchedAt }: { items: LiveNewsItem[]; fetchedAt: string }) {
   const [activeFilter, setActiveFilter] = useState('Alla');
@@ -64,15 +68,20 @@ export default function LiveFrontpage({ items, fetchedAt }: { items: LiveNewsIte
 
   const filtered = useMemo(() => {
     if (activeFilter === 'Alla') return items;
+    if (activeFilter === 'Just nu') return items.filter((item) => isFresh(item.published, now));
     return items.filter((item) => item.section === activeFilter);
-  }, [items, activeFilter]);
+  }, [items, activeFilter, now]);
 
   const selected = filtered.slice(0, 8);
   if (!items.length) return null;
 
   const lead = selected[0];
   const more = selected.slice(1);
-  const counts = useMemo(() => Object.fromEntries(FILTERS.map((filter) => [filter, filter === 'Alla' ? items.length : items.filter((item) => item.section === filter).length])), [items]);
+  const counts = useMemo(() => Object.fromEntries(FILTERS.map((filter) => {
+    if (filter === 'Alla') return [filter, items.length];
+    if (filter === 'Just nu') return [filter, items.filter((item) => isFresh(item.published, now)).length];
+    return [filter, items.filter((item) => item.section === filter).length];
+  })), [items, now]);
   const activeCount = counts[activeFilter] ?? 0;
 
   return (
@@ -86,7 +95,7 @@ export default function LiveFrontpage({ items, fetchedAt }: { items: LiveNewsIte
 
       <div style={{display:'flex',justifyContent:'space-between',gap:'18px',alignItems:'center',flexWrap:'wrap',margin:'12px 0 10px'}}>
         <p style={{margin:0,fontFamily:'Georgia, serif',fontSize:'1.05rem',color:'#4f4a43'}}>
-          {activeFilter === 'Alla' ? `${activeCount} aktuella rubriker i radarn` : `${activeCount} aktuella rubriker inom ${activeFilter}`}
+          {activeFilter === 'Alla' ? `${activeCount} aktuella rubriker i radarn` : activeFilter === 'Just nu' ? `${activeCount} rubriker publicerade de senaste 2 timmarna` : `${activeCount} aktuella rubriker inom ${activeFilter}`}
         </p>
         <span style={{fontSize:'.72rem',fontWeight:800,textTransform:'uppercase',letterSpacing:'.08em',color:'#9f1d20'}}>Senaste läget</span>
       </div>
@@ -111,12 +120,12 @@ export default function LiveFrontpage({ items, fetchedAt }: { items: LiveNewsIte
 
       {!lead ? (
         <div style={{borderTop:'4px solid #171717',padding:'28px 0',color:'#69645c'}}>
-          Inga aktuella nyheter i kategorin {activeFilter} just nu. Välj en annan kategori eller öppna hela nyhetsradarn.
+          {activeFilter === 'Just nu' ? 'Inga nyheter har publicerats de senaste två timmarna. Välj en annan kategori eller öppna hela nyhetsradarn.' : `Inga aktuella nyheter i kategorin ${activeFilter} just nu. Välj en annan kategori eller öppna hela nyhetsradarn.`}
         </div>
       ) : (
         <div style={{display:'grid',gridTemplateColumns:'minmax(0,1.05fr) minmax(0,1fr)',gap:'44px',borderTop:'4px solid #171717',paddingTop:'24px'}}>
           <article style={{paddingRight:'36px',borderRight:'1px solid #d8d2c6'}}>
-            <div className="kicker" style={{marginBottom:'10px'}}>{activeFilter === 'Alla' ? 'Viktigast just nu' : `Viktigast inom ${activeFilter}`}</div>
+            <div className="kicker" style={{marginBottom:'10px'}}>{activeFilter === 'Alla' ? 'Viktigast just nu' : activeFilter === 'Just nu' ? 'Färskast just nu' : `Viktigast inom ${activeFilter}`}</div>
             <div className="feed-meta"><span>{lead.section}<FreshnessBadge value={lead.published} now={now} /></span><span title={timeLabel(lead.published)}>{freshnessLabel(lead.published, now)}</span></div>
             <h3 style={{fontFamily:'Georgia, serif',fontSize:'clamp(2rem,3.5vw,3.5rem)',lineHeight:1.02,letterSpacing:'-.035em',margin:'14px 0 18px'}}>
               <a href={lead.link} target="_blank" rel="noreferrer">{lead.title}</a>
@@ -141,7 +150,7 @@ export default function LiveFrontpage({ items, fetchedAt }: { items: LiveNewsIte
       )}
 
       <div style={{display:'flex',justifyContent:'space-between',gap:'24px',alignItems:'center',marginTop:'22px',paddingTop:'16px',borderTop:'1px solid #d8d2c6',fontSize:'.76rem',color:'#69645c'}}>
-        <p style={{margin:0,maxWidth:'760px'}}>Filtrera direkt mellan Nacka/Lokalt, Sverige, Världen, Ekonomi, Kultur, Vetenskap och Sport. Rubrikerna hämtas från anslutna källor och länkar till originalpubliceringen.</p>
+        <p style={{margin:0,maxWidth:'760px'}}>Välj Just nu för nyheter från de senaste två timmarna, eller filtrera mellan Nacka/Lokalt, Sverige, Världen, Ekonomi, Kultur, Vetenskap och Sport. Rubrikerna länkar till originalpubliceringen.</p>
         <a className="button" href="/live">Se hela nyhetsradarn</a>
       </div>
     </section>
