@@ -12,6 +12,8 @@ const keys = [
   'nackasidan-live-session-paused-at',
   'nackasidan-live-session-goal',
   'nackasidan-live-session-goal-done',
+  'nackasidan-live-session-goal-deadline',
+  'nackasidan-live-next-step',
 ];
 
 export default function LiveSessionReset115() {
