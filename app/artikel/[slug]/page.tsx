@@ -4,6 +4,7 @@ import { ReadingProgress, ShareTools } from '../../../components/Interactive';
 import { IntelligencePanel } from '../../../components/Intelligence';
 import { ArticleTopics, NextArticle } from '../../../components/ArticleNavigation';
 import { ArticleTrustBar } from '../../../components/Newsroom';
+import ArticleEditorialStandard152 from '../../../components/ArticleEditorialStandard152';
 import Link from 'next/link';
 import { articleBySlug, articles } from '../../../content/articles';
 
@@ -25,6 +26,7 @@ export default async function ArticlePage({ params }: { params: Promise<{ slug: 
           <h1>{article.title}</h1>
           <p className="intro">{article.intro}</p>
           <ArticleMeta article={article} /><ArticleTrustBar article={article} /><div className="article-actions"><Link href="/forfattare/redaktionen">Om författaren</Link><ShareTools title={article.title} /></div>
+          <ArticleEditorialStandard152 article={article} />
           {article.image && (
             <figure className="article-hero-image">
               <img src={article.image} alt={article.imageCaption || article.title} />
