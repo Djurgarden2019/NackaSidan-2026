@@ -33,12 +33,20 @@ export default function LiveFrontpage({ items, fetchedAt }: { items: LiveNewsIte
   const lead = selected[0];
   const more = selected.slice(1);
   const counts = useMemo(() => Object.fromEntries(FILTERS.map((filter) => [filter, filter === 'Alla' ? items.length : items.filter((item) => item.section === filter).length])), [items]);
+  const activeCount = counts[activeFilter] ?? 0;
 
   return (
     <section className="section live-frontpage" aria-label="Senaste nyheter">
       <div className="live-frontpage-head">
         <div><div className="kicker">Live · uppdateras automatiskt</div><h2>Senaste från nyhetsradarn</h2></div>
         <div className="live-frontpage-updated">Uppdaterad {timeLabel(fetchedAt)} · <a href="/live">Öppna radarn →</a></div>
+      </div>
+
+      <div style={{display:'flex',justifyContent:'space-between',gap:'18px',alignItems:'center',flexWrap:'wrap',margin:'12px 0 10px'}}>
+        <p style={{margin:0,fontFamily:'Georgia, serif',fontSize:'1.05rem',color:'#4f4a43'}}>
+          {activeFilter === 'Alla' ? `${activeCount} aktuella rubriker i radarn` : `${activeCount} aktuella rubriker inom ${activeFilter}`}
+        </p>
+        <span style={{fontSize:'.72rem',fontWeight:800,textTransform:'uppercase',letterSpacing:'.08em',color:'#9f1d20'}}>Senaste läget</span>
       </div>
 
       <div style={{display:'flex',flexWrap:'wrap',gap:'8px',margin:'14px 0 20px'}} aria-label="Filtrera nyhetsradarn">
