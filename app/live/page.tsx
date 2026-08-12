@@ -12,6 +12,7 @@ import LiveCopySection107 from "../../components/LiveCopySection107";
 import LiveStickyNav108 from "../../components/LiveStickyNav108";
 import LiveWorkChecklist109 from "../../components/LiveWorkChecklist109";
 import LiveSessionNotes110 from "../../components/LiveSessionNotes110";
+import LiveFocusMode111 from "../../components/LiveFocusMode111";
 
 export default function LivePage() {
   return (
@@ -19,7 +20,7 @@ export default function LivePage() {
       <LiveScrollProgress103 />
       <LiveBackToTop104 />
       <LiveKeyboardShortcuts105 />
-      <LiveStickyNav108 />
+      <div className="live-focus-secondary"><LiveStickyNav108 /></div>
       <div className="shell">
         <section className="live-hero live-hero-s11">
           <div className="kicker">Nacka Intelligence · Main 21</div>
@@ -30,16 +31,21 @@ export default function LivePage() {
             Main 19 prioriterar kandidater och kräver källkontroll innan publicering.
           </p>
         </section>
-        <LiveQuickNav101 />
-        <LiveSectionStatus102 />
-        <LiveResume106 />
-        <LiveCopySection107 />
-        <LiveWorkChecklist109 />
-        <LiveSessionNotes110 />
-        <div id="redaktionsbordet" style={{scrollMarginTop:'56px'}}><EditorialDesk19 /></div>
-        <div id="kallkontroll" style={{scrollMarginTop:'56px'}}><SourceVerification20 /></div>
-        <div id="kalljakt" style={{scrollMarginTop:'56px'}}><SourceHunter21 /></div>
-        <div id="liveflodet" style={{scrollMarginTop:'56px'}}><LiveRadarBrowser /></div>
+        <LiveFocusMode111 />
+        <div className="live-focus-secondary">
+          <LiveQuickNav101 />
+          <LiveSectionStatus102 />
+          <LiveResume106 />
+          <LiveCopySection107 />
+          <LiveWorkChecklist109 />
+          <LiveSessionNotes110 />
+        </div>
+        <div className="live-focus-main">
+          <div id="redaktionsbordet" style={{scrollMarginTop:'56px'}}><EditorialDesk19 /></div>
+          <div id="kallkontroll" style={{scrollMarginTop:'56px'}}><SourceVerification20 /></div>
+          <div id="kalljakt" style={{scrollMarginTop:'56px'}}><SourceHunter21 /></div>
+          <div id="liveflodet" style={{scrollMarginTop:'56px'}}><LiveRadarBrowser /></div>
+        </div>
       </div>
     </main>
   );
