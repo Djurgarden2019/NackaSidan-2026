@@ -8,9 +8,15 @@ export function EditorialIntake({ compact = false }: { compact?: boolean }) {
     <section className="intake">
       <div className="intake-head">
         <div><div className="kicker">Nacka Intelligence</div><h2>Nyhetsdesk</h2></div>
-        <span className="intake-badge">Redaktionell kö · Sprint 10</span>
+        <span className="intake-badge">Redaktionell kö · Main 49</span>
       </div>
-      <p className="intake-note">Detta är arbetsflödet för inkommande signaler. De första externa RSS-källorna är nu anslutna automatiskt. Den här kön är fortfarande redaktionens arbetsyta: råa liveposter publiceras aldrig automatiskt som NackaSidan-artiklar.</p>
+      <p className="intake-note">Nyhetsdesken prioriterar färska signaler och håller 10-dagarsgränsen synlig i arbetsflödet. Källor och originalrubriker bevaras för kontroll. Råa liveposter publiceras aldrig automatiskt som NackaSidan-artiklar.</p>
+      <div className="rules-box">
+        <h3>Aktualitetskontroll</h3>
+        <p><b>01</b> Nyheter äldre än 10 dagar ska inte gå vidare till det aktuella nyhetsflödet.</p>
+        <p><b>02</b> Färskare svenska och lokala signaler prioriteras när redaktionell relevans är likvärdig.</p>
+        <p><b>03</b> Originalkälla och publiceringstid ska vara synliga före redaktionellt beslut.</p>
+      </div>
       <div className="intake-list">
         {items.map(item => (
           <article key={item.id}>
