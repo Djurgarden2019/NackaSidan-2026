@@ -1,0 +1,9 @@
+@media (max-width: 760px) {
+  .live-frontpage [aria-label="Mest aktiva platser just nu"] a > span:first-child {
+    white-space: normal !important;
+    display: -webkit-box !important;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    overflow: hidden;
+  }
+}
