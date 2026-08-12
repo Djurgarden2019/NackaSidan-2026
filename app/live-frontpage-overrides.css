@@ -82,6 +82,20 @@
     width: 100%;
   }
 
+  .live-frontpage > div[aria-label="Filtrera nyhetsradarn"] {
+    flex-wrap: nowrap !important;
+    overflow-x: auto;
+    overscroll-behavior-inline: contain;
+    scroll-snap-type: inline proximity;
+    scrollbar-width: thin;
+    padding-bottom: 6px;
+  }
+
+  .live-frontpage > div[aria-label="Filtrera nyhetsradarn"] > button {
+    flex: 0 0 auto;
+    scroll-snap-align: start;
+  }
+
   .live-frontpage [aria-label="Mest aktiva platser just nu"] > div:last-child {
     grid-template-columns: 1fr !important;
   }
