@@ -23,6 +23,7 @@ import LiveSessionTransfer122 from "../../components/LiveSessionTransfer122";
 import LiveSessionGoal125 from "../../components/LiveSessionGoal125";
 import LiveFocusSummary127 from "../../components/LiveFocusSummary127";
 import LiveNextStep128 from "../../components/LiveNextStep128";
+import LiveSessionLog130 from "../../components/LiveSessionLog130";
 
 export default function LivePage() {
   return (
@@ -49,6 +50,7 @@ export default function LivePage() {
         <LiveSessionSummary113 />
         <LiveSessionExport114 />
         <LiveSessionTimer116 />
+        <LiveSessionLog130 />
         <LiveSessionSnapshots117 />
         <LiveSessionTransfer122 />
         <LiveSessionReset115 />
