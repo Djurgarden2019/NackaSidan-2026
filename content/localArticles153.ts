@@ -2,81 +2,29 @@ import type { Article } from './articles';
 
 export const localArticles153: Article[] = [
   {
-    slug: 'birka-900-bostader-jarla',
-    section: 'Nacka · Stadsutveckling',
-    title: 'Birka går från villaområde till ny stadsdel – 900 bostäder planeras vid Järla',
-    intro: 'Kommunstyrelsen har antagit planprogrammet för Birkaområdet. Förslaget innebär omkring 900 nya bostäder, två förskolor och ett vård- och omsorgsboende nära den kommande tunnelbanestationen i Järla – men också att delar av dagens villabebyggelse försvinner.',
-    author: 'NackaSidans redaktion',
-    published: '12 augusti 2026',
-    updated: '12 augusti 2026 kl. 23.40',
-    publishedAt: '2026-08-12T23:40:00+02:00',
-    updatedAt: '2026-08-12T23:40:00+02:00',
-    status: 'published',
-    homepage: { role: 'top', order: 0 },
-    teaserTitle: '900 bostäder planeras vid Järla',
-    teaserSummary: 'Birkaområdet står inför en stor omvandling när Nacka växer kring den kommande tunnelbanan. Planprogrammet är antaget och detaljplaneringen ska börja under hösten 2026.',
-    readingTime: '7 min',
+    slug: 'nackenbadet-kostnad-oppning-2026', section: 'Nacka · Saltsjöbaden',
+    title: 'Nya Näckenbadet öppnar i augusti – därför blev badhuset en investering på över 370 miljoner',
+    intro: 'Efter flera års planering närmar sig nya Näckenbadet öppning. Nacka kommun har beslutat om 338,6 miljoner kronor i investeringsmedel och 34,3 miljoner i kostnader för bland annat sanering och etablering. Här är vad Nackaborna får – och kommunens förklaring till kostnadsnivån.',
+    author: 'NackaSidans redaktion', published: '12 augusti 2026', updated: '12 augusti 2026 kl. 23.55', publishedAt: '2026-08-12T23:55:00+02:00', updatedAt: '2026-08-12T23:55:00+02:00', status: 'published', homepage: { role: 'lead', order: 0 },
+    teaserTitle: 'Näckenbadet öppnar – kostnaden passerar 370 miljoner', teaserSummary: 'Det nya badhuset i Saltsjöbaden närmar sig öppning. Vi går igenom investeringen, kostnadsökningen och vad anläggningen faktiskt innehåller.', readingTime: '7 min',
     body: [
-      {
-        heading: 'Ett avgörande steg för Birka',
-        paragraphs: [
-          'Den 1 juni 2026 antog kommunstyrelsen planprogrammet för Birkaområdet på Västra Sicklaön. Beslutet betyder inte att byggandet kan börja direkt, men det anger den övergripande riktningen för hur området ska utvecklas och blir vägledande för kommande detaljplaner.',
-          'Kommunens program beskriver en ny stadsdel med omkring 900 bostäder i flerbostadshus, två förskolor och ett vård- och omsorgsboende. Läget är strategiskt: Birka ligger mellan Finntorp, Järlahöjden, Ryssbergen och den kommande tunnelbanestationen Järla.'
-        ]
-      },
-      {
-        heading: 'Tunnelbanan förändrar förutsättningarna',
-        paragraphs: [
-          'Utbyggnaden hänger nära samman med tunnelbanans förlängning till Nacka. När stationen i Järla öppnar är kommunens uppgift att resan till T-Centralen ska ta omkring tio minuter. Det gör området betydligt mer kollektivtrafiknära än i dag och är ett viktigt skäl till att kommunen vill möjliggöra tätare bebyggelse.',
-          'Birka är samtidigt bara en del av en större förändring. Nacka hade 113 731 invånare enligt kommunens statistik för 2026. På Sicklaön koncentreras en stor del av kommunens planerade stadsutveckling kring de nya tunnelbanestationerna.'
-        ]
-      },
-      {
-        heading: 'Natur och kulturvärden ska vägas mot nya bostäder',
-        paragraphs: [
-          'Omvandlingen är inte enbart en fråga om hur många bostäder som kan byggas. Programmet ska också hantera områdets natur- och kulturhistoriska värden. Kommunens beslutsunderlag anger att omkring 31 000 kvadratmeter naturmark ska sparas och att fem kulturhistoriskt särskilt värdefulla byggnader ska bevaras.',
-          'Samtidigt innebär förslaget en tydlig fysisk förändring. I underlaget till miljö- och stadsbyggnadsnämnden anges att 26 villor samt omkring 5 000 kvadratmeter natur- och parkmark försvinner. Det illustrerar den centrala avvägningen i projektet: fler bostäder och bättre kopplingar till kollektivtrafiken mot förändringen av ett befintligt småskaligt område.'
-        ]
-      },
-      {
-        heading: '131 yttranden under samrådet',
-        paragraphs: [
-          'Planprogrammet har föregåtts av samråd. Mellan den 28 oktober och 9 december 2025 kunde boende och andra berörda lämna synpunkter. Kommunen uppger att 131 yttranden kom in, varav 102 från privatpersoner.',
-          'Synpunkterna har sammanställts i en samrådsredogörelse. Kommunen beskriver processen som ett sätt att väga samman fastighetsägarnas, närboendes och remissinstansernas intressen innan den mer detaljerade planeringen börjar.'
-        ]
-      },
-      {
-        heading: 'Vad händer nu?',
-        paragraphs: [
-          'Nästa steg är detaljplanering. Kommunens projektsida anger att den ska påbörjas under hösten 2026. Först när en detaljplan har antagits och vunnit laga kraft kan byggstart bli aktuell.',
-          'Det betyder att många viktiga frågor återstår: exakt utformning och höjd på bebyggelsen, trafiklösningar, genomförande, etappindelning och hur natur- och kulturvärden skyddas i praktiken. Planprogrammet är därför startpunkten för nästa fas – inte slutpunkten för diskussionen om Birka.'
-        ]
-      }
+      { heading: 'Öppning efter sommaren', paragraphs: ['Nya Näckenbadet i Saltsjöbaden ska enligt Nacka kommun slutbesiktigas i juni 2026 och öppningsdatumet väntas bli i augusti, i samråd med driftoperatören Medley. Projektet ersätter den äldre simhallen med en större och modernare anläggning.', 'Badhuset omfattar omkring 3 500 kvadratmeter. Kommunens projektinformation beskriver en 25-metersbassäng med sex banor, en undervisningsbassäng med höj- och sänkbar botten, barnpool, bastur och café. Solceller på byggnaden beräknas täcka omkring 40 procent av badhusets elförbrukning.'] },
+      { heading: '338,6 miljoner i investering – plus 34,3 miljoner', paragraphs: ['Den ekonomiska frågan har blivit central i diskussionen om projektet. Kommunen uppger att budgeten uppdaterades inför kontraktsskrivningen 2022 och att 338,6 miljoner kronor beslutades som investeringsmedel för själva simhallen. Därutöver anges 34,3 miljoner kronor i kostnader för bland annat sanering och etablering.', 'Ett kommunalt beslutsunderlag från 2022 visar samtidigt hur investeringen fördelades: omkring 290 miljoner kronor för utredning, projektering, entreprenad och köpta tjänster, 15,6 miljoner för interna personalkostnader samt en budgetreserv på 33 miljoner för ändrings- och tilläggsarbeten och risker kopplade till markförhållanden.'] },
+      { heading: 'Varför jämförelsen med 95 miljoner blir missvisande', paragraphs: ['Kommunen har särskilt bemött uppgiften att badet skulle ha ökat från 95 miljoner kronor till nära 400 miljoner. Enligt kommunens FAQ kommer 95-miljonerssiffran från en mer än tio år gammal utredning och avsåg entreprenadsumman för en betydligt mindre simhall på omkring 2 500 kvadratmeter.', 'Den äldre kalkylen inkluderade enligt kommunen inte byggherrekostnader som projektering och sanering och byggde dessutom på normala markförhållanden. Kommunen pekar på mer omfattande grundläggningsåtgärder, ny lagstiftning och utökad sanering som faktorer bakom den högre kostnadsnivån. Det är kommunens egen förklaring och bör skiljas från en oberoende kostnadsgranskning.'] },
+      { heading: 'Vad kostar anläggningen efter öppningen?', paragraphs: ['I investeringsunderlaget uppskattades den genomsnittliga årliga kapitalkostnaden för det nya badhuset till 15,5 miljoner kronor. Den totala årliga driftkostnaden uppskattades till 2,8 miljoner kronor, jämfört med omkring 1,4 miljoner för den gamla simhallen.', 'Kostnaden behöver samtidigt sättas mot anläggningens större kapacitet, energilösningar och fler funktioner. Den relevanta frågan efter öppningen blir därför inte bara vad byggnaden kostade, utan hur mycket den används, vilka intäkter och driftkostnader den får och om den levererar den tillgänglighet och kvalitet som låg bakom investeringsbeslutet.'] },
+      { heading: 'Det här bör följas efter premiären', paragraphs: ['När badet öppnar går projektet från byggfråga till verksamhetsfråga. Besökstal, öppettider, simundervisning, föreningskapacitet, energianvändning och faktisk driftkostnad blir mätbara.', 'För NackaSidan är nästa naturliga granskning därför att jämföra kommunens kalkyl med utfallet efter det första hela verksamhetsåret. Då går det att bedöma om investeringen håller ekonomiskt och om den större anläggningen ger den nytta som kommunen räknat med.'] }
     ],
-    knowledge: [
-      { label: 'Beslutet', text: 'Kommunstyrelsen antog planprogrammet den 1 juni 2026.' },
-      { label: 'Omfattning', text: 'Omkring 900 bostäder, två förskolor och ett vård- och omsorgsboende planeras.' },
-      { label: 'Nästa steg', text: 'Detaljplaneringen ska enligt kommunen börja under hösten 2026.' },
-      { label: 'Viktig avvägning', text: 'Ny tät bebyggelse ska kombineras med bevarande av natur- och kulturhistoriska värden.' }
-    ],
-    facts: [
-      'Omkring 31 000 kvadratmeter naturmark föreslås sparas.',
-      'Fem kulturhistoriskt särskilt värdefulla byggnader ska bevaras enligt programförslaget.',
-      'Under samrådet kom 131 yttranden in, varav 102 från privatpersoner.'
-    ],
-    analysis: 'Birka visar i koncentrerad form den stora stadsbyggnadsfrågan för Västra Sicklaön: hur mycket tätare Nacka ska bli när tunnelbanan förändrar områdets tillgänglighet. Projektets långsiktiga kvalitet kommer därför inte bara att avgöras av antalet nya bostäder, utan av hur väl detaljplaneringen lyckas förena kollektivtrafiknära stadsbyggande med områdets natur, kulturmiljö och befintliga grannskap.',
-    consequences: [
-      'Detaljplaneringen blir nästa tillfälle då projektets konkreta utformning prövas.',
-      'Boende och fastighetsägare behöver följa kommande samråd när mer detaljerade förslag presenteras.',
-      'Utbyggnaden stärker Järlas roll som en central del av Nackas nya tunnelbanestad.'
-    ],
-    sources: [
-      { label: 'Nacka kommun: Birka tar nästa steg mot en ny stadsdel vid tunnelbanan, 2 juni 2026', url: 'https://www.nacka.se/stadsutveckling-trafik/nyheter-om-stadsutveckling-och-trafik/2026/06/birka-tar-nasta-steg-mot-en-ny-stadsdel-vid-tunnelbanan/', type: 'Primärkälla' },
-      { label: 'Nacka kommun: Birkaområdet – projekt, status och handlingar', url: 'https://www.nacka.se/stadsutveckling-trafik/har-planerar-och-bygger-vi/sok-projekt-pa-namn/centrala-nacka/birkaomradet/', type: 'Primärkälla' },
-      { label: 'Nacka kommun: Statistik och prognoser', url: 'https://www.nacka.se/stadsutveckling-trafik/har-planerar-och-bygger-vi/strategisk-stadsutveckling/statistik-och-prognoser/', type: 'Statistik' },
-      { label: 'Miljö- och stadsbyggnadsnämnden: protokollsutdrag 22 april 2026 §80', url: 'https://www.nacka.se/49948f/contentassets/060f837327184d7ea45a3f7d366e8c3b/protokollsutdrag-miljo-och-stadsbyggnadsnamnden-2026-04-22-80.pdf', type: 'Primärkälla' }
-    ],
-    tags: ['Nacka', 'Birka', 'Järla', 'Bostäder', 'Tunnelbana', 'Stadsutveckling'],
-    related: []
+    knowledge: [{ label: 'Planerad öppning', text: 'Augusti 2026 enligt kommunens nuvarande information.' }, { label: 'Investering', text: '338,6 miljoner kronor i beslutade investeringsmedel.' }, { label: 'Övriga kostnader', text: '34,3 miljoner kronor för bland annat sanering och etablering enligt kommunen.' }, { label: 'Storlek', text: 'Cirka 3 500 kvadratmeter, större än den äldre kalkylens cirka 2 500 kvadratmeter.' }],
+    facts: ['25-metersbassäng med sex banor.', 'Undervisningsbassäng med höj- och sänkbar botten samt barnpool.', 'Solcellerna beräknas täcka omkring 40 procent av badhusets elförbrukning.'],
+    analysis: 'Näckenbadet visar varför offentliga byggprojekt behöver följas med jämförbara kalkyler. Den ofta citerade 95-miljonerssiffran och dagens totala projektkostnad beskriver enligt kommunen olika stora anläggningar och olika kostnadsposter. Det gör inte kostnadsfrågan mindre relevant – men en seriös granskning måste skilja mellan ursprunglig entreprenadkalkyl, senare investeringsbeslut, sanering, riskreserv och framtida drift. Det verkliga värdet kan först bedömas när kostnad och faktisk användning kan ställas mot varandra.',
+    consequences: ['Nackaborna får en större simanläggning med fler funktioner än i den äldre kalkylen.', 'Kommunens framtida kapitalkostnader blir betydande och bör följas mot nyttjandegraden.', 'Första hela verksamhetsåret ger möjlighet till en konkret uppföljning av drift, energi och besökstal.'],
+    sources: [{ label: 'Nacka kommun: Frågor och svar om nya Näckenbadet', url: 'https://www.nacka.se/stadsutveckling-trafik/har-planerar-och-bygger-vi/sok-projekt-pa-namn/nya-nackenbadet/faq/', type: 'Primärkälla' }, { label: 'Nacka kommun: Nya Näckenbadet', url: 'https://www.nacka.se/stadsutveckling-trafik/har-planerar-och-bygger-vi/sok-projekt-pa-namn/nya-nackenbadet/', type: 'Primärkälla' }, { label: 'Nacka kommun: investeringsbeslut/kostnadsökning 2022', url: 'https://www.nacka.se/48f018/globalassets/stadsutveckling-trafik/bilder/nackenbadet/12a_tjskr_investeringsbeslut_kostnadsokning_nya_nackenbadet.pdf', type: 'Primärkälla' }, { label: 'Nacka kommun: Mål och budget 2026–2028', url: 'https://www.nacka.se/4ace44/globalassets/kommun-politik/dokument/ekonomi-statistik/budget/mal-och-budget-for-nacka-kommun-2026-2028.pdf', type: 'Primärkälla' }],
+    tags: ['Nacka', 'Saltsjöbaden', 'Näckenbadet', 'Ekonomi', 'Idrott'], related: ['birka-900-bostader-jarla']
+  },
+  {
+    slug: 'birka-900-bostader-jarla', section: 'Nacka · Stadsutveckling', title: 'Birka går från villaområde till ny stadsdel – 900 bostäder planeras vid Järla',
+    intro: 'Kommunstyrelsen har antagit planprogrammet för Birkaområdet. Förslaget innebär omkring 900 nya bostäder, två förskolor och ett vård- och omsorgsboende nära den kommande tunnelbanestationen i Järla – men också att delar av dagens villabebyggelse försvinner.', author: 'NackaSidans redaktion', published: '12 augusti 2026', updated: '12 augusti 2026 kl. 23.40', publishedAt: '2026-08-12T23:40:00+02:00', updatedAt: '2026-08-12T23:40:00+02:00', status: 'published', homepage: { role: 'top', order: 0 }, teaserTitle: '900 bostäder planeras vid Järla', teaserSummary: 'Birkaområdet står inför en stor omvandling när Nacka växer kring den kommande tunnelbanan. Planprogrammet är antaget och detaljplaneringen ska börja under hösten 2026.', readingTime: '7 min',
+    body: [{ heading: 'Ett avgörande steg för Birka', paragraphs: ['Den 1 juni 2026 antog kommunstyrelsen planprogrammet för Birkaområdet på Västra Sicklaön. Beslutet betyder inte att byggandet kan börja direkt, men det anger den övergripande riktningen för hur området ska utvecklas och blir vägledande för kommande detaljplaner.', 'Kommunens program beskriver en ny stadsdel med omkring 900 bostäder i flerbostadshus, två förskolor och ett vård- och omsorgsboende. Läget är strategiskt: Birka ligger mellan Finntorp, Järlahöjden, Ryssbergen och den kommande tunnelbanestationen Järla.'] }, { heading: 'Tunnelbanan förändrar förutsättningarna', paragraphs: ['Utbyggnaden hänger nära samman med tunnelbanans förlängning till Nacka. När stationen i Järla öppnar är kommunens uppgift att resan till T-Centralen ska ta omkring tio minuter. Det gör området betydligt mer kollektivtrafiknära än i dag och är ett viktigt skäl till att kommunen vill möjliggöra tätare bebyggelse.', 'Birka är samtidigt bara en del av en större förändring. På Sicklaön koncentreras en stor del av kommunens planerade stadsutveckling kring de nya tunnelbanestationerna.'] }, { heading: 'Natur och kulturvärden ska vägas mot nya bostäder', paragraphs: ['Omvandlingen är inte enbart en fråga om hur många bostäder som kan byggas. Programmet ska också hantera områdets natur- och kulturhistoriska värden. Kommunens beslutsunderlag anger att omkring 31 000 kvadratmeter naturmark ska sparas och att fem kulturhistoriskt särskilt värdefulla byggnader ska bevaras.', 'Samtidigt innebär förslaget en tydlig fysisk förändring. I underlaget till miljö- och stadsbyggnadsnämnden anges att 26 villor samt omkring 5 000 kvadratmeter natur- och parkmark försvinner.'] }, { heading: '131 yttranden under samrådet', paragraphs: ['Planprogrammet har föregåtts av samråd. Mellan den 28 oktober och 9 december 2025 kunde boende och andra berörda lämna synpunkter. Kommunen uppger att 131 yttranden kom in, varav 102 från privatpersoner.', 'Synpunkterna har sammanställts i en samrådsredogörelse inför den mer detaljerade planeringen.'] }, { heading: 'Vad händer nu?', paragraphs: ['Nästa steg är detaljplanering. Kommunens projektsida anger att den ska påbörjas under hösten 2026. Först när en detaljplan har antagits och vunnit laga kraft kan byggstart bli aktuell.', 'Det betyder att många viktiga frågor återstår: exakt utformning och höjd på bebyggelsen, trafiklösningar, genomförande, etappindelning och hur natur- och kulturvärden skyddas i praktiken.'] }],
+    knowledge: [{ label: 'Beslutet', text: 'Kommunstyrelsen antog planprogrammet den 1 juni 2026.' }, { label: 'Omfattning', text: 'Omkring 900 bostäder, två förskolor och ett vård- och omsorgsboende planeras.' }, { label: 'Nästa steg', text: 'Detaljplaneringen ska enligt kommunen börja under hösten 2026.' }, { label: 'Viktig avvägning', text: 'Ny tät bebyggelse ska kombineras med bevarande av natur- och kulturhistoriska värden.' }], facts: ['Omkring 31 000 kvadratmeter naturmark föreslås sparas.', 'Fem kulturhistoriskt särskilt värdefulla byggnader ska bevaras enligt programförslaget.', 'Under samrådet kom 131 yttranden in, varav 102 från privatpersoner.'], analysis: 'Birka visar i koncentrerad form den stora stadsbyggnadsfrågan för Västra Sicklaön: hur mycket tätare Nacka ska bli när tunnelbanan förändrar områdets tillgänglighet.', consequences: ['Detaljplaneringen blir nästa tillfälle då projektets konkreta utformning prövas.', 'Boende och fastighetsägare behöver följa kommande samråd.', 'Utbyggnaden stärker Järlas roll som en central del av Nackas nya tunnelbanestad.'], sources: [{ label: 'Nacka kommun: Birka tar nästa steg mot en ny stadsdel vid tunnelbanan, 2 juni 2026', url: 'https://www.nacka.se/stadsutveckling-trafik/nyheter-om-stadsutveckling-och-trafik/2026/06/birka-tar-nasta-steg-mot-en-ny-stadsdel-vid-tunnelbanan/', type: 'Primärkälla' }, { label: 'Nacka kommun: Birkaområdet – projekt, status och handlingar', url: 'https://www.nacka.se/stadsutveckling-trafik/har-planerar-och-bygger-vi/sok-projekt-pa-namn/centrala-nacka/birkaomradet/', type: 'Primärkälla' }], tags: ['Nacka', 'Birka', 'Järla', 'Bostäder', 'Tunnelbana', 'Stadsutveckling'], related: ['nackenbadet-kostnad-oppning-2026']
   }
 ];
