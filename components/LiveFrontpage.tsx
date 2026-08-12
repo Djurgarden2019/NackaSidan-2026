@@ -120,14 +120,23 @@ export default function LiveFrontpage({ items, fetchedAt }: { items: LiveNewsIte
     .sort((a, b) => publishedTime(b.published) - publishedTime(a.published)), [items, now]);
 
   const localPlaces = useMemo(() => {
-    const placeCounts = new Map<string, number>();
+    const placeStats = new Map<string, { count: number; latestPublished: string }>();
     freshLocalItems.forEach((item) => {
       const place = localPlace(item);
-      if (place) placeCounts.set(place, (placeCounts.get(place) ?? 0) + 1);
+      if (!place) return;
+      const current = placeStats.get(place);
+      if (!current) {
+        placeStats.set(place, { count: 1, latestPublished: item.published });
+        return;
+      }
+      placeStats.set(place, {
+        count: current.count + 1,
+        latestPublished: publishedTime(item.published) > publishedTime(current.latestPublished) ? item.published : current.latestPublished,
+      });
     });
-    return Array.from(placeCounts.entries())
-      .sort((a, b) => b[1] - a[1] || a[0].localeCompare(b[0], 'sv-SE'))
-      .map(([place, count]) => ({ place, count }));
+    return Array.from(placeStats.entries())
+      .sort((a, b) => b[1].count - a[1].count || a[0].localeCompare(b[0], 'sv-SE'))
+      .map(([place, stats]) => ({ place, ...stats }));
   }, [freshLocalItems]);
 
   const topLocalPlaces = localPlaces.slice(0, 3);
@@ -223,16 +232,16 @@ export default function LiveFrontpage({ items, fetchedAt }: { items: LiveNewsIte
         <>
           <div style={{display:'flex',alignItems:'center',gap:'7px',flexWrap:'wrap',margin:'0 0 10px'}} aria-label="Mest aktiva platser just nu">
             <span style={{fontSize:'.68rem',fontWeight:800,textTransform:'uppercase',letterSpacing:'.06em',color:'#69645c'}}>Mest aktivt:</span>
-            {topLocalPlaces.map(({ place, count }, index) => (
+            {topLocalPlaces.map(({ place, count, latestPublished }, index) => (
               <button
                 key={place}
                 type="button"
                 onClick={() => setActivePlace(place)}
                 aria-pressed={activePlace === place}
-                title={`Visa färska nyheter från ${place}`}
+                title={`Senaste från ${place}: ${timeLabel(latestPublished)}. Visa färska nyheter från ${place}`}
                 style={{border:0,background:'transparent',padding:'2px 1px',fontSize:'.72rem',fontWeight:800,color:activePlace === place ? '#9f1d20' : '#171717',cursor:'pointer',textDecoration:activePlace === place ? 'underline' : 'none'}}
               >
-                {index + 1}. {place} ({count})
+                {index + 1}. {place} ({count}) · <span style={{fontWeight:600,color:'#69645c'}}>{freshnessLabel(latestPublished, now)}</span>
               </button>
             ))}
           </div>
@@ -310,7 +319,7 @@ export default function LiveFrontpage({ items, fetchedAt }: { items: LiveNewsIte
       )}
 
       <div style={{display:'flex',justifyContent:'space-between',gap:'24px',alignItems:'center',marginTop:'22px',paddingTop:'16px',borderTop:'1px solid #d8d2c6',fontSize:'.76rem',color:'#69645c'}}>
-        <p style={{margin:0,maxWidth:'760px'}}>Under Lokalt nu visas de tre mest aktiva platserna som en snabböversikt. Klicka på en plats för att filtrera direkt; nyhetsflödet behåller fortfarande strikt nyast-först-ordning.</p>
+        <p style={{margin:0,maxWidth:'760px'}}>Under Lokalt nu visas de tre mest aktiva platserna med antal färska rubriker och hur nyligen den senaste rubriken publicerades. Klicka på en plats för att filtrera direkt.</p>
         <a className="button" href="/live">Se hela nyhetsradarn</a>
       </div>
     </section>
