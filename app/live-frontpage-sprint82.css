@@ -1,0 +1,4 @@
+.live-frontpage [aria-label="Mest aktiva platser just nu"] > div:last-child > div:focus-within {
+  border-color: var(--live-accent) !important;
+  box-shadow: 0 0 0 2px rgba(159, 29, 32, 0.12);
+}
