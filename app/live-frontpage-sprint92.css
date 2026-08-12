@@ -1,0 +1,23 @@
+@media print {
+  .live-frontpage > div[aria-label="Filtrera nyhetsradarn"],
+  .live-frontpage div[aria-label="Filtrera lokala nyheter efter plats"],
+  .live-frontpage [aria-label="Mest aktiva platser just nu"] button,
+  .live-frontpage a.button {
+    display: none !important;
+  }
+
+  .live-frontpage {
+    color: #000 !important;
+    background: #fff !important;
+  }
+
+  .live-frontpage article,
+  .live-frontpage [aria-label="Mest aktiva platser just nu"] > div:last-child > div {
+    break-inside: avoid;
+  }
+
+  .live-frontpage a {
+    color: #000 !important;
+    text-decoration: none !important;
+  }
+}
