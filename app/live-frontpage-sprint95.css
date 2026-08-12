@@ -1,0 +1,7 @@
+@media (hover: hover) and (pointer: fine) {
+  .live-frontpage [aria-label="Mest aktiva platser just nu"] > div:last-child > div:hover {
+    border-color: var(--live-accent) !important;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.07);
+    transform: translateY(-1px);
+  }
+}
