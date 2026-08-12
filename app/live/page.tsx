@@ -15,6 +15,7 @@ import LiveSessionNotes110 from "../../components/LiveSessionNotes110";
 import LiveFocusMode111 from "../../components/LiveFocusMode111";
 import LiveCompactMode112 from "../../components/LiveCompactMode112";
 import LiveSessionSummary113 from "../../components/LiveSessionSummary113";
+import LiveSessionExport114 from "../../components/LiveSessionExport114";
 
 export default function LivePage() {
   return (
@@ -36,6 +37,7 @@ export default function LivePage() {
         <LiveFocusMode111 />
         <LiveCompactMode112 />
         <LiveSessionSummary113 />
+        <LiveSessionExport114 />
         <div className="live-focus-secondary">
           <LiveQuickNav101 />
           <LiveSectionStatus102 />
