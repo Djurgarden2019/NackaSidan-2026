@@ -1,0 +1,33 @@
+.live-frontpage {
+  --live-accent: #9f1d20;
+  --live-ink: #171717;
+  --live-muted: #69645c;
+  --live-paper: #f4efe6;
+  --live-line: #d8d2c6;
+}
+
+.live-frontpage a,
+.live-frontpage button {
+  -webkit-tap-highlight-color: transparent;
+}
+
+.live-frontpage a:focus-visible,
+.live-frontpage button:focus-visible {
+  outline: 3px solid var(--live-accent);
+  outline-offset: 3px;
+}
+
+@media (max-width: 760px) {
+  .live-frontpage {
+    overflow-x: hidden;
+  }
+
+  .live-frontpage .live-frontpage-head {
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+  .live-frontpage .live-frontpage-updated {
+    width: 100%;
+  }
+}
