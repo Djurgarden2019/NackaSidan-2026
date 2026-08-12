@@ -1,11 +1,22 @@
 'use client';
 
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 
 type Snapshot = { id: string; savedAt: number; notes: string; checklist: boolean[]; lastSection: string; focus: boolean; compact: boolean; startedAt: number | null };
 
 export default function LiveSessionSnapshots117() {
   const [saved, setSaved] = useState(false);
+  const [open, setOpen] = useState(false);
+  const [snapshots, setSnapshots] = useState<Snapshot[]>([]);
+
+  const load = () => {
+    try {
+      const parsed = JSON.parse(localStorage.getItem('nackasidan-live-session-snapshots') || '[]');
+      setSnapshots(Array.isArray(parsed) ? parsed.slice(0,5) : []);
+    } catch { setSnapshots([]); }
+  };
+
+  useEffect(load, []);
 
   const saveSnapshot = () => {
     try {
@@ -20,13 +31,13 @@ export default function LiveSessionSnapshots117() {
         compact: localStorage.getItem('nackasidan-live-compact-mode') === '1',
         startedAt: Number(localStorage.getItem('nackasidan-live-session-started-at')) || null,
       };
-      const existing = JSON.parse(localStorage.getItem('nackasidan-live-session-snapshots') || '[]');
-      const next = [snapshot, ...(Array.isArray(existing) ? existing : [])].slice(0, 5);
+      const next = [snapshot, ...snapshots].slice(0, 5);
       localStorage.setItem('nackasidan-live-session-snapshots', JSON.stringify(next));
+      setSnapshots(next);
       setSaved(true);
       window.setTimeout(() => setSaved(false), 1600);
     } catch {}
   };
 
-  return <div className="live-focus-secondary" style={{display:'flex',justifyContent:'flex-end',margin:'-8px 0 18px'}}><button type="button" onClick={saveSnapshot} style={{border:'1px solid #171717',background:'#fff',color:'#171717',padding:'7px 10px',fontSize:'.68rem',fontWeight:800,cursor:'pointer'}}>{saved?'Ögonblicksbild sparad ✓':'Spara ögonblicksbild'}</button></div>;
+  return <section className="live-focus-secondary" aria-label="Sparade arbetsrundor" style={{margin:'-8px 0 18px',border:'1px solid #d8d2c6',background:'#fff'}}><div style={{display:'flex',justifyContent:'space-between',alignItems:'center',gap:'10px',padding:'9px 10px'}}><button type="button" onClick={saveSnapshot} style={{border:'1px solid #171717',background:'#fff',color:'#171717',padding:'7px 10px',fontSize:'.68rem',fontWeight:800,cursor:'pointer'}}>{saved?'Ögonblicksbild sparad ✓':'Spara ögonblicksbild'}</button><button type="button" onClick={()=>setOpen(v=>!v)} aria-expanded={open} style={{border:0,background:'transparent',padding:'4px',fontSize:'.68rem',fontWeight:800,cursor:'pointer',color:'#5f5a52'}}>Historik ({snapshots.length}) {open?'−':'+'}</button></div>{open&&<div style={{borderTop:'1px solid #e4ded4',padding:'8px 10px'}}>{snapshots.length===0?<p style={{margin:0,fontSize:'.7rem',color:'#69645c'}}>Inga sparade ögonblicksbilder ännu.</p>:<div style={{display:'grid',gap:'6px'}}>{snapshots.map((snapshot)=><div key={snapshot.id} style={{display:'flex',justifyContent:'space-between',gap:'10px',padding:'7px 8px',background:'#faf7f1',fontSize:'.68rem'}}><span>{new Date(snapshot.savedAt).toLocaleString('sv-SE',{dateStyle:'short',timeStyle:'short'})}</span><span style={{color:'#69645c'}}>{snapshot.checklist.filter(Boolean).length}/4 klara · {snapshot.notes?'anteckningar':'inga anteckningar'}</span></div>)}</div>}</div>}</section>;
 }
