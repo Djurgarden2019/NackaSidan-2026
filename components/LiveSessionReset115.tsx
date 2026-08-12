@@ -10,6 +10,8 @@ const keys = [
   'nackasidan-live-compact-mode',
   'nackasidan-live-session-started-at',
   'nackasidan-live-session-paused-at',
+  'nackasidan-live-session-goal',
+  'nackasidan-live-session-goal-done',
 ];
 
 export default function LiveSessionReset115() {
