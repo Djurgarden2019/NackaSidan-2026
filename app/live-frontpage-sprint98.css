@@ -1,0 +1,11 @@
+@media (min-width: 981px) {
+  .live-frontpage [aria-label="Mest aktiva platser just nu"] > div:last-child > div {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .live-frontpage [aria-label="Mest aktiva platser just nu"] > div:last-child > div > a {
+    margin-top: auto !important;
+  }
+}
