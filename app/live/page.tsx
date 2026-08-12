@@ -8,6 +8,7 @@ import LiveScrollProgress103 from "../../components/LiveScrollProgress103";
 import LiveBackToTop104 from "../../components/LiveBackToTop104";
 import LiveKeyboardShortcuts105 from "../../components/LiveKeyboardShortcuts105";
 import LiveResume106 from "../../components/LiveResume106";
+import LiveCopySection107 from "../../components/LiveCopySection107";
 
 export default function LivePage() {
   return (
@@ -28,6 +29,7 @@ export default function LivePage() {
         <LiveQuickNav101 />
         <LiveSectionStatus102 />
         <LiveResume106 />
+        <LiveCopySection107 />
         <div id="redaktionsbordet" style={{scrollMarginTop:'24px'}}><EditorialDesk19 /></div>
         <div id="kallkontroll" style={{scrollMarginTop:'24px'}}><SourceVerification20 /></div>
         <div id="kalljakt" style={{scrollMarginTop:'24px'}}><SourceHunter21 /></div>
