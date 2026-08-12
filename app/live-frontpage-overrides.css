@@ -123,6 +123,11 @@
     scroll-snap-align: start;
   }
 
+  .live-frontpage > div[aria-label="Filtrera nyhetsradarn"] > button,
+  .live-frontpage div[aria-label="Filtrera lokala nyheter efter plats"] > button {
+    min-height: 44px;
+  }
+
   .live-frontpage [aria-label="Mest aktiva platser just nu"] > div:last-child {
     grid-template-columns: 1fr !important;
   }
