@@ -135,7 +135,7 @@ export default function LiveFrontpage({ items, fetchedAt }: { items: LiveNewsIte
       });
     });
     return Array.from(placeStats.entries())
-      .sort((a, b) => b[1].count - a[1].count || a[0].localeCompare(b[0], 'sv-SE'))
+      .sort((a, b) => b[1].count - a[1].count || publishedTime(b[1].latestPublished) - publishedTime(a[1].latestPublished) || a[0].localeCompare(b[0], 'sv-SE'))
       .map(([place, stats]) => ({ place, ...stats }));
   }, [freshLocalItems]);
 
@@ -319,7 +319,7 @@ export default function LiveFrontpage({ items, fetchedAt }: { items: LiveNewsIte
       )}
 
       <div style={{display:'flex',justifyContent:'space-between',gap:'24px',alignItems:'center',marginTop:'22px',paddingTop:'16px',borderTop:'1px solid #d8d2c6',fontSize:'.76rem',color:'#69645c'}}>
-        <p style={{margin:0,maxWidth:'760px'}}>Under Lokalt nu visas de tre mest aktiva platserna med antal färska rubriker och hur nyligen den senaste rubriken publicerades. Klicka på en plats för att filtrera direkt.</p>
+        <p style={{margin:0,maxWidth:'760px'}}>Under Lokalt nu rangordnas platserna först efter antal färska rubriker. Vid lika många rubriker går platsen med den färskaste senaste publiceringen före.</p>
         <a className="button" href="/live">Se hela nyhetsradarn</a>
       </div>
     </section>
