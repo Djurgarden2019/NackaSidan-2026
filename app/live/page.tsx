@@ -39,7 +39,7 @@ export const metadata = {
 export default function LivePage() {
   return (
     <main>
-      <style>{`.live-skip-link{position:absolute;left:-9999px;top:8px;z-index:60;background:#171717;color:#fff;padding:6px 8px;font-size:.68rem;font-weight:800;text-decoration:none}.live-skip-link:focus{left:8px}`}</style>
+      <style>{`.live-skip-link{position:absolute;left:-9999px;top:8px;z-index:60;background:#171717;color:#fff;padding:6px 8px;font-size:.68rem;font-weight:800;text-decoration:none}.live-skip-link:focus{left:8px}.live-release-tools{margin:0 0 18px;border:1px solid #d8d2c6;background:#f7f3eb}.live-release-tools>summary{cursor:pointer;padding:10px 12px;font-size:.72rem;font-weight:900;text-transform:uppercase;letter-spacing:.06em}.live-release-tools-inner{padding:0 10px 2px}`}</style>
       <a href="#live-main" className="live-skip-link">Hoppa till redaktionellt innehåll</a>
       <LiveScrollProgress103 />
       <LiveBackToTop104 />
@@ -59,11 +59,16 @@ export default function LivePage() {
         <LiveCompactMode112 />
         <LiveSessionGoal125 />
         <LiveNextStep128 />
-        <LiveSessionReadiness133 />
-        <LiveReleaseReadiness136 />
-        <LiveSessionHealth137 />
-        <LivePublishGate138 />
-        <LiveReleaseNotes139 />
+        <details className="live-release-tools" open>
+          <summary>Releaseverktyg</summary>
+          <div className="live-release-tools-inner">
+            <LiveSessionReadiness133 />
+            <LiveReleaseReadiness136 />
+            <LiveSessionHealth137 />
+            <LivePublishGate138 />
+            <LiveReleaseNotes139 />
+          </div>
+        </details>
         <LiveFocusSummary127 />
         <LiveSessionSummary113 />
         <LiveSessionExport114 />
