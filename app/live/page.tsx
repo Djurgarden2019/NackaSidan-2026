@@ -3,6 +3,7 @@ import EditorialDesk19 from "../../components/EditorialDesk19";
 import SourceVerification20 from "../../components/SourceVerification20";
 import SourceHunter21 from "../../components/SourceHunter21";
 import LiveQuickNav101 from "../../components/LiveQuickNav101";
+import LiveSectionStatus102 from "../../components/LiveSectionStatus102";
 
 export default function LivePage() {
   return (
@@ -18,6 +19,7 @@ export default function LivePage() {
           </p>
         </section>
         <LiveQuickNav101 />
+        <LiveSectionStatus102 />
         <div id="redaktionsbordet" style={{scrollMarginTop:'24px'}}><EditorialDesk19 /></div>
         <div id="kallkontroll" style={{scrollMarginTop:'24px'}}><SourceVerification20 /></div>
         <div id="kalljakt" style={{scrollMarginTop:'24px'}}><SourceHunter21 /></div>
