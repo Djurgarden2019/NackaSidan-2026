@@ -11,6 +11,16 @@
   text-wrap: balance;
 }
 
+.live-frontpage article h3 a,
+.live-frontpage .live-source {
+  overflow-wrap: anywhere;
+}
+
+.live-frontpage .feed-meta,
+.live-frontpage .live-frontpage-updated {
+  font-variant-numeric: tabular-nums;
+}
+
 .live-frontpage article h3 a {
   text-decoration-thickness: 0.08em;
   text-underline-offset: 0.13em;
