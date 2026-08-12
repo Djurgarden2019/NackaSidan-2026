@@ -40,12 +40,12 @@ export default function LivePage() {
       <div className="live-focus-secondary"><LiveStickyNav108 /></div>
       <div className="shell">
         <section className="live-hero live-hero-s11">
-          <div className="kicker">Nacka Intelligence · Main 21</div>
+          <div className="kicker">Nacka Intelligence · Release candidate</div>
           <h1>Nyhetsradarn</h1>
           <p>
-            Nyhetsradarn är nu kopplad till Artikelverkstaden. Signaler poängsätts, liknande händelser grupperas och
-            redaktionen får en föreslagen vinkel, källkort och arbetsflöde från bevakning till faktakontroll.
-            Main 19 prioriterar kandidater och kräver källkontroll innan publicering.
+            Nyhetsradarn samlar bevakning, prioritering, källkontroll och redaktionellt arbetsflöde på en plats.
+            Signaler poängsätts och grupperas, medan sessionsverktygen hjälper redaktionen att dokumentera mål,
+            nästa steg, beslut och slutkontroll inför publicering.
           </p>
         </section>
         <LiveFocusMode111 />
