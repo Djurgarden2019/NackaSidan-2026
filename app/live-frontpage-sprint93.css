@@ -1,0 +1,18 @@
+@media (max-width: 420px) {
+  .live-frontpage h2 {
+    font-size: clamp(1.45rem, 9vw, 1.9rem);
+  }
+
+  .live-frontpage .feed-meta {
+    font-size: 0.82rem;
+  }
+
+  .live-frontpage [aria-label="Mest aktiva platser just nu"] > div:first-child {
+    gap: 6px !important;
+  }
+
+  .live-frontpage [aria-label="Mest aktiva platser just nu"] button,
+  .live-frontpage [aria-label="Mest aktiva platser just nu"] a {
+    font-size: 0.92rem;
+  }
+}
