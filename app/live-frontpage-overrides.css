@@ -82,7 +82,8 @@
     width: 100%;
   }
 
-  .live-frontpage > div[aria-label="Filtrera nyhetsradarn"] {
+  .live-frontpage > div[aria-label="Filtrera nyhetsradarn"],
+  .live-frontpage div[aria-label="Filtrera lokala nyheter efter plats"] {
     flex-wrap: nowrap !important;
     overflow-x: auto;
     overscroll-behavior-inline: contain;
@@ -91,7 +92,9 @@
     padding-bottom: 6px;
   }
 
-  .live-frontpage > div[aria-label="Filtrera nyhetsradarn"] > button {
+  .live-frontpage > div[aria-label="Filtrera nyhetsradarn"] > button,
+  .live-frontpage div[aria-label="Filtrera lokala nyheter efter plats"] > button,
+  .live-frontpage div[aria-label="Filtrera lokala nyheter efter plats"] > span {
     flex: 0 0 auto;
     scroll-snap-align: start;
   }
