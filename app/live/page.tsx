@@ -29,6 +29,7 @@ import LiveSessionCloseout135 from "../../components/LiveSessionCloseout135";
 import LiveReleaseReadiness136 from "../../components/LiveReleaseReadiness136";
 import LiveSessionHealth137 from "../../components/LiveSessionHealth137";
 import LivePublishGate138 from "../../components/LivePublishGate138";
+import LiveReleaseNotes139 from "../../components/LiveReleaseNotes139";
 
 export default function LivePage() {
   return (
@@ -55,6 +56,7 @@ export default function LivePage() {
         <LiveReleaseReadiness136 />
         <LiveSessionHealth137 />
         <LivePublishGate138 />
+        <LiveReleaseNotes139 />
         <LiveFocusSummary127 />
         <LiveSessionSummary113 />
         <LiveSessionExport114 />
