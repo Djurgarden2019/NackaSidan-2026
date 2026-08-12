@@ -1,0 +1,13 @@
+@media (hover: hover) {
+  .live-frontpage [aria-label="Mest aktiva platser just nu"] a:hover > span:first-child {
+    text-decoration: underline;
+    text-decoration-thickness: 0.08em;
+    text-underline-offset: 0.12em;
+  }
+}
+
+.live-frontpage [aria-label="Mest aktiva platser just nu"] a:focus-visible > span:first-child {
+  text-decoration: underline;
+  text-decoration-thickness: 0.08em;
+  text-underline-offset: 0.12em;
+}
