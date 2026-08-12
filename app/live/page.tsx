@@ -24,6 +24,7 @@ import LiveSessionGoal125 from "../../components/LiveSessionGoal125";
 import LiveFocusSummary127 from "../../components/LiveFocusSummary127";
 import LiveNextStep128 from "../../components/LiveNextStep128";
 import LiveSessionLog130 from "../../components/LiveSessionLog130";
+import LiveSessionReadiness133 from "../../components/LiveSessionReadiness133";
 
 export default function LivePage() {
   return (
@@ -46,6 +47,7 @@ export default function LivePage() {
         <LiveCompactMode112 />
         <LiveSessionGoal125 />
         <LiveNextStep128 />
+        <LiveSessionReadiness133 />
         <LiveFocusSummary127 />
         <LiveSessionSummary113 />
         <LiveSessionExport114 />
