@@ -35,6 +35,11 @@ function isFresh(value: string, now: number | null) {
   return freshnessStatus(value, now) === 'Färsk';
 }
 
+function publishedTime(value: string) {
+  const date = new Date(value);
+  return Number.isNaN(date.getTime()) ? 0 : date.getTime();
+}
+
 function sourceLabel(source: string) {
   const normalized = source.toLowerCase();
   if (normalized.includes('svt')) return 'SVT';
@@ -68,7 +73,12 @@ export default function LiveFrontpage({ items, fetchedAt }: { items: LiveNewsIte
 
   const filtered = useMemo(() => {
     if (activeFilter === 'Alla') return items;
-    if (activeFilter === 'Just nu') return items.filter((item) => isFresh(item.published, now));
+    if (activeFilter === 'Just nu') {
+      return items
+        .filter((item) => isFresh(item.published, now))
+        .slice()
+        .sort((a, b) => publishedTime(b.published) - publishedTime(a.published));
+    }
     return items.filter((item) => item.section === activeFilter);
   }, [items, activeFilter, now]);
 
@@ -95,7 +105,7 @@ export default function LiveFrontpage({ items, fetchedAt }: { items: LiveNewsIte
 
       <div style={{display:'flex',justifyContent:'space-between',gap:'18px',alignItems:'center',flexWrap:'wrap',margin:'12px 0 10px'}}>
         <p style={{margin:0,fontFamily:'Georgia, serif',fontSize:'1.05rem',color:'#4f4a43'}}>
-          {activeFilter === 'Alla' ? `${activeCount} aktuella rubriker i radarn` : activeFilter === 'Just nu' ? `${activeCount} rubriker publicerade de senaste 2 timmarna` : `${activeCount} aktuella rubriker inom ${activeFilter}`}
+          {activeFilter === 'Alla' ? `${activeCount} aktuella rubriker i radarn` : activeFilter === 'Just nu' ? `${activeCount} rubriker publicerade de senaste 2 timmarna · nyast först` : `${activeCount} aktuella rubriker inom ${activeFilter}`}
         </p>
         <span style={{fontSize:'.72rem',fontWeight:800,textTransform:'uppercase',letterSpacing:'.08em',color:'#9f1d20'}}>Senaste läget</span>
       </div>
@@ -150,7 +160,7 @@ export default function LiveFrontpage({ items, fetchedAt }: { items: LiveNewsIte
       )}
 
       <div style={{display:'flex',justifyContent:'space-between',gap:'24px',alignItems:'center',marginTop:'22px',paddingTop:'16px',borderTop:'1px solid #d8d2c6',fontSize:'.76rem',color:'#69645c'}}>
-        <p style={{margin:0,maxWidth:'760px'}}>Välj Just nu för nyheter från de senaste två timmarna, eller filtrera mellan Nacka/Lokalt, Sverige, Världen, Ekonomi, Kultur, Vetenskap och Sport. Rubrikerna länkar till originalpubliceringen.</p>
+        <p style={{margin:0,maxWidth:'760px'}}>Välj Just nu för nyheter från de senaste två timmarna i strikt tidsordning, eller filtrera mellan Nacka/Lokalt, Sverige, Världen, Ekonomi, Kultur, Vetenskap och Sport. Rubrikerna länkar till originalpubliceringen.</p>
         <a className="button" href="/live">Se hela nyhetsradarn</a>
       </div>
     </section>
