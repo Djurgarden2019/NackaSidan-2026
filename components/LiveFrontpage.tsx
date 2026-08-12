@@ -9,6 +9,17 @@ function timeLabel(value: string) {
   return new Intl.DateTimeFormat('sv-SE', { timeZone: 'Europe/Stockholm', hour: '2-digit', minute: '2-digit', day: 'numeric', month: 'short' }).format(date);
 }
 
+function freshnessLabel(value: string) {
+  const date = new Date(value);
+  if (Number.isNaN(date.getTime())) return 'Nyss';
+  const diffMinutes = Math.max(0, Math.floor((Date.now() - date.getTime()) / 60000));
+  if (diffMinutes < 60) return diffMinutes <= 1 ? 'Nyss' : `${diffMinutes} min sedan`;
+  const diffHours = Math.floor(diffMinutes / 60);
+  if (diffHours < 24) return `${diffHours} tim sedan`;
+  const diffDays = Math.floor(diffHours / 24);
+  return `${diffDays} d sedan`;
+}
+
 function sourceLabel(source: string) {
   const normalized = source.toLowerCase();
   if (normalized.includes('svt')) return 'SVT';
@@ -75,7 +86,7 @@ export default function LiveFrontpage({ items, fetchedAt }: { items: LiveNewsIte
         <div style={{display:'grid',gridTemplateColumns:'minmax(0,1.05fr) minmax(0,1fr)',gap:'44px',borderTop:'4px solid #171717',paddingTop:'24px'}}>
           <article style={{paddingRight:'36px',borderRight:'1px solid #d8d2c6'}}>
             <div className="kicker" style={{marginBottom:'10px'}}>{activeFilter === 'Alla' ? 'Viktigast just nu' : `Viktigast inom ${activeFilter}`}</div>
-            <div className="feed-meta"><span>{lead.section}</span><span>{timeLabel(lead.published)}</span></div>
+            <div className="feed-meta"><span>{lead.section}</span><span title={timeLabel(lead.published)}>{freshnessLabel(lead.published)}</span></div>
             <h3 style={{fontFamily:'Georgia, serif',fontSize:'clamp(2rem,3.5vw,3.5rem)',lineHeight:1.02,letterSpacing:'-.035em',margin:'14px 0 18px'}}>
               <a href={lead.link} target="_blank" rel="noreferrer">{lead.title}</a>
             </h3>
@@ -88,7 +99,7 @@ export default function LiveFrontpage({ items, fetchedAt }: { items: LiveNewsIte
               <article key={item.link} style={{display:'grid',gridTemplateColumns:'42px 1fr',gap:'14px',padding:'0 0 15px',marginBottom:'15px',borderBottom:'1px solid #d8d2c6'}}>
                 <span style={{fontFamily:'Georgia, serif',fontSize:'1.2rem',color:'#9f1d20'}}>{String(index + 2).padStart(2, '0')}</span>
                 <div>
-                  <div className="feed-meta"><span>{item.section}</span><span>{timeLabel(item.published)}</span></div>
+                  <div className="feed-meta"><span>{item.section}</span><span title={timeLabel(item.published)}>{freshnessLabel(item.published)}</span></div>
                   <h3 style={{fontFamily:'Georgia, serif',fontSize:'1.18rem',lineHeight:1.12,margin:'5px 0 4px'}}><a href={item.link} target="_blank" rel="noreferrer">{item.title}</a></h3>
                   <p className="live-source" style={{margin:0}}><strong>{sourceLabel(item.source)}</strong> · {item.source}</p>
                 </div>
