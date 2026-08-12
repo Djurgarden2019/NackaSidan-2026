@@ -1,0 +1,5 @@
+@media (min-width: 600px) and (max-width: 760px) and (orientation: landscape) {
+  .live-frontpage [aria-label="Mest aktiva platser just nu"] > div:last-child {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+  }
+}
