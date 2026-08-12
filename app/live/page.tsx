@@ -30,6 +30,7 @@ import LiveReleaseReadiness136 from "../../components/LiveReleaseReadiness136";
 import LiveSessionHealth137 from "../../components/LiveSessionHealth137";
 import LivePublishGate138 from "../../components/LivePublishGate138";
 import LiveReleaseNotes139 from "../../components/LiveReleaseNotes139";
+import LiveFinalQa146 from "../../components/LiveFinalQa146";
 
 export const metadata = {
   title: "Nyhetsradarn | NackaSidan 2026",
@@ -67,6 +68,7 @@ export default function LivePage() {
             <LiveSessionHealth137 />
             <LivePublishGate138 />
             <LiveReleaseNotes139 />
+            <LiveFinalQa146 />
           </div>
         </details>
         <LiveFocusSummary127 />
