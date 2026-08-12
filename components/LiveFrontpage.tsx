@@ -232,20 +232,26 @@ export default function LiveFrontpage({ items, fetchedAt }: { items: LiveNewsIte
 
       {activeFilter === 'Lokalt nu' && localPlaces.length > 0 && (
         <>
-          <div style={{display:'flex',alignItems:'center',gap:'7px',flexWrap:'wrap',margin:'0 0 10px'}} aria-label="Mest aktiva platser just nu">
-            <span style={{fontSize:'.68rem',fontWeight:800,textTransform:'uppercase',letterSpacing:'.06em',color:'#69645c'}}>Mest aktivt:</span>
-            {topLocalPlaces.map(({ place, count, latestPublished, latestTitle }, index) => (
-              <button
-                key={place}
-                type="button"
-                onClick={() => setActivePlace(place)}
-                aria-pressed={activePlace === place}
-                title={`Senaste från ${place}: ${latestTitle} · ${timeLabel(latestPublished)}. Visa färska nyheter från ${place}`}
-                style={{border:0,background:'transparent',padding:'2px 1px',fontSize:'.72rem',fontWeight:800,color:activePlace === place ? '#9f1d20' : '#171717',cursor:'pointer',textDecoration:activePlace === place ? 'underline' : 'none'}}
-              >
-                {index + 1}. {place} ({count}) · <span style={{fontWeight:600,color:'#69645c'}}>{freshnessLabel(latestPublished, now)}</span>
-              </button>
-            ))}
+          <div style={{margin:'0 0 12px'}} aria-label="Mest aktiva platser just nu">
+            <div style={{fontSize:'.68rem',fontWeight:800,textTransform:'uppercase',letterSpacing:'.06em',color:'#69645c',marginBottom:'7px'}}>Mest aktivt:</div>
+            <div style={{display:'grid',gridTemplateColumns:'repeat(auto-fit,minmax(190px,1fr))',gap:'8px'}}>
+              {topLocalPlaces.map(({ place, count, latestPublished, latestTitle }, index) => (
+                <button
+                  key={place}
+                  type="button"
+                  onClick={() => setActivePlace(place)}
+                  aria-pressed={activePlace === place}
+                  title={`Senaste från ${place}: ${latestTitle} · ${timeLabel(latestPublished)}. Visa färska nyheter från ${place}`}
+                  style={{textAlign:'left',border:activePlace === place ? '2px solid #9f1d20' : '1px solid #d8d2c6',background:activePlace === place ? '#f4efe6' : 'transparent',padding:'10px 11px',cursor:'pointer',minWidth:0}}
+                >
+                  <span style={{display:'flex',justifyContent:'space-between',gap:'10px',alignItems:'baseline',fontSize:'.72rem',fontWeight:800,color:'#171717'}}>
+                    <span>{index + 1}. {place} ({count})</span>
+                    <span style={{fontWeight:600,color:'#69645c',whiteSpace:'nowrap'}}>{freshnessLabel(latestPublished, now)}</span>
+                  </span>
+                  <span style={{display:'block',marginTop:'5px',fontFamily:'Georgia, serif',fontSize:'.86rem',lineHeight:1.2,color:'#4f4a43',overflow:'hidden',textOverflow:'ellipsis',whiteSpace:'nowrap'}}>{latestTitle}</span>
+                </button>
+              ))}
+            </div>
           </div>
           {activePlace && (
             <div style={{display:'flex',justifyContent:'space-between',alignItems:'center',gap:'12px',flexWrap:'wrap',margin:'0 0 10px',padding:'9px 11px',borderLeft:'3px solid #9f1d20',background:'#f4efe6'}} aria-live="polite">
@@ -321,7 +327,7 @@ export default function LiveFrontpage({ items, fetchedAt }: { items: LiveNewsIte
       )}
 
       <div style={{display:'flex',justifyContent:'space-between',gap:'24px',alignItems:'center',marginTop:'22px',paddingTop:'16px',borderTop:'1px solid #d8d2c6',fontSize:'.76rem',color:'#69645c'}}>
-        <p style={{margin:0,maxWidth:'760px'}}>Under Lokalt nu visar topplistan antal färska rubriker, färskaste publiceringstid och den senaste rubriken i knappens tooltip. Klicka på en plats för att filtrera direkt.</p>
+        <p style={{margin:0,maxWidth:'760px'}}>Under Lokalt nu visar topp-3-korten plats, antal färska rubriker, senaste publiceringstid och en synlig förhandsvisning av den senaste rubriken. Klicka på ett kort för att filtrera direkt.</p>
         <a className="button" href="/live">Se hela nyhetsradarn</a>
       </div>
     </section>
