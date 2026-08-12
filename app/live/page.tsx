@@ -31,6 +31,11 @@ import LiveSessionHealth137 from "../../components/LiveSessionHealth137";
 import LivePublishGate138 from "../../components/LivePublishGate138";
 import LiveReleaseNotes139 from "../../components/LiveReleaseNotes139";
 
+export const metadata = {
+  title: "Nyhetsradarn | NackaSidan 2026",
+  description: "Redaktionell nyhetsradar för bevakning, prioritering, källkontroll och publiceringsförberedelse på NackaSidan 2026.",
+};
+
 export default function LivePage() {
   return (
     <main>
