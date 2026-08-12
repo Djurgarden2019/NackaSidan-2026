@@ -1,0 +1,17 @@
+@media (max-width: 760px) {
+  .live-frontpage > div[aria-label="Filtrera nyhetsradarn"],
+  .live-frontpage div[aria-label="Filtrera lokala nyheter efter plats"] {
+    scrollbar-color: var(--live-accent) transparent;
+  }
+
+  .live-frontpage > div[aria-label="Filtrera nyhetsradarn"]::-webkit-scrollbar,
+  .live-frontpage div[aria-label="Filtrera lokala nyheter efter plats"]::-webkit-scrollbar {
+    height: 4px;
+  }
+
+  .live-frontpage > div[aria-label="Filtrera nyhetsradarn"]::-webkit-scrollbar-thumb,
+  .live-frontpage div[aria-label="Filtrera lokala nyheter efter plats"]::-webkit-scrollbar-thumb {
+    background: var(--live-accent);
+    border-radius: 999px;
+  }
+}
