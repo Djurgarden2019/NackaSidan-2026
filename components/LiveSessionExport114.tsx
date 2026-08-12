@@ -5,7 +5,7 @@ import { useState } from 'react';
 export default function LiveSessionExport114(){
   const [copied,setCopied]=useState(false);
   const exportSession=async()=>{
-    let focus=false,compact=false,done:boolean[]=[false,false,false,false],notes='',goal='',deadline='',nextStep='',log:any[]=[];
+    let focus=false,compact=false,done:boolean[]=[false,false,false,false],notes='',goal='',deadline='',nextStep='',releaseNotes='',log:any[]=[];
     try{
       focus=localStorage.getItem('nackasidan-live-focus-mode')==='1';
       compact=localStorage.getItem('nackasidan-live-compact-mode')==='1';
@@ -15,6 +15,7 @@ export default function LiveSessionExport114(){
       goal=localStorage.getItem('nackasidan-live-session-goal')||'';
       deadline=localStorage.getItem('nackasidan-live-session-goal-deadline')||'';
       nextStep=localStorage.getItem('nackasidan-live-next-step')||'';
+      releaseNotes=localStorage.getItem('nackasidan-live-release-notes')||'';
       const savedLog=JSON.parse(localStorage.getItem('nackasidan-live-session-log')||'[]');
       if(Array.isArray(savedLog))log=savedLog.slice(0,12);
     }catch{}
@@ -31,6 +32,8 @@ export default function LiveSessionExport114(){
       ...steps.map((step,index)=>`${done[index]?'✓':'○'} ${step}`),
       '',
       `Anteckningar:${notes.trim()?`\n${notes.trim()}`:' inga sparade anteckningar'}`,
+      '',
+      `Releaseanteckningar:${releaseNotes.trim()?`\n${releaseNotes.trim()}`:' inga releaseanteckningar'}`,
       '',
       'Sessionslogg:',
       ...(logLines.length?logLines:['inga loggposter']),
