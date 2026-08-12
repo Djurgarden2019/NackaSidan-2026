@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import './globals.css';
+import './live-frontpage-overrides.css';
 import { Header } from '../components/Header';
 import { Footer } from '../components/Footer';
 
