@@ -63,6 +63,16 @@
     overflow-x: hidden;
   }
 
+  .live-frontpage h2 {
+    font-size: clamp(1.65rem, 8vw, 2.25rem);
+    line-height: 1.05;
+  }
+
+  .live-frontpage .feed-meta {
+    flex-wrap: wrap;
+    gap: 6px 10px;
+  }
+
   .live-frontpage .live-frontpage-head {
     align-items: flex-start;
     gap: 10px;
@@ -92,6 +102,16 @@
       border-right: 0 !important;
       padding-bottom: 22px;
       border-bottom: 1px solid var(--live-line);
+    }
+
+    .live-frontpage > div:has(> article:first-child) > article:first-child h3 {
+      font-size: clamp(1.85rem, 9vw, 2.5rem) !important;
+      line-height: 1.04 !important;
+    }
+
+    .live-frontpage > div:has(> article:first-child) > div > article {
+      grid-template-columns: 30px 1fr !important;
+      gap: 10px !important;
     }
   }
 }
