@@ -39,7 +39,8 @@ export const metadata = {
 export default function LivePage() {
   return (
     <main>
-      <a href="#live-main" style={{position:'absolute',left:'8px',top:'8px',zIndex:60,background:'#171717',color:'#fff',padding:'6px 8px',fontSize:'.68rem',fontWeight:800,textDecoration:'none'}}>Hoppa till redaktionellt innehåll</a>
+      <style>{`.live-skip-link{position:absolute;left:-9999px;top:8px;z-index:60;background:#171717;color:#fff;padding:6px 8px;font-size:.68rem;font-weight:800;text-decoration:none}.live-skip-link:focus{left:8px}`}</style>
+      <a href="#live-main" className="live-skip-link">Hoppa till redaktionellt innehåll</a>
       <LiveScrollProgress103 />
       <LiveBackToTop104 />
       <LiveKeyboardShortcuts105 />
