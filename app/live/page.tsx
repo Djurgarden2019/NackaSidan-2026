@@ -9,6 +9,7 @@ import LiveBackToTop104 from "../../components/LiveBackToTop104";
 import LiveKeyboardShortcuts105 from "../../components/LiveKeyboardShortcuts105";
 import LiveResume106 from "../../components/LiveResume106";
 import LiveCopySection107 from "../../components/LiveCopySection107";
+import LiveStickyNav108 from "../../components/LiveStickyNav108";
 
 export default function LivePage() {
   return (
@@ -16,6 +17,7 @@ export default function LivePage() {
       <LiveScrollProgress103 />
       <LiveBackToTop104 />
       <LiveKeyboardShortcuts105 />
+      <LiveStickyNav108 />
       <div className="shell">
         <section className="live-hero live-hero-s11">
           <div className="kicker">Nacka Intelligence · Main 21</div>
@@ -30,10 +32,10 @@ export default function LivePage() {
         <LiveSectionStatus102 />
         <LiveResume106 />
         <LiveCopySection107 />
-        <div id="redaktionsbordet" style={{scrollMarginTop:'24px'}}><EditorialDesk19 /></div>
-        <div id="kallkontroll" style={{scrollMarginTop:'24px'}}><SourceVerification20 /></div>
-        <div id="kalljakt" style={{scrollMarginTop:'24px'}}><SourceHunter21 /></div>
-        <div id="liveflodet" style={{scrollMarginTop:'24px'}}><LiveRadarBrowser /></div>
+        <div id="redaktionsbordet" style={{scrollMarginTop:'56px'}}><EditorialDesk19 /></div>
+        <div id="kallkontroll" style={{scrollMarginTop:'56px'}}><SourceVerification20 /></div>
+        <div id="kalljakt" style={{scrollMarginTop:'56px'}}><SourceHunter21 /></div>
+        <div id="liveflodet" style={{scrollMarginTop:'56px'}}><LiveRadarBrowser /></div>
       </div>
     </main>
   );
