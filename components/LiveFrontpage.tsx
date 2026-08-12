@@ -78,13 +78,25 @@ function FreshnessBadge({ value, now }: { value: string; now: number | null }) {
   );
 }
 
-function LocalBadge({ item }: { item: LiveNewsItem }) {
+function LocalBadge({ item, onSelect }: { item: LiveNewsItem; onSelect?: (place: string) => void }) {
   const place = localPlace(item);
   if (!place) return null;
+  if (!onSelect) {
+    return (
+      <span title="Lokal nyhet" style={{marginLeft:'7px',padding:'2px 5px',background:'#9f1d20',color:'#fff',fontSize:'.62rem',fontWeight:800,letterSpacing:'.06em'}}>
+        {place}
+      </span>
+    );
+  }
   return (
-    <span title="Lokal nyhet" style={{marginLeft:'7px',padding:'2px 5px',background:'#9f1d20',color:'#fff',fontSize:'.62rem',fontWeight:800,letterSpacing:'.06em'}}>
+    <button
+      type="button"
+      title={`Visa färska nyheter från ${place}`}
+      onClick={() => onSelect(place)}
+      style={{marginLeft:'7px',padding:'2px 5px',border:0,background:'#9f1d20',color:'#fff',fontSize:'.62rem',fontWeight:800,letterSpacing:'.06em',cursor:'pointer'}}
+    >
       {place}
-    </span>
+    </button>
   );
 }
 
@@ -92,6 +104,7 @@ const FILTERS = ['Alla', 'Just nu', 'Lokalt nu', 'Nacka/Lokalt', 'Sverige', 'Vä
 
 export default function LiveFrontpage({ items, fetchedAt }: { items: LiveNewsItem[]; fetchedAt: string }) {
   const [activeFilter, setActiveFilter] = useState('Alla');
+  const [activePlace, setActivePlace] = useState<string | null>(null);
   const [now, setNow] = useState<number | null>(null);
 
   useEffect(() => {
@@ -100,6 +113,13 @@ export default function LiveFrontpage({ items, fetchedAt }: { items: LiveNewsIte
     const interval = window.setInterval(updateClock, 60_000);
     return () => window.clearInterval(interval);
   }, []);
+
+  const freshLocalItems = useMemo(() => items
+    .filter((item) => isFresh(item.published, now) && isLocal(item))
+    .slice()
+    .sort((a, b) => publishedTime(b.published) - publishedTime(a.published)), [items, now]);
+
+  const localPlaces = useMemo(() => Array.from(new Set(freshLocalItems.map((item) => localPlace(item)).filter((place): place is string => Boolean(place)))), [freshLocalItems]);
 
   const filtered = useMemo(() => {
     if (activeFilter === 'Alla') return items;
@@ -110,27 +130,34 @@ export default function LiveFrontpage({ items, fetchedAt }: { items: LiveNewsIte
         .sort((a, b) => publishedTime(b.published) - publishedTime(a.published));
     }
     if (activeFilter === 'Lokalt nu') {
-      return items
-        .filter((item) => isFresh(item.published, now) && isLocal(item))
-        .slice()
-        .sort((a, b) => publishedTime(b.published) - publishedTime(a.published));
+      return activePlace ? freshLocalItems.filter((item) => localPlace(item) === activePlace) : freshLocalItems;
     }
     return items.filter((item) => item.section === activeFilter);
-  }, [items, activeFilter, now]);
+  }, [items, activeFilter, activePlace, now, freshLocalItems]);
 
   const selected = filtered.slice(0, 8);
   if (!items.length) return null;
 
   const lead = selected[0];
   const more = selected.slice(1);
-  const freshLocalCount = useMemo(() => items.filter((item) => isFresh(item.published, now) && isLocal(item)).length, [items, now]);
+  const freshLocalCount = freshLocalItems.length;
   const counts = useMemo(() => Object.fromEntries(FILTERS.map((filter) => {
     if (filter === 'Alla') return [filter, items.length];
     if (filter === 'Just nu') return [filter, items.filter((item) => isFresh(item.published, now)).length];
     if (filter === 'Lokalt nu') return [filter, freshLocalCount];
     return [filter, items.filter((item) => item.section === filter).length];
   })), [items, now, freshLocalCount]);
-  const activeCount = counts[activeFilter] ?? 0;
+  const activeCount = activeFilter === 'Lokalt nu' && activePlace ? filtered.length : (counts[activeFilter] ?? 0);
+
+  const selectFilter = (filter: string) => {
+    setActiveFilter(filter);
+    if (filter !== 'Lokalt nu') setActivePlace(null);
+  };
+
+  const selectPlace = (place: string) => {
+    setActiveFilter('Lokalt nu');
+    setActivePlace(place);
+  };
 
   return (
     <section className="section live-frontpage" aria-label="Senaste nyheter">
@@ -148,21 +175,23 @@ export default function LiveFrontpage({ items, fetchedAt }: { items: LiveNewsIte
             : activeFilter === 'Just nu'
               ? `${activeCount} rubriker publicerade de senaste 2 timmarna · nyast först${freshLocalCount ? ` · ${freshLocalCount} lokala` : ''}`
               : activeFilter === 'Lokalt nu'
-                ? `${activeCount} lokala rubriker från de senaste 2 timmarna · nyast först`
+                ? activePlace
+                  ? `${activeCount} färska rubriker från ${activePlace} · nyast först`
+                  : `${activeCount} lokala rubriker från de senaste 2 timmarna · nyast först`
                 : `${activeCount} aktuella rubriker inom ${activeFilter}`}
         </p>
         <span style={{fontSize:'.72rem',fontWeight:800,textTransform:'uppercase',letterSpacing:'.08em',color:'#9f1d20'}}>Senaste läget</span>
       </div>
 
-      <div style={{display:'flex',flexWrap:'wrap',gap:'8px',margin:'14px 0 20px'}} aria-label="Filtrera nyhetsradarn">
+      <div style={{display:'flex',flexWrap:'wrap',gap:'8px',margin:'14px 0 12px'}} aria-label="Filtrera nyhetsradarn">
         {FILTERS.map((filter) => {
-          const active = activeFilter === filter;
+          const active = activeFilter === filter && !(filter === 'Lokalt nu' && activePlace);
           const count = counts[filter] ?? 0;
           return (
             <button
               key={filter}
               type="button"
-              onClick={() => setActiveFilter(filter)}
+              onClick={() => selectFilter(filter)}
               aria-pressed={active}
               style={{fontSize:'.72rem',fontWeight:800,textTransform:'uppercase',letterSpacing:'.06em',padding:'7px 10px',border:'1px solid #cfc8bb',background:active ? '#171717' : 'transparent',color:active ? '#fff' : '#171717',cursor:'pointer'}}
             >
@@ -172,21 +201,44 @@ export default function LiveFrontpage({ items, fetchedAt }: { items: LiveNewsIte
         })}
       </div>
 
+      {activeFilter === 'Lokalt nu' && localPlaces.length > 0 && (
+        <div style={{display:'flex',flexWrap:'wrap',gap:'7px',margin:'0 0 20px'}} aria-label="Filtrera lokala nyheter efter plats">
+          <span style={{fontSize:'.68rem',fontWeight:800,textTransform:'uppercase',letterSpacing:'.06em',padding:'6px 0',color:'#69645c'}}>Plats:</span>
+          {localPlaces.map((place) => {
+            const active = activePlace === place;
+            const count = freshLocalItems.filter((item) => localPlace(item) === place).length;
+            return (
+              <button
+                key={place}
+                type="button"
+                onClick={() => setActivePlace(active ? null : place)}
+                aria-pressed={active}
+                style={{fontSize:'.68rem',fontWeight:800,padding:'5px 8px',border:'1px solid #9f1d20',background:active ? '#9f1d20' : 'transparent',color:active ? '#fff' : '#9f1d20',cursor:'pointer'}}
+              >
+                {place} ({count})
+              </button>
+            );
+          })}
+        </div>
+      )}
+
       {!lead ? (
         <div style={{borderTop:'4px solid #171717',padding:'28px 0',color:'#69645c'}}>
           {activeFilter === 'Just nu'
             ? 'Inga nyheter har publicerats de senaste två timmarna. Välj en annan kategori eller öppna hela nyhetsradarn.'
             : activeFilter === 'Lokalt nu'
-              ? 'Inga lokala Nacka/Stockholm-nyheter har publicerats de senaste två timmarna. Välj Nacka/Lokalt för fler lokala rubriker.'
+              ? activePlace
+                ? `Inga färska nyheter från ${activePlace} just nu. Visa alla lokala nyheter eller välj en annan plats.`
+                : 'Inga lokala Nacka/Stockholm-nyheter har publicerats de senaste två timmarna. Välj Nacka/Lokalt för fler lokala rubriker.'
               : `Inga aktuella nyheter i kategorin ${activeFilter} just nu. Välj en annan kategori eller öppna hela nyhetsradarn.`}
         </div>
       ) : (
         <div style={{display:'grid',gridTemplateColumns:'minmax(0,1.05fr) minmax(0,1fr)',gap:'44px',borderTop:'4px solid #171717',paddingTop:'24px'}}>
           <article style={{paddingRight:'36px',borderRight:'1px solid #d8d2c6'}}>
             <div className="kicker" style={{marginBottom:'10px'}}>
-              {activeFilter === 'Alla' ? 'Viktigast just nu' : activeFilter === 'Just nu' ? 'Färskast just nu' : activeFilter === 'Lokalt nu' ? 'Färskast lokalt' : `Viktigast inom ${activeFilter}`}
+              {activeFilter === 'Alla' ? 'Viktigast just nu' : activeFilter === 'Just nu' ? 'Färskast just nu' : activeFilter === 'Lokalt nu' ? activePlace ? `Färskast i ${activePlace}` : 'Färskast lokalt' : `Viktigast inom ${activeFilter}`}
             </div>
-            <div className="feed-meta"><span>{lead.section}<FreshnessBadge value={lead.published} now={now} />{(activeFilter === 'Just nu' || activeFilter === 'Lokalt nu') && <LocalBadge item={lead} />}</span><span title={timeLabel(lead.published)}>{freshnessLabel(lead.published, now)}</span></div>
+            <div className="feed-meta"><span>{lead.section}<FreshnessBadge value={lead.published} now={now} />{(activeFilter === 'Just nu' || activeFilter === 'Lokalt nu') && <LocalBadge item={lead} onSelect={selectPlace} />}</span><span title={timeLabel(lead.published)}>{freshnessLabel(lead.published, now)}</span></div>
             <h3 style={{fontFamily:'Georgia, serif',fontSize:'clamp(2rem,3.5vw,3.5rem)',lineHeight:1.02,letterSpacing:'-.035em',margin:'14px 0 18px'}}>
               <a href={lead.link} target="_blank" rel="noreferrer">{lead.title}</a>
             </h3>
@@ -199,7 +251,7 @@ export default function LiveFrontpage({ items, fetchedAt }: { items: LiveNewsIte
               <article key={item.link} style={{display:'grid',gridTemplateColumns:'42px 1fr',gap:'14px',padding:'0 0 15px',marginBottom:'15px',borderBottom:'1px solid #d8d2c6'}}>
                 <span style={{fontFamily:'Georgia, serif',fontSize:'1.2rem',color:'#9f1d20'}}>{String(index + 2).padStart(2, '0')}</span>
                 <div>
-                  <div className="feed-meta"><span>{item.section}<FreshnessBadge value={item.published} now={now} />{(activeFilter === 'Just nu' || activeFilter === 'Lokalt nu') && <LocalBadge item={item} />}</span><span title={timeLabel(item.published)}>{freshnessLabel(item.published, now)}</span></div>
+                  <div className="feed-meta"><span>{item.section}<FreshnessBadge value={item.published} now={now} />{(activeFilter === 'Just nu' || activeFilter === 'Lokalt nu') && <LocalBadge item={item} onSelect={selectPlace} />}</span><span title={timeLabel(item.published)}>{freshnessLabel(item.published, now)}</span></div>
                   <h3 style={{fontFamily:'Georgia, serif',fontSize:'1.18rem',lineHeight:1.12,margin:'5px 0 4px'}}><a href={item.link} target="_blank" rel="noreferrer">{item.title}</a></h3>
                   <p className="live-source" style={{margin:0}}><strong>{sourceLabel(item.source)}</strong> · {item.source}</p>
                 </div>
@@ -210,7 +262,7 @@ export default function LiveFrontpage({ items, fetchedAt }: { items: LiveNewsIte
       )}
 
       <div style={{display:'flex',justifyContent:'space-between',gap:'24px',alignItems:'center',marginTop:'22px',paddingTop:'16px',borderTop:'1px solid #d8d2c6',fontSize:'.76rem',color:'#69645c'}}>
-        <p style={{margin:0,maxWidth:'760px'}}>Välj Just nu för allt från de senaste två timmarna eller Lokalt nu för enbart färska Nacka/Stockholm-nyheter. Lokala etiketter visar område när det kan identifieras, och flödena ligger fortsatt i strikt tidsordning.</p>
+        <p style={{margin:0,maxWidth:'760px'}}>Välj Lokalt nu och klicka på en plats för att isolera färska nyheter från exempelvis Sickla, Älta eller Saltsjöbaden. Platsnamnen i nyhetsflödet fungerar också som genvägar till samma filter.</p>
         <a className="button" href="/live">Se hela nyhetsradarn</a>
       </div>
     </section>
