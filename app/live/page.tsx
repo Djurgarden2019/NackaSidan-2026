@@ -39,7 +39,7 @@ export const metadata = {
 
 export default function LivePage() {
   return (
-    <main>
+    <main data-release="1.0-rc">
       <style>{`.live-skip-link{position:absolute;left:-9999px;top:8px;z-index:60;background:#171717;color:#fff;padding:6px 8px;font-size:.68rem;font-weight:800;text-decoration:none}.live-skip-link:focus{left:8px}.live-release-tools{margin:0 0 18px;border:1px solid #d8d2c6;background:#f7f3eb}.live-release-tools>summary{cursor:pointer;padding:10px 12px;font-size:.72rem;font-weight:900;text-transform:uppercase;letter-spacing:.06em}.live-release-tools-inner{padding:0 10px 2px}`}</style>
       <a href="#live-main" className="live-skip-link">Hoppa till redaktionellt innehåll</a>
       <LiveScrollProgress103 />
@@ -48,7 +48,7 @@ export default function LivePage() {
       <div className="live-focus-secondary"><LiveStickyNav108 /></div>
       <div className="shell">
         <section className="live-hero live-hero-s11">
-          <div className="kicker">Nacka Intelligence · Release candidate</div>
+          <div className="kicker">Nacka Intelligence · Version 1.0 RC</div>
           <h1>Nyhetsradarn</h1>
           <p>
             Nyhetsradarn samlar bevakning, prioritering, källkontroll och redaktionellt arbetsflöde på en plats.
@@ -61,7 +61,7 @@ export default function LivePage() {
         <LiveSessionGoal125 />
         <LiveNextStep128 />
         <details className="live-release-tools" open>
-          <summary>Releaseverktyg</summary>
+          <summary>Releaseverktyg · v1.0 RC</summary>
           <div className="live-release-tools-inner">
             <LiveSessionReadiness133 />
             <LiveReleaseReadiness136 />
