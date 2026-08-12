@@ -9,6 +9,7 @@ const keys = [
   'nackasidan-live-focus-mode',
   'nackasidan-live-compact-mode',
   'nackasidan-live-session-started-at',
+  'nackasidan-live-session-paused-at',
 ];
 
 export default function LiveSessionReset115() {
