@@ -6,6 +6,7 @@ import './live-frontpage-sprint83.css';
 import './live-frontpage-sprint84.css';
 import './live-frontpage-sprint85.css';
 import './live-frontpage-sprint86.css';
+import './live-frontpage-sprint87.css';
 import { Header } from '../components/Header';
 import { Footer } from '../components/Footer';
 
