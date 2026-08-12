@@ -251,15 +251,17 @@ export default function LiveFrontpage({ items, fetchedAt }: { items: LiveNewsIte
                     <span>{index + 1}. {place} ({count})</span>
                     <span style={{fontWeight:600,color:'#69645c',whiteSpace:'nowrap'}}>{freshnessLabel(latestPublished, now)}</span>
                   </button>
+                  <div style={{marginTop:'5px',fontSize:'.62rem',fontWeight:800,textTransform:'uppercase',letterSpacing:'.06em',color:'#9f1d20'}}>Filtrera område ↑</div>
                   <a
                     href={latestLink}
                     target="_blank"
                     rel="noreferrer"
                     title={`Öppna senaste nyheten från ${place}: ${latestTitle}`}
-                    style={{display:'block',marginTop:'5px',fontFamily:'Georgia, serif',fontSize:'.86rem',lineHeight:1.2,color:'#4f4a43',overflow:'hidden',textOverflow:'ellipsis',whiteSpace:'nowrap',textDecoration:'none'}}
+                    style={{display:'block',marginTop:'7px',paddingTop:'7px',borderTop:'1px solid #e3ddd2',fontFamily:'Georgia, serif',fontSize:'.86rem',lineHeight:1.2,color:'#4f4a43',overflow:'hidden',textOverflow:'ellipsis',whiteSpace:'nowrap',textDecoration:'none'}}
                   >
-                    {latestTitle} <span aria-hidden="true" style={{fontFamily:'Arial, sans-serif',fontSize:'.72rem',color:'#9f1d20'}}>↗</span>
+                    {latestTitle}
                   </a>
+                  <div style={{marginTop:'4px',fontSize:'.62rem',fontWeight:800,textTransform:'uppercase',letterSpacing:'.06em',color:'#9f1d20'}}>Öppna nyhet ↗</div>
                 </div>
               ))}
             </div>
@@ -338,7 +340,7 @@ export default function LiveFrontpage({ items, fetchedAt }: { items: LiveNewsIte
       )}
 
       <div style={{display:'flex',justifyContent:'space-between',gap:'24px',alignItems:'center',marginTop:'22px',paddingTop:'16px',borderTop:'1px solid #d8d2c6',fontSize:'.76rem',color:'#69645c'}}>
-        <p style={{margin:0,maxWidth:'760px'}}>Under Lokalt nu kan du klicka på platsraden för att filtrera eller öppna den senaste rubriken direkt via länken i kortet. Topp-3-rangordningen och nyast-först-flödet är oförändrade.</p>
+        <p style={{margin:0,maxWidth:'760px'}}>Toppkorten skiljer nu tydligt mellan platsfiltret och direktlänken: använd platsraden för att filtrera området och rubriken för att öppna originalartikeln.</p>
         <a className="button" href="/live">Se hela nyhetsradarn</a>
       </div>
     </section>
