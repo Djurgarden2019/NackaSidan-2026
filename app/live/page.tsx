@@ -5,11 +5,13 @@ import SourceHunter21 from "../../components/SourceHunter21";
 import LiveQuickNav101 from "../../components/LiveQuickNav101";
 import LiveSectionStatus102 from "../../components/LiveSectionStatus102";
 import LiveScrollProgress103 from "../../components/LiveScrollProgress103";
+import LiveBackToTop104 from "../../components/LiveBackToTop104";
 
 export default function LivePage() {
   return (
     <main>
       <LiveScrollProgress103 />
+      <LiveBackToTop104 />
       <div className="shell">
         <section className="live-hero live-hero-s11">
           <div className="kicker">Nacka Intelligence · Main 21</div>
