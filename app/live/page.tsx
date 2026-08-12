@@ -17,6 +17,7 @@ import LiveCompactMode112 from "../../components/LiveCompactMode112";
 import LiveSessionSummary113 from "../../components/LiveSessionSummary113";
 import LiveSessionExport114 from "../../components/LiveSessionExport114";
 import LiveSessionReset115 from "../../components/LiveSessionReset115";
+import LiveSessionTimer116 from "../../components/LiveSessionTimer116";
 
 export default function LivePage() {
   return (
@@ -39,6 +40,7 @@ export default function LivePage() {
         <LiveCompactMode112 />
         <LiveSessionSummary113 />
         <LiveSessionExport114 />
+        <LiveSessionTimer116 />
         <LiveSessionReset115 />
         <div className="live-focus-secondary">
           <LiveQuickNav101 />
