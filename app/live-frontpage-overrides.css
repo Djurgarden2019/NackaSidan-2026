@@ -72,8 +72,26 @@
     width: 100%;
   }
 
+  .live-frontpage [aria-label="Mest aktiva platser just nu"] > div:last-child {
+    grid-template-columns: 1fr !important;
+  }
+
   .live-frontpage [aria-label="Mest aktiva platser just nu"] button,
   .live-frontpage [aria-label="Mest aktiva platser just nu"] a {
     min-height: 44px;
+  }
+
+  @supports selector(:has(*)) {
+    .live-frontpage > div:has(> article:first-child) {
+      grid-template-columns: 1fr !important;
+      gap: 24px !important;
+    }
+
+    .live-frontpage > div:has(> article:first-child) > article:first-child {
+      padding-right: 0 !important;
+      border-right: 0 !important;
+      padding-bottom: 22px;
+      border-bottom: 1px solid var(--live-line);
+    }
   }
 }
