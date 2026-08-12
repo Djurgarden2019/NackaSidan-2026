@@ -74,3 +74,7 @@ Nyhetsradarn har nu ett redaktionellt prioriterings- och källkontrollager. Se `
 
 ## Main 21
 Källjägaren söker aktivt efter en andra oberoende publicering för olösta nyhetssignaler. Se `docs/MAIN-21.md`.
+
+
+## Main 50
+Nyhetsradarn får ett tydligt kvalitetslager för balanserad källmix utan att kompromissa med aktualitet eller redaktionell relevans. Se `docs/MAIN-50.md`.
