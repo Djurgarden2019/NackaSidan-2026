@@ -1,0 +1,12 @@
+@media (pointer: coarse) {
+  .live-frontpage article h3 a,
+  .live-frontpage [aria-label="Mest aktiva platser just nu"] a,
+  .live-frontpage [aria-label="Mest aktiva platser just nu"] button {
+    min-height: 44px;
+  }
+
+  .live-frontpage article h3 a {
+    display: inline-flex;
+    align-items: center;
+  }
+}
