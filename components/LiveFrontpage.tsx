@@ -130,6 +130,7 @@ export default function LiveFrontpage({ items, fetchedAt }: { items: LiveNewsIte
       .map(([place, count]) => ({ place, count }));
   }, [freshLocalItems]);
 
+  const topLocalPlaces = localPlaces.slice(0, 3);
   const activePlaceAvailable = activePlace ? localPlaces.some(({ place }) => place === activePlace) : true;
 
   useEffect(() => {
@@ -220,6 +221,21 @@ export default function LiveFrontpage({ items, fetchedAt }: { items: LiveNewsIte
 
       {activeFilter === 'Lokalt nu' && localPlaces.length > 0 && (
         <>
+          <div style={{display:'flex',alignItems:'center',gap:'7px',flexWrap:'wrap',margin:'0 0 10px'}} aria-label="Mest aktiva platser just nu">
+            <span style={{fontSize:'.68rem',fontWeight:800,textTransform:'uppercase',letterSpacing:'.06em',color:'#69645c'}}>Mest aktivt:</span>
+            {topLocalPlaces.map(({ place, count }, index) => (
+              <button
+                key={place}
+                type="button"
+                onClick={() => setActivePlace(place)}
+                aria-pressed={activePlace === place}
+                title={`Visa färska nyheter från ${place}`}
+                style={{border:0,background:'transparent',padding:'2px 1px',fontSize:'.72rem',fontWeight:800,color:activePlace === place ? '#9f1d20' : '#171717',cursor:'pointer',textDecoration:activePlace === place ? 'underline' : 'none'}}
+              >
+                {index + 1}. {place} ({count})
+              </button>
+            ))}
+          </div>
           {activePlace && (
             <div style={{display:'flex',justifyContent:'space-between',alignItems:'center',gap:'12px',flexWrap:'wrap',margin:'0 0 10px',padding:'9px 11px',borderLeft:'3px solid #9f1d20',background:'#f4efe6'}} aria-live="polite">
               <span style={{fontSize:'.75rem',fontWeight:800}}>Visar: {activePlace} · {activeCount} färska rubriker</span>
@@ -294,7 +310,7 @@ export default function LiveFrontpage({ items, fetchedAt }: { items: LiveNewsIte
       )}
 
       <div style={{display:'flex',justifyContent:'space-between',gap:'24px',alignItems:'center',marginTop:'22px',paddingTop:'16px',borderTop:'1px solid #d8d2c6',fontSize:'.76rem',color:'#69645c'}}>
-        <p style={{margin:0,maxWidth:'760px'}}>Välj Lokalt nu och klicka på en plats för att isolera färska nyheter. Om platsens sista färska rubrik blir äldre än två timmar återgår filtret automatiskt till Alla lokala, så flödet aldrig fastnar tomt.</p>
+        <p style={{margin:0,maxWidth:'760px'}}>Under Lokalt nu visas de tre mest aktiva platserna som en snabböversikt. Klicka på en plats för att filtrera direkt; nyhetsflödet behåller fortfarande strikt nyast-först-ordning.</p>
         <a className="button" href="/live">Se hela nyhetsradarn</a>
       </div>
     </section>
