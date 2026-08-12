@@ -6,6 +6,16 @@
   --live-line: #d8d2c6;
 }
 
+.live-frontpage h2,
+.live-frontpage h3 {
+  text-wrap: balance;
+}
+
+.live-frontpage article h3 a {
+  text-decoration-thickness: 0.08em;
+  text-underline-offset: 0.13em;
+}
+
 .live-frontpage a,
 .live-frontpage button {
   -webkit-tap-highlight-color: transparent;
@@ -25,6 +35,10 @@
 }
 
 @media (hover: hover) {
+  .live-frontpage article h3 a:hover {
+    text-decoration: underline;
+  }
+
   .live-frontpage [aria-label="Mest aktiva platser just nu"] button:hover,
   .live-frontpage [aria-label="Mest aktiva platser just nu"] a:hover {
     background: rgba(159, 29, 32, 0.07) !important;
