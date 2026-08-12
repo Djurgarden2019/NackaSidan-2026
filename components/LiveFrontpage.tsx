@@ -130,6 +130,14 @@ export default function LiveFrontpage({ items, fetchedAt }: { items: LiveNewsIte
       .map(([place, count]) => ({ place, count }));
   }, [freshLocalItems]);
 
+  const activePlaceAvailable = activePlace ? localPlaces.some(({ place }) => place === activePlace) : true;
+
+  useEffect(() => {
+    if (activeFilter === 'Lokalt nu' && activePlace && now !== null && !activePlaceAvailable) {
+      setActivePlace(null);
+    }
+  }, [activeFilter, activePlace, activePlaceAvailable, now]);
+
   const filtered = useMemo(() => {
     if (activeFilter === 'Alla') return items;
     if (activeFilter === 'Just nu') {
@@ -286,7 +294,7 @@ export default function LiveFrontpage({ items, fetchedAt }: { items: LiveNewsIte
       )}
 
       <div style={{display:'flex',justifyContent:'space-between',gap:'24px',alignItems:'center',marginTop:'22px',paddingTop:'16px',borderTop:'1px solid #d8d2c6',fontSize:'.76rem',color:'#69645c'}}>
-        <p style={{margin:0,maxWidth:'760px'}}>Välj Lokalt nu och klicka på en plats för att isolera färska nyheter från exempelvis Sickla, Älta eller Saltsjöbaden. Aktiv plats visas tydligt ovanför platsfiltren och Alla lokala återställer hela det lokala flödet.</p>
+        <p style={{margin:0,maxWidth:'760px'}}>Välj Lokalt nu och klicka på en plats för att isolera färska nyheter. Om platsens sista färska rubrik blir äldre än två timmar återgår filtret automatiskt till Alla lokala, så flödet aldrig fastnar tomt.</p>
         <a className="button" href="/live">Se hela nyhetsradarn</a>
       </div>
     </section>
