@@ -17,6 +17,7 @@ const keys = [
   'nackasidan-live-next-step',
   'nackasidan-live-session-log',
   'nackasidan-live-release-notes',
+  'nackasidan-live-final-qa',
 ];
 
 export default function LiveSessionReset115() {
