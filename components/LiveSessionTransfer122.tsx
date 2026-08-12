@@ -13,6 +13,8 @@ const keys = [
   'nackasidan-live-session-snapshots',
   'nackasidan-live-session-goal',
   'nackasidan-live-session-goal-done',
+  'nackasidan-live-session-goal-deadline',
+  'nackasidan-live-next-step',
 ];
 
 export default function LiveSessionTransfer122() {
