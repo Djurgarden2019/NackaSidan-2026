@@ -15,6 +15,7 @@ const keys = [
   'nackasidan-live-session-goal-done',
   'nackasidan-live-session-goal-deadline',
   'nackasidan-live-next-step',
+  'nackasidan-live-session-log',
 ];
 
 export default function LiveSessionTransfer122() {
