@@ -27,6 +27,7 @@ import LiveSessionLog130 from "../../components/LiveSessionLog130";
 import LiveSessionReadiness133 from "../../components/LiveSessionReadiness133";
 import LiveSessionCloseout135 from "../../components/LiveSessionCloseout135";
 import LiveReleaseReadiness136 from "../../components/LiveReleaseReadiness136";
+import LiveSessionHealth137 from "../../components/LiveSessionHealth137";
 
 export default function LivePage() {
   return (
@@ -51,6 +52,7 @@ export default function LivePage() {
         <LiveNextStep128 />
         <LiveSessionReadiness133 />
         <LiveReleaseReadiness136 />
+        <LiveSessionHealth137 />
         <LiveFocusSummary127 />
         <LiveSessionSummary113 />
         <LiveSessionExport114 />
