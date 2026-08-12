@@ -21,12 +21,32 @@ function freshnessLabel(value: string, now: number | null) {
   return `${diffDays} d sedan`;
 }
 
+function freshnessStatus(value: string, now: number | null) {
+  if (now === null) return null;
+  const date = new Date(value);
+  if (Number.isNaN(date.getTime())) return null;
+  const diffHours = Math.max(0, (now - date.getTime()) / 3_600_000);
+  if (diffHours < 2) return 'Färsk';
+  if (diffHours < 24) return 'Idag';
+  return 'Äldre';
+}
+
 function sourceLabel(source: string) {
   const normalized = source.toLowerCase();
   if (normalized.includes('svt')) return 'SVT';
   if (normalized.includes('sveriges radio') || normalized.includes('ekot') || normalized.includes('p4')) return 'SR';
   if (normalized.includes('bbc')) return 'BBC';
   return source;
+}
+
+function FreshnessBadge({ value, now }: { value: string; now: number | null }) {
+  const status = freshnessStatus(value, now);
+  if (!status) return null;
+  return (
+    <span style={{marginLeft:'7px',padding:'2px 5px',border:'1px solid currentColor',fontSize:'.62rem',fontWeight:800,letterSpacing:'.06em'}}>
+      {status}
+    </span>
+  );
 }
 
 const FILTERS = ['Alla', 'Nacka/Lokalt', 'Sverige', 'Världen', 'Ekonomi', 'Kultur', 'Vetenskap', 'Sport'];
@@ -97,7 +117,7 @@ export default function LiveFrontpage({ items, fetchedAt }: { items: LiveNewsIte
         <div style={{display:'grid',gridTemplateColumns:'minmax(0,1.05fr) minmax(0,1fr)',gap:'44px',borderTop:'4px solid #171717',paddingTop:'24px'}}>
           <article style={{paddingRight:'36px',borderRight:'1px solid #d8d2c6'}}>
             <div className="kicker" style={{marginBottom:'10px'}}>{activeFilter === 'Alla' ? 'Viktigast just nu' : `Viktigast inom ${activeFilter}`}</div>
-            <div className="feed-meta"><span>{lead.section}</span><span title={timeLabel(lead.published)}>{freshnessLabel(lead.published, now)}</span></div>
+            <div className="feed-meta"><span>{lead.section}<FreshnessBadge value={lead.published} now={now} /></span><span title={timeLabel(lead.published)}>{freshnessLabel(lead.published, now)}</span></div>
             <h3 style={{fontFamily:'Georgia, serif',fontSize:'clamp(2rem,3.5vw,3.5rem)',lineHeight:1.02,letterSpacing:'-.035em',margin:'14px 0 18px'}}>
               <a href={lead.link} target="_blank" rel="noreferrer">{lead.title}</a>
             </h3>
@@ -110,7 +130,7 @@ export default function LiveFrontpage({ items, fetchedAt }: { items: LiveNewsIte
               <article key={item.link} style={{display:'grid',gridTemplateColumns:'42px 1fr',gap:'14px',padding:'0 0 15px',marginBottom:'15px',borderBottom:'1px solid #d8d2c6'}}>
                 <span style={{fontFamily:'Georgia, serif',fontSize:'1.2rem',color:'#9f1d20'}}>{String(index + 2).padStart(2, '0')}</span>
                 <div>
-                  <div className="feed-meta"><span>{item.section}</span><span title={timeLabel(item.published)}>{freshnessLabel(item.published, now)}</span></div>
+                  <div className="feed-meta"><span>{item.section}<FreshnessBadge value={item.published} now={now} /></span><span title={timeLabel(item.published)}>{freshnessLabel(item.published, now)}</span></div>
                   <h3 style={{fontFamily:'Georgia, serif',fontSize:'1.18rem',lineHeight:1.12,margin:'5px 0 4px'}}><a href={item.link} target="_blank" rel="noreferrer">{item.title}</a></h3>
                   <p className="live-source" style={{margin:0}}><strong>{sourceLabel(item.source)}</strong> · {item.source}</p>
                 </div>
