@@ -21,6 +21,7 @@ import LiveSessionTimer116 from "../../components/LiveSessionTimer116";
 import LiveSessionSnapshots117 from "../../components/LiveSessionSnapshots117";
 import LiveSessionTransfer122 from "../../components/LiveSessionTransfer122";
 import LiveSessionGoal125 from "../../components/LiveSessionGoal125";
+import LiveFocusSummary127 from "../../components/LiveFocusSummary127";
 
 export default function LivePage() {
   return (
@@ -42,6 +43,7 @@ export default function LivePage() {
         <LiveFocusMode111 />
         <LiveCompactMode112 />
         <LiveSessionGoal125 />
+        <LiveFocusSummary127 />
         <LiveSessionSummary113 />
         <LiveSessionExport114 />
         <LiveSessionTimer116 />
