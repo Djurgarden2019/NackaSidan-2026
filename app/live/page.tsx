@@ -25,6 +25,7 @@ import LiveFocusSummary127 from "../../components/LiveFocusSummary127";
 import LiveNextStep128 from "../../components/LiveNextStep128";
 import LiveSessionLog130 from "../../components/LiveSessionLog130";
 import LiveSessionReadiness133 from "../../components/LiveSessionReadiness133";
+import LiveSessionCloseout135 from "../../components/LiveSessionCloseout135";
 
 export default function LivePage() {
   return (
@@ -55,6 +56,7 @@ export default function LivePage() {
         <LiveSessionLog130 />
         <LiveSessionSnapshots117 />
         <LiveSessionTransfer122 />
+        <LiveSessionCloseout135 />
         <LiveSessionReset115 />
         <div className="live-focus-secondary">
           <LiveQuickNav101 />
