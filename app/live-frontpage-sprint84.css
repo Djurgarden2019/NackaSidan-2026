@@ -1,0 +1,15 @@
+@media (prefers-contrast: more) {
+  .live-frontpage {
+    --live-muted: #3f3a34;
+    --live-line: #8e877c;
+  }
+
+  .live-frontpage a:focus-visible,
+  .live-frontpage button:focus-visible {
+    outline-width: 4px;
+  }
+
+  .live-frontpage [aria-label="Mest aktiva platser just nu"] > div:last-child > div {
+    border-color: var(--live-ink) !important;
+  }
+}
