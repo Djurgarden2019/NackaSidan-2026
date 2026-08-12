@@ -119,7 +119,16 @@ export default function LiveFrontpage({ items, fetchedAt }: { items: LiveNewsIte
     .slice()
     .sort((a, b) => publishedTime(b.published) - publishedTime(a.published)), [items, now]);
 
-  const localPlaces = useMemo(() => Array.from(new Set(freshLocalItems.map((item) => localPlace(item)).filter((place): place is string => Boolean(place)))), [freshLocalItems]);
+  const localPlaces = useMemo(() => {
+    const placeCounts = new Map<string, number>();
+    freshLocalItems.forEach((item) => {
+      const place = localPlace(item);
+      if (place) placeCounts.set(place, (placeCounts.get(place) ?? 0) + 1);
+    });
+    return Array.from(placeCounts.entries())
+      .sort((a, b) => b[1] - a[1] || a[0].localeCompare(b[0], 'sv-SE'))
+      .map(([place, count]) => ({ place, count }));
+  }, [freshLocalItems]);
 
   const filtered = useMemo(() => {
     if (activeFilter === 'Alla') return items;
@@ -204,14 +213,21 @@ export default function LiveFrontpage({ items, fetchedAt }: { items: LiveNewsIte
       {activeFilter === 'Lokalt nu' && localPlaces.length > 0 && (
         <div style={{display:'flex',flexWrap:'wrap',gap:'7px',margin:'0 0 20px'}} aria-label="Filtrera lokala nyheter efter plats">
           <span style={{fontSize:'.68rem',fontWeight:800,textTransform:'uppercase',letterSpacing:'.06em',padding:'6px 0',color:'#69645c'}}>Plats:</span>
-          {localPlaces.map((place) => {
+          <button
+            type="button"
+            onClick={() => setActivePlace(null)}
+            aria-pressed={activePlace === null}
+            style={{fontSize:'.68rem',fontWeight:800,padding:'5px 8px',border:'1px solid #171717',background:activePlace === null ? '#171717' : 'transparent',color:activePlace === null ? '#fff' : '#171717',cursor:'pointer'}}
+          >
+            Alla lokala ({freshLocalCount})
+          </button>
+          {localPlaces.map(({ place, count }) => {
             const active = activePlace === place;
-            const count = freshLocalItems.filter((item) => localPlace(item) === place).length;
             return (
               <button
                 key={place}
                 type="button"
-                onClick={() => setActivePlace(active ? null : place)}
+                onClick={() => setActivePlace(place)}
                 aria-pressed={active}
                 style={{fontSize:'.68rem',fontWeight:800,padding:'5px 8px',border:'1px solid #9f1d20',background:active ? '#9f1d20' : 'transparent',color:active ? '#fff' : '#9f1d20',cursor:'pointer'}}
               >
@@ -262,7 +278,7 @@ export default function LiveFrontpage({ items, fetchedAt }: { items: LiveNewsIte
       )}
 
       <div style={{display:'flex',justifyContent:'space-between',gap:'24px',alignItems:'center',marginTop:'22px',paddingTop:'16px',borderTop:'1px solid #d8d2c6',fontSize:'.76rem',color:'#69645c'}}>
-        <p style={{margin:0,maxWidth:'760px'}}>Välj Lokalt nu och klicka på en plats för att isolera färska nyheter från exempelvis Sickla, Älta eller Saltsjöbaden. Platsnamnen i nyhetsflödet fungerar också som genvägar till samma filter.</p>
+        <p style={{margin:0,maxWidth:'760px'}}>Välj Lokalt nu och klicka på en plats för att isolera färska nyheter från exempelvis Sickla, Älta eller Saltsjöbaden. Platsfiltren sorteras efter flest färska rubriker och Alla lokala återställer hela det lokala flödet.</p>
         <a className="button" href="/live">Se hela nyhetsradarn</a>
       </div>
     </section>
