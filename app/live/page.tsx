@@ -19,6 +19,7 @@ import LiveSessionExport114 from "../../components/LiveSessionExport114";
 import LiveSessionReset115 from "../../components/LiveSessionReset115";
 import LiveSessionTimer116 from "../../components/LiveSessionTimer116";
 import LiveSessionSnapshots117 from "../../components/LiveSessionSnapshots117";
+import LiveSessionTransfer122 from "../../components/LiveSessionTransfer122";
 
 export default function LivePage() {
   return (
@@ -43,6 +44,7 @@ export default function LivePage() {
         <LiveSessionExport114 />
         <LiveSessionTimer116 />
         <LiveSessionSnapshots117 />
+        <LiveSessionTransfer122 />
         <LiveSessionReset115 />
         <div className="live-focus-secondary">
           <LiveQuickNav101 />
