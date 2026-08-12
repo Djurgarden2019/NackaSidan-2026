@@ -39,6 +39,7 @@ export const metadata = {
 export default function LivePage() {
   return (
     <main>
+      <a href="#live-main" style={{position:'absolute',left:'8px',top:'8px',zIndex:60,background:'#171717',color:'#fff',padding:'6px 8px',fontSize:'.68rem',fontWeight:800,textDecoration:'none'}}>Hoppa till redaktionellt innehåll</a>
       <LiveScrollProgress103 />
       <LiveBackToTop104 />
       <LiveKeyboardShortcuts105 />
@@ -79,7 +80,7 @@ export default function LivePage() {
           <LiveWorkChecklist109 />
           <LiveSessionNotes110 />
         </div>
-        <div className="live-focus-main">
+        <div id="live-main" className="live-focus-main">
           <div id="redaktionsbordet" style={{scrollMarginTop:'56px'}}><EditorialDesk19 /></div>
           <div id="kallkontroll" style={{scrollMarginTop:'56px'}}><SourceVerification20 /></div>
           <div id="kalljakt" style={{scrollMarginTop:'56px'}}><SourceHunter21 /></div>
