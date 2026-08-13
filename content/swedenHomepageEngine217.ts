@@ -1,0 +1,4 @@
+export type SwedenCandidate217={slug:string;title:string;section:string;region?:string;publishedAt:string;status:'published'|'verify-before-publish';nationalImpact?:number;sourceStrength?:number;freshnessWeight?:number};
+export function scoreSweden217(x:SwedenCandidate217,now=Date.now()){if(x.status!=='published')return -Infinity;const age=Math.max(0,(now-Date.parse(x.publishedAt))/86400000);return (x.nationalImpact??0)*6+(x.sourceStrength??0)*4+(x.freshnessWeight??1)*Math.max(0,10-age);}
+export function rankSweden217(items:SwedenCandidate217[],now=Date.now()){return items.map(item=>({item,score:scoreSweden217(item,now)})).filter(x=>Number.isFinite(x.score)).sort((a,b)=>b.score-a.score);}
+export const swedenHomepageRules217={maxOrdinaryNewsAgeDays:10,regionalDiversity:true,principle:'Nationell betydelse, verifiering och aktualitet styr förstasidan. Regional mångfald ska aktivt vägas in.'};
