@@ -15,10 +15,36 @@ export type StockholmTrafficItem = {
   sourceUrl: string;
 };
 
-// Main 168 introduces the editorial data model for Trafikkollen Stockholm.
-// Live disruptions must be populated from current primary/authoritative sources
-// and should never be presented as current when checkedAt is stale.
-export const stockholmTraffic168: StockholmTrafficItem[] = [];
+// Live disruptions must come from current authoritative sources. Main 179 adds
+// verified background/planned information only; it is deliberately not marked live.
+export const stockholmTraffic168: StockholmTrafficItem[] = [
+  {
+    id: 'slussen-bussterminal-2028',
+    mode: 'Buss',
+    area: 'Slussen · Nacka/Värmdö',
+    headline: 'Bussterminalen i Katarinaberget är senarelagd till 2028',
+    summary: 'Region Stockholms årsredovisning för 2025 anger att färdigställandet har senarelagts till 2028 på grund av försenade arbeten med bussterminalen. Ett förnyat genomförandebeslut planeras under 2026.',
+    impact: 'Stor',
+    status: 'planned',
+    validTo: '2028-12-31T23:59:59+01:00',
+    checkedAt: '2026-08-13T12:20:00+02:00',
+    sourceLabel: 'Region Stockholm – Årsredovisning 2025',
+    sourceUrl: 'https://www.regionstockholm.se/498fc3/contentassets/c4853f1d3efe4d4ebac340a1d7fa56b3/arsredovisning-2025-for-region-stockholm.pdf'
+  },
+  {
+    id: 'saltsjobanan-slussen-2028',
+    mode: 'Pendeltåg',
+    area: 'Saltsjöbanan · Nacka/Stockholm',
+    headline: 'Saltsjöbanans tåg väntas nå Slussen igen 2028',
+    summary: 'Region Stockholm uppger att förstärkande bussar fortsätter till 2028, då Saltsjöbanans tåg åter ska kunna gå hela vägen till Slussen.',
+    impact: 'Stor',
+    status: 'planned',
+    validTo: '2028-12-31T23:59:59+01:00',
+    checkedAt: '2026-08-13T12:20:00+02:00',
+    sourceLabel: 'Region Stockholm – Årsredovisning 2025',
+    sourceUrl: 'https://www.regionstockholm.se/49ae8f/contentassets/c4853f1d3efe4d4ebac340a1d7fa56b3/arsredovisning-2025-for-region-stockholm2.pdf'
+  }
+];
 
 export const stockholmTrafficEditorialRules168 = {
   title: 'Trafikkollen Stockholm',
