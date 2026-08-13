@@ -1,0 +1,3 @@
+export type SwedenRegionalMetric229={id:string;region:string;label:string;value:string;period:string;source:string;sourceUrl:string;checkedAt:string};
+export const swedenRegionalMetrics229:SwedenRegionalMetric229[]=[];
+export const swedenRegionalDataRules229={title:'Sverige i siffror',dimensions:['Befolkning','Sysselsättning','Bostäder','Företag','Vård','Utbildning'],geography:['Län','Kommun','RegSO','DeSO'],rules:['Regionala siffror ska alltid ange geografisk nivå och period.','SCB och andra statistikansvariga myndigheter prioriteras.','Kommun-, läns- och riksdata får inte jämföras utan tydlig märkning.','Kartor och rankingar ska använda samma mätperiod när områden jämförs.'],source:'SCB regional statistik'};
