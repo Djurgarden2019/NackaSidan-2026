@@ -1,0 +1,3 @@
+export type SwedenArticle220={slug:string;section:string;title:string;intro:string;publishedAt:string;updatedAt:string;status:'published'|'verify-before-publish';sourceUrls:string[];body:{heading?:string;paragraphs:string[]}[];tags:string[];region?:string};
+export const swedenArticles220:SwedenArticle220[]=[];
+export const swedenArticleRules220={maxOrdinaryNewsAgeDays:10,requireSource:true,requirePublishedAt:true,principles:['Publicerade nyhetsartiklar ska bygga på verifierbara källor.','Analys ska tydligt skiljas från verifierbara fakta.','Gamla artiklar får inte få nytt publiceringsdatum bara för att se färska ut.','Väsentliga uppdateringar ska ändra updatedAt och beskrivas öppet.']};
