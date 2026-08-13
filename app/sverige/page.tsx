@@ -1,44 +1,4 @@
-import { swedenStories } from '../../content/data';
-import { AnalysisBox, FactStrip } from '../../components/Editorial';
-
-export default function Sweden() {
-  return (
-    <main>
-      <div className="shell">
-        <div className="page-hero">
-          <div className="kicker">Sverige</div>
-          <h1>Val, jobb och förtroende</h1>
-          <p>Den svenska veckan präglas av en ekonomi som förbättras ojämnt, ett val som blir mer digitalt och institutioner som måste förklara sig tydligare.</p>
-        </div>
-
-        <div className="article-list">
-          {swedenStories.map((story, index) => (
-            <article className="article-row" key={story.title}>
-              <div className="meta">{String(index + 1).padStart(2, '0')} · {story.section}</div>
-              <div>
-                <h2>{story.title}</h2>
-                <p>{story.summary}</p>
-                <AnalysisBox>
-                  {index % 2 === 0
-                    ? 'Utvecklingen skapar möjligheter, men också ett tydligt krav på verifiering och långsiktighet. Den politiska effekten avgörs av om förändringen märks i vardagen.'
-                    : 'Det kortsiktiga läget är bara en del av bilden. Den större frågan är om Sverige lyckas minska glappet mellan institutionernas beslut och medborgarnas upplevelse.'}
-                </AnalysisBox>
-              </div>
-            </article>
-          ))}
-        </div>
-
-        <section className="section">
-          <FactStrip
-            items={[
-              { label: 'Huvudfrågor', value: '6' },
-              { label: 'Fördjupningar', value: '6' },
-              { label: 'Perspektiv', value: 'Ekonomi' },
-              { label: 'Nästa steg', value: 'Valet' },
-            ]}
-          />
-        </section>
-      </div>
-    </main>
-  );
-}
+import Link from 'next/link';
+import { swedenDesk207 } from '../../content/swedenDesk207';
+export const metadata={title:'Sverige | NackaSidan 2026',description:'Politik, ekonomi, samhälle, klimat, säkerhet, kultur och sport från hela Sverige.'};
+export default function SverigePage(){return <main className="mx-auto max-w-7xl px-4 py-8 sm:px-6 lg:px-8"><header className="border-b-4 border-neutral-950 pb-7"><p className="text-sm font-bold uppercase tracking-[.2em] text-neutral-500">NackaSidan 2026</p><div className="mt-2 flex flex-col gap-4 lg:flex-row lg:items-end lg:justify-between"><div><h1 className="text-6xl font-black tracking-tight">{swedenDesk207.title}</h1><p className="mt-4 max-w-3xl text-xl leading-8 text-neutral-600">{swedenDesk207.promise}</p></div><div className="text-sm text-neutral-500">Hela landet · Källa först · Fakta före tempo</div></div></header><nav className="flex gap-5 overflow-x-auto border-b py-4 text-sm font-bold">{swedenDesk207.sections.map(s=><a key={s.id} href={`#${s.id}`} className="whitespace-nowrap hover:underline">{s.title}</a>)}</nav><section className="grid gap-8 border-b py-9 lg:grid-cols-[2fr_1fr]"><div><p className="text-sm font-bold uppercase tracking-wider text-neutral-500">Nationellt</p><h2 className="mt-2 text-4xl font-black leading-tight sm:text-5xl">Sverige-bevakningen byggs för riktiga nyheter – inte utfyllnad</h2><p className="mt-4 max-w-3xl text-xl leading-8 text-neutral-600">Här kommer de viktigaste nationella nyheterna att prioriteras efter samhällsbetydelse, aktualitet och källstyrka. Inga konstruerade rubriker visas som dagens nyheter.</p></div><aside className="border-t pt-5 lg:border-l lg:border-t-0 lg:pl-7"><h3 className="text-xl font-black">Redaktionell princip</h3><p className="mt-3 leading-7 text-neutral-600">Stockholm är viktigt, men Sverige är större. Den nationella sidan ska aktivt söka perspektiv från hela landet.</p></aside></section><section className="grid gap-7 py-9 md:grid-cols-2 lg:grid-cols-4">{swedenDesk207.sections.map(s=><section id={s.id} key={s.id} className="border-t-4 border-neutral-950 pt-4"><h2 className="text-2xl font-black">{s.title}</h2><p className="mt-3 text-sm leading-6 text-neutral-600">{s.focus.join(' · ')}</p><div className="mt-5 rounded-lg bg-neutral-100 p-4 text-sm text-neutral-500">Verifierade artiklar fylls på här.</div></section>)}</section><footer className="border-t py-6 text-sm text-neutral-500"><Link href="/stockholm" className="font-bold underline">Stockholm</Link> fortsätter som separat lokalredaktion.</footer></main>}
