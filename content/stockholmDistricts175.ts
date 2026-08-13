@@ -15,7 +15,6 @@ export const stockholmDistricts175: StockholmDistrict[] = [
   { slug: 'skarholmen', name: 'Skärholmen', focus: ['Stadsutveckling','Trygghet','Handel','Skola'], latestArticleSlugs: [] },
   { slug: 'enskede-arsta-vantor', name: 'Enskede-Årsta-Vantör', focus: ['Befolkning','Bostäder','Trafik','Skola'], latestArticleSlugs: ['stockholm-en-miljon-invanare-2026'] },
   { slug: 'farsta', name: 'Farsta', focus: ['Bostäder','Centrum','Trafik','Trygghet'], latestArticleSlugs: [] },
-  { slug: 'skarholmen', name: 'Skärholmen', focus: ['Stadsutveckling','Trygghet','Handel','Skola'], latestArticleSlugs: [] },
   { slug: 'jarva', name: 'Järva', focus: ['Befolkning','Trygghet','Bostäder','Näringsliv'], latestArticleSlugs: ['stockholm-en-miljon-invanare-2026'] },
   { slug: 'bromma', name: 'Bromma', focus: ['Stadsutveckling','Flygplats','Bostäder','Trafik'], latestArticleSlugs: ['bromma-framtid-stadsutveckling'] }
 ];
