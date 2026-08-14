@@ -11,8 +11,7 @@ export const stockholmArticles165: Article[] = [
     updated: '13 augusti 2026',
     publishedAt: '2026-08-13T11:30:00+02:00',
     updatedAt: '2026-08-13T11:30:00+02:00',
-    status: 'verify-before-publish',
-    homepage: { role: 'standard', order: 3 },
+    status: 'review',
     teaserTitle: 'Slussen: projektet som påverkar hela östra Stockholm',
     teaserSummary: 'Ombyggnaden handlar om mer än en trafikplats. Slussen knyter samman innerstaden, kollektivtrafiken och resandet mot Nacka och Värmdö.',
     readingTime: '8 min',
@@ -28,7 +27,7 @@ export const stockholmArticles165: Article[] = [
       { label: 'Nackakopplingen', text: 'Slussen är en central bytespunkt för många resenärer från Nacka och Värmdö.' },
       { label: 'Publiceringsregel', text: 'Aktuella trafikuppgifter ska verifieras samma dag före publicering.' }
     ],
-    facts: ['Slussen är en central trafik- och kollektivtrafikknutpunkt i Stockholm.', 'Projektet påverkar gång-, cykel-, buss- och biltrafik samt offentliga stadsrum.', 'Artikeln är markerad verify-before-publish tills aktuella projekt- och trafikuppgifter har färskkontrollerats.'],
+    facts: ['Slussen är en central trafik- och kollektivtrafikknutpunkt i Stockholm.', 'Projektet påverkar gång-, cykel-, buss- och biltrafik samt offentliga stadsrum.', 'Artikeln ligger i review tills aktuella projekt- och trafikuppgifter har färskkontrollerats.'],
     analysis: 'Slussens betydelse ligger i kombinationen av lokal stadsutveckling och regional infrastruktur. För NackaSidan är projektet därför en naturlig brygga mellan bevakningen av Nacka och Stockholm.',
     consequences: ['Förändrade trafiklösningar kan påverka pendlare från Nacka och Värmdö.', 'Nya offentliga miljöer förändrar hur området används efter byggtiden.', 'Förseningar eller omläggningar kan få regionala följder eftersom Slussen är en viktig bytespunkt.'],
     sources: [
