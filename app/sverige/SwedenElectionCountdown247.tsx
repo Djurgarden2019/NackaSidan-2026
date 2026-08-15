@@ -1,0 +1,4 @@
+const electionDay=new Date('2026-09-13T00:00:00+02:00');
+const editorialDay=new Date('2026-08-15T00:00:00+02:00');
+const days=Math.max(0,Math.ceil((electionDay.getTime()-editorialDay.getTime())/86400000));
+export default function SwedenElectionCountdown247(){return <section className="border-b bg-neutral-950 px-5 py-5 text-white sm:px-7" aria-label="Valet 2026 nedräkning"><div className="mx-auto flex max-w-7xl flex-col gap-3 sm:flex-row sm:items-center sm:justify-between"><div><p className="text-xs font-black uppercase tracking-[.2em] text-neutral-400">Valet 2026</p><h2 className="mt-1 text-2xl font-black">{days} dagar kvar till valdagen</h2></div><div className="max-w-2xl text-sm leading-6 text-neutral-300">13 september · Riksdag, region och kommun · NackaSidan samlar sakfrågor, vallöften, faktakoll och viktiga datum.</div><a href="#valkalender" className="whitespace-nowrap text-sm font-black underline underline-offset-4">Se valkalendern ↓</a></div></section>}
