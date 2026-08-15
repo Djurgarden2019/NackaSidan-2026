@@ -11,8 +11,7 @@ export const stockholmArticles167: Article[] = [
     updated: '13 augusti 2026',
     publishedAt: '2026-08-13T10:50:00+02:00',
     updatedAt: '2026-08-13T10:50:00+02:00',
-    status: 'verify-before-publish',
-    homepage: { role: 'standard', order: 5 },
+    status: 'review',
     teaserTitle: 'Älvsjö kan förändras i grunden',
     teaserSummary: 'Mässområdet, kollektivtrafiken och nya stadsdelar gör Älvsjö till ett av Stockholms mest intressanta utvecklingsområden.',
     readingTime: '7 min',
@@ -32,8 +31,8 @@ export const stockholmArticles167: Article[] = [
     analysis: 'Älvsjös potential ligger i kombinationen av stora utvecklingsbara ytor och mycket stark kollektivtrafik. Men värdet av en tätare stadsdel beror på om trafik, service och offentliga miljöer byggs ut i takt med bostäder och arbetsplatser.',
     consequences: ['Fler bostäder kan stärka underlaget för lokal service.', 'Förändrad användning av mässområdet kan påverka Stockholms besöksnäring.', 'Ökat resande ställer högre krav på kollektivtrafikens kapacitet.'],
     sources: [
-      { label: 'Stockholms stad: stadsutveckling och budget 2026', url: 'https://start.stockholm/', type: 'Primärkälla – kontrollera aktuell projektsida före publicering' },
-      { label: 'Stockholmsmässan', url: 'https://www.stockholmsmassan.se/', type: 'Primärkälla – verksamhet' }
+      { label: 'Stockholms stad: stadsutveckling och budget 2026', url: 'https://start.stockholm/', type: 'Primärkälla' },
+      { label: 'Stockholmsmässan', url: 'https://www.stockholmsmassan.se/', type: 'Primärkälla' }
     ],
     tags: ['Stockholm','Älvsjö','Stockholmsmässan','Stadsutveckling','Trafik'],
     related: []
