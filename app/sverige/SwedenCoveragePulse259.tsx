@@ -1,0 +1,11 @@
+import { swedenArticleFeed239 } from '../../content/swedenArticleFeed239';
+
+const labels:Record<string,string>={politik:'Politik',ekonomi:'Ekonomi',samhalle:'Samhälle',regioner:'Regioner',forsvar:'Säkerhet',kultur:'Kultur',sport:'Sport'};
+export default function SwedenCoveragePulse259(){
+ const articles=swedenArticleFeed239();
+ const counts=articles.reduce<Record<string,number>>((acc,a)=>{acc[a.section]=(acc[a.section]||0)+1;return acc;},{});
+ const sources=new Set(articles.flatMap(a=>a.sourceUrls)).size;
+ const regions=new Set(articles.map(a=>a.region).filter(Boolean)).size;
+ const sections=Object.entries(counts).sort((a,b)=>b[1]-a[1]).slice(0,5);
+ return <section className="border-b py-8" aria-labelledby="coverage-pulse"><div className="flex flex-wrap items-end justify-between gap-4"><div><p className="text-xs font-black uppercase tracking-[.18em] text-neutral-500">Redaktionell överblick</p><h2 id="coverage-pulse" className="mt-1 text-3xl font-black">Bevakningen just nu</h2></div><span className="text-xs text-neutral-500">Bygger på publicerade och verifierade artiklar</span></div><div className="mt-6 grid gap-4 sm:grid-cols-3"><article className="rounded-xl bg-neutral-950 p-5 text-white"><div className="text-sm font-bold text-neutral-400">Publicerade artiklar</div><div className="mt-2 text-4xl font-black">{articles.length}</div></article><article className="rounded-xl border border-neutral-200 p-5"><div className="text-sm font-bold text-neutral-500">Unika källor</div><div className="mt-2 text-4xl font-black">{sources}</div></article><article className="rounded-xl border border-neutral-200 p-5"><div className="text-sm font-bold text-neutral-500">Regionala områden</div><div className="mt-2 text-4xl font-black">{regions}</div></article></div><div className="mt-5 grid gap-px overflow-hidden rounded-xl bg-neutral-200 sm:grid-cols-2 lg:grid-cols-5">{sections.map(([section,count])=><div key={section} className="bg-white p-4"><div className="text-xs font-black uppercase tracking-wide text-neutral-500">{labels[section]||section}</div><div className="mt-1 text-2xl font-black">{count}</div><div className="text-xs text-neutral-500">artiklar</div></div>)}</div></section>;
+}
