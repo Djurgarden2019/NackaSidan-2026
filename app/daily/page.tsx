@@ -15,7 +15,7 @@ export default function DailyPage() {
           <div className="kicker">Nacka Daily</div>
           <h1>{dailyEdition.title}</h1>
           <p>{dailyEdition.intro}</p>
-          <div className="daily-meta"><span>5 min läsning</span><span>Uppdaterad 07.00</span><span>Gratis briefing</span><span>Redaktionellt urval</span></div>
+          <div className="daily-meta"><span>5 min läsning</span><span>Morgonbriefing</span><span>Gratis</span><span>Redaktionellt urval</span></div>
         </section>
 
         <section className="daily-lead">
@@ -40,7 +40,7 @@ export default function DailyPage() {
           ))}
         </section>
 
-        <section className="daily-source-note"><div className="kicker">Transparens</div><h2>Så är briefingen byggd</h2><p>Nacka Daily sammanfattar och länkar vidare till NackaSidans publicerade analyser och ämnessidor. Sprint 8 använder ingen extern automatisk nyhetswire; innehållet uppdateras redaktionellt i projektets innehållsfiler.</p></section>
+        <section className="daily-source-note"><div className="kicker">Transparens</div><h2>Så är briefingen byggd</h2><p>Nacka Daily är ett redaktionellt urval av NackaSidans publicerade analyser, nyhetsbevakning och ämnessidor. Där externa uppgifter används ska läsaren kunna följa källorna vidare från den underliggande artikeln. Briefingen prioriterar relevans och begriplighet framför mängd.</p><div className="daily-meta"><span>Källa först</span><span>Fakta före tempo</span><span>Tydlig analys</span></div></section>
 
         <section className="daily-insights">
           <div className="daily-number">
@@ -59,11 +59,11 @@ export default function DailyPage() {
 
         <section className="daily-signoff">
           <div>
-            <div className="kicker">Nästa briefing</div>
-            <h2>I morgon kl. 07.00</h2>
-            <p>Nacka Daily är prototypen för en återkommande morgonbriefing. I nästa steg kan innehållet kopplas till ett visuellt CMS och ett riktigt nyhetsbrev.</p>
+            <div className="kicker">Fortsätt läsa</div>
+            <h2>Fördjupa dagens viktigaste frågor</h2>
+            <p>Gå vidare till Sverige-bevakningen för politik, ekonomi, samhälle, regioner och valet 2026.</p>
           </div>
-          <Link className="button" href="/">Till startsidan</Link>
+          <div style={{display:'flex',gap:10,flexWrap:'wrap'}}><Link className="button" href="/sverige">Till Sverige</Link><Link className="text-link" href="/">Till startsidan</Link></div>
         </section>
       </div>
     </main>
