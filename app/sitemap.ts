@@ -18,13 +18,17 @@ export default function sitemap():MetadataRoute.Sitemap{
   '/sport',
   '/tema/ai',
   '/kunskap',
+  '/sok',
+  '/forfattare/redaktionen',
+  '/principer',
+  '/rattelser',
   '/artikel/veckans-analys',
   '/artikel/veckan-pa-tio-minuter',
  ];
  return routes.map((route,index)=>({
   url:`${baseUrl}${route}`,
   lastModified:new Date(),
-  changeFrequency:index===0||route==='/daily'||route==='/senaste'?'daily':'weekly',
-  priority:index===0?1:route==='/sverige'||route==='/stockholm'?0.9:0.7,
+  changeFrequency:index===0||route==='/daily'||route==='/senaste'||route==='/live'?'daily':'weekly',
+  priority:index===0?1:route==='/sverige'||route==='/stockholm'?0.9:route==='/daily'?0.85:0.7,
  }));
 }
