@@ -22,6 +22,7 @@ export default function sitemap():MetadataRoute.Sitemap{
   '/forfattare/redaktionen',
   '/principer',
   '/rattelser',
+  '/kontakt',
   '/artikel/veckans-analys',
   '/artikel/veckan-pa-tio-minuter',
  ];
