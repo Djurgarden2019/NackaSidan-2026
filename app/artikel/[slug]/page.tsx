@@ -1,3 +1,4 @@
+import type { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 import { ArticleMeta, KnowledgeCard, RelatedArticles, SourcePanel } from '../../../components/Knowledge';
 import { ReadingProgress, ShareTools } from '../../../components/Interactive';
@@ -8,60 +9,16 @@ import ArticleEditorialStandard152 from '../../../components/ArticleEditorialSta
 import Link from 'next/link';
 import { articleBySlug, articles } from '../../../content/articles';
 
-export function generateStaticParams() {
-  return articles.map((article) => ({ slug: article.slug }));
+export function generateStaticParams(){return articles.map((article)=>({slug:article.slug}))}
+
+export async function generateMetadata({params}:{params:Promise<{slug:string}>}):Promise<Metadata>{
+ const {slug}=await params; const article=articleBySlug[slug];
+ if(!article)return {title:'Artikel saknas'};
+ return {title:article.title,description:article.intro,openGraph:{type:'article',title:article.title,description:article.intro,url:`/artikel/${article.slug}`,images:article.image?[{url:article.image,alt:article.imageCaption||article.title}]:undefined},twitter:{card:'summary_large_image',title:article.title,description:article.intro}};
 }
 
-export default async function ArticlePage({ params }: { params: Promise<{ slug: string }> }) {
-  const { slug } = await params;
-  const article = articleBySlug[slug];
-  if (!article) notFound();
-  const titleBySlug = Object.fromEntries(articles.map((item) => [item.slug, item.title]));
-
-  return (
-    <main><ReadingProgress />
-      <div className="shell">
-        <article className="article article-premium">
-          <div className="kicker">{article.section}</div>
-          <h1>{article.title}</h1>
-          <p className="intro">{article.intro}</p>
-          <ArticleMeta article={article} /><ArticleTrustBar article={article} /><div className="article-actions"><Link href="/forfattare/redaktionen">Om författaren</Link><ShareTools title={article.title} /></div>
-          <ArticleEditorialStandard152 article={article} />
-          {article.image && (
-            <figure className="article-hero-image">
-              <img src={article.image} alt={article.imageCaption || article.title} />
-              {article.imageCaption && <figcaption>{article.imageCaption}</figcaption>}
-            </figure>
-          )}
-          <div className="article-body">
-            {article.body.map((section) => (
-              <section className="article-section" key={section.heading ?? section.paragraphs[0]}>
-                {section.heading && <h2>{section.heading}</h2>}
-                {section.paragraphs.map((paragraph) => <p key={paragraph}>{paragraph}</p>)}
-              </section>
-            ))}
-          </div>
-          <KnowledgeCard article={article} />
-          <IntelligencePanel article={article} />
-          <section className="facts-panel">
-            <div className="kicker">Fakta</div>
-            <h2>Tre saker att känna till</h2>
-            <ul>{article.facts.map((fact) => <li key={fact}>{fact}</li>)}</ul>
-          </section>
-          <section className="editorial-analysis">
-            <div className="kicker">Redaktionens analys</div>
-            <p>{article.analysis}</p>
-          </section>
-          <section className="consequence-panel">
-            <div className="kicker">Vad händer härnäst?</div>
-            <ul>{article.consequences.map((item) => <li key={item}>{item}</li>)}</ul>
-          </section>
-          <SourcePanel article={article} />
-          <ArticleTopics article={article} />
-          <RelatedArticles article={article} titleBySlug={titleBySlug} />
-          <NextArticle current={article} articles={articles} />
-        </article>
-      </div>
-    </main>
-  );
+export default async function ArticlePage({params}:{params:Promise<{slug:string}>}){
+ const {slug}=await params; const article=articleBySlug[slug]; if(!article)notFound();
+ const titleBySlug=Object.fromEntries(articles.map((item)=>[item.slug,item.title]));
+ return <main><ReadingProgress/><div className="shell"><article className="article article-premium"><nav aria-label="Brödsmulor" className="meta" style={{marginBottom:18}}><Link href="/">NackaSidan</Link> · <Link href="/sok">{article.section}</Link> · Artikel</nav><div className="kicker">{article.section}</div><h1>{article.title}</h1><p className="intro">{article.intro}</p><ArticleMeta article={article}/><ArticleTrustBar article={article}/><div className="article-actions"><Link href="/forfattare/redaktionen">Om redaktionen</Link><Link href="/principer">Så arbetar vi</Link><ShareTools title={article.title}/></div><ArticleEditorialStandard152 article={article}/>{article.image&&<figure className="article-hero-image"><img src={article.image} alt={article.imageCaption||article.title}/>{article.imageCaption&&<figcaption>{article.imageCaption}</figcaption>}</figure>}<div className="article-body">{article.body.map((section)=><section className="article-section" key={section.heading??section.paragraphs[0]}>{section.heading&&<h2>{section.heading}</h2>}{section.paragraphs.map((paragraph)=><p key={paragraph}>{paragraph}</p>)}</section>)}</div><KnowledgeCard article={article}/><IntelligencePanel article={article}/><section className="facts-panel"><div className="kicker">Verifierad bakgrund</div><h2>Tre saker att känna till</h2><ul>{article.facts.map((fact)=><li key={fact}>{fact}</li>)}</ul></section><section className="editorial-analysis"><div className="kicker">Redaktionens analys</div><p>{article.analysis}</p></section><section className="consequence-panel"><div className="kicker">Vad händer härnäst?</div><ul>{article.consequences.map((item)=><li key={item}>{item}</li>)}</ul></section><SourcePanel article={article}/><section style={{borderTop:'1px solid #d4d4d4',paddingTop:18,marginTop:28}}><div className="kicker">Transparens</div><p style={{fontSize:14}}>Upptäcker du ett sakfel? Läs hur vi arbetar med rättelser eller kontakta redaktionen.</p><div style={{display:'flex',gap:14,flexWrap:'wrap'}}><Link className="text-link" href="/rattelser">Rättelser & transparens →</Link><Link className="text-link" href="/kontakt">Kontakt →</Link></div></section><ArticleTopics article={article}/><RelatedArticles article={article} titleBySlug={titleBySlug}/><NextArticle current={article} articles={articles}/></article></div></main>;
 }
