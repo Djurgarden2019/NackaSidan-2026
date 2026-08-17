@@ -1,48 +1,13 @@
+import Link from 'next/link';
 import { AnalysisBox, FactStrip } from '../../components/Editorial';
 
-const articleTitles = [
-  'Veckans viktigaste utveckling',
-  'Bakgrunden som förklarar förändringen',
-  'Konsekvenserna på kort och lång sikt',
-  'Detta bör följas nästa vecka',
+const sections=[
+ {kicker:'Veckans analys',title:'Resultat är bara början av berättelsen',text:'Prestation, ekonomi, publik och besluten runt lagen avgör hur en sportslig utveckling ska förstås.'},
+ {kicker:'Publik & ekonomi',title:'När läktaren blir en del av konkurrenskraften',text:'Publiktryck, biljettintäkter, sponsring och arenaekonomi påverkar klubbarnas långsiktiga handlingsutrymme.'},
+ {kicker:'Form & prestation',title:'Vad resultaten faktiskt säger',text:'Vi skiljer tillfällig form från mer hållbara trender och tittar på vad som förändras över tid.'},
+ {kicker:'Nästa vecka',title:'Det här följer vi nu',text:'Matcher, tabelläge, publik, ekonomi och beslut som kan ändra förutsättningarna.'}
 ];
 
-export default function Page() {
-  return (
-    <main>
-      <div className="shell">
-        <div className="page-hero">
-          <div className="kicker">Sport</div>
-          <h1>Resultat är bara början av berättelsen</h1>
-          <p>Analys av prestation, ekonomi, publik och de beslut som formar modern idrott.</p>
-        </div>
+export const metadata={title:'Sport | NackaSidan 2026',description:'Sportanalys om prestation, ekonomi, publik och utvecklingen runt svensk idrott.'};
 
-        <div className="article-list">
-          {articleTitles.map((title, index) => (
-            <article className="article-row" key={title}>
-              <div className="meta">{String(index + 1).padStart(2, '0')} · Fördjupning</div>
-              <div>
-                <h2>{title}</h2>
-                <p>En koncentrerad redaktionell genomgång som kopplar nyheten till större utvecklingslinjer och tydliggör vad som är säkert, osäkert och viktigt.</p>
-                <AnalysisBox>
-                  Det finns skäl att skilja mellan det omedelbara nyhetsvärdet och den långsiktiga betydelsen. Utfallet avgörs av om trenden bekräftas av fler data och beslut.
-                </AnalysisBox>
-              </div>
-            </article>
-          ))}
-        </div>
-
-        <section className="section">
-          <FactStrip
-            items={[
-              { label: 'Artiklar', value: '4' },
-              { label: 'Analyser', value: '4' },
-              { label: 'Lästid', value: '18 min' },
-              { label: 'Uppdatering', value: 'Veckovis' },
-            ]}
-          />
-        </section>
-      </div>
-    </main>
-  );
-}
+export default function Page(){return <main><div className="shell"><div className="page-hero"><div className="kicker">Sport</div><h1>Resultat är bara början av berättelsen</h1><p>Analys av prestation, ekonomi, publik och de beslut som formar modern idrott.</p></div><section className="section" style={{borderTop:'4px solid #111',paddingTop:22}}><div className="kicker">Sportredaktionen</div><h2 style={{fontSize:'clamp(2rem,5vw,3.7rem)',maxWidth:900,marginTop:8}}>Förstå varför resultaten förändras</h2><p className="lead" style={{maxWidth:800}}>NackaSidan kopplar ihop det som händer på planen med ekonomi, publik, organisation och de långsiktiga besluten runt lagen.</p><Link className="button" href="/sverige#sport">Sport i Sverige-bevakningen</Link></section><div className="article-list">{sections.map((item,index)=><article className="article-row" key={item.title}><div className="meta">{String(index+1).padStart(2,'0')} · {item.kicker}</div><div><h2>{item.title}</h2><p>{item.text}</p><AnalysisBox>{index===0?'Ett enskilt resultat säger lite om riktningen. Det viktiga är om samma mönster syns i prestation, resurser och beslut över tid.':'Vi försöker skilja det tillfälliga från det strukturella och tydliggöra vad som faktiskt är belagt.'}</AnalysisBox></div></article>)}</div><section className="section"><FactStrip items={[{label:'Fokus',value:'Sverige'},{label:'Perspektiv',value:'4'},{label:'Format',value:'Analys'},{label:'Uppdatering',value:'Löpande'}]}/></section><section className="section" style={{borderTop:'1px solid #d4d4d4',paddingTop:24}}><div className="kicker">Fortsätt läsa</div><h2>Sport i ett större sammanhang</h2><p className="lead">Gå vidare till Sverige för nationell bevakning eller Nacka Daily för dagens redaktionella urval.</p><div style={{display:'flex',gap:14,flexWrap:'wrap'}}><Link className="button" href="/sverige">Sverige</Link><Link className="text-link" href="/daily">Nacka Daily →</Link></div></section></div></main>}
