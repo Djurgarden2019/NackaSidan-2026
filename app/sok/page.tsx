@@ -1,8 +1,9 @@
+import Link from 'next/link';
 import { SearchExperience } from '../../components/Interactive';
 import { articles } from '../../content/articles';
 
-export const metadata = { title: 'Sök | NackaSidan' };
+export const metadata = { title: 'Sök & upptäck', description: 'Sök i NackaSidans artiklar, analyser, ämnen och fördjupningar.' };
 
-export default function SearchPage() {
-  return <main><div className="shell"><section className="page-hero search-hero"><div className="kicker">Sök & upptäck</div><h1>Hitta sammanhanget</h1><p>Sök i artiklar, analyser, ämnen och taggar.</p></section><SearchExperience articles={articles} /></div></main>;
-}
+const topics=[['/stockholm','Stockholm','Trafik, bostäder, näringsliv och stadsliv'],['/sverige','Sverige','Politik, ekonomi, samhälle och valet 2026'],['/varlden','Världen','Säkerhet, handel, demokrati och geopolitik'],['/ekonomi','Ekonomi','Räntor, köpkraft, jobb och företag'],['/vetenskap','Vetenskap & AI','Teknik, forskning, medicin och klimat'],['/kultur','Kultur','Böcker, film, musik och kulturdebatt']];
+
+export default function SearchPage(){return <main><div className="shell"><section className="page-hero search-hero"><div className="kicker">Sök & upptäck</div><h1>Hitta sammanhanget</h1><p>Sök i artiklar, analyser, ämnen och taggar – eller börja i ett av våra viktigaste bevakningsområden.</p></section><SearchExperience articles={articles}/><section className="section"><div className="kicker">Utforska</div><h2>Börja med ett ämne</h2><div style={{display:'grid',gridTemplateColumns:'repeat(auto-fit,minmax(220px,1fr))',gap:12,marginTop:18}}>{topics.map(([href,label,text])=><Link key={href} href={href} style={{display:'block',padding:18,border:'1px solid #d4d4d4',borderRadius:10,textDecoration:'none',color:'inherit'}}><strong style={{display:'block',fontSize:20}}>{label} →</strong><span style={{display:'block',marginTop:6,fontSize:14,lineHeight:1.5,color:'#666'}}>{text}</span></Link>)}</div></section><section className="section" style={{borderTop:'1px solid #d4d4d4',paddingTop:24}}><div className="kicker">Snabbaste vägen</div><h2>Dagens viktigaste på fem minuter</h2><p className="lead">Nacka Daily samlar dagens huvudfråga, korta nyheter, dagens siffra och det redaktionen följer.</p><Link className="button" href="/daily">Öppna Nacka Daily</Link></section></div></main>}
