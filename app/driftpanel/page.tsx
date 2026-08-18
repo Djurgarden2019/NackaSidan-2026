@@ -8,27 +8,46 @@ const controls = [
   ['03', 'Prioritet', 'Visar hur många artiklar som just nu är markerade med hög prioritet i den redaktionella sorteringen.'],
   ['04', 'Källstatus', 'Visar vilka RSS-källor som svarar och hur många poster varje källa levererar till parsern.'],
   ['05', 'Kategoribalans', 'Gör det lättare att upptäcka om en kategori plötsligt blir tom eller ovanligt stor.'],
-  ['06', 'Driftfel', 'Källor som inte går att hämta markeras som tillfälligt otillgängliga utan att resten av radarn stoppas.'],
+  ['06', 'Driftvarningar', 'Samlar tydliga varningar när källor är nere, Nacka-innehåll saknas eller en kategori blir tom.'],
 ];
 
 export default async function DriftpanelPage() {
   const radar = await getLiveNews();
   const connected = radar.feeds.filter(feed => feed.status === 'Ansluten').length;
-  const unavailable = radar.feeds.length - connected;
+  const unavailableFeeds = radar.feeds.filter(feed => feed.status !== 'Ansluten');
+  const emptySections = radar.sections.filter(section => section !== 'Alla' && (radar.sectionCounts[section] ?? 0) === 0);
+  const alerts = [
+    ...unavailableFeeds.map(feed => `${feed.name} är tillfälligt otillgänglig.`),
+    ...(radar.localCount === 0 ? ['Nacka/Lokalt har inga aktuella artiklar. Kontrollera de officiella Nacka-flödena innan publicering.'] : []),
+    ...(radar.items.length === 0 ? ['Nyhetsradarn saknar helt aktuellt innehåll. Kontrollera RSS-inflödet omedelbart.'] : []),
+    ...(emptySections.length ? [`Tomma kategorier just nu: ${emptySections.join(', ')}.`] : []),
+  ];
+  const health = alerts.length === 0 ? 'STABIL' : unavailableFeeds.length || radar.items.length === 0 ? 'ÅTGÄRD' : 'BEVAKA';
   const metrics = [
     ['AKTUELLA', String(radar.items.length), 'Artiklar kvar efter åldersfilter, sortering och deduplicering'],
     ['NACKA/LOKALT', String(radar.localCount), 'Aktuella artiklar klassificerade som lokala'],
     ['HÖG PRIORITET', String(radar.highPriority), 'Artiklar som just nu kräver extra redaktionell uppmärksamhet'],
-    ['KÄLLOR ONLINE', `${connected}/${radar.feeds.length}`, unavailable ? `${unavailable} källa/källor är tillfälligt otillgängliga` : 'Alla konfigurerade källor svarar'],
+    ['KÄLLOR ONLINE', `${connected}/${radar.feeds.length}`, unavailableFeeds.length ? `${unavailableFeeds.length} källa/källor är tillfälligt otillgängliga` : 'Alla konfigurerade källor svarar'],
   ];
 
   return (
     <main style={{ maxWidth: 1120, margin: '0 auto', padding: '72px 28px 100px' }}>
-      <p style={{ color: '#a61919', fontWeight: 800, letterSpacing: 2, fontSize: 13 }}>MAIN 322 · LIVE DRIFTPANEL</p>
+      <p style={{ color: '#a61919', fontWeight: 800, letterSpacing: 2, fontSize: 13 }}>MAIN 323 · DRIFTVARNINGAR</p>
       <h1 style={{ fontFamily: 'Georgia,serif', fontSize: 'clamp(52px,8vw,90px)', lineHeight: .96, margin: '12px 0 22px' }}>Se Nyhetsradarn som ett levande system</h1>
       <p style={{ maxWidth: 850, fontFamily: 'Georgia,serif', fontSize: 20, lineHeight: 1.45 }}>
-        Driftpanelen använder nu samma live-data som Nyhetsradarn och visar aktuellt inflöde, lokala träffar, prioritet och källhälsa i stället för statiska exempelvärden.
+        Driftpanelen använder samma live-data som Nyhetsradarn och lyfter nu automatiskt fram tillstånd som behöver bevakas eller åtgärdas.
       </p>
+
+      <section aria-label="Driftstatus" style={{ marginTop: 34, padding: '22px 24px', border: '3px solid #111', background: alerts.length ? '#f7eee5' : '#eef4ec' }}>
+        <div style={{ fontSize: 12, fontWeight: 900, letterSpacing: 1.5 }}>DRIFTSTATUS · {health}</div>
+        {alerts.length ? (
+          <ul style={{ margin: '12px 0 0', paddingLeft: 20, lineHeight: 1.55 }}>
+            {alerts.map(alert => <li key={alert}>{alert}</li>)}
+          </ul>
+        ) : (
+          <p style={{ margin: '10px 0 0' }}>Inga automatiska driftvarningar just nu.</p>
+        )}
+      </section>
 
       <section style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit,minmax(210px,1fr))', borderTop: '1px solid #bbb', borderBottom: '3px solid #111', marginTop: 42 }}>
         {metrics.map(([name,value,desc]) => (
@@ -85,7 +104,7 @@ export default async function DriftpanelPage() {
       </section>
 
       <footer style={{ borderTop: '3px solid #111', paddingTop: 18, marginTop: 30, fontSize: 12 }}>
-        NYHETSRADARN → KÄLLHÄLSA → KATEGORIBALANS → REDAKTIONELL KONTROLL → PUBLICERING
+        NYHETSRADARN → KÄLLHÄLSA → DRIFTVARNING → REDAKTIONELL KONTROLL → PUBLICERING
       </footer>
     </main>
   );
