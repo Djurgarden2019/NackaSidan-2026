@@ -7,7 +7,6 @@ export default function sitemap():MetadataRoute.Sitemap{
   '/',
   '/daily',
   '/senaste',
-  '/live',
   '/stockholm',
   '/sverige',
   '/varlden',
@@ -22,6 +21,7 @@ export default function sitemap():MetadataRoute.Sitemap{
   '/forfattare/redaktionen',
   '/principer',
   '/rattelser',
+  '/integritet',
   '/kontakt',
   '/artikel/veckans-analys',
   '/artikel/veckan-pa-tio-minuter',
@@ -29,7 +29,7 @@ export default function sitemap():MetadataRoute.Sitemap{
  return routes.map((route,index)=>({
   url:`${baseUrl}${route}`,
   lastModified:new Date(),
-  changeFrequency:index===0||route==='/daily'||route==='/senaste'||route==='/live'?'daily':'weekly',
+  changeFrequency:index===0||route==='/daily'||route==='/senaste'?'daily':'weekly',
   priority:index===0?1:route==='/sverige'||route==='/stockholm'?0.9:route==='/daily'?0.85:0.7,
  }));
 }
