@@ -12,6 +12,8 @@ export type LiveNewsItem = {
 type Feed = { name: string; url: string; section: string; homepage: string; note?: string };
 
 export const liveFeeds: Feed[] = [
+  { name: 'Nacka kommun · Nyheter', url: 'https://www.nacka.se/nyheter-start/rss/', section: 'Nacka/Lokalt', homepage: 'https://www.nacka.se/nyheter-start/', note: 'Officiellt RSS-flöde från Nacka kommun' },
+  { name: 'Nacka kommun · Stadsutveckling & trafik', url: 'https://www.nacka.se/stadsutveckling-trafik/nyheter-om-stadsutveckling-och-trafik/rss/', section: 'Nacka/Lokalt', homepage: 'https://www.nacka.se/stadsutveckling-trafik/nyheter-om-stadsutveckling-och-trafik/', note: 'Officiellt lokalt RSS-flöde från Nacka kommun' },
   { name: 'SVT Nyheter Stockholm', url: 'https://www.svt.se/nyheter/lokalt/stockholm/rss.xml', section: 'Stockholm', homepage: 'https://www.svt.se/nyheter/lokalt/stockholm' },
   { name: 'SVT Nyheter', url: 'https://www.svt.se/nyheter/rss.xml', section: 'Sverige', homepage: 'https://www.svt.se/nyheter' },
   { name: 'Sveriges Radio · Ekot', url: 'https://api.sr.se/api/rss/program/83', section: 'Sverige', homepage: 'https://www.sverigesradio.se/ekot', note: 'Text-RSS från Sveriges Radio' },
@@ -68,6 +70,7 @@ function classify(title: string, link: string, fallback: string) {
 
   const text = normalizedWords(title);
   for (const rule of rules) if (rule.words.some(word => hasWord(text, word))) return rule.section;
+  if (fallback === 'Nacka/Lokalt') return 'Nacka/Lokalt';
   if (fallback === 'Ekonomi') return 'Ekonomi';
   if (fallback === 'Stockholm') return 'Sverige';
   if (['Världen','Vetenskap','Kultur','Sport'].includes(fallback)) return fallback;
@@ -94,6 +97,7 @@ function parse(xml: string, feed: Feed): LiveNewsItem[] {
 }
 
 function sourceWeight(source: string) {
+  if (source.startsWith('Nacka kommun')) return 4;
   if (source.startsWith('SVT') || source.startsWith('Sveriges Radio')) return 3;
   if (source.startsWith('Sveriges Riksbank')) return 2;
   return 1;
