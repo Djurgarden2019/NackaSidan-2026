@@ -2,16 +2,17 @@ import Link from 'next/link';
 import type { Article } from '../content/articles';
 
 export function NewsDashboard({ articles }: { articles: Article[] }) {
-  const ranked = [...articles].slice(0, 5);
-  const latest = [...articles].reverse().slice(0, 3);
+  const recommended = [...articles].slice(0, 5);
+  const latest = [...articles].sort((a,b)=>Date.parse(b.updatedAt)-Date.parse(a.updatedAt)).slice(0, 3);
   return (
     <section className="section home-dashboard">
       <div className="dashboard-column">
-        <div className="kicker">Mest läst</div>
-        <h2>Läsarnas väg in i veckan</h2>
+        <div className="kicker">Redaktionens urval</div>
+        <h2>Fem texter att börja med</h2>
         <ol className="ranking-list">
-          {ranked.map((article, index) => <li key={article.slug}><span>{String(index + 1).padStart(2, '0')}</span><Link href={`/artikel/${article.slug}`}>{article.title}</Link></li>)}
+          {recommended.map((article, index) => <li key={article.slug}><span>{String(index + 1).padStart(2, '0')}</span><Link href={`/artikel/${article.slug}`}>{article.title}</Link></li>)}
         </ol>
+        <p className="meta" style={{marginTop:16}}>Urvalet är redaktionellt och bygger inte på påhittad läsarstatistik.</p>
       </div>
       <div className="dashboard-column latest-column">
         <div className="kicker">Senast uppdaterat</div>
