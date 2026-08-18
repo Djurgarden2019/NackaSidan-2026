@@ -1,5 +1,6 @@
-import type { LiveNewsData } from './liveNews';
+import type { getLiveNews } from './liveNews';
 
+type LiveNewsData = Awaited<ReturnType<typeof getLiveNews>>;
 export type NewsHealthStatus = 'STABIL' | 'BEVAKA' | 'ÅTGÄRD';
 
 export function getNewsHealth(radar: LiveNewsData) {
