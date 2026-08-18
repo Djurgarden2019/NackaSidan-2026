@@ -46,7 +46,7 @@ const rules: { section: string; words: string[] }[] = [
   { section: 'Nacka/Lokalt', words: ['nacka','saltsjöbaden','sickla','älta','boo','fisksätra','orminge','värmdö'] },
   { section: 'Ekonomi', words: ['ränta','inflation','krona','kronan','riksbank','ekonomi','konjunktur','börs','bank','bolag','företag','arbetslöshet','bnp','vinst','förlust','elpris','elpriset'] },
   { section: 'Vetenskap', words: ['forskning','forskare','vetenskap','rymd','klimat','studie','universitet','karolinska','kth','nasa','space','science','climate','ai','artificiell intelligens'] },
-  { section: 'Kultur', words: ['kultur','film','bok','böcker','musik','teater','konst','museum','författare','artist','album','festival'] },
+  { section: 'Kultur', words: ['kultur','bok','böcker','musik','teater','konst','museum','författare','artist','album','festival'] },
   { section: 'Sport', words: ['sport','fotboll','hockey','allsvenskan','landslaget','os','vm','em','match','mål','simning','skidor','skidåkning'] },
   { section: 'Världen', words: ['usa','ukraina','ryssland','iran','israel','gaza','kina','eu','nato','trump','världen','utrikes','war','world','zelenskyj'] },
 ];
@@ -63,6 +63,7 @@ function hasWord(text: string, word: string) {
 function classify(title: string, link: string, fallback: string) {
   const lowerLink = link.toLowerCase();
   if (lowerLink.includes('/sport/')) return 'Sport';
+  if (lowerLink.includes('/kultur/')) return 'Kultur';
   if (lowerLink.includes('/utrikes/') || lowerLink.includes('/world/')) return 'Världen';
 
   const text = normalizedWords(title);
