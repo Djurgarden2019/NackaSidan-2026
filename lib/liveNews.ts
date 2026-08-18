@@ -43,19 +43,28 @@ function linkFrom(block: string) {
 }
 
 const rules: { section: string; words: string[] }[] = [
-  { section: 'Nacka/Lokalt', words: ['nacka','saltsjöbaden','sickla','älta','boo','fisksätra','orminge','värmdö','stockholm','region stockholm','slussen'] },
+  { section: 'Nacka/Lokalt', words: ['nacka','saltsjöbaden','sickla','älta','boo','fisksätra','orminge','värmdö'] },
   { section: 'Ekonomi', words: ['ränta','inflation','krona','kronan','riksbank','ekonomi','konjunktur','börs','bank','bolag','företag','arbetslöshet','bnp'] },
-  { section: 'Vetenskap', words: ['forskning','forskare','vetenskap','rymd','klimat','studie','universitet','karolinska','kth','nasa','space','science','climate','ai ','artificiell intelligens'] },
+  { section: 'Vetenskap', words: ['forskning','forskare','vetenskap','rymd','klimat','studie','universitet','karolinska','kth','nasa','space','science','climate','ai','artificiell intelligens'] },
   { section: 'Kultur', words: ['kultur','film','bok','böcker','musik','teater','konst','museum','författare'] },
-  { section: 'Sport', words: ['sport','fotboll','hockey','allsvenskan','landslaget','os ','vm ','em ','match','mål'] },
-  { section: 'Världen', words: ['usa','ukraina','ryssland','iran','israel','gaza','kina','eu ','nato','trump','världen','utrikes','war','world'] },
+  { section: 'Sport', words: ['sport','fotboll','hockey','allsvenskan','landslaget','os','vm','em','match','mål'] },
+  { section: 'Världen', words: ['usa','ukraina','ryssland','iran','israel','gaza','kina','eu','nato','trump','världen','utrikes','war','world'] },
 ];
 
+function normalizedWords(value: string) {
+  return ` ${value.toLowerCase().replace(/[^a-z0-9åäö]+/g, ' ').replace(/\s+/g, ' ').trim()} `;
+}
+
+function hasWord(text: string, word: string) {
+  const needle = word.toLowerCase().replace(/[^a-z0-9åäö]+/g, ' ').replace(/\s+/g, ' ').trim();
+  return needle.length > 0 && text.includes(` ${needle} `);
+}
+
 function classify(title: string, fallback: string) {
-  const text = ` ${title.toLowerCase()} `;
-  for (const rule of rules) if (rule.words.some(word => text.includes(word))) return rule.section;
+  const text = normalizedWords(title);
+  for (const rule of rules) if (rule.words.some(word => hasWord(text, word))) return rule.section;
   if (fallback === 'Ekonomi') return 'Ekonomi';
-  if (fallback === 'Stockholm') return 'Nacka/Lokalt';
+  if (fallback === 'Stockholm') return 'Sverige';
   if (['Världen','Vetenskap','Kultur','Sport'].includes(fallback)) return fallback;
   return 'Sverige';
 }
