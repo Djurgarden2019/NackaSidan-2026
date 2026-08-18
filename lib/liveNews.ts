@@ -44,11 +44,11 @@ function linkFrom(block: string) {
 
 const rules: { section: string; words: string[] }[] = [
   { section: 'Nacka/Lokalt', words: ['nacka','saltsjöbaden','sickla','älta','boo','fisksätra','orminge','värmdö'] },
-  { section: 'Ekonomi', words: ['ränta','inflation','krona','kronan','riksbank','ekonomi','konjunktur','börs','bank','bolag','företag','arbetslöshet','bnp'] },
+  { section: 'Ekonomi', words: ['ränta','inflation','krona','kronan','riksbank','ekonomi','konjunktur','börs','bank','bolag','företag','arbetslöshet','bnp','vinst','förlust','elpris','elpriset'] },
   { section: 'Vetenskap', words: ['forskning','forskare','vetenskap','rymd','klimat','studie','universitet','karolinska','kth','nasa','space','science','climate','ai','artificiell intelligens'] },
-  { section: 'Kultur', words: ['kultur','film','bok','böcker','musik','teater','konst','museum','författare'] },
-  { section: 'Sport', words: ['sport','fotboll','hockey','allsvenskan','landslaget','os','vm','em','match','mål'] },
-  { section: 'Världen', words: ['usa','ukraina','ryssland','iran','israel','gaza','kina','eu','nato','trump','världen','utrikes','war','world'] },
+  { section: 'Kultur', words: ['kultur','film','bok','böcker','musik','teater','konst','museum','författare','artist','album','festival'] },
+  { section: 'Sport', words: ['sport','fotboll','hockey','allsvenskan','landslaget','os','vm','em','match','mål','simning','skidor','skidåkning'] },
+  { section: 'Världen', words: ['usa','ukraina','ryssland','iran','israel','gaza','kina','eu','nato','trump','världen','utrikes','war','world','zelenskyj'] },
 ];
 
 function normalizedWords(value: string) {
@@ -60,7 +60,11 @@ function hasWord(text: string, word: string) {
   return needle.length > 0 && text.includes(` ${needle} `);
 }
 
-function classify(title: string, fallback: string) {
+function classify(title: string, link: string, fallback: string) {
+  const lowerLink = link.toLowerCase();
+  if (lowerLink.includes('/sport/')) return 'Sport';
+  if (lowerLink.includes('/utrikes/') || lowerLink.includes('/world/')) return 'Världen';
+
   const text = normalizedWords(title);
   for (const rule of rules) if (rule.words.some(word => hasWord(text, word))) return rule.section;
   if (fallback === 'Ekonomi') return 'Ekonomi';
@@ -82,8 +86,9 @@ function parse(xml: string, feed: Feed): LiveNewsItem[] {
   const atomItems = xml.match(/<entry\b[\s\S]*?<\/entry>/gi) || [];
   return [...rssItems, ...atomItems].slice(0, 30).map(block => {
     const title = tag(block, ['title']);
-    const section = classify(title, feed.section);
-    return { title, link: linkFrom(block), published: tag(block, ['pubDate', 'published', 'updated']), source: feed.name, sourceSection: feed.section, section, priority: priorityFor(title, section), local: section === 'Nacka/Lokalt' };
+    const link = linkFrom(block);
+    const section = classify(title, link, feed.section);
+    return { title, link, published: tag(block, ['pubDate', 'published', 'updated']), source: feed.name, sourceSection: feed.section, section, priority: priorityFor(title, section), local: section === 'Nacka/Lokalt' };
   }).filter(x => x.title && x.link);
 }
 
