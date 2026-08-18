@@ -3,6 +3,7 @@ import './globals.css';
 import './live-frontpage-overrides.css';
 import './live-frontpage-polish.css';
 import './mobile-polish.css';
+import './accessibility.css';
 import { Header } from '../components/Header';
 import { Footer } from '../components/Footer';
 
