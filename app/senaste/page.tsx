@@ -2,32 +2,8 @@ import Link from 'next/link';
 import { LatestNewsFeed } from '../../components/Newsroom';
 import { latestNews } from '../../content/news';
 
-export const metadata = {
-  title: 'Senaste',
-  description: 'Senaste publicerade briefingarna, analyserna och fördjupningarna från NackaSidan.',
-};
+export const metadata={title:'Senaste',description:'Senaste publiceringarna, uppdateringarna och fördjupningarna från NackaSidan.'};
 
-export default function LatestPage() {
-  return (
-    <main>
-      <div className="shell">
-        <section className="page-hero latest-page-hero">
-          <div className="kicker">Senaste</div>
-          <h1>Vad är nytt?</h1>
-          <p>En kronologisk översikt över det som publicerats och uppdaterats i NackaSidans redaktionella innehåll.</p>
-        </section>
-        <LatestNewsFeed items={latestNews} />
-        <aside className="latest-note">
-          <strong>Om flödet</strong>
-          <p>Flödet visar NackaSidans senaste publiceringar och uppdateringar. Tidsstämplar och redaktionell status ska göra det tydligt vad som är nytt och vad som har förändrats.</p>
-        </aside>
-        <section className="section" style={{borderTop:'1px solid #d4d4d4',paddingTop:24}}>
-          <div className="kicker">Fortsätt</div>
-          <h2>Vill du ha sammanhang i stället för kronologi?</h2>
-          <p className="lead">Nacka Daily samlar dagens viktigaste, medan Sverige och Världen ger fördjupning inom de största bevakningsområdena.</p>
-          <div style={{display:'flex',gap:14,flexWrap:'wrap'}}><Link className="button" href="/daily">Nacka Daily</Link><Link className="text-link" href="/sverige">Sverige →</Link><Link className="text-link" href="/varlden">Världen →</Link></div>
-        </section>
-      </div>
-    </main>
-  );
-}
+const paths=[['/live','Live','Följ det löpande nyhetsläget och de färskaste signalerna.'],['/daily','Nacka Daily','Få dagens viktigaste sammanhang på fem minuter.'],['/sverige','Sverige','Fördjupa politik, ekonomi, samhälle och valet 2026.'],['/varlden','Världen','Följ säkerhet, handel, demokrati och geopolitik.']];
+
+export default function LatestPage(){return <main><div className="shell"><section className="page-hero latest-page-hero"><div className="kicker">Senaste</div><h1>Det här har hänt sedan du var här sist</h1><p>En kronologisk översikt över NackaSidans senaste publiceringar och uppdateringar – med tydliga tidsstämplar och redaktionell status.</p><div style={{display:'flex',gap:10,flexWrap:'wrap',marginTop:18}}><span className="meta">Nyast först</span><span className="meta">Publiceringar & uppdateringar</span><span className="meta">Källor i artiklarna</span></div></section><LatestNewsFeed items={latestNews}/><aside className="latest-note"><strong>Om flödet</strong><p>Senaste visar vad som publicerats eller förändrats. En uppdaterad artikel är inte automatiskt en ny nyhet. Därför skiljer vi mellan publicering, uppdatering och redaktionell analys.</p><Link className="text-link" href="/principer">Så arbetar vi redaktionellt →</Link></aside><section className="section"><div className="kicker">Välj nästa steg</div><h2>Från kronologi till sammanhang</h2><p className="lead">Senaste berättar vad som är nytt. De här ingångarna hjälper dig förstå vad som är viktigast.</p><div style={{display:'grid',gridTemplateColumns:'repeat(auto-fit,minmax(220px,1fr))',gap:12,marginTop:18}}>{paths.map(([href,label,text])=><Link key={href} href={href} style={{display:'block',padding:18,border:'1px solid #d4d4d4',borderRadius:10,textDecoration:'none',color:'inherit'}}><strong style={{display:'block',fontSize:20}}>{label} →</strong><span style={{display:'block',marginTop:6,fontSize:14,lineHeight:1.5,color:'#666'}}>{text}</span></Link>)}</div></section><section className="section" style={{borderTop:'1px solid #d4d4d4',paddingTop:24}}><div className="kicker">Transparens</div><h2>Ser något fel ut?</h2><p className="lead">Vi vill att rättelser och betydelsefulla uppdateringar ska gå att följa.</p><div style={{display:'flex',gap:14,flexWrap:'wrap'}}><Link className="button" href="/rattelser">Rättelser & transparens</Link><Link className="text-link" href="/kontakt">Kontakta redaktionen →</Link></div></section></div></main>}
