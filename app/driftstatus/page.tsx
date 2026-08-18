@@ -1,26 +1,19 @@
 import Link from 'next/link';
 import { getLiveNews } from '../../lib/liveNews';
+import { getNewsHealth } from '../../lib/newsHealth';
 
 export const revalidate = 900;
 
 export default async function DriftstatusPage() {
   const radar = await getLiveNews();
-  const unavailable = radar.feeds.filter(feed => feed.status !== 'Ansluten');
-  const emptySections = radar.sections.filter(section => section !== 'Alla' && (radar.sectionCounts[section] ?? 0) === 0);
-  const alerts = [
-    ...unavailable.map(feed => `${feed.name} är tillfälligt otillgänglig.`),
-    ...(radar.localCount === 0 ? ['Nacka/Lokalt har inga aktuella artiklar.'] : []),
-    ...(radar.items.length === 0 ? ['Nyhetsradarn saknar helt aktuellt innehåll.'] : []),
-    ...(emptySections.length ? [`Tomma kategorier: ${emptySections.join(', ')}.`] : []),
-  ];
-  const status = alerts.length === 0 ? 'STABIL' : unavailable.length || radar.items.length === 0 ? 'ÅTGÄRD' : 'BEVAKA';
+  const { unavailable, alerts, status } = getNewsHealth(radar);
 
   return (
     <main style={{ maxWidth: 960, margin: '0 auto', padding: '72px 28px 100px' }}>
-      <p style={{ color: '#a61919', fontWeight: 800, letterSpacing: 2, fontSize: 13 }}>MAIN 326 · DRIFTSTATUS</p>
+      <p style={{ color: '#a61919', fontWeight: 800, letterSpacing: 2, fontSize: 13 }}>MAIN 327 · DRIFTSTATUS</p>
       <h1 style={{ fontFamily: 'Georgia,serif', fontSize: 'clamp(48px,7vw,82px)', lineHeight: .98, margin: '12px 0 18px' }}>Nyhetsradarns status</h1>
       <p style={{ fontFamily: 'Georgia,serif', fontSize: 20, lineHeight: 1.45, maxWidth: 760 }}>
-        En enkel visuell kontroll av samma live-data som Driftpanelen och API-endpointen använder.
+        En enkel visuell kontroll av samma live-data och samma hälsomodell som Driftpanelen och API-endpointen använder.
       </p>
 
       <nav aria-label="Driftverktyg" style={{ display: 'flex', flexWrap: 'wrap', gap: 10, marginTop: 24 }}>
