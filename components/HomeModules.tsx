@@ -24,9 +24,17 @@ export function NewsDashboard({ articles }: { articles: Article[] }) {
 
 export function NewsletterSignup() {
   return (
-    <section className="newsletter-section">
-      <div><div className="kicker">NackaSidan Briefing</div><h2>Förstå veckan i din inkorg</h2><p>En redaktionell sammanfattning av det viktigaste, med bakgrund, analys och kultur.</p></div>
-      <form className="newsletter-form"><label><span>E-postadress</span><input type="email" placeholder="namn@exempel.se" /></label><button type="button">Prenumerera gratis</button></form>
+    <section className="newsletter-section" aria-labelledby="newsletter-title">
+      <div>
+        <div className="kicker">NackaSidan Briefing</div>
+        <h2 id="newsletter-title">Förstå veckan – utan att jaga rubriker</h2>
+        <p>En kommande veckobriefing med det viktigaste inom Sverige, världen, ekonomi, vetenskap och kultur. Vi öppnar e-postprenumerationen när utskicksfunktionen är färdig och integritetstestad.</p>
+        <div className="meta" style={{marginTop:12}}>Ingen e-post samlas in ännu · Gratis när tjänsten öppnar</div>
+      </div>
+      <div style={{display:'flex',flexDirection:'column',alignItems:'flex-start',justifyContent:'center',gap:12}}>
+        <Link className="button" href="/daily">Läs Nacka Daily nu</Link>
+        <Link className="text-link" href="/integritet">Så tänker vi om integritet →</Link>
+      </div>
     </section>
   );
 }
