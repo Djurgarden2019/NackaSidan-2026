@@ -1,4 +1,4 @@
-import { getLiveNews } from '@/lib/liveNews';
+import { getLiveNews } from '../../lib/liveNews';
 
 export const revalidate = 900;
 
