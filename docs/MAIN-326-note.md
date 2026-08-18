@@ -1,0 +1,1 @@
+Main 326 connects quick status, detailed drift diagnostics and the machine-readable health endpoint into one troubleshooting flow.

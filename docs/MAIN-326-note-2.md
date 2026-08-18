@@ -1,0 +1,1 @@
+Status navigation now links quick status, detailed diagnostics and health JSON.
