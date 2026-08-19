@@ -5,6 +5,7 @@ export type NewsHealthStatus = 'STABIL' | 'BEVAKA' | 'ÅTGÄRD';
 export type NewsHealthReason = 'SOURCE_DEGRADED' | 'LOCAL_EMPTY' | 'RADAR_EMPTY' | 'CATEGORY_EMPTY' | 'ALL_SOURCES_DOWN' | 'ALL_LOCAL_SOURCES_DOWN' | 'NEWS_STALE';
 
 const STALE_AFTER_HOURS = 36;
+const SOURCE_STALE_AFTER_HOURS = 168;
 
 export function getNewsHealth(radar: LiveNewsData) {
   const unavailable = radar.feeds.filter(feed => feed.status !== 'Ansluten');
@@ -17,6 +18,18 @@ export function getNewsHealth(radar: LiveNewsData) {
   const newestPublishedAt = datedItems.length ? new Date(Math.max(...datedItems)).toISOString() : null;
   const newestAgeHours = newestPublishedAt ? Math.max(0, (Date.now() - Date.parse(newestPublishedAt)) / 3600000) : null;
   const newsStale = radar.items.length > 0 && newestAgeHours !== null && newestAgeHours > STALE_AFTER_HOURS;
+
+  const sourceFreshness = radar.feeds.map(feed => {
+    const sourceDates = radar.items
+      .filter(item => item.source === feed.name)
+      .map(item => Date.parse(item.published))
+      .filter(time => Number.isFinite(time));
+    const latestPublishedAt = sourceDates.length ? new Date(Math.max(...sourceDates)).toISOString() : null;
+    const ageHours = latestPublishedAt ? Math.max(0, (Date.now() - Date.parse(latestPublishedAt)) / 3600000) : null;
+    const stale = feed.status === 'Ansluten' && ageHours !== null && ageHours > SOURCE_STALE_AFTER_HOURS;
+    return { name: feed.name, section: feed.section, status: feed.status, latestPublishedAt, ageHours, stale };
+  });
+  const staleSources = sourceFreshness.filter(source => source.stale);
 
   const alerts = [
     ...unavailable.map(feed => `${feed.name} är tillfälligt otillgänglig.`),
@@ -39,5 +52,18 @@ export function getNewsHealth(radar: LiveNewsData) {
   const needsWatching = unavailable.length > 0 || radar.localCount === 0 || emptySections.length > 0 || newsStale;
   const status: NewsHealthStatus = requiresAction ? 'ÅTGÄRD' : needsWatching ? 'BEVAKA' : 'STABIL';
 
-  return { unavailable, unavailableLocalFeeds, emptySections, alerts, reasons, status, newestPublishedAt, newestAgeHours, staleAfterHours: STALE_AFTER_HOURS };
+  return {
+    unavailable,
+    unavailableLocalFeeds,
+    emptySections,
+    alerts,
+    reasons,
+    status,
+    newestPublishedAt,
+    newestAgeHours,
+    staleAfterHours: STALE_AFTER_HOURS,
+    sourceFreshness,
+    staleSources,
+    sourceStaleAfterHours: SOURCE_STALE_AFTER_HOURS,
+  };
 }
