@@ -6,6 +6,8 @@ export const revalidate = 900;
 
 const reasonLabels: Record<string,string> = {
   SOURCE_DEGRADED: 'En eller flera källor svarar inte',
+  SOURCE_STALE: 'En eller flera anslutna källor levererar för gammalt daterat innehåll',
+  SOURCE_UNDATED: 'En eller flera anslutna källor saknar daterat innehåll i aktuell radar',
   LOCAL_EMPTY: 'Nacka/Lokalt saknar aktuella artiklar',
   RADAR_EMPTY: 'Nyhetsradarn saknar aktuellt innehåll',
   CATEGORY_EMPTY: 'En eller flera kategorier är tomma',
@@ -42,7 +44,7 @@ export default async function DriftstatusPage() {
 
   return (
     <main style={{ maxWidth: 960, margin: '0 auto', padding: '72px 28px 100px' }}>
-      <p style={{ color: '#a61919', fontWeight: 800, letterSpacing: 2, fontSize: 13 }}>MAIN 334 · DRIFTSTATUS</p>
+      <p style={{ color: '#a61919', fontWeight: 800, letterSpacing: 2, fontSize: 13 }}>MAIN 335 · DRIFTSTATUS</p>
       <h1 style={{ fontFamily: 'Georgia,serif', fontSize: 'clamp(48px,7vw,82px)', lineHeight: .98, margin: '12px 0 18px' }}>Nyhetsradarns status</h1>
       <p style={{ fontFamily: 'Georgia,serif', fontSize: 20, lineHeight: 1.45, maxWidth: 760 }}>
         Visuell kontroll av live-data, statusregler, orsakskoder och tydligt klassificerad källhälsa.
@@ -77,7 +79,7 @@ export default async function DriftstatusPage() {
       </section>
 
       <section aria-label="Färskhetsgräns" style={{ marginTop: 24, padding: '16px 18px', background: '#f7f5f1' }}>
-        <strong>Färskhetskontroll:</strong> BEVAKA aktiveras om den nyaste daterade artikeln är äldre än {staleAfterHours} timmar.
+        <strong>Färskhetskontroll:</strong> BEVAKA aktiveras om den nyaste daterade artikeln är äldre än {staleAfterHours} timmar eller om en ansluten källa klassificeras som GAMMAL eller INGEN_DATERAD_DATA.
         {newestPublishedAt ? <div style={{ marginTop: 6 }}>Nyaste daterade publicering: {new Date(newestPublishedAt).toLocaleString('sv-SE', { timeZone: 'Europe/Stockholm' })}.</div> : null}
       </section>
 
