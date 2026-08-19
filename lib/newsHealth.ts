@@ -2,7 +2,7 @@ import type { getLiveNews } from './liveNews';
 
 type LiveNewsData = Awaited<ReturnType<typeof getLiveNews>>;
 export type NewsHealthStatus = 'STABIL' | 'BEVAKA' | 'ÅTGÄRD';
-export type NewsHealthReason = 'SOURCE_DEGRADED' | 'LOCAL_EMPTY' | 'RADAR_EMPTY' | 'CATEGORY_EMPTY' | 'ALL_SOURCES_DOWN' | 'ALL_LOCAL_SOURCES_DOWN' | 'NEWS_STALE';
+export type NewsHealthReason = 'SOURCE_DEGRADED' | 'SOURCE_STALE' | 'SOURCE_UNDATED' | 'LOCAL_EMPTY' | 'RADAR_EMPTY' | 'CATEGORY_EMPTY' | 'ALL_SOURCES_DOWN' | 'ALL_LOCAL_SOURCES_DOWN' | 'NEWS_STALE';
 export type SourceHealthState = 'AKTIV' | 'GAMMAL' | 'INGEN_DATERAD_DATA' | 'NERE';
 
 const STALE_AFTER_HOURS = 36;
@@ -38,6 +38,8 @@ export function getNewsHealth(radar: LiveNewsData) {
 
   const alerts = [
     ...unavailable.map(feed => `${feed.name} är tillfälligt otillgänglig.`),
+    ...(staleSources.length ? [`${staleSources.length} ansluten källa/källor har inte levererat daterat innehåll inom ${SOURCE_STALE_AFTER_HOURS} timmar.`] : []),
+    ...(undatedSources.length ? [`${undatedSources.length} ansluten källa/källor saknar daterat innehåll i aktuell radar.`] : []),
     ...(radar.localCount === 0 ? ['Nacka/Lokalt har inga aktuella artiklar.'] : []),
     ...(radar.items.length === 0 ? ['Nyhetsradarn saknar aktuellt innehåll.'] : []),
     ...(newsStale ? [`Nyaste daterade artikeln är äldre än ${STALE_AFTER_HOURS} timmar.`] : []),
@@ -46,6 +48,8 @@ export function getNewsHealth(radar: LiveNewsData) {
 
   const reasons: NewsHealthReason[] = [];
   if (unavailable.length > 0) reasons.push('SOURCE_DEGRADED');
+  if (staleSources.length > 0) reasons.push('SOURCE_STALE');
+  if (undatedSources.length > 0) reasons.push('SOURCE_UNDATED');
   if (radar.localCount === 0) reasons.push('LOCAL_EMPTY');
   if (radar.items.length === 0) reasons.push('RADAR_EMPTY');
   if (newsStale) reasons.push('NEWS_STALE');
@@ -54,7 +58,7 @@ export function getNewsHealth(radar: LiveNewsData) {
   if (allLocalFeedsDown) reasons.push('ALL_LOCAL_SOURCES_DOWN');
 
   const requiresAction = allSourcesDown || allLocalFeedsDown || radar.items.length === 0;
-  const needsWatching = unavailable.length > 0 || radar.localCount === 0 || emptySections.length > 0 || newsStale;
+  const needsWatching = unavailable.length > 0 || staleSources.length > 0 || undatedSources.length > 0 || radar.localCount === 0 || emptySections.length > 0 || newsStale;
   const status: NewsHealthStatus = requiresAction ? 'ÅTGÄRD' : needsWatching ? 'BEVAKA' : 'STABIL';
 
   return {
