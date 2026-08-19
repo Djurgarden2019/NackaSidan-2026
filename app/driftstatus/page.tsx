@@ -16,15 +16,26 @@ const reasonLabels: Record<string,string> = {
 
 export default async function DriftstatusPage() {
   const radar = await getLiveNews();
-  const { unavailable, alerts, reasons, status, newestPublishedAt, newestAgeHours, staleAfterHours } = getNewsHealth(radar);
+  const {
+    unavailable,
+    alerts,
+    reasons,
+    status,
+    newestPublishedAt,
+    newestAgeHours,
+    staleAfterHours,
+    sourceFreshness,
+    staleSources,
+    sourceStaleAfterHours,
+  } = getNewsHealth(radar);
   const freshnessLabel = newestAgeHours === null ? 'Okänd' : `${Math.round(newestAgeHours * 10) / 10} h`;
 
   return (
     <main style={{ maxWidth: 960, margin: '0 auto', padding: '72px 28px 100px' }}>
-      <p style={{ color: '#a61919', fontWeight: 800, letterSpacing: 2, fontSize: 13 }}>MAIN 332 · DRIFTSTATUS</p>
+      <p style={{ color: '#a61919', fontWeight: 800, letterSpacing: 2, fontSize: 13 }}>MAIN 333 · DRIFTSTATUS</p>
       <h1 style={{ fontFamily: 'Georgia,serif', fontSize: 'clamp(48px,7vw,82px)', lineHeight: .98, margin: '12px 0 18px' }}>Nyhetsradarns status</h1>
       <p style={{ fontFamily: 'Georgia,serif', fontSize: 20, lineHeight: 1.45, maxWidth: 760 }}>
-        Visuell kontroll av live-data, statusregler, orsakskoder och nyhetsflödets färskhet.
+        Visuell kontroll av live-data, statusregler, orsakskoder och nyhetsflödets färskhet per källa.
       </p>
 
       <nav aria-label="Driftverktyg" style={{ display: 'flex', flexWrap: 'wrap', gap: 10, marginTop: 24 }}>
@@ -57,6 +68,18 @@ export default async function DriftstatusPage() {
       <section aria-label="Färskhetsgräns" style={{ marginTop: 24, padding: '16px 18px', background: '#f7f5f1' }}>
         <strong>Färskhetskontroll:</strong> BEVAKA aktiveras om den nyaste daterade artikeln är äldre än {staleAfterHours} timmar.
         {newestPublishedAt ? <div style={{ marginTop: 6 }}>Nyaste daterade publicering: {new Date(newestPublishedAt).toLocaleString('sv-SE', { timeZone: 'Europe/Stockholm' })}.</div> : null}
+      </section>
+
+      <section aria-label="Källvis färskhet" style={{ marginTop: 34 }}>
+        <h2 style={{ fontFamily: 'Georgia,serif', fontSize: 30 }}>Färskhet per källa</h2>
+        <p style={{ lineHeight: 1.5 }}>En ansluten källa markeras som gammal om dess senaste daterade artikel är äldre än {sourceStaleAfterHours} timmar.</p>
+        <div style={{ display: 'grid', gap: 8, marginTop: 16 }}>
+          {sourceFreshness.map(source => {
+            const age = source.ageHours === null ? 'Okänd ålder' : `${Math.round(source.ageHours * 10) / 10} h`;
+            return <div key={source.name} style={{ display: 'flex', justifyContent: 'space-between', gap: 18, flexWrap: 'wrap', borderTop: '1px solid #bbb', paddingTop: 10 }}><strong>{source.name}</strong><span>{source.status} · {age}{source.stale ? ' · GAMMAL' : ''}</span></div>;
+          })}
+        </div>
+        {staleSources.length ? <p style={{ marginTop: 16, fontWeight: 700 }}>{staleSources.length} källa/källor behöver granskas för låg publiceringstakt.</p> : null}
       </section>
 
       {unavailable.length ? <section style={{ marginTop: 34 }}><h2 style={{ fontFamily: 'Georgia,serif', fontSize: 30 }}>Källor som behöver kontrolleras</h2><ul style={{ lineHeight: 1.6 }}>{unavailable.map(feed => <li key={feed.name}>{feed.name}</li>)}</ul></section> : null}
