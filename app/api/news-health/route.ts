@@ -6,10 +6,11 @@ export const revalidate = 900;
 
 export async function GET() {
   const radar = await getLiveNews();
-  const { unavailable, alerts, status } = getNewsHealth(radar);
+  const { unavailable, alerts, reasons, status } = getNewsHealth(radar);
 
   return NextResponse.json({
     status,
+    reasons,
     checkedAt: radar.fetchedAt,
     articleCount: radar.items.length,
     localCount: radar.localCount,
