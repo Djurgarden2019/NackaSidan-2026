@@ -16,6 +16,9 @@ export async function GET() {
     staleAfterHours,
     sourceFreshness,
     staleSources,
+    undatedSources,
+    activeSources,
+    downSources,
     sourceStaleAfterHours,
   } = getNewsHealth(radar);
 
@@ -27,7 +30,14 @@ export async function GET() {
     newestAgeHours: newestAgeHours === null ? null : Math.round(newestAgeHours * 10) / 10,
     staleAfterHours,
     sourceStaleAfterHours,
+    sourceStateCounts: {
+      active: activeSources.length,
+      stale: staleSources.length,
+      undated: undatedSources.length,
+      down: downSources.length,
+    },
     staleSources: staleSources.map(source => source.name),
+    undatedSources: undatedSources.map(source => source.name),
     sourceFreshness: sourceFreshness.map(source => ({
       ...source,
       ageHours: source.ageHours === null ? null : Math.round(source.ageHours * 10) / 10,

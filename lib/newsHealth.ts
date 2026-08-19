@@ -3,6 +3,7 @@ import type { getLiveNews } from './liveNews';
 type LiveNewsData = Awaited<ReturnType<typeof getLiveNews>>;
 export type NewsHealthStatus = 'STABIL' | 'BEVAKA' | 'ÅTGÄRD';
 export type NewsHealthReason = 'SOURCE_DEGRADED' | 'LOCAL_EMPTY' | 'RADAR_EMPTY' | 'CATEGORY_EMPTY' | 'ALL_SOURCES_DOWN' | 'ALL_LOCAL_SOURCES_DOWN' | 'NEWS_STALE';
+export type SourceHealthState = 'AKTIV' | 'GAMMAL' | 'INGEN_DATERAD_DATA' | 'NERE';
 
 const STALE_AFTER_HOURS = 36;
 const SOURCE_STALE_AFTER_HOURS = 168;
@@ -27,9 +28,13 @@ export function getNewsHealth(radar: LiveNewsData) {
     const latestPublishedAt = sourceDates.length ? new Date(Math.max(...sourceDates)).toISOString() : null;
     const ageHours = latestPublishedAt ? Math.max(0, (Date.now() - Date.parse(latestPublishedAt)) / 3600000) : null;
     const stale = feed.status === 'Ansluten' && ageHours !== null && ageHours > SOURCE_STALE_AFTER_HOURS;
-    return { name: feed.name, section: feed.section, status: feed.status, latestPublishedAt, ageHours, stale };
+    const state: SourceHealthState = feed.status !== 'Ansluten' ? 'NERE' : ageHours === null ? 'INGEN_DATERAD_DATA' : stale ? 'GAMMAL' : 'AKTIV';
+    return { name: feed.name, section: feed.section, status: feed.status, latestPublishedAt, ageHours, stale, state };
   });
-  const staleSources = sourceFreshness.filter(source => source.stale);
+  const staleSources = sourceFreshness.filter(source => source.state === 'GAMMAL');
+  const undatedSources = sourceFreshness.filter(source => source.state === 'INGEN_DATERAD_DATA');
+  const activeSources = sourceFreshness.filter(source => source.state === 'AKTIV');
+  const downSources = sourceFreshness.filter(source => source.state === 'NERE');
 
   const alerts = [
     ...unavailable.map(feed => `${feed.name} är tillfälligt otillgänglig.`),
@@ -64,6 +69,9 @@ export function getNewsHealth(radar: LiveNewsData) {
     staleAfterHours: STALE_AFTER_HOURS,
     sourceFreshness,
     staleSources,
+    undatedSources,
+    activeSources,
+    downSources,
     sourceStaleAfterHours: SOURCE_STALE_AFTER_HOURS,
   };
 }
