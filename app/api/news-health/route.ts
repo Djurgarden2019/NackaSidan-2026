@@ -6,12 +6,15 @@ export const revalidate = 900;
 
 export async function GET() {
   const radar = await getLiveNews();
-  const { unavailable, alerts, reasons, status } = getNewsHealth(radar);
+  const { unavailable, alerts, reasons, status, newestPublishedAt, newestAgeHours, staleAfterHours } = getNewsHealth(radar);
 
   return NextResponse.json({
     status,
     reasons,
     checkedAt: radar.fetchedAt,
+    newestPublishedAt,
+    newestAgeHours: newestAgeHours === null ? null : Math.round(newestAgeHours * 10) / 10,
+    staleAfterHours,
     articleCount: radar.items.length,
     localCount: radar.localCount,
     highPriority: radar.highPriority,
