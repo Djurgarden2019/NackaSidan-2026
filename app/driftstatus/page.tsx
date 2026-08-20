@@ -44,7 +44,7 @@ export default async function DriftstatusPage() {
 
   return (
     <main style={{ maxWidth: 960, margin: '0 auto', padding: '72px 28px 100px' }}>
-      <p style={{ color: '#a61919', fontWeight: 800, letterSpacing: 2, fontSize: 13 }}>MAIN 335 · DRIFTSTATUS</p>
+      <p style={{ color: '#a61919', fontWeight: 800, letterSpacing: 2, fontSize: 13 }}>MAIN 338 · DRIFTSTATUS</p>
       <h1 style={{ fontFamily: 'Georgia,serif', fontSize: 'clamp(48px,7vw,82px)', lineHeight: .98, margin: '12px 0 18px' }}>Nyhetsradarns status</h1>
       <p style={{ fontFamily: 'Georgia,serif', fontSize: 20, lineHeight: 1.45, maxWidth: 760 }}>
         Visuell kontroll av live-data, statusregler, orsakskoder och tydligt klassificerad källhälsa.
@@ -53,8 +53,14 @@ export default async function DriftstatusPage() {
       <nav aria-label="Driftverktyg" style={{ display: 'flex', flexWrap: 'wrap', gap: 10, marginTop: 24 }}>
         <Link href="/driftpanel" style={{ border: '1px solid #111', padding: '10px 14px', textDecoration: 'none', fontWeight: 700 }}>Öppna Driftpanelen</Link>
         <Link href="/api/news-health" style={{ border: '1px solid #111', padding: '10px 14px', textDecoration: 'none', fontWeight: 700 }}>Visa health-JSON</Link>
+        <Link href="/api/news-health/live" style={{ border: '1px solid #111', padding: '10px 14px', textDecoration: 'none', fontWeight: 700 }}>Liveness-probe</Link>
+        <Link href="/api/news-health/ready" style={{ border: '1px solid #111', padding: '10px 14px', textDecoration: 'none', fontWeight: 700 }}>Readiness-probe</Link>
         <Link href="/" style={{ border: '1px solid #111', padding: '10px 14px', textDecoration: 'none', fontWeight: 700 }}>Till startsidan</Link>
       </nav>
+
+      <section aria-label="Probe-status" style={{ marginTop: 24, padding: '16px 18px', background: '#f7f5f1', lineHeight: 1.55 }}>
+        <strong>Övervakningsprober:</strong> liveness svarar om själva appen kör. Readiness använder Nyhetsradarns hälsomodell och returnerar 503 endast vid ÅTGÄRD. Båda stöder GET och HEAD.
+      </section>
 
       <section aria-label="Aktuell driftstatus" style={{ marginTop: 34, border: '3px solid #111', padding: '28px 26px', background: status === 'STABIL' ? '#eef4ec' : '#f7eee5' }}>
         <div style={{ fontSize: 13, fontWeight: 900, letterSpacing: 1.6 }}>STATUS</div>
