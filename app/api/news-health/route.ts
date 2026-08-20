@@ -21,9 +21,13 @@ export async function GET() {
     downSources,
     sourceStaleAfterHours,
   } = getNewsHealth(radar);
+  const severity = status === 'ÅTGÄRD' ? 2 : status === 'BEVAKA' ? 1 : 0;
+  const healthy = status === 'STABIL';
 
   return NextResponse.json({
     status,
+    severity,
+    healthy,
     reasons,
     checkedAt: radar.fetchedAt,
     newestPublishedAt,
@@ -51,8 +55,11 @@ export async function GET() {
     sectionCounts: radar.sectionCounts,
     alerts,
   }, {
+    status: status === 'ÅTGÄRD' ? 503 : 200,
     headers: {
       'Cache-Control': 'public, s-maxage=900, stale-while-revalidate=300',
+      'X-NackaSidan-Health': status,
+      'X-NackaSidan-Severity': String(severity),
     },
   });
 }
