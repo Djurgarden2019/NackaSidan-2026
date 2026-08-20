@@ -4,22 +4,41 @@ import { getNewsHealth } from '../../../../lib/newsHealth';
 
 export const revalidate = 900;
 
-export async function GET() {
+async function getReadiness() {
   const radar = await getLiveNews();
   const { status, reasons } = getNewsHealth(radar);
   const ready = status !== 'ÅTGÄRD';
+  const severity = status === 'ÅTGÄRD' ? 2 : status === 'BEVAKA' ? 1 : 0;
+  const headers = {
+    'Cache-Control': 'public, s-maxage=900, stale-while-revalidate=300',
+    'X-NackaSidan-Probe': 'ready',
+    'X-NackaSidan-Health': status,
+    'X-NackaSidan-Severity': String(severity),
+  };
+
+  return { radar, status, reasons, ready, severity, headers };
+}
+
+export async function GET() {
+  const { radar, status, reasons, ready, severity, headers } = await getReadiness();
 
   return NextResponse.json({
     ready,
     status,
+    severity,
     reasons,
     checkedAt: radar.fetchedAt,
   }, {
     status: ready ? 200 : 503,
-    headers: {
-      'Cache-Control': 'public, s-maxage=900, stale-while-revalidate=300',
-      'X-NackaSidan-Probe': 'ready',
-      'X-NackaSidan-Health': status,
-    },
+    headers,
+  });
+}
+
+export async function HEAD() {
+  const { ready, headers } = await getReadiness();
+
+  return new NextResponse(null, {
+    status: ready ? 200 : 503,
+    headers,
   });
 }
