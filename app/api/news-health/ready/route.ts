@@ -4,6 +4,8 @@ import { getNewsHealth } from '../../../../lib/newsHealth';
 
 export const revalidate = 900;
 
+const CONTRACT_VERSION = 1;
+
 async function getReadiness() {
   const radar = await getLiveNews();
   const { status, reasons } = getNewsHealth(radar);
@@ -12,6 +14,7 @@ async function getReadiness() {
   const headers = {
     'Cache-Control': 'public, s-maxage=900, stale-while-revalidate=300',
     'X-NackaSidan-Probe': 'ready',
+    'X-NackaSidan-Probe-Version': String(CONTRACT_VERSION),
     'X-NackaSidan-Health': status,
     'X-NackaSidan-Severity': String(severity),
   };
@@ -23,6 +26,7 @@ export async function GET() {
   const { radar, status, reasons, ready, severity, headers } = await getReadiness();
 
   return NextResponse.json({
+    contractVersion: CONTRACT_VERSION,
     ready,
     status,
     severity,
