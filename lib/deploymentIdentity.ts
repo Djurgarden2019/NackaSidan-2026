@@ -3,6 +3,9 @@ export function getDeploymentIdentity() {
   const environment = process.env.VERCEL_ENV ?? process.env.NODE_ENV ?? 'unknown';
   const deploymentUrl = process.env.VERCEL_URL ?? null;
   const gitRef = process.env.VERCEL_GIT_COMMIT_REF ?? null;
+  const isProduction = environment === 'production';
+  const isMainRef = gitRef === 'main';
+  const provenanceOk = !isProduction || isMainRef;
 
   return {
     commitSha,
@@ -10,5 +13,8 @@ export function getDeploymentIdentity() {
     environment,
     deploymentUrl,
     gitRef,
+    isProduction,
+    isMainRef,
+    provenanceOk,
   };
 }

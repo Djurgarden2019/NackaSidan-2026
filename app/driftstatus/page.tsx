@@ -46,7 +46,7 @@ export default async function DriftstatusPage() {
 
   return (
     <main style={{ maxWidth: 960, margin: '0 auto', padding: '72px 28px 100px' }}>
-      <p style={{ color: '#a61919', fontWeight: 800, letterSpacing: 2, fontSize: 13 }}>MAIN 341 · DRIFTSTATUS</p>
+      <p style={{ color: '#a61919', fontWeight: 800, letterSpacing: 2, fontSize: 13 }}>MAIN 342 · DRIFTSTATUS</p>
       <h1 style={{ fontFamily: 'Georgia,serif', fontSize: 'clamp(48px,7vw,82px)', lineHeight: .98, margin: '12px 0 18px' }}>Nyhetsradarns status</h1>
       <p style={{ fontFamily: 'Georgia,serif', fontSize: 20, lineHeight: 1.45, maxWidth: 760 }}>
         Visuell kontroll av live-data, statusregler, orsakskoder, källhälsa och den deployment som faktiskt kör.
@@ -67,6 +67,17 @@ export default async function DriftstatusPage() {
           <div><strong>Miljö</strong><div style={{ marginTop: 4 }}>{deployment.environment}</div></div>
           <div><strong>Git-ref</strong><div style={{ fontFamily: 'monospace', marginTop: 4 }}>{deployment.gitRef ?? 'Okänd'}</div></div>
           <div><strong>Deployment</strong><div style={{ marginTop: 4 }}>{deployment.deploymentUrl ? <a href={`https://${deployment.deploymentUrl}`} target="_blank" rel="noreferrer">Öppna körande deploy</a> : 'Okänd'}</div></div>
+        </div>
+      </section>
+
+      <section aria-label="Deploy-proveniens" style={{ marginTop: 14, padding: '16px 18px', border: `2px solid ${deployment.provenanceOk ? '#235c2b' : '#a61919'}`, background: deployment.provenanceOk ? '#eef4ec' : '#f7e7e7', lineHeight: 1.55 }}>
+        <strong>Deploy-proveniens: {deployment.provenanceOk ? 'GODKÄND' : 'VARNING'}</strong>
+        <div style={{ marginTop: 6 }}>
+          {deployment.isProduction
+            ? deployment.isMainRef
+              ? 'Production-deployen kommer från main, vilket är förväntat.'
+              : `Production-deployen kommer från ${deployment.gitRef ?? 'okänd Git-ref'} i stället för main.`
+            : `Detta är ${deployment.environment}; main-kravet gäller endast production.`}
         </div>
       </section>
 
