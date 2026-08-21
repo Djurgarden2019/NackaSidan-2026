@@ -64,6 +64,7 @@ export async function GET() {
       'X-NackaSidan-Health': status,
       'X-NackaSidan-Severity': String(severity),
       ...(deployment.shortCommitSha ? { 'X-NackaSidan-Commit': deployment.shortCommitSha } : {}),
+      ...(deployment.deploymentId ? { 'X-NackaSidan-Deployment-Id': deployment.deploymentId } : {}),
       'X-NackaSidan-Environment': deployment.environment,
     },
   });

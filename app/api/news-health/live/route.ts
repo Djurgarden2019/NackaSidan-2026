@@ -12,6 +12,7 @@ function getHeaders() {
     'X-NackaSidan-Probe': 'live',
     'X-NackaSidan-Probe-Version': String(CONTRACT_VERSION),
     ...(deployment.shortCommitSha ? { 'X-NackaSidan-Commit': deployment.shortCommitSha } : {}),
+    ...(deployment.deploymentId ? { 'X-NackaSidan-Deployment-Id': deployment.deploymentId } : {}),
     'X-NackaSidan-Environment': deployment.environment,
   };
 }
