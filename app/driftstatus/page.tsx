@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import { getLiveNews } from '../../lib/liveNews';
 import { getNewsHealth } from '../../lib/newsHealth';
+import { getDeploymentIdentity } from '../../lib/deploymentIdentity';
 
 export const revalidate = 900;
 
@@ -25,6 +26,7 @@ const sourceStateLabels: Record<string,string> = {
 
 export default async function DriftstatusPage() {
   const radar = await getLiveNews();
+  const deployment = getDeploymentIdentity();
   const {
     unavailable,
     alerts,
@@ -44,10 +46,10 @@ export default async function DriftstatusPage() {
 
   return (
     <main style={{ maxWidth: 960, margin: '0 auto', padding: '72px 28px 100px' }}>
-      <p style={{ color: '#a61919', fontWeight: 800, letterSpacing: 2, fontSize: 13 }}>MAIN 338 · DRIFTSTATUS</p>
+      <p style={{ color: '#a61919', fontWeight: 800, letterSpacing: 2, fontSize: 13 }}>MAIN 341 · DRIFTSTATUS</p>
       <h1 style={{ fontFamily: 'Georgia,serif', fontSize: 'clamp(48px,7vw,82px)', lineHeight: .98, margin: '12px 0 18px' }}>Nyhetsradarns status</h1>
       <p style={{ fontFamily: 'Georgia,serif', fontSize: 20, lineHeight: 1.45, maxWidth: 760 }}>
-        Visuell kontroll av live-data, statusregler, orsakskoder och tydligt klassificerad källhälsa.
+        Visuell kontroll av live-data, statusregler, orsakskoder, källhälsa och den deployment som faktiskt kör.
       </p>
 
       <nav aria-label="Driftverktyg" style={{ display: 'flex', flexWrap: 'wrap', gap: 10, marginTop: 24 }}>
@@ -57,6 +59,16 @@ export default async function DriftstatusPage() {
         <Link href="/api/news-health/ready" style={{ border: '1px solid #111', padding: '10px 14px', textDecoration: 'none', fontWeight: 700 }}>Readiness-probe</Link>
         <Link href="/" style={{ border: '1px solid #111', padding: '10px 14px', textDecoration: 'none', fontWeight: 700 }}>Till startsidan</Link>
       </nav>
+
+      <section aria-label="Deployment-identitet" style={{ marginTop: 24, padding: '18px', border: '1px solid #111', background: '#f7f5f1' }}>
+        <div style={{ fontSize: 13, fontWeight: 900, letterSpacing: 1.4 }}>AKTUELL DEPLOYMENT</div>
+        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit,minmax(180px,1fr))', gap: 14, marginTop: 14 }}>
+          <div><strong>Commit</strong><div style={{ fontFamily: 'monospace', marginTop: 4 }}>{deployment.shortCommitSha ?? 'Okänd'}</div></div>
+          <div><strong>Miljö</strong><div style={{ marginTop: 4 }}>{deployment.environment}</div></div>
+          <div><strong>Git-ref</strong><div style={{ fontFamily: 'monospace', marginTop: 4 }}>{deployment.gitRef ?? 'Okänd'}</div></div>
+          <div><strong>Deployment</strong><div style={{ marginTop: 4 }}>{deployment.deploymentUrl ? <a href={`https://${deployment.deploymentUrl}`} target="_blank" rel="noreferrer">Öppna körande deploy</a> : 'Okänd'}</div></div>
+        </div>
+      </section>
 
       <section aria-label="Probe-status" style={{ marginTop: 24, padding: '16px 18px', background: '#f7f5f1', lineHeight: 1.55 }}>
         <strong>Övervakningsprober:</strong> liveness svarar om själva appen kör. Readiness använder Nyhetsradarns hälsomodell och returnerar 503 endast vid ÅTGÄRD. Båda stöder GET och HEAD.
