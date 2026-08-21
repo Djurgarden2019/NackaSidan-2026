@@ -1,11 +1,13 @@
 import { NextResponse } from 'next/server';
 import { getLiveNews } from '../../../lib/liveNews';
 import { getNewsHealth } from '../../../lib/newsHealth';
+import { getDeploymentIdentity } from '../../../lib/deploymentIdentity';
 
 export const revalidate = 900;
 
 export async function GET() {
   const radar = await getLiveNews();
+  const deployment = getDeploymentIdentity();
   const {
     unavailable,
     alerts,
@@ -28,6 +30,7 @@ export async function GET() {
     status,
     severity,
     healthy,
+    deployment,
     reasons,
     checkedAt: radar.fetchedAt,
     newestPublishedAt,
@@ -60,6 +63,8 @@ export async function GET() {
       'Cache-Control': 'public, s-maxage=900, stale-while-revalidate=300',
       'X-NackaSidan-Health': status,
       'X-NackaSidan-Severity': String(severity),
+      ...(deployment.shortCommitSha ? { 'X-NackaSidan-Commit': deployment.shortCommitSha } : {}),
+      'X-NackaSidan-Environment': deployment.environment,
     },
   });
 }
