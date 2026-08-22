@@ -6,6 +6,7 @@ import { getDeploymentIdentity } from '../../../lib/deploymentIdentity';
 export const revalidate = 900;
 
 type VerificationStatus = 'VERIFIED' | 'BEVAKA' | 'FAILED';
+type ReleaseGate = 'ALLOW' | 'ALLOW_WITH_WARNING' | 'BLOCK';
 
 async function buildReleaseVerification() {
   const radar = await getLiveNews();
@@ -19,6 +20,8 @@ async function buildReleaseVerification() {
   let status: VerificationStatus = 'VERIFIED';
   if (!provenanceOk || !readinessOk) status = 'FAILED';
   else if (health.status === 'BEVAKA') status = 'BEVAKA';
+
+  const gate: ReleaseGate = status === 'FAILED' ? 'BLOCK' : status === 'BEVAKA' ? 'ALLOW_WITH_WARNING' : 'ALLOW';
 
   const checks = {
     liveness: { ok: livenessOk },
@@ -36,6 +39,9 @@ async function buildReleaseVerification() {
   return {
     contractVersion: 1,
     verificationStatus: status,
+    releaseGate: gate,
+    releaseAllowed: gate !== 'BLOCK',
+    warningAcknowledgementRequired: gate === 'ALLOW_WITH_WARNING',
     verified: status === 'VERIFIED',
     operationallyReady: readinessOk && provenanceOk,
     healthStatus: health.status,
@@ -55,32 +61,31 @@ async function buildReleaseVerification() {
   };
 }
 
+function headersFor(payload: Awaited<ReturnType<typeof buildReleaseVerification>>) {
+  return {
+    'Cache-Control': 'public, s-maxage=900, stale-while-revalidate=300',
+    'X-NackaSidan-Release-Verification': payload.verificationStatus,
+    'X-NackaSidan-Release-Gate': payload.releaseGate,
+    'X-NackaSidan-Release-Allowed': payload.releaseAllowed ? 'true' : 'false',
+    'X-NackaSidan-Release-Verified': payload.verified ? 'true' : 'false',
+    'X-NackaSidan-Severity': String(payload.severity),
+    'X-NackaSidan-Deployment-Id': payload.deployment.deploymentId ?? 'unknown',
+    'X-NackaSidan-Commit': payload.deployment.shortCommitSha ?? 'unknown',
+  };
+}
+
 export async function GET() {
   const payload = await buildReleaseVerification();
   return NextResponse.json(payload, {
-    status: payload.verificationStatus === 'FAILED' ? 503 : 200,
-    headers: {
-      'Cache-Control': 'public, s-maxage=900, stale-while-revalidate=300',
-      'X-NackaSidan-Release-Verification': payload.verificationStatus,
-      'X-NackaSidan-Release-Verified': payload.verified ? 'true' : 'false',
-      'X-NackaSidan-Severity': String(payload.severity),
-      'X-NackaSidan-Deployment-Id': payload.deployment.deploymentId ?? 'unknown',
-      'X-NackaSidan-Commit': payload.deployment.shortCommitSha ?? 'unknown',
-    },
+    status: payload.releaseGate === 'BLOCK' ? 503 : 200,
+    headers: headersFor(payload),
   });
 }
 
 export async function HEAD() {
   const payload = await buildReleaseVerification();
   return new Response(null, {
-    status: payload.verificationStatus === 'FAILED' ? 503 : 200,
-    headers: {
-      'Cache-Control': 'public, s-maxage=900, stale-while-revalidate=300',
-      'X-NackaSidan-Release-Verification': payload.verificationStatus,
-      'X-NackaSidan-Release-Verified': payload.verified ? 'true' : 'false',
-      'X-NackaSidan-Severity': String(payload.severity),
-      'X-NackaSidan-Deployment-Id': payload.deployment.deploymentId ?? 'unknown',
-      'X-NackaSidan-Commit': payload.deployment.shortCommitSha ?? 'unknown',
-    },
+    status: payload.releaseGate === 'BLOCK' ? 503 : 200,
+    headers: headersFor(payload),
   });
 }
