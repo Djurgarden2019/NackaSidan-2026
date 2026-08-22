@@ -1,0 +1,1 @@
+Main 348 makes the incident workflow visible directly in `/driftstatus` and chooses the immediate next action from current provenance and health state. The full runbook remains linked for deeper incident response.
