@@ -13,6 +13,22 @@ type ReleaseGateReason =
   | 'HEALTH_WARNING'
   | 'PRODUCTION_IDENTITY_WARNING'
   | 'ALL_CHECKS_PASSED';
+type RemediationCode =
+  | 'VERIFY_DEPLOYMENT_PROVENANCE'
+  | 'OPEN_HEALTH_DIAGNOSTICS'
+  | 'INVESTIGATE_HEALTH_WARNINGS'
+  | 'VERIFY_PRODUCTION_IDENTITY'
+  | 'NO_REMEDIATION_REQUIRED';
+
+function remediationFor(reason: ReleaseGateReason): RemediationCode {
+  switch (reason) {
+    case 'PROVENANCE_FAILED': return 'VERIFY_DEPLOYMENT_PROVENANCE';
+    case 'READINESS_FAILED': return 'OPEN_HEALTH_DIAGNOSTICS';
+    case 'HEALTH_WARNING': return 'INVESTIGATE_HEALTH_WARNINGS';
+    case 'PRODUCTION_IDENTITY_WARNING': return 'VERIFY_PRODUCTION_IDENTITY';
+    default: return 'NO_REMEDIATION_REQUIRED';
+  }
+}
 
 async function buildReleaseVerification() {
   const radar = await getLiveNews();
@@ -37,6 +53,9 @@ async function buildReleaseVerification() {
   if (!productionIdentityOk) gateReasons.push('PRODUCTION_IDENTITY_WARNING');
   if (gateReasons.length === 0) gateReasons.push('ALL_CHECKS_PASSED');
 
+  const primaryReleaseGateReason = gateReasons[0];
+  const remediationCode = remediationFor(primaryReleaseGateReason);
+
   const checks = {
     liveness: { ok: livenessOk },
     readiness: { ok: readinessOk, healthStatus: health.status },
@@ -55,7 +74,8 @@ async function buildReleaseVerification() {
     verificationStatus: status,
     releaseGate: gate,
     releaseGateReasons: gateReasons,
-    primaryReleaseGateReason: gateReasons[0],
+    primaryReleaseGateReason,
+    remediationCode,
     releaseAllowed: gate !== 'BLOCK',
     warningAcknowledgementRequired: gate === 'ALLOW_WITH_WARNING',
     verified: status === 'VERIFIED',
@@ -83,6 +103,7 @@ function headersFor(payload: Awaited<ReturnType<typeof buildReleaseVerification>
     'X-NackaSidan-Release-Verification': payload.verificationStatus,
     'X-NackaSidan-Release-Gate': payload.releaseGate,
     'X-NackaSidan-Release-Gate-Reason': payload.primaryReleaseGateReason,
+    'X-NackaSidan-Remediation-Code': payload.remediationCode,
     'X-NackaSidan-Release-Allowed': payload.releaseAllowed ? 'true' : 'false',
     'X-NackaSidan-Release-Verified': payload.verified ? 'true' : 'false',
     'X-NackaSidan-Severity': String(payload.severity),
