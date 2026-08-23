@@ -1,65 +1,20 @@
 export const nackaEditorial = [
-  {
-    section: 'Skola & jobb',
-    title: 'Nacka vill ge högstadieelever riktiga jobb under skoltid',
-    summary: 'Kommunen har tecknat en avsiktsförklaring med Nästa generation Sverige om SAO-jobb. Modellen innebär att högstadieelever får ett betalt arbete som en del av undervisningen.',
-    why: 'Om modellen genomförs kan den skapa en tidigare länk mellan skola och arbetsliv och ge lokala arbetsgivare en ny roll i elevernas vardag.',
-    date: '21 augusti 2026',
-    href: 'https://www.nacka.se/nyheter-start/2026/08/nacka-ingar-avsiktsforklaring-om-sao-jobb/',
-    source: 'Nacka kommun'
-  },
-  {
-    section: 'Val 2026',
-    title: 'Valaffischerna är uppe – Nacka går in i valrörelsens slutskede',
-    summary: 'Inför valet den 13 september har kommunen förtydligat reglerna för valaffischering efter frågor och synpunkter från allmänheten.',
-    why: 'De kommande veckorna blir kommunpolitiken mer synlig i gaturummet. NackaSidan följer sakfrågorna bakom affischerna och vad partierna faktiskt vill göra lokalt.',
-    date: '21 augusti 2026',
-    href: 'https://www.nacka.se/nyheter-start/',
-    source: 'Nacka kommun'
-  },
-  {
-    section: 'Fritid',
-    title: 'Nackas nya Fritidsbibliotek har öppnat',
-    summary: 'I Nacka sportcentrum kan invånare nu låna bland annat skateboards, sovsäckar, simutrustning och bollar utan kostnad.',
-    why: 'Satsningen kan sänka tröskeln till idrott och friluftsliv, särskilt för familjer som inte vill eller kan köpa utrustning för varje aktivitet.',
-    date: '17 augusti 2026',
-    href: 'https://www.nacka.se/nyheter-start/',
-    source: 'Nacka kommun'
-  },
-  {
-    section: 'Trafik',
-    title: 'Ny pendelbåtsbrygga i Nacka strand är i trafik',
-    summary: 'Den nya bryggan öppnade för SL:s pendelbåtar och skärgårdstrafiken den 17 augusti och ska förenkla byten och resor från Nacka strand.',
-    why: 'Sjötrafiken blir allt viktigare när Nacka växer. Bryggan stärker ett kollektivtrafikalternativ som inte belastar vägnätet.',
-    date: '17 augusti 2026',
-    href: 'https://www.nacka.se/nyheter-start/',
-    source: 'Nacka kommun'
-  },
-  {
-    section: 'Trafik',
-    title: 'Broar längs Saltsjöbadsleden rustas under hösten',
-    summary: 'Underhåll på tre broar nära trafikplats Fisksätra pågår från augusti till november.',
-    why: 'Arbetena kan påverka vardagsresor i östra Nacka och är samtidigt en påminnelse om kostnaden för att underhålla kommunens och regionens växande infrastruktur.',
-    date: '11 augusti 2026',
-    href: 'https://www.nacka.se/nyheter-start/',
-    source: 'Nacka kommun'
-  },
-  {
-    section: 'Trygghet',
-    title: 'Kommunen och polisen varnar för otillåtna elsparkcyklar',
-    summary: 'En gemensam informationsinsats riktas till barn och föräldrar när fler unga använder elsparkcyklar som inte alltid uppfyller kraven för trafik på allmän väg.',
-    why: 'Frågan berör både trafiksäkerhet och föräldraansvar när skolorna har startat och fler barn rör sig i trafiken.',
-    date: '12 augusti 2026',
-    href: 'https://www.nacka.se/nyheter-start/',
-    source: 'Nacka kommun'
-  },
-  {
-    section: 'Omsorg',
-    title: 'Nacka söker årets insatser för äldre',
-    summary: 'Nomineringen till Ess-utmärkelsen är öppen till den 7 september för personer och team som gjort skillnad inom äldreomsorgen.',
-    why: 'Äldreomsorgen blir en viktig lokal valfråga. Utmärkelsen ger samtidigt en ingång till hur kvalitet och goda insatser uppmärksammas i vardagen.',
-    date: '17 augusti 2026',
-    href: 'https://www.nacka.se/nyheter-start/',
-    source: 'Nacka kommun'
-  }
+  { section:'Utrikes · Iran/USA', title:'Pakistan försöker medla när Iran–USA-konflikten hårdnar', summary:'Pakistans arméchef Asim Munir väntas resa till Teheran den 24 augusti. Pakistan har tagit en medlarroll samtidigt som Washington förbereder nya hårda sanktioner.', why:'Ett fungerande medlingsspår kan bli avgörande för både säkerheten i Gulfregionen och energipriserna i Europa.', date:'23 augusti 2026', href:'https://www.reuters.com/world/asia-pacific/iran-says-pakistans-army-chief-visit-tehran-monday-2026-08-23/', source:'Reuters' },
+  { section:'Utrikes · Ukraina', title:'Zelenskyj: Ryssland kan mobilisera ytterligare 300 000 soldater', summary:'Ukrainas president säger att Kyiv bedömer att Ryssland planerar en ny stor mobilisering efter det ryska parlamentsvalet i september samtidigt som hårda strider fortsätter i Donbas.', why:'En ny rysk mobilisering skulle kunna förlänga kriget och öka pressen på Europas militära och ekonomiska stöd.', date:'23 augusti 2026', href:'https://www.reuters.com/world/europe/putin-will-draft-300000-new-troops-after-september-elections-zelenskiy-says-2026-08-23/', source:'Reuters' },
+  { section:'Utrikes · Ukraina', title:'Zelenskyj varnar för val mitt under kriget', summary:'Ukrainas president avvisar kraven på ett val medan striderna pågår och säger att ett val under nuvarande förhållanden riskerar att splittra landet.', why:'Frågan handlar både om demokratisk legitimitet och om hur fria val kan genomföras när miljoner befinner sig vid fronten, utomlands eller under ockupation.', date:'23 augusti 2026', href:'https://www.reuters.com/world/europe/wartime-election-would-destroy-ukraine-zelenskiy-says-2026-08-23/', source:'Reuters' },
+  { section:'Utrikes · Norden', title:'Norge lovar över nio miljarder dollar till Ukraina 2027', summary:'Den norska regeringen planerar 85 miljarder norska kronor i militärt och humanitärt stöd till Ukraina under 2027, samma nivå som 2026.', why:'Beslutet visar hur det långvariga kriget förändrar de nordiska ländernas budgetar och syn på europeisk säkerhet.', date:'23 augusti 2026', href:'https://www.reuters.com/world/europe/norway-give-over-9-billion-ukraine-2027-2026-08-23/', source:'Reuters' },
+  { section:'Utrikes · Ukraina', title:'Drönarkriget flyttar allt längre från fronten', summary:'Ryssland och Ukraina trappar upp angreppen mot varandras ekonomiska infrastruktur. Vladimir Putin hotar med svar efter ukrainska attacker mot bland annat ryska oljeraffinaderier.', why:'När ekonomisk infrastruktur blir mål påverkas även energi, spannmålshandel och priser utanför Ukraina och Ryssland.', date:'22 augusti 2026', href:'https://www.reuters.com/world/europe/putin-says-ukraine-opened-pandoras-box-with-strikes-economic-targets-2026-08-22/', source:'Reuters' },
+  { section:'Utrikes · Ukraina', title:'Minst 16 döda efter attack mot köpcentrum i Kryvyj Rih', summary:'Minst 16 människor dödades och över 130 skadades i ett ryskt drönarangrepp mot ett köpcentrum i centrala Ukraina. Även barn finns bland de skadade enligt ukrainska myndigheter.', why:'Attacken visar hur civilbefolkningen fortsätter att drabbas när luftkriget intensifieras långt från frontlinjen.', date:'21 augusti 2026', href:'https://www.reuters.com/world/europe/five-killed-52-wounded-russian-strike-ukraines-kryvyi-rih-2026-08-21/', source:'Reuters' },
+  { section:'Utrikes · Iran/USA', title:'Fartygstrafiken genom Hormuz ligger kvar på mycket låg nivå', summary:'Endast nio råvarufartyg passerade Hormuzsundet under både tisdagen och onsdagen enligt Kplers data, samtidigt som Washington och Teheran ger motstridiga besked om vattenvägens status.', why:'Hormuz är en av världens viktigaste energipassager. Långvarigt låg trafik kan slå mot oljepriser, fraktkostnader och inflation även i Sverige.', date:'20 augusti 2026', href:'https://www.reuters.com/world/middle-east/hormuz-shipping-unchanged-amid-us-iran-stalemate-data-shows-2026-08-20/', source:'Reuters' },
+  { section:'Världsekonomi', title:'Europas börser står emot Iran-kriget bättre än väntat', summary:'STOXX 600 ligger nära rekordnivåer samtidigt som europeiska bolagsvinster och konjunkturdata överraskat positivt och kapital åter börjat strömma in i europeiska aktier.', why:'Utvecklingen är viktig för svenska sparare och företag eftersom Sverige är starkt integrerat med Europas kapitalmarknader och handel.', date:'21 augusti 2026', href:'https://www.reuters.com/business/war-hit-european-markets-are-far-down-out-2026-08-21/', source:'Reuters' },
+  { section:'Utrikes · Kina', title:'Kinas återhämtning tappar fart', summary:'Industriproduktion och detaljhandel bromsade in i juli samtidigt som investeringarna föll. Svag inhemsk efterfrågan och bostadsproblemen fortsätter att tynga ekonomin.', why:'Kinas utveckling påverkar global handel, råvarupriser och efterfrågan på europeiska exportvaror.', date:'17 augusti 2026', href:'https://www.reuters.com/world/china/chinas-industrial-output-slows-july-retail-sales-miss-forecasts-2026-08-17/', source:'Reuters' },
+  { section:'Utrikes · Kina', title:'Peking lovar mer stöd när ekonomin bromsar', summary:'Kinas regering säger att mer finanspolitiskt stöd ska riktas mot hushåll, konsumtion och investeringar under andra halvåret efter svagare ekonomiska data.', why:'Om stödet lyckas kan det stärka global efterfrågan. Om återhämtningen misslyckas ökar risken för svagare världshandel.', date:'21 augusti 2026', href:'https://www.reuters.com/world/asia-pacific/china-pledges-timely-fiscal-support-bolster-growth-2026-08-21/', source:'Reuters' },
+  { section:'Utrikes · USA', title:'USA:s 250-årsfirande avslutas med IndyCar genom Washington', summary:'En IndyCar-tävling genom centrala Washington blir finalen på sommarens firande av USA:s 250-årsjubileum. Omkring 200 000 åskådare väntas.', why:'Evenemanget kombinerar sport, nationellt jubileum och amerikansk politik samtidigt som USA befinner sig i konflikt med Iran.', date:'23 augusti 2026', href:'https://www.reuters.com/world/us/trump-caps-summer-us-250th-birthday-with-auto-race-through-washington-2026-08-23/', source:'Reuters' },
+  { section:'Skola & jobb', title:'Nacka vill ge högstadieelever riktiga jobb under skoltid', summary:'Kommunen har tecknat en avsiktsförklaring med Nästa generation Sverige om SAO-jobb. Modellen innebär att högstadieelever får ett betalt arbete som en del av undervisningen.', why:'Om modellen genomförs kan den skapa en tidigare länk mellan skola och arbetsliv och ge lokala arbetsgivare en ny roll i elevernas vardag.', date:'21 augusti 2026', href:'https://www.nacka.se/nyheter-start/2026/08/nacka-ingar-avsiktsforklaring-om-sao-jobb/', source:'Nacka kommun' },
+  { section:'Val 2026', title:'Valaffischerna är uppe – Nacka går in i valrörelsens slutskede', summary:'Inför valet den 13 september har kommunen förtydligat reglerna för valaffischering efter frågor och synpunkter från allmänheten.', why:'De kommande veckorna blir kommunpolitiken mer synlig i gaturummet. NackaSidan följer sakfrågorna bakom affischerna och vad partierna faktiskt vill göra lokalt.', date:'21 augusti 2026', href:'https://www.nacka.se/nyheter-start/', source:'Nacka kommun' },
+  { section:'Fritid', title:'Nackas nya Fritidsbibliotek har öppnat', summary:'I Nacka sportcentrum kan invånare nu låna bland annat skateboards, sovsäckar, simutrustning och bollar utan kostnad.', why:'Satsningen kan sänka tröskeln till idrott och friluftsliv, särskilt för familjer som inte vill eller kan köpa utrustning för varje aktivitet.', date:'17 augusti 2026', href:'https://www.nacka.se/nyheter-start/', source:'Nacka kommun' },
+  { section:'Trafik', title:'Ny pendelbåtsbrygga i Nacka strand är i trafik', summary:'Den nya bryggan öppnade för SL:s pendelbåtar och skärgårdstrafiken den 17 augusti och ska förenkla byten och resor från Nacka strand.', why:'Sjötrafiken blir allt viktigare när Nacka växer. Bryggan stärker ett kollektivtrafikalternativ som inte belastar vägnätet.', date:'17 augusti 2026', href:'https://www.nacka.se/nyheter-start/', source:'Nacka kommun' },
+  { section:'Trafik', title:'Broar längs Saltsjöbadsleden rustas under hösten', summary:'Underhåll på tre broar nära trafikplats Fisksätra pågår från augusti till november.', why:'Arbetena kan påverka vardagsresor i östra Nacka och är samtidigt en påminnelse om kostnaden för att underhålla växande infrastruktur.', date:'11 augusti 2026', href:'https://www.nacka.se/nyheter-start/', source:'Nacka kommun' },
+  { section:'Trygghet', title:'Kommunen och polisen varnar för otillåtna elsparkcyklar', summary:'En gemensam informationsinsats riktas till barn och föräldrar när fler unga använder elsparkcyklar som inte alltid uppfyller kraven för trafik på allmän väg.', why:'Frågan berör både trafiksäkerhet och föräldraansvar när skolorna har startat och fler barn rör sig i trafiken.', date:'12 augusti 2026', href:'https://www.nacka.se/nyheter-start/', source:'Nacka kommun' },
+  { section:'Omsorg', title:'Nacka söker årets insatser för äldre', summary:'Nomineringen till Ess-utmärkelsen är öppen till den 7 september för personer och team som gjort skillnad inom äldreomsorgen.', why:'Äldreomsorgen blir en viktig lokal valfråga. Utmärkelsen ger samtidigt en ingång till hur kvalitet och goda insatser uppmärksammas.', date:'17 augusti 2026', href:'https://www.nacka.se/nyheter-start/', source:'Nacka kommun' }
 ] as const;
