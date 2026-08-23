@@ -1,0 +1,1 @@
+Editorial 363 expands the front page with a dedicated local deep-dive layer while retaining the existing Nacka and international news package. The new material is sourced from SVT and Nacka municipality and focuses on Birka, the election calendar and major development projects.
