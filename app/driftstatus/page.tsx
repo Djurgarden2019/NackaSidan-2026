@@ -9,6 +9,13 @@ const reasonLabels: Record<string,string> = {
   SOURCE_DEGRADED: 'En eller flera källor svarar inte', SOURCE_STALE: 'En eller flera anslutna källor levererar för gammalt daterat innehåll', SOURCE_UNDATED: 'En eller flera anslutna källor saknar daterat innehåll i aktuell radar', LOCAL_EMPTY: 'Nacka/Lokalt saknar aktuella artiklar', RADAR_EMPTY: 'Nyhetsradarn saknar aktuellt innehåll', CATEGORY_EMPTY: 'En eller flera kategorier är tomma', ALL_SOURCES_DOWN: 'Alla källor är nere', ALL_LOCAL_SOURCES_DOWN: 'Alla Nacka/Lokalt-källor är nere', NEWS_STALE: 'Den nyaste daterade artikeln är för gammal',
 };
 const sourceStateLabels: Record<string,string> = { AKTIV: 'Ansluten och färsk', GAMMAL: 'Ansluten men gammal', INGEN_DATERAD_DATA: 'Ansluten men saknar daterad artikel', NERE: 'Källan svarar inte' };
+const gateReasonLabels: Record<string,string> = {
+  PROVENANCE_FAILED: 'Production har inte godkänd deploy-proveniens. Verifiera Git-ref, commit och deployment-ID innan release godkänns.',
+  READINESS_FAILED: 'Nyhetsradarn är inte operativt redo. Öppna readiness och full health-diagnostik för att hitta blockerande orsak.',
+  HEALTH_WARNING: 'Production är tillgänglig men hälsomodellen innehåller varningar som ska dokumenteras och följas.',
+  PRODUCTION_IDENTITY_WARNING: 'Production-identiteten behöver verifieras mot avsedd main-release.',
+  ALL_CHECKS_PASSED: 'Alla release-kontroller är godkända.',
+};
 
 export default async function DriftstatusPage() {
   const radar = await getLiveNews(); const deployment = getDeploymentIdentity();
@@ -16,6 +23,7 @@ export default async function DriftstatusPage() {
   const freshnessLabel = newestAgeHours === null ? 'Okänd' : `${Math.round(newestAgeHours * 10) / 10} h`;
   const releaseStatus = !deployment.provenanceOk || status === 'ÅTGÄRD' ? 'FAILED' : status === 'BEVAKA' ? 'BEVAKA' : 'VERIFIED';
   const releaseGate = releaseStatus === 'FAILED' ? 'BLOCK' : releaseStatus === 'BEVAKA' ? 'ALLOW_WITH_WARNING' : 'ALLOW';
+  const releaseGateReason = !deployment.provenanceOk ? 'PROVENANCE_FAILED' : status === 'ÅTGÄRD' ? 'READINESS_FAILED' : status === 'BEVAKA' ? 'HEALTH_WARNING' : deployment.isProduction && !deployment.isMainRef ? 'PRODUCTION_IDENTITY_WARNING' : 'ALL_CHECKS_PASSED';
   const nextAction = !deployment.provenanceOk
     ? 'Verifiera först deploy-proveniens och att production verkligen kommer från main. Jämför commit och deployment-ID innan annan felsökning.'
     : status === 'ÅTGÄRD'
@@ -25,7 +33,7 @@ export default async function DriftstatusPage() {
         : 'Ingen incidentåtgärd krävs. Fortsätt normal övervakning och använd proberna som verifiering efter nästa release.';
 
   return <main style={{ maxWidth:960, margin:'0 auto', padding:'72px 28px 100px' }}>
-    <p style={{ color:'#a61919', fontWeight:800, letterSpacing:2, fontSize:13 }}>MAIN 355 · DRIFTSTATUS</p>
+    <p style={{ color:'#a61919', fontWeight:800, letterSpacing:2, fontSize:13 }}>MAIN 357 · DRIFTSTATUS</p>
     <h1 style={{ fontFamily:'Georgia,serif', fontSize:'clamp(48px,7vw,82px)', lineHeight:.98, margin:'12px 0 18px' }}>Nyhetsradarns status</h1>
     <p style={{ fontFamily:'Georgia,serif', fontSize:20, lineHeight:1.45, maxWidth:760 }}>Visuell kontroll av live-data, release-verifiering, release-gate, statusregler, källhälsa och den deployment som faktiskt kör.</p>
     <nav aria-label="Driftverktyg" style={{ display:'flex', flexWrap:'wrap', gap:10, marginTop:24 }}>
@@ -38,6 +46,7 @@ export default async function DriftstatusPage() {
       <div style={{fontSize:13,fontWeight:900,letterSpacing:1.5}}>RELEASE-GATE</div>
       <div style={{fontFamily:'Georgia,serif',fontSize:'clamp(40px,6vw,62px)',lineHeight:1,marginTop:8,overflowWrap:'anywhere'}}>{releaseGate}</div>
       <div style={{marginTop:12,fontSize:18,lineHeight:1.5}}>{releaseGate==='ALLOW'?'Release är godkänd. Production är operativt verifierad och kan stängas som genomförd.':releaseGate==='ALLOW_WITH_WARNING'?'Release är tillåten, men varningen ska dokumenteras och följas tills hälsostatus återgår till STABIL.':'Release är blockerad. Åtgärda readiness eller deploy-proveniens innan production betraktas som verifierad.'}</div>
+      <div style={{marginTop:16,paddingTop:14,borderTop:'1px solid currentColor'}}><strong>Primär orsak:</strong> <code>{releaseGateReason}</code><div style={{marginTop:6}}>{gateReasonLabels[releaseGateReason]}</div></div>
     </section>
 
     <section aria-label="Release-verifiering" style={{marginTop:18,padding:'20px 22px',border:`3px solid ${releaseStatus==='VERIFIED'?'#235c2b':releaseStatus==='BEVAKA'?'#8a6400':'#a61919'}`,background:releaseStatus==='VERIFIED'?'#eef4ec':releaseStatus==='BEVAKA'?'#fff4d8':'#f7e7e7'}}>
@@ -55,7 +64,7 @@ export default async function DriftstatusPage() {
 
     <section aria-label="Deployment-identitet" style={{ marginTop:24, padding:18, border:'1px solid #111', background:'#f7f5f1' }}><div style={{ fontSize:13,fontWeight:900,letterSpacing:1.4 }}>AKTUELL DEPLOYMENT</div><div style={{display:'grid',gridTemplateColumns:'repeat(auto-fit,minmax(180px,1fr))',gap:14,marginTop:14}}><div><strong>Commit</strong><div style={{fontFamily:'monospace',marginTop:4}}>{deployment.shortCommitSha ?? 'Okänd'}</div></div><div><strong>Deployment-ID</strong><div style={{fontFamily:'monospace',marginTop:4,overflowWrap:'anywhere'}}>{deployment.deploymentId ?? 'Okänd'}</div></div><div><strong>Miljö</strong><div>{deployment.environment}</div></div><div><strong>Git-ref</strong><div style={{fontFamily:'monospace'}}>{deployment.gitRef ?? 'Okänd'}</div></div><div><strong>Deployment</strong><div>{deployment.deploymentUrl ? <a href={`https://${deployment.deploymentUrl}`} target="_blank" rel="noreferrer">Öppna körande deploy</a> : 'Okänd'}</div></div></div></section>
     <section aria-label="Deploy-proveniens" style={{marginTop:14,padding:'16px 18px',border:`2px solid ${deployment.provenanceOk?'#235c2b':'#a61919'}`,background:deployment.provenanceOk?'#eef4ec':'#f7e7e7',lineHeight:1.55}}><strong>Deploy-proveniens: {deployment.provenanceOk?'GODKÄND':'VARNING'}</strong><div style={{marginTop:6}}>{deployment.isProduction ? deployment.isMainRef ? 'Production-deployen kommer från main, vilket är förväntat.' : `Production-deployen kommer från ${deployment.gitRef ?? 'okänd Git-ref'} i stället för main.` : `Detta är ${deployment.environment}; main-kravet gäller endast production.`}</div></section>
-    <section aria-label="Probe-status" style={{marginTop:24,padding:'16px 18px',background:'#f7f5f1',lineHeight:1.55}}><strong>Övervakningsprober:</strong> release-gatet ger go/no-go. Release-verifiering sammanfattar production. Liveness svarar om appen kör. Readiness använder Nyhetsradarns hälsomodell. Incident-status ger incidentnivå och nästa maskinläsbara åtgärd. Deploy-proveniens verifierar releaseursprunget.</section>
+    <section aria-label="Probe-status" style={{marginTop:24,padding:'16px 18px',background:'#f7f5f1',lineHeight:1.55}}><strong>Övervakningsprober:</strong> release-gatet ger go/no-go och en primär orsakskod. Release-verifiering sammanfattar production. Liveness svarar om appen kör. Readiness använder Nyhetsradarns hälsomodell. Incident-status ger incidentnivå och nästa maskinläsbara åtgärd. Deploy-proveniens verifierar releaseursprunget.</section>
     <section aria-label="Aktuell driftstatus" style={{marginTop:34,border:'3px solid #111',padding:'28px 26px',background:status==='STABIL'?'#eef4ec':'#f7eee5'}}><div style={{fontSize:13,fontWeight:900,letterSpacing:1.6}}>STATUS</div><div style={{fontFamily:'Georgia,serif',fontSize:54,lineHeight:1,marginTop:8}}>{status}</div>{alerts.length?<ul style={{margin:'18px 0 0',paddingLeft:20,lineHeight:1.6}}>{alerts.map(a=><li key={a}>{a}</li>)}</ul>:<p>Inga automatiska driftvarningar just nu.</p>}</section>
     {reasons.length?<section style={{marginTop:24}}><h2 style={{fontFamily:'Georgia,serif',fontSize:30}}>Varför denna status?</h2><div style={{display:'grid',gap:10}}>{reasons.map(r=><div key={r} style={{borderLeft:'3px solid #a61919',padding:'10px 14px',background:'#f7f5f1'}}><strong style={{fontFamily:'monospace'}}>{r}</strong><div>{reasonLabels[r]??r}</div></div>)}</div></section>:null}
     <section style={{display:'grid',gridTemplateColumns:'repeat(auto-fit,minmax(150px,1fr))',gap:14,marginTop:28}}>{[[radar.items.length,'Aktuella artiklar'],[freshnessLabel,'Nyaste artikelns ålder'],[activeSources.length,'Aktiva källor'],[staleSources.length,'Gamla källor'],[undatedSources.length,'Utan daterad data'],[downSources.length,'Nere']].map(([v,l])=><div key={String(l)} style={{borderTop:'2px solid #111',paddingTop:12}}><strong style={{fontSize:34}}>{v}</strong><div>{l}</div></div>)}</section>
