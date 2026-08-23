@@ -1,0 +1,1 @@
+QA focus: verify front-page rendering, external source links, mobile grid behavior and Vercel build before merge.
