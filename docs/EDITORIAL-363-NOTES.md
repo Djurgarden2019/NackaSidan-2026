@@ -1,0 +1,1 @@
+Sources checked 23 August 2026. Election dates follow Nacka municipality. Birka figures follow SVT and Nacka municipality.
