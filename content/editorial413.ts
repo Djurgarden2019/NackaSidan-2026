@@ -1,0 +1,4 @@
+export const editorial413=[
+{section:'Nacka · Val 2026',date:'24 aug',title:'Två dagar kvar till förtidsröstningen',summary:'Förtidsröstningen inför valet den 13 september börjar onsdag 26 augusti.',why:'Valbevakningen går nu in i ett nytt skede när Nackaborna faktiskt börjar lägga sina röster.',source:'Nacka kommun',href:'https://www.nacka.se/kommun--politik/delta-och-paverka/val-2026/'},
+{section:'Nacka · Val 2026',date:'24 aug',title:'Valaffischerna blir en allt synligare del av kommunbilden',summary:'Kommunen har publicerat en särskild genomgång av reglerna för valaffischer efter frågor och synpunkter från invånare.',why:'Skyltningen är en konkret del av den lokala valrörelsen och kan följas område för område.',source:'Nacka kommun',href:'https://www.nacka.se/'}
+];
