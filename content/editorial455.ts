@@ -1,0 +1,4 @@
+export const editorial455=[
+{section:'Nacka · Barn',date:'25 aug',title:'Babymålning på Dieselverkstaden i dag',summary:'Barn mellan 9 månader och 2 år välkomnas tillsammans med vuxen till babymålning klockan 10–11.',why:'Nackas evenemangskalender visar hur kulturutbudet också riktas till kommunens allra yngsta.',source:'Nacka kommun',href:'https://www.nacka.se/pa-gang-i-nacka/'},
+{section:'Nacka · Friluftsliv',date:'25 aug',title:'Kvällsvandring genom Nyckelviken',summary:'En cirka 6–7 kilometer lång kvällsvandring arrangeras i Nyckelviken den 25 augusti klockan 17–19.30.',why:'Nyckelviken kombinerar natur, motion och närhet till tätorten och är ett återkommande lokalt utflyktsmål.',source:'Nacka kommun',href:'https://www.nacka.se/pa-gang-i-nacka/'}
+];
