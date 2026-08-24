@@ -1,0 +1,4 @@
+export const editorial409=[
+{section:'Nacka · Skola',date:'24 aug',title:'Skolorna går in i första hela veckan efter sommaren',summary:'Nackas kommunala skolor publicerar nu vecka 35-information och menyer när höstterminens vardag tar fart.',why:'Efter skolstarten skiftar fokus från trafikstart till den löpande vardagen för elever och familjer.',source:'Nacka kommun',href:'https://www.nacka.se/valfard-skola/ektorps-skola/'},
+{section:'Nacka · Förskola',date:'24 aug',title:'Förskolor uppdaterar höstens praktiska information',summary:'Tallidens förskola i Finntorp har aktuell information om verksamhet, visningar och vecka 35.',why:'Praktisk lokal serviceinformation är en viktig del av en användbar Nackasida för barnfamiljer.',source:'Nacka kommun',href:'https://www.nacka.se/valfard-skola/tallidensforskola/'}
+];

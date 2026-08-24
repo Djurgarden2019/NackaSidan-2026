@@ -1,0 +1,4 @@
+export const editorial406=[
+{section:'Nacka · Centrala Nacka',date:'24 aug',title:'Agnestigs torg invigs på torsdag',summary:'Den 27 augusti klockan 15 invigs Agnestigs torg intill Värmdövägen och Elverkshuset i Centrala Nacka.',why:'Torget blir ytterligare en färdig offentlig plats i den snabbt växande stadsmiljön i Centrala Nacka.',source:'Nacka kommun',href:'https://www.nacka.se/nyheter-start/2026/08/valkommen-pa-invigning-av-agnestigs-torg/'},
+{section:'Nacka · Kulturhistoria',date:'24 aug',title:'Nytt torg hedrar Carl-Bertil Agnestig',summary:'Torget har fått namn efter musikpedagogen, körledaren och tonsättaren Carl-Bertil Agnestig, som var verksam vid Nacka musikskola och fick kommunens kulturpris 2002.',why:'Namngivningen knyter den nya stadsdelen till Nackas lokala kulturhistoria.',source:'Nacka kommun',href:'https://www.nacka.se/nyheter-start/2026/08/valkommen-pa-invigning-av-agnestigs-torg/'}
+];
