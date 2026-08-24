@@ -1,0 +1,4 @@
+export const editorial461=[
+{section:'Nacka · Val 2026',date:'25 aug',title:'En dag kvar till förtidsröstningen',summary:'Förtidsröstningen inför valet den 13 september börjar onsdag den 26 augusti. Nackabor kan då börja rösta före valdagen.',why:'Valbevakningen går nu in i ett nytt skede när röster faktiskt börjar lämnas.',source:'Nacka kommun',href:'https://www.nacka.se/kommun--politik/delta-och-paverka/val-2026/'},
+{section:'Nacka · Senior',date:'26 aug',title:'Samtalskafé öppnar veckan på Smedjan',summary:'På onsdag hålls samtalskafé för seniorer på Träffpunkt Smedjan klockan 13–14.30 med fokus på samtal och nya kontakter.',why:'Kommunens öppna mötesplatser är en viktig del av arbetet mot ensamhet och för social gemenskap.',source:'Nacka kommun',href:'https://www.nacka.se/'}
+];
