@@ -1,0 +1,4 @@
+export const editorial459=[
+{section:'Nacka · Miljö',date:'25 aug',title:'Kyrkviken går tillbaka mot normalt badläge',summary:'Efter det mindre oljeutsläppet syns oljefilmen inte längre. Kommunen uppger att länsar och varningsskyltar tas bort under tisdagen den 25 augusti och att det går bra att bada när skyltarna är nedtagna.',why:'Badläget berör många Nackabor och är en konkret lokal uppföljning på helgens miljöhändelse.',source:'Nacka kommun',href:'https://www.nacka.se/nyheter-start/2026/08/avradan-fran-bad-vid-kyrkviken/'},
+{section:'Nacka · Skola',date:'25 aug',title:'Skolvecka 35 är igång i Nacka',summary:'Kommunala skolor som Ektorps skola och Borgvallaskolan visar nu veckans verksamhetsinformation för vecka 35, ett tydligt tecken på att höstterminens vardag är igång.',why:'Skolstarten påverkar tusentals familjer och innebär mer trafik och aktivitet kring kommunens skolor.',source:'Nacka kommun',href:'https://www.nacka.se/valfard-skola/ektorps-skola/'}
+];

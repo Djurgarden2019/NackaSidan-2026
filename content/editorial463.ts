@@ -1,0 +1,4 @@
+export const editorial463=[
+{section:'Nacka · Familj',date:'25 aug',title:'Babymålning lockar de allra yngsta',summary:'Dieselverkstaden arrangerar En tå i det blå, babymålning för barn 9 månader–2 år tillsammans med vuxen, med två pass under tisdagen.',why:'Små lokala kulturaktiviteter visar bredden i kommunens utbud för barnfamiljer.',source:'Nacka kommun',href:'https://www.nacka.se/pa-gang-i-nacka/'},
+{section:'Nacka · Samhälle',date:'25 aug',title:'Flera öppna mötesplatser under tisdagen',summary:'Dagens kalender innehåller bland annat Attention Nacka-Värmdös drop-in och en kvällsträff för vuxna med adhd/add på Tillgänglighetsforum.',why:'Öppna mötesplatser ger stöd, information och gemenskap utanför den ordinarie myndighetskontakten.',source:'Nacka kommun',href:'https://www.nacka.se/pa-gang-i-nacka/'}
+];
