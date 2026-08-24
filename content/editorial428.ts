@@ -1,0 +1,4 @@
+export const editorial428=[
+{section:'Nacka · Bevakar',date:'24 aug',title:'Tre datum att följa: 25, 26 och 27 augusti',summary:'På tisdag väntar förändrat badläge vid Kyrkviken och IT-hjälp i Dieselverkstaden, på onsdag börjar förtidsröstningen och på torsdag invigs Agnestigs torg.',why:'En tydlig lokal kalender gör NackaSidan mer användbar och skapar naturliga uppföljningar under veckan.',source:'Nacka kommun',href:'https://www.nacka.se/'},
+{section:'Nacka · Unga vuxna',date:'24 aug',title:'Socialpsykiatrin publicerar nya aktiviteter',summary:'Under måndagskvällen publicerades nya aktiviteter för unga vuxna, däribland fiske och grillning i Nyckelviken den 31 augusti och ett kommande samtal om yrkeslivet.',why:'Det breddar den lokala bevakningen från politik och byggande till stöd, gemenskap och vardagsservice.',source:'Nacka kommun',href:'https://www.nacka.se/valfard-samhallsservice/socialpsykiatrin/'}
+];
