@@ -1,0 +1,4 @@
+export const editorial438=[
+{section:'Nacka · Val 2026',date:'25 aug',title:'Digitalt röstkort är nytt i valet 2026',summary:'Från och med årets val ersätts pappersröstkortet av digitalt röstkort för väljare som har digital brevlåda. Den som saknar digital brevlåda får fortfarande röstkortet med posten.',why:'Förändringen är praktiskt viktig när förtidsröstningen nu öppnar och kan skapa frågor för väljare som är vana vid tidigare valrutiner.',source:'Nacka kommun',href:'https://www.nacka.se/kommun--politik/delta-och-paverka/val-2026/rosta-pa-valdagen/'},
+{section:'Nacka · Senior',date:'25 aug',title:'Samtalskafé öppnar på Smedjan i morgon',summary:'Nacka kommun listar samtalskafé för seniorer på Träffpunkt Smedjan onsdag 26 augusti klockan 13.00–14.30.',why:'Små lokala mötesplatser är en viktig del av kommunens arbete mot ensamhet och bör få större synlighet i den lokala bevakningen.',source:'Nacka kommun',href:'https://www.nacka.se/'}
+];
