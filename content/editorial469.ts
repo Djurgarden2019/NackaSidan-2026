@@ -1,0 +1,4 @@
+export const editorial469=[
+{section:'Nacka · Kultur',date:'25 aug',title:'Konst i omlopp fortsätter på Nacka konsthall',summary:'Sommarutställningen Konst i omlopp visas på Dieselverkstaden och pågår till den 6 september.',why:'Utställningen ger en kontinuerlig kulturbevakning under sensommaren.',source:'Nacka kommun',href:'https://www.nacka.se/pa-gang-i-nacka/'},
+{section:'Nacka · Samhälle',date:'25 aug',title:'Tisdags-drop in för gemenskap och information',summary:'Attention Nacka-Värmdö håller tisdags-drop in på Tillgänglighetsforum klockan 14–16.',why:'Föreningslivet och öppna mötesplatser är en viktig men ofta underbevakad del av lokalsamhället.',source:'Nacka kommun',href:'https://www.nacka.se/pa-gang-i-nacka/?page=2&panel=list'}
+];
