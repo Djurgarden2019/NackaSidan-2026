@@ -1,0 +1,4 @@
+export const editorial420=[
+{section:'Nacka · Skola',date:'24 aug',title:'Skolorna går in i vecka 35 efter sommarlovet',summary:'Kommunala skolor som Ektorps skola och Borgvallaskolan har publicerat veckoinformation för vecka 35 när höstterminens vardag nu är igång.',why:'Skolstarten påverkar tusentals familjer och ger underlag för löpande bevakning av trafik, måltider och skolmiljö.',source:'Nacka kommun',href:'https://www.nacka.se/valfard-skola/ektorps-skola/'},
+{section:'Nacka · Förskola',date:'24 aug',title:'Förskolorna publicerar ny veckoinformation',summary:'Tallidens och Optimus förskolor är exempel på kommunala verksamheter som uppdaterat information för vecka 35.',why:'Förskolebevakningen breddar NackaSidans lokala servicejournalistik för barnfamiljer.',source:'Nacka kommun',href:'https://www.nacka.se/valfard-skola/tallidensforskola/'}
+];

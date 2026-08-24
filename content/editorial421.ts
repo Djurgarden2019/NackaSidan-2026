@@ -1,0 +1,4 @@
+export const editorial421=[
+{section:'Nacka · Kultur',date:'24 aug',title:'Konst i omlopp fortsätter till 6 september',summary:'Nacka konsthalls sommarutställning Konst i omlopp pågår till 6 september och verken ska därefter kunna lånas ut till kommunalt finansierade verksamheter.',why:'Projektet låter kommunens konstsamling nå skolor, kontor och offentliga miljöer utanför själva konsthallen.',source:'Nacka kommun',href:'https://www.nacka.se/pa-gang-i-nacka/konst-i-omlopp2/'},
+{section:'Nacka · Service',date:'24 aug',title:'Gratis Data och IT-hjälp på Dieselverkstaden på tisdag',summary:'Dieselverkstadens bibliotek erbjuder Data och IT-hjälp tisdag 25 augusti klockan 10.00–12.00.',why:'Praktisk digital hjälp är lokal serviceinformation som kan vara särskilt värdefull för personer som behöver stöd med vardagsteknik.',source:'Nacka kommun',href:'https://www.nacka.se/'}
+];
