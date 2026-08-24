@@ -1,0 +1,4 @@
+export const editorial441=[
+{section:'Nacka · Miljö',date:'25 aug',title:'Kyrkviken går mot normalt badläge',summary:'Efter oljeutsläppet syns oljefilmen inte längre och kommunen har meddelat att länsar och varningsskyltar ska tas bort den 25 augusti.',why:'När skyltarna är nedtagna går det enligt kommunen bra att bada igen. Ursprunget till oljan är fortfarande oklart.',source:'Nacka kommun',href:'https://www.nacka.se/nyheter-start/2026/08/avradan-fran-bad-vid-kyrkviken/'},
+{section:'Nacka · Val 2026',date:'25 aug',title:'En dag kvar till förtidsröstningen',summary:'Förtidsröstningen inför valet den 13 september öppnar i Nacka den 26 augusti.',why:'Valbevakningen går nu in i ett nytt skede när Nackaborna kan börja lägga sina röster.',source:'Nacka kommun',href:'https://www.nacka.se/kommun--politik/delta-och-paverka/val-2026/'}
+];
