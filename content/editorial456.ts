@@ -1,0 +1,4 @@
+export const editorial456=[
+{section:'Nacka · Centrala Nacka',date:'25 aug',title:'Två dagar till invigningen av Agnestigs torg',summary:'Det nya Agnestigs torg intill Värmdövägen och Elverkshuset invigs torsdag den 27 augusti klockan 15.',why:'Torget blir en ny offentlig mötesplats i den snabbt föränderliga centrala delen av Nacka.',source:'Nacka kommun',href:'https://www.nacka.se/nyheter-start/2026/08/valkommen-pa-invigning-av-agnestigs-torg/'},
+{section:'Nacka · Samhälle',date:'25 aug',title:'Flyttade fordon finns på kommunens anslagstavla',summary:'Kommunens kungörelse från den 24 augusti redovisar fordon som har flyttats enligt reglerna om flyttning av fordon.',why:'Officiella kungörelser är en viktig del av den lokala myndighetsbevakningen och kan få direkta konsekvenser för fordonsägare.',source:'Nacka kommun',href:'https://www.nacka.se/kommun--politik/delta-och-paverka/anslagstavla-officiell/kungorelser/2026/08/kungorelse-om-flyttade-fordon3/'}
+];
