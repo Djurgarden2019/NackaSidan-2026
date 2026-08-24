@@ -1,0 +1,4 @@
+export const editorial389=[
+{section:'Nacka · Val 2026',date:'24 aug',title:'Förtidsröstningen öppnar på onsdag',summary:'Den 26 augusti börjar förtidsröstningen inför valet den 13 september.',why:'När röstningen öppnar går valrörelsen in i ett nytt skede. NackaSidan följer både praktisk valinformation och de lokala sakfrågorna.',source:'Nacka kommun',href:'https://www.nacka.se/kommun--politik/delta-och-paverka/val-2026/'},
+{section:'Nacka · Val 2026',date:'24 aug',title:'Preliminär rösträkning den 16 september',summary:'Val- och demokratinämnden har ett sammanträde den 16 september för den preliminära rösträkningen.',why:'Det är ett viktigt datum efter valdagen för den lokala resultatbevakningen.',source:'Nacka kommun',href:'https://www.nacka.se/kommun--politik/politik-handlingar-och-protokoll/sammantradesdagar/'}
+];
