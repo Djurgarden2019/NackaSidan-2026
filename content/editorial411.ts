@@ -1,0 +1,4 @@
+export const editorial411=[
+{section:'Nacka · Miljö',date:'24 aug',title:'Kyrkviken: badet kan öppna igen när skyltarna tas ned',summary:'Oljefilmen vid Kyrkvikens badbryggor syns inte längre. Kommunen uppger att absorptionslänsar och skyltar ska tas bort under tisdag 25 augusti och att det därefter går bra att bada igen.',why:'Det ger Nackabor en konkret uppföljning på helgens oljeutsläpp och badavrådan.',source:'Nacka kommun',href:'https://www.nacka.se/nyheter-start/2026/08/avradan-fran-bad-vid-kyrkviken/'},
+{section:'Nacka · Miljö',date:'24 aug',title:'Källan till oljan vid Kyrkviken fortfarande okänd',summary:'Kommunen har kontrollerat den närliggande dagvattenanläggningen men inte hittat några spår av olja där.',why:'Frågan om var utsläppet kom ifrån är fortfarande obesvarad och värd fortsatt bevakning.',source:'Nacka kommun',href:'https://www.nacka.se/nyheter-start/2026/08/avradan-fran-bad-vid-kyrkviken/'}
+];

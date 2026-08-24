@@ -1,0 +1,4 @@
+export const editorial415=[
+{section:'Nacka · Skola',date:'24 aug',title:'Ny skolvecka syns direkt i skolornas vardagsinformation',summary:'Ektorps skola och Borgvallaskolan har publicerat veckans måltider för vecka 35, med bland annat lasagne på tisdag och fiskpanetter på onsdag.',why:'Små vardagsuppdateringar ger NackaSidan möjlighet att också vara användbar för familjer, inte bara rapportera stora beslut.',source:'Nacka kommun',href:'https://www.nacka.se/valfard-skola/ektorps-skola/'},
+{section:'Nacka · Skola',date:'24 aug',title:'Saltängen och Saltsjö-Duvnäs går in i vecka 35',summary:'Saltängens och Duvnäs skolor visar en ny veckomeny med bland annat pasta på tisdag och fiskgratäng på onsdag.',why:'Lokal servicejournalistik kan byggas ut med återkommande skol- och familjeinformation.',source:'Nacka kommun',href:'https://www.nacka.se/valfard-skola/saltangens-skola/'}
+];
