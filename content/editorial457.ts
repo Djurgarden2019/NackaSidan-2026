@@ -1,0 +1,4 @@
+export const editorial457=[
+{section:'Nacka · Skola',date:'25 aug',title:'Vecka 35 är igång i Nackas skolor',summary:'Kommunala skolor som Borgvallaskolan och Ektorps skola publicerar nu veckans information och menyer för vecka 35.',why:'Efter skolstarten går bevakningen över från terminsstart till vardagsfrågor om undervisning, trygghet och skolmiljö.',source:'Nacka kommun',href:'https://www.nacka.se/valfard-skola/'},
+{section:'Nacka · Skola',date:'25 aug',title:'Små skolor lyfter trygghet och elevinflytande',summary:'Borgvallaskolan beskriver sin verksamhet med fokus på trygg arbetsmiljö, elevinflytande och språk och kommunikation.',why:'Skolornas egna mål ger utgångspunkter för NackaSidans fortsatta granskning av hur löftena fungerar i praktiken.',source:'Nacka kommun',href:'https://www.nacka.se/valfard-skola/borgvallaskolan/'}
+];
