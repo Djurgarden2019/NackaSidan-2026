@@ -1,0 +1,4 @@
+export const editorial399=[
+{section:'Nacka · Miljö',date:'24 aug',title:'Kyrkviken: badavrådan kan hävas på tisdag',summary:'Efter det mindre oljeutsläppet syns oljefilmen inte längre. Kommunen uppger att länsar och varningsskyltar ska tas bort under tisdag 25 augusti.',why:'När skyltarna är nedtagna går det enligt kommunen bra att bada igen, vilket gör tisdagens uppföljning viktig för badande i området.',source:'Nacka kommun',href:'https://www.nacka.se/nyheter-start/2026/08/avradan-fran-bad-vid-kyrkviken/'},
+{section:'Nacka · Miljö',date:'24 aug',title:'Orsaken till oljeutsläppet fortfarande okänd',summary:'Kommunen har kontrollerat den närliggande dagvattenanläggningen men uppger att inga spår av olja hittades där.',why:'Orsaken är fortfarande en lokal miljöfråga att följa även när själva badavrådan upphör.',source:'Nacka kommun',href:'https://www.nacka.se/nyheter-start/2026/08/avradan-fran-bad-vid-kyrkviken/'}
+];
