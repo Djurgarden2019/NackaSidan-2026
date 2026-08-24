@@ -1,0 +1,4 @@
+export const editorial439=[
+{section:'Nacka · Skola',date:'25 aug',title:'Föräldramöten präglar skolornas andra vecka',summary:'Flera kommunala skolor har vårdnadshavarmöten den 25 och 26 augusti, bland annat Sågtorpsskolan och Neglinge skola.',why:'Skolstarten går nu från introduktion till vardag och föräldramötena är en naturlig punkt för att följa trygghet, undervisning och praktiska frågor.',source:'Nacka kommun',href:'https://www.nacka.se/valfard-skola/sagtorpsskolan/kalendarium/'},
+{section:'Nacka · Service',date:'25 aug',title:'Gratis IT-hjälp på Dieselverkstadens bibliotek',summary:'Kommunens evenemangskalender listar Data/IT-hjälp på Dieselverkstadens bibliotek tisdag 25 augusti klockan 10.00–12.00.',why:'Digital hjälp på biblioteket är särskilt relevant när allt fler offentliga tjänster och även årets röstkort blir digitala.',source:'Nacka kommun',href:'https://www.nacka.se/evenemang'}
+];
