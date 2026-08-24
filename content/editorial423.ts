@@ -1,0 +1,4 @@
+export const editorial423=[
+{section:'Nacka · Samhälle',date:'24 aug',title:'Nytt ikväll: unga vuxna bjuds till fiske i Nyckelviken',summary:'Nacka socialpsykiatri publicerade under kvällen en aktivitet den 31 augusti med grillning och fiske i Nyckelviken för unga vuxna.',why:'En konkret lokal aktivitet och ett exempel på kommunens sociala stöd som publicerades sent på måndagen.',source:'Nacka kommun',href:'https://www.nacka.se/valfard-samhallsservice/socialpsykiatrin/nyheter/2026/08/unga-vuxna-grillning-och-fiske-i-nyckelviken-mandag-31-augusti/'},
+{section:'Nacka · Service',date:'24 aug',title:'Data- och IT-hjälp på Dieselverkstaden på tisdag',summary:'Dieselverkstadens bibliotek erbjuder Data/IT-hjälp den 25 augusti klockan 10–12 på Marcusplatsen 17.',why:'Praktisk och tidsnära serviceinformation för Nackabor som behöver digital hjälp.',source:'Nacka kommun',href:'https://www.nacka.se/'}
+];
