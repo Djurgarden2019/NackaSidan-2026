@@ -1,0 +1,4 @@
+export const editorial447=[
+{section:'Nacka · Miljö',date:'25 aug',title:'Kyrkviken går mot normalt badläge under tisdagen',summary:'Efter det mindre oljeutsläppet syns oljefilmen inte längre. Kommunen har meddelat att länsar och varningsskyltar ska tas bort under tisdag 25 augusti.',why:'När skyltarna är nedtagna går det enligt kommunen bra att bada igen. Ursprunget till oljan är fortfarande oklart.',source:'Nacka kommun',href:'https://www.nacka.se/nyheter-start/2026/08/avradan-fran-bad-vid-kyrkviken/'},
+{section:'Nacka · Senior',date:'25 aug',title:'Gratis IT-hjälp för seniorer på två bibliotek i dag',summary:'SeniorNet Nacka erbjuder gratis Data/IT-hjälp klockan 10–12 både på Dieselverkstadens bibliotek och Nacka Forum bibliotek.',why:'Digital hjälp på plats är en konkret lokal service för Nackabor över 55 år.',source:'Nacka kommun',href:'https://www.nacka.se/pa-gang-i-nacka/'}
+];
