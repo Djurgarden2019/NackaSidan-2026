@@ -1,0 +1,4 @@
+export const editorial442=[
+{section:'Nacka · Senior',date:'25 aug',title:'Gratis IT-hjälp för seniorer i Sickla',summary:'SeniorNet Nacka erbjuder drop-in med gratis IT-hjälp på Dieselverkstadens bibliotek den 25 augusti klockan 10–12.',why:'Digital hjälp i vardagen är en konkret lokal service för seniorer som behöver stöd med mobil, surfplatta eller dator.',source:'Nacka kommun',href:'https://www.nacka.se/pa-gang-i-nacka/datait-hjalp-i-dieselverkstaden/?occurrence=202608250800-202608251000'},
+{section:'Nacka · Kultur',date:'25 aug',title:'Konst i omlopp fortsätter i Dieselverkstaden',summary:'Nacka konsthalls sommarutställning Konst i omlopp visas den 25 augusti och fortsätter till den 6 september.',why:'Utställningen är en del av sensommarens lokala kulturutbud i Sickla.',source:'Nacka kommun',href:'https://www.nacka.se/pa-gang-i-nacka/'}
+];
