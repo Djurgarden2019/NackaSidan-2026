@@ -1,0 +1,4 @@
+export const editorial416=[
+{section:'Nacka · Myndighet',date:'24 aug',title:'Nya flyttade fordon kungörs av kommunen',summary:'Nacka kommun publicerade den 24 augusti en ny kungörelse om fordon som flyttats enligt lagen och förordningen om flyttning av fordon.',why:'Den officiella anslagstavlan innehåller myndighetsinformation som kan beröra enskilda Nackabor direkt.',source:'Nacka kommun',href:'https://www.nacka.se/kommun--politik/delta-och-paverka/anslagstavla-officiell/kungorelser/2026/08/kungorelse-om-flyttade-fordon3/'},
+{section:'Nacka · Redaktionellt',date:'24 aug',title:'NackaSidan breddar bevakningen från nyheter till vardagsservice',summary:'Kvällens redaktionella block kombinerar miljöuppföljning, stadsutveckling, val, evenemang, skola och officiella kungörelser.',why:'En bred lokal startsida blir mer relevant när den både förklarar stora förändringar och hjälper läsaren med det som händer nästa dag.',source:'NackaSidan',href:'/'}
+];
