@@ -1,0 +1,4 @@
+export const editorial450=[
+{section:'Nacka · Kultur',date:'25 aug',title:'Konst i omlopp fortsätter i Nacka konsthall',summary:'Sommarutställningen Konst i omlopp visas på Dieselverkstaden även under tisdagen och fortsätter till den 6 september.',why:'Utställningen kopplar kommunens konstsamling till vardagen och ger NackaSidan ett återkommande lokalt kulturspår.',source:'Nacka kommun',href:'https://www.nacka.se/pa-gang-i-nacka/'},
+{section:'Nacka · Friluftsliv',date:'25 aug',title:'Kvällsvandring genom Nyckelviken',summary:'En guidad kvällsvandring på cirka sex till sju kilometer arrangeras i Nyckelviken klockan 17–19.30.',why:'Nyckelviken är ett av kommunens viktigaste natur- och rekreationsområden och aktiviteter där har bred lokal relevans.',source:'Nacka kommun',href:'https://www.nacka.se/evenemang?page=14&panel=list'}
+];
