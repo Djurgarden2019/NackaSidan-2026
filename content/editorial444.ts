@@ -1,0 +1,4 @@
+export const editorial444=[
+{section:'Nacka · Skola',date:'25 aug',title:'Skolvecka 35 är igång i Nacka',summary:'Kommunala skolor som Borgvallaskolan och Ektorps skola publicerar nu veckans information och menyer för vecka 35.',why:'Efter skolstarten går vardagen in i ordinarie hösttempo för elever och familjer runt om i kommunen.',source:'Nacka kommun',href:'https://www.nacka.se/valfard-skola/borgvallaskolan/'},
+{section:'Nacka · Barn',date:'25 aug',title:'Babymålning på Dieselverkstaden',summary:'Den 25 augusti arrangeras En tå i det blå, babymålning för barn mellan nio månader och två år tillsammans med vuxen.',why:'Evenemanget visar bredden i det lokala kulturutbudet även för de allra yngsta.',source:'Nacka kommun',href:'https://www.nacka.se/pa-gang-i-nacka/'}
+];
