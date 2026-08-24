@@ -1,0 +1,4 @@
+export const editorial401=[
+{section:'Nacka · Senior',date:'25 aug',title:'Gratis IT-hjälp för seniorer i Dieselverkstaden',summary:'SeniorNet Nacka erbjuder gratis Data/IT-hjälp för seniorer 55+ på Dieselverkstadens bibliotek tisdag 25 augusti klockan 10–12.',why:'Praktisk digital hjälp är lokal service som kan minska digitalt utanförskap.',source:'Nacka kommun',href:'https://www.nacka.se/pa-gang-i-nacka/'},
+{section:'Nacka · Kultur',date:'25 aug',title:'Konst i omlopp fortsätter i Nacka konsthall',summary:'Sommarutställningen Konst i omlopp visas i Dieselverkstaden och pågår till den 6 september.',why:'Utställningen har en ovanlig fortsättning där konstverk ska kunna lånas ut till kommunalt finansierade verksamheter.',source:'Nacka kommun',href:'https://www.nacka.se/pa-gang-i-nacka/konst-i-omlopp2/'}
+];
