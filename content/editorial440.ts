@@ -1,0 +1,4 @@
+export const editorial440=[
+{section:'Nacka · Kultur',date:'25 aug',title:'Konst i omlopp fortsätter i Dieselverkstaden',summary:'Sommarutställningen Konst i omlopp visas i Nacka konsthall även den 25 augusti och pågår till den 6 september.',why:'Kulturbevakningen behöver vara kontinuerlig och inte bara följa premiärer; utställningen är en pågående lokal kulturhändelse mitt i valrörelsen.',source:'Nacka kommun',href:'https://www.nacka.se/evenemang'},
+{section:'Nacka · Val 2026',date:'25 aug',title:'Valbevakningen växlar upp när rösterna börjar lämnas',summary:'Med förtidsröstning från 26 augusti återstår mindre än tre veckor till valdagen den 13 september.',why:'NackaSidan går nu in i en fas där lokala sakfrågor, partiernas besked och den praktiska valinformationen behöver följas parallellt varje dag.',source:'Nacka kommun',href:'https://www.nacka.se/kommun--politik/delta-och-paverka/val-2026/'}
+];

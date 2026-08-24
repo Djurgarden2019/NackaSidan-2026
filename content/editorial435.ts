@@ -1,0 +1,4 @@
+export const editorial435=[
+{section:'Nacka · Val 2026',date:'25 aug',title:'I morgon öppnar förtidsröstningen i Nacka',summary:'Förtidsröstningen inför valet den 13 september startar onsdag 26 augusti och pågår varje dag fram till valdagen.',why:'Nu går valbevakningen in i ett praktiskt skede där öppettider, lokaler och tillgänglighet blir centrala frågor för Nackaborna.',source:'Nacka kommun',href:'https://www.nacka.se/kommun--politik/delta-och-paverka/val-2026/'},
+{section:'Nacka · Politik',date:'25 aug',title:'Natur- och trafiknämnden sammanträder i dag',summary:'Natur- och trafiknämnden har sammanträde den 25 augusti och börjar vanligtvis klockan 16.30.',why:'Trafik, framkomlighet och naturfrågor är återkommande lokala konfliktområden och besluten bör följas upp när protokollet publiceras.',source:'Nacka kommun',href:'https://www.nacka.se/kommun--politik/politik-handlingar-och-protokoll/sammantradesdagar/'}
+];

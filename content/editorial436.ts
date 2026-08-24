@@ -1,0 +1,4 @@
+export const editorial436=[
+{section:'Nacka · Politik',date:'25 aug',title:'Socialnämnden går in i höstens första möte',summary:'Socialnämnden sammanträder den 25 augusti, enligt kommunens officiella sammanträdeskalender.',why:'Socialtjänst och stödinsatser påverkar många invånare direkt och protokollet ger möjlighet till konkret uppföljning av prioriteringar och beslut.',source:'Nacka kommun',href:'https://www.nacka.se/kommun--politik/politik-handlingar-och-protokoll/sammantradesdagar/'},
+{section:'Nacka · Stadsutveckling',date:'25 aug',title:'Miljö- och stadsbyggnadsnämnden möts 26 augusti',summary:'Miljö- och stadsbyggnadsnämnden sammanträder onsdag 26 augusti, normalt med start klockan 15.',why:'Nämnden hanterar frågor som formar Nackas byggande och miljö och är därför en central källa för NackaSidans fortsatta granskning.',source:'Nacka kommun',href:'https://www.nacka.se/kommun--politik/politik-handlingar-och-protokoll/sammantradesdagar/'}
+];
