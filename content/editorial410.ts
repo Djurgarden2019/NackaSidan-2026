@@ -1,0 +1,4 @@
+export const editorial410=[
+{section:'Nacka · Kultur',date:'24 aug',title:'Konst i omlopp fortsätter på Dieselverkstaden',summary:'Sommarutställningen Konst i omlopp pågår i Nacka konsthall till den 6 september och låter senare verk gå vidare till kommunalt finansierade verksamheter.',why:'Projektet kopplar kommunens konstsamling till skolor, kontor och andra offentliga miljöer i vardagen.',source:'Nacka kommun',href:'https://www.nacka.se/pa-gang-i-nacka/konst-i-omlopp2/?occurrence=202608240800-202608241400'},
+{section:'Nacka · Service',date:'24 aug',title:'Gratis Data och IT-hjälp på Dieselverkstaden på tisdag',summary:'Dieselverkstadens bibliotek erbjuder Data och IT-hjälp den 25 augusti klockan 10–12.',why:'Digital vardagshjälp på biblioteket är konkret lokal service, särskilt för invånare som behöver stöd med teknik.',source:'Nacka kommun',href:'https://www.nacka.se/'}
+];
