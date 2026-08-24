@@ -1,0 +1,4 @@
+export const editorial462=[
+{section:'Nacka · Stadsutveckling',date:'25 aug',title:'Agnestigs torg redo för invigning',summary:'På torsdag den 27 augusti invigs Agnestigs torg intill Värmdövägen och Elverkshuset. Den nya mötesplatsen har sittplatser, belysning, planteringar och bevarade stora ekar.',why:'Torget är ett synligt nytt offentligt rum mitt i utvecklingen av Centrala Nacka.',source:'Nacka kommun',href:'https://www.nacka.se/nyheter-start/2026/08/valkommen-pa-invigning-av-agnestigs-torg/'},
+{section:'Nacka · Kultur',date:'25 aug',title:'Konst i omlopp fortsätter på Dieselverkstaden',summary:'Sommarutställningen Konst i omlopp visas i Nacka konsthall till den 6 september och är öppen även under tisdagen.',why:'Utställningen kopplar kommunens konstsamling till vardagen och håller kulturutbudet levande efter sommaren.',source:'Nacka kommun',href:'https://www.nacka.se/pa-gang-i-nacka/'}
+];
