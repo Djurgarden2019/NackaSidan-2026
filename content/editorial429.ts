@@ -1,0 +1,4 @@
+export const editorial429=[
+{section:'Nacka · Miljö',date:'24 aug',title:'Kyrkviken: badavrådan på väg att hävas',summary:'Efter oljeutsläppet syns oljefilmen inte längre. Kommunen planerar att ta bort länsar och skyltar den 25 augusti.',why:'När skyltarna är nedtagna går det enligt kommunen bra att bada igen, men oljeutsläppets ursprung är fortfarande oklart.',source:'Nacka kommun',href:'https://www.nacka.se/nyheter-start/2026/08/avradan-fran-bad-vid-kyrkviken/'},
+{section:'Nacka · Stad',date:'24 aug',title:'Agnestigs torg invigs på torsdag',summary:'Det nya torget i Centrala Nacka invigs den 27 augusti klockan 15.00–15.30.',why:'Torget blir en ny offentlig mötesplats intill Värmdövägen och Elverkshuset och knyter samtidigt an till Nackas musikhistoria.',source:'Nacka kommun',href:'https://www.nacka.se/nyheter-start/2026/08/valkommen-pa-invigning-av-agnestigs-torg/'}
+];
