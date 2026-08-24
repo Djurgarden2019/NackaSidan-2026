@@ -1,0 +1,4 @@
+export const editorial434=[
+{section:'Nacka · Analys',date:'24 aug',title:'Nackaveckan växlar upp',summary:'Badläget i Kyrkviken, valstarten, Agnestigs torg och flera lokala aktiviteter gör de kommande dagarna ovanligt händelserika.',why:'NackaSidan samlar de praktiska händelserna och följer samtidigt de större frågorna om stadsutveckling, demokrati och lokal service.',source:'Nacka kommun',href:'https://www.nacka.se/nyheter-start/'},
+{section:'Nacka · Kalender',date:'24 aug',title:'IT-hjälp i Dieselverkstaden på tisdag',summary:'Dieselverkstadens bibliotek erbjuder Data/IT-hjälp den 25 augusti klockan 10–12.',why:'Digital vardagshjälp är en liten men konkret lokal service som kan göra stor skillnad för den som fastnat med teknik eller e-tjänster.',source:'Nacka kommun',href:'https://www.nacka.se/'}
+];

@@ -1,0 +1,4 @@
+export const editorial430=[
+{section:'Nacka · Val 2026',date:'24 aug',title:'Två dagar kvar till förtidsröstningen',summary:'Förtidsröstningen inför valet den 13 september startar i Nacka den 26 augusti.',why:'Nu går valrörelsen in i ett praktiskt skede där öppettider, lokaler och tillgänglighet blir centrala frågor för väljarna.',source:'Nacka kommun',href:'https://www.nacka.se/kommun--politik/delta-och-paverka/val-2026/'},
+{section:'Nacka · Myndighet',date:'24 aug',title:'Nya flyttade fordon kungörs',summary:'Kommunen publicerade den 24 augusti en ny kungörelse om fordon som har flyttats enligt lagen om flyttning av fordon.',why:'Ägare har tidsfrister att förhålla sig till innan fordon i vissa fall kan tillfalla kommunens trafikenhet.',source:'Nacka kommun',href:'https://www.nacka.se/kommun--politik/delta-och-paverka/anslagstavla-officiell/kungorelser/2026/08/kungorelse-om-flyttade-fordon3/'}
+];
