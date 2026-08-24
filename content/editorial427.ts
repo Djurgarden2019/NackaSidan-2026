@@ -1,0 +1,4 @@
+export const editorial427=[
+{section:'Nacka · Skola',date:'24 aug',title:'Vecka 35 är igång i Nackas skolor',summary:'Ektorps skola har publicerat veckans meny för vecka 35, ett av flera tecken på att höstterminens vardag nu är fullt igång.',why:'Efter skolstarten skiftar bevakningen från trafikstart till den löpande vardagen för elever och familjer.',source:'Nacka kommun',href:'https://www.nacka.se/valfard-skola/ektorps-skola/'},
+{section:'Nacka · Förskola',date:'24 aug',title:'Tallidens förskola öppnar för visningar',summary:'Tallidens förskola i Finntorp informerar om möjlighet för familjer att boka visning av verksamheten och miljöerna.',why:'Val av förskola är en viktig vardagsfråga för barnfamiljer och lokal servicebevakning.',source:'Nacka kommun',href:'https://www.nacka.se/valfard-skola/tallidensforskola/'}
+];
