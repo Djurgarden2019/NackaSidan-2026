@@ -1,0 +1,4 @@
+export const editorial448=[
+{section:'Nacka · Val 2026',date:'25 aug',title:'I morgon öppnar förtidsröstningen i Nacka',summary:'Förtidsröstningen inför valet den 13 september börjar onsdag 26 augusti och pågår varje dag till och med valdagen.',why:'Valbevakningen går nu in i ett nytt skede när Nackaborna faktiskt kan börja lägga sina röster.',source:'Nacka kommun',href:'https://www.nacka.se/kommun--politik/delta-och-paverka/val-2026/'},
+{section:'Nacka · Val 2026',date:'25 aug',title:'Digitalt röstkort är nytt i valet 2026',summary:'Väljare med digital brevlåda får sitt röstkort digitalt via Kivra, Billo eller Min myndighetspost. Den som saknar digital brevlåda får fortfarande röstkort på papper.',why:'Förändringen är praktiskt viktig för alla som planerar hur och var de ska rösta.',source:'Nacka kommun',href:'https://www.nacka.se/kommun--politik/delta-och-paverka/val-2026/rosta-pa-valdagen/'}
+];

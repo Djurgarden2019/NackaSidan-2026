@@ -1,0 +1,4 @@
+export const editorial449=[
+{section:'Nacka · Skola',date:'25 aug',title:'Föräldramöten drar i gång på Nackas skolor',summary:'Sågtorpsskolan har vårdnadshavarmöten för årskurs F–3 under tisdagen och för årskurs 4–6 på onsdagen. Även Neglinge skola har föräldramöten denna vecka.',why:'Efter skolstarten den 17 augusti går höstterminen nu in i sin första fulla period med möten och ordinarie rutiner.',source:'Nacka kommun',href:'https://www.nacka.se/valfard-skola/sagtorpsskolan/kalendarium/'},
+{section:'Nacka · Familj',date:'25 aug',title:'Babymålning på Dieselverkstaden i dag',summary:'Barn mellan nio månader och två år kan delta i En tå i det blå tillsammans med en vuxen på Dieselverkstaden under tisdagen.',why:'Nackas evenemangskalender visar ett brett vardagsutbud även för kommunens allra yngsta invånare.',source:'Nacka kommun',href:'https://www.nacka.se/pa-gang-i-nacka/'}
+];

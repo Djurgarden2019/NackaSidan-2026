@@ -1,0 +1,4 @@
+export const editorial452=[
+{section:'Nacka · Val 2026',date:'25 aug',title:'Valdygnet närmar sig: rösta från onsdag',summary:'När förtidsröstningen öppnar den 26 augusti återstår knappt tre veckor till valdagen den 13 september. Förtidsröstning erbjuds varje dag fram till valet.',why:'NackaSidan följer nu valets praktiska genomförande parallellt med den lokala politiska bevakningen.',source:'Nacka kommun',href:'https://www.nacka.se/kommun--politik/delta-och-paverka/val-2026/'},
+{section:'Nacka · Centrala Nacka',date:'25 aug',title:'Två dagar kvar till invigningen av Agnestigs torg',summary:'Torsdag 27 augusti invigs Agnestigs torg i Centrala Nacka och kommunen har bjudit in allmänheten.',why:'Invigningen markerar ännu ett synligt steg i omvandlingen av Centrala Nacka och blir ett naturligt bevakningstillfälle.',source:'Nacka kommun',href:'https://www.nacka.se/nyheter-start/2026/08/valkommen-pa-invigning-av-agnestigs-torg/'}
+];

@@ -1,0 +1,4 @@
+export const editorial451=[
+{section:'Nacka · Samhälle',date:'25 aug',title:'Kommunen har kungjort nya flyttade fordon',summary:'Nacka kommun publicerade den 24 augusti en ny kungörelse om fordon som har flyttats enligt lagen och förordningen om flyttning av fordon.',why:'Myndighetsbeslut på den officiella anslagstavlan kan beröra enskilda Nackabor direkt och är värda att bevaka löpande.',source:'Nacka kommun',href:'https://www.nacka.se/kommun--politik/delta-och-paverka/anslagstavla-officiell/kungorelser/2026/08/kungorelse-om-flyttade-fordon3/'},
+{section:'Nacka · Senior',date:'25 aug',title:'Samtalskafé öppnar på Smedjan i morgon',summary:'Onsdag 26 augusti arrangeras samtalskafé för seniorer på Träffpunkt Smedjan klockan 13–14.30.',why:'Träffpunkterna är en del av kommunens lokala sociala infrastruktur och erbjuder mötesplatser för äldre Nackabor.',source:'Nacka kommun',href:'https://www.nacka.se/'}
+];
