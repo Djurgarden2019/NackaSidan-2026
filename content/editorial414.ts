@@ -1,0 +1,4 @@
+export const editorial414=[
+{section:'Nacka · Senior',date:'25 aug',title:'Gratis IT-hjälp för seniorer i Dieselverkstaden',summary:'SeniorNet Nacka erbjuder gratis Data/IT-hjälp för seniorer 55+ på Dieselverkstadens bibliotek tisdag 25 augusti klockan 10–12.',why:'Praktisk digital hjälp är en lokal servicefråga som kan göra stor skillnad i vardagen.',source:'Nacka kommun',href:'https://www.nacka.se/pa-gang-i-nacka/'},
+{section:'Nacka · Friluftsliv',date:'25 aug',title:'Kvällsvandring genom Nyckelviken',summary:'På tisdag arrangeras en cirka 6–7 kilometer lång kvällsvandring i Nyckelviken klockan 17.00–19.30.',why:'Nackas natur- och friluftsliv är en viktig del av kommunens lokala identitet och vardagsutbud.',source:'Nacka kommun',href:'https://www.nacka.se/evenemang?panel=map'}
+];
