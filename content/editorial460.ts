@@ -1,0 +1,4 @@
+export const editorial460=[
+{section:'Nacka · Senior',date:'25 aug',title:'Gratis IT-hjälp på två bibliotek i dag',summary:'SeniorNet Nacka erbjuder gratis IT-hjälp för seniorer 55+ både i Dieselverkstadens bibliotek och Nacka Forum bibliotek klockan 10–12.',why:'Digital hjälp nära hemmet kan göra stor praktisk skillnad för äldre Nackabor.',source:'Nacka kommun',href:'https://www.nacka.se/pa-gang-i-nacka/'},
+{section:'Nacka · Friluftsliv',date:'25 aug',title:'Kvällsvandring genom Nyckelviken',summary:'En guidad kvällsvandring på cirka 6–7 kilometer genom Nyckelviken arrangeras klockan 17–19.30 med skog, öppet hav och utsikter längs vägen.',why:'Nyckelviken är ett av kommunens viktigaste natur- och rekreationsområden.',source:'Nacka kommun',href:'https://www.nacka.se/pa-gang-i-nacka/'}
+];
