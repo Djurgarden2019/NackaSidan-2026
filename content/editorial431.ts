@@ -1,0 +1,4 @@
+export const editorial431=[
+{section:'Nacka · Unga',date:'24 aug',title:'Ny aktivitet för unga vuxna i Nyckelviken',summary:'Socialpsykiatrin bjuder den 31 augusti in unga vuxna till grillning och fiske i Nyckelviken.',why:'Aktiviteten är ett konkret exempel på kommunens sociala mötesplatser för personer mellan 18 och 35 år.',source:'Nacka kommun',href:'https://www.nacka.se/valfard-samhallsservice/socialpsykiatrin/nyheter/2026/08/unga-vuxna-grillning-och-fiske-i-nyckelviken-mandag-31-augusti/'},
+{section:'Nacka · Senior',date:'24 aug',title:'Samtalskafé öppnar veckan för seniorer',summary:'Den 26 augusti arrangeras samtalskafé på Träffpunkt Smedjan för seniorer som vill träffa nya människor.',why:'Lokala mötesplatser kan spela stor roll för att motverka ensamhet och skapa sociala nätverk.',source:'Nacka kommun',href:'https://www.nacka.se/'}
+];
