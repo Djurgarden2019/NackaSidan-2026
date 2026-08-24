@@ -1,0 +1,4 @@
+export const editorial426=[
+{section:'Nacka · Kultur',date:'24 aug',title:'Konst i omlopp fortsätter i Dieselverkstaden',summary:'Nacka konsthalls sommarutställning Konst i omlopp pågår till den 6 september och visar verk ur kommunens konstsamling.',why:'Utställningen har en lokal modell där verk senare kan lånas ut till kommunalt finansierade verksamheter.',source:'Nacka kommun',href:'https://www.nacka.se/pa-gang-i-nacka/konst-i-omlopp2/'},
+{section:'Nacka · Fritid',date:'24 aug',title:'Sicklaslussens dag ordnas på söndag',summary:'Den 30 augusti blir det guidade elbåtsturer och gratis slussning vid Sicklaslussen mellan klockan 10 och 16.',why:'Evenemanget knyter ihop Nackas vattenvägar, lokalhistoria och fritidsliv.',source:'Nacka kommun',href:'https://www.nacka.se/pa-gang-i-nacka/sicklaslussens-dag-med-guidade-batturer/'}
+];

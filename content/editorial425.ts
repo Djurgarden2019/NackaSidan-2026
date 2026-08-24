@@ -1,0 +1,4 @@
+export const editorial425=[
+{section:'Nacka · Val 2026',date:'24 aug',title:'Förtidsröstningen öppnar på onsdag',summary:'Nackabor kan börja förtidsrösta den 26 augusti inför valdagen den 13 september.',why:'Valbevakningen går nu från förberedelser till faktisk röstning och blir en central lokal fråga de kommande veckorna.',source:'Nacka kommun',href:'https://www.nacka.se/'},
+{section:'Nacka · Samhälle',date:'24 aug',title:'Kommunen har flyttat fordon – ny kungörelse publicerad',summary:'En ny officiell kungörelse om flyttade fordon publicerades på kommunens anslagstavla den 24 augusti.',why:'Myndighetsbeslut på anslagstavlan kan få direkta konsekvenser för fordonsägare och är värda löpande lokal bevakning.',source:'Nacka kommun',href:'https://www.nacka.se/kommun--politik/delta-och-paverka/anslagstavla-officiell/kungorelser/2026/08/kungorelse-om-flyttade-fordon3/'}
+];

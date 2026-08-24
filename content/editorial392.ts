@@ -28,10 +28,16 @@ import { editorial419 } from './editorial419';
 import { editorial420 } from './editorial420';
 import { editorial421 } from './editorial421';
 import { editorial422 } from './editorial422';
+import { editorial423 } from './editorial423';
+import { editorial424 } from './editorial424';
+import { editorial425 } from './editorial425';
+import { editorial426 } from './editorial426';
+import { editorial427 } from './editorial427';
+import { editorial428 } from './editorial428';
 
 const base392=[
 {section:'Nacka · Samhälle',date:'24 aug',title:'Kommunen kungör flyttade fordon',summary:'Nacka kommun publicerade den 24 augusti en ny kungörelse om fordon som har flyttats enligt reglerna om flyttning av fordon.',why:'Den officiella anslagstavlan innehåller löpande myndighetsbeslut som ofta passerar under radarn men kan beröra invånare direkt.',source:'Nacka kommun',href:'https://www.nacka.se/kommun--politik/delta-och-paverka/anslagstavla-officiell/kungorelser/2026/08/kungorelse-om-flyttade-fordon3/'},
 {section:'Nacka · Stadsutveckling',date:'24 aug',title:'Två stora Sicklaplaner är fortfarande i granskningsfas',summary:'Kommunens officiella anslagstavla visar pågående granskningar för detaljplanerna Finnbergets bergrum och Traversen på Västra Sicklaön.',why:'Granskningsskedet är ett av de viktigaste tillfällena för boende och andra berörda att följa och påverka stadsutvecklingen.',source:'Nacka kommun',href:'https://www.nacka.se/kommun--politik/delta-och-paverka/anslagstavla-officiell/kungorelser/'}
 ];
 
-export const editorial392=[...editorial422,...editorial421,...editorial420,...editorial419,...editorial418,...editorial417,...editorial416,...editorial415,...editorial414,...editorial413,...editorial412,...editorial411,...editorial410,...editorial409,...editorial408,...editorial407,...editorial406,...editorial405,...editorial404,...editorial403,...editorial402,...editorial401,...editorial400,...editorial399,...editorial398,...editorial397,...editorial396,...editorial395,...editorial394,...editorial393,...base392];
+export const editorial392=[...editorial428,...editorial427,...editorial426,...editorial425,...editorial424,...editorial423,...editorial422,...editorial421,...editorial420,...editorial419,...editorial418,...editorial417,...editorial416,...editorial415,...editorial414,...editorial413,...editorial412,...editorial411,...editorial410,...editorial409,...editorial408,...editorial407,...editorial406,...editorial405,...editorial404,...editorial403,...editorial402,...editorial401,...editorial400,...editorial399,...editorial398,...editorial397,...editorial396,...editorial395,...editorial394,...editorial393,...base392];
