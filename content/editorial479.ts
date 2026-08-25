@@ -1,0 +1,4 @@
+export const editorial479=[
+{section:'Nacka · Kultur',date:'26 aug',title:'Uppladdning inför Nackas första kulturreservat',summary:'På lördag den 29 augusti invigs Baggenstäkets kulturreservat kring Gammeludden och norra sidan av Stäket.',why:'Det blir Nackas första kulturreservat och ger NackaSidan ett tydligt lokalt kultur- och naturspår inför helgen.',source:'Nacka kommun',href:'https://www.nacka.se/'},
+{section:'Nacka · Stadsmiljö',date:'26 aug',title:'Agnestigs torg står inför torsdagens invigning',summary:'Den 27 augusti invigs Agnestigs torg i Centrala Nacka och allmänheten är välkommen.',why:'Invigningen blir en konkret milstolpe i utvecklingen av Centrala Nackas offentliga miljöer.',source:'Nacka kommun',href:'https://www.nacka.se/nyheter-start/2026/08/valkommen-pa-invigning-av-agnestigs-torg/'}
+];
