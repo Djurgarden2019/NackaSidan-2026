@@ -1,0 +1,4 @@
+export const editorial482=[
+{section:'Nacka · Val 2026',date:'26 aug',title:'Valbevakningen går in i skarpt läge',summary:'Från i dag kan Nackabor förtidsrösta varje dag fram till och med valdagen den 13 september.',why:'NackaSidan prioriterar nu servicejournalistik om röstning tillsammans med lokal politisk bevakning.',source:'Nacka kommun',href:'https://www.nacka.se/kommun--politik/delta-och-paverka/val-2026/'},
+{section:'Nacka · Skola',date:'26 aug',title:'Reservantagningen till gymnasiet närmar sig nästa fas',summary:'Från den 1 september kan gymnasieskolor frångå Gymnasieantagningens reservlista och göra en helhetsbedömning när lediga platser tillsätts.',why:'Det är viktig praktisk information för ungdomar som fortfarande söker eller vill byta gymnasieplats.',source:'Nacka kommun',href:'https://www.nacka.se/valfard-skola/ybc/aktuellt/2026/06/antagning-till-ht26/'}
+];

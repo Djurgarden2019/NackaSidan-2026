@@ -1,0 +1,4 @@
+export const editorial477=[
+{section:'Nacka · Val 2026',date:'26 aug',title:'Förtidsröstningen startar i Nacka',summary:'I dag öppnar förtidsröstningen inför valet till riksdag, kommun och region den 13 september.',why:'NackaSidan följer nu röstningen, lokala valfrågor och praktisk information hela vägen fram till valdagen.',source:'Nacka kommun',href:'https://www.nacka.se/kommun--politik/delta-och-paverka/val-2026/'},
+{section:'Nacka · Stadsutveckling',date:'26 aug',title:'Finnboda chefsbostad går in i nästa planskede',summary:'Miljö- och stadsbyggnadsnämnden planeras i dag ta ställning till att inleda planarbetet för Finnboda chefsbostad.',why:'Projektet går från startskede mot detaljplanering, med samråd preliminärt planerat till våren 2027.',source:'Nacka kommun',href:'https://www.nacka.se/stadsutveckling-trafik/har-planerar-och-bygger-vi/sok-projekt-pa-namn/finnboda-chefsbostad/'}
+];
