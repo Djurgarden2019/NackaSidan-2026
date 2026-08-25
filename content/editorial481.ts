@@ -1,0 +1,4 @@
+export const editorial481=[
+{section:'Nacka · Miljö',date:'26 aug',title:'Kyrkviken tillbaka mot normalt badläge',summary:'Oljefilmen vid Kyrkvikens badbryggor syns inte längre och kommunen uppgav att länsar och varningsskyltar skulle tas bort den 25 augusti.',why:'När skyltarna är borttagna går det enligt kommunen bra att bada igen, medan utsläppets ursprung fortfarande är oklart.',source:'Nacka kommun',href:'https://www.nacka.se/boende-miljo/nyheter/2026/08/avradan-fran-bad-vid-kyrkviken/'},
+{section:'Nacka · Kultur & fritid',date:'26 aug',title:'Höstens kulturskolekurser är öppna för ansökan',summary:'Nackas kulturskolor tar emot ansökningar till höstens kurser för barn och unga.',why:'Utbudet är en central del av kommunens fritids- och kulturverksamhet för unga.',source:'Nacka kommun',href:'https://www.nacka.se/uppleva--gora/'}
+];
