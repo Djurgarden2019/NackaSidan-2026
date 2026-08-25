@@ -1,0 +1,4 @@
+export const editorial473=[
+{section:'Nacka · Miljö',date:'25 aug',title:'Kyrkviken går tillbaka mot normalt badläge',summary:'Efter oljeutsläppet syns ingen oljefilm längre och kommunen har meddelat att länsar och varningsskyltar tas bort den 25 augusti.',why:'När skyltarna är borta går det enligt kommunen bra att bada igen.',source:'Nacka kommun',href:'https://www.nacka.se/boende-miljo/nyheter/2026/08/avradan-fran-bad-vid-kyrkviken/'},
+{section:'Nacka · Granskning',date:'25 aug',title:'Oljeutsläppets källa fortfarande okänd',summary:'Kontroller av den närliggande dagvattenanläggningen har inte visat några spår av olja.',why:'NackaSidan följer om kommunen senare kan klarlägga var utsläppet kom ifrån.',source:'Nacka kommun',href:'https://www.nacka.se/boende-miljo/nyheter/2026/08/avradan-fran-bad-vid-kyrkviken/'}
+];

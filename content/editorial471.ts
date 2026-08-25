@@ -1,0 +1,4 @@
+export const editorial471=[
+{section:'Nacka · Saltsjöbaden',date:'25 aug',title:'Nya Näckenbadet är invigt',summary:'Efter flera års planering och byggande invigdes Näckenbadet i Saltsjöbaden den 25 augusti.',why:'Badhuset är en stor lokal investering med fokus på tillgänglighet, idrott och möten mellan generationer.',source:'Nacka kommun',href:'https://www.nacka.se/nyheter-start/2026/08/gladjefest-nar-nya-nackenbadet-invigdes/'},
+{section:'Nacka · Energi',date:'25 aug',title:'Kommunens största solcellsanläggning sitter på Näckenbadet',summary:'Det nya badhusets tak har Nacka kommuns hittills största solcellsanläggning och energin används bland annat till bassänger och belysning.',why:'Det gör badhuset intressant även som lokal klimat- och energisatsning.',source:'Nacka kommun',href:'https://www.nacka.se/uppleva--gora/nyheter-om-kultur-idrott-och-fritid/2026/08/nackenbadet-invigning/'}
+];
