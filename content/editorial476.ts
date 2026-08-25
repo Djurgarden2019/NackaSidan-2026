@@ -1,0 +1,4 @@
+export const editorial476=[
+{section:'Nacka · Skola',date:'25 aug',title:'Föräldramöten fortsätter under skolstarten',summary:'Flera kommunala skolor har vårdnadshavarmöten under vecka 35, bland annat den 25 och 26 augusti.',why:'Skolstarten är mer än första skoldagen och NackaSidan följer vardagsfrågorna för familjer under de första veckorna.',source:'Nacka kommun',href:'https://www.nacka.se/valfard-skola/sagtorpsskolan/kalendarium/'},
+{section:'Nacka · Utbildning',date:'25 aug',title:'Reservantagningen till gymnasiet pågår månaden ut',summary:'YBC hanterar reservantagning till lediga platser mellan den 12 och 31 augusti.',why:'De sista augustidagarna kan fortfarande förändra gymnasieplaceringen för elever som står på reservlista.',source:'Nacka kommun',href:'https://www.nacka.se/valfard-skola/ybc/aktuellt/2026/06/antagning-till-ht26/'}
+];

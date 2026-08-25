@@ -1,0 +1,4 @@
+export const editorial475=[
+{section:'Nacka · Centrala Nacka',date:'25 aug',title:'Agnestigs torg står inför invigning',summary:'Den 27 augusti invigs Agnestigs torg i Centrala Nacka.',why:'Torget är en del av den pågående omvandlingen av Centrala Nacka och ger ett konkret tillfälle att följa hur nya offentliga miljöer fungerar.',source:'Nacka kommun',href:'https://www.nacka.se/nyheter-start/2026/08/valkommen-pa-invigning-av-agnestigs-torg/'},
+{section:'Nacka · Stadsutveckling',date:'25 aug',title:'NackaSidan följer livet efter byggprojekten',summary:'När nya torg och kvarter öppnar flyttas fokus från byggplaner till hur platserna faktiskt används.',why:'Stadsutveckling handlar också om vardagsliv, trygghet, handel och mötesplatser efter invigningen.',source:'Nacka kommun',href:'https://www.nacka.se/nyheter-start/2026/08/valkommen-pa-invigning-av-agnestigs-torg/'}
+];

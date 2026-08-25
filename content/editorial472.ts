@@ -1,0 +1,4 @@
+export const editorial472=[
+{section:'Nacka · Skola',date:'25 aug',title:'Nackaskolor utmanas att gå och cykla',summary:'Skolor kan delta i Gå & Cykla till skolan under två valfria veckor i september och oktober.',why:'Satsningen kombinerar trafiksäkerhet, vardagsmotion och minskad biltrafik kring skolorna.',source:'Nacka kommun',href:'https://www.nacka.se/nyheter-start/2026/08/ga-och-cykla-till-skolan-i-host/'},
+{section:'Nacka · Trafik',date:'25 aug',title:'Aktiva skolresor ska minska biltrafiken',summary:'Elever och lärare får respoäng när de går, cyklar eller åker kollektivt till skolan.',why:'Skoltrafiken är en konkret lokal fråga där små förändringar kan påverka både säkerhet och framkomlighet.',source:'Nacka kommun',href:'https://www.nacka.se/stadsutveckling-trafik/nyheter-om-stadsutveckling-och-trafik/2026/08/ga-och-cykla-till-skolan-i-host/'}
+];
