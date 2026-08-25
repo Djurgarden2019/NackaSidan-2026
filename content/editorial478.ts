@@ -1,0 +1,4 @@
+export const editorial478=[
+{section:'Nacka · Skola',date:'26 aug',title:'Föräldramöten på flera Nackaskolor i kväll',summary:'Bland annat Sågtorpsskolan, Neglinge skola och Sickla anpassade grundskola har föräldramöten den 26 augusti.',why:'Höstterminen är nu fullt igång och skolornas första veckor går in i en intensiv informationsperiod för vårdnadshavare.',source:'Nacka kommun',href:'https://www.nacka.se/valfard-skola/sagtorpsskolan/kalendarium/'},
+{section:'Nacka · Senior',date:'26 aug',title:'Sommarfest på Seniorcenter Sjötäppan',summary:'Nära och kära välkomnas till Hälsoträdgården klockan 15.30 med snittar och levande musik, följt av middag.',why:'Evenemanget är en del av kommunens lokala seniorverksamhet och mötesplatser.',source:'Nacka kommun',href:'https://www.nacka.se/valfard-samhallsservice/nacka-seniorcenter/seniorcenter-sjotappan/aktuellt/2026/08/valkommen-pa-sommarfest/'}
+];
