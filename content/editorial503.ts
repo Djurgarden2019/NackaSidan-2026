@@ -1,0 +1,4 @@
+export const editorial503=[
+{section:'Nacka · Kultur',date:'26 aug',title:'Konst i omlopp fortsätter i Dieselverkstaden',summary:'Sommarutställningen i Nacka konsthall pågår till den 6 september.',why:'Utställningen lyfter hur kommunens konstsamling kan aktiveras och möta människor i vardagen.',source:'Nacka kommun',href:'https://www.nacka.se/pa-gang-i-nacka/'},
+{section:'Nacka · Senior',date:'26 aug',title:'Samtalskafé samlade seniorer på Smedjan',summary:'Dagens samtalskafé på Träffpunkt Smedjan gav seniorer möjlighet att träffas och lära känna nya människor.',why:'Återkommande lokala mötesplatser är en viktig del av arbetet mot ofrivillig ensamhet.',source:'Nacka kommun',href:'https://www.nacka.se/pa-gang-i-nacka/'}
+];
