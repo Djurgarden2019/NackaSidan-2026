@@ -1,0 +1,4 @@
+export const editorial496=[
+{section:'Nacka · Mötesplatser',date:'26 aug',title:'Samtalskafé samlade seniorer på Smedjan',summary:'Träffpunkt Smedjan bjöd i dag in seniorer till samtal och nya bekantskaper.',why:'Lokala mötesplatser spelar en viktig roll för gemenskap och minskad ensamhet.',source:'Nacka kommun',href:'https://www.nacka.se/pa-gang-i-nacka/'},
+{section:'Nacka · Kultur',date:'26 aug',title:'Ansökan till Vintersalongen är öppen',summary:'Konstnärer kan söka till Vintersalong 2026 i Nacka konsthall fram till den 24 september.',why:'Vintersalongen är ett återkommande skyltfönster för konstnärligt skapande med lokal anknytning.',source:'Nacka kommun',href:'https://www.nacka.se/pa-gang-i-nacka/'}
+];
