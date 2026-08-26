@@ -1,0 +1,4 @@
+export const editorial495=[
+{section:'Nacka · Val 2026',date:'26 aug',title:'Förtidsröstningen är igång i Nacka',summary:'Förtidsröstningen startade i dag och pågår till och med valdagen den 13 september.',why:'NackaSidan följer öppettider, lokaler och den lokala valrörelsen fram till valdagen.',source:'Nacka kommun',href:'https://www.nacka.se/kommun--politik/delta-och-paverka/val-2026/fortidsrosta/'},
+{section:'Nacka · Kultur',date:'26 aug',title:'Konst i omlopp fortsätter på Dieselverkstaden',summary:'Sommarutställningen i Nacka konsthall pågår till den 6 september.',why:'Utställningen visar hur kommunens konstsamling kan aktiveras och möta Nackabor i vardagen.',source:'Nacka kommun',href:'https://www.nacka.se/pa-gang-i-nacka/'}
+];
