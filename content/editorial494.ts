@@ -1,0 +1,4 @@
+export const editorial494=[
+{section:'Nacka · Park',date:'26 aug',title:'Kyrkviksparken laddar för Parkernas dag',summary:'Söndag 30 augusti arrangeras Nackas första Parkernas dag i samband med invigningen av Kyrkviksparken.',why:'Den nya parken ger fler möjligheter till rekreation, rörelse och möten vid vattnet.',source:'Nacka kommun',href:'https://www.nacka.se/'},
+{section:'Nacka · Val 2026',date:'26 aug',title:'Hjälp finns för den som inte kan ta sig till vallokal',summary:'Väljare som har svårt att ta sig till en röstningslokal kan använda bud eller boka ambulerande röstmottagare via kommunen.',why:'Tillgänglig röstning är central när förtidsröstningen nu har öppnat.',source:'Nacka kommun',href:'https://www.nacka.se/kommun--politik/delta-och-paverka/val-2026/fortidsrosta/'}
+];

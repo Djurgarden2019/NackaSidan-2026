@@ -1,0 +1,4 @@
+export const editorial490=[
+{section:'Nacka · Senior',date:'26 aug',title:'Samtalskafé på Smedjan i eftermiddag',summary:'Seniorer i Nacka välkomnas till Träffpunkt Smedjan klockan 13–14.30.',why:'Lokala mötesplatser motverkar ensamhet och skapar nya sociala kontakter.',source:'Nacka kommun',href:'https://www.nacka.se/pa-gang-i-nacka/'},
+{section:'Nacka · Skola',date:'26 aug',title:'Föräldramöten fortsätter efter skolstarten',summary:'På Sågtorpsskolan hålls i kväll vårdnadshavarmöten för årskurs 4–6 och SU.',why:'Skolstartens första veckor sätter ramarna för höstens samarbete mellan hem och skola.',source:'Nacka kommun',href:'https://www.nacka.se/valfard-skola/sagtorpsskolan/kalendarium/'}
+];
