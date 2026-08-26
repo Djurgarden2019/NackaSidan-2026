@@ -1,0 +1,4 @@
+export const editorial502=[
+{section:'Nacka · Service',date:'26 aug',title:'Vatten stängs av på Boovägen på torsdag',summary:'Nacka vatten och avfall planerar en vattenavstängning på Boovägen den 27 augusti mellan cirka 11.30 och 15.30.',why:'Boende uppmanas att tappa upp vatten i förväg och hålla kranarna stängda under arbetet.',source:'Nacka vatten och avfall',href:'https://www.nacka.se/nackavattenavfall/driftinformation/driftinformation/'},
+{section:'Nacka · Trafik',date:'26 aug',title:'Trafiksäkerheten stärks vid Talluddsvägen',summary:'Kommunens arbete med trafikmiljön vid busshållplatserna Fredriksbergsvägen fortsätter.',why:'Åtgärderna ska skapa tydligare gränser mellan trafikslag och bidra till lägre hastigheter.',source:'Nacka kommun',href:'https://www.nacka.se/stadsutveckling-trafik/nyheter-om-stadsutveckling-och-trafik/'}
+];
