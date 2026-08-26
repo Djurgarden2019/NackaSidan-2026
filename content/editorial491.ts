@@ -1,0 +1,4 @@
+export const editorial491=[
+{section:'Nacka · Saltsjöbaden',date:'26 aug',title:'Nya Näckenbadet går in i vardagsfasen',summary:'Efter tisdagens invigningsfest står det nya badhuset i Saltsjöbaden redo som mötesplats för motion, simning och föreningsliv.',why:'Anläggningen är en stor kommunal investering med fokus på tillgänglighet, hållbarhet och rörelse.',source:'Nacka kommun',href:'https://www.nacka.se/nyheter-start/'},
+{section:'Nacka · Trafik',date:'26 aug',title:'Skolor uppmanas gå och cykla i höst',summary:'Nackas skolor kan delta i den nationella Gå & Cykla till skolan-utmaningen.',why:'Aktiva skolresor kan minska biltrafiken kring skolorna och samtidigt öka barns vardagsrörelse.',source:'Nacka kommun',href:'https://www.nacka.se/nyheter-start/'}
+];
