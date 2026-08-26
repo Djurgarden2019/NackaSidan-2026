@@ -1,0 +1,4 @@
+export const editorial499=[
+{section:'Nacka · Trafik',date:'26 aug',title:'Broarbeten fortsätter längs Saltsjöbadsleden',summary:'Underhåll på tre broar nära trafikplats Fisksätra pågår under perioden augusti till november.',why:'Arbetena kan påverka framkomligheten och är viktiga att följa för pendlare och boende.',source:'Nacka kommun',href:'https://www.nacka.se/stadsutveckling-trafik/nyheter-om-stadsutveckling-och-trafik/'},
+{section:'Nacka · Park',date:'26 aug',title:'Kyrkviksparken närmar sig färdigställande',summary:'Den östra delen av Kyrkviksparken är inne i slutskedet av arbetet.',why:'Parken ska ge fler möjligheter till rekreation, naturupplevelser och aktivitet vid vattnet.',source:'Nacka kommun',href:'https://www.nacka.se/stadsutveckling-trafik/nyheter-om-stadsutveckling-och-trafik/'}
+];
