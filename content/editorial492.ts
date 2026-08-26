@@ -1,0 +1,4 @@
+export const editorial492=[
+{section:'Nacka · Centrala Nacka',date:'26 aug',title:'Agnestigs torg invigs i morgon',summary:'Torsdag 27 augusti klockan 15 invigs Agnestigs torg i Centrala Nacka och allmänheten är välkommen.',why:'Torget är en del av den fortsatta omvandlingen av Centrala Nacka och blir en ny lokal mötesplats.',source:'Nacka kommun',href:'https://www.nacka.se/nyheter-start/'},
+{section:'Nacka · Miljö',date:'26 aug',title:'Kyrkviken åter öppen för bad',summary:'Oljefilmen syns inte längre och kommunen uppgav att länsar och avrådansskyltar skulle tas bort den 25 augusti.',why:'Badläget normaliseras efter det mindre oljeutsläppet, samtidigt som utsläppets ursprung fortfarande är oklart.',source:'Nacka kommun',href:'https://www.nacka.se/boende-miljo/nyheter/2026/08/avradan-fran-bad-vid-kyrkviken/'}
+];
