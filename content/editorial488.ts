@@ -1,0 +1,4 @@
+export const editorial488=[
+{section:'Nacka · Fritid',date:'26 aug',title:'Fritidsbiblioteket ger fler möjlighet att prova aktiviteter',summary:'Nackas Fritidsbibliotek i Nacka sportcentrum lånar kostnadsfritt ut bland annat skateboards, sovsäckar, simdynor och bollar.',why:'Gratis utlåning sänker tröskeln till idrott och friluftsliv för barn, unga och vuxna.',source:'Nacka kommun',href:'https://www.nacka.se/nyheter-start/'},
+{section:'Nacka · Kultur',date:'26 aug',title:'Vintersalongen tar emot ansökningar',summary:'Ansökan till Vintersalong 2026 i Nacka konsthall är öppen till den 24 september.',why:'Utställningen ger lokala och regionala konstnärer möjlighet att nå en bred publik i Dieselverkstaden.',source:'Nacka kommun',href:'https://www.nacka.se/pa-gang-i-nacka/'}
+];
