@@ -1,0 +1,4 @@
+export const editorial483=[
+{section:'Nacka · Val 2026',date:'26 aug',title:'Förtidsröstningen har startat i Nacka',summary:'Från i dag den 26 augusti kan Nackabor förtidsrösta inför valet den 13 september.',why:'NackaSidan följer öppettider, lokaler, tillgänglighet och den lokala valrörelsen fram till valdagen.',source:'Nacka kommun',href:'https://www.nacka.se/kommun--politik/delta-och-paverka/val-2026/fortidsrosta/'},
+{section:'Nacka · Skola',date:'26 aug',title:'Föräldramöten fortsätter på Nackas skolor',summary:'Flera skolor har vårdnadshavarmöten i kväll, bland annat Sågtorpsskolan och Neglinge skola.',why:'Skolstarten går nu in i sin andra vecka med information till vårdnadshavare och planering inför höstterminen.',source:'Nacka kommun',href:'https://www.nacka.se/valfard-skola/sagtorpsskolan/kalendarium/'}
+];

@@ -1,0 +1,4 @@
+export const editorial484=[
+{section:'Nacka · Kultur',date:'26 aug',title:'Konst i omlopp visas i Dieselverkstaden i dag',summary:'Nacka konsthalls sommarutställning Konst i omlopp håller öppet 10–16 och pågår till 6 september.',why:'Utställningen lyfter hur kommunens konstsamling kan aktiveras och möta Nackabor utanför traditionella utställningsformat.',source:'Nacka kommun',href:'https://www.nacka.se/pa-gang-i-nacka/'},
+{section:'Nacka · Senior',date:'26 aug',title:'Samtalskafé på Träffpunkt Smedjan',summary:'Seniorer i Nacka kan träffas för samtal och nya kontakter på Smedjan klockan 13–14.30.',why:'Träffpunkterna är en viktig del av kommunens arbete mot ensamhet och för social gemenskap bland äldre.',source:'Nacka kommun',href:'https://www.nacka.se/pa-gang-i-nacka/'}
+];

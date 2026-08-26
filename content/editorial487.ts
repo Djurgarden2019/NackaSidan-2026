@@ -1,0 +1,4 @@
+export const editorial487=[
+{section:'Nacka · Val 2026',date:'26 aug',title:'Valbevakningen går från förberedelse till genomförande',summary:'När förtidsröstningen nu är öppen blir röstmottagning, tillgänglighet och valsäkerhet centrala lokala frågor.',why:'NackaSidan följer valets praktiska genomförande och de frågor som påverkar Nackabor fram till den 13 september.',source:'Nacka kommun',href:'https://www.nacka.se/kommun--politik/delta-och-paverka/val-2026/'},
+{section:'Nacka · Äldre',date:'26 aug',title:'Nomineringen till Ess-utmärkelsen fortsätter',summary:'Nackabor kan till den 7 september nominera personer och team som gör skillnad för äldre.',why:'Utmärkelsen synliggör kvalitet och engagemang inom äldreomsorgen.',source:'Nacka kommun',href:'https://www.nacka.se/nyheter-start/'}
+];
