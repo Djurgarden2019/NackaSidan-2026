@@ -1,0 +1,4 @@
+export const editorial505=[
+{section:'Nacka · Val 2026',date:'26 aug',title:'Valaffischerna blir en del av stadsbilden',summary:'När valrörelsen intensifieras påminner kommunen om reglerna för affischering i Nacka.',why:'Tydliga regler behövs för trafiksäkerhet, framkomlighet och en ordnad offentlig miljö under valrörelsen.',source:'Nacka kommun',href:'https://www.nacka.se/nyheter-start/'},
+{section:'Nacka · Omsorg',date:'26 aug',title:'Nomineringarna till Ess-utmärkelsen fortsätter',summary:'Till och med den 7 september går det att nominera personer och team som gör skillnad för äldre i Nacka.',why:'Utmärkelsen synliggör kvalitet och engagemang inom äldreomsorgen.',source:'Nacka kommun',href:'https://www.nacka.se/nyheter-start/'}
+];
