@@ -1,0 +1,4 @@
+export const editorial506=[
+{section:'Nacka · Nacka strand',date:'26 aug',title:'Nya pendelbåtsbryggan är i trafik',summary:'Den nya bryggan i Nacka strand används nu av SL och Skärgårdstrafiken efter trafikstarten den 17 augusti.',why:'Bryggan stärker kollektivtrafiken på vatten och förbättrar kopplingen mellan Nacka och centrala Stockholm.',source:'Nacka kommun',href:'https://www.nacka.se/stadsutveckling-trafik/nyheter-om-stadsutveckling-och-trafik/'},
+{section:'Nacka · Framåt',date:'26 aug',title:'Torsdagen får tydligt lokalt fokus',summary:'Agnestigs torg invigs samtidigt som boende på Boovägen berörs av planerad vattenavstängning.',why:'NackaSidan följer både kommunens större stadsutvecklingsprojekt och den praktiska vardagsinformationen nära läsarna.',source:'Nacka kommun',href:'https://www.nacka.se/'}
+];
