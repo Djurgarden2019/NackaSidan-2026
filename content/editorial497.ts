@@ -1,0 +1,4 @@
+export const editorial497=[
+{section:'Nacka · Stadsutveckling',date:'26 aug',title:'Agnestigs torg står inför morgondagens invigning',summary:'Den 27 augusti invigs Agnestigs torg i Centrala Nacka.',why:'Torget är en del av omvandlingen av Centrala Nacka och blir en ny offentlig mötesplats.',source:'Nacka kommun',href:'https://www.nacka.se/nyheter-start/2026/08/valkommen-pa-invigning-av-agnestigs-torg/'},
+{section:'Nacka · Trafik',date:'26 aug',title:'Aktiva skolresor får nytt fokus efter skolstarten',summary:'Kommunen uppmanar skolor att delta i höstens Gå & Cykla till skolan.',why:'Fler aktiva skolresor kan minska biltrafiken kring skolorna och bidra till tryggare trafikmiljö.',source:'Nacka kommun',href:'https://www.nacka.se/nyheter-start/2026/08/ga-och-cykla-till-skolan-i-host/'}
+];

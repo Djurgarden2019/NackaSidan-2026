@@ -1,0 +1,4 @@
+export const editorial498=[
+{section:'Saltsjöbaden · Fritid',date:'26 aug',title:'Nya Näckenbadet går in i vardagen efter invigningen',summary:'Det nya badhuset i Saltsjöbaden invigdes den 25 augusti efter flera års planering och byggande.',why:'Anläggningen har fokus på tillgänglighet, hållbarhet och rörelse och blir en viktig lokal mötesplats.',source:'Nacka kommun',href:'https://www.nacka.se/nyheter-start/2026/08/gladjefest-nar-nya-nackenbadet-invigdes/'},
+{section:'Nacka · Fritid',date:'26 aug',title:'Fritidsbiblioteket breddar möjligheten till aktivitet',summary:'På Nacka sportcentrum kan Nackabor gratis låna sport- och friluftsutrustning.',why:'Utlåningen sänker tröskeln till rörelse och friluftsliv för både barn och vuxna.',source:'Nacka kommun',href:'https://www.nacka.se/nyheter-start/2026/08/nu-oppnar-nackas-fritidsbibliotek/'}
+];

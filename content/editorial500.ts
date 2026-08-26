@@ -1,0 +1,4 @@
+export const editorial500=[
+{section:'Nacka · Omsorg',date:'26 aug',title:'Nomineringarna till Ess-utmärkelsen fortsätter',summary:'Nackabor kan nominera personer och team som gör skillnad för äldre fram till den 7 september.',why:'Utmärkelsen synliggör kvalitet och engagemang inom äldreomsorgen.',source:'Nacka kommun',href:'https://www.nacka.se/nyheter-start/'},
+{section:'Nacka · Skola',date:'26 aug',title:'SAO-jobb kan ge högstadieelever betalt arbete i undervisningen',summary:'Nacka kommun har tecknat en avsiktsförklaring om att införa modellen SAO-jobb.',why:'Modellen kombinerar skola och arbetsliv och kan ge elever tidig arbetslivserfarenhet.',source:'Nacka kommun',href:'https://www.nacka.se/nyheter-start/'}
+];
