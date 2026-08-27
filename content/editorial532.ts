@@ -1,0 +1,4 @@
+export const editorial532=[
+{section:'Nacka · I morgon',date:'27 aug',title:'Tugg och Toner samlar Älta på fredag',summary:'Fredag 28 augusti blir det mat, möten och livemusik på Älta torg mellan klockan 17 och 19.',why:'Evenemanget är en del av den växande lokala mötesplatsen på Älta torg.',source:'Nacka kommun',href:'https://www.nacka.se/pa-gang-i-nacka/tugg-toner-pa-alta-torg/'},
+{section:'Nacka · Kultur',date:'27 aug',title:'Konst i omlopp fortsätter i Dieselverkstaden',summary:'Sommarutställningen i Nacka konsthall håller öppet fredag 28 augusti klockan 10–16 och pågår till 6 september.',why:'Utställningen aktiverar kommunens konstsamling och gör den tillgänglig för fler Nackabor.',source:'Nacka kommun',href:'https://www.nacka.se/pa-gang-i-nacka/'}
+];

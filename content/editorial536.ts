@@ -1,0 +1,4 @@
+export const editorial536=[
+{section:'Nacka · Näckenbadet',date:'27 aug',title:'Nya Näckenbadet går in i sin första hela vecka',summary:'Det nya badhuset i Saltsjöbaden invigdes den 25 augusti efter flera års planering och byggande.',why:'Tillgänglighet, hållbarhet och rörelseglädje står i centrum för en av sensommarens största lokala invigningar.',source:'Nacka kommun',href:'https://www.nacka.se/nyheter-start?page=26'},
+{section:'Nacka · Söndag',date:'27 aug',title:'Dieselverkstaden bjuder in till öppet hus',summary:'Söndag 30 augusti klockan 12–14 kan besökare möta lärare, prova aktiviteter och se kursverksamhetens lokaler.',why:'Öppet hus ger barn, vuxna och seniorer möjlighet att hitta höstens kultur- och skapandekurser.',source:'Nacka kommun',href:'https://www.nacka.se/valfard-samhallsservice/kulturhusetdieselverkstaden/kalender-diesel/'}
+];

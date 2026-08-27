@@ -1,0 +1,4 @@
+export const editorial531=[
+{section:'Nacka · Kustliv',date:'27 aug',title:'Ny plan ska stärka Nackas båt- och kustliv',summary:'Natur- och trafiknämnden har antagit en ny plan med inriktning på fler båtplatser, utvecklade strandpromenader, fler badplatser och bättre kollektivtrafik på vatten.',why:'Nackas långa kust är en central del av kommunens identitet och planen kan påverka både vardagsliv, friluftsliv och resande.',source:'Nacka kommun',href:'https://www.nacka.se/nyheter-start?page=26'},
+{section:'Nacka · Val 2026',date:'27 aug',title:'Förtidsröstningen är igång inför valet',summary:'Nackabor kan nu förtidsrösta inför valdagen den 13 september.',why:'NackaSidan fortsätter den praktiska valbevakningen med fokus på hur och var kommuninvånarna kan rösta.',source:'Nacka kommun',href:'https://www.nacka.se/kommun--politik/delta-och-paverka/val-2026/'}
+];
