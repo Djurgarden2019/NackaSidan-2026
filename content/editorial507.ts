@@ -1,0 +1,4 @@
+export const editorial507=[
+{section:'Nacka · Centrala Nacka',date:'27 aug',title:'I dag invigs Agnestigs torg',summary:'Klockan 15.00–15.30 invigs Agnestigs torg intill Värmdövägen i Centrala Nacka.',why:'Det nya torget blir en öppen mötesplats med sittplatser, grönska och belysning och uppmärksammar musikpedagogen Carl-Bertil Agnestig.',source:'Nacka kommun',href:'https://www.nacka.se/nyheter-start/2026/08/valkommen-pa-invigning-av-agnestigs-torg/'},
+{section:'Nacka · Trafik',date:'27 aug',title:'Infartsparkering vid Gustavsviksvägen stänger',summary:'Den 31 augusti stänger infartsparkeringen vid Gustavsviksvägen i anslutning till Bygg-Ole.',why:'Pendlare som använder parkeringen behöver välja någon av kommunens andra infartsparkeringar.',source:'Nacka kommun',href:'https://www.nacka.se/stadsutveckling-trafik/trafik-och-resande/nyheter-om-trafik-vagar-och-resande/2026/08/infartsparkeringen-vid-gustavsviksvagen-stanger/'}
+];

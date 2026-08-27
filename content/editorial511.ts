@@ -1,0 +1,4 @@
+export const editorial511=[
+{section:'Nacka · Helgen',date:'27 aug',title:'Nackas första kulturreservat invigs på lördag',summary:'Den 29 augusti invigs Baggenstäkets kulturreservat kring Gammeludden och norra sidan av Stäket.',why:'Reservatet lyfter ett kulturhistoriskt landskap och blir ett nytt utflyktsmål i kommunen.',source:'Nacka kommun',href:'https://www.nacka.se/pa-gang-i-nacka/'},
+{section:'Nacka · Natur',date:'27 aug',title:'Helgen sätter natur- och kulturmiljöer i fokus',summary:'Kommunens evenemangskalender lyfter flera invigningar och aktiviteter inför den sista augustihelgen.',why:'NackaSidan samlar praktiska helgtips när fler aktiviteter flyttar ut i natur- och kulturmiljöerna.',source:'Nacka kommun',href:'https://www.nacka.se/pa-gang-i-nacka/'}
+];

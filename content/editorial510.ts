@@ -1,0 +1,4 @@
+export const editorial510=[
+{section:'Nacka · Saltsjöbaden',date:'27 aug',title:'Nya Näckenbadet går in i vardagen',summary:'Efter veckans officiella invigning är det nya badhuset i Saltsjöbaden en ny mötesplats för motion och simning.',why:'Anläggningen har byggts med fokus på tillgänglighet, hållbarhet och rörelseglädje.',source:'Nacka kommun',href:'https://www.nacka.se/nyheter-start/2026/08/gladjefest-nar-nya-nackenbadet-invigdes/'},
+{section:'Nacka · Jobb & skola',date:'27 aug',title:'SAO-jobb ska ge högstadieelever arbetslivserfarenhet',summary:'Nacka har ingått en avsiktsförklaring om att införa modellen där elever får ett riktigt betalt jobb som del av undervisningen.',why:'Satsningen kan skapa tidigare kontakt mellan unga och arbetslivet och blir ett viktigt spår att följa under läsåret.',source:'Nacka kommun',href:'https://www.nacka.se/nyheter-start/2026/08/nacka-ingar-avsiktsforklaring-om-sao-jobb/'}
+];
