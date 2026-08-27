@@ -22,7 +22,7 @@ export default function DailyPage() {
           <div className="daily-index">01</div>
           <div>
             <div className="kicker">{dailyEdition.lead.label}</div>
-            <h2>{dailyEdition.lead.title}</h2>
+            <h2><Link href={dailyEdition.lead.href}>{dailyEdition.lead.title}</Link></h2>
             <p>{dailyEdition.lead.text}</p>
             <Link className="button" href={dailyEdition.lead.href}>Läs huvudanalysen</Link>
           </div>
@@ -33,7 +33,7 @@ export default function DailyPage() {
             <article key={item.title}>
               <div className="daily-index">{String(index + 2).padStart(2, '0')}</div>
               <div className="kicker">{item.label}</div>
-              <h2>{item.title}</h2>
+              <h2>{item.href ? <Link href={item.href}>{item.title}</Link> : item.title}</h2>
               <p>{item.text}</p>
               {item.href && <Link className="text-link" href={item.href}>Fördjupa dig</Link>}
             </article>

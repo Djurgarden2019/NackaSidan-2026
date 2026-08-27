@@ -56,9 +56,9 @@ export default function AiTopicPage() {
         <section className="section">
           <SectionIntro title="Fördjupa dig" text="Tre ingångar till hur AI förändrar samhälle och arbetsliv." />
           <div className="grid-3">
-            <article className="card red"><div className="kicker">Arbetsmarknad</div><h3>AI och arbetsmarknaden</h3><p>Vilka arbetsuppgifter förändras och vilka kompetenser blir viktigare?</p><Link className="button" href="/artikel/ai-och-arbetsmarknaden">Läs analysen</Link></article>
-            <article className="card"><div className="kicker">Demokrati</div><h3>Valrörelsen i AI-eran</h3><p>Verifiering och källkritik blir en del av demokratins tekniska infrastruktur.</p><Link className="button" href="/sverige">Till Sverige</Link></article>
-            <article className="card"><div className="kicker">Kultur</div><h3>Vem äger den genererade kulturen?</h3><p>Upphovsrätt, kreativitet och offentlighet möts i en ny kulturdebatt.</p><Link className="button" href="/kulturdebatt">Till kulturdebatten</Link></article>
+            <article className="card red"><div className="kicker">Arbetsmarknad</div><h3><Link href="/artikel/ai-och-arbetsmarknaden">AI och arbetsmarknaden</Link></h3><p>Vilka arbetsuppgifter förändras och vilka kompetenser blir viktigare?</p><Link className="button" href="/artikel/ai-och-arbetsmarknaden">Läs analysen</Link></article>
+            <article className="card"><div className="kicker">Demokrati</div><h3><Link href="/sverige">Valrörelsen i AI-eran</Link></h3><p>Verifiering och källkritik blir en del av demokratins tekniska infrastruktur.</p><Link className="button" href="/sverige">Till Sverige</Link></article>
+            <article className="card"><div className="kicker">Kultur</div><h3><Link href="/kulturdebatt">Vem äger den genererade kulturen?</Link></h3><p>Upphovsrätt, kreativitet och offentlighet möts i en ny kulturdebatt.</p><Link className="button" href="/kulturdebatt">Till kulturdebatten</Link></article>
           </div>
         </section>
       </div>
