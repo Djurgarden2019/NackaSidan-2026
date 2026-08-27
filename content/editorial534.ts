@@ -1,0 +1,4 @@
+export const editorial534=[
+{section:'Nacka · Kultur',date:'27 aug',title:'Kårspexet intar Dieselverkstadens stora scen',summary:'Fredag 28 augusti spelas Kårspexets Vinland eller en fruktad evighet klockan 19–22.',why:'Dieselverkstaden går in i en aktiv kulturhelg med scenkonst, utställningar och kursverksamhet.',source:'Nacka kommun',href:'https://www.nacka.se/pa-gang-i-nacka/'},
+{section:'Nacka · Hälsa',date:'27 aug',title:'MediYoga för anhöriga erbjuds på fredag',summary:'En prova-på-aktivitet med MediYoga för anhöriga arrangeras fredag 28 augusti klockan 10–11.30.',why:'Aktiviteten riktar sig till personer som vårdar eller stödjer någon och behöver möjlighet till återhämtning.',source:'Nacka kommun',href:'https://www.nacka.se/pa-gang-i-nacka/'}
+];
