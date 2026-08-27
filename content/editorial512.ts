@@ -1,0 +1,4 @@
+export const editorial512=[
+{section:'Nacka · Äldre',date:'27 aug',title:'Sista veckorna att nominera till Ess-utmärkelsen',summary:'Nomineringar till årets Ess-utmärkelse för insatser inom äldreområdet kan lämnas till den 7 september.',why:'Utmärkelsen uppmärksammar personer och team som gör skillnad för äldre Nackabor.',source:'Nacka kommun',href:'https://www.nacka.se/nyheter-start/2026/08/nominera-till-ess-utmarkelsen-2026/'},
+{section:'Nacka · Nacka strand',date:'27 aug',title:'Nya pendelbåtsbryggan etablerar sig i resandet',summary:'Den nya bryggan i Nacka strand trafikeras sedan 17 augusti av SL och Skärgårdstrafiken.',why:'Förbindelsen är en viktig del av kollektivtrafiken över vatten och kan förändra vardagsresandet för boende och arbetande i området.',source:'Nacka kommun',href:'https://www.nacka.se/stadsutveckling-trafik/nyheter-om-stadsutveckling-och-trafik/2026/08/klar-for-trafik---ny-brygga-forenklar-resandet-i-nacka-strand/'}
+];
