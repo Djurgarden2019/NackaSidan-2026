@@ -1,0 +1,4 @@
+export const editorial519=[
+{section:'Nacka · Stadsliv',date:'27 aug',title:'Agnestigs torg invigs i eftermiddag',summary:'Det nya torget invigs i dag och blir en ny mötesplats i centrala Nacka.',why:'Torgets öppnande är en tydlig milstolpe i utvecklingen av området och påverkar vardagen för boende och besökare.',source:'Nacka kommun',href:'https://www.nacka.se/'},
+{section:'Nacka · Val 2026',date:'27 aug',title:'Förtidsröstningen går in på sin andra dag',summary:'Förtidsröstningen fortsätter i Nacka inför valet den 13 september.',why:'Tillgänglighet, öppettider och valdeltagande blir centrala frågor i den lokala valbevakningen.',source:'Nacka kommun',href:'https://www.nacka.se/kommun--politik/delta-och-paverka/val-2026/'}
+];
