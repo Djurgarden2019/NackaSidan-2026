@@ -1,0 +1,4 @@
+export const editorial533=[
+{section:'Nacka · Helgen',date:'27 aug',title:'Nackas första kulturreservat invigs på lördag',summary:'Baggenstäkets kulturreservat invigs lördag 29 augusti klockan 11–13 kring Gammeludden och norra sidan av Stäket.',why:'Reservatet skyddar och synliggör ett kulturhistoriskt landskap med stor betydelse för Nackas historia.',source:'Nacka kommun',href:'https://www.nacka.se/pa-gang-i-nacka/'},
+{section:'Nacka · Historia',date:'27 aug',title:'Hembygdsmuseet öppnar i Nyckelviken på lördag',summary:'Nacka hembygdsmuseum vid Stora Nyckelviken håller öppet 29 augusti klockan 12–16.',why:'Besöket ger en lokalhistorisk bild av livet för torpare och bönder under 1800-talet.',source:'Nacka kommun',href:'https://www.nacka.se/pa-gang-i-nacka/'}
+];
