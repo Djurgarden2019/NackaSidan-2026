@@ -5,8 +5,8 @@ export type Feature = { section:string; title:string; summary:string; href?:stri
 
 export function FeatureCard({item,large=false}:{item:Feature;large?:boolean}){
   return <article className={large?'feature-card feature-card-large':'feature-card'}>
-    {item.image && <img src={item.image} alt="" loading="lazy"/>}
-    <div className="feature-body"><div className="kicker">{item.section}</div><h3>{item.title}</h3><p>{item.summary}</p>{item.meta&&<div className="meta">{item.meta}</div>}{item.href&&<Link className="text-link" href={item.href}>Läs vidare</Link>}</div>
+    {item.image && (item.href?<Link href={item.href} aria-label={item.title}><img src={item.image} alt="" loading="lazy"/></Link>:<img src={item.image} alt="" loading="lazy"/>)}
+    <div className="feature-body"><div className="kicker">{item.section}</div><h3>{item.href?<Link href={item.href}>{item.title}</Link>:item.title}</h3><p>{item.summary}</p>{item.meta&&<div className="meta">{item.meta}</div>}{item.href&&<Link className="text-link" href={item.href}>Läs vidare</Link>}</div>
   </article>
 }
 
