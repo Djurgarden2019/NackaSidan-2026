@@ -1,0 +1,4 @@
+export const editorial528=[
+{section:'Nacka · Skola',date:'27 aug',title:'Gå och cykla till skolan växlar upp inför hösten',summary:'Nackas skolor kan delta i den nationella utmaningen för mer aktiva skolresor.',why:'Satsningen kombinerar trafiksäkerhet, rörelse och hållbara resvanor när höstterminen är igång.',source:'Nacka kommun',href:'https://www.nacka.se/nyheter-start/'},
+{section:'Nacka · Trafik',date:'27 aug',title:'Nya pendelbåtsbryggan stärker Nacka strands sjötrafik',summary:'Den nya bryggan i Nacka strand är i trafik för SL och skärgårdstrafiken.',why:'Utbyggd kollektivtrafik på vatten knyter an till kommunens nya plan för båt- och kustliv.',source:'Nacka kommun',href:'https://www.nacka.se/stadsutveckling-trafik/nyheter-om-stadsutveckling-och-trafik/'}
+];
