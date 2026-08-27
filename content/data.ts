@@ -15,11 +15,11 @@ export const swedenStories:Story[]=[
 {section:'Utbildning',title:'Kompetensbristen flyttar fokus till yrkesutbildning',summary:'När arbetsgivare söker erfarenhet som inte finns blir utbildningens koppling till arbetsmarknaden central.'}
 ];
 export const cultureStories:Story[]=[
-{section:'Veckans bok',title:'Romanen som gör familjens hemligheter till samhällsspegel',summary:'En psykologisk berättelse visar hur den privata familjekonflikten ofta rymmer större frågor om klass, ansvar och identitet.',href:'/kultur#veckans-bok'},
-{section:'Nya böcker',title:'Sensommarens utgivning rör sig mellan spänning och självbiografi',summary:'Förlagen satsar både på breda berättelser och personliga röster inför höstens stora bokperiod.',href:'/kultur#nya-bocker'},
-{section:'Film',title:'Sensommarens filmer söker det mänskliga i det spektakulära',summary:'Stora genrefilmer möter mindre personliga berättelser när biograferna går in i höstsäsongen.',href:'/kultur#film'},
-{section:'TV-serier',title:'Streamingserierna blir kortare, tätare och dyrare',summary:'Färre avsnitt ska bära större produktionskostnader – och vinna en publik med allt mindre tid.',href:'/kultur#tv-serier'},
-{section:'Musik',title:'Konsertsommaren förlängs in i augusti',summary:'Arenakonserter och mindre scener konkurrerar om samma publik men erbjuder helt olika upplevelser.',href:'/kultur#musik'},
+{section:'Veckans bok',title:'Romanen som gör familjens hemligheter till samhällsspegel',summary:'En psykologisk berättelse visar hur den privata familjekonflikten ofta rymmer större frågor om klass, ansvar och identitet.',href:'/kultur/artikel/familjehemligheter-som-samhallsspegel'},
+{section:'Nya böcker',title:'Sensommarens utgivning rör sig mellan spänning och självbiografi',summary:'Förlagen satsar både på breda berättelser och personliga röster inför höstens stora bokperiod.',href:'/kultur/artikel/sensommarens-nya-bocker'},
+{section:'Film',title:'Sensommarens filmer söker det mänskliga i det spektakulära',summary:'Stora genrefilmer möter mindre personliga berättelser när biograferna går in i höstsäsongen.',href:'/kultur/artikel/sensommarens-filmer'},
+{section:'TV-serier',title:'Streamingserierna blir kortare, tätare och dyrare',summary:'Färre avsnitt ska bära större produktionskostnader – och vinna en publik med allt mindre tid.',href:'/kultur/artikel/streamingserier-kortare-tatare-dyrare'},
+{section:'Musik',title:'Konsertsommaren förlängs in i augusti',summary:'Arenakonserter och mindre scener konkurrerar om samma publik men erbjuder helt olika upplevelser.',href:'/kultur/artikel/konsertsommaren-forlangs'},
 {section:'Kulturdebatt',title:'Vem får definiera den gemensamma kulturen?',summary:'Debatten om bibliotek, public service, kulturstöd och AI handlar i grunden om vem som får tillgång till offentligheten.',href:'/kulturdebatt'}
 ];
 export const worldFeatures:Feature[]=[
