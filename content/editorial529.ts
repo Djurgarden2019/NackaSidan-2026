@@ -1,0 +1,4 @@
+export const editorial529=[
+{section:'Nacka · Saltsjöbaden',date:'27 aug',title:'Näckenbadet går in i vardagsfas efter invigningen',summary:'Det nya badhuset i Saltsjöbaden är officiellt invigt efter flera års planering och byggande.',why:'Anläggningen har fokus på tillgänglighet, hållbarhet och rörelse och blir en viktig lokal mötesplats.',source:'Nacka kommun',href:'https://www.nacka.se/nyheter-start/'},
+{section:'Nacka · Trafik',date:'27 aug',title:'Broarbeten fortsätter längs Saltsjöbadsleden',summary:'Underhåll på tre broar nära trafikplats Fisksätra pågår mellan augusti och november.',why:'Arbetena kan påverka resor genom området under hösten och följs därför löpande.',source:'Nacka kommun',href:'https://www.nacka.se/stadsutveckling-trafik/nyheter-om-stadsutveckling-och-trafik/'}
+];

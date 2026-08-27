@@ -1,0 +1,4 @@
+export const editorial530=[
+{section:'Nacka · Val 2026',date:'27 aug',title:'Förtidsröstningen inne på andra dagen',summary:'Nackabor kan nu förtidsrösta inför valdagen den 13 september.',why:'NackaSidan fortsätter den praktiska valbevakningen med fokus på röstmöjligheter och lokal demokrati.',source:'Nacka kommun',href:'https://www.nacka.se/kommun--politik/delta-och-paverka/val-2026/'},
+{section:'Nacka · Kultur',date:'27 aug',title:'Vintersalongen tar emot ansökningar',summary:'Ansökningstiden till Vintersalong 2026 i Nacka konsthall pågår till den 24 september.',why:'Utlysningen ger lokala och regionala konstnärer möjlighet att söka till årets stora salong.',source:'Nacka kommun',href:'https://www.nacka.se/pa-gang-i-nacka/'}
+];

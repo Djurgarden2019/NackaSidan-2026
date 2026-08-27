@@ -1,0 +1,4 @@
+export const editorial526=[
+{section:'Nacka · Drift',date:'27 aug',title:'Vattenavstängning berörde Filip Månssons väg',summary:'Nacka vatten och avfall planerade en avstängning mellan klockan 09.00 och 11.00.',why:'Berörda adresser var Filip Månssons väg 9 samt Lillskogsvägen 10–16.',source:'Nacka kommun',href:'https://www.nacka.se/nackavattenavfall/driftinformation/driftinformation/2026/08/vattenavstangning2/'},
+{section:'Nacka · Kultur',date:'27 aug',title:'Konst i omlopp öppen till klockan 16',summary:'Sommarutställningen i Nacka konsthall fortsätter i Dieselverkstaden.',why:'Efter utställningen ska verk kunna lånas ut till kommunalt finansierade verksamheter och fortsätta möta Nackabor i vardagen.',source:'Nacka kommun',href:'https://www.nacka.se/pa-gang-i-nacka/konst-i-omlopp2/'}
+];
