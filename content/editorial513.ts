@@ -1,0 +1,4 @@
+export const editorial513=[
+{section:'Nacka · Drift',date:'27 aug',title:'Vattenavstängning på Filip Månssons väg',summary:'Nacka vatten och avfall meddelar vattenavstängning den 27 augusti klockan 09.00–11.00 för Filip Månssons väg 9 och Lillskogsvägen 10–16.',why:'Boende uppmanas tappa upp vatten i förväg och spola efter att vattnet återkommit.',source:'Nacka kommun',href:'https://www.nacka.se/nackavattenavfall/driftinformation/driftinformation/2026/08/vattenavstangning2/'},
+{section:'Nacka · Centrala Nacka',date:'27 aug',title:'Agnestigs torg invigs i eftermiddag',summary:'Det nya torget intill Värmdövägen och Elverkshuset invigs klockan 15.00–15.30.',why:'Torget blir en ny mötesplats med sittplatser, planteringar, belysning och bevarade ekar.',source:'Nacka kommun',href:'https://www.nacka.se/stadsutveckling-trafik/nyheter-om-stadsutveckling-och-trafik/2026/08/invigning-av-agnestigs-torg/'}
+];
