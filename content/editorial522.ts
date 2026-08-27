@@ -1,0 +1,4 @@
+export const editorial522=[
+{section:'Nacka · Natur',date:'27 aug',title:'Helgens naturinvigningar närmar sig',summary:'Baggenstäkets kulturreservat och Svartkärrsbergets biotopskydd står i fokus inför helgen.',why:'Natur- och kulturmiljöfrågorna visar hur Nacka försöker kombinera tillväxt med bevarande.',source:'Nacka kommun',href:'https://www.nacka.se/'},
+{section:'Nacka · Park',date:'27 aug',title:'Kyrkviksparken redo för helgens aktiviteter',summary:'Kyrkviksparken är en av helgens lokala mötesplatser.',why:'Nya och upprustade parker påverkar både rekreation och områdets attraktivitet.',source:'Nacka kommun',href:'https://www.nacka.se/'}
+];

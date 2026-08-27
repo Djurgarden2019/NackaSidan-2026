@@ -1,0 +1,4 @@
+export const editorial523=[
+{section:'Nacka · Infrastruktur',date:'27 aug',title:'Saltsjöbadsleden fortsatt viktig trafikfråga',summary:'Arbeten och trafikpåverkan längs Saltsjöbadsleden följs fortsatt.',why:'Störningar på en av kommunens viktiga trafikleder får snabbt konsekvenser för både bil- och busstrafik.',source:'Nacka kommun',href:'https://www.nacka.se/'},
+{section:'Nacka · Kollektivtrafik',date:'27 aug',title:'Nacka strands pendelbåtsläge fortsätter utvecklas',summary:'Pendelbåtsbryggan i Nacka strand är fortsatt en del av kommunens kollektivtrafikutveckling.',why:'Sjötrafiken kan avlasta vägtrafiken och stärka kopplingen mellan Nacka och centrala Stockholm.',source:'Nacka kommun',href:'https://www.nacka.se/'}
+];
