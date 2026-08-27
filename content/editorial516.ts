@@ -1,0 +1,4 @@
+export const editorial516=[
+{section:'Nacka · Helgen',date:'27 aug',title:'Nackas första kulturreservat invigs på lördag',summary:'Baggenstäkets kulturreservat invigs den 29 augusti klockan 11.00–13.00.',why:'Reservatet omfattar området kring Gammeludden och norra sidan av Stäket och blir kommunens första kulturreservat.',source:'Nacka kommun',href:'https://www.nacka.se/pa-gang-i-nacka/'},
+{section:'Nacka · Natur',date:'27 aug',title:'Svartkärrsbergets biotopskydd invigs samma dag',summary:'På lördag klockan 14.00–16.00 invigs Svartkärrsbergets biotopskyddsområde.',why:'Området skyddar äldre naturskogsartad skog med höga naturvärden.',source:'Nacka kommun',href:'https://www.nacka.se/'}
+];
