@@ -1,0 +1,4 @@
+export const editorial539=[
+{section:'Nacka · Kultur',date:'27 aug',title:'Konst i omlopp fortsätter över helgen',summary:'Sommarutställningen i Nacka konsthall på Dieselverkstaden är öppen även fredag och lördag och pågår till den 6 september.',why:'Utställningen ger besökare möjlighet att möta kommunens konstsamling på ett mer aktivt sätt.',source:'Nacka kommun',href:'https://www.nacka.se/pa-gang-i-nacka/'},
+{section:'Nacka · Hälsa',date:'27 aug',title:'MediYoga erbjuds för anhöriga',summary:'Fredag förmiddag arrangeras prova-på MediYoga för personer som vårdar eller stödjer en närstående.',why:'Aktiviteten lyfter återhämtning och stöd för en grupp som ofta har en pressad vardag.',source:'Nacka kommun',href:'https://www.nacka.se/pa-gang-i-nacka/?page=2&panel=list'}
+];
