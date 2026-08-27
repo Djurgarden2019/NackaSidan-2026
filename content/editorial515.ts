@@ -1,0 +1,4 @@
+export const editorial515=[
+{section:'Nacka · Kultur',date:'27 aug',title:'Konst i omlopp fortsätter på Dieselverkstaden',summary:'Sommarutställningen i Nacka konsthall håller öppet i dag klockan 10.00–16.00 och pågår till 6 september.',why:'Utställningen arbetar med kommunens konstsamling och hur konsten kan aktiveras i vardagen.',source:'Nacka kommun',href:'https://www.nacka.se/pa-gang-i-nacka/'},
+{section:'Nacka · I morgon',date:'27 aug',title:'Tugg och Toner får premiär på Älta torg',summary:'Fredag 28 augusti startar Tugg och Toner på Älta torg med mat och musik klockan 17.00–19.00.',why:'Den nya fredagsaktiviteten är tänkt att skapa mer liv och gemenskap på torget.',source:'Nacka kommun',href:'https://www.nacka.se/pa-gang-i-nacka/'}
+];
