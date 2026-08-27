@@ -1,0 +1,4 @@
+export const editorial521=[
+{section:'Nacka · Kultur',date:'27 aug',title:'Konst i omlopp fortsätter locka besökare',summary:'Den lokala konstsatsningen fortsätter att synas i kommunens kulturutbud.',why:'Kulturbevakningen breddar NackaSidan och ger plats åt lokala initiativ utanför politik och byggande.',source:'Nacka kommun',href:'https://www.nacka.se/'},
+{section:'Nacka · Evenemang',date:'27 aug',title:'Tugg och Toner närmar sig i Älta',summary:'Älta laddar för lokalt evenemang med mat, musik och aktiviteter.',why:'Lokala evenemang är viktiga för områdesidentitet och ger läsarna konkret helginformation.',source:'Nacka kommun',href:'https://www.nacka.se/'}
+];
