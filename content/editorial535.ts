@@ -1,0 +1,4 @@
+export const editorial535=[
+{section:'Nacka · Trafik',date:'27 aug',title:'Broarbeten fortsätter längs Saltsjöbadsleden',summary:'Underhållsarbeten på tre broar nära trafikplats Fisksätra pågår mellan augusti och november.',why:'Arbetena är viktiga att följa för pendlare och boende i Saltsjöbaden och Fisksätra.',source:'Nacka kommun',href:'https://www.nacka.se/stadsutveckling-trafik/nyheter-om-stadsutveckling-och-trafik?page=9'},
+{section:'Nacka · Skola',date:'27 aug',title:'Gå och cykla till skolan ska få fler barn i rörelse',summary:'Nackas skolor kan delta i höstens nationella utmaning där klasser uppmuntras att gå och cykla till skolan.',why:'Satsningen kombinerar trafiksäkerhet, hälsa och mer hållbara skolresor.',source:'Nacka kommun',href:'https://www.nacka.se/stadsutveckling-trafik/nyheter-om-stadsutveckling-och-trafik?page=9'}
+];
