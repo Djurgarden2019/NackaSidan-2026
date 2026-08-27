@@ -1,0 +1,4 @@
+export const editorial508=[
+{section:'Nacka · Kultur',date:'27 aug',title:'Konst i omlopp fortsätter i Dieselverkstaden',summary:'Nacka konsthalls sommarutställning är öppen i dag klockan 10–16 på Marcusplatsen 17.',why:'Efter utställningen kan verk lånas ut till kommunalt finansierade verksamheter och fortsätta möta Nackabor i vardagen.',source:'Nacka kommun',href:'https://www.nacka.se/pa-gang-i-nacka/konst-i-omlopp2/'},
+{section:'Nacka · Skola',date:'27 aug',title:'Aktiva skolresor får ny höstskjuts',summary:'Nackas skolor kan delta i den nationella utmaningen Gå & Cykla till skolan.',why:'Satsningen kombinerar trafiksäkerhet, rörelse och hållbara resor när höstterminen nu är igång.',source:'Nacka kommun',href:'https://www.nacka.se/stadsutveckling-trafik/nyheter-om-stadsutveckling-och-trafik/2026/08/ga-och-cykla-till-skolan-i-host/'}
+];
