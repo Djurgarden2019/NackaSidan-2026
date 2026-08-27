@@ -1,0 +1,4 @@
+export const editorial527=[
+{section:'Nacka · Natur',date:'27 aug',title:'Baggenstäkets kulturreservat står inför invigning',summary:'På lördag invigs Nackas första kulturreservat kring Gammeludden och norra sidan av Stäket.',why:'Reservatet lyfter både landskapets naturvärden och områdets långa kulturhistoria.',source:'Nacka kommun',href:'https://www.nacka.se/pa-gang-i-nacka/'},
+{section:'Nacka · Hälsa',date:'27 aug',title:'Seniorer tränar ute i Finntorp',summary:'Sickla Seniorers utegympa fortsätter i Duschparken på torsdagar.',why:'Aktiviteten är ett exempel på lokala lågtröskelinitiativ för rörelse och gemenskap.',source:'Nacka kommun',href:'https://www.nacka.se/pa-gang-i-nacka/'}
+];
