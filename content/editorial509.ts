@@ -1,0 +1,4 @@
+export const editorial509=[
+{section:'Nacka · Val 2026',date:'27 aug',title:'Förtidsröstningen inne på andra dagen',summary:'Förtidsröstningen inför valet den 13 september är nu igång i Nacka.',why:'NackaSidan fortsätter den praktiska valbevakningen med fokus på var, när och hur kommuninvånarna kan rösta.',source:'Nacka kommun',href:'https://www.nacka.se/kommun--politik/delta-och-paverka/val-2026/'},
+{section:'Nacka · Val 2026',date:'27 aug',title:'Valaffischer fortsatt aktuell lokal fråga',summary:'När valrörelsen intensifieras gäller kommunens regler för placering och ansvar för valaffischer.',why:'Reglerna är viktiga både för trafiksäkerhet och för en fungerande offentlig miljö under valspurten.',source:'Nacka kommun',href:'https://www.nacka.se/nyheter-start/2026/08/regler-for-valaffischer-i-nacka/'}
+];
