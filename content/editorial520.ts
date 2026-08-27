@@ -1,0 +1,4 @@
+export const editorial520=[
+{section:'Nacka · Trafik',date:'27 aug',title:'Gustavsviksvägens infartsparkering stänger snart',summary:'Infartsparkeringen vid Gustavsviksvägen stänger den 31 augusti.',why:'Förändringen påverkar pendlare och kan flytta trycket till andra infartsparkeringar och kollektivtrafiklägen.',source:'Nacka kommun',href:'https://www.nacka.se/'},
+{section:'Nacka · Skola',date:'27 aug',title:'Aktiva skolresor fortsätter efter skolstarten',summary:'Kommunens arbete med säkrare gång- och cykelresor till skolan fortsätter under hösten.',why:'Skolvägar, trafiksäkerhet och barns självständiga resor är återkommande lokala frågor.',source:'Nacka kommun',href:'https://www.nacka.se/'}
+];
