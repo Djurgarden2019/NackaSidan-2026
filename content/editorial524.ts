@@ -1,0 +1,4 @@
+export const editorial524=[
+{section:'Nacka · Fritid',date:'27 aug',title:'Näckenbadet går in i sin första hela vecka',summary:'Det nyinvigda Näckenbadet är nu öppet och går in i vardagsdrift.',why:'Efter invigningen blir det intressant att följa hur anläggningen används och tas emot av Nackaborna.',source:'Nacka kommun',href:'https://www.nacka.se/'},
+{section:'Nacka · Arbete',date:'27 aug',title:'SAO-jobben fortsätter vara en lokal arbetsmarknadsfråga',summary:'Kommunens arbete med lokala arbetsmöjligheter och vägar in i sysselsättning fortsätter.',why:'Arbetsmarknadsfrågor ger NackaSidan en bredare bevakning av vardagsekonomi och kommunal service.',source:'Nacka kommun',href:'https://www.nacka.se/'}
+];
