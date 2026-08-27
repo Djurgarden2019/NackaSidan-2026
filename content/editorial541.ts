@@ -1,0 +1,4 @@
+export const editorial541=[
+{section:'Nacka · Fritid',date:'27 aug',title:'Näckenbadet går in i sin första höst efter invigningen',summary:'Det nya badhuset i Saltsjöbaden invigdes den 25 augusti efter flera års planering och byggande.',why:'Den nya anläggningen är en stor kommunal investering i simning, motion och tillgänglighet.',source:'Nacka kommun',href:'https://www.nacka.se/nyheter-start/'},
+{section:'Nacka · Natur',date:'27 aug',title:'Kyrkviksparken får egen invigningsdag',summary:'På söndag arrangeras Nackas första Parkernas dag i samband med invigningen av Kyrkviksparken klockan 12–15.',why:'Parken blir en ny mötesplats för gemenskap, rörelse och rekreation.',source:'Nacka kommun',href:'https://www.nacka.se/'}
+];
