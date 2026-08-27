@@ -1,0 +1,4 @@
+export const editorial518=[
+{section:'Nacka · Skola',date:'27 aug',title:'Gå och cykla till skolan växlar upp',summary:'Nackas skolor är inbjudna till den nationella höstutmaningen där elever uppmuntras att gå och cykla till skolan.',why:'Satsningen kombinerar trafiksäkerhet, rörelse och hållbara skolresor.',source:'Nacka kommun',href:'https://www.nacka.se/stadsutveckling-trafik/nyheter-om-stadsutveckling-och-trafik/'},
+{section:'Nacka · Bad',date:'27 aug',title:'Nya Näckenbadet blir ny mötesplats i Saltsjöbaden',summary:'Det nya Näckenbadet har nu invigts efter flera års planering och byggande.',why:'Badhuset har fokus på tillgänglighet, hållbarhet och rörelse och är en viktig ny lokal anläggning.',source:'Nacka kommun',href:'https://www.nacka.se/nyheter-start/'}
+];

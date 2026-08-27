@@ -1,0 +1,4 @@
+export const editorial514=[
+{section:'Nacka · Evenemang',date:'27 aug',title:'Kulturhistorisk vandring i Saltsjöbaden i kväll',summary:'En guidad kulturhistorisk vandring om Saltsjöbanan, villorna och de salta baden hålls klockan 17.00–18.20.',why:'Vandringen lyfter fram en central del av Saltsjöbadens lokala historia och miljö.',source:'Nacka kommun',href:'https://www.nacka.se/pa-gang-i-nacka/'},
+{section:'Nacka · Senior',date:'27 aug',title:'Stavgång i Jarlaberg mitt på dagen',summary:'Dagens stavgångspromenad startar utanför Jarlabergsskolan klockan 11.00.',why:'Aktiviteten är en del av dagens lokala utbud för motion, hälsa och gemenskap.',source:'Nacka kommun',href:'https://www.nacka.se/pa-gang-i-nacka/'}
+];

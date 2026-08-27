@@ -1,0 +1,4 @@
+export const editorial517=[
+{section:'Nacka · Helgen',date:'27 aug',title:'Kyrkviksparken får egen Parkernas dag',summary:'Söndag 30 augusti klockan 12.00–15.00 arrangeras Nackas första Parkernas dag i samband med invigningen av Kyrkviksparken.',why:'Kommunen vill göra dagen till en återkommande tradition kring parker, rörelse och gemenskap.',source:'Nacka kommun',href:'https://www.nacka.se/'},
+{section:'Nacka · Trafik',date:'27 aug',title:'Saltsjöbadsleden påverkas av broarbeten',summary:'Underhåll på tre broar nära trafikplats Fisksätra pågår mellan augusti och november.',why:'Arbetena är viktiga att följa för pendlare och boende eftersom trafiken kan påverkas under hösten.',source:'Nacka kommun',href:'https://www.nacka.se/stadsutveckling-trafik/nyheter-om-stadsutveckling-och-trafik/'}
+];
