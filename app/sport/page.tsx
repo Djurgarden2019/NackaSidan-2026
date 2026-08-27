@@ -2,7 +2,7 @@ import Link from 'next/link';
 import { AnalysisBox, FactStrip } from '../../components/Editorial';
 
 const sections=[
- {kicker:'Veckans analys',title:'Resultat är bara början av berättelsen',text:'Prestation, ekonomi, publik och besluten runt lagen avgör hur en sportslig utveckling ska förstås.'},
+ {kicker:'27 augusti · Fotboll',title:'UEFA begär FIFA-dokument i amerikansk domstol',text:'UEFA förbereder en möjlig schweizisk rättsprocess om FIFA:s stoppade plan för kommersiella rättigheter.'},
  {kicker:'Publik & ekonomi',title:'När läktaren blir en del av konkurrenskraften',text:'Publiktryck, biljettintäkter, sponsring och arenaekonomi påverkar klubbarnas långsiktiga handlingsutrymme.'},
  {kicker:'Form & prestation',title:'Vad resultaten faktiskt säger',text:'Vi skiljer tillfällig form från mer hållbara trender och tittar på vad som förändras över tid.'},
  {kicker:'Nästa vecka',title:'Det här följer vi nu',text:'Matcher, tabelläge, publik, ekonomi och beslut som kan ändra förutsättningarna.'}
