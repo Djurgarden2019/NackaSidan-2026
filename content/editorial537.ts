@@ -1,0 +1,4 @@
+export const editorial537=[
+{section:'Nacka · Helgen',date:'27 aug',title:'Tre stora invigningar väntar i Nacka i helgen',summary:'Baggenstäkets kulturreservat och Svartkärrsbergets biotopskydd invigs på lördag, följt av Parkernas dag och invigning av Kyrkviksparken på söndag.',why:'Helgen samlar flera stora satsningar på natur, kulturmiljö och offentliga rum.',source:'Nacka kommun',href:'https://www.nacka.se/'},
+{section:'Nacka · Kultur',date:'27 aug',title:'Fredagskvällen fylls av musik och teater',summary:'Tugg och Toner har premiär på Älta torg och Kårspexet spelar på Dieselverkstadens stora scen den 28 augusti.',why:'Två olika evenemang ger Nackabor fler lokala kultur- och mötesplatser inför helgen.',source:'Nacka kommun',href:'https://www.nacka.se/pa-gang-i-nacka/'}
+];
