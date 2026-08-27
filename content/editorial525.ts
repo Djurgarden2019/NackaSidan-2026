@@ -1,0 +1,4 @@
+export const editorial525=[
+{section:'Nacka · Kustliv',date:'27 aug',title:'Ny plan ska stärka Nackas båt- och kustliv',summary:'Natur- och trafiknämnden har antagit en ny plan för att utveckla Nackas sjöar och kust.',why:'Planen pekar ut satsningar på bland annat fler båtplatser, strandpromenader, badplatser och bättre kollektivtrafik på vatten.',source:'Nacka kommun',href:'https://www.nacka.se/nyheter-start/'},
+{section:'Nacka · Centrala Nacka',date:'27 aug',title:'Agnestigs torg invigs i eftermiddag',summary:'Det nya torget intill Värmdövägen invigs klockan 15.00–15.30.',why:'Torget blir en ny mötesplats med sittplatser, grönska och belysning och är uppkallat efter Carl-Bertil Agnestig.',source:'Nacka kommun',href:'https://www.nacka.se/nyheter-start/2026/08/valkommen-pa-invigning-av-agnestigs-torg/'}
+];
