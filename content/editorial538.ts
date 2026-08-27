@@ -1,0 +1,4 @@
+export const editorial538=[
+{section:'Nacka · Val 2026',date:'27 aug',title:'Förtidsröstningen är igång i Nacka',summary:'Sedan den 26 augusti kan Nackabor förtidsrösta inför valdagen den 13 september.',why:'NackaSidan fortsätter den praktiska valbevakningen med fokus på hur och när invånarna kan rösta.',source:'Nacka kommun',href:'https://www.nacka.se/'},
+{section:'Nacka · Stad',date:'27 aug',title:'Agnestigs torg invigs i Centrala Nacka',summary:'Det nya torget vid Värmdövägen invigs torsdag eftermiddag och blir en ny öppen mötesplats med sittplatser, planteringar och bevarade ekar.',why:'Torget är en konkret del av omvandlingen av Centrala Nacka.',source:'Nacka kommun',href:'https://www.nacka.se/nyheter-start/2026/08/valkommen-pa-invigning-av-agnestigs-torg/'}
+];
