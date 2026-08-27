@@ -2,10 +2,10 @@ import Link from 'next/link';
 import { AnalysisBox, SectionIntro } from '../../components/Editorial';
 
 const debates=[
- ['Bibliotek','Bibliotekens roll växer när informationsmiljön blir mer splittrad','Frågan är hur bibliotek ska förena fri tillgång, lokal närvaro och ett växande digitalt uppdrag.','/kultur'],
- ['Public service','Oberoende medier blir en allt tydligare demokratisk konflikt','Debatten handlar både om finansiering och om vem som har förtroende att definiera ett gemensamt offentligt samtal.','/kultur'],
- ['AI & kultur','Generativ AI utmanar både upphovsrätt och konstnärlig identitet','Konflikten gäller ersättning, transparens och skillnaden mellan inspiration och automatiserad reproduktion.','/tema/ai'],
- ['Kulturpolitik','Kulturstödets mål blir svårare att formulera','Ska stödet prioritera bredd, kvalitet, regional spridning eller konstnärlig frihet?','/kultur']
+ ['Bibliotek','Bibliotekens roll växer när informationsmiljön blir mer splittrad','Frågan är hur bibliotek ska förena fri tillgång, lokal närvaro och ett växande digitalt uppdrag.','/kultur/artikel/bibliotekens-vaxande-roll'],
+ ['Public service','Oberoende medier blir en allt tydligare demokratisk konflikt','Debatten handlar både om finansiering och om vem som har förtroende att definiera ett gemensamt offentligt samtal.','/kultur/artikel/public-service-demokratisk-konflikt'],
+ ['AI & kultur','Generativ AI utmanar både upphovsrätt och konstnärlig identitet','Konflikten gäller ersättning, transparens och skillnaden mellan inspiration och automatiserad reproduktion.','/kultur/artikel/generativ-ai-upphovsratt'],
+ ['Kulturpolitik','Kulturstödets mål blir svårare att formulera','Ska stödet prioritera bredd, kvalitet, regional spridning eller konstnärlig frihet?','/kultur/artikel/kulturstodets-mal']
 ];
 
 export const metadata={title:'Kulturdebatt | NackaSidan 2026',description:'Idé- och kulturfrågor om offentlighet, medier, AI, bibliotek och kulturpolitik.'};
