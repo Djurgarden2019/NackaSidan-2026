@@ -1,0 +1,4 @@
+export const editorial542=[
+{section:'Nacka · Helgguide',date:'27 aug',title:'Nacka går in i en fullmatad sensommarhelg',summary:'Fredagens kulturprogram följs av lördagens natur- och kulturreservatsinvigningar och söndagens Parkernas dag i Kyrkviksparken.',why:'NackaSidan samlar helgens viktigaste lokala hållpunkter i ett redaktionellt slutblock inför lanseringskontrollen.',source:'Nacka kommun',href:'https://www.nacka.se/pa-gang-i-nacka/'},
+{section:'Nacka · Redaktion',date:'27 aug',title:'Nästa steg: slutkontroll av NackaSidan',summary:'Efter Editorial 542 går arbetet över från innehållspåfyllnad till kontroll av aktualitet, länkar, dubletter, balans och presentation.',why:'En strukturerad slutkontroll minskar risken för gammalt eller dubblerat material när sajten går in i lanseringsläge.',source:'NackaSidan',href:'/'}
+];
