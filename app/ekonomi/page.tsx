@@ -2,10 +2,10 @@ import Link from 'next/link';
 import { AnalysisBox, FactStrip } from '../../components/Editorial';
 
 const themes=[
- {title:'Räntan och bolånen',text:'Vi följer styrräntan, bankernas boräntor och hur förändringarna slår mot hushållens månadsbudget.',href:'/sverige#ekonomi-nu'},
- {title:'Priser och köpkraft',text:'Inflation är mer än en procentsiffra. Mat, boende, energi och tjänster avgör hur mycket som faktiskt blir kvar.',href:'/sverige#ekonomi-nu'},
- {title:'Jobb och konjunktur',text:'Arbetsmarknaden visar om återhämtningen når hushållen och vilka branscher som går först in i nästa fas.',href:'/sverige#ekonomi-nu'},
- {title:'Börs och företag',text:'Bolagens investeringar, vinster och framtidstro ger tidiga signaler om vart ekonomin är på väg.',href:'/sverige#ekonomi-nu'}
+ {title:'Regeringen höjer prognosen för svensk BNP',text:'Tillväxtprognosen för 2026 höjs från 2,3 till 2,5 procent när regeringen beskriver en starkare återhämtning.',href:'https://www.reuters.com/world/europe/swedish-government-raises-gdp-forecast-ahead-september-election-2026-08-27/'},
+ {title:'50 miljarder kronor i reformutrymme inför budgeten',text:'Det nya ekonomiska utrymmet blir en central del av valrörelsens konflikt om skatter, välfärd och hushållens ekonomi.',href:'https://www.svt.se/nyheter/inrikes/senaste-nytt-om-val-2026'},
+ {title:'Sverige kräver stora nedskärningar i EU:s långtidsbudget',text:'Sex nettobetalande länder vill minska kommissionens budgetförslag med flera hundra miljarder euro.',href:'https://www.reuters.com/business/six-eu-net-contributors-demand-hundreds-billions-cuts-blocs-long-term-budget-2026-08-27/'},
+ {title:'Valrörelsen avgör hur återhämtningen ska fördelas',text:'Lägre inflation och en förbättrad arbetsmarknad möter fortsatt försiktighet bland hushåll med små marginaler.',href:'https://www.reuters.com/world/europe/swedish-government-raises-gdp-forecast-ahead-september-election-2026-08-27/'}
 ];
 
 export const metadata={title:'Ekonomi | NackaSidan 2026',description:'Räntor, inflation, jobb, bostäder och börs – förklarat utifrån vad utvecklingen betyder för hushållen.'};

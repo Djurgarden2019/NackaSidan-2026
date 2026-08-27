@@ -2,10 +2,10 @@ import Link from 'next/link';
 import { AnalysisBox, FactStrip } from '../../components/Editorial';
 
 const beats=[
- {title:'Artificiell intelligens',text:'Modeller, reglering, arbete och demokrati – med fokus på vad som faktiskt förändras utanför laboratoriet.',href:'/tema/ai'},
- {title:'Medicin & hälsa',text:'Nya behandlingar, diagnostik och forskning granskas utifrån evidens, nytta och risk.',href:'/vetenskap#veckans-fokus'},
- {title:'Rymd & klimat',text:'Satelliter, energisystem, klimatdata och stora forskningsprogram sätts i ett större sammanhang.',href:'/vetenskap#veckans-fokus'},
- {title:'Forskning & samhälle',text:'Vi följer hur vetenskap påverkar beslut, utbildning, industri och vardag – och var osäkerheten finns.',href:'/vetenskap#veckans-fokus'}
+ {title:'AI-agenter får standard för att styra laboratorieutrustning',text:'Anthropic presenterar ett ramverk för att koppla AI-agenter till bland annat mikroskop och robotarmar.',href:'https://www.investing.com/news/stock-market-news/anthropic-unveils-new-framework-allowing-ai-agents-to-operate-physical-devices-4880003'},
+ {title:'AI användes i realtid under synräddande hjärnkirurgi',text:'Ett UCL-system analyserade operationsvideo och hjälpte kirurger att identifiera känsliga strukturer.',href:'https://www.ucl.ac.uk/news/2026/aug/first-patient-live-ai-assisted-sight-saving-brain-surgery'},
+ {title:'AI hjälper forskare konstruera genetiska kretsar',text:'En ny metod producerar mycket stora DNA-bibliotek och träningsdata för mer träffsäkra modeller.',href:'https://news.rice.edu/news/2026/scientists-demonstrate-first-time-use-ai-genetic-circuit-design'},
+ {title:'Djupinlärning förbättrar kommunikationen med bioniska ögon',text:'Forskare använder modeller för att styra elektrisk stimulering i synbarken mer precist.',href:'https://news.ucsb.edu/2026/022739/deep-learning-refines-how-bionic-eyes-communicate-brain'}
 ];
 
 export const metadata={title:'Vetenskap & AI | NackaSidan 2026',description:'AI, medicin, forskning, klimat och rymd – med fokus på evidens, konsekvenser och vad som faktiskt spelar roll.'};
