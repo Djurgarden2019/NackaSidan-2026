@@ -37,7 +37,7 @@ export function SourcePanel({ article }: { article: Article }) {
         {article.sources.map((source) => (
           <li key={`${source.type}-${source.label}`}>
             <span>{source.type}</span>
-            {source.url ? <a href={source.url}>{source.label}</a> : source.label}
+            {source.url ? <a href={source.url} target="_blank" rel="noopener noreferrer">{source.label} ↗</a> : source.label}
           </li>
         ))}
       </ul>
