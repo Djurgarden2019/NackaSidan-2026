@@ -1,20 +1,111 @@
-import type {Metadata} from 'next';
+import type { Metadata } from 'next';
 import Link from 'next/link';
-import {notFound} from 'next/navigation';
-import {sportArticles,sportArticleBySlug} from '../../../../content/sportArticles';
+import { notFound } from 'next/navigation';
+import { sportArticleBySlug, sportArticles } from '../../../../content/sportArticles';
 
-const matchArticles:Record<string,{report:string[];team:string[];perspective:string[]}>= {
- 'mjallby-europa-salzburg':{
-  report:['Mjällby kom till returen i Salzburg med ett 0–1-underläge från hemmamötet. Det svenska laget behövde därför göra mål, men Salzburg tog kontroll över matchen och vann med 3–0. Dubbelmötet slutade 4–0 sammanlagt.','Resultatet visar att Salzburg lyckades försvara sitt försprång och samtidigt utnyttja de ytor som uppstod när Mjällby behövde flytta fram laget. Mjällbys Europa League-kval tog därmed slut före ligafasen.'],
-  team:['Uttåget minskar den omedelbara matchbelastningen. Tränarstaben behöver inte längre planera för återkommande Europamatcher och resor under hösten, vilket ger mer tid för återhämtning och träning mellan de allsvenska omgångarna.','Samtidigt försvinner möjligheten att ge hela truppen regelbunden speltid i två tävlingar. Spelare som hade kunnat få större roller i Europa måste nu konkurrera om färre minuter. Klubbledningen behöver också bedöma om truppen är dimensionerad för den nationella slutspurten eller om någon spelare kan lämna.','Mentalt blir nästa allsvenska match viktig. Ett tydligt nederlag kan sitta kvar, men den frigjorda kalendern kan också bli en fördel om laget snabbt återgår till sitt stabila grundspel.'],
-  perspective:['För Mjällby är kvalet ett kvitto på att klubbens modell kan bära långt även med mindre ekonomiska resurser. Nästa steg är att omsätta erfarenheten i bättre förberedelser, fortsatt spelarutveckling och investeringar som stärker klubben över flera säsonger.','För svensk fotboll illustrerar dubbelmötet avståndet till etablerade europeiska utvecklingsklubbar. Skillnaden handlar inte bara om de bästa spelarna, utan om truppbredd, tempo, internationell erfarenhet och ekonomisk förmåga att ersätta spelare som säljs.','Ett enskilt 0–4-resultat bevisar inte att Allsvenskan blir svagare. Men om svenska klubbar återkommande faller före ligafaserna minskar både rankingpoäng och framtida intäkter. Därför är Mjällbys erfarenhet relevant även för konkurrenterna: fler klubbar behöver kunna behålla sin struktur när motståndet och matchtempot höjs.']
- }
+type PageProps = { params: Promise<{ slug: string }> };
+
+const matchDetails: Record<string, {
+  report: string[];
+  consequences: string[];
+  perspective: string[];
+}> = {
+  'mjallby-europa-salzburg': {
+    report: [
+      'Mjällby kom till returen med ett 0–1-underläge och behövde därför flytta fram laget. Salzburg utnyttjade ytorna som uppstod, vann med 3–0 och tog playoffmötet med sammanlagt 4–0.',
+      'Siffrorna speglar framför allt skillnaden i tempo. Salzburg kunde pressa längre, växla snabbare efter bollvinst och straffa misstagen innan Mjällby hann återställa sin defensiva organisation.'
+    ],
+    consequences: [
+      'Uttåget innebär att Mjällby slipper höstens extra Europamatcher och kan lägga mer träningstid på Allsvenskan. På kort sikt kan det ge friskare ben och en tydligare veckorytm i den nationella slutspurten.',
+      'Samtidigt försvinner chansen till större matchintäkter och fler internationella minuter. Ledningen behöver nu väga kontinuitet mot risken att spelare som visat sig i kvalet blir transfermål.'
+    ],
+    perspective: [
+      'För klubben blir dubbelmötet ett konkret underlag för rekrytering, fysisk träning och matchplanering. Nästa steg är inte att försöka kopiera Salzburgs ekonomi, utan att höja tempot i den egna modellen och återinvestera Europaintäkterna klokt.',
+      'För svensk fotboll visar mötet hur stort steget fortfarande är från en stark allsvensk vardag till etablerade europeiska utvecklingsmiljöer. Fler svenska lag behöver nå ligafaser återkommande om rankning, intäkter och vana vid internationellt tempo ska förbättras.'
+    ]
+  }
 };
 
-export function generateStaticParams(){return sportArticles.map(({slug})=>({slug}))}
-export async function generateMetadata({params}:{params:Promise<{slug:string}>}):Promise<Metadata>{const {slug}=await params;const article=sportArticleBySlug[slug];return article?{title:article.title,description:article.dek}:{title:'Sportartikel saknas'}}
+export function generateStaticParams() {
+  return sportArticles.map(({ slug }) => ({ slug }));
+}
 
-export default async function SportArticlePage({params}:{params:Promise<{slug:string}>}){
- const {slug}=await params;const article=sportArticleBySlug[slug];if(!article)notFound();const match=matchArticles[slug];const related=sportArticles.filter(item=>item.slug!==article.slug).slice(0,3);
- return <main><div className="shell"><article className="article article-premium sport-article"><nav className="meta" aria-label="Brödsmulor"><Link href="/">NackaSidan</Link> · <Link href="/sport">Sport</Link> · Artikel</nav><div className="kicker">{article.sport}</div><h1>{article.title}</h1><p className="intro">{article.dek}</p><p className="meta">Publicerad {article.date} · NackaSidans sportredaktion</p>{match?<div className="article-body match-article-body"><section className="article-section"><div className="match-section-number">01</div><h2>En kort rapport om matchen</h2>{match.report.map(paragraph=><p key={paragraph}>{paragraph}</p>)}</section><section className="article-section"><div className="match-section-number">02</div><h2>Konsekvenser för laget</h2>{match.team.map(paragraph=><p key={paragraph}>{paragraph}</p>)}</section><section className="article-section"><div className="match-section-number">03</div><h2>Ett större perspektiv för klubben och svensk fotboll</h2>{match.perspective.map(paragraph=><p key={paragraph}>{paragraph}</p>)}</section></div>:<><section className="facts-panel"><div className="kicker">Verifierade fakta</div><h2>Detta vet vi</h2><ul>{article.facts.map(fact=><li key={fact}>{fact}</li>)}</ul></section><div className="article-body">{article.body.map(section=><section className="article-section" key={section.heading}><h2>{section.heading}</h2>{section.paragraphs.map(paragraph=><p key={paragraph}>{paragraph}</p>)}</section>)}</div><section className="editorial-analysis"><div className="kicker">Redaktionens analys</div><p>{article.analysis}</p></section><section className="consequence-panel"><div className="kicker">Detta följer vi</div><ul>{article.watch.map(point=><li key={point}>{point}</li>)}</ul></section></>}<section className="sport-article-sources"><div className="match-section-number">04</div><div className="kicker">Tydliga och klickbara källor</div><h2>Källor</h2><ul>{article.sources.map(source=><li key={source.url}><a href={source.url} target="_blank" rel="noreferrer">{source.label} ↗</a></li>)}</ul></section><section className="section"><div className="kicker">Fler sportartiklar</div><div className="grid-3">{related.map(item=><article key={item.slug}><div className="kicker">{item.sport}</div><h3><Link href={`/sport/artikel/${item.slug}`}>{item.title}</Link></h3></article>)}</div></section><Link className="button" href="/sport">Till Sport</Link></article></div></main>
+export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
+  const { slug } = await params;
+  const article = sportArticleBySlug[slug];
+  return article ? { title: `${article.title} | NackaSidan`, description: article.dek } : {};
+}
+
+export default async function SportArticlePage({ params }: PageProps) {
+  const { slug } = await params;
+  const article = sportArticleBySlug[slug];
+  if (!article) notFound();
+
+  const special = matchDetails[slug];
+  const isMatch = Boolean(special);
+  const report = special?.report ?? [article.dek];
+  const consequences = special?.consequences ?? (article.body[0]?.paragraphs ?? article.facts);
+  const perspective = special?.perspective ?? [
+    ...article.body.slice(1).flatMap(section => section.paragraphs),
+    article.analysis
+  ];
+
+  return (
+    <main>
+      <article className="shell article match-article-body">
+        <header className="page-hero">
+          <div className="article-part-label">01 · Rubrik</div>
+          <div className="kicker">{article.sport}</div>
+          <h1>{article.title}</h1>
+          <p>{article.dek}</p>
+          <p className="meta">Publicerad {article.date}</p>
+        </header>
+
+        <section className="article-section">
+          <div className="match-section-number">02 · Själva nyheten</div>
+          <h2>{isMatch ? 'En kort rapport om matchen' : 'Kort om nyheten'}</h2>
+          {report.map(paragraph => <p key={paragraph}>{paragraph}</p>)}
+          {!isMatch && (
+            <ul className="standard-facts">
+              {article.facts.map(fact => <li key={fact}>{fact}</li>)}
+            </ul>
+          )}
+        </section>
+
+        <section className="article-section">
+          <div className="match-section-number">03 · Analys och konsekvenser</div>
+          <h2>{isMatch ? 'Konsekvenser för laget' : 'Konsekvenser för de berörda'}</h2>
+          {consequences.map(paragraph => <p key={paragraph}>{paragraph}</p>)}
+          <h2>{isMatch ? 'Ett större perspektiv för klubben och svensk fotboll' : 'Ett större perspektiv'}</h2>
+          {perspective.map(paragraph => <p key={paragraph}>{paragraph}</p>)}
+          <h3>Det här följer vi</h3>
+          <ul>
+            {article.watch.map(item => <li key={item}>{item}</li>)}
+          </ul>
+        </section>
+
+        <section className="article-section sport-article-sources">
+          <div className="match-section-number">04 · Källhänvisning</div>
+          <h2>Tydliga och klickbara källor</h2>
+          <ul>
+            {article.sources.map(source => (
+              <li key={source.url}>
+                <a href={source.url} target="_blank" rel="noopener noreferrer">{source.label} ↗</a>
+              </li>
+            ))}
+          </ul>
+        </section>
+
+        <section className="section">
+          <h2>Fler sportartiklar</h2>
+          <ul>
+            {sportArticles.filter(item => item.slug !== slug).slice(0, 3).map(item => (
+              <li key={item.slug}><Link href={`/sport/artikel/${item.slug}`}>{item.title} →</Link></li>
+            ))}
+          </ul>
+          <p><Link className="button" href="/sport">Tillbaka till Sport</Link></p>
+        </section>
+      </article>
+    </main>
+  );
 }
