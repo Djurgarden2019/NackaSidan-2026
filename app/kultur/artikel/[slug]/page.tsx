@@ -1,21 +1,26 @@
+import type {Metadata} from 'next';
 import Link from 'next/link';
-import { notFound } from 'next/navigation';
+import {notFound} from 'next/navigation';
+import {cultureItems,cultureItemBySlug,cultureSlug} from '../../../../content/cultureDesk';
 
-const articles:Record<string,{section:string,title:string,intro:string}>={
- 'familjehemligheter-som-samhallsspegel':{section:'Veckans bok',title:'Romanen som gör familjens hemligheter till samhällsspegel',intro:'Familjen blir en koncentrerad bild av klass, ansvar och identitet.'},
- 'sensommarens-nya-bocker':{section:'Nya böcker',title:'Sensommarens utgivning rör sig mellan spänning och självbiografi',intro:'Höstens bokperiod inleds med både breda berättelser och personliga röster.'},
- 'sensommarens-filmer':{section:'Film',title:'Sensommarens filmer söker det mänskliga i det spektakulära',intro:'Stora genrefilmer möter mindre personliga berättelser när höstsäsongen börjar.'},
- 'streamingserier-kortare-tatare-dyrare':{section:'TV-serier',title:'Streamingserierna blir kortare, tätare och dyrare',intro:'Färre avsnitt ska bära större kostnader och vinna en publik med mindre tid.'},
- 'konsertsommaren-forlangs':{section:'Musik',title:'Konsertsommaren förlängs in i augusti',intro:'Arenor och mindre scener konkurrerar om samma publik med olika upplevelser.'},
- 'bibliotekens-vaxande-roll':{section:'Bibliotek',title:'Bibliotekens roll växer när informationsmiljön blir mer splittrad',intro:'Fri tillgång, lokal närvaro och digitalt ansvar måste förenas.'},
- 'public-service-demokratisk-konflikt':{section:'Public service',title:'Oberoende medier blir en allt tydligare demokratisk konflikt',intro:'Finansiering och förtroende formar det gemensamma offentliga samtalet.'},
- 'generativ-ai-upphovsratt':{section:'AI & kultur',title:'Generativ AI utmanar både upphovsrätt och konstnärlig identitet',intro:'Ersättning, transparens och kreativ kontroll står i centrum.'},
- 'kulturstodets-mal':{section:'Kulturpolitik',title:'Kulturstödets mål blir svårare att formulera',intro:'Bredd, kvalitet, spridning och frihet konkurrerar om samma resurser.'}
-};
-
-export function generateStaticParams(){return Object.keys(articles).map(slug=>({slug}));}
+export function generateStaticParams(){return cultureItems.map(item=>({slug:cultureSlug(item.title)}))}
+export async function generateMetadata({params}:{params:Promise<{slug:string}>}):Promise<Metadata>{const {slug}=await params;const item=cultureItemBySlug[slug];return item?{title:item.title,description:item.summary}:{title:'Kulturartikel saknas'}}
 
 export default async function CultureArticlePage({params}:{params:Promise<{slug:string}>}){
- const {slug}=await params; const article=articles[slug]; if(!article) notFound();
- return <main><article className="shell article"><div className="page-hero"><div className="kicker">{article.section}</div><h1>{article.title}</h1><p>{article.intro}</p></div><section className="section no-top"><p className="lead">NackaSidan sätter frågan i ett större sammanhang och skiljer det aktuella skeendet från den långsiktiga utvecklingen.</p><p className="lead">Det avgörande är hur publikens vanor, branschens ekonomi och politiska beslut påverkar vilka berättelser och röster som får utrymme.</p></section><section className="section"><Link className="button" href="/kultur">Tillbaka till Kultur</Link> <Link className="text-link" href="/kulturdebatt">Kulturdebatt →</Link></section></article></main>;
+ const {slug}=await params;const item=cultureItemBySlug[slug];if(!item)notFound();
+ return <main><div className="shell"><article className="article article-premium culture-article">
+  <nav className="meta"><Link href="/">NackaSidan</Link> · <Link href="/kultur">Kultur</Link> · {item.section}</nav>
+  <div className="kicker">{item.section} · {item.date}</div><h1>{item.title}</h1><p className="intro">{item.summary}</p><p className="meta">NackaSidans kulturredaktion · Källkontrollerad</p>
+
+  <div className="article-part-label">01 · Själva nyheten</div>
+  <section className="article-section culture-news-body"><h2>Detta har hänt</h2><p>{item.summary}</p><p>Nyheten publiceras i Kulturdelen eftersom den berör ett aktuellt verk, en kulturinstitution, en konstnär eller villkoren för hur kultur skapas och når sin publik. Uppgifterna ovan bygger på den redovisade originalkällan och har inte blandats ihop med redaktionens tolkning.</p></section>
+
+  <div className="article-part-label">02 · Analys</div>
+  <section className="article-section culture-analysis-body"><h2>Vad betyder utvecklingen?</h2><p>{item.why}</p><p>Det större perspektivet handlar om hur publikens vanor, ekonomiska villkor och kulturella institutioner påverkar vilka verk och röster som får utrymme. Analysen är NackaSidans redaktionella bedömning och är tydligt skild från de verifierade nyhetsuppgifterna.</p></section>
+
+  <div className="article-part-label">03 · Källa</div>
+  <section className="sport-article-sources"><h2>Originalkälla</h2><p>Här kan du kontrollera uppgifterna och läsa originalpubliceringen.</p><a className="culture-source-button" href={item.href} target="_blank" rel="noopener noreferrer"><strong>{item.source}</strong><span>Öppna källan ↗</span></a></section>
+
+  <div style={{display:'flex',gap:15,flexWrap:'wrap',marginTop:30}}><Link className="button" href="/kultur">Tillbaka till Kultur</Link><Link className="text-link" href="/kulturdebatt">Kulturdebatt →</Link></div>
+ </article></div></main>
 }
