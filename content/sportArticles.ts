@@ -8,8 +8,8 @@ export const latestResults=[
  {competition:'Conference League-kval',match:'Jablonec–Rangers',score:'1–0 e.f.',note:'Jablonec vann straffläggningen med 4–3'}
 ];
 export const sportAgenda=[
- {time:'Fredag 28 augusti',event:'Lottning till Europa Leagues och Conference Leagues ligafaser'},
- {time:'Lördag 29 augusti',event:'Rosengård–Häcken i Damallsvenskan och första dagen av Finnkampen'},
+ {time:'I dag · 17.00',event:'Finnkampen 2026 inleds med första tävlingsdagen'},
+ {time:'I dag',event:'Rosengård–Häcken i Damallsvenskan'},
  {time:'Pågår',event:'Damernas volleyboll-EM, cykelloppet Spanien runt samt kanot-VM'}
 ];
 export const sportArticles:SportArticle[]=[
