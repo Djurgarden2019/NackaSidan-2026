@@ -9,6 +9,30 @@ export type NewsFeedItem = {
 
 export const latestNews: NewsFeedItem[] = [
   {
+    time: '29 aug · 10.30',
+    section: 'Världen',
+    title: 'Dagens sex viktigaste världsnyheter är genomgångna',
+    summary: 'Startsidan samlar det avgörande läget kring Iran och Hormuz, Ukraina, Gaza, europeisk diplomati och EU:s budgetstrid – med längre analyser och källor.',
+    href: '/',
+    type: 'Briefing',
+  },
+  {
+    time: '29 aug · 10.20',
+    section: 'Sport',
+    title: 'Sporthelgen: Finnkampen inleds och Damallsvenskan fortsätter',
+    summary: 'Dagens agenda är framflyttad till lördagens tävlingar. Resultat, matchartiklar och analyser ligger kvar med sina ursprungliga publiceringsdatum.',
+    href: '/sport',
+    type: 'Briefing',
+  },
+  {
+    time: '29 aug · 10.10',
+    section: 'Nacka Daily',
+    title: 'Lördagens briefing samlar världsläget, ekonomi, kultur och Nacka',
+    summary: 'Dagens läsning följer diplomatin kring Iran, Finnkampen och invigningen av Baggenstäkets kulturreservat.',
+    href: '/daily',
+    type: 'Briefing',
+  },
+  {
     time: '28 aug · 15.20',
     section: 'Sverige',
     title: 'Regeringen höjer BNP-prognosen inför valet',
