@@ -6,9 +6,9 @@ export type DailyItem = {
 };
 
 export const dailyEdition = {
-  date: 'Fredag 28 augusti 2026',
+  date: 'Lördag 29 augusti 2026',
   title: 'Det viktigaste på fem minuter',
-  intro: 'En koncentrerad morgonbriefing med nyheter, analys, siffror och kultur – för dig som vill förstå dagen innan den börjar.',
+  intro: 'En koncentrerad helgbriefing med nyheter, analys, siffror och kultur – för dig som vill förstå dagens viktigaste skeenden.',
   lead: {
     label: 'Dagens huvudfråga',
     title: 'Irankriget har nått ett dyrt och farligt dödläge',
@@ -21,7 +21,7 @@ export const dailyEdition = {
     { label: 'Vetenskap & AI', title: 'AI användes under synräddande hjärnkirurgi', text: 'Ett system analyserade operationsvideo i realtid och hjälpte kirurger identifiera känsliga strukturer.', href: '/vetenskap' },
     { label: 'Kultur', title: 'Kulturpolitiken pressas om AI och arbetsvillkor', text: 'Kulturarbetare kräver tydligare besked från partierna inför valet.', href: '/kultur' },
   ] as DailyItem[],
-  number: { value: '2,00 %', label: 'Styrränta', text: 'Räntenivån präglar fortfarande hushållens och företagens beslut trots lägre inflation.' },
+  number: { value: '1,75 %', label: 'Styrränta', text: 'Riksbankens aktuella räntenivå präglar fortfarande hushållens och företagens beslut trots lägre inflation.' },
   quote: 'Det viktigaste är inte att läsa allt – utan att förstå vad som förändrar helheten.',
-  watch: ['Qatars försök att återstarta diplomatin med Iran', 'Nya besked i den svenska valrörelsen', 'Utvecklingen efter helgens stora klimatdemonstration i Stockholm'],
+  watch: ['Diplomatin kring Iran och sjöfarten genom Hormuz', 'Finnkampens första tävlingsdag', 'Invigningen av Baggenstäkets kulturreservat i Nacka'],
 };
