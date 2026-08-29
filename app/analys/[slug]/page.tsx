@@ -2,13 +2,14 @@ import type {Metadata} from 'next';
 import Link from 'next/link';
 import {notFound} from 'next/navigation';
 import {analyses,analysisBySlug} from '../../../content/analyses';
+import {frontPageLongReads} from '../../../content/frontPageLongReads';
 
 export function generateStaticParams(){return analyses.map(({slug})=>({slug}))}
 export async function generateMetadata({params}:{params:Promise<{slug:string}>}):Promise<Metadata>{const {slug}=await params;const item=analysisBySlug[slug];return item?{title:item.title,description:item.dek}:{title:'Analys saknas'}}
 
 export default async function AnalysisArticle({params}:{params:Promise<{slug:string}>}){
  const {slug}=await params;const item=analysisBySlug[slug];if(!item)notFound();
- const related=analyses.filter(candidate=>candidate.slug!==item.slug).slice(0,3);
+ const related=analyses.filter(candidate=>candidate.slug!==item.slug).slice(0,3);const longRead=frontPageLongReads[slug]??[];
  return <main><div className="shell"><article className="article article-premium">
   <nav className="meta" aria-label="Brödsmulor"><Link href="/">NackaSidan</Link> · <Link href="/analys">Analys</Link> · {item.section}</nav>
   <div className="article-part-label">01 · Rubrik</div><div className="kicker">Analys · {item.section}</div><h1>{item.title}</h1><p className="intro">{item.dek}</p><p className="meta">Publicerad 29 augusti 2026 · NackaSidans redaktion</p>
@@ -19,6 +20,7 @@ export default async function AnalysisArticle({params}:{params:Promise<{slug:str
   <section className="editorial-analysis"><div className="kicker">Huvudtes</div><p style={{fontSize:22,lineHeight:1.55}}>{item.thesis}</p></section>
   <div className="article-body"><section className="article-section"><h2>Redaktionens analys</h2>{item.interpretation.map(paragraph=><p key={paragraph}>{paragraph}</p>)}</section></div>
   <div className="article-part-label">04 · Längre fördjupning</div>
+  {longRead.length?<div className="article-body">{longRead.map(section=><section className="article-section" key={section.heading}><h2>{section.heading}</h2>{section.paragraphs.map(paragraph=><p key={paragraph}>{paragraph}</p>)}</section>)}</div>:null}
   <section className="consequence-panel"><div className="kicker">Osäkerheter och konsekvenser</div><h2>Detta kan ändra utvecklingen</h2><ul>{item.uncertainties.map(point=><li key={point}>{point}</li>)}</ul></section>
   <section className="facts-panel"><div className="kicker">Vad vi följer</div><ul>{item.watch.map(point=><li key={point}>{point}</li>)}</ul></section>
   <div className="article-part-label">05 · Tydliga och klickbara källor</div>
