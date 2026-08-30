@@ -5,7 +5,6 @@ import { knowledgeEntries } from '../../content/knowledge';
 import { latestNews } from '../../content/news';
 
 const planned = [
-  ['07 aug', 'Nacka Daily', 'Planerad', 'Briefing'],
   ['08 aug', 'AI och valet', 'Utkast', 'Sverige'],
   ['09 aug', 'Veckans kulturval', 'Idé', 'Kultur'],
 ];
@@ -31,7 +30,7 @@ export default function EditorialPage() {
             <h1>Redaktionens kontrollcenter</h1>
             <p>En samlad startsida för arbetskö, publicering, drift, larm, hälsokontroll, planering och kvalitetskontroll.</p>
           </div>
-          <Link className="button" href="/daily">Förhandsvisa Nacka Daily</Link>
+
         </section>
 
         <section style={{ margin: '28px 0 42px' }}>
