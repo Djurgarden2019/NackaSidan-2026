@@ -33,7 +33,7 @@ export function NewsletterSignup() {
         <div className="meta" style={{marginTop:12}}>Ingen e-post samlas in ännu · Gratis när tjänsten öppnar</div>
       </div>
       <div style={{display:'flex',flexDirection:'column',alignItems:'flex-start',justifyContent:'center',gap:12}}>
-        <Link className="button" href="/daily">Läs Nacka Daily nu</Link>
+        <Link className="button" href="/senaste">Se senaste nytt</Link>
         <Link className="text-link" href="/integritet">Så tänker vi om integritet →</Link>
       </div>
     </section>
