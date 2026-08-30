@@ -25,14 +25,6 @@ export const latestNews: NewsFeedItem[] = [
     type: 'Briefing',
   },
   {
-    time: '29 aug · 10.10',
-    section: 'Nacka Daily',
-    title: 'Lördagens briefing samlar världsläget, ekonomi, kultur och Nacka',
-    summary: 'Dagens läsning följer diplomatin kring Iran, Finnkampen och invigningen av Baggenstäkets kulturreservat.',
-    href: '/daily',
-    type: 'Briefing',
-  },
-  {
     time: '28 aug · 15.20',
     section: 'Sverige',
     title: 'Regeringen höjer BNP-prognosen inför valet',

@@ -3,7 +3,6 @@ import AnalysisFront from './AnalysisFront';
 
 const routes=[
  {href:'/sverige',label:'Sverige',eyebrow:'Nationellt',text:'Valet 2026, ekonomi, samhälle och regioner'},
- {href:'/daily',label:'Nacka Daily',eyebrow:'Briefing',text:'Dagens viktigaste på fem minuter'},
  {href:'/kultur',label:'Kultur',eyebrow:'Idéer & verk',text:'Böcker, film, musik och kulturdebatt'},
  {href:'/sport',label:'Sport',eyebrow:'Resultat & analys',text:'Resultat, publik och analys'}
 ];
