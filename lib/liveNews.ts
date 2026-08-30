@@ -7,6 +7,7 @@ export type LiveNewsItem = {
   section: string;
   priority: 'Hög' | 'Medel' | 'Låg';
   local: boolean;
+  summary: string;
 };
 
 type Feed = { name: string; url: string; section: string; homepage: string; note?: string };
@@ -92,7 +93,7 @@ function parse(xml: string, feed: Feed): LiveNewsItem[] {
     const title = tag(block, ['title']);
     const link = linkFrom(block);
     const section = classify(title, link, feed.section);
-    return { title, link, published: tag(block, ['pubDate', 'published', 'updated']), source: feed.name, sourceSection: feed.section, section, priority: priorityFor(title, section), local: section === 'Nacka/Lokalt' };
+    return { title, link, published: tag(block, ['pubDate', 'published', 'updated']), source: feed.name, sourceSection: feed.section, section, priority: priorityFor(title, section), local: section === 'Nacka/Lokalt', summary: tag(block, ['description', 'summary', 'content:encoded', 'content']) };
   }).filter(x => x.title && x.link);
 }
 
