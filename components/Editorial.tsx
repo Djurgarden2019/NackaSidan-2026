@@ -1,7 +1,7 @@
 import type { ReactNode } from 'react';
 import Link from 'next/link';
 
-export type Feature = { section:string; title:string; summary:string; href?:string; image?:string; meta?:string };
+export type Feature = { section:string; title:string; summary:string; href?:string; image?:string; imageCredit?:string; meta?:string };
 
 export function FeatureCard({item,large=false}:{item:Feature;large?:boolean}){
   return <article className={large?'feature-card feature-card-large':'feature-card'}>

@@ -1,4 +1,6 @@
 import Link from 'next/link';
+import DeskDepth from '../../components/DeskDepth';
+import {scienceDepth} from '../../content/deskDepth';
 
 const stories=[
  {area:'AI & reglering',date:'28 augusti 2026',title:'EU kräver märkning av AI-innehåll och tydligare besked till användare',news:'Sedan den 2 augusti gäller AI-förordningens transparensregler. Användare ska informeras när de möter vissa AI-system, och genererat eller manipulerat innehåll ska i relevanta fall kunna identifieras och märkas.',analysis:'Reglerna flyttar ansvaret från den enskilda användarens källkritik till hela kedjan av modellföretag, plattformar och publicister. Den avgörande frågan blir om märkningen fungerar tekniskt även när innehåll kopieras, redigeras och sprids mellan tjänster.',source:'EU-kommissionen',url:'https://digital-strategy.ec.europa.eu/en/policies/guidelines-ai-transparency-obligations'},
@@ -30,4 +32,5 @@ export default function Page(){return <main><div className="shell science-desk">
 
  <section className="science-sources"><div className="kicker">Källor</div><h2>Primärkällor och forskningspubliceringar</h2><p>Varje nyhet ovan länkar direkt till universitetet, myndigheten eller tidskriften bakom uppgiften. Analysen är NackaSidans redaktionella bedömning.</p><div><a href="https://digital-strategy.ec.europa.eu/en/policies/regulatory-framework-ai" target="_blank" rel="noopener noreferrer">EU-kommissionen: AI-förordningen ↗</a><a href="https://www.nih.gov/" target="_blank" rel="noopener noreferrer">NIH: medicinsk forskning ↗</a><a href="https://science.nasa.gov/" target="_blank" rel="noopener noreferrer">NASA Science ↗</a><a href="https://www.nature.com/natmachintell/" target="_blank" rel="noopener noreferrer">Nature Machine Intelligence ↗</a></div></section>
  <section className="science-next"><Link className="button" href="/tema/ai">Fördjupa dig i AI-temat</Link><Link className="text-link" href="/senaste">Se dagens uppdateringar →</Link></section>
+ <DeskDepth eyebrow="Vetenskaplig fördjupning" title="Vad som krävs innan ett resultat förändrar samhället" {...scienceDepth}/>
  </div></main>}

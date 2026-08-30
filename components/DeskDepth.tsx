@@ -1,0 +1,6 @@
+export type DeskDepthItem={title:string;news:string;analysis:string;depth:string};
+export type DeskSource={label:string;url:string};
+
+export default function DeskDepth({eyebrow,title,intro,items,sources}:{eyebrow:string;title:string;intro:string;items:DeskDepthItem[];sources:DeskSource[]}){
+ return <section className="section" style={{borderTop:'5px solid #111'}}><div className="kicker">{eyebrow}</div><h2 style={{fontFamily:'Georgia,serif',fontSize:'clamp(32px,5vw,52px)',lineHeight:1.02,maxWidth:900}}>{title}</h2><p className="lead" style={{maxWidth:850}}>{intro}</p><div style={{display:'grid',gap:32,marginTop:30}}>{items.map((item,index)=><article key={item.title} style={{borderTop:'1px solid #bbb',paddingTop:22}}><div className="kicker">0{index+1} · Fördjupning</div><h3 style={{fontFamily:'Georgia,serif',fontSize:'clamp(25px,3vw,36px)',lineHeight:1.08}}>{item.title}</h3><h4>Själva nyheten och bakgrunden</h4><p>{item.news}</p><h4>Analys och konsekvenser</h4><p>{item.analysis}</p><h4>Längre perspektiv</h4><p>{item.depth}</p></article>)}</div><div style={{borderTop:'2px solid #111',marginTop:36,paddingTop:18}}><div className="kicker">Tydliga och klickbara källor</div><ul>{sources.map(source=><li key={source.url}><a href={source.url} target="_blank" rel="noopener noreferrer">{source.label} ↗</a></li>)}</ul></div></section>
+}
