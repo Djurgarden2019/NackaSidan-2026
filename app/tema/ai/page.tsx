@@ -1,5 +1,7 @@
 import Link from 'next/link';
 import { FactStrip, SectionIntro } from '../../../components/Editorial';
+import DeskDepth from '../../../components/DeskDepth';
+import {aiDepth} from '../../../content/deskDepth';
 
 const timeline = [
   ['2022–2023', 'Generativ AI blir tillgänglig för en bred publik.'],
@@ -61,6 +63,7 @@ export default function AiTopicPage() {
             <article className="card"><div className="kicker">Kultur</div><h3><Link href="/kulturdebatt">Vem äger den genererade kulturen?</Link></h3><p>Upphovsrätt, kreativitet och offentlighet möts i en ny kulturdebatt.</p><Link className="button" href="/kulturdebatt">Till kulturdebatten</Link></article>
           </div>
         </section>
+        <DeskDepth eyebrow="AI Insight · Uppdaterad 30 augusti 2026" title="Från modell till makt, arbete och ansvar" {...aiDepth}/>
       </div>
     </main>
   );
