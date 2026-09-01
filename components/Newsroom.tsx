@@ -2,12 +2,12 @@ import Link from 'next/link';
 import type { Article } from '../content/articles';
 import type { NewsFeedItem } from '../content/news';
 
-export function LatestNewsFeed({ items, compact = false }: { items: NewsFeedItem[]; compact?: boolean }) {
+export function LatestNewsFeed({ items, compact = false, showKicker = true }: { items: NewsFeedItem[]; compact?: boolean; showKicker?: boolean }) {
   return (
     <section className={compact ? 'latest-feed latest-feed-compact' : 'latest-feed'}>
       <div className="latest-feed-heading">
         <div>
-          <div className="kicker">Senaste från redaktionen</div>
+          {showKicker && <div className="kicker">Senaste från redaktionen</div>}
           <h2>Publiceringsflödet</h2>
         </div>
         <div className="feed-disclosure">Redaktionellt flöde · inte automatisk nyhetswire</div>
