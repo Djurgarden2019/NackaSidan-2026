@@ -3,6 +3,7 @@ import { getLiveNews } from '../../../../lib/liveNews';
 import { getNewsHealth } from '../../../../lib/newsHealth';
 import { getDeploymentIdentity } from '../../../../lib/deploymentIdentity';
 
+export const dynamic = 'force-dynamic';
 export const revalidate = 900;
 
 const CONTRACT_VERSION = 1;
