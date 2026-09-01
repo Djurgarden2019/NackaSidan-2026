@@ -4,6 +4,7 @@ import { runFinalControl } from '../../lib/finalControl';
 import { buildEditorialQueue, editorialQueueSummary } from '../../lib/editorialQueue';
 import EditorialDecisionPanel from './EditorialDecisionPanel';
 
+export const dynamic = 'force-dynamic';
 export const revalidate = 900;
 
 export default async function RedaktionskonPage() {
