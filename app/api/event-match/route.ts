@@ -4,6 +4,7 @@ import { corroborate } from '../../../lib/sourceEngine';
 import { huntSecondSources, isGenericHeadline } from '../../../lib/sourceHunter';
 import { matchEvent } from '../../../lib/eventMatcher';
 
+export const dynamic = 'force-dynamic';
 export const revalidate = 900;
 
 export async function GET() {
