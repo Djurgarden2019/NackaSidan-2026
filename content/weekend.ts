@@ -174,7 +174,113 @@ export const weekendArticles: WeekendArticle[] = [
       { label: 'SCB: Hushållens boendeutgifter', url: 'https://www.scb.se/hitta-statistik/statistik-efter-amne/hushallens-ekonomi/hushallens-utgifter/hushallens-boendeutgifter/' },
       { label: 'SCB: Hyror i bostadslägenheter', url: 'https://www.scb.se/hitta-statistik/statistik-efter-amne/boende-bebyggelse-och-mark/bostader-och-boende/hyror-i-bostadslagenheter/' }
     ]
+  },
+  {
+    slug: 'vinval-till-sensommarens-mat',
+    section: 'Mat · Vin',
+    title: 'Fem vinval till sensommarens mat – från riesling till Rhône',
+    intro: 'En praktisk vinguide där maten styr valet: fem stilar, rimliga prisnivåer och ett alkoholfritt alternativ för middagar från svamp och fisk till tomat och grillat.',
+    published: '2 september 2026',
+    readingTime: '12 min',
+    news: [
+      {
+        heading: 'Fem vinprofiler som löser olika middagar',
+        paragraphs: [
+          'Till fisk, skaldjur och rätter med chili är en torr riesling från Tyskland eller Alsace ett säkert val. Syran möter sälta och friskhet, medan en liten restsötma kan dämpa hetta. I ett ungefärligt spann på 120–180 kronor finns ofta torra, matvänliga alternativ, men kontrollera alltid sockerhalten och den aktuella årgången.',
+          'Grüner veltliner från Österrike passar till gröna rätter, örter, kål och milda ostar. Barbera från Piemonte har hög syra och relativt mjuka tanniner och fungerar därför väl med tomatbaserad pasta, pizza och svamp. För båda stilarna är 120–190 kronor en användbar utgångspunkt snarare än en kvalitetsgaranti.',
+          'Till lamm, grillade grönsaker och långkok är rött från Côtes-du-Rhône ett robust val, ofta med mörk frukt, örter och peppar. Den som avstår från alkohol kan välja ett torrt alkoholfritt mousserande: syra och bubblor gör det mer användbart till mat än många söta alkoholfria drycker.'
+        ]
+      },
+      {
+        heading: 'Välj efter såsen och tillagningen',
+        paragraphs: [
+          'Råvaran är bara halva matchningen. En mild vit fisk med smörsås behöver mer syra och fyllighet än samma fisk med citron och örter. Kyckling kan möta vitt, rosé eller lätt rött beroende på om den serveras grillad, kryddstark eller gräddig.',
+          'Sötma i maten gör torra viner stramare och beskare. Starka kryddor förstärker alkoholens hetta. Därför är måttlig alkohol, frisk syra och ibland lite restsötma bättre verktyg än hög prislapp när middagen innehåller chili, ingefära eller söt glaze.',
+          'Serveringstemperaturen påverkar mer än många tror. Vitt vin behöver sällan vara iskallt och rött vin blir ofta tydligare strax under rumstemperatur. Ett enkelt glas och några minuter i karaff kan ge större effekt än att byta till en dyrare flaska.'
+        ]
+      },
+      {
+        heading: 'Så provar du mer träffsäkert',
+        paragraphs: [
+          'Börja med tre frågor: Är maten fet eller mager, mild eller kryddstark, syrlig eller söt? Välj därefter vinets syra, fyllighet och sötma. Druvnamn och prestigeområde kommer först i nästa steg.',
+          'Skriv gärna ned vad som fungerade. Ett vin som är utmärkt på egen hand kan förlora mot maten, medan en anspråkslös flaska kan bli bättre vid bordet. Små jämförelser över tid ger säkrare val än generella topplistor.',
+          'Alkohol innebär hälsorisker och är inte nödvändigt för en lyckad måltid. Rekommendationerna gäller smakmatchning, inte konsumtionsmängd. Systembolagets åldersgräns är 20 år och sortiment, årgångar och priser kan förändras.'
+        ]
+      }
+    ],
+    analysis: [
+      'Den viktigaste slutsatsen är att vinval blir bättre när det beskrivs som en kombination av egenskaper, inte som en lista över prestigeflaskor. Syra, tannin, sötma och alkohol går att koppla direkt till maten.',
+      'Pris är ett trubbigt kvalitetsmått. Dyrare vin kan ge större komplexitet, men till vardagsmat betyder rätt stil oftast mer än en exklusiv etikett.',
+      'Årgång och producent spelar roll, vilket gör exakta flaskråd kortlivade. Därför kombinerar NackaSidan stabila stilråd med länkar till det aktuella sortimentet.',
+      'Ett alkoholfritt alternativ bör behandlas som ett riktigt dryckesval. Frisk syra, låg sötma och struktur är samma kvaliteter som gör vin matvänligt.'
+    ],
+    consequences: [
+      'Läsaren kan välja vin utifrån maträtt även när en rekommenderad flaska är slut.',
+      'Prisintervallen gör planeringen enklare men måste kontrolleras mot dagens sortiment.',
+      'Restaurang och butik får mindre betydelse än kombinationen av smak, mat och tillfälle.',
+      'Alkoholfria alternativ får en likvärdig plats vid bordet.'
+    ],
+    sources: [
+      { label: 'Systembolaget – vin i aktuellt sortiment', url: 'https://www.systembolaget.se/sortiment/vin/' },
+      { label: 'Systembolaget – Côtes-du-Rhône', url: 'https://www.systembolaget.se/sortiment/vin/frankrike/rhonedalen/cotes-du-rhone/' },
+      { label: 'Systembolaget – alkohol och hälsa', url: 'https://www.systembolaget.se/alkohol-och-halsa/' }
+    ]
+  },
+  {
+    slug: 'stockholmskrogar-fem-bord-2026',
+    section: 'Mat · Krogrecensioner',
+    title: 'Stockholmskrogar just nu – fem bord från kvarterskrog till högtidsmiddag',
+    intro: 'Fem redaktionella krogbedömningar med olika prisnivåer: vad köken gör bäst, vilka kompromisser gästen behöver känna till och när varje restaurang passar.',
+    published: '2 september 2026',
+    readingTime: '14 min',
+    news: [
+      {
+        heading: 'Adam/Albin och Triton – två olika slags ambition',
+        paragraphs: [
+          'Adam/Albin är valet för en planerad högtidsmiddag. Det nya flaggskeppet vid Gustav Adolfs torg arbetar med tekniskt precisa, visuellt genomarbetade rätter och en tydlig premiuminramning. Styrkan är detaljnivån och kombinationerna; svagheten är priset och att den formella rytmen inte passar den som söker en spontan kväll. Prisnivå: mycket hög.',
+          'Triton på Södermalm står för motsatsen: en liten, personlig matsal och en säsongsstyrd fast meny. Köket har uppmärksammats för lekfullhet och förhållandevis gott värde. Den fasta menyn skapar fokus men begränsar valfriheten, och det lilla formatet gör bokning viktig. Prisnivå: mellan till hög.',
+          'Båda visar hur Stockholms krogscen rör sig bort från långa à la carte-menyer. För gästen innebär det en tydligare idé men också mindre kontroll över kvällen.'
+        ]
+      },
+      {
+        heading: 'Lilla Ego, Bar Agrikultur och Minh Mat',
+        paragraphs: [
+          'Lilla Ego är en energisk kvarterskrog med modern svensk mat och Bib Gourmand-status. Styrkan är kombinationen av hantverk, personlighet och rimligare kostnad än stadens avsmakningsmenyer. Den livliga lokalen och trycket på bokningarna kan vara en nackdel för den som vill ha en lågmäld middag. Prisnivå: mellan.',
+          'Bar Agrikultur är kompakt och råvarudriven, med småskaligt format och rätter som passar att dela. Här är styrkan närheten till köket och den koncentrerade menyn. Trängsel och ljudnivå är den naturliga kompromissen. Prisnivå: mellan.',
+          'Minh Mat är ett starkt alternativ för vietnamesiska smaker och en mer tillgänglig prisbild. Örter, syra, hetta och tydliga kontraster gör maten distinkt. Populariteten kan göra spontana besök svåra, och den som vill ha en lång, ceremoniell middag bör välja annorlunda. Prisnivå: mellan.'
+        ]
+      },
+      {
+        heading: 'Så ska bedömningarna läsas',
+        paragraphs: [
+          'Detta är en redaktionell guide baserad på aktuella restaurangguider och publicerade recensioner, inte förklädda påståenden om anonyma egna besök. Bedömningarna väger samman kökets idé, prisnivå, atmosfär, valfrihet och återkommande omdömen.',
+          'Prisnivåerna är relativa och exakta menyer förändras. Kontrollera därför restaurangens egen meny, öppettider, allergihantering och bokningsvillkor före besöket.',
+          'En bra krog är inte bäst för alla tillfällen. Adam/Albin passar firandet, Triton den nyfikna helkvällen, Lilla Ego den livliga middagen, Bar Agrikultur delandet och Minh Mat den smakintensiva vardagskvällen.'
+        ]
+      }
+    ],
+    analysis: [
+      'Stockholms restaurangutbud har blivit mer polariserat. I ena änden finns kostsamma helhetsupplevelser; i den andra små menyer och kvartersformat där köket försöker hålla nere bemanning och svinn.',
+      'Fasta menyer kan höja precisionen och minska svinn, men flyttar makt från gäst till kök. Det är en styrka för den nyfikne och en svaghet för sällskap med olika behov.',
+      'Bib Gourmand är användbart som signal om förhållandet mellan mat och pris, men säger mindre om ljudnivå, bokningstryck och vilken sorts kväll restaurangen lämpar sig för.',
+      'En trovärdig recension behöver redovisa både styrkor och kompromisser. Krogens popularitet eller stjärnstatus är inte samma sak som att den passar varje läsare.'
+    ],
+    consequences: [
+      'Gäster får ett urval som täcker flera tillfällen och budgetar.',
+      'Tydliga svagheter minskar risken att välja rätt krog vid fel tillfälle.',
+      'Kontroll av aktuell meny och bokningsvillkor är nödvändig eftersom utbud och priser ändras.',
+      'Kommande recensioner kan använda samma öppna modell: styrka, svaghet, prisnivå och bäst för.'
+    ],
+    sources: [
+      { label: 'Guide Michelin – restauranger i Stockholm', url: 'https://guide.michelin.com/us/en/stockholm-region/stockholm/restaurants' },
+      { label: 'Guide Michelin – Bib Gourmand i Stockholm', url: 'https://guide.michelin.com/us/en/stockholm-region/stockholm/restaurants/bib-gourmand' },
+      { label: 'Guide Michelin – prisvärda restauranger i Stockholm', url: 'https://guide.michelin.com/en/se/stockholm-region/restaurants/affordable' },
+      { label: 'Visit Stockholm – nya och aktuella restauranger', url: 'https://www.visitstockholm.com/eat-drink/restaurants/new-and-trendy-restaurants/' },
+      { label: 'Svenska Dagbladet – recension av Adam/Albin', url: 'https://www.svd.se/a/lnvG07/recension-adam-albin-tekniskt-fullandat-och-haftiga-smakkombinationer' },
+      { label: 'Food & Wine – Stockholm restaurants 2025', url: 'https://www.foodandwine.com/stockholm-sweden-new-restaurants-11720512' }
+    ]
   }
+
 ];
 
 export const weekendArticleBySlug = Object.fromEntries(weekendArticles.map(article => [article.slug, article]));
