@@ -55,7 +55,7 @@ function article(item: LiveNewsItem): AutomaticArticle {
   };
 }
 
-async function readArticles(): Promise<AutomaticArticle[]> {
+export async function readArticles(): Promise<AutomaticArticle[]> {
   try {
     const result = await get(PATH, { access: 'private', useCache: false });
     if (result?.statusCode !== 200 || !result.stream) return [];
