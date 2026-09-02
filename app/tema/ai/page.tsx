@@ -1,3 +1,4 @@
+import DailyDeskUpdate from '../../../components/DailyDeskUpdate';
 import Link from 'next/link';
 import { FactStrip, SectionIntro } from '../../../components/Editorial';
 import DeskDepth from '../../../components/DeskDepth';
@@ -12,7 +13,7 @@ const timeline = [
 
 export default function AiTopicPage() {
   return (
-    <main>
+    <main><DailyDeskUpdate desk="ai"/>
       <div className="shell">
         <section className="topic-hero">
           <div>
