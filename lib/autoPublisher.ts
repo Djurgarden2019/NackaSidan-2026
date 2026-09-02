@@ -1,4 +1,4 @@
-import { list, put } from '@vercel/blob';
+import { get, put } from '@vercel/blob';
 import { getLiveNews, type LiveNewsItem } from './liveNews';
 
 export type AutomaticArticle = {
@@ -57,11 +57,9 @@ function article(item: LiveNewsItem): AutomaticArticle {
 
 async function readArticles(): Promise<AutomaticArticle[]> {
   try {
-    const result = await list({ prefix: PATH });
-    const blob = result.blobs.find(item => item.pathname === PATH);
-    if (!blob) return [];
-    const response = await fetch(blob.url, { cache: 'no-store' });
-    return response.ok ? await response.json() : [];
+    const result = await get(PATH, { access: 'private', useCache: false });
+    if (result?.statusCode !== 200 || !result.stream) return [];
+    return await new Response(result.stream).json();
   } catch {
     return [];
   }
@@ -78,7 +76,13 @@ export async function runAutomaticPublishing() {
     .slice(0, 500);
 
   if (additions.length) {
-    await put(PATH, JSON.stringify(next), { access: 'public', addRandomSuffix: false, contentType: 'application/json' });
+    await put(PATH, JSON.stringify(next), {
+      access: 'private',
+      addRandomSuffix: false,
+      allowOverwrite: true,
+      cacheControlMaxAge: 60,
+      contentType: 'application/json'
+    });
   }
 
   return { checked: live.items.length, published: additions.length, heldForReview: live.items.length - candidates.length, total: next.length };
