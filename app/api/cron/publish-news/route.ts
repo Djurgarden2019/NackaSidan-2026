@@ -12,7 +12,8 @@ export async function GET(request: NextRequest) {
 
   try {
     return NextResponse.json({ ok: true, ...(await runAutomaticPublishing()), completedAt: new Date().toISOString() });
-  } catch {
+  } catch (error) {
+    console.error('[cron:publish-news] failed', { error: String(error), stack: error instanceof Error ? error.stack : undefined });
     return NextResponse.json({ ok: false, error: 'Den automatiska publiceringen kunde inte slutföras.' }, { status: 500 });
   }
 }
