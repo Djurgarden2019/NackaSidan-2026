@@ -9,114 +9,22 @@ export type WorldLongRead = {
 };
 
 export const worldLongReads: WorldLongRead[] = [
-  {
-    eyebrow: 'USA–Iran · Säkerhet och energi',
-    title: 'Nya attacker gör Hormuz till konfliktens avgörande nerv',
-    lead: 'USA har genomfört en ny våg av angrepp mot mål kopplade till Irans revolutionsgarde. Iran har svarat med robotar och drönare mot amerikanska mål i regionen. Konflikten påverkar samtidigt sjöfarten genom Hormuzsundet och därmed världens energiförsörjning.',
-    news: [
-      'USA:s militär uppger att angreppen riktades mot bland annat luftförsvar, radar, marina resurser, minläggningsförmåga och kommunikationsanläggningar. Iran säger sig i sin tur ha angripit amerikanska militära mål i Jordanien, Bahrain och Irak. Uppgifterna om skador och eventuella förluster går isär och måste därför behandlas försiktigt.',
-      'Den civila kostnaden blir allt tydligare. En attack nära Sirik vid Hormuzsundet uppges ha dödat flera människor och skadat många fler. Samtidigt har attacker mot tankfartyg och hot mot kommersiell sjöfart skapat ny osäkerhet kring en transportled som är central för den globala oljemarknaden.'
-    ],
-    analysis: [
-      'Konfliktens kärna är inte bara vilka militära mål som träffas. Den viktigaste strategiska frågan är om parterna kan begränsa striderna utan att förlora trovärdighet inför sina egna befolkningar och regionala allierade. USA försöker minska Irans förmåga att hota sjöfarten. Iran försöker visa att kostnaden för fortsatt amerikanskt tryck kan spridas till baser, allierade och energiflöden i hela regionen.',
-      'Gulfstaterna hamnar i ett särskilt svårt läge. De är beroende av amerikanska säkerhetsgarantier men vill undvika att deras territorier och energianläggningar blir en del av slagfältet. Ju fler iranska projektiler som riktas mot amerikansk närvaro i regionen, desto svårare blir det för dessa regeringar att hålla en diplomatisk distans.',
-      'För Europa och Sverige går den snabbaste konsekvenskedjan via energipriser, inflation och marknadsräntor. Ett varaktigt riskpåslag på olja och transporter kan fördyra drivmedel, industrins insatsvaror och sjöfrakt. Effekten blir störst om osäkerheten består i månader, även utan en total stängning av Hormuz.'
-    ],
-    depth: [
-      'Tre scenarier är viktigast att följa. I det första återgår parterna till begränsade angrepp och indirekta kontakter. I det andra fortsätter en utdragen militär kraftmätning som successivt försvagar handel och investeringar. I det tredje angrips kritisk energiinfrastruktur eller ett fartyg med stora civila förluster, vilket kan utlösa en betydligt bredare regional konfrontation.',
-      'Det avgörande är därför inte en enskild attack utan om det finns fungerande kanaler för deeskalering, vilka mål parterna väljer och om Gulfstaterna lyckas begränsa användningen av deras territorier. Även marknadens bedömning av försäkringsrisker och tillgången på tankfartyg blir en tidig signal om hur allvarligt läget är.'
-    ],
-    sources: [
-      { label: 'Reuters: USA avslutar senaste angreppsvågen mot Iran', href: 'https://www.reuters.com/world/middle-east/us-military-says-it-completed-latest-wave-strikes-iran-2026-09-02/' },
-      { label: 'Reuters: USA och Iran utbyter nya attacker', href: 'https://www.reuters.com/world/middle-east/us-iran-exchange-attacks-lull-war-appears-over-2026-09-02/' },
-      { label: 'Reuters: Oljepriserna stiger efter attackerna', href: 'https://www.reuters.com/business/energy/oil-up-nearly-1-us-iran-trade-fresh-strikes-2026-09-02/' }
-    ]
-  },
-  {
-    eyebrow: 'Ukraina · Flygsäkerhet',
-    title: 'Drönarkriget flyttar riskerna långt bakom fronten',
-    lead: 'Ukraina säger att återkommande drönaroperationer har gjort delar av det ryska luftrummet osäkert. Samtidigt fortsätter ryska robot- och drönarangrepp mot ukrainska städer och infrastruktur.',
-    news: [
-      'President Volodymyr Zelenskyj har uppmanat flygbolag och försäkringsbolag att väga in den växande risken i ryskt luftrum. Europeiska och amerikanska bolag undviker redan området, medan flera flygbolag från andra regioner fortfarande använder ryska rutter.',
-      'Utvecklingen följer på intensifierade ryska angrepp mot Kyiv och andra ukrainska städer. Ukraina har samtidigt ökat sina långräckviddiga drönarangrepp mot rysk energi-, transport- och militär infrastruktur.'
-    ],
-    analysis: [
-      'Det långräckviddiga drönarkriget förändrar konfliktens geografi. Frontlinjen är fortfarande central, men kostnaderna sprids nu till flygplatser, raffinaderier, lager och transporter långt inne i Ryssland. Det tvingar Moskva att fördela luftförsvar över ett mycket större område.',
-      'För civilflyget uppstår en svår kombination av osäker information, elektronisk störning och risken för felidentifiering. Även om Ukraina säger att civila flyg inte är mål kan ett tätare militärt operationsmönster öka risken för misstag. Flygbolagens ruttval blir därför både en säkerhetsfråga och en konkurrensfråga.',
-      'För Europa kan följderna bli längre flygrutter, högre försäkringskostnader och ytterligare press på energimarknaden om ryska exportanläggningar skadas. Samtidigt kan Ukrainas förmåga att nå mål på djupet stärka landets förhandlingsläge utan att automatiskt förändra situationen vid fronten.'
-    ],
-    depth: [
-      'Den viktigaste militära frågan är om drönarangreppen kan skapa varaktiga kapacitetsproblem eller främst tillfälliga störningar. För att få strategisk effekt krävs upprepade träffar, svårersatta komponenter och att Ryssland inte snabbt kan reparera eller flytta verksamheten.',
-      'Det som bör följas är antalet stängda flygplatser, försäkringsbolagens riskklassningar, förändrade internationella flygrutter och hur Ryssland omgrupperar sitt luftförsvar. Dessa indikatorer säger mer om den långsiktiga effekten än dramatiska bilder från en enskild attack.'
-    ],
-    sources: [
-      { label: 'Reuters: Ukraina varnar för riskerna i ryskt luftrum', href: 'https://www.reuters.com/business/aerospace-defense/zelenskiy-says-ukrainian-drones-have-effectively-closed-russian-airspace-2026-09-01/' },
-      { label: 'Reuters: Angreppen mot Kyivregionen', href: 'https://www.reuters.com/world/europe/explosions-heard-ukraines-kyiv-four-people-injured-2026-09-01/' }
-    ]
-  },
-  {
-    eyebrow: 'Världsekonomi · Räntor',
-    title: 'Olja, inflation och statsskulder driver en ny global räntechock',
-    lead: 'Statsobligationsräntor har stigit kraftigt i flera stora ekonomier. Dyrare olja, inflationsoro, omfattande upplåning och stora investeringar i AI-infrastruktur förstärker trycket samtidigt.',
-    news: [
-      'Räntan på amerikanska tioåriga statsobligationer har närmat sig fem procent. Japans tioårsränta har passerat tre procent för första gången på omkring tre decennier, samtidigt som räntorna i bland annat Tyskland och Australien har nått flerårshögsta nivåer.',
-      'Brentoljan har stigit till omkring 95 dollar per fat i samband med konflikten mellan USA och Iran. Marknaden oroar sig för att energipriserna åter ska driva upp inflationen och tvinga centralbanker att behålla eller höja räntorna.'
-    ],
-    analysis: [
-      'Det här är mer än en normal marknadsrörelse. När investerare kräver högre ränta för att låna ut till stater blir finanspolitiken dyrare. Länder med stora underskott får mindre utrymme för försvar, välfärd, klimatinvesteringar och skattesänkningar. Samma räntor används dessutom som utgångspunkt för bolån och företagsfinansiering.',
-      'Centralbankerna står inför ett obekvämt val. Höga energipriser talar för stramare penningpolitik, medan svagare konjunktur talar för lättnader. Om inflationen främst beror på en geopolitisk utbudschock kan högre räntor dämpa efterfrågan men inte skapa mer olja eller säkrare sjöfart.',
-      'För Sverige kan genomslaget komma genom kronan, internationella marknadsräntor, drivmedelspriser och bankernas finansiering. Även om Riksbanken styr den korta styrräntan påverkas längre bolåneräntor av den globala obligationsmarknaden.'
-    ],
-    depth: [
-      'Marknaden väger nu samman tre risker: geopolitisk energibrist, strukturellt stora statliga lånebehov och snabbt växande kapitalbehov för AI och elinfrastruktur. När alla tre förstärks samtidigt kan räntorna förbli höga även om den löpande inflationen senare faller.',
-      'Viktiga indikatorer är oljeprisets varaktighet, inflationsförväntningar, statsauktionernas efterfrågan och skillnaden mellan korta och långa räntor. Om långa räntor fortsätter upp trots svagare tillväxt tyder det på att investerarna främst oroar sig för skuld och inflation.'
-    ],
-    sources: [
-      { label: 'Reuters: Den globala utförsäljningen av obligationer', href: 'https://www.reuters.com/world/asia-pacific/bond-selloff-deepens-inflation-oil-prices-jolt-markets-2026-09-02/' },
-      { label: 'Reuters: Dollarn stärks när oljan stiger', href: 'https://www.reuters.com/world/china/dollar-holds-firm-middle-east-hostilities-lift-oil-2026-09-02/' }
-    ]
-  },
-  {
-    eyebrow: 'G20 · Ryssland och diplomati',
-    title: 'Rysslands återkomst testar västländernas gemensamma linje',
-    lead: 'Ryska företrädare deltar åter i G20-möten efter flera år av mer begränsad närvaro. Kontakterna skapar irritation bland europeiska deltagare men visar samtidigt hur ekonomiska forum används för att återöppna politiska kanaler.',
-    news: [
-      'Rysslands finansminister har deltagit i G20-sammanhang och haft kontakt med amerikanska företrädare. För europeiska regeringar väcker detta frågor om huruvida Moskva gradvis normaliseras trots det fortsatta kriget mot Ukraina.',
-      'G20 är inte en militär allians och rymmer länder med mycket olika syn på Ryssland. Många stater i det globala syd vill hålla ekonomiska och diplomatiska kontakter öppna och motsätter sig att forumet helt underordnas västvärldens säkerhetspolitiska prioriteringar.'
-    ],
-    analysis: [
-      'Diplomatisk närvaro är inte samma sak som politisk rehabilitering, men symboliken spelar roll. När högnivåmöten återupptas får Ryssland möjlighet att visa att isoleringen är begränsad. USA kan samtidigt använda kontakterna för att sondera ekonomi, energi eller möjliga förhandlingsvägar.',
-      'EU:s problem är att unionen vill upprätthålla trycket mot Moskva men inte ensam bestämmer G20:s dagordning. En hård europeisk linje kan bevara sanktionernas trovärdighet, men den kan också minska EU:s inflytande över länder som prioriterar handel och strategisk autonomi.',
-      'För Ukraina är processen känslig eftersom små diplomatiska förändringar kan påverka förväntningar om sanktioner och framtida stöd. Det avgörande blir om mötena leder till konkreta eftergifter eller endast är begränsade arbetskontakter.'
-    ],
-    depth: [
-      'G20 visar en mer multipolär världsordning där väst inte längre ensamt kan definiera vilka stater som ska isoleras. Indien, Kina, Brasilien, Gulfstater och andra makter använder konkurrensen mellan blocken för att bevara handlingsfrihet.',
-      'Fortsättningen bör bedömas genom mötenas nivå, eventuella gemensamma uttalanden, sanktionsbeslut och praktiska överenskommelser om energi eller betalningar. Bilder på handslag är politiskt betydelsefulla, men de verkliga konsekvenserna syns först i policy.'
-    ],
-    sources: [
-      { label: 'Sveriges Radio: Ryssland tillbaka i G20', href: 'https://www.sverigesradio.se/artikel/9288207' },
-      { label: 'Axios: Amerikansk-ryskt möte vid G20', href: 'https://www.axios.com/2026/08/31/bessent-russia-g20-europe' }
-    ]
-  },
-  {
-    eyebrow: 'Teknikpolitik · G20',
-    title: 'USA:s krav på friare AI möter Europas säkerhetslinje',
-    lead: 'USA har uppmanat G20-länder att undvika omfattande reglering av artificiell intelligens. Budskapet skärper den globala konflikten mellan snabb innovation, industriell konkurrenskraft och krav på ansvar.',
-    news: [
-      'Vid ett G20-möte med handelsministrar och teknikföretag argumenterade USA för en mer återhållsam regleringsmodell. Den amerikanska linjen betonar investeringar, innovation och risken att detaljerade regler låser fast tekniken för tidigt.',
-      'EU har i stället byggt sin strategi kring riskklasser, krav på transparens och särskilda skyldigheter för system som kan påverka säkerhet, rättigheter eller samhällsviktiga funktioner. Skillnaden får betydelse för företag som verkar på båda marknaderna.'
-    ],
-    analysis: [
-      'AI-regleringen handlar i grunden om vem som sätter standarderna för nästa tekniska infrastruktur. USA har ledande modell- och molnföretag och tjänar på snabb global spridning. EU har en mindre plattformssektor men en stor marknad och använder reglering för att påverka globala normer.',
-      'En alltför lös modell kan flytta kostnaderna till användare och samhälle när system diskriminerar, sprider fel eller används i kritiska beslut. En alltför tung modell kan samtidigt gynna de största företagen, eftersom bara de har råd med juridik, dokumentation och tester.',
-      'För svenska företag innebär skillnaderna att efterlevnad blir en konkurrensfråga. Bolag måste kunna visa vilka data och modeller som används, hur risker hanteras och vilka regler som gäller i varje marknad.'
-    ],
-    depth: [
-      'En möjlig kompromiss är gemensamma krav på testning, incidentrapportering och ursprungsmärkning, men större nationell frihet kring tillstånd och produktlansering. Det skulle minska de värsta gränsöverskridande riskerna utan att skapa helt identiska regelverk.',
-      'Det som avgör är inte bara lagtexten utan hur tillsynen finansieras, om standarder blir internationellt kompatibla och hur snabbt regler kan anpassas. G20 kan skapa en gemensam miniminivå, men konkurrensen om teknik och säkerhet gör ett helt enhetligt system osannolikt.'
-    ],
-    sources: [
-      { label: 'Reuters: USA vill se en återhållsam AI-reglering i G20', href: 'https://www.reuters.com/legal/litigation/us-urges-hands-off-approach-ai-regulation-g20-tech-meeting-2026-09-01/' }
-    ]
-  }
+{
+ eyebrow:'USA–Iran · Säkerhet och energi',title:'USA och Iran i den kraftigaste upptrappningen på flera veckor',lead:'Nya amerikanska anfall och iranska motangrepp har åter flyttat konflikten närmare Gulfstaterna och världens viktigaste oljeled.',news:['USA:s militär uppger att den senaste vågen riktades mot luftförsvar, radar, marina resurser, minläggningsförmåga och kommunikation. Iran svarade mot amerikanska mål i Jordanien, Bahrain och Irak.','Sjöfarten genom Hormuz har samtidigt återhämtat sig delvis. Omkring 17 miljoner fat råolja passerade under måndagen, enligt USA:s energiminister, men attacker mot tankfartyg visar att leden fortfarande är utsatt.'],analysis:['Den omedelbara risken är en spiral där varje begränsad attack besvaras bredare. Gulfstaterna dras närmare konflikten när amerikanska baser och transportleder på deras territorier blir mål.','Energimarknaden reagerar inte bara på faktisk brist utan på risken för avbrott. Därför kan försäkringar, frakt och lagerhållning förbli dyra även när fartyg passerar.'],depth:['Hormuz är svårt att ersätta eftersom stora exportvolymer från Gulfregionen passerar en smal vattenväg. Alternativa rörledningar täcker bara en del av kapaciteten.','Diplomati måste därför både minska det militära våldet och skapa praktiska garantier för sjöfarten. Ett tillfälligt lugn utan övervakning förblir skört.'],sources:[{label:'Reuters – US military completed latest wave of strikes',href:'https://www.reuters.com/world/middle-east/us-military-says-it-completed-latest-wave-strikes-iran-2026-09-02/'},{label:'Reuters – 17 million barrels crossed Hormuz',href:'https://www.reuters.com/business/energy/us-energy-secretary-says-17-million-barrels-oil-transited-strait-hormuz-monday-2026-09-02/'}]
+},
+{
+ eyebrow:'Ukraina · Kriget',title:'Kyiv angrips för sjunde dagen i rad',lead:'Ryska drönare fortsätter att slå mot huvudstadsregionen samtidigt som attacker mot energisystemet ökar trycket inför vintern.',news:['Elva människor skadades när bostäder och ett universitet i Kyiv träffades. I Odesa slogs elinfrastruktur ut och omkring 350 000 hushåll blev utan ström, enligt ukrainska uppgifter.','Larmen påverkar kollektivtrafik, undervisning och myndighetsarbete. Ukraina planerar att justera varningssystem och trafikregler för att vardagen ska fungera under återkommande attacker.'],analysis:['Den långa serien av anfall tyder på ett försök att nöta ned både luftförsvar och civilsamhälle. Varje drönare är billigare än många av robotarna som används för att skjuta ned den.','Energimålen pekar fram mot vintern. Även reparerbara skador kan bli strategiska om reservdelar, personal och luftvärn överbelastas samtidigt.'],depth:['Ukrainas problem är inte bara antalet luftvärnssystem utan tillgången på ammunition och förmågan att prioritera mellan städer, elnät och front.','Tysk-ukrainsk samproduktion av drönare och robotar kan stärka kapaciteten, men den förändrar inte läget om produktionen inte kan skalas snabbt.'],sources:[{label:'Reuters – Russia torments Kyiv with seventh day of strikes',href:'https://www.reuters.com/world/europe/russian-attacks-damage-infrastructure-ukraines-odesa-official-says-2026-09-02/'},{label:'Reuters – Ukraine and Germany finalise drone deal',href:'https://www.reuters.com/business/aerospace-defense/ukraine-is-finalising-drone-deal-with-germany-zelenskiy-says-2026-09-02/'}]
+},
+{
+ eyebrow:'Nepal · Klimat och katastrof',title:'Räddare försöker nå arbetare instängda i kraftverkstunnlar',lead:'En vecka efter Himalayakatastrofen finns det fortfarande hopp om människor i torra utrymmen under vattenkraftverk, men räddningsarbetet är extremt svårt.',news:['Översvämningen efter en glaciärkollaps har dödat över 1 200 människor och lämnat tusentals saknade enligt de senaste myndighetsuppgifterna som Reuters redovisar.','Räddare pumpar syre mot möjliga torra kammare och får stöd från flera länder. Lera, rasrisk och enorma mängder bråte bromsar arbetet.'],analysis:['Katastrofen visar hur vattenkraft, vägar och samhällen i branta dalgångar kan drabbas samtidigt. När infrastrukturen förstörs försvåras även själva räddningen.','Dödstal och antal saknade förändras snabbt. Uppgifterna måste därför behandlas som preliminära och kopplas till tydligt angivna tidpunkter.'],depth:['Glaciärsjöar och instabila ismassor kräver gränsöverskridande varningssystem, eftersom vattenflöden inte följer nationsgränser.','Återuppbyggnaden behöver ompröva placering och dimensionering av kraftverk, broar och bosättningar i stället för att bara ersätta det som förstörts.'],sources:[{label:'Reuters – Nepal rescuers race to reach survivors',href:'https://www.reuters.com/business/environment/hopes-finding-survivors-dim-week-after-catastrophic-nepal-flood-2026-09-02/'},{label:'Reuters – Officials see chance trapped workers are alive',href:'https://www.reuters.com/world/china/good-chance-that-trapped-workers-are-still-alive-nepal-hydropower-plant-official-2026-09-02/'}]
+},
+{
+ eyebrow:'USA–Kina · Rymdsäkerhet',title:'USA och Kina rustar för en möjlig konflikt i rymden',lead:'Teknik som kan manövrera, störa och närma sig andra satelliter gör omloppsbanan till en allt viktigare militär arena.',news:['Båda länderna utvecklar hemliga rymdfarkoster, manövrerbara satelliter och system för störning, övervakning och närkontakt i omloppsbana.','Teknik för reparation och tankning kan ha civila syften men också användas för att flytta eller oskadliggöra en motståndares satellit.'],analysis:['Militära och civila system delar samma miljö. Ett angrepp mot navigation eller kommunikation kan påverka banker, transporter, väderprognoser och räddningstjänst långt från slagfältet.','Den dubbla användningen gör avsikter svåra att bedöma. En servicefarkost kan uppfattas som ett vapen, vilket ökar risken för missförstånd.'],depth:['Rymdskrot gör fysiska angrepp farliga även för angriparen. Därför kan störning, cyberangrepp och tillfällig bländning bli mer sannolika verktyg.','Internationella regler ligger efter tekniken. Transparens kring närmanden och säkra avstånd kan bli lika viktigt som traditionell vapenkontroll.'],sources:[{label:'Reuters Insight – US and China arm for space warfare',href:'https://www.reuters.com/world/asia-pacific/us-china-arm-space-warfare-hunter-satellites-orbital-weapons-2026-09-02/'}]
+},
+{
+ eyebrow:'Arktis · Grönland',title:'Danmark skickar värnpliktiga till Grönland',lead:'Den första större värnpliktsinsatsen i modern tid markerar att Arktis har blivit en konkret försvarsfråga för Danmark och Nato.',news:['Danska värnpliktiga deltar i arktisk utbildning och övningen Arctic Endurance inom Natos nya arktiska närvaro.','Insatsen följer ökade danska försvarsinvesteringar och återkommande amerikanskt intresse för Grönland, som Danmark och det grönländska självstyret har avvisat.'],analysis:['Utplaceringen är militärt begränsad men politiskt tydlig. Danmark vill visa faktisk närvaro och förmåga i ett område där Ryssland och Kina också ökar sin aktivitet.','Säkerhetspolitiken måste samtidigt förankras hos Grönlands befolkning. En förstärkning som uppfattas som styrd utifrån kan skapa nya konflikter om självbestämmande.'],depth:['Arktiska operationer kräver logistik, kommunikation och uthållighet i extremt klimat. Antalet soldater säger mindre än förmågan att försörja och leda dem.','Klimatförändringen öppnar längre sjöfartssäsonger och tillgång till resurser, vilket gör regionen mer ekonomiskt och militärt omstridd.'],sources:[{label:'Reuters – Denmark sends conscripts to Greenland',href:'https://www.reuters.com/world/denmark-sends-conscripts-greenland-arctic-tensions-grow-2026-09-02/'}]
+},
+{
+ eyebrow:'Malta · Pressfrihet och rättsstat',title:'Affärsman frias från anklagelser om journalistmord',lead:'Yorgen Fenech har friats från anklagelser om att ha beställt mordet på Daphne Caruana Galizia, men rättsprocessens slut avslutar inte frågorna om Maltas institutioner.',news:['Juryn friade Fenech från medverkan till mord och deltagande i en kriminell sammanslutning. Han riskerade livstids fängelse om han hade dömts.','Tre personer som utförde mordet och andra med koppling till bomben har tidigare dömts. Caruana Galizias familj uttryckte besvikelse efter friandet.'],analysis:['En friande dom innebär att åtalet inte bevisades, inte att journalistens granskningar saknade betydelse. Rättssäkerheten kräver att den skillnaden hålls tydlig.','Fallet har blivit en europeisk symbol för riskerna när ekonomisk och politisk makt möter svaga kontrollinstitutioner och utsatta grävjournalister.'],depth:['Det långsiktiga måttet på ansvar är om staten skyddar journalister, utreder hot och gör offentliga beslutsvägar transparenta.','EU:s verktyg är främst politiska, rättsliga och ekonomiska. De fungerar bara om uppföljningen fortsätter även efter att den mest uppmärksammade rättegången är avslutad.'],sources:[{label:'Reuters – Malta court acquits businessman',href:'https://www.reuters.com/world/malta-court-acquits-businessman-car-bomb-murder-anti-corruption-journalist-2026-09-02/'},{label:'Reuters – Jury clears Fenech after two-month trial',href:'https://www.reuters.com/business/media-telecom/jury-considers-verdict-trial-over-killing-maltese-journalist-2026-09-02/'}]
+}
 ];
