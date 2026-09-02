@@ -114,6 +114,66 @@ export const weekendArticles: WeekendArticle[] = [
     analysis: ['Motsättningen mellan utsläppsminskning och klimatanpassning är falsk. Anpassning utan minskade utsläpp får snabbt växande kostnader. Utsläppsminskning utan anpassning lämnar människor oskyddade mot risker som redan byggts in i systemet.', 'Lokala investeringar bör prioriteras efter både sannolikhet och konsekvens. Ett sällsynt avbrott kan motivera åtgärd om följden hotar vård, vattenförsörjning eller annan kritisk verksamhet.', 'Osäkerhet är inte ett argument för passivitet. Infrastruktur planeras alltid under osäkerhet. Klimatscenarier gör osäkerheten mer synlig och ger möjlighet att bygga lösningar som fungerar i flera framtider.', 'Den politiska prövningen handlar till sist om genomförande: vem ansvarar, när ska åtgärden vara klar, hur finansieras den och hur kontrolleras resultatet?'],
     consequences: ['Kommuner behöver föra in klimatrisken i ordinarie investeringar och underhåll.', 'Vård, omsorg och skolor behöver beredskap för längre värmeperioder.', 'Ny bebyggelse måste bedömas mot framtida skyfall och andra klimatförhållanden.', 'Klimatpolitikens legitimitet påverkas av hur kostnader och stöd fördelas.'],
     sources: [{ label: 'SMHI: Klimat – statistik, forskning och vägledning', url: 'https://www.smhi.se/klimat' }, { label: 'SMHI: Stora utsläppsminskningar krävs nu', url: 'https://www.smhi.se/klimat/klimatlaget/viktig-fakta-om-klimatlaget/stora-utslappsminskningar-kravs-nu' }, { label: 'SMHI: IPCC:s syntesrapport om klimat i förändring', url: 'https://www.smhi.se/nyheter/nyheter/2023-03-20-huvudslutsatser-i-ipccs-rapport-klimat-i-forandring-2023---syntesrapport' }]
+  },
+  {
+    slug: 'marknadshyror-hyror-bostadsratter-villor', section: 'Samhälle & bostad',
+    title: 'Om Sverige införde marknadshyror – så skulle hyror, bostadsrätter och villor påverkas',
+    intro: 'Marknadshyror skulle inte bara förändra kostnaden för en hyresrätt. Reformen skulle påverka kötider, flyttmönster, nybyggande och efterfrågan på bostadsrätter och villor. Men riktningen och styrkan beror helt på hur snabbt systemet ändras och vilka skyddsregler som följer med.',
+    published: '2 september 2026', readingTime: '18 min',
+    news: [
+      { heading: 'Utgångsläget: Sverige har inte marknadshyror i dag', paragraphs: [
+        'Hyrorna i svenska bostadshyresrätter bestäms huvudsakligen genom bruksvärdessystemet och kollektiva förhandlingar. Lägenhetens standard, kvalitet, läge och andra bruksvärdesegenskaper ska påverka hyran, men en bostadsbrist får inte i sig slå igenom fullt ut som den skulle göra på en fri marknad. Det gör att hyran för ett äldre förstahandskontrakt i ett attraktivt läge kan ligga tydligt under vad många skulle vara beredda att betala.',
+        'Begreppet marknadshyra betyder att hyran i större utsträckning bestäms av utbud och efterfrågan. Det finns dock ingen enda modell. Fri hyressättning för nyproduktion, marknadsanpassning bara när en lägenhet blir ledig och ett omedelbart byte för alla befintliga kontrakt är tre mycket olika reformer.',
+        'Skillnaden är central. Om dagens hyresgäster skyddas och nya hyror bara gäller framtida kontrakt blir omställningen långsam. Om även befintliga avtal snabbt anpassas till marknaden blir effekten större, snabbare och socialt betydligt mer konfliktfylld.'
+      ]},
+      { heading: 'Hyrorna: störst uppgång där köerna och betalningsviljan är högst', paragraphs: [
+        'På kort sikt skulle hyrorna sannolikt stiga mest i attraktiva delar av Stockholm, Göteborg och Malmö, nära arbetsplatser, universitet och kollektivtrafik. Där är efterfrågan stor och utbudet trögt. I svagare bostadsmarknader kan förändringen bli liten, och vissa hyror skulle i teorin kunna pressas ned om lediga lägenheter konkurrerar om få hyresgäster.',
+        'En högre hyra skulle göra det lättare att få en bostad för den som har god inkomst men saknar kötid. Priset skulle ersätta kön som fördelningsmekanism. Rörligheten kan öka när hushåll inte längre behåller en stor eller centralt belägen lägenhet främst därför att kontraktet är ekonomiskt förmånligt.',
+        'Samtidigt skulle hushåll med låg inkomst få svårare att efterfråga attraktiva lägen. SCB:s statistik visar att hyresgäster redan lägger en större andel av sin disponibla inkomst på boendet än hushåll i bostadsrätt och ägt småhus. Kraftiga hyreshöjningar utan större bostadsbidrag eller sociala bostäder skulle därför öka risken för trångboddhet, ofrivilliga flyttar och geografisk segregation.',
+        'För befintliga hyresgäster är övergångsreglerna helt avgörande. Frysta eller långsamt stigande hyror för sittande hyresgäster minskar den omedelbara chocken, men skapar samtidigt en ny skillnad mellan gamla och nya kontrakt. Ett snabbt genomslag ger en renare marknadsmodell men kan tvinga hushåll att lämna områden där de bott länge.'
+      ]},
+      { heading: 'Bostadsrätter: två krafter drar priserna åt olika håll', paragraphs: [
+        'På bostadsrättsmarknaden finns ingen enkel automatisk priseffekt. Om hyran för en jämförbar lägenhet stiger blir ägande relativt mer attraktivt. Hushåll med kontantinsats och låneutrymme kan då försöka köpa i stället för att hyra. Den ökade efterfrågan skulle kunna pressa upp priserna på mindre och medelstora bostadsrätter, särskilt i storstädernas attraktiva lägen.',
+        'Samtidigt kan marknadshyror göra hyresrätten till ett mer tillgängligt alternativ för höginkomsttagare som i dag köper därför att de inte kan få ett förstahandskontrakt. Om det blir lättare att hyra centralt kan vissa avstå från att köpa, vilket dämpar efterfrågan på bostadsrätter. Vilken kraft som dominerar beror på hyresnivån, räntan, kreditreglerna och hur snabbt fler hyresbostäder tillkommer.',
+        'Fastighetsvärden kan också förändras. Högre möjliga hyresintäkter höjer normalt värdet på hyresfastigheter och gör det mer attraktivt att bygga och behålla hyresrätter. Det kan minska trycket att ombilda hyresfastigheter till bostadsrätter. Ett lägre framtida utbud genom ombildningar skulle i sin tur kunna stödja priserna på befintliga bostadsrätter.',
+        'Över längre tid kan ökat byggande verka i motsatt riktning. Om högre hyror gör fler projekt lönsamma och det faktiskt går att få fram mark, detaljplaner och finansiering kan bostadsutbudet växa. OECD:s modellsimuleringar pekar på att en mer flexibel hyresreglering kan öka byggandet och på lång sikt minska trycket på reala bostadspriser. Det är en modellbedömning, inte en säker prognos.'
+      ]},
+      { heading: 'Villorna: mindre direkt effekt men tydliga följdverkningar', paragraphs: [
+        'Villapriserna skulle sannolikt påverkas mindre direkt än priserna på bostadsrätter, eftersom hyresrätten oftast är ett närmare alternativ till en lägenhet än till en villa. Men kedjan når även småhusmarknaden. Om fler hushåll försöker lämna dyrare hyresrätter genom att köpa kan efterfrågan på radhus och mindre villor i pendlingskommuner öka.',
+        'Den motsatta effekten är också möjlig. Om marknadshyror på sikt leder till fler hyreslägenheter och bättre tillgång i storstäderna kan vissa hushåll skjuta upp eller avstå från ett villaköp. Det skulle särskilt kunna påverka hushåll som i dag köper långt från centrum eftersom ett centralt hyreskontrakt är svårt att få.',
+        'Villamarknaden styrs dock mycket starkare av bolåneräntor, inkomster, kreditprövning, byggkostnader och tillgången på mark. En hyresreform skulle därför sannolikt märkas som en av flera efterfrågefaktorer, inte som den dominerande prisfaktorn i hela landet.',
+        'Geografin spelar stor roll. I Stockholmsregionen kan förändrade hyror påverka flyttkedjor mellan innerstad, närförort, Nacka och längre pendlingsavstånd. På orter utan bostadsbrist kan effekten på både hyror och småhuspriser bli begränsad.'
+      ]},
+      { heading: 'Tre scenarier – från chock till långsam omställning', paragraphs: [
+        'I ett snabbt scenario får även befintliga kontrakt marknadsanpassade hyror under några få år. Då stiger hyrorna kraftigast i attraktiva bristområden. Fler hushåll söker billigare bostäder, vissa försöker köpa och andra flyttar längre från centrum. Bostadsrättspriser kan få stöd av högre alternativkostnad för att hyra, men effekten begränsas av att pressade hushåll inte automatiskt kan låna.',
+        'I ett gradvis scenario gäller de nya hyrorna främst nyproduktion och nya kontrakt. Effekten på sittande hyresgäster blir liten i början, samtidigt som rörligheten kan förbli låg under lång tid. Nya hyresrätter blir dyrare men fler projekt kan bli möjliga. Skillnaden mellan gamla och nya kontrakt består och kan skapa fortsatt inlåsning.',
+        'I ett reformpaket kombineras friare hyror med bostadsbidrag, större socialt bostadsansvar, snabbare planprocesser och reformerad beskattning av ägt boende. Det är dyrare för staten men har bäst möjlighet att förena större rörlighet och byggande med skydd för hushåll som saknar betalningsförmåga. Utan ett ökat faktiskt utbud riskerar reformen främst att omfördela befintliga bostäder till dem som kan betala mest.'
+      ]}
+    ],
+    analysis: [
+      'Den kortsiktiga huvudeffekten av marknadshyror är sannolikt högre hyror i de områden där dagens reglerade hyror ligger längst under betalningsviljan. En reform skapar inte nya bostäder över en natt. Under de första åren handlar förändringen därför främst om vem som får tillgång till det befintliga beståndet och till vilket pris.',
+      'Förespråkarnas starkaste argument är att köerna förkortas, rörligheten ökar och investeringen i hyresrätter blir mer attraktiv. Kritikers starkaste argument är att en bostadskö ersätts med en inkomstprövning genom priset, att låginkomsthushåll trängs undan och att högre fastighetsvärden inte garanterar fler färdigställda bostäder.',
+      'Bostadsrätter kan stiga i pris om dyrare hyror får fler kreditvärdiga hushåll att köpa. De kan samtidigt pressas om en fungerande hyresmarknad gör det mindre nödvändigt att äga och om byggandet ökar på lång sikt. Därför är påståendet att marknadshyror säkert höjer eller sänker bostadsrättspriserna för kategoriskt.',
+      'För villor blir effekten normalt svagare och mer geografiskt varierad. Pendlingskommuner kan få ökad efterfrågan om hushåll lämnar dyra stadshyror, men bättre tillgång till hyresrätter kan minska samma utflyttning. Räntor och inkomster förblir viktigare för den samlade villamarknaden.',
+      'Den viktigaste politiska slutsatsen är att hyressättning inte kan reformeras isolerat. Planprocesser, markpolitik, byggkostnader, bostadsbidrag, sociala kontrakt, fastighetsbeskattning och bolån påverkar resultatet. Marknadshyror utan utbudsreformer riskerar att ge högre hyror med liten byggökning. Utbudsreformer utan socialt skydd riskerar att öka segregationen.',
+      'För Nacka och Stockholm skulle effekterna sannolikt bli större än riksgenomsnittet eftersom lägesvärdena, köerna och bostadspriserna är höga. Men exakta hyreshöjningar eller priseffekter kan inte anges trovärdigt utan en preciserad reform, data på kontraktsnivå och antaganden om ränta, bidrag och nyproduktion.'
+    ],
+    consequences: [
+      'Hyrorna skulle sannolikt stiga mest i attraktiva storstadsområden och mindre på orter med balans eller överskott.',
+      'Kötider kan minska, men inkomsten får större betydelse för vem som kan bo centralt.',
+      'Bostadsrättspriser kan stiga kortsiktigt om ägande blir relativt billigare än hyra, men dämpas långsiktigt om utbudet ökar.',
+      'Villapriser påverkas främst indirekt genom förändrade flyttkedjor och efterfrågan i pendlingskommuner.',
+      'Befintliga hyresgästers situation avgörs i hög grad av övergångsregler och bostadsbidrag.',
+      'Större byggande kräver även mark, detaljplaner, finansiering och lägre genomförandetrösklar.'
+    ],
+    sources: [
+      { label: 'Boverket: Bruksvärdessystemet och svensk hyressättning', url: 'https://www.boverket.se/sv/samhallsplanering/bostadsmarknad/alla-behover-ett-hem/ordlista/' },
+      { label: 'OECD Economic Survey Sweden 2025: bostadsutbud och efterfrågan', url: 'https://www.oecd.org/en/publications/oecd-economic-surveys-sweden-2025_75e94b2f-en/full-report/matching-housing-supply-and-demand_137c5aa2.html' },
+      { label: 'OECD: modellanalys av friare hyresreglering och bostadspriser', url: 'https://www.oecd.org/en/publications/brick-by-brick_b453b043-en/full-report/component-6.html' },
+      { label: 'SCB: Hushållens boende 2025', url: 'https://www.scb.se/hitta-statistik/statistik-efter-amne/boende-bebyggelse-och-mark/bostader-och-boende/hushallens-boende/pong/statistiknyhet/hushallens-boende-2025/' },
+      { label: 'SCB: Hushållens boendeutgifter', url: 'https://www.scb.se/hitta-statistik/statistik-efter-amne/hushallens-ekonomi/hushallens-utgifter/hushallens-boendeutgifter/' },
+      { label: 'SCB: Hyror i bostadslägenheter', url: 'https://www.scb.se/hitta-statistik/statistik-efter-amne/boende-bebyggelse-och-mark/bostader-och-boende/hyror-i-bostadslagenheter/' }
+    ]
   }
 ];
 
