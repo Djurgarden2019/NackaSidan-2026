@@ -1,10 +1,11 @@
+import DailyDeskUpdate from '../../components/DailyDeskUpdate';
 import type { Metadata } from 'next';
 import { euCountries } from '../../content/euCountries';
 
 export const metadata: Metadata = {title:'EU:s 27 medlemsländer',description:'Fakta om EU-ländernas huvudstäder, befolkning, yta, ledare, val, ekonomi och industrier.'};
 
 export default function EuPage(){
- return <main id="main-content"><div className="shell">
+ return <main id="main-content"><DailyDeskUpdate desk="eu"/><div className="shell">
   <header className="page-hero"><div className="kicker">EU · 27 medlemsländer · Uppdaterad 2 september 2026</div><h1>Europeiska unionen – land för land</h1><p>En samlad översikt över unionens länder, politiska ledning, kommande val, ekonomi och viktigaste näringar.</p></header>
   <section className="section no-top" style={{display:'grid',gridTemplateColumns:'repeat(auto-fit,minmax(180px,1fr))',gap:16}}>
    <div style={{borderTop:'3px solid #111',paddingTop:12}}><strong style={{fontSize:28}}>27</strong><p>medlemsländer</p></div>
