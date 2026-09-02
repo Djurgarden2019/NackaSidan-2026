@@ -20,7 +20,7 @@ const watch=[
 
 export const metadata={title:'Vetenskap & AI | NackaSidan 2026',description:'Dagens AI-, medicin-, klimat- och forskningsnyheter med analys och spårbara källor.'};
 
-export default function Page(){return <main><DailyDeskUpdate desk="vetenskap"/><div className="shell science-desk">
+export default function Page(){return <main><div className="shell science-desk">
  <header className="science-head"><div className="kicker">Vetenskap & AI · Uppdaterad 29 augusti 2026</div><p className="lead">Vi följer AI, medicin, bioteknik, klimat och rymd – och skiljer ett lovande experiment från en metod som faktiskt är redo för samhället.</p><nav aria-label="Vetenskapsområden"><a href="#senaste">Senaste</a><a href="#analys">Analys</a><a href="#metod">Så granskar vi</a><Link href="/tema/ai">AI-temat</Link></nav></header>
 
  <section className="science-lead" id="senaste"><article><div className="kicker">Huvudnyhet · {stories[0].area}</div><h2>{stories[0].title}</h2><div className="science-part"><strong>Nyheten</strong><p>{stories[0].news}</p></div><div className="science-part science-part-analysis"><strong>Analys</strong><p>{stories[0].analysis}</p></div><a className="button" href={stories[0].url} target="_blank" rel="noopener noreferrer">Källa: {stories[0].source} ↗</a></article><aside><div className="kicker">Dagens bevakning</div><strong>6</strong><span>verifierade forskningsspår</span><hr/><p>Reglering, klinisk AI, bioteknik, neuroteknik och klimatmodeller.</p></aside></section>
@@ -34,4 +34,4 @@ export default function Page(){return <main><DailyDeskUpdate desk="vetenskap"/><
  <section className="science-sources"><div className="kicker">Källor</div><h2>Primärkällor och forskningspubliceringar</h2><p>Varje nyhet ovan länkar direkt till universitetet, myndigheten eller tidskriften bakom uppgiften. Analysen är NackaSidans redaktionella bedömning.</p><div><a href="https://digital-strategy.ec.europa.eu/en/policies/regulatory-framework-ai" target="_blank" rel="noopener noreferrer">EU-kommissionen: AI-förordningen ↗</a><a href="https://www.nih.gov/" target="_blank" rel="noopener noreferrer">NIH: medicinsk forskning ↗</a><a href="https://science.nasa.gov/" target="_blank" rel="noopener noreferrer">NASA Science ↗</a><a href="https://www.nature.com/natmachintell/" target="_blank" rel="noopener noreferrer">Nature Machine Intelligence ↗</a></div></section>
  <section className="science-next"><Link className="button" href="/tema/ai">Fördjupa dig i AI-temat</Link><Link className="text-link" href="/senaste">Se dagens uppdateringar →</Link></section>
  <DeskDepth eyebrow="Vetenskaplig fördjupning" title="Vad som krävs innan ett resultat förändrar samhället" {...scienceDepth}/>
- </div></main>}
+ </div><DailyDeskUpdate desk="vetenskap"/></main>}
