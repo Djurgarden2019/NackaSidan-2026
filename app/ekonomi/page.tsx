@@ -1,3 +1,4 @@
+import DailyDeskUpdate from '../../components/DailyDeskUpdate';
 import Link from 'next/link';
 
 const markets=[
@@ -25,7 +26,7 @@ const news=[
 ];
 export const metadata={title:'Ekonomi | NackaSidan 2026',description:'Börs, ekonominyheter, valutakurser, räntor och prognoser – med analys.'};
 
-export default function Page(){return <main><div className="shell economy-desk">
+export default function Page(){return <main><DailyDeskUpdate desk="ekonomi"/><div className="shell economy-desk">
  <header className="economy-head"><div><div className="kicker">Ekonomi · Uppdaterad 29 augusti 2026</div><p className="lead">Börs, nyheter, valutakurser och prognoser – med analys av vad siffrorna betyder för hushåll, företag och Sverige.</p></div><nav aria-label="Ekonomisidans avdelningar"><a href="#bors">Börs</a><a href="#nyheter">Nyheter</a><a href="#valutor">Valutor</a><a href="#prognoser">Prognoser</a></nav></header>
  <section className="economy-snapshot" aria-label="Dagens ekonomiska läge"><article><span>Styrränta</span><strong>1,75 %</strong><small>Från 26 augusti</small></article><article><span>KPIF</span><strong>0,7 %</strong><small>Juli · mål 2 %</small></article><article><span>EUR/SEK</span><strong>11,0835</strong><small>ECB · 27 augusti</small></article><article><span>BNP-prognos</span><strong>2,5 %</strong><small>Helåret 2026</small></article></section>
 
