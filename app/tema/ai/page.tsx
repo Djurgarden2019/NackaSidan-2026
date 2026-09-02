@@ -13,7 +13,7 @@ const timeline = [
 
 export default function AiTopicPage() {
   return (
-    <main><DailyDeskUpdate desk="ai"/>
+    <main>
       <div className="shell">
         <section className="topic-hero">
           <div>
@@ -66,6 +66,6 @@ export default function AiTopicPage() {
         </section>
         <DeskDepth eyebrow="AI Insight · Uppdaterad 30 augusti 2026" title="Från modell till makt, arbete och ansvar" {...aiDepth}/>
       </div>
-    </main>
+    <DailyDeskUpdate desk="ai"/></main>
   );
 }

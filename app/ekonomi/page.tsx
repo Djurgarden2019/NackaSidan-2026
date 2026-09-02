@@ -26,7 +26,7 @@ const news=[
 ];
 export const metadata={title:'Ekonomi | NackaSidan 2026',description:'Börs, ekonominyheter, valutakurser, räntor och prognoser – med analys.'};
 
-export default function Page(){return <main><DailyDeskUpdate desk="ekonomi"/><div className="shell economy-desk">
+export default function Page(){return <main><div className="shell economy-desk">
  <header className="economy-head"><div><div className="kicker">Ekonomi · Uppdaterad 29 augusti 2026</div><p className="lead">Börs, nyheter, valutakurser och prognoser – med analys av vad siffrorna betyder för hushåll, företag och Sverige.</p></div><nav aria-label="Ekonomisidans avdelningar"><a href="#bors">Börs</a><a href="#nyheter">Nyheter</a><a href="#valutor">Valutor</a><a href="#prognoser">Prognoser</a></nav></header>
  <section className="economy-snapshot" aria-label="Dagens ekonomiska läge"><article><span>Styrränta</span><strong>1,75 %</strong><small>Från 26 augusti</small></article><article><span>KPIF</span><strong>0,7 %</strong><small>Juli · mål 2 %</small></article><article><span>EUR/SEK</span><strong>11,0835</strong><small>ECB · 27 augusti</small></article><article><span>BNP-prognos</span><strong>2,5 %</strong><small>Helåret 2026</small></article></section>
 
@@ -40,4 +40,4 @@ export default function Page(){return <main><DailyDeskUpdate desk="ekonomi"/><di
 
  <section className="economy-sources"><div className="kicker">Källor och transparens</div><h2>Primärkällorna bakom sidan</h2><div><a href="https://www.scb.se/" target="_blank" rel="noopener noreferrer">SCB: dagens statistik ↗</a><a href="https://www.riksbank.se/sv/penningpolitik/" target="_blank" rel="noopener noreferrer">Riksbanken: ränta och inflation ↗</a><a href="https://www.ecb.europa.eu/stats/policy_and_exchange_rates/euro_reference_exchange_rates/html/index.en.html" target="_blank" rel="noopener noreferrer">ECB: valutakurser ↗</a><a href="https://www.nasdaqomxnordic.com/" target="_blank" rel="noopener noreferrer">Nasdaq Nordic: börsdata ↗</a></div><p>Valuta- och marknadsdata kan ändras under dagen. Varje datapunkt är märkt med referensdag.</p></section>
  <section className="economy-next"><Link className="button" href="/sverige/artikel/sverige-ekonomi-laget-2026">Läs den stora ekonomiguiden</Link><Link className="text-link" href="/senaste">Se dagens uppdateringar →</Link></section>
- </div></main>}
+ </div><DailyDeskUpdate desk="ekonomi"/></main>}
