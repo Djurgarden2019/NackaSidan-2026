@@ -26,7 +26,7 @@ export const topWorldNews5Sep:TopWorldArticle[]=[
 },
 {
  slug:'who-lager-attack-kyiv',section:'Ukraina · Humanitärt',title:'WHO-lager med medicinsk utrustning träffat i Kyivregionen',summary:'Ett lager med humanitära sjukvårdsförnödenheter har träffats i ett nattligt anfall. Ingen WHO-personal uppges ha skadats.',
- image:'https://commons.wikimedia.org/wiki/Special:FilePath/WHO%20Health%20Emergencies%20Programme.jpg?width=1200',imageCredit:'Världshälsoorganisationen · Wikimedia Commons',
+ image:'https://images.unsplash.com/photo-1584036561566-baf8f5f1b144?auto=format&fit=crop&w=1400&q=82',imageCredit:'Medicinsk beredskap · Unsplash',
  news:[
   'Ett lager som Världshälsoorganisationen använder för humanitära sjukvårdsförnödenheter träffades i ett nattligt flyganfall i Kyivregionen. WHO uppger att ingen i organisationens personal skadades.',
   'Tillträdet till platsen har begränsats på grund av rök och säkerhetsrisker. Skadornas omfattning utreds och WHO har identifierat alternativa lagerplatser för att försöka hålla verksamheten igång.',
@@ -46,7 +46,7 @@ export const topWorldNews5Sep:TopWorldArticle[]=[
 },
 {
  slug:'sydney-extremvarme-brandrisk',section:'Australien · Klimat',title:'Extrem vårvärme ger hög brandrisk kring Sydney',summary:'Temperaturen steg till omkring 33 grader, nära 13 grader över septembernormalen, och myndigheterna införde totalt eldningsförbud.',
- image:'https://commons.wikimedia.org/wiki/Special:FilePath/Sydney%20Opera%20House%20and%20Harbour%20Bridge%20Dusk%20%282%29%202019-06-21.jpg?width=1200',imageCredit:'Sydney · Wikimedia Commons',
+ image:'https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Sydney_Opera_House_and_Harbour_Bridge_Dusk_%282%29_2019-06-21.jpg/1280px-Sydney_Opera_House_and_Harbour_Bridge_Dusk_%282%29_2019-06-21.jpg',imageCredit:'Sydney · Wikimedia Commons',
  news:[
   'Sydney har drabbats av en ovanligt varm vårdag med temperaturer omkring 33 grader, nära 13 grader över genomsnittet för september. Vid flygplatsen hade temperaturen redan nått 28,6 grader före middagstid.',
   'Starka nordvästliga vindar, torka och hög temperatur fick vädertjänsten att varna för extrem brandrisk i Greater Sydney. Delstatens räddningstjänst införde totalt eldningsförbud.',
@@ -66,7 +66,7 @@ export const topWorldNews5Sep:TopWorldArticle[]=[
 },
 {
  slug:'usa-jobbrapport-fed-ranta',section:'USA · Ekonomi',title:'Starka jobbsiffror ökar sannolikheten för amerikansk räntehöjning',summary:'USA skapade 162 000 jobb i augusti medan arbetslösheten låg kvar på 4,1 procent. Nu riktas blickarna mot nästa veckas inflationstal.',
- image:'https://commons.wikimedia.org/wiki/Special:FilePath/Federal%20Reserve%20Board%20building.jpg?width=1200',imageCredit:'Federal Reserve i Washington · Wikimedia Commons',
+ image:'https://images.unsplash.com/photo-1529107386315-e1a2ed48a620?auto=format&fit=crop&w=1400&q=82',imageCredit:'Washington · Unsplash',
  news:[
   'Den amerikanska ekonomin skapade 162 000 jobb i augusti, betydligt fler än väntat. Arbetslösheten låg kvar på 4,1 procent och deltagandet i arbetskraften steg till 61,6 procent.',
   'Rapporten har ökat marknadens förväntningar på att Federal Reserve kan höja räntan vid mötet den 15–16 september. Inflationstakten ligger fortfarande över centralbankens mål på 2 procent.',
@@ -86,7 +86,7 @@ export const topWorldNews5Sep:TopWorldArticle[]=[
 },
 {
  slug:'stillahavslander-kina-robotprov',section:'Stilla havet · Kina',title:'Stillahavsländer kräver förvarning efter Kinas robotprov',summary:'Regionala ledare uttrycker oro efter att en kinesisk interkontinental robot flög över flera önationer utan förhandsbesked.',
- image:'https://commons.wikimedia.org/wiki/Special:FilePath/Pacific%20Ocean%20laea%20relief%20location%20map.jpg?width=1200',imageCredit:'Stilla havet · Wikimedia Commons',
+ image:'https://upload.wikimedia.org/wikipedia/commons/c/c4/Pacific_Ocean_laea_relief_location_map.jpg',imageCredit:'Stilla havet · Wikimedia Commons',
  news:[
   'Ledarna vid Pacific Islands Forum har ställt sig bakom oro över Kinas interkontinentala robotprov i juli. Roboten flög över flera önationer utan förvarning.',
   'Forumets majoritet efterlyser tydligare kommunikation och minst 24 timmars förhandsbesked inför framtida prov. Nauru reserverade sig mot formuleringen.',
@@ -106,7 +106,7 @@ export const topWorldNews5Sep:TopWorldArticle[]=[
 },
 {
  slug:'nepal-oversvamning-skador-raddning',section:'Nepal · Katastrof',title:'Nepals översvämningar beräknas ha orsakat skador för 2,56 miljarder dollar',summary:'Samtidigt använder ingenjörer en digital expertgrupp för att vägleda räddningsarbetet i förstörda vattenkraftstunnlar.',
- image:'https://commons.wikimedia.org/wiki/Special:FilePath/Flag%20of%20Nepal.svg?width=1000',imageCredit:'Nepals flagga · Wikimedia Commons',
+ image:'https://upload.wikimedia.org/wikipedia/commons/thumb/9/9b/Flag_of_Nepal.svg/1280px-Flag_of_Nepal.svg.png',imageCredit:'Nepals flagga · Wikimedia Commons',
  news:[
   'Nepals katastrofmyndighet uppskattar att bostäder, egendom och infrastruktur för minst 2,56 miljarder dollar har förstörts i förra veckans översvämningar.',
   'Räddningsarbetet fortsätter i avlägsna dalar och vid skadade vattenkraftverk. Ingenjörer i en digital expertgrupp hjälper räddningspersonal att tolka ritningar och bedöma var människor kan ha överlevt i tunnlar.',
