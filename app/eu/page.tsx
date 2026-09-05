@@ -6,7 +6,7 @@ export const metadata: Metadata = {title:'EU:s 27 medlemsländer',description:'F
 
 export default function EuPage(){
  return <main id="main-content"><div className="shell">
-  <header className="page-hero"><div className="kicker">EU · 27 medlemsländer · Uppdaterad 4 september 2026</div><h1>Europeiska unionen – land för land</h1><p>En samlad översikt över unionens länder, politiska ledning, kommande val, ekonomi och viktigaste näringar.</p></header>
+  <header className="page-hero"><div className="kicker">EU · 27 medlemsländer · Uppdaterad 5 september 2026</div><h1>Europeiska unionen – land för land</h1><p>En samlad översikt över unionens länder, politiska ledning, kommande val, ekonomi och viktigaste näringar.</p></header>
   <section className="section no-top" style={{display:'grid',gridTemplateColumns:'repeat(auto-fit,minmax(180px,1fr))',gap:16}}>
    <div style={{borderTop:'3px solid #111',paddingTop:12}}><strong style={{fontSize:28}}>27</strong><p>medlemsländer</p></div>
    <div style={{borderTop:'3px solid #111',paddingTop:12}}><strong style={{fontSize:28}}>452 miljoner</strong><p>invånare i EU den 1 januari 2026</p></div>
