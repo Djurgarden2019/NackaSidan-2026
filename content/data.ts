@@ -1,5 +1,6 @@
 import type { Story } from '../components/Cards';
 import type { Feature } from '../components/Editorial';
+import {topWorldNews5Sep} from './topWorldNews5Sep';
 export const lead:Story={section:'Världen',title:'Hormuzavtal närmar sig – men sundet förblir stängt',summary:'Iran uppger att förhandlingarna med Oman är inne i ett slutskede. Ett avtal kan ändra sjöfartslederna genom Hormuzsundet, men innebär ännu inte att den strategiska vattenvägen öppnas för normal trafik.',href:'/artikel/veckans-analys'};
 export const topStories:Story[]=[
 {section:'Sverige',title:'AI får större roll i valrörelsen',summary:'Inför riksdagsvalet använder väljare AI för att jämföra politik och söka svar. Samtidigt växer frågorna om manipulation, källkritik och hur tekniken påverkar valdebatten.',href:'/artikel/ai-i-valrorelsen-2026'},
@@ -22,11 +23,12 @@ export const cultureStories:Story[]=[
 {section:'Musik',title:'Yasin skildrar fattigdom, flykt och kriminalitet i ny låt',summary:'Den självbiografiska låten 1991 lyfts av Kulturnytt för sin direkta och personliga berättelse.',href:'https://www.sverigesradio.se/grupp/18771'},
 {section:'Kulturdebatt',title:'Vem får definiera den gemensamma kulturen?',summary:'Debatten om bibliotek, public service, kulturstöd och AI handlar i grunden om vem som får tillgång till offentligheten.',href:'/kulturdebatt'}
 ];
-export const worldFeatures:Feature[]=[
-{section:'Mellanöstern · Iran',title:'USA och Iran i den kraftigaste upptrappningen på flera veckor',summary:'USA har avslutat en ny våg av anfall mot iranska luftförsvar, radar-, sjö- och kommunikationsmål. Iran svarade mot amerikanska mål i Jordanien, Bahrain och Irak, medan oron kring Hormuz åter ökar.',href:'/varlden#fordjupningar',image:'https://commons.wikimedia.org/wiki/Special:FilePath/Strait%20of%20Hormuz%20map.svg?width=1200',imageCredit:'Karta över Hormuzsundet · Wikimedia Commons',meta:'Uppdaterad 3 september 2026'},
-{section:'Ukraina · Kriget',title:'Kyiv angrips för sjunde dagen i rad',summary:'Ryska drönarangrepp har skadat bostäder och ett universitet i Kyiv. Elinfrastruktur i Odesa träffades samtidigt, och hundratusentals hushåll uppges ha blivit utan ström.',href:'/varlden#fordjupningar',image:'https://commons.wikimedia.org/wiki/Special:FilePath/Flag%20of%20Ukraine.svg?width=1200',imageCredit:'Ukrainas flagga · Wikimedia Commons',meta:'Uppdaterad 3 september 2026'},
-{section:'Nepal · Katastrof',title:'Räddare försöker nå arbetare instängda i kraftverkstunnlar',summary:'Efter den katastrofala översvämningen i Himalaya koncentreras räddningsarbetet till tunnlar och torra kammare vid vattenkraftverk. Internationella team deltar medan hoppet om fler överlevande minskar.',href:'/varlden#fordjupningar',image:'https://commons.wikimedia.org/wiki/Special:FilePath/Flag%20of%20Nepal.svg?width=1000',imageCredit:'Nepals flagga · Wikimedia Commons',meta:'Uppdaterad 3 september 2026'},
-{section:'USA–Kina · Rymden',title:'USA och Kina rustar för en möjlig konflikt i rymden',summary:'Manövrerbara satelliter, rymdfarkoster, störsystem och teknik för att närma sig andra satelliter får en större militär roll. Utvecklingen gör civil infrastruktur mer sårbar i en framtida konflikt.',href:'/varlden#fordjupningar',image:'https://commons.wikimedia.org/wiki/Special:FilePath/The%20Earth%20seen%20from%20Apollo%2017.jpg?width=1200',imageCredit:'Jorden från Apollo 17 · NASA',meta:'Uppdaterad 3 september 2026'},
-{section:'Arktis · Grönland',title:'Danmark skickar värnpliktiga till Grönland',summary:'Danska värnpliktiga har skickats till Grönland för arktisk utbildning inom en större förstärkning av försvaret i norr. Insatsen sker när konkurrensen mellan Nato, Ryssland och Kina ökar.',href:'/varlden#fordjupningar',image:'https://commons.wikimedia.org/wiki/Special:FilePath/Flag%20of%20Greenland.svg?width=1000',imageCredit:'Grönlands flagga · Wikimedia Commons',meta:'Uppdaterad 3 september 2026'},
-{section:'Malta · Rättsstat',title:'Affärsman frias från anklagelser om journalistmord',summary:'En jury på Malta har friat Yorgen Fenech från anklagelser om medverkan i mordet på grävjournalisten Daphne Caruana Galizia. Familjen säger att de systemfel som möjliggjorde mordet består.',href:'/varlden#fordjupningar',image:'https://commons.wikimedia.org/wiki/Special:FilePath/Flag%20of%20Malta.svg?width=1000',imageCredit:'Maltas flagga · Wikimedia Commons',meta:'Uppdaterad 3 september 2026'}
-];
+export const worldFeatures:Feature[]=topWorldNews5Sep.map(article=>({
+ section:article.section,
+ title:article.title,
+ summary:article.summary,
+ href:`/varlden/nyheter/${article.slug}`,
+ image:article.image,
+ imageCredit:article.imageCredit,
+ meta:'Uppdaterad 5 september 2026'
+}));
