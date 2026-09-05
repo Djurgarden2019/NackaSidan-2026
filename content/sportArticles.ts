@@ -1,24 +1,155 @@
-export type SportArticle={slug:string;sport:string;title:string;dek:string;date:string;lead:boolean;facts:string[];body:{heading:string;paragraphs:string[]}[];analysis:string;watch:string[];sources:{label:string;url:string}[]};
-export const latestResults=[
- {competition:'Finnkampen · Damer',match:'Sverige–Finland',score:'Svensk seger',note:'Sverige avgjorde damkampen efter en dramatisk avslutning'},
- {competition:'Finnkampen · Herrar',match:'Sverige–Finland',score:'Finländsk seger',note:'Herrkampen avgjordes med minsta möjliga marginal'},
- {competition:'Fotbolls-VM 2026',match:'Sverige–Frankrike',score:'0–3',note:'Sverige utslaget i sextondelsfinalen'}
-];
-export const sportAgenda=[
- {time:'I dag · 18.50',event:'Sverige–Italien i kvartsfinal i damernas volleyboll-EM'},
- {time:'4–5 september',event:'Diamond League-final i Bryssel med svenskt deltagande'},
- {time:'8–10 september',event:'Champions League: första omgången i ligafasen'}
-];
-export const sportArticles:SportArticle[]=[
- {slug:'sverige-italien-volleyboll-em-kvartsfinal',sport:'Volleyboll · EM',title:'Sverige utmanar världsettan Italien i EM-kvartsfinal',dek:'Det svenska damlandslaget har nått kvartsfinal och ställs mot Italien. Uppgiften är maximal, men matchen blir också ett mått på hur långt svensk volleyboll har flyttat sin internationella nivå.',date:'2 september 2026',lead:true,facts:['Kvartsfinalen Sverige–Italien spelas den 2 september.','Italien är världsetta.','Matchen sänds av SVT.'],body:[{heading:'Ett svenskt lag med allt att vinna',paragraphs:['Sverige går in i kvartsfinalen mot turneringens tyngsta motstånd. Italien kan kontrollera matcher med servepress, block och ett högt tempo i anfallsspelet. För Sverige blir mottagningen den första avgörande punkten: utan stabilitet i första kontakten krymper möjligheten att variera anfallet.','Samtidigt ger utslagsformatet en chans som en lång serie sällan erbjuder. Några starka serveserier, försvarsräddningar och vunna jämna bollar kan flytta pressen över på favoriten.']},{heading:'Mer än en enskild match',paragraphs:['En svensk prestation mot världsettan påverkar synen på landslaget, men också sportens attraktionskraft hemma. Internationella framgångar kan ge fler barn till föreningarna, större publik och bättre kommersiella villkor.','Det viktiga långsiktigt är därför inte bara resultatet, utan om Sverige kan skapa återkommande mästerskapsmiljöer för nästa generation.']}],analysis:'Italien är klar favorit eftersom laget har fler vägar att vinna poäng och större vana vid matcher på den här nivån. Sveriges möjlighet ligger i att minska antalet enkla misstag, ta risk i rätt serverotationer och hålla seten jämna länge. Om matchen blir en fysisk duell vid nätet ökar Italiens övertag; om Sverige kan skapa osäkerhet med serve och försvar öppnas en smalare väg till skräll.',watch:['Sveriges servemottagning','Poängen i jämna slutskeden','Hur Sverige hanterar Italiens block'],sources:[{label:'SVT Sport: Sveriges kvartsfinal mot Italien',url:'https://www.svt.se/sport/'},{label:'Europeiska volleybollförbundet: tävlingar och resultat',url:'https://www.cev.eu/'}]},
- {slug:'womens-super-league-2026-svenskorna',sport:'Fotboll · England',title:'Ny WSL-säsong sätter svenska stjärnor i centrum',dek:'Women’s Super League startar med flera svenska landslagsspelare i framträdande roller. Ligan fortsätter samtidigt sin kamp om publik, tv-tid och ekonomisk hållbarhet.',date:'2 september 2026',lead:false,facts:['WSL räknas som en av världens ledande damligor.','Stina Blackstenius och Rosa Kafaji är två av de svenska profilerna.','SVT sänder utvalda matcher under säsongen 2026/27.'],body:[{heading:'Svenska spelare i en växande liga',paragraphs:['Den engelska ligan förenar hög internationell kvalitet med snabbt växande kommersiellt intresse. För de svenska spelarna innebär miljön hård konkurrens om startplatser och matcher där tempo och fysisk belastning ligger nära landslagsnivå.','Säsongen blir särskilt viktig inför kommande landslagssamlingar. Regelbunden speltid, roll i klubblaget och skadehantering kommer att påverka Sveriges alternativ.']},{heading:'Tillväxten måste bära sig',paragraphs:['Publiksiffror och tv-avtal har stärkt ligans varumärke, men kostnaderna växer också. Klubbarna behöver bygga intäkter som inte enbart är beroende av herrverksamheten.','Den långsiktiga prövningen blir om fler lag kan erbjuda professionella miljöer utan att avståndet till de rikaste klubbarna blir för stort.']}],analysis:'WSL:s genomslag gör ligan till ett skyltfönster för svenska spelare, men också till en mer krävande arbetsmarknad. Framgång mäts inte bara i mål och tabellplacering, utan i hur spelare utvecklas och orkar genom en tät säsong. För svensk fotboll är det positivt med spelare i toppmiljöer, så länge landslaget inte blir alltför beroende av ett fåtal klubbar och roller.',watch:['De svenska spelarnas speltid','Publikutvecklingen','Skillnaden mellan topp- och bottenklubbar'],sources:[{label:'SVT Sport: Women’s Super League 2026/27',url:'https://www.svt.se/sport/fotboll/womens-super-league-20262027'},{label:'Women’s Super League: officiell webbplats',url:'https://womensleagues.thefa.com/'}]},
- {slug:'diamond-league-final-bryssel-2026',sport:'Friidrott · Diamond League',title:'Diamond League-finalen blir höstens stora svenska formtest',dek:'Säsongen avslutas i Bryssel den 4–5 september. För de svenska deltagarna handlar finalen både om placering och om att avsluta året med ett internationellt styrkebesked.',date:'2 september 2026',lead:false,facts:['Finalen avgörs i Bryssel den 4–5 september.','Armand Duplantis finns med i den aktuella svenska bevakningen.','Endast kvalificerade aktiva får tävla om Diamond League-titlarna.'],body:[{heading:'En final utan transportsträckor',paragraphs:['Diamond League-finalen samlar de aktiva som varit mest stabila genom säsongen. Till skillnad från en vanlig gala finns inget utrymme att använda tävlingen enbart som formbyggande: placering och titel avgörs direkt.','För svenskarna blir utförandet lika intressant som resultatet. Antal försök, teknisk stabilitet och förmågan att leverera under press visar vad som kan bäras vidare till nästa mästerskap.']},{heading:'Duplantis förändrar måttstocken',paragraphs:['När Armand Duplantis tävlar bedöms han inte längre bara mot motståndarna, utan mot sina egna historiska nivåer. Det gör varje tävling till både idrott och rekordberättelse.','Den bredare svenska bilden avgörs däremot av hur många fler aktiva som kan etablera sig i internationella finalfält.']}],analysis:'Finalformatet premierar säsongens stabilitet men avgörs under två koncentrerade kvällar. För en stor favorit är pressen att bekräfta nivån; för övriga svenskar är möjligheten att slå högre rankade motståndare särskilt värdefull. Resultaten bör därför läsas både som avslutning på 2026 och som underlag inför nästa träningsår.',watch:['Duplantis val av ingångshöjd','Svenska finalplaceringar utanför stavhoppet','Hur täta starter påverkar resultaten'],sources:[{label:'SVT Sport: Guide till Diamond League 2026',url:'https://www.svt.se/sport/friidrott/guide-diamond-league-2026'},{label:'Diamond League: officiellt schema',url:'https://www.diamondleague.com/calendar/'}]},
+export type SportArticle = {
+  slug: string;
+  sport: string;
+  title: string;
+  dek: string;
+  date: string;
+  publishedAt: string;
+  lead: boolean;
+  facts: string[];
+  body: { heading: string; paragraphs: string[] }[];
+  analysis: string;
+  watch: string[];
+  sources: { label: string; url: string }[];
+};
 
- {slug:'champions-league-lottningen-2026',sport:'Fotboll · Europa',title:'Champions League-lottningen sätter press på både trupper och kalendrar',dek:'36 lag går in i ligafasen. Det nya formatet ger fler stormatcher, men också en hårdare belastning när varje poäng påverkar vägen till slutspelet.',date:'28 augusti 2026',lead:true,facts:['Ligafasen består av 36 lag.','29 lag var direktkvalificerade och sju tog sig vidare genom playoff.','Lottningen till ligafasen genomfördes den 27 augusti.'],body:[{heading:'En tabell, men olika motstånd',paragraphs:['Ligafasen har ersatt de traditionella grupperna. Lagen samlas i en gemensam tabell, men möter inte exakt samma motstånd. Det gör lottningen mer betydelsefull än tabellen först antyder.','För klubbarna blir planeringen en balans mellan sportslig ambition och belastning. En svår europeisk vecka kan påverka både den nationella ligan och skadebilden.']},{heading:'Marginalerna börjar redan i augusti',paragraphs:['Direktplatserna till åttondelsfinalerna är särskilt värdefulla eftersom de minskar antalet utslagsmatcher. Därför blir varje poäng och målskillnaden viktig långt innan vårens slutspel.']}],analysis:'Formatet belönar breda trupper och stabilitet mer än enstaka topprestationer. De ekonomiskt starkaste klubbarna får ett strukturellt övertag, men den gemensamma tabellen kan samtidigt skapa fler avgörande matcher sent i ligafasen.',watch:['Vilka lag som får de tyngsta bortamatcherna','Hur tränarna roterar mellan liga och Europa','Om skadefrekvensen ökar under hösten'],sources:[{label:'UEFA: lag, datum och format 2026/27',url:'https://www.uefa.com/uefachampionsleague/news/02a6-20d57cfcd03e-407c22a7f465-1000--2026-27-champions-league-teams-dates-draws-format-final/'},{label:'UEFA: kvalresultat och ligafaslottning',url:'https://www.uefa.com/uefachampionsleague/news/02a6-20e5a8be4e63-ae971c582f8c-1000--champions-league-qualifying-results-how-it-worked/'}]},
- {slug:'mjallby-europa-salzburg',sport:'Fotboll · Sverige',title:'Mjällbys Champions League-resa tog slut mot Slovan Bratislava',dek:'Slovan Bratislava vann returen med 2–0 och dubbelmötet med 4–1. Mjällby föll ur Champions League-kvalet men fortsatte sin europeiska säsong i Europa League-kvalet.',date:'28 augusti 2026',lead:false,facts:['Slovan Bratislava vann returen med 2–0.','Dubbelmötet slutade 4–1 sammanlagt.','Mjällby gick efter förlusten vidare till Europa League-kvalets playoff.'],body:[{heading:'En tydlig europeisk nivåmätare',paragraphs:['Mjällby hade ett 1–2-underläge efter hemmamötet och behövde göra mål i Bratislava. Slovan höll nollan, vann returen med 2–0 och säkrade avancemanget med sammanlagt 4–1.','Resultatet visade hur kostsamma små misstag blir när tempot och den individuella kvaliteten höjs. Samtidigt gav kvalet Mjällby värdefulla matcher mot motstånd som ställer andra krav än den allsvenska vardagen.']},{heading:'Europa påverkar även Allsvenskan',paragraphs:['Kvalspelet ger erfarenhet och intäkter men minskar tiden för träning och återhämtning. Hur Mjällby hanterar den belastningen kan få betydelse i den allsvenska slutspurten.']}],analysis:'För svensk klubbfotboll är lärdomen att enstaka starka säsonger inte räcker. Återkommande Europaspel behövs för att bygga ranking, ekonomi och vana vid internationellt tempo. Mjällbys viktigaste uppgift blir att omvandla erfarenheten till bättre rekrytering, större truppbredd och fortsatt spelarutveckling.',watch:['Mjällbys reaktion i Allsvenskan','Hur europaintäkterna återinvesteras','Om nyckelspelare blir transfermål'],sources:[{label:'UEFA: Champions League-kvalets samtliga resultat',url:'https://www.uefa.com/uefachampionsleague/news/02a6-20e5a8be4e63-ae971c582f8c-1000--champions-league-qualifying-results-how-it-worked/'},{label:'Svenska Fotbollförbundet: serier, cuper och aktuella resultat',url:'https://www.svenskfotboll.se/serier-cuper/'}]},
- {slug:'svenska-cupen-omgang-tva',sport:'Fotboll · Svenska cupen',title:'Cupens andra omgång visar varför små arenor betyder mycket',dek:'Allsvenska lag och Superettanlag gick in i Svenska cupen. För mindre föreningar är mötena både sportslig chans och ekonomiskt skyltfönster.',date:'28 augusti 2026',lead:false,facts:['Omgång två spelades den 18–20 och 25–27 augusti.','Lag från Allsvenskan och Superettan gick in i turneringen.','Gruppspelet och slutspelet avgörs under 2027.'],body:[{heading:'Mer än en kvalmatch',paragraphs:['När ett elitlag kommer till en mindre ort förändras förutsättningarna för en kväll. Publik, lokal sponsring och uppmärksamhet kan ge ett tillskott som betyder mer för hemmaklubben än för favoriten.','Sportsligt uppstår en tydlig kontrast. Elitlaget måste hantera underlag, miljö och ett motstånd som kan spela utan samma förväntningar.']},{heading:'Cupen binder ihop seriesystemet',paragraphs:['Svenska cupens värde ligger i att föreningar från olika nivåer faktiskt möts i tävlingsmatcher. Det gör turneringen till en av få arenor där hela fotbollspyramiden blir synlig.']}],analysis:'Cupformatet är som starkast när hemmalaget får behålla sin lokala fördel. Samtidigt behöver kalendern ge elitlagen rimlig återhämtning. Balansen mellan folkfest och sportslig kvalitet avgör turneringens status.',watch:['Vilka mindre klubbar som når gruppspelet','Publiksiffrorna i omgång två','Hur gruppspelet lottas'],sources:[{label:'Svenska Fotbollförbundet: Svenska cupen',url:'https://www.svenskfotboll.se/serier-cuper/svenska-cupen/'},{label:'Svenska Fotbollförbundet: inför omgång två',url:'https://www.svenskfotboll.se/nyheter/cuper/2026/08/svc-herr-infor-omg-2/'}]},
- {slug:'norden-fifa-infantino',sport:'Fotboll · Politik',title:'Nordens uppbrott med FIFA kan bli början på en större maktkamp',dek:'Sex nordiska förbund säger att de har förlorat förtroendet för Gianni Infantino och kräver oberoende granskning av FIFA:s styrning.',date:'28 augusti 2026',lead:false,facts:['Danmark, Finland, Färöarna, Island, Norge och Sverige står bakom beskedet.','Förbunden vill ha en oberoende granskning av FIFA:s styrmodell.','Kritiken gäller bland annat planen att ta in privat kapital i kommersiella rättigheter.'],body:[{heading:'Ett ovanligt skarpt gemensamt besked',paragraphs:['Nordiska fotbollsförbund brukar söka inflytande genom förhandling. När sex förbund samtidigt säger att förtroendet är förbrukat markerar det att konflikten har passerat en normal sakpolitisk oenighet.','Frågan är dock hur långt stödet räcker. FIFA:s president väljs globalt och europeiska förbund kan inte ensamma avgöra valet.']},{heading:'Pengarna och kontrollen',paragraphs:['Konflikten handlar om vem som får kontroll över värdet i de största turneringarna. Privat kapital kan ge snabba intäkter, men riskerar att låsa framtida beslut och minska medlemsförbundens insyn.']}],analysis:'Nordens styrka ligger mindre i antalet röster och mer i möjligheten att bygga en trovärdig reformkoalition. Utan stöd från förbund i Afrika, Asien och Amerika riskerar kritiken att stanna vid en europeisk protest.',watch:['Om en motkandidat ställer upp 2027','Vilka förbund utanför Europa som ansluter','Om dokumenten kring rättighetsplanen offentliggörs'],sources:[{label:'Reuters: Nordic nations lose confidence in FIFA leadership',url:'https://www.reuters.com/sports/soccer/nordic-nations-say-they-have-lost-confidence-infantino-fifa-governance-2026-08-23/'},{label:'Reuters: UEFA seeks FIFA documents',url:'https://www.reuters.com/sports/soccer/uefa-asks-us-court-fifa-documents-planned-swiss-case-against-infantino-2026-08-27/'}]},
- {slug:'us-open-damfavoriter-2026',sport:'Tennis · US Open',title:'US Open saknar självklar favorit – och därför blir första veckan avgörande',dek:'Swiatek kommer med återfunnen form, Gauff med Cincinnati-titeln och Sabalenka med historien inom räckhåll men en svagare trend.',date:'28 augusti 2026',lead:false,facts:['Iga Swiatek har vunnit tio av sina elva senaste matcher.','Coco Gauff vann Cincinnati inför US Open.','Aryna Sabalenka jagar en tredje raka titel i New York.'],body:[{heading:'Tre olika vägar in i turneringen',paragraphs:['Swiatek har byggt upp självförtroendet på hardcourt efter en ojämn första halva av året. Gauff kommer med ett färskt titelbevis och ett mer varierat spel. Sabalenka bär den tyngsta historiska möjligheten men också flest frågor om formen.','I en Grand Slam räcker det inte att ha högst toppnivå. Spelarna måste lösa olika motstånd, väder och långa matcher under två veckor.']},{heading:'Serven kan avgöra för Gauff',paragraphs:['Gauffs aggressivare serve ger gratispoäng men också dubbelfel. Balansen mellan risk och stabilitet blir central när motståndet hårdnar.']}],analysis:'Det öppna fältet gynnar den spelare som snabbast hittar ett stabilt grundspel. Den första veckan blir därför mer än transportsträcka: den visar vem som kan vinna utan att förbruka för mycket energi.',watch:['Gauffs andraserve','Sabalenkas förmåga att stänga matcher','Swiateks nivå mot offensiva hardcourtspelare'],sources:[{label:'Reuters: Swiatek arrives in renewed form',url:'https://www.reuters.com/sports/tennis/swiatek-arrives-new-york-renewed-form-with-seventh-major-sight-2026-08-27/'},{label:'Reuters: Gauff aims to ride momentum',url:'https://www.reuters.com/sports/tennis/gauff-aims-ride-winning-momentum-into-us-open-2026-08-27/'},{label:'Reuters: Sabalenka chases three-peat',url:'https://www.reuters.com/sports/tennis/sabalenka-chases-us-open-three-peat-amid-downturn-form-2026-08-27/'}]},
- {slug:'diamond-league-zurich-svenskar',sport:'Friidrott · Diamond League',title:'Zürich blir sista stora formbeskedet före finalen',dek:'Samuel Pihlström och Armand Duplantis finns bland svenskarna i säsongens sista Diamond League-gala före finalen.',date:'28 augusti 2026',lead:false,facts:['Galan i Zürich är den sista Diamond League-tävlingen före finalen.','Samuel Pihlström springer 1 500 meter.','Armand Duplantis tävlar i stavhopp, men grenen ingår inte i Diamond League-poängen denna gång.'],body:[{heading:'Olika uppdrag för svenskarna',paragraphs:['För Pihlström handlar loppet om positionering, farttålighet och att få ett tydligt kvitto inför finalen. På 1 500 meter kan ett långsamt taktiskt lopp och ett högt fartlopp kräva nästan olika egenskaper.','Duplantis tävlar utan att stavhoppet räknas som Diamond League-gren i Zürich. Det minskar poängbetydelsen men inte värdet av att behålla tävlingsrytmen.']},{heading:'Form är mer än placering',paragraphs:['Inför en final säger utförandet ofta mer än tabellplaceringen. För löpare handlar det om avslutningen och för stavhoppare om vilka höjder som klaras med marginal.']}],analysis:'Svensk friidrott har flera tydliga världsstjärnor, men bredden bedöms bäst genom hur många som kan konkurrera i finalfält. Zürich ger därför både individuella besked och en bild av landslagets internationella nivå.',watch:['Pihlströms sista 400 meter','Duplantis ingångshöjd och antal försök','Vilka svenskar som säkrar finalplats'],sources:[{label:'SVT Sport: Guide till Diamond League 2026',url:'https://www.svt.se/sport/friidrott/guide-diamond-league-2026'}]}
+export const SPORT_ARTICLE_MAX_AGE_HOURS = 48;
+const SPORT_ARTICLE_MAX_AGE_MS = SPORT_ARTICLE_MAX_AGE_HOURS * 60 * 60 * 1000;
+
+export const latestResults = [
+  { competition: 'Rugby · Pacific Nations Cup', match: 'Japan–Kanada', score: '57–12', note: 'Japan gjorde nio försök i en klar premiärseger.' },
+  { competition: 'Tennis · US Open dubbel', match: 'Williams/Williams–Joint/Chan', score: '1–2', note: 'Serena och Venus föll i ett avgörande matchtiebreak.' },
+  { competition: 'Tennis · US Open', match: 'Dag sex', score: 'Favoriter vidare', note: 'Flera toppseedade spelare tog sig vidare i New York.' }
 ];
-export const sportArticleBySlug=Object.fromEntries(sportArticles.map(article=>[article.slug,article]));
+
+export const sportAgenda = [
+  { time: 'I dag', event: 'US Open fortsätter i New York' },
+  { time: 'I dag', event: 'U20-VM för damer inleds i Polen' },
+  { time: 'Kommande', event: 'Japan fortsätter Pacific Nations Cup' }
+];
+
+export const sportArticles: SportArticle[] = [
+  {
+    slug: 'williams-systrarna-us-open-aterkomst',
+    sport: 'Tennis · US Open',
+    title: 'Williams-systrarnas återkomst blev en fest trots förlust',
+    dek: 'Serena och Venus Williams spelade tillsammans i US Open för första gången på fyra år. De pressade Maya Joint och Chan Hao-ching till ett avgörande matchtiebreak inför 23 000 åskådare.',
+    date: '5 september 2026',
+    publishedAt: '2026-09-05T03:18:00Z',
+    lead: true,
+    facts: [
+      'Joint och Chan vann med 6–3, 6–7 (6), 7–6 (10–7).',
+      'Det var systrarnas första gemensamma US Open-match på fyra år.',
+      'Omkring 23 000 åskådare såg matchen på Arthur Ashe Stadium.'
+    ],
+    body: [
+      {
+        heading: 'En efterlängtad återkomst',
+        paragraphs: [
+          'Serena och Venus Williams fick ett varmt mottagande när de återvände till US Open-dubbeln. Efter att ha tappat första set arbetade de sig tillbaka och tvingade fram ett avgörande matchtiebreak.',
+          'Där var Maya Joint och Chan Hao-ching starkast. Förlusten avslutade tävlingen, men kvällen visade att systrarnas dragningskraft fortfarande är exceptionell.'
+        ]
+      },
+      {
+        heading: 'Större än resultatet',
+        paragraphs: [
+          'Matchen blev både elitidrott och ett möte med tennishistorien. Publiktrycket visade hur starkt Williams-systrarna fortfarande förknippas med sportens moderna genombrott.'
+        ]
+      }
+    ],
+    analysis: 'Det sportsliga utfallet var mindre viktigt än nivån på motståndet de kunde erbjuda efter ett långt uppehåll. Samtidigt ska en enstaka jämn match inte tolkas som bevis för en full återkomst till touren.',
+    watch: ['Om systrarna spelar fler tävlingar', 'Hur dubbelparet Joint/Chan följer upp segern', 'US Opens fortsatta publikutveckling'],
+    sources: [
+      { label: 'Reuters: Williams-systrarnas US Open-återkomst', url: 'https://www.reuters.com/sports/tennis/williams-sisters-us-open-return-becomes-celebration-despite-first-round-exit-2026-09-05/' }
+    ]
+  },
+  {
+    slug: 'japan-kanada-rugby-57-12',
+    sport: 'Rugby · Landslag',
+    title: 'Japan körde över Kanada med nio försök',
+    dek: 'Japan vann med 57–12 i Pacific Nations Cup efter en offensivt stark insats där Kouta Harada gjorde två försök.',
+    date: '5 september 2026',
+    publishedAt: '2026-09-05T08:01:00Z',
+    lead: false,
+    facts: [
+      'Japan vann med 57–12.',
+      'Laget gjorde nio försök.',
+      'Kouta Harada stod för två av försöken.'
+    ],
+    body: [
+      {
+        heading: 'Japan tog kommandot',
+        paragraphs: [
+          'Japan byggde tidigt ett övertag och fortsatte att skapa genombrott efter paus. Den höga försökssiffran speglar både tempo och effektivitet nära Kanadas mållinje.',
+          'Kanada fick perioder med boll men hade svårt att bromsa Japans variation i anfallsspelet.'
+        ]
+      },
+      {
+        heading: 'Viktig start på turneringen',
+        paragraphs: [
+          'Segern ger Japan arbetsro inför fortsättningen av Pacific Nations Cup. Motståndet hårdnar, men premiären gav ett tydligt kvitto på lagets offensiva potential.'
+        ]
+      }
+    ],
+    analysis: 'Resultatet är starkt, men värdet ligger främst i att Japan kunde hålla intensiteten genom hela matchen. Nästa test blir om samma anfallstempo fungerar mot mer fysiskt och disciplinerat motstånd.',
+    watch: ['Japans disciplin mot starkare motstånd', 'Kanadas defensiva justeringar', 'Kouta Haradas fortsatta roll'],
+    sources: [
+      { label: 'Reuters: Japan–Kanada 57–12', url: 'https://www.reuters.com/sports/japan-score-nine-tries-comfortable-57-12-win-over-canada-2026-09-05/' }
+    ]
+  },
+  {
+    slug: 'us-open-dag-sex-2026',
+    sport: 'Tennis · US Open',
+    title: 'Favoriterna höll när US Open gick in i nästa fas',
+    dek: 'Aryna Sabalenka, Jessica Pegula och Carlos Alcaraz var bland spelarna som tog sig vidare under US Opens sjätte tävlingsdag.',
+    date: '4 september 2026',
+    publishedAt: '2026-09-04T20:00:00Z',
+    lead: false,
+    facts: [
+      'Sabalenka och Pegula tog sig vidare på damsidan.',
+      'Alcaraz och Shelton fortsatte sina turneringar.',
+      'Resultaten förde turneringen närmare den avgörande andra veckan.'
+    ],
+    body: [
+      {
+        heading: 'Toppspelarna stod emot',
+        paragraphs: [
+          'När belastningen ökar i en Grand Slam blir förmågan att vinna utan onödig energiförbrukning viktig. Flera av de högst rankade spelarna klarade den uppgiften under dag sex.',
+          'Samtidigt blir marginalerna mindre för varje omgång och en svag start kan snabbt förändra en match.'
+        ]
+      },
+      {
+        heading: 'Andra veckan närmar sig',
+        paragraphs: [
+          'Nu blir återhämtning, serveprocent och förmågan att hantera pressade poäng allt mer avgörande. De kvarvarande spelarna har mindre utrymme för svackor.'
+        ]
+      }
+    ],
+    analysis: 'Avancemang säger inte allt om formen, men spelare som vinner kontrollerat bygger ett tydligt energiövertag. Det kan bli avgörande när matcherna blir längre och motståndet starkare.',
+    watch: ['Sabalenkas servenivå', 'Alcaraz belastning', 'Vilka spelare som når andra veckan med minst speltid'],
+    sources: [
+      { label: 'Reuters: US Open dag sex', url: 'https://www.reuters.com/sports/tennis/us-open-day-six-2026-09-04/' }
+    ]
+  }
+];
+
+export function isSportArticleFresh(article: SportArticle, now = Date.now()) {
+  const published = Date.parse(article.publishedAt);
+  const age = now - published;
+  return Number.isFinite(published) && age >= 0 && age <= SPORT_ARTICLE_MAX_AGE_MS;
+}
+
+export function getFreshSportArticles(now = Date.now()) {
+  return sportArticles
+    .filter(article => isSportArticleFresh(article, now))
+    .sort((a, b) => Date.parse(b.publishedAt) - Date.parse(a.publishedAt));
+}
+
+export const sportArticleBySlug: Record<string, SportArticle> = Object.fromEntries(
+  sportArticles.map(article => [article.slug, article])
+);
+
+export function getFreshSportArticleBySlug(slug: string, now = Date.now()) {
+  const article = sportArticleBySlug[slug];
+  return article && isSportArticleFresh(article, now) ? article : undefined;
+}
