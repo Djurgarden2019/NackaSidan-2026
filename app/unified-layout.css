@@ -160,3 +160,59 @@ main>.shell>section:first-child{padding-top:0}
   .shell{width:100%}
   main{padding-top:1.5rem}
 }
+
+
+/* Startsidan: visa en tydlig bild för samtliga sex huvudnyheter */
+.world-lead-media,
+.world-story-image{
+  display:block!important;
+  position:relative;
+  overflow:hidden;
+  background:#e7e1d6;
+  visibility:visible!important;
+  opacity:1!important;
+}
+.world-lead-media img,
+.world-story-image img{
+  display:block!important;
+  width:100%!important;
+  height:auto!important;
+  min-height:180px;
+  aspect-ratio:16/9;
+  object-fit:cover!important;
+  visibility:visible!important;
+  opacity:1!important;
+}
+.world-story-image{
+  margin:0 0 1rem!important;
+}
+.world-story-major{
+  display:block;
+}
+.world-story-major .world-story-image{
+  margin:0 0 1rem!important;
+}
+.world-story-major .world-story-image img{
+  height:auto!important;
+  min-height:260px;
+}
+.world-story-image span,
+.world-lead-media>span:not(.top-six-number){
+  display:block;
+  padding:.45rem 0 0;
+  font-size:.68rem;
+  line-height:1.35;
+  color:var(--muted);
+}
+.world-story-major .world-story-image span{
+  position:static;
+  left:auto;
+}
+@media(max-width:640px){
+  .world-lead-media img,
+  .world-story-image img,
+  .world-story-major .world-story-image img{
+    min-height:0;
+    aspect-ratio:16/10;
+  }
+}
