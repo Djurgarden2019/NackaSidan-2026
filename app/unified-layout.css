@@ -1,0 +1,162 @@
+/*
+ * NackaSidan – gemensamt redaktionellt layoutlager.
+ * Laddas sist och harmoniserar äldre avdelningsmallar utan att ändra innehållet.
+ */
+:root{
+  --paper:#f7f4ed;
+  --surface:#fffdf8;
+  --soft:#eee8dc;
+  --ink:#171717;
+  --muted:#625e57;
+  --red:#9f1d20;
+  --line:#d6d0c5;
+  --content:1180px;
+  --reading:780px;
+  --space-section:clamp(3rem,6vw,5.5rem);
+  --radius:2px;
+}
+
+body{font-size:16px;line-height:1.65;overflow-wrap:break-word}
+.shell{width:min(var(--content),calc(100% - 3rem))}
+main{padding:clamp(2.5rem,5vw,4.5rem) 0 clamp(4rem,8vw,7rem)}
+main>section:first-child,
+main>.shell>section:first-child{padding-top:0}
+
+.site-header{padding:1.35rem 0 1.1rem;background:var(--paper)}
+.masthead{align-items:center}
+.brand{font-size:clamp(3rem,6vw,5rem);line-height:.88}
+.brand span{font-size:.66rem;line-height:1.35;letter-spacing:.2em}
+.nav{
+  position:sticky;
+  top:0;
+  z-index:100;
+  gap:clamp(.9rem,2vw,1.65rem);
+  padding:.85rem max(1.5rem,calc((100vw - var(--content))/2));
+  background:rgba(247,244,237,.96);
+  backdrop-filter:blur(10px);
+  -webkit-backdrop-filter:blur(10px);
+}
+.nav a{padding:.25rem 0;white-space:nowrap}
+
+.page-hero,.topic-page-hero,.topic-hero,.culture-head,.sport-desk-head,.weekend-head{
+  padding-top:clamp(1rem,3vw,2.5rem);
+}
+.page-hero{max-width:var(--content);text-align:left}
+.page-hero h1,.topic-page-hero h1,.topic-hero h1,
+.culture-head h1,.sport-desk-head h1,.weekend-head h1{
+  font-size:clamp(3rem,8vw,6.5rem);
+  line-height:.92;
+  letter-spacing:-.055em;
+  text-wrap:balance;
+}
+.page-hero p,.topic-page-hero p,.topic-hero p{max-width:760px}
+
+.section,.culture-shelf,.weekend-cover,.world-grid-section,
+.world-analysis,.world-live,.world-focus{
+  padding-block:var(--space-section);
+}
+.section-heading,.world-section-head,.culture-shelf-head{
+  padding-bottom:1rem;
+  margin-bottom:1.75rem;
+  border-bottom:4px solid var(--ink);
+}
+.section-heading h2,.world-section-head h2,.culture-shelf-head h2,
+.display-heading{
+  font-size:clamp(2.25rem,4vw,3.75rem);
+  line-height:1;
+  text-wrap:balance;
+}
+
+.grid-2,.grid-3,.feature-grid,.world-story-grid,.world-analysis-grid,
+.culture-shelf-grid,.sport-news-grid,.weekend-grid,.topic-article-grid{
+  gap:clamp(1.5rem,3vw,2.5rem);
+}
+.card,.feature-card,.world-story,.world-analysis-card,.culture-item,
+.sport-card,.weekend-card,.topic-article-grid article{
+  min-width:0;
+}
+.card h3,.feature-card h3,.world-story h3,.world-analysis-card h3,
+.culture-item h3,.sport-card h3,.weekend-card h2{
+  font-size:clamp(1.45rem,2.2vw,2rem);
+  line-height:1.12;
+  text-wrap:balance;
+}
+.card p,.feature-card p,.world-story p,.world-analysis-card p,
+.culture-item p,.sport-card p,.weekend-card p{color:#4e4942}
+.card img,.feature-card img,.world-story img,.culture-item img,
+.sport-card img,.topic-article-grid img{
+  width:100%;
+  aspect-ratio:16/9;
+  object-fit:cover;
+}
+.kicker,.meta,.story-update{font-variant-numeric:tabular-nums}
+
+.article,.article-premium{width:min(var(--reading),100%);max-width:var(--reading)}
+.article h1{font-size:clamp(2.8rem,6vw,5rem);text-wrap:balance}
+.article .intro{font-size:clamp(1.2rem,2vw,1.4rem);line-height:1.55}
+.article p{font-size:1.125rem;line-height:1.78}
+.article h2{font-size:clamp(1.8rem,3vw,2.35rem);line-height:1.12}
+.article-hero-image{width:min(1000px,calc(100vw - 3rem));margin-left:50%;transform:translateX(-50%)}
+.analysis-box,.editorial-analysis,.facts-panel,.consequence-panel,
+.knowledge-card,.factbox,.sport-deep-dive{
+  border-radius:var(--radius);
+  box-shadow:0 1px 0 rgba(23,23,23,.06);
+}
+.source-panel a,.sport-article-sources a,.current-desk-sources a{
+  text-decoration:underline;
+  text-decoration-color:rgba(159,29,32,.45);
+  text-underline-offset:3px;
+}
+
+.current-desk-update{
+  margin-top:var(--space-section);
+  padding:var(--space-section) 1.5rem;
+  background:var(--soft);
+  border-top:1px solid var(--line);
+  border-bottom:0;
+}
+.current-desk-inner{max-width:var(--content)}
+.current-desk-update h2{font-size:clamp(2rem,4vw,3.25rem)}
+.current-desk-grid{gap:clamp(2rem,5vw,4rem)}
+
+.footer{background:#eee8dc;padding:3.5rem 0 2rem}
+.footer-premium{gap:clamp(2rem,5vw,4rem)}
+.footer a{padding-block:.1rem}
+.footer a:hover,.footer a:focus-visible,.nav a:hover,.nav a:focus-visible{color:var(--red)}
+
+@media(max-width:900px){
+  .shell{width:min(100% - 2rem,var(--content))}
+  .masthead{grid-template-columns:1fr;gap:.6rem}
+  .brand{order:-1}
+  .issue,.tools{text-align:center}
+  .nav{justify-content:flex-start;flex-wrap:nowrap;overflow-x:auto;scrollbar-width:thin}
+  .hero,.hero-sprint2,.topic-hero,.topic-layout,.weekend-head,.weekend-cover,
+  .culture-debate-promo,.sport-lead,.sport-analysis-strip{grid-template-columns:1fr}
+  .grid-3,.feature-grid,.world-story-grid,.culture-shelf-grid,.sport-news-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+}
+
+@media(max-width:640px){
+  .shell{width:min(100% - 1.5rem,var(--content))}
+  main{padding-top:2rem}
+  .site-header{padding:1rem 0 .8rem}
+  .brand{font-size:2.8rem}
+  .issue{order:2}
+  .tools{order:3}
+  .nav{padding:.75rem;gap:1.1rem}
+  .page-hero h1,.topic-page-hero h1,.topic-hero h1,
+  .culture-head h1,.sport-desk-head h1,.weekend-head h1{font-size:clamp(2.8rem,15vw,4.4rem)}
+  .grid-2,.grid-3,.feature-grid,.world-story-grid,.world-analysis-grid,
+  .culture-shelf-grid,.sport-news-grid,.weekend-grid,.topic-article-grid,
+  .current-desk-grid{grid-template-columns:1fr}
+  .article-hero-image{width:calc(100vw - 1.5rem)}
+  .article p{font-size:1.0625rem}
+  .section-heading,.world-section-head,.culture-shelf-head{display:block}
+  .current-desk-update{padding-inline:.75rem}
+}
+
+@media print{
+  .nav,.tools,.skip-link,.article-actions{display:none!important}
+  body{background:#fff}
+  .shell{width:100%}
+  main{padding-top:1.5rem}
+}
