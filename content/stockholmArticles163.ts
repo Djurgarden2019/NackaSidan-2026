@@ -42,7 +42,7 @@ export const stockholmArticles163: Article[] = [
     publishedAt:'2026-09-07T11:21:00+02:00',
     updatedAt:'2026-09-07T11:21:00+02:00',
     status:'published',
-    homepage:{role:'secondary',order:1},
+    homepage:{role:'feature',order:1},
     teaserTitle:'21-åring driver verkstad i Vasastan',
     teaserSummary:'Självlärd via Youtube och forum – nu vill Mateusz inspirera fler unga företagare.',
     readingTime:'6 min',
