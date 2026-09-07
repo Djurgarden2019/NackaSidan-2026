@@ -27,7 +27,7 @@ export const stockholmArticles163: Article[] = [
     facts:['Riksbyggens minilägenhet är en illustration av ungas köpkraft.','Kommunen styr planläggning och markanvisningar.','Kreditregler och skatter beslutas huvudsakligen nationellt.'],
     analysis:'Stockholms bostadsproblem är inte bara brist på bostäder utan en brist på bostäder som unga faktiskt kan efterfråga med sin inkomst och sitt kapital.',
     consequences:['Fler unga bor kvar hemma längre.','Rörligheten till arbete och studier försämras.','Föräldrarnas ekonomi får större betydelse för etableringen.'],
-    sources:[{label:'SVT Stockholm: Så vill politikerna lösa bostadskrisen för unga',url:'https://www.svt.se/nyheter/lokalt/stockholm/sa-vill-politikerna-i-stockholm-losa-bostadskrisen-for-unga',type:'Originalkälla'}],
+    sources:[{label:'SVT Stockholm: Så vill politikerna lösa bostadskrisen för unga',url:'https://www.svt.se/nyheter/lokalt/stockholm/sa-vill-politikerna-i-stockholm-losa-bostadskrisen-for-unga',type:'Redaktionell källa'}],
     tags:['Stockholm','Bostäder','Unga','Val 2026','Stadsutveckling'],
     related:[]
   },
@@ -55,7 +55,7 @@ export const stockholmArticles163: Article[] = [
     facts:['Mateusz Maciaszczyk är 21 år.','Han började med att reparera en trasig moped.','Han driver nu egen bilverkstad i Vasastan.'],
     analysis:'Självlärande kan bredda rekryteringen till bristyrken, men behöver kombineras med kvalitetssäkring och säkra arbetsmetoder.',
     consequences:['Fler unga kan hitta alternativa vägar till yrken.','Små företags tillgång till lokaler blir viktig.','Validering av praktisk kompetens behöver utvecklas.'],
-    sources:[{label:'SVT Stockholm: Mateusz driver egen bilverkstad',url:'https://www.svt.se/nyheter/lokalt/stockholm/mateusz-21-driver-egen-bilverkstad-larde-sig-via-youtube',type:'Originalkälla'}],
+    sources:[{label:'SVT Stockholm: Mateusz driver egen bilverkstad',url:'https://www.svt.se/nyheter/lokalt/stockholm/mateusz-21-driver-egen-bilverkstad-larde-sig-via-youtube',type:'Redaktionell källa'}],
     tags:['Stockholm','Vasastan','Näringsliv','Unga','Yrkesutbildning'],
     related:[]
   },
