@@ -33,7 +33,8 @@ export default function SportPage() {
       <div className="shell sport-desk">
         <header className="sport-desk-head">
           <div>
-            <div className="kicker">Sport · Uppdaterad {updatedLabel(now)}</div>
+            <div className="kicker">Uppdaterad {updatedLabel(now)}</div>
+            <h1>Sport</h1>
             <p className="lead">Verifierade sportnyheter från de senaste {SPORT_ARTICLE_MAX_AGE_HOURS} timmarna.</p>
           </div>
           <nav aria-label="Sportområden">
