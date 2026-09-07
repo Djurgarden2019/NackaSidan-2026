@@ -216,3 +216,26 @@ main>.shell>section:first-child{padding-top:0}
     aspect-ratio:16/10;
   }
 }
+
+
+/* Enhetlig avdelningsstart: Sport och Helg */
+.sport-desk-head{
+  align-items:flex-end;
+  padding-top:.5rem;
+  padding-bottom:2rem;
+  margin-bottom:2.5rem;
+  border-bottom:4px solid var(--ink);
+}
+.sport-desk-head h1{
+  margin:.1rem 0 .6rem;
+}
+.sport-desk-head .lead{max-width:680px;margin-bottom:0}
+.sport-desk-head nav{display:flex;flex-wrap:wrap;justify-content:flex-end;gap:.6rem 1.1rem}
+.sport-results,.sport-agenda,.sport-lead,.sport-news,.sport-sources{margin-top:var(--space-section)}
+.sport-score-grid article,.sport-card{height:100%}
+.weekend-head{padding-top:.25rem}
+.weekend-head h1{margin:.05rem 0 .6rem}
+@media(max-width:900px){
+  .sport-desk-head{align-items:start}
+  .sport-desk-head nav{justify-content:flex-start}
+}
