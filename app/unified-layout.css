@@ -255,3 +255,25 @@ main>.shell>section:first-child{padding-top:0}
 }
 .nav .nav-helg:hover,.nav .nav-helg:focus-visible{color:#fff;background:#741416}
 @media(max-width:640px){.nav .nav-helg{font-size:1.15rem}}
+
+/* Sport: gemensamt redaktionellt rutnät */
+.sport-panel{padding:clamp(2.5rem,5vw,4.5rem) 0;border-top:1px solid var(--line)}
+.sport-section-title{display:flex;align-items:end;justify-content:space-between;gap:1rem;margin-bottom:1.5rem;padding-bottom:1rem;border-bottom:4px solid var(--ink)}
+.sport-section-title h2,.sport-agenda h2,.sport-sources h2{margin:.25rem 0 0;font-size:clamp(2rem,4vw,3.4rem);line-height:1}
+.sport-news-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr))}
+.sport-card{display:flex;flex-direction:column;padding:1.4rem;border:1px solid var(--line);background:var(--surface)}
+.sport-card h3{margin:.55rem 0 .75rem}
+.sport-card-fact{margin-top:auto;padding-top:1rem;border-top:1px solid var(--line)}
+.sport-card-footer{display:flex;align-items:center;justify-content:space-between;gap:1rem;margin-top:1rem;font-size:.82rem;color:var(--muted)}
+.sport-lead{margin-top:2rem;padding:clamp(2rem,4vw,3.5rem) 0;border-bottom:1px solid var(--line)}
+.sport-lead-facts{display:grid;gap:.5rem;margin:1.5rem 0}
+.sport-lead-facts p{margin:0;padding:.7rem 0;border-top:1px solid var(--line)}
+.sport-score-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1rem}
+.sport-score-grid article{padding:1.25rem;border:1px solid var(--line);background:var(--surface)}
+.sport-score-grid article>strong{display:block;margin:.45rem 0;font-family:Georgia,serif;font-size:1.6rem}
+.sport-agenda{display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr);gap:clamp(2rem,5vw,4rem)}
+.sport-agenda ul{margin:0;padding:0;list-style:none}
+.sport-agenda li{display:grid;grid-template-columns:7rem 1fr;gap:1rem;padding:.8rem 0;border-top:1px solid var(--line)}
+.sport-standard-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1rem}
+.sport-standard-grid p{margin:0;padding:1rem;border:1px solid var(--line);background:var(--surface)}
+@media(max-width:800px){.sport-news-grid,.sport-score-grid,.sport-agenda,.sport-standard-grid{grid-template-columns:1fr}.sport-agenda li{grid-template-columns:6.5rem 1fr}}
