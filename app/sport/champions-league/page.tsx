@@ -42,7 +42,7 @@ const rounds:Round[]=raw.map(([name,days])=>({name,days:days.map(([date,list])=>
 export default function ChampionsLeaguePage(){
  return <main><div className="shell" style={{maxWidth:1120,paddingBottom:80}}>
   <header style={{padding:'44px 0 28px',borderBottom:'1px solid #d8d2c7'}}>
-   <div className="kicker">Sport · Champions League · Uppdaterad 1 september 2026</div>
+   <div className="kicker">Sport · Champions League · Uppdaterad 7 september 2026</div>
    <h1 style={{fontSize:'clamp(2.5rem,6vw,5.5rem)',lineHeight:.95,margin:'14px 0 20px'}}>Champions League 2026/27 – hela spelschemat</h1>
    <p className="lead" style={{maxWidth:820}}>Här finns samtliga 144 matcher i ligafasen, sorterade efter omgång och speldag. Ligafasen spelas från 8 september 2026 till 27 januari 2027.</p>
    <p><strong>Tider:</strong> Alla avsparkstider anges i svensk tid. Matchtider och datum kan ändras av UEFA.</p>
