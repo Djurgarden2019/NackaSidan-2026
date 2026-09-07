@@ -239,3 +239,19 @@ main>.shell>section:first-child{padding-top:0}
   .sport-desk-head{align-items:start}
   .sport-desk-head nav{justify-content:flex-start}
 }
+
+/* Helg ska vara ett tydligt eget magasin i huvudmenyn */
+.nav .nav-helg{
+  margin-left:.25rem;
+  padding:.32rem .72rem;
+  color:#fff;
+  background:var(--red);
+  font-family:Georgia,serif;
+  font-size:1.25rem;
+  font-weight:700;
+  line-height:1;
+  letter-spacing:.01em;
+  text-transform:none;
+}
+.nav .nav-helg:hover,.nav .nav-helg:focus-visible{color:#fff;background:#741416}
+@media(max-width:640px){.nav .nav-helg{font-size:1.15rem}}
