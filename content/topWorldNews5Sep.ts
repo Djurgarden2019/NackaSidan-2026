@@ -5,124 +5,52 @@ export type TopWorldArticle={
 
 export const topWorldNews5Sep:TopWorldArticle[]=[
 {
- slug:'ukraina-fredsresor-sakerhetskrav',section:'Ukraina · Diplomati',title:'USA:s planerade fredsresor osäkra efter nya säkerhetskrav',summary:'Washington söker garantier inför möjliga besök i Moskva och Kyiv samtidigt som attackerna fortsätter och parterna står långt ifrån varandra.',
- image:'https://commons.wikimedia.org/wiki/Special:FilePath/Flag%20of%20Ukraine.svg?width=1200',imageCredit:'Ukrainas flagga · Wikimedia Commons',
- news:[
-  'Planerade resor av de amerikanska sändebuden Steve Witkoff och Jared Kushner till Moskva och Kyiv är fortfarande osäkra. Enligt Reuters försöker USA få säkerhetsgarantier från både Ryssland och Ukraina innan besöken kan genomföras.',
-  'Säkerhetsfrågan har blivit central efter intensifierade flyganfall. USA vill enligt uppgifterna minska risken för attacker mot de städer där sändebuden befinner sig. Någon överenskommelse om skyddet har ännu inte bekräftats.',
-  'De politiska avstånden är fortsatt stora. Ryssland kräver territoriella eftergifter och att Ukraina avstår från Natoambitioner. Kyiv beskriver sådana krav som kapitulation och kräver trovärdiga säkerhetsgarantier.'
- ],
- analysis:[
-  'Att resorna diskuteras visar att en diplomatisk kanal fortfarande existerar. Men behovet av särskilda säkerhetsarrangemang visar samtidigt hur skör processen är. Ett tillfälligt uppehåll kring ett besök är inte detsamma som en vapenvila.',
-  'USA försöker förena två roller: militär och ekonomisk stödgivare till Ukraina samt möjlig medlare. Det skapar en svår trovärdighetsfråga. Moskva vill påverka villkoren för samtalen, medan Kyiv behöver undvika att beslut fattas över Ukrainas huvud.',
-  'För Europa är processen avgörande eftersom ett avtal skulle påverka sanktioner, försvarsutgifter, flyktingpolitik och Ukrainas framtida relation till EU. Ett snabbt avtal utan kontrollmekanismer kan frysa konflikten snarare än lösa den.'
- ],
- depth:[
-  'De svåraste förhandlingsfrågorna gäller territoriell kontroll, framtida säkerhetsgarantier, sanktionernas avveckling och hur ett eldupphör ska övervakas. Varje del kräver detaljer som kan ta lång tid att förhandla.',
-  'Rysslands och Ukrainas militära bedömningar påverkar viljan att kompromissa. Om någon sida tror att tiden förbättrar dess position minskar incitamentet att göra eftergifter nu.',
-  'Det viktigaste att följa är därför inte bara om resorna blir av, utan om de leder till en gemensam dagordning, direkta kontakter och verifierbara steg som minskar våldet.'
- ],
- sources:[{label:'Reuters – US seeks security assurances before envoys visit',url:'https://www.reuters.com/world/europe/trump-envoys-visit-russia-ukraine-weekend-tass-reports-2026-09-04/'}]
+ slug:'israel-anfall-sodra-libanon',section:'Mellanöstern · Libanon',title:'Elva döda efter israeliska anfall i södra Libanon',summary:'Två barn och två sjukvårdare finns enligt Libanons statliga nyhetsbyrå bland de döda. Risken ökar för en ny spiral av vedergällningar.',
+ image:'https://upload.wikimedia.org/wikipedia/commons/thumb/5/59/Beirut_skyline%2C_Lebanon.jpg/1280px-Beirut_skyline%2C_Lebanon.jpg',imageCredit:'Beirut, Libanon · Wikimedia Commons',
+ news:['Israeliska anfall mot Kfar Rumman i södra Libanon har enligt landets statliga nyhetsbyrå dödat minst elva människor. Nio uppges ha dödats när ett bostadshus bombades och två sjukvårdare i ett separat drönaranfall mot ett fordon.','Israels militär hade när Reuters publicerade uppgifterna inte kommenterat målen eller uppgifterna om civila offer. Uppgifterna om antal döda kommer därför i detta skede från libanesiska myndigheter.'],
+ analysis:['Anfallen ökar risken för nya attacker från Hizbollah och pressar den sköra vapenvilan. För Libanon förvärras en redan djup ekonomisk och humanitär kris.','Israels mål är att minska den militära hotbilden nära gränsen, men höga civila kostnader kan samtidigt undergräva internationellt stöd och stärka viljan till vedergällning.'],
+ depth:['Det viktigaste att följa är om Hizbollah svarar, om den libanesiska staten kan agera och om internationella medlare kan återupprätta en trovärdig övervakning.','Dödstal och ansvarspåståenden kan förändras när räddningsarbete och oberoende verifiering fortsätter.'],
+ sources:[{label:'Reuters – Israeli strikes on southern Lebanese town kill 11',url:'https://www.reuters.com/world/middle-east/israeli-strikes-southern-lebanese-town-kill-11-state-news-agency-says-2026-09-07/'}]
 },
 {
- slug:'who-lager-attack-kyiv',section:'Ukraina · Humanitärt',title:'WHO-lager med medicinsk utrustning träffat i Kyivregionen',summary:'Ett lager med humanitära sjukvårdsförnödenheter har träffats i ett nattligt anfall. Ingen WHO-personal uppges ha skadats.',
- image:'https://images.unsplash.com/photo-1584036561566-baf8f5f1b144?auto=format&fit=crop&w=1400&q=82',imageCredit:'Medicinsk beredskap · Unsplash',
- news:[
-  'Ett lager som Världshälsoorganisationen använder för humanitära sjukvårdsförnödenheter träffades i ett nattligt flyganfall i Kyivregionen. WHO uppger att ingen i organisationens personal skadades.',
-  'Tillträdet till platsen har begränsats på grund av rök och säkerhetsrisker. Skadornas omfattning utreds och WHO har identifierat alternativa lagerplatser för att försöka hålla verksamheten igång.',
-  'Det är inte den första attacken mot medicinska lager under 2026. Ett tidigare anfall i Dnipro förstörde enligt WHO omkring hälften av förnödenheter avsedda för cirka 225 000 människor.'
- ],
- analysis:[
-  'Ett angrepp mot ett lager får konsekvenser långt från själva nedslagsplatsen. När förbrukningsvaror, läkemedel och utrustning förstörs påverkas sjukhus och patienter som redan arbetar under krigets kapacitetsbrist.',
-  'Även om alternativa lokaler finns tar omlastning, kontroll och distribution tid. Försörjningskedjan blir dyrare och mer sårbar när lager måste spridas och transporter omdirigeras.',
-  'Händelsen förstärker behovet av dokumentation och oberoende granskning. Ansvar kan bara bedömas när plats, målval, vapen och omständigheter har utretts.'
- ],
- depth:[
-  'Humanitär logistik bygger normalt på stora nav där material kan sorteras och skickas vidare. I ett krig blir samma effektivitet en sårbarhet eftersom ett enda anfall kan slå ut stora volymer.',
-  'Motåtgärderna är mindre och geografiskt spridda lager, reservlager och flera transportvägar. Det ökar motståndskraften men också kostnaderna och kraven på samordning.',
-  'Det centrala framåt är hur snabbt lagret kan ersättas och om vårdinrättningar får brist på särskilda varor. WHO:s fortsatta skadebedömning blir därför viktigare än tidiga uppskattningar.'
- ],
- sources:[{label:'Reuters – WHO medical warehouse attacked in Kyiv region',url:'https://www.reuters.com/world/who-warehouse-storing-medical-supplies-attacked-overnight-kyiv-region-who-says-2026-09-04/'}]
+ slug:'nordkorea-ryssland-vagbro',section:'Asien · Säkerhet',title:'Nordkorea och Ryssland öppnar sin första vägförbindelse',summary:'Den nya bron över Tumenfloden kompletterar järnvägen och blir en symbol för de snabbt växande banden mellan Moskva och Pyongyang.',
+ image:'https://upload.wikimedia.org/wikipedia/commons/thumb/5/51/Tumen_River_between_Russia_and_North_Korea.jpg/1280px-Tumen_River_between_Russia_and_North_Korea.jpg',imageCredit:'Tumenfloden · Wikimedia Commons',
+ news:['Nordkorea och Ryssland har öppnat sin första landsvägsbro över Tumenfloden, enligt den ryska nyhetsbyrån Tass. Sedan 1959 har länderna haft en järnvägsförbindelse över samma gränsområde.','Bygget inleddes efter Vladimir Putins besök i Nordkorea 2024 och ska enligt länderna stärka handel, turism och tekniskt samarbete.'],
+ analysis:['Bron gör transporter mindre beroende av järnväg och sjöfart och kan därför få både ekonomisk och militär betydelse.','För omvärlden blir frågan om förbindelsen används för flöden som omfattas av internationella sanktioner. Infrastrukturens kapacitet och faktiska trafik blir viktigare än invigningens symbolik.'],
+ depth:['Ryssland behöver arbetskraft, materiel och politiska partners. Nordkorea behöver energi, livsmedel, valuta och teknik. Det skapar ett ömsesidigt men ojämnt beroende.','Den nya vägen bör följas tillsammans med truppsamarbete, vapenleveranser och förändringar i gränskontrollen.'],
+ sources:[{label:'Reuters – North Korea and Russia open first road bridge',url:'https://www.reuters.com/world/asia-pacific/north-korea-russia-open-their-first-road-bridge-symbol-expanding-ties-tass-2026-09-07/'}]
 },
 {
- slug:'sydney-extremvarme-brandrisk',section:'Australien · Klimat',title:'Extrem vårvärme ger hög brandrisk kring Sydney',summary:'Temperaturen steg till omkring 33 grader, nära 13 grader över septembernormalen, och myndigheterna införde totalt eldningsförbud.',
- image:'https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Sydney_Opera_House_and_Harbour_Bridge_Dusk_%282%29_2019-06-21.jpg/1280px-Sydney_Opera_House_and_Harbour_Bridge_Dusk_%282%29_2019-06-21.jpg',imageCredit:'Sydney · Wikimedia Commons',
- news:[
-  'Sydney har drabbats av en ovanligt varm vårdag med temperaturer omkring 33 grader, nära 13 grader över genomsnittet för september. Vid flygplatsen hade temperaturen redan nått 28,6 grader före middagstid.',
-  'Starka nordvästliga vindar, torka och hög temperatur fick vädertjänsten att varna för extrem brandrisk i Greater Sydney. Delstatens räddningstjänst införde totalt eldningsförbud.',
-  'Värmen kopplas till ett kraftigt El Niño-mönster i Stilla havet. Australien har redan erfarenhet av omfattande bränder som förstört bostäder, slagit ut el och bränt stora naturområden.'
- ],
- analysis:[
-  'Brandrisk avgörs inte av temperatur ensam. Vind, luftfuktighet, vegetationens torrhet och hur människor använder eld avgör hur snabbt en brand kan starta och spridas.',
-  'El Niño är ett naturligt återkommande fenomen, men ett varmare klimat höjer utgångsnivån. Det kan göra extrema temperaturer och brandväder vanligare eller intensivare.',
-  'Konsekvenserna omfattar mer än brända områden. Rök påverkar folkhälsan, försäkringskostnader ökar och elnät, vägar samt räddningstjänst utsätts för större belastning.'
- ],
- depth:[
-  'Australiens erfarenhet visar att förebyggande arbete måste ske före branddagen. Vegetationshantering, byggnormer, varningssystem och evakueringsvägar avgör hur stora skadorna blir.',
-  'Snabba väderförändringar gör prognoser osäkra på lokal nivå. Vindriktningen kan på kort tid ändra vilka samhällen som hotas, vilket kräver tydlig och mobil information.',
-  'Händelsen är också relevant för Europa. Sverige har andra förhållanden, men längre torrperioder och högre temperaturer ökar behovet av lokal brandberedskap även här.'
- ],
- sources:[{label:'Reuters – Sydney faces extreme bushfire risk',url:'https://www.reuters.com/business/environment/sydney-sweats-spring-hot-spell-faces-extreme-bushfire-risk-2026-09-05/'}]
+ slug:'fn-varnar-ai-risk',section:'AI · Mänskliga rättigheter',title:'FN:s människorättschef varnar för existentiella AI-risker',summary:'Volker Türk efterlyser internationella säkerhetsregler och varnar för att makten över avancerad AI koncentreras till ett fåtal företag och personer.',
+ image:'https://upload.wikimedia.org/wikipedia/commons/thumb/5/52/Palais_des_Nations_Geneva_2018.jpg/1280px-Palais_des_Nations_Geneva_2018.jpg',imageCredit:'FN-palatset i Genève · Wikimedia Commons',
+ news:['FN:s människorättschef Volker Türk varnar för att avancerad artificiell intelligens kan medföra mycket allvarliga risker om styrning och säkerhet inte utvecklas i samma takt.','Han efterlyser gemensamma internationella röda linjer och skydd för mänskliga rättigheter när allt mer kraftfulla system utvecklas av ett begränsat antal företag.'],
+ analysis:['Varningen handlar både om framtida extrema risker och om dagens problem: diskriminering, övervakning, desinformation och koncentrerad ekonomisk makt.','Internationella regler kan skapa minimikrav, men de måste vara möjliga att kontrollera. Annars riskerar överenskommelser att bli principförklaringar utan praktisk betydelse.'],
+ depth:['De mest användbara åtgärderna är oberoende tester, incidentrapportering, tydligt ansvar och möjlighet att stoppa system med stora konsekvenser.','Samtidigt måste regler utformas så att mindre företag och offentlig forskning inte slås ut av kostnader som bara de största aktörerna klarar.'],
+ sources:[{label:'Reuters – UN rights chief warns about AI risks',url:'https://www.reuters.com/technology/ai-could-pose-existential-risk-humanity-un-rights-chief-warns-2026-09-07/'}]
 },
 {
- slug:'usa-jobbrapport-fed-ranta',section:'USA · Ekonomi',title:'Starka jobbsiffror ökar sannolikheten för amerikansk räntehöjning',summary:'USA skapade 162 000 jobb i augusti medan arbetslösheten låg kvar på 4,1 procent. Nu riktas blickarna mot nästa veckas inflationstal.',
- image:'https://images.unsplash.com/photo-1529107386315-e1a2ed48a620?auto=format&fit=crop&w=1400&q=82',imageCredit:'Washington · Unsplash',
- news:[
-  'Den amerikanska ekonomin skapade 162 000 jobb i augusti, betydligt fler än väntat. Arbetslösheten låg kvar på 4,1 procent och deltagandet i arbetskraften steg till 61,6 procent.',
-  'Rapporten har ökat marknadens förväntningar på att Federal Reserve kan höja räntan vid mötet den 15–16 september. Inflationstakten ligger fortfarande över centralbankens mål på 2 procent.',
-  'Nästa veckas konsument- och producentpriser blir därför avgörande. En fortsatt avmattning i inflationen kan tala för oförändrad ränta, medan nya prisöverraskningar stärker argumentet för en höjning.'
- ],
- analysis:[
-  'Jobbrapporten minskar risken för en omedelbar recession men försvårar centralbankens balansgång. Stark efterfrågan på arbetskraft kan hålla löner och tjänstepriser uppe.',
-  'Räntan påverkas inte bara av hur många jobb som skapas utan också av löneökningar, produktivitet och hur många som söker arbete. Ett högre arbetskraftsdeltagande kan öka utbudet utan samma inflationstryck.',
-  'För Sverige spelar USA stor roll genom dollarn och de globala kapitalmarknaderna. Högre amerikanska räntor kan pressa kronan, höja obligationsräntor och sänka värderingen på räntekänsliga aktier.'
- ],
- depth:[
-  'En månads jobbsiffra revideras ofta i efterhand. Därför bör utvecklingen bedömas över flera månader och tillsammans med arbetade timmar, lediga platser och arbetslöshetsansökningar.',
-  'Federal Reserve möter också politiskt tryck på lägre räntor. Centralbankens trovärdighet beror på att beslut kan förklaras med data och inflationsmålet, inte med önskemål från regeringen.',
-  'Det viktigaste scenariot för världsekonomin är om USA kan bromsa inflationen utan att stoppa tillväxten. En mjuk landning skulle stödja export och marknader; nya höjningar ökar risken för senare inbromsning.'
- ],
- sources:[{label:'Reuters – Strong job gains put Fed hike back in focus',url:'https://www.reuters.com/business/fed-rate-hike-back-focus-after-strong-jobs-report-2026-09-04/'}]
+ slug:'brandrok-luftkvalitet-wmo',section:'Klimat · Hälsa',title:'WMO: Bränder och värme hotar luftkvaliteten',summary:'Rök och marknära ozon kan spridas långt från extrema bränder. Klimatförändringen riskerar därmed att bromsa förbättringar av luftkvaliteten.',
+ image:'https://upload.wikimedia.org/wikipedia/commons/thumb/9/92/Wildfire_smoke_over_city.jpg/1280px-Wildfire_smoke_over_city.jpg',imageCredit:'Brandrök över bebyggelse · Wikimedia Commons',
+ news:['Världsmeteorologiska organisationen varnar för att värmeböljor och skogsbränder gör luftföroreningar till ett växande gränsöverskridande problem.','Särskilt små partiklar och marknära ozon kan bidra till hjärt- och lungsjukdomar även långt från själva brandplatsen.'],
+ analysis:['Klimat och luftföroreningar förstärker varandra. Värme ökar brandrisken, medan rök belastar sjukvård, arbetsliv och skolor.','Det gör tidiga varningar, mätningar och information till riskgrupper lika viktiga som själva brandbekämpningen.'],
+ depth:['På lång sikt krävs både lägre utsläpp och robustare samhällen. Renare inomhusluft, reservkraft och lokala beredskapsplaner kan minska skadorna.','Lokala prognoser måste uppdateras ofta eftersom vind och nederbörd snabbt förändrar exponeringen.'],
+ sources:[{label:'Reuters – Wildfires and heat threaten air quality',url:'https://www.reuters.com/sustainability/cop/wildfires-heat-waves-threaten-undermine-air-quality-un-weather-agency-says-2026-09-07/'}]
 },
 {
- slug:'stillahavslander-kina-robotprov',section:'Stilla havet · Kina',title:'Stillahavsländer kräver förvarning efter Kinas robotprov',summary:'Regionala ledare uttrycker oro efter att en kinesisk interkontinental robot flög över flera önationer utan förhandsbesked.',
- image:'https://upload.wikimedia.org/wikipedia/commons/c/c4/Pacific_Ocean_laea_relief_location_map.jpg',imageCredit:'Stilla havet · Wikimedia Commons',
- news:[
-  'Ledarna vid Pacific Islands Forum har ställt sig bakom oro över Kinas interkontinentala robotprov i juli. Roboten flög över flera önationer utan förvarning.',
-  'Forumets majoritet efterlyser tydligare kommunikation och minst 24 timmars förhandsbesked inför framtida prov. Nauru reserverade sig mot formuleringen.',
-  'Mötet präglades också av spänningar om Taiwans deltagande. Kina motsatte sig närvaron, medan Taiwan anklagade Peking för påtryckningar och aggressiv diplomati.'
- ],
- analysis:[
-  'Små önationer har begränsad militär makt men stor strategisk betydelse. Deras havsområden, flygvägar och diplomatiska röster gör dem centrala i konkurrensen mellan Kina, USA, Australien och Taiwan.',
-  'Kravet på förvarning är både en säkerhetsfråga och ett krav på respekt. Ett prov kan skapa risk för flyg och sjöfart även om det inte är riktat mot öarna.',
-  'Naurus avvikande linje visar hur Kinas ekonomiska och diplomatiska relationer påverkar regional enighet. Forumets styrka beror på om medlemsländerna kan enas trots olika partnerskap.'
- ],
- depth:[
-  'Stilla havet har blivit en arena för konkurrens om hamnar, telekommunikation, bistånd och säkerhetsavtal. Länderna försöker samtidigt undvika att reduceras till brickor i stormakternas strategi.',
-  'Taiwanfrågan skär genom samarbetet eftersom vissa stater erkänner Taipei och andra Peking. Byte av diplomatiskt erkännande kan förändra röster i internationella organisationer.',
-  'Det viktiga framåt är om Kina accepterar rutiner för förvarning och om regionen utvecklar gemensam övervakning. Transparens minskar risken för missförstånd även när den strategiska konkurrensen fortsätter.'
- ],
- sources:[{label:'Reuters – Pacific summit backs concerns over China missile test',url:'https://www.reuters.com/world/china/pacific-summit-backs-concerns-over-china-missile-test-despite-nauru-dissent-2026-09-04/'}]
+ slug:'taiwan-chipdiplomati',section:'Teknik · Taiwan',title:'Taiwan använder chipindustrin som diplomatisk hävstång',summary:'Taiwan söker fler internationella partnerskap samtidigt som USA och EU vill få en större del av den strategiska halvledarproduktionen.',
+ image:'https://upload.wikimedia.org/wikipedia/commons/thumb/6/6b/Semiconductor_wafer.jpg/1280px-Semiconductor_wafer.jpg',imageCredit:'Halvledarskiva · Wikimedia Commons',
+ news:['Taiwan lyfter fram sin halvledarindustri som grund för internationella partnerskap. TSMC:s investeringar i USA är en central del av utvecklingen, samtidigt som EU försöker locka taiwanesiska projekt.','Bakgrunden är den växande efterfrågan på AI-chip och trycket att sprida produktionen geografiskt.'],
+ analysis:['Taiwan kan använda sin tekniska betydelse för att bygga politiska relationer, men möter samtidigt krav på att flytta kompetens och kapacitet utomlands.','En bredare produktion minskar vissa försörjningsrisker men kan på sikt försvaga det industriella kluster som gjort Taiwan unikt.'],
+ depth:['Halvledare kräver mer än fabriker: leverantörer, vatten, energi och kvalificerad personal måste finnas samtidigt. Därför tar verklig diversifiering många år.','För Europa är möjligheten att delta beroende av stabila regler, snabb tillståndsgivning och tillgång till avancerad forskning.'],
+ sources:[{label:'Reuters – Taiwan flexes chip diplomacy',url:'https://www.reuters.com/world/china/taiwan-flexes-chip-diplomacy-muscles-it-faces-pressure-share-ai-wealth-with-2026-09-07/'}]
 },
 {
- slug:'nepal-oversvamning-skador-raddning',section:'Nepal · Katastrof',title:'Nepals översvämningar beräknas ha orsakat skador för 2,56 miljarder dollar',summary:'Samtidigt använder ingenjörer en digital expertgrupp för att vägleda räddningsarbetet i förstörda vattenkraftstunnlar.',
- image:'https://upload.wikimedia.org/wikipedia/commons/thumb/9/9b/Flag_of_Nepal.svg/1280px-Flag_of_Nepal.svg.png',imageCredit:'Nepals flagga · Wikimedia Commons',
- news:[
-  'Nepals katastrofmyndighet uppskattar att bostäder, egendom och infrastruktur för minst 2,56 miljarder dollar har förstörts i förra veckans översvämningar.',
-  'Räddningsarbetet fortsätter i avlägsna dalar och vid skadade vattenkraftverk. Ingenjörer i en digital expertgrupp hjälper räddningspersonal att tolka ritningar och bedöma var människor kan ha överlevt i tunnlar.',
-  'Katastrofen har slagit mot vägar, elproduktion och lokalsamhällen samtidigt. Den fulla kostnaden kan därför bli större när följderna för företag, inkomster och energiförsörjning räknas in.'
- ],
- analysis:[
-  'Skadebeloppet motsvarar inte den totala samhällsförlusten. Förlorade arbetsinkomster, avbruten utbildning, sjukdomar och långvarig migration syns sällan i den första beräkningen.',
-  'Vattenkraften är central för Nepals energisystem och exportmöjligheter. Skador på tunnlar och kraftverk kan därför bromsa återhämtningen även efter att vägar och bostäder har reparerats.',
-  'Den digitala expertgruppen visar hur enkel kommunikationsteknik kan få stor betydelse när specialister inte kan ta sig till katastrofområdet. Informationen måste dock verifieras på plats innan räddningsbeslut fattas.'
- ],
- depth:[
-  'Återuppbyggnaden behöver kombinera snabb hjälp med bättre motståndskraft. Om samma byggstandard och placering används riskerar nästa översvämning att skapa liknande skador.',
-  'Bergsområden gör räddningsarbete särskilt svårt eftersom vägar kan rasa och väder stoppa helikoptrar. Lokala lager, reservkommunikation och utbildade team blir därför avgörande.',
-  'Internationellt stöd bör följas öppet: hur pengar fördelas, vilka projekt som prioriteras och om utsatta grupper får hjälp. Transparens minskar risken att akuta medel försvinner innan de når de drabbade.'
- ],
- sources:[{label:'Reuters – Nepal flood losses estimated at $2.56 billion',url:'https://www.reuters.com/business/environment/nepal-flood-losses-estimated-256-billion-official-says-2026-09-04/'},{label:'Reuters – Engineers guide Nepal flood rescue efforts',url:'https://www.reuters.com/business/environment/how-engineers-whatsapp-group-are-guiding-nepals-flood-rescue-efforts-2026-09-04/'}]
+ slug:'ecb-rantehojningar-prognos',section:'Europa · Ekonomi',title:'Ny prognos pekar mot fler räntehöjningar från ECB',summary:'Deutsche Bank räknar med fortsatt åtstramning genom december. Stigande oljepris gör inflationsbilden mer svårbedömd.',
+ image:'https://upload.wikimedia.org/wikipedia/commons/thumb/2/25/European_Central_Bank_-_Frankfurt.jpg/1280px-European_Central_Bank_-_Frankfurt.jpg',imageCredit:'Europeiska centralbanken i Frankfurt · Wikimedia Commons',
+ news:['Deutsche Bank räknar enligt Reuters med att Europeiska centralbanken fortsätter höja räntan genom december. Bedömningen är en prognos från banken, inte ett beslut från ECB.','Samtidigt pressas europeiska aktier av högre oljepris, vilket kan öka företagens kostnader och komplicera kampen mot inflationen.'],
+ analysis:['Högre ränta kan dämpa prisökningarna men slår mot investeringar, bostäder och skuldsatta hushåll. Samma ränta får olika effekt i medlemsländer med olika skuld och tillväxt.','För Sverige påverkas kronan, exportefterfrågan och marknadsräntorna trots att landet står utanför euron.'],
+ depth:['Det viktiga inför kommande beslut är utvecklingen för tjänsteinflation, löner och energi. En bankprognos ska inte läsas som ett säkert besked.','Om oljepriset förblir högt kan centralbanken ställas inför valet mellan svagare tillväxt och större inflationsrisk.'],
+ sources:[{label:'Reuters – Deutsche Bank expects ECB rate hikes',url:'https://www.reuters.com/business/finance/deutsche-bank-expects-ecb-extend-rate-hikes-through-december-2026-09-07/'},{label:'Reuters – European shares dip as oil rises',url:'https://www.reuters.com/markets/europe/european-shares-dip-rise-oil-prices-weighs-novartis-slips-2026-09-07/'}]
 }
 ];
 
