@@ -30,5 +30,5 @@ export const worldFeatures:Feature[]=topWorldNews5Sep.map(article=>({
  href:`/varlden/nyheter/${article.slug}`,
  image:article.image,
  imageCredit:article.imageCredit,
- meta:'Uppdaterad 5 september 2026'
+ meta:'Uppdaterad 7 september 2026'
 }));
