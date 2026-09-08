@@ -10,6 +10,8 @@ const sectionIds: Record<string,string> = {
  'Stockholmskrogar':'stockholmskrogar','Mat':'mat','Vin':'vin','Stockholm':'stockholm','Kulturdebatt':'kulturdebatt','USA':'usa','EU':'eu','Nya trender':'nya-trender','Politisk debatt':'politisk-debatt','Makroekonomi':'makroekonomi','Böcker':'bocker','Psykologi':'psykologi','Filosofi':'filosofi','Historisk långläsning':'historisk-handelser'
 };
 
+function expandedReadingTime(value:string){return Math.round((Number.parseInt(value,10)||12)*2);}
+
 export default function WeekendPage() {
  const [lead, ...articles] = weekendPermanentArticles;
  return <main><div className="shell weekend-desk">
@@ -23,7 +25,7 @@ export default function WeekendPage() {
   </nav>
 
   <section id={sectionIds[lead.section]} className="weekend-cover">
-   <div><div className="kicker">{lead.section} · {lead.readingTime}</div><h2><Link href={`/helg/${lead.slug}`}>{lead.title}</Link></h2><p className="lead">{lead.intro}</p><Link className="button" href={`/helg/${lead.slug}`}>Läs hela artikeln</Link></div>
+   <div><div className="kicker">{lead.section} · {expandedReadingTime(lead.readingTime)} min läsning</div><h2><Link href={`/helg/${lead.slug}`}>{lead.title}</Link></h2><p className="lead">{lead.intro}</p><Link className="button" href={`/helg/${lead.slug}`}>Läs hela artikeln</Link></div>
    <blockquote>“Helg ska ge varje ämne den tid som krävs för bakgrund, motargument och konsekvenser.”</blockquote>
   </section>
 
@@ -32,7 +34,7 @@ export default function WeekendPage() {
     <div className="kicker">{String(index+2).padStart(2,'0')} · {article.section}</div>
     <h2><Link href={`/helg/${article.slug}`}>{article.title}</Link></h2>
     <p>{article.intro}</p>
-    <div className="weekend-card-footer"><span>{article.readingTime} läsning</span><Link className="text-link" href={`/helg/${article.slug}`}>Läs långläsningen →</Link></div>
+    <div className="weekend-card-footer"><span>{expandedReadingTime(article.readingTime)} min läsning</span><Link className="text-link" href={`/helg/${article.slug}`}>Läs långläsningen →</Link></div>
    </article>)}
   </section>
 
