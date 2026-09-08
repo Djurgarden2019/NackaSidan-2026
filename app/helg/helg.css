@@ -1,0 +1,15 @@
+.weekend-index{display:grid;grid-template-columns:repeat(7,minmax(0,1fr));gap:1px;margin:1.5rem 0 3rem;background:var(--line);border:1px solid var(--line)}
+.weekend-index a{display:flex;align-items:center;gap:.55rem;min-height:3.5rem;padding:.8rem;background:var(--surface);font-size:.8rem;font-weight:800;line-height:1.15}
+.weekend-index a:hover,.weekend-index a:focus-visible{color:var(--red);background:#fff}
+.weekend-index span{color:var(--red);font-variant-numeric:tabular-nums}
+.weekend-magazine-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:0 2.5rem;margin:var(--space-section) 0}
+.weekend-feature-card{display:flex;flex-direction:column;min-height:20rem;padding:2rem 0;border-top:4px solid var(--ink)}
+.weekend-feature-card-wide{grid-column:1/-1;min-height:auto}
+.weekend-feature-card h2{margin:.55rem 0 1rem;font-family:Georgia,serif;font-size:clamp(2rem,3.5vw,3.2rem);line-height:1.05;letter-spacing:-.025em;text-wrap:balance}
+.weekend-feature-card-wide h2{max-width:950px;font-size:clamp(2.6rem,5vw,4.6rem)}
+.weekend-feature-card>p{max-width:760px;font-size:1.08rem;line-height:1.75;color:var(--muted)}
+.weekend-card-footer{display:flex;align-items:center;justify-content:space-between;gap:1rem;margin-top:auto;padding-top:1.5rem;border-top:1px solid var(--line);font-size:.88rem;color:var(--muted)}
+.weekend-card-footer .text-link{color:var(--ink);font-weight:800}
+.weekend-promise{margin-top:var(--space-section)}
+@media(max-width:1000px){.weekend-index{grid-template-columns:repeat(4,minmax(0,1fr))}}
+@media(max-width:700px){.weekend-index{grid-template-columns:repeat(2,minmax(0,1fr))}.weekend-magazine-grid{grid-template-columns:1fr}.weekend-feature-card-wide{grid-column:auto}.weekend-feature-card{min-height:0}.weekend-card-footer{align-items:flex-start;flex-direction:column}}
