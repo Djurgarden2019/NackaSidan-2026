@@ -2,6 +2,7 @@ import DailyDeskUpdate from '../../components/DailyDeskUpdate';
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import { weekendPermanentArticles } from '../../content/weekendPermanent';
+import './helg.css';
 
 export const metadata: Metadata = { title: 'Helg', description: 'NackaSidans helgmagasin med längre artiklar om mat, vin, Stockholm, politik, kultur, ekonomi, psykologi, filosofi och historia.' };
 
