@@ -29,6 +29,11 @@ export const liveFeeds: Feed[] = [
   { name: 'The Guardian World', url: 'https://www.theguardian.com/world/rss', section: 'Internationella medier', homepage: 'https://www.theguardian.com/world' },
   { name: 'New York Times World', url: 'https://rss.nytimes.com/services/xml/rss/nyt/World.xml', section: 'Internationella medier', homepage: 'https://www.nytimes.com/section/world' },
   { name: 'NPR World', url: 'https://feeds.npr.org/1004/rss.xml', section: 'Internationella medier', homepage: 'https://www.npr.org/sections/world/' },
+  { name: 'Politico Europe', url: 'https://www.politico.eu/feed/', section: 'Internationella medier', homepage: 'https://www.politico.eu/' },
+  { name: 'Sky News World', url: 'https://feeds.skynews.com/feeds/rss/world.xml', section: 'Internationella medier', homepage: 'https://news.sky.com/world' },
+  { name: 'Washington Post World', url: 'https://feeds.washingtonpost.com/rss/world', section: 'Internationella medier', homepage: 'https://www.washingtonpost.com/world/' },
+  { name: 'CBS News World', url: 'https://www.cbsnews.com/latest/rss/world', section: 'Internationella medier', homepage: 'https://www.cbsnews.com/world/' },
+  { name: 'Al Jazeera', url: 'https://www.aljazeera.com/xml/rss/all.xml', section: 'Internationella medier', homepage: 'https://www.aljazeera.com/' },
   { name: 'BBC Science', url: 'https://feeds.bbci.co.uk/news/science_and_environment/rss.xml', section: 'Vetenskap', homepage: 'https://www.bbc.com/news/science_and_environment' },
   { name: 'NASA', url: 'https://www.nasa.gov/rss/dyn/breaking_news.rss', section: 'Vetenskap', homepage: 'https://www.nasa.gov/' },
 ];
