@@ -13,11 +13,10 @@ export async function GET(request: NextRequest) {
 
   try {
     const result = await runAutomaticPublishing();
+    const sectionPages = ['sverige','stockholm','internationella-medier','senaste','sport'];
     revalidatePath('/');
-    revalidatePath('/sverige');
-    revalidatePath('/stockholm');
-    revalidatePath('/internationella-medier');
-    return NextResponse.json({ ok: true, ...result, homepageRevalidated: true, sectionPagesRevalidated: ['sverige','stockholm','internationella-medier'], completedAt: new Date().toISOString() });
+    sectionPages.forEach(path => revalidatePath(`/${path}`));
+    return NextResponse.json({ ok: true, ...result, homepageRevalidated: true, sectionPagesRevalidated: sectionPages, completedAt: new Date().toISOString() });
   } catch (error) {
     console.error('[cron:publish-news] failed', { error: String(error), stack: error instanceof Error ? error.stack : undefined });
     return NextResponse.json({ ok: false, error: 'Den automatiska publiceringen kunde inte slutföras.' }, { status: 500 });
