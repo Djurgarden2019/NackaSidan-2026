@@ -23,6 +23,12 @@ export const liveFeeds: Feed[] = [
   { name: 'Sveriges Riksbank · Nyheter', url: 'https://www.riksbank.se/sv/rss/nyheter/', section: 'Ekonomi', homepage: 'https://www.riksbank.se/sv/press-och-publicerat/' },
   { name: 'Sveriges Riksbank · Pressmeddelanden', url: 'https://www.riksbank.se/sv/rss/pressmeddelanden/', section: 'Ekonomi', homepage: 'https://www.riksbank.se/sv/press-och-publicerat/' },
   { name: 'BBC World', url: 'https://feeds.bbci.co.uk/news/world/rss.xml', section: 'Världen', homepage: 'https://www.bbc.com/news/world' },
+  { name: 'BBC Europe', url: 'https://feeds.bbci.co.uk/news/world/europe/rss.xml', section: 'Internationella medier', homepage: 'https://www.bbc.com/news/world/europe' },
+  { name: 'Deutsche Welle', url: 'https://rss.dw.com/rdf/rss-en-all', section: 'Internationella medier', homepage: 'https://www.dw.com/' },
+  { name: 'France 24 Europe', url: 'https://www.france24.com/en/europe/rss', section: 'Internationella medier', homepage: 'https://www.france24.com/en/europe/' },
+  { name: 'The Guardian World', url: 'https://www.theguardian.com/world/rss', section: 'Internationella medier', homepage: 'https://www.theguardian.com/world' },
+  { name: 'New York Times World', url: 'https://rss.nytimes.com/services/xml/rss/nyt/World.xml', section: 'Internationella medier', homepage: 'https://www.nytimes.com/section/world' },
+  { name: 'NPR World', url: 'https://feeds.npr.org/1004/rss.xml', section: 'Internationella medier', homepage: 'https://www.npr.org/sections/world/' },
   { name: 'BBC Science', url: 'https://feeds.bbci.co.uk/news/science_and_environment/rss.xml', section: 'Vetenskap', homepage: 'https://www.bbc.com/news/science_and_environment' },
   { name: 'NASA', url: 'https://www.nasa.gov/rss/dyn/breaking_news.rss', section: 'Vetenskap', homepage: 'https://www.nasa.gov/' },
 ];
@@ -163,7 +169,7 @@ export async function getLiveNews() {
     return true;
   });
 
-  const sections = ['Alla','Nacka/Lokalt','Sverige','Världen','Ekonomi','Kultur','Vetenskap','Sport'];
+  const sections = ['Alla','Nacka/Lokalt','Sverige','Världen','Internationella medier','Ekonomi','Kultur','Vetenskap','Sport'];
   const sectionCounts = Object.fromEntries(sections.map(section => [section, section === 'Alla' ? items.length : items.filter(i => i.section === section).length]));
   return { items, sections, sectionCounts, highPriority: items.filter(i => i.priority === 'Hög').length, localCount: items.filter(i => i.local).length, feeds: settled.map(x => ({ name: x.feed.name, homepage: x.feed.homepage, section: x.feed.section, note: x.feed.note, status: x.ok ? 'Ansluten' : 'Tillfälligt otillgänglig', count: x.items.length })), fetchedAt: new Date().toISOString() };
 }

@@ -16,7 +16,8 @@ export async function GET(request: NextRequest) {
     revalidatePath('/');
     revalidatePath('/sverige');
     revalidatePath('/stockholm');
-    return NextResponse.json({ ok: true, ...result, homepageRevalidated: true, sectionPagesRevalidated: ['sverige','stockholm'], completedAt: new Date().toISOString() });
+    revalidatePath('/internationella-medier');
+    return NextResponse.json({ ok: true, ...result, homepageRevalidated: true, sectionPagesRevalidated: ['sverige','stockholm','internationella-medier'], completedAt: new Date().toISOString() });
   } catch (error) {
     console.error('[cron:publish-news] failed', { error: String(error), stack: error instanceof Error ? error.stack : undefined });
     return NextResponse.json({ ok: false, error: 'Den automatiska publiceringen kunde inte slutföras.' }, { status: 500 });
