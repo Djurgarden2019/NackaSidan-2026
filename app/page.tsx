@@ -8,14 +8,16 @@ import AutoPublishedFrontpage from '../components/AutoPublishedFrontpage';
 export const revalidate=900;
 
 function dateLabel(value:string){const date=new Date(value);return Number.isNaN(date.getTime())?'Senaste nytt':new Intl.DateTimeFormat('sv-SE',{hour:'2-digit',minute:'2-digit',day:'numeric',month:'short',timeZone:'Europe/Stockholm'}).format(date)}
+function todayLabel(){return new Intl.DateTimeFormat('sv-SE',{weekday:'long',day:'numeric',month:'long',year:'numeric',timeZone:'Europe/Stockholm'}).format(new Date())}
 
 export default async function Home(){
  const live=await getLiveNews();
+ const updatedToday=todayLabel();
  const worldLive=live.items.filter(item=>item.section==='Världen'||item.sourceSection==='Världen').slice(0,12);
  const worldAnalyses=analyses.filter(item=>['Världen','Europa'].includes(item.section));
  const lead=worldFeatures[0];
  return <main><div className="shell world-front">
-  <section className="world-front-heading"><div><div className="breaking-line"><span>Senaste nytt</span> Uppdaterad måndag 7 september 2026</div><p className="lead">Redaktionens urval av de sex världsnyheter som har störst betydelse för säkerhet, ekonomi, diplomati och Sverige.</p></div><Link className="text-link" href="/varlden">Öppna hela utrikesbevakningen →</Link></section>
+  <section className="world-front-heading"><div><div className="breaking-line"><span>Senaste nytt</span> Uppdaterad {updatedToday} kl. 06.00</div><p className="lead">Redaktionens urval av de sex världsnyheter som har störst betydelse för säkerhet, ekonomi, diplomati och Sverige.</p></div><Link className="text-link" href="/varlden">Öppna hela utrikesbevakningen →</Link></section>
 
   <section className="world-lead" aria-labelledby="world-lead-title"><div className="world-lead-media"><span className="top-six-number">01</span><img src={lead.image} alt="Aktuell nyhetsbild från Ukraina" loading="eager" fetchPriority="high"/><span>{lead.imageCredit}</span></div><article><div className="kicker">Huvudnyhet · {lead.section}</div><h2 id="world-lead-title"><Link href={lead.href??'/varlden'}>{lead.title}</Link></h2><p className="lead">{lead.summary}</p><div className="world-lead-actions"><Link className="button" href={lead.href??'/varlden'}>Läs hela artikeln</Link><Link className="text-link" href="/analys">NackaSidans analyser →</Link></div></article></section>
 

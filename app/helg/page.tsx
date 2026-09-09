@@ -13,7 +13,8 @@ const sectionIds: Record<string,string> = {
 function expandedReadingTime(value:string){return Math.round((Number.parseInt(value,10)||12)*2);}
 
 export default function WeekendPage() {
- const [lead, ...articles] = weekendPermanentArticles;
+ const sortedArticles=[...weekendPermanentArticles].sort((a,b)=>a.section.localeCompare(b.section,'sv'));
+ const [lead, ...articles] = sortedArticles;
  return <main><div className="shell weekend-desk">
   <header className="weekend-head">
    <div><div className="kicker">Uppdaterad 8 september 2026</div><h1>Helg</h1><p className="lead">NackaSidans stora helgmagasin. Längre artiklar, tydliga analyser och öppna källor om samhället, maten, kulturen och idéerna som formar vår tid.</p></div>
@@ -21,7 +22,7 @@ export default function WeekendPage() {
   </header>
 
   <nav className="weekend-index" aria-label="Helgs fasta avdelningar">
-   {weekendPermanentArticles.map((article,index)=><a key={article.section} href={`#${sectionIds[article.section]}`}><span>{index+1}</span>{article.section}</a>)}
+   {sortedArticles.map((article,index)=><a key={article.section} href={`#${sectionIds[article.section]}`}><span>{index+1}</span>{article.section}</a>)}
   </nav>
 
   <section id={sectionIds[lead.section]} className="weekend-cover">
@@ -38,6 +39,6 @@ export default function WeekendPage() {
    </article>)}
   </section>
 
-  <section className="weekend-promise"><div className="kicker">Helgs fasta innehåll</div><h2>14 avdelningar i varje utgåva</h2><p>Stockholmskrogar, mat, vin, Stockholm, kulturdebatt, USA, EU, nya trender, politisk debatt, makroekonomi, böcker, psykologi, filosofi och en historisk långläsning ska alltid finnas med. Varje artikel följer samma ordning: artikel, analys och konsekvenser, längre fördjupning och klickbara källor sist.</p></section>
+  <section className="weekend-promise"><div className="kicker">Helgs fasta innehåll</div><h2>14 avdelningar i varje utgåva</h2><p>Böcker, EU, filosofi, historisk långläsning, kulturdebatt, makroekonomi, mat, nya trender, politisk debatt, psykologi, Stockholm, Stockholmskrogar, USA och vin ska alltid finnas med. Varje artikel följer samma ordning: artikel, analys och konsekvenser, längre fördjupning och klickbara källor sist.</p></section>
  </div><DailyDeskUpdate desk="helg"/></main>;
 }
