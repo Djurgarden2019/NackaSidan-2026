@@ -198,5 +198,64 @@ export const weekendPermanentArticles: WeekendArticle[] = [
     analysis:['Historiska katastrofer har sällan en enda orsak.','Tidspress och stel mobiliseringsplanering minskade utrymmet för kompromiss.','Ledare misstolkade både motståndarnas avsikter och krigets sannolika längd.'],
     consequences:['Miljontals döda och fyra imperiers fall.','Nya stater och olösta gränskonflikter.','Politiska följder som bidrog till nästa världskrig.'],
     sources:[{label:'Imperial War Museums: How the world went to war in 1914',url:'https://www.iwm.org.uk/history/how-the-world-went-to-war-in-1914'},{label:'Encyclopaedia Britannica: Assassination of Franz Ferdinand',url:'https://www.britannica.com/event/assassination-of-Franz-Ferdinand'}]
+  },
+  {
+    slug:'helg-miljo-klimatanpassning-fran-plan-till-vardag', section:'Miljö',
+    title:'Klimatanpassningen flyttar in i vardagen – men tempot avgör kostnaden',
+    intro:'Skyfall, värme och förändrade vattenflöden gör miljöpolitiken konkret. Kommuner, fastighetsägare och hushåll måste nu planera för både utsläppsminskningar och ett klimat som redan förändras.',
+    published:'9 september 2026', readingTime:'18 min',
+    news:[
+      {heading:'Från framtidsfråga till investeringsbeslut',paragraphs:['Klimatanpassning handlar om var vatten kan ta vägen vid skyfall, hur äldre och sjuka skyddas vid värmeböljor och vilka byggnader som klarar stigande fuktbelastning. Åtgärderna konkurrerar med andra investeringar men blir dyrare när de skjuts upp.','Gröna tak, träd, öppna dagvattenlösningar och svalare offentliga rum kan samtidigt ge bättre stadsmiljö. Effekten beror på platsen och måste mätas mot lokala riskkartor.']},
+      {heading:'Naturens kapacitet är också infrastruktur',paragraphs:['Våtmarker, skogar och kustmiljöer lagrar kol, dämpar vattenflöden och ger livsmiljöer åt arter. När de försvagas behöver samhället ofta ersätta deras funktion med dyrare tekniska system.','Det betyder inte att varje naturåtgärd är rätt överallt. Prioriteringar måste bygga på dokumenterad risk, biologiskt värde och långsiktig förvaltning.']},
+      {heading:'Vem betalar och vem skyddas?',paragraphs:['Fastighetsägare kan behöva investera i dränering och översvämningsskydd, samtidigt som kommunen ansvarar för planering och allmän plats. Otydlig ansvarsfördelning riskerar att fördröja åtgärder.','Rättvisefrågan blir central när områden med små ekonomiska marginaler samtidigt kan vara särskilt utsatta för värme, buller eller översvämning.']}
+    ],
+    analysis:['Tidiga förebyggande investeringar är ofta billigare än återkommande skadekostnader.','Klimatnytta, biologisk mångfald och social rättvisa behöver vägas ihop i samma beslut.','Lokala data är avgörande eftersom riskerna varierar kraftigt mellan platser.'],
+    consequences:['Fler krav på fastigheter och samhällsplanering.','Större investeringar i vattenhantering och grönska.','Tydligare konflikt om kostnadsansvar.'],
+    sources:[{label:'SMHI: Klimatanpassning',url:'https://www.smhi.se/klimat/klimatanpassning'},{label:'Naturvårdsverket: Klimatet och miljön',url:'https://www.naturvardsverket.se/amnesomraden/klimatomstallningen-och-samhallet/'}]
+  },
+  {
+    slug:'helg-forskning-framsteg-fraan-upptackt-till-samhalle', section:'Forskning och framsteg',
+    title:'Från upptäckt till samhällsnytta – varför forskningens långsamma steg spelar roll',
+    intro:'Genombrott presenteras gärna som enskilda ögonblick. I verkligheten bygger framsteg på upprepning, öppna metoder och många års arbete innan en idé blir behandling, teknik eller ny kunskap.',
+    published:'9 september 2026', readingTime:'19 min',
+    news:[
+      {heading:'Ett resultat är början, inte slutet',paragraphs:['En ny studie kan visa en lovande effekt utan att bevisa att metoden fungerar i större skala. Urval, mätmetod och osäkerhet avgör hur stark slutsatsen är. Därför behöver resultat upprepas av andra forskargrupper.','Nyhetsvärdet ligger ofta i det oväntade, medan vetenskapens värde ligger i om resultatet håller när förutsättningarna ändras.']},
+      {heading:'Medicinen möter teknik och data',paragraphs:['Precisionsmedicin, nya bildmetoder och avancerad dataanalys kan ge tidigare diagnoser och mer riktad behandling. Samtidigt växer kraven på integritet, representativa data och begriplig dokumentation.','En modell som fungerar i en forskningsmiljö måste också prövas i vårdens vardag där tid, personal och patientgrupper ser annorlunda ut.']},
+      {heading:'Den långa finansieringen',paragraphs:['Grundforskning har ofta ingen omedelbar produkt men kan skapa verktygen bakom framtida innovationer. Korta finansieringscykler riskerar att premiera säkra projekt framför svåra frågor.','Samhället behöver både tålamod och tydlig kvalitetskontroll. Öppen publicering och redovisade intressekonflikter gör framstegen lättare att granska.']}
+    ],
+    analysis:['Forskningsnyheter ska värderas efter metod och evidensnivå, inte bara efter rubrikens löfte.','Övergången från laboratorium till vardag är ofta den svåraste delen av innovationen.','Långsiktig finansiering måste kombineras med oberoende granskning.'],
+    consequences:['Större krav på reproducerbara resultat.','Fler etiska frågor kring data och AI.','Längre tid mellan lovande fynd och praktisk användning.'],
+    sources:[{label:'Vetenskapsrådet: Forskning och finansiering',url:'https://www.vr.se/'},{label:'Karolinska Institutet: Forskning',url:'https://ki.se/forskning'}]
+  },
+  {
+    slug:'helg-resor-smartare-val-i-en-osaker-varld', section:'Resor',
+    title:'Resandet förändras – trygghet, pris och klimat vägs mot upplevelsen',
+    intro:'Den moderna resan börjar långt före avfärd. Säkerhetsläge, extremväder, försäkring, transportutsläpp och lokala regler påverkar både destination och budget.',
+    published:'9 september 2026', readingTime:'17 min',
+    news:[
+      {heading:'Planen måste tåla förändring',paragraphs:['Flexibla biljetter och tydliga avbokningsvillkor har blivit viktigare när väder, strejker och säkerhetslägen kan ändras snabbt. Den billigaste biljetten är inte alltid billigast om hela risken ligger på resenären.','Kontrollera pass, inresebestämmelser, försäkringsskydd och Utrikesdepartementets reseinformation nära avresan. Regler och rekommendationer kan ändras.']},
+      {heading:'Tåget, flyget och den verkliga restiden',paragraphs:['En rättvis jämförelse räknar in resan till terminalen, väntetid, byten och risken för försening. På kortare europeiska sträckor kan tåget vara konkurrenskraftigt från centrum till centrum.','På längre resor blir flyget ofta praktiskt nödvändigt, men färre och längre resor kan minska utsläppen utan att resandet försvinner.']},
+      {heading:'Resmålet är någons hem',paragraphs:['Höga besökstal kan skapa arbeten men också pressa bostäder, vatten och lokal infrastruktur. Att resa utanför högsäsong och välja lokalt ägda verksamheter kan sprida intäkterna bättre.','Ansvarsfullt resande är inte en perfekt checklista. Det handlar om att förstå de största konsekvenserna och göra genomtänkta val.']}
+    ],
+    analysis:['Flexibilitet har ett ekonomiskt värde som bör räknas in i biljettpriset.','Klimatpåverkan minskar mest när resesätt, avstånd och antal resor bedöms tillsammans.','Turismens lokala nytta beror på hur intäkterna fördelas.'],
+    consequences:['Större efterfrågan på ombokningsbara resor.','Fler jämförelser av total restid.','Ökat intresse för lågsäsong och närmare resmål.'],
+    sources:[{label:'Regeringen: UD:s reseinformation',url:'https://www.regeringen.se/uds-reseinformation/'},{label:'Konsumentverket: Resor',url:'https://www.hallakonsument.se/omrade/resor/'}]
+  },
+  {
+    slug:'helg-kultur-hostens-bocker-film-musik-scen-tv', section:'Kultur',
+    title:'Kulturhösten 2026 – böckerna, filmerna, musiken och scenerna att följa',
+    intro:'Höstens utbud rör sig mellan nya svenska romaner, biopremiärer, skivsläpp, opera, teater och tv-serier. Helg samlar det aktuella men skiljer tydligt mellan presentation och egen bedömning.',
+    published:'9 september 2026', readingTime:'24 min',
+    news:[
+      {heading:'Nya böcker',paragraphs:['Den svenska bokhösten är i gång. Norstedts septemberlista innehåller bland annat nya titlar av Marit Kapla, Aris Fioretos och Naima Chahboun, medan flera stora förlag presenterar både romaner, sakprosa och översatta verk.','Utgivningsdatum säger inget om kvalitet. Helgs recensioner ska bedöma språk, form, idé och vad boken tillför utöver förlagets presentation.']},
+      {heading:'Film och tv-serier',paragraphs:['Biografer och strömningstjänster fyller hösten med premiärer, men det stora utbudet gör urvalet svårare. En användbar guide behöver ange premiärplats, genre och varför verket är intressant utan att återge marknadsföringen som kritik.','För tv-serier bedöms inte bara pilotavsnittet. Dramaturgi, skådespeleri och om berättelsen bär över en hel säsong är avgörande.']},
+      {heading:'Nya skivor och musik',paragraphs:['Albumformatet lever parallellt med singlar och spellistor. Helg följer nya svenska och internationella släpp och lyssnar efter helhet, produktion, texter och om musiken utvecklar artistens uttryck.','Popularitet och kvalitet redovisas som olika saker. Listplaceringar beskriver genomslag men ersätter inte en musikalisk bedömning.']},
+      {heading:'Opera',paragraphs:['Kungliga Operans repertoar gör det möjligt att följa både klassiker och nya uppsättningar. En operarecension behöver väga samman sång, orkester, regi, scenbild och hur tolkningen motiverar ännu en uppsättning av verket.','Pris, speltid, textning och tillgänglighet ska framgå när Helg tipsar om en föreställning.']},
+      {heading:'Teater',paragraphs:['Dramaten och Stockholms övriga scener presenterar en blandning av nyskrivet, klassiker och gästspel. Den viktiga frågan är inte bara vad pjäsen handlar om utan vad uppsättningen gör med texten här och nu.','Recensionerna skiljer skådespelarnas arbete från regi och dramatik så att omdömet blir begripligt.']},
+      {heading:'Så väljer Helg',paragraphs:['Varje vecka prioriteras verk som är nya, tillgängliga för publiken och kulturellt intressanta. Fakta hämtas från arrangörer och distributörer, medan värderingen är NackaSidans egen.','Källor och premiärdatum ligger längst ned. Artiklar uppdateras när program, datum eller tillgänglighet förändras.']}
+    ],
+    analysis:['Det växande utbudet ökar behovet av redaktionellt urval och tydlig kritik.','En aktuell kulturbevakning måste skilja pressinformation från självständigt omdöme.','Böcker, scenkonst, musik, film och tv förtjänar olika bedömningskriterier.'],
+    consequences:['Fler aktuella kulturguider under Helg.','Tydligare märkning av premiärer och utgivningsdatum.','Separata bedömningar av verkens kvalitet och genomslag.'],
+    sources:[{label:'Norstedts: Höstens böcker 2026',url:'https://www.norstedts.se/hostens-bocker-2026'},{label:'Svenska Filminstitutet: Filmdatabasen',url:'https://www.filminstitutet.se/sv/se-och-samtala-om-film/filmdatabasen/'},{label:'Kungliga Operan: Repertoar',url:'https://www.operan.se/repertoar'},{label:'Dramaten: Repertoar',url:'https://www.dramaten.se/repertoar'},{label:'SVT Play: Serier',url:'https://www.svtplay.se/kategori/serier'}]
   }
 ];
