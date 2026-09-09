@@ -6,31 +6,47 @@ import { swedenEconomySnapshot227 } from '../../content/swedenEconomySnapshot227
 import { swedenArticleFeed239, swedenFeed239 } from '../../content/swedenArticleFeed239';
 import DeskDepth from '../../components/DeskDepth';
 import { swedenDepth } from '../../content/deskDepth';
+import { getLiveNews } from '../../lib/liveNews';
+
+export const dynamic='force-dynamic';
 
 export const metadata={title:'Sverige | NackaSidan 2026',description:'Aktuella och fördjupande artiklar om politik, ekonomi och samhälle i Sverige.'};
+
+const todayLabel=()=>new Intl.DateTimeFormat('sv-SE',{weekday:'long',day:'numeric',month:'long',year:'numeric',timeZone:'Europe/Stockholm'}).format(new Date());
+const liveDate=(value:string)=>{const date=new Date(value);return Number.isNaN(date.getTime())?'Senaste nytt':new Intl.DateTimeFormat('sv-SE',{day:'numeric',month:'short',hour:'2-digit',minute:'2-digit',timeZone:'Europe/Stockholm'}).format(date)};
 
 const formatDate=(iso:string)=>new Intl.DateTimeFormat('sv-SE',{day:'numeric',month:'long'}).format(new Date(`${iso}T12:00:00`));
 const formatArticleDate=(iso:string)=>new Intl.DateTimeFormat('sv-SE',{day:'numeric',month:'short',hour:'2-digit',minute:'2-digit'}).format(new Date(iso));
 
-export default function SverigePage(){
+export default async function SverigePage(){
+ const live=await getLiveNews();
+ const dailyNews=live.items.filter(item=>item.sourceSection==='Sverige').slice(0,6);
  const articles=swedenArticleFeed239();
  const lead=articles[0];
  const latest=articles.slice(1,7);
 
- return <main className="mx-auto max-w-6xl px-4 py-8 sm:px-6 lg:px-8">
+ return <main className="mx-auto max-w-6xl px-4 py-8 font-sans text-neutral-950 sm:px-6 lg:px-8">
   <header className="border-b-4 border-neutral-950 pb-7">
-   <p className="text-sm font-bold uppercase tracking-[.18em] text-red-800">Uppdaterad 9 september 2026</p>
+   <p className="text-sm font-bold uppercase tracking-[.18em] text-red-800">Uppdaterad {todayLabel()}</p>
    <h1 className="mt-2 text-5xl font-black tracking-tight sm:text-7xl">{swedenDesk207.title}</h1>
    <p className="mt-4 max-w-3xl text-lg leading-8 text-neutral-600">Nyheter och analyser om politiken, ekonomin och de samhällsfrågor som påverkar hela Sverige.</p>
   </header>
 
   <nav aria-label="Innehåll på Sverigesidan" className="flex gap-6 overflow-x-auto border-b border-neutral-300 py-4 text-sm font-bold">
+   <a href="#dagens-nyheter" className="whitespace-nowrap hover:underline">Dagens nyheter</a>
    <a href="#huvudnyhet" className="whitespace-nowrap hover:underline">Huvudnyhet</a>
    <a href="#senaste" className="whitespace-nowrap hover:underline">Senaste artiklar</a>
    <a href="#ekonomi" className="whitespace-nowrap hover:underline">Ekonomi</a>
    <a href="#valet" className="whitespace-nowrap hover:underline">Valet</a>
    <a href="#fordjupning" className="whitespace-nowrap hover:underline">Fördjupning</a>
   </nav>
+
+  <section id="dagens-nyheter" className="border-b border-neutral-300 py-10">
+   <p className="text-xs font-bold uppercase tracking-widest text-red-800">Automatiskt uppdaterat</p>
+   <h2 className="mt-1 text-3xl font-black sm:text-4xl">Dagens Sverige-nyheter</h2>
+   <p className="mt-3 max-w-3xl text-base leading-7 text-neutral-600">De senaste verifierade rubrikerna från SVT Nyheter och Sveriges Radio.</p>
+   {dailyNews.length?<div className="mt-6 divide-y divide-neutral-300 border-t-4 border-neutral-950">{dailyNews.map((item,index)=><a key={`${item.link}-${index}`} href={item.link} target="_blank" rel="noreferrer" className="grid gap-2 py-5 hover:bg-neutral-50 sm:grid-cols-[9rem_1fr_auto] sm:items-start"><time className="text-sm text-neutral-500">{liveDate(item.published)}</time><div><p className="text-xs font-bold uppercase tracking-wide text-red-800">{item.source}</p><h3 className="mt-1 text-xl font-black leading-tight">{item.title}</h3>{item.summary&&<p className="mt-2 line-clamp-2 leading-7 text-neutral-600">{item.summary}</p>}</div><span className="font-bold" aria-hidden="true">→</span></a>)}</div>:<p className="mt-5 border border-neutral-200 bg-neutral-50 p-5 text-neutral-600">Nyhetsflödet uppdateras. De redaktionella artiklarna nedan är tillgängliga under tiden.</p>}
+  </section>
 
   {lead&&<section id="huvudnyhet" className="border-b border-neutral-300 py-10">
    <article className="max-w-5xl">
