@@ -22,7 +22,7 @@ export default async function InternationalMediaPage(){
  const european=items.filter(item=>europe.some(source=>item.source.startsWith(source))).slice(0,12);
  const american=items.filter(item=>usa.some(source=>item.source.startsWith(source))).slice(0,16);
  const globalNews=items.filter(item=>global.some(source=>item.source.startsWith(source))).slice(0,12);
- return <main className="mx-auto max-w-6xl px-4 py-8 font-sans text-neutral-950 sm:px-6 lg:px-8">
+ return <main className="standard-section-page">
   <header className="border-b-4 border-neutral-950 pb-7"><p className="text-sm font-bold uppercase tracking-[.18em] text-red-800">Uppdaterad {today()}</p><h1 className="mt-2 text-5xl font-black tracking-tight sm:text-7xl">Internationella medier</h1></header>
   <nav aria-label="Innehåll" className="flex gap-6 overflow-x-auto border-b border-neutral-300 py-4 text-sm font-bold"><a href="#europa" className="hover:underline">Europeiska medier</a><a href="#usa" className="hover:underline">Amerikanska medier</a><a href="#globalt" className="hover:underline">Globala medier</a></nav>
   <div id="europa"><NewsList title="Europeiska medier" items={european}/></div>
