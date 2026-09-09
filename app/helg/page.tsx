@@ -4,25 +4,27 @@ import Link from 'next/link';
 import { weekendPermanentArticles } from '../../content/weekendPermanent';
 import './helg.css';
 
+export const dynamic = 'force-dynamic';
+
 export const metadata: Metadata = { title: 'Helg', description: 'NackaSidans helgmagasin med längre artiklar om mat, vin, Stockholm, politik, kultur, ekonomi, psykologi, filosofi och historia.' };
 
 const sectionIds: Record<string,string> = {
- 'Stockholmskrogar':'stockholmskrogar','Mat':'mat','Vin':'vin','Stockholm':'stockholm','Kulturdebatt':'kulturdebatt','USA':'usa','EU':'eu','Nya trender':'nya-trender','Politisk debatt':'politisk-debatt','Makroekonomi':'makroekonomi','Böcker':'bocker','Psykologi':'psykologi','Filosofi':'filosofi','Historisk långläsning':'historisk-handelser'
+ 'Stockholmskrogar':'stockholmskrogar','Mat':'mat','Vin':'vin','Stockholm':'stockholm','Kulturdebatt':'kulturdebatt','USA':'usa','EU':'eu','Nya trender':'nya-trender','Politisk debatt':'politisk-debatt','Makroekonomi':'makroekonomi','Böcker':'bocker','Psykologi':'psykologi','Filosofi':'filosofi','Historisk långläsning':'historisk-handelser','Miljö':'miljo','Forskning och framsteg':'forskning-och-framsteg','Resor':'resor','Kultur':'kultur'
 };
 
 function expandedReadingTime(value:string){return Math.round((Number.parseInt(value,10)||12)*2);}
 
 export default function WeekendPage() {
- const sortedArticles=[...weekendPermanentArticles].sort((a,b)=>a.section.localeCompare(b.section,'sv'));
- const [lead, ...articles] = sortedArticles;
+ const shuffledArticles=[...weekendPermanentArticles].sort(()=>Math.random()-0.5);
+ const [lead, ...articles] = shuffledArticles;
  return <main><div className="shell weekend-desk">
   <header className="weekend-head">
-   <div><div className="kicker">Uppdaterad 8 september 2026</div><h1>Helg</h1><p className="lead">NackaSidans stora helgmagasin. Längre artiklar, tydliga analyser och öppna källor om samhället, maten, kulturen och idéerna som formar vår tid.</p></div>
-   <div className="weekend-date"><span>Tisdag</span><strong>8</strong><span>september 2026</span></div>
+   <div><div className="kicker">Uppdaterad 9 september 2026</div><h1>Helg</h1><p className="lead">NackaSidans stora helgmagasin. Längre artiklar, tydliga analyser och öppna källor om samhället, maten, kulturen och idéerna som formar vår tid.</p></div>
+   <div className="weekend-date"><span>Onsdag</span><strong>9</strong><span>september 2026</span></div>
   </header>
 
   <nav className="weekend-index" aria-label="Helgs fasta avdelningar">
-   {sortedArticles.map((article,index)=><a key={article.section} href={`#${sectionIds[article.section]}`}><span>{index+1}</span>{article.section}</a>)}
+   {shuffledArticles.map((article,index)=><a key={article.section} href={`#${sectionIds[article.section]}`}><span>{index+1}</span>{article.section}</a>)}
   </nav>
 
   <section id={sectionIds[lead.section]} className="weekend-cover">
@@ -39,6 +41,6 @@ export default function WeekendPage() {
    </article>)}
   </section>
 
-  <section className="weekend-promise"><div className="kicker">Helgs fasta innehåll</div><h2>14 avdelningar i varje utgåva</h2><p>Böcker, EU, filosofi, historisk långläsning, kulturdebatt, makroekonomi, mat, nya trender, politisk debatt, psykologi, Stockholm, Stockholmskrogar, USA och vin ska alltid finnas med. Varje artikel följer samma ordning: artikel, analys och konsekvenser, längre fördjupning och klickbara källor sist.</p></section>
+  <section className="weekend-promise"><div className="kicker">Helgs fasta innehåll</div><h2>18 avdelningar i varje utgåva</h2><p>Böcker, EU, filosofi, forskning och framsteg, historisk långläsning, kultur, kulturdebatt, makroekonomi, mat, miljö, nya trender, politisk debatt, psykologi, resor, Stockholm, Stockholmskrogar, USA och vin ska alltid finnas med. Ordningen bland avdelningarna slumpas vid varje besök. Varje artikel följer samma ordning: artikel, analys och konsekvenser, längre fördjupning och klickbara källor sist.</p></section>
  </div><DailyDeskUpdate desk="helg"/></main>;
 }
