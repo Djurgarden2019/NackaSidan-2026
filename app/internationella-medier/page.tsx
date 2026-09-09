@@ -23,7 +23,7 @@ export default async function InternationalMediaPage(){
  const american=items.filter(item=>usa.some(source=>item.source.startsWith(source))).slice(0,16);
  const globalNews=items.filter(item=>global.some(source=>item.source.startsWith(source))).slice(0,12);
  return <main className="mx-auto max-w-6xl px-4 py-8 font-sans text-neutral-950 sm:px-6 lg:px-8">
-  <header className="border-b-4 border-neutral-950 pb-7"><p className="text-sm font-bold uppercase tracking-[.18em] text-red-800">Uppdaterad {today()}</p><h1 className="mt-2 text-5xl font-black tracking-tight sm:text-7xl">Internationella medier</h1><p className="mt-4 max-w-3xl text-lg leading-8 text-neutral-600">Ett dagsaktuellt urval från europeiska, amerikanska och globala redaktioner. Alla länkar går direkt till originalmediet och artiklar äldre än 72 timmar tas bort automatiskt.</p></header>
+  <header className="border-b-4 border-neutral-950 pb-7"><p className="text-sm font-bold uppercase tracking-[.18em] text-red-800">Uppdaterad {today()}</p><h1 className="mt-2 text-5xl font-black tracking-tight sm:text-7xl">Internationella medier</h1></header>
   <nav aria-label="Innehåll" className="flex gap-6 overflow-x-auto border-b border-neutral-300 py-4 text-sm font-bold"><a href="#europa" className="hover:underline">Europeiska medier</a><a href="#usa" className="hover:underline">Amerikanska medier</a><a href="#globalt" className="hover:underline">Globala medier</a></nav>
   <div id="europa"><NewsList title="Europeiska medier" items={european}/></div>
   <div id="usa"><NewsList title="Amerikanska medier" items={american}/></div>

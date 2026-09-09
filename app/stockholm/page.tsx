@@ -41,10 +41,10 @@ export default async function StockholmPage(){
   </nav>
 
   <section id="dagens-nyheter" className="border-b border-neutral-300 py-10">
-   <p className="text-xs font-bold uppercase tracking-widest text-red-800">Automatiskt uppdaterat</p>
+   
    <h2 className="mt-1 text-3xl font-black sm:text-4xl">Dagens Stockholm-nyheter</h2>
-   <p className="mt-3 max-w-3xl text-base leading-7 text-neutral-600">De senaste verifierade rubrikerna från SVT Nyheter Stockholm och Sveriges Radio P4 Stockholm.</p>
-   {dailyNews.length?<div className="mt-6 divide-y divide-neutral-300 border-t-4 border-neutral-950">{dailyNews.map((item,index)=><a key={`${item.link}-${index}`} href={item.link} target="_blank" rel="noreferrer" className="grid gap-2 py-5 hover:bg-neutral-50 sm:grid-cols-[9rem_1fr_auto] sm:items-start"><time className="text-sm text-neutral-500">{liveDate(item.published)}</time><div><p className="text-xs font-bold uppercase tracking-wide text-red-800">{item.source}</p><h3 className="mt-1 text-xl font-black leading-tight">{item.title}</h3>{item.summary&&<p className="mt-2 line-clamp-2 leading-7 text-neutral-600">{item.summary}</p>}</div><span className="font-bold" aria-hidden="true">→</span></a>)}</div>:<p className="mt-5 border border-neutral-200 bg-neutral-50 p-5 text-neutral-600">Nyhetsflödet uppdateras. De redaktionella artiklarna nedan är tillgängliga under tiden.</p>}
+   
+   {dailyNews.length?<div className="mt-6 divide-y divide-neutral-300 border-t-4 border-neutral-950">{dailyNews.map((item,index)=><a key={`${item.link}-${index}`} href={item.link} target="_blank" rel="noreferrer" className="grid gap-2 py-5 hover:bg-neutral-50 sm:grid-cols-[9rem_1fr_auto] sm:items-start"><time className="text-sm text-neutral-500">{liveDate(item.published)}</time><div><p className="text-xs font-bold uppercase tracking-wide text-red-800">{item.source}</p><h3 className="mt-1 text-xl font-black leading-tight">{item.title}</h3>{item.summary&&<p className="mt-2 line-clamp-2 leading-7 text-neutral-600">{item.summary}</p>}</div><span className="font-bold" aria-hidden="true">→</span></a>)}</div>:<p className="mt-5 border border-neutral-200 bg-neutral-50 p-5 text-neutral-600">Inga nya Stockholmsnyheter visas just nu.</p>}
   </section>
 
   {lead&&<section id="huvudnyhet" className="border-b border-neutral-300 py-10">
@@ -78,6 +78,6 @@ export default async function StockholmPage(){
   <div id="fordjupning"><DeskDepth eyebrow="Stockholm · Fördjupning" title="Besluten som formar hela regionens vardag" {...stockholmDepth}/></div>
   <StockholmToday/>
   <DailyDeskUpdate desk="stockholm"/>
-  <footer className="border-t border-neutral-300 py-6 text-sm text-neutral-500"><div className="flex flex-wrap items-center justify-between gap-3"><span>Källorna ligger sist i varje artikel.</span><Link href="/sverige" className="font-bold underline">Till Sverige →</Link></div></footer>
+  <footer className="border-t border-neutral-300 py-6 text-sm"><Link href="/sverige" className="font-bold underline">Till Sverige →</Link></footer>
  </main>
 }
