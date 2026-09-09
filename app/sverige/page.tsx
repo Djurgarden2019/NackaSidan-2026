@@ -1,27 +1,75 @@
 import DailyDeskUpdate from '../../components/DailyDeskUpdate';
 import Link from 'next/link';
-import RegionalArticleFeed243 from './RegionalArticleFeed243';
-import SwedenTopStories245 from './SwedenTopStories245';
-import SwedenElectionCountdown247 from './SwedenElectionCountdown247';
-import SwedenSectionNavigator249 from './SwedenSectionNavigator249';
-import SwedenLatestUpdate257 from './SwedenLatestUpdate257';
-import SwedenCoveragePulse259 from './SwedenCoveragePulse259';
-import SwedenSourceTrust261 from './SwedenSourceTrust261';
 import { swedenDesk207 } from '../../content/swedenDesk207';
-import { swedenElection209 } from '../../content/swedenElection209';
-import { swedenEconomyDesk210 } from '../../content/swedenEconomy210';
-import { swedenSocietyDesk211 } from '../../content/swedenSociety211';
-import { swedenSecurityDesk212 } from '../../content/swedenSecurity212';
-import { swedenRegions214 } from '../../content/swedenRegions214';
-import { swedenCulture215 } from '../../content/swedenCulture215';
-import { swedenSport216 } from '../../content/swedenSport216';
 import { swedenElectionCalendar224, swedenElectionCalendarRules224 } from '../../content/swedenElectionCalendar224';
 import { swedenEconomySnapshot227 } from '../../content/swedenEconomySnapshot227';
 import { swedenArticleFeed239, swedenFeed239 } from '../../content/swedenArticleFeed239';
 import DeskDepth from '../../components/DeskDepth';
-import {swedenDepth} from '../../content/deskDepth';
-export const metadata={title:'Sverige | NackaSidan 2026',description:'Politik, ekonomi, samhälle, säkerhet, regioner, kultur och sport från hela Sverige.'};
-const desks=[{id:'politik',title:swedenElection209.title,items:swedenElection209.topics},{id:'ekonomi',title:swedenEconomyDesk210.title,items:swedenEconomyDesk210.indicators},{id:'samhalle',title:swedenSocietyDesk211.title,items:swedenSocietyDesk211.beats.map(x=>x.title)},{id:'forsvar',title:swedenSecurityDesk212.title,items:swedenSecurityDesk212.areas},{id:'regioner',title:swedenRegions214.title,items:swedenRegions214.regions.map(x=>x.title)},{id:'kultur',title:swedenCulture215.title,items:swedenCulture215.areas},{id:'sport',title:swedenSport216.title,items:swedenSport216.areas}];
+import { swedenDepth } from '../../content/deskDepth';
+
+export const metadata={title:'Sverige | NackaSidan 2026',description:'Aktuella och fördjupande artiklar om politik, ekonomi och samhälle i Sverige.'};
+
 const formatDate=(iso:string)=>new Intl.DateTimeFormat('sv-SE',{day:'numeric',month:'long'}).format(new Date(`${iso}T12:00:00`));
 const formatArticleDate=(iso:string)=>new Intl.DateTimeFormat('sv-SE',{day:'numeric',month:'short',hour:'2-digit',minute:'2-digit'}).format(new Date(iso));
-export default function SverigePage(){const articles=swedenArticleFeed239();return <main className="mx-auto max-w-7xl px-4 py-8 sm:px-6 lg:px-8"><header className="border-b-4 border-neutral-950 pb-7"><p className="text-sm font-bold uppercase tracking-[.2em] text-neutral-500">NackaSidan 2026</p><div className="mt-2 flex flex-col gap-4 lg:flex-row lg:items-end lg:justify-between"><div><h1 className="text-6xl font-black tracking-tight">{swedenDesk207.title}</h1><p className="mt-4 max-w-3xl text-xl leading-8 text-neutral-600">{swedenDesk207.promise}</p></div><div className="text-sm text-neutral-500">Hela landet · Källa först · Fakta före tempo</div></div></header><nav className="flex gap-5 overflow-x-auto border-b py-4 text-sm font-bold">{desks.map(s=><a key={s.id} href={`#${s.id}`} className="whitespace-nowrap hover:underline">{s.title}</a>)}</nav><SwedenLatestUpdate257/><SwedenElectionCountdown247/><SwedenTopStories245/><SwedenSectionNavigator249/><section className="grid gap-8 border-b py-9 lg:grid-cols-[2fr_1fr]"><div><p className="text-sm font-bold uppercase tracking-wider text-neutral-500">Nationellt</p><h2 className="mt-2 text-4xl font-black leading-tight sm:text-5xl">Sveriges viktigaste frågor – samlade på en sida</h2><p className="mt-4 max-w-3xl text-xl leading-8 text-neutral-600">Valet, ekonomin, välfärden, säkerheten och utvecklingen utanför Stockholm får egna redaktionella ytor. Aktuella artiklar visas först efter källkontroll.</p></div><aside className="border-t pt-5 lg:border-l lg:border-t-0 lg:pl-7"><h3 className="text-xl font-black">Valet 2026</h3><p className="mt-3 leading-7 text-neutral-600">Sakfrågor, opinionsmätningar, faktakoll och vallöften får en central plats fram till valdagen.</p><div className="mt-5 text-sm font-bold">Valdag: 13 september 2026</div></aside></section><section className="border-b py-9" aria-labelledby="senaste-sverige"><div className="flex items-end justify-between gap-4"><div><p className="text-xs font-bold uppercase tracking-widest text-neutral-500">Verifierat</p><h2 id="senaste-sverige" className="text-3xl font-black">{swedenFeed239.title}</h2></div><span className="text-xs text-neutral-500">Källkontrollerat före publicering</span></div>{articles.length?<div className="mt-6 grid gap-5 md:grid-cols-2 lg:grid-cols-3">{articles.slice(0,6).map((article,index)=><article key={article.slug} className={`border-t-4 border-neutral-950 pt-4 ${index===0?'md:col-span-2':''}`}><div className="flex gap-2 text-xs font-bold uppercase tracking-wide text-neutral-500"><span>{article.section}</span>{article.region?<><span>·</span><span>{article.region}</span></>:null}</div><h3 className={`mt-2 font-black leading-tight ${index===0?'text-3xl':'text-2xl'}`}><Link href={`/sverige/artikel/${article.slug}`} className="hover:underline">{article.title}</Link></h3><p className="mt-3 leading-7 text-neutral-600">{article.intro}</p><div className="mt-4 text-xs text-neutral-500">Uppdaterad {formatArticleDate(article.updatedAt)}</div><Link href={`/sverige/artikel/${article.slug}`} className="mt-4 inline-block text-sm font-black underline">Läs hela artikeln</Link></article>)}</div>:<div className="mt-5 rounded-lg bg-neutral-100 p-5 text-neutral-600">{swedenFeed239.emptyMessage}</div>}</section><RegionalArticleFeed243/><SwedenCoveragePulse259/><SwedenSourceTrust261/><section className="border-b py-8" aria-labelledby="valkalender"><div className="flex flex-wrap items-end justify-between gap-3"><div><p className="text-xs font-bold uppercase tracking-widest text-neutral-500">Valmyndigheten</p><h2 id="valkalender" className="text-3xl font-black">Viktiga datum inför valet</h2></div><span className="text-xs text-neutral-500">Kontrollerad {swedenElectionCalendarRules224.checkedAt}</span></div><div className="mt-5 grid gap-4 md:grid-cols-3">{swedenElectionCalendar224.map(item=><article key={item.date} className="rounded-lg border border-neutral-200 p-5"><div className="text-sm font-black uppercase tracking-wide">{formatDate(item.date)}</div><h3 className="mt-2 text-xl font-black">{item.title}</h3><p className="mt-2 text-sm leading-6 text-neutral-600">{item.description}</p><a href={item.sourceUrl} target="_blank" rel="noreferrer" className="mt-4 inline-block text-sm font-bold underline">Källa: {item.source}</a></article>)}</div></section><section id="ekonomi-nu" className="border-b py-8"><div className="flex flex-wrap items-end justify-between gap-3"><div><p className="text-xs font-bold uppercase tracking-widest text-neutral-500">SCB</p><h2 className="text-3xl font-black">{swedenEconomySnapshot227.title}</h2></div><span className="text-xs text-neutral-500">Kontrollerad {swedenEconomySnapshot227.checkedAt}</span></div><p className="mt-3 max-w-3xl text-lg leading-7 text-neutral-600">{swedenEconomySnapshot227.lead}</p><div className="mt-5 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">{swedenEconomySnapshot227.metrics.map(metric=><article key={metric.label} className="rounded-lg border border-neutral-200 p-5"><div className="text-sm font-bold text-neutral-500">{metric.label}</div><div className="mt-2 text-3xl font-black">{metric.value}</div><div className="mt-2 text-xs leading-5 text-neutral-500">{metric.period}</div></article>)}</div><a href={swedenEconomySnapshot227.sourceUrl} target="_blank" rel="noreferrer" className="mt-5 inline-block text-sm font-bold underline">Källa: SCB, Sveriges ekonomi</a></section><section className="grid gap-7 py-9 md:grid-cols-2 lg:grid-cols-3">{desks.map(s=><section id={s.id} key={s.id} className="border-t-4 border-neutral-950 pt-4"><h2 className="text-2xl font-black">{s.title}</h2><p className="mt-3 text-sm leading-6 text-neutral-600">{s.items.join(' · ')}</p><div className="mt-5 rounded-lg bg-neutral-100 p-4 text-sm text-neutral-500">Verifierade nyheter och analyser fylls på här.</div></section>)}</section><DeskDepth eyebrow="Sverige · Fördjupning" title="Valet, ekonomin och säkerheten bakom rubrikerna" {...swedenDepth}/><footer className="border-t py-6 text-sm text-neutral-500"><Link href="/stockholm" className="font-bold underline">Stockholm</Link> fortsätter som separat lokalredaktion.</footer><DailyDeskUpdate desk="sverige"/></main>}
+
+export default function SverigePage(){
+ const articles=swedenArticleFeed239();
+ const lead=articles[0];
+ const latest=articles.slice(1,7);
+
+ return <main className="mx-auto max-w-6xl px-4 py-8 sm:px-6 lg:px-8">
+  <header className="border-b-4 border-neutral-950 pb-7">
+   <p className="text-sm font-bold uppercase tracking-[.18em] text-red-800">Uppdaterad 9 september 2026</p>
+   <h1 className="mt-2 text-5xl font-black tracking-tight sm:text-7xl">{swedenDesk207.title}</h1>
+   <p className="mt-4 max-w-3xl text-lg leading-8 text-neutral-600">Nyheter och analyser om politiken, ekonomin och de samhällsfrågor som påverkar hela Sverige.</p>
+  </header>
+
+  <nav aria-label="Innehåll på Sverigesidan" className="flex gap-6 overflow-x-auto border-b border-neutral-300 py-4 text-sm font-bold">
+   <a href="#huvudnyhet" className="whitespace-nowrap hover:underline">Huvudnyhet</a>
+   <a href="#senaste" className="whitespace-nowrap hover:underline">Senaste artiklar</a>
+   <a href="#ekonomi" className="whitespace-nowrap hover:underline">Ekonomi</a>
+   <a href="#valet" className="whitespace-nowrap hover:underline">Valet</a>
+   <a href="#fordjupning" className="whitespace-nowrap hover:underline">Fördjupning</a>
+  </nav>
+
+  {lead&&<section id="huvudnyhet" className="border-b border-neutral-300 py-10">
+   <article className="max-w-5xl">
+    <p className="text-xs font-bold uppercase tracking-widest text-red-800">{lead.section}{lead.region?` · ${lead.region}`:''}</p>
+    <h2 className="mt-3 text-4xl font-black leading-tight sm:text-6xl"><Link href={`/sverige/artikel/${lead.slug}`} className="hover:underline">{lead.title}</Link></h2>
+    <p className="mt-5 max-w-4xl text-xl leading-8 text-neutral-700">{lead.intro}</p>
+    <div className="mt-5 text-sm text-neutral-500">Uppdaterad {formatArticleDate(lead.updatedAt)}</div>
+    <Link href={`/sverige/artikel/${lead.slug}`} className="mt-6 inline-block border-b-2 border-neutral-950 pb-1 font-bold">Läs hela artikeln →</Link>
+   </article>
+  </section>}
+
+  <section id="senaste" className="border-b border-neutral-300 py-10" aria-labelledby="senaste-sverige">
+   <p className="text-xs font-bold uppercase tracking-widest text-red-800">Aktuellt och verifierat</p>
+   <h2 id="senaste-sverige" className="mt-1 text-3xl font-black sm:text-4xl">{swedenFeed239.title}</h2>
+   {latest.length?<div className="mt-6 grid gap-x-8 gap-y-7 md:grid-cols-2">{latest.map(article=><article key={article.slug} className="border-t-4 border-neutral-950 pt-4">
+    <p className="text-xs font-bold uppercase tracking-wide text-red-800">{article.section}</p>
+    <h3 className="mt-2 text-2xl font-black leading-tight"><Link href={`/sverige/artikel/${article.slug}`} className="hover:underline">{article.title}</Link></h3>
+    <p className="mt-3 leading-7 text-neutral-600">{article.intro}</p>
+    <div className="mt-4 flex items-center justify-between gap-4 text-sm text-neutral-500"><span>{formatArticleDate(article.updatedAt)}</span><Link href={`/sverige/artikel/${article.slug}`} className="font-bold text-neutral-950 underline">Läs →</Link></div>
+   </article>)}</div>:<p className="mt-5 border border-neutral-200 bg-neutral-50 p-5 text-neutral-600">{swedenFeed239.emptyMessage}</p>}
+  </section>
+
+  <section id="ekonomi" className="border-b border-neutral-300 py-10">
+   <p className="text-xs font-bold uppercase tracking-widest text-red-800">Sverige i siffror</p>
+   <h2 className="mt-1 text-3xl font-black sm:text-4xl">{swedenEconomySnapshot227.title}</h2>
+   <p className="mt-3 max-w-3xl text-lg leading-7 text-neutral-600">{swedenEconomySnapshot227.lead}</p>
+   <div className="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">{swedenEconomySnapshot227.metrics.map(metric=><article key={metric.label} className="border-t-4 border-neutral-950 pt-4">
+    <p className="text-sm font-bold text-neutral-500">{metric.label}</p><p className="mt-2 text-3xl font-black">{metric.value}</p><p className="mt-2 text-xs text-neutral-500">{metric.period}</p>
+   </article>)}</div>
+   <a href={swedenEconomySnapshot227.sourceUrl} target="_blank" rel="noreferrer" className="mt-6 inline-block text-sm font-bold underline">Källa: SCB →</a>
+  </section>
+
+  <section id="valet" className="border-b border-neutral-300 py-10">
+   <div className="flex flex-wrap items-end justify-between gap-3"><div><p className="text-xs font-bold uppercase tracking-widest text-red-800">Valet 2026</p><h2 className="mt-1 text-3xl font-black sm:text-4xl">Viktiga datum</h2></div><span className="text-xs text-neutral-500">Kontrollerad {swedenElectionCalendarRules224.checkedAt}</span></div>
+   <div className="mt-6 grid gap-5 md:grid-cols-3">{swedenElectionCalendar224.map(item=><article key={item.date} className="border-t-4 border-neutral-950 pt-4"><p className="text-sm font-black uppercase">{formatDate(item.date)}</p><h3 className="mt-2 text-xl font-black">{item.title}</h3><p className="mt-2 text-sm leading-6 text-neutral-600">{item.description}</p><a href={item.sourceUrl} target="_blank" rel="noreferrer" className="mt-4 inline-block text-sm font-bold underline">Källa →</a></article>)}</div>
+  </section>
+
+  <div id="fordjupning"><DeskDepth eyebrow="Sverige · Fördjupning" title="Valet, ekonomin och säkerheten bakom rubrikerna" {...swedenDepth}/></div>
+  <DailyDeskUpdate desk="sverige"/>
+  <footer className="border-t border-neutral-300 py-6 text-sm text-neutral-500"><Link href="/stockholm" className="font-bold underline">Till Stockholm →</Link></footer>
+ </main>
+}
