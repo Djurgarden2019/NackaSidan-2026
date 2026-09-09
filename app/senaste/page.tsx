@@ -47,7 +47,7 @@ export default async function LatestPage(){
     href: article.sourceUrl,
     type: 'Briefing'
   }));
-  const liveItems: NewsFeedItem[] = live.items.filter(item => within72Hours(item.published)).map(item => ({time:formatTime(item.published),section:item.section,title:item.title,summary:item.summary,href:item.link,type:'Briefing'}));
+  const liveItems: NewsFeedItem[] = live.items.filter(item => within72Hours(item.published)&&!item.local&&!['Stockholm','Nacka/Lokalt'].includes(item.sourceSection)).map(item => ({time:formatTime(item.published),section:item.section,title:item.title,summary:item.summary,href:item.link,type:'Briefing'}));
   const seen = new Set<string>();
   const items = [...automaticItems, ...liveItems]
     .filter((item) => !isLocalNews(item))
