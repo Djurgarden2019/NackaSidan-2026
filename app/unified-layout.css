@@ -277,3 +277,18 @@ main>.shell>section:first-child{padding-top:0}
 .sport-standard-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1rem}
 .sport-standard-grid p{margin:0;padding:1rem;border:1px solid var(--line);background:var(--surface)}
 @media(max-width:800px){.sport-news-grid,.sport-score-grid,.sport-agenda,.sport-standard-grid{grid-template-columns:1fr}.sport-agenda li{grid-template-columns:6.5rem 1fr}}
+
+
+/* Ett gemensamt typsnitt på hela NackaSidan */
+:root{
+  --site-font:Arial,Helvetica,sans-serif;
+}
+html,
+body,
+body *,
+button,
+input,
+select,
+textarea{
+  font-family:var(--site-font)!important;
+}
