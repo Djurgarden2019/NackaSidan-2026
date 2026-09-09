@@ -29,7 +29,6 @@ export default function WeekendPage() {
 
   <section id={sectionIds[lead.section]} className="weekend-cover">
    <div><div className="kicker">{lead.section} · {expandedReadingTime(lead.readingTime)} min läsning</div><h2><Link href={`/helg/${lead.slug}`}>{lead.title}</Link></h2><p className="lead">{lead.intro}</p><Link className="button" href={`/helg/${lead.slug}`}>Läs hela artikeln</Link></div>
-   <blockquote>“Helg ska ge varje ämne den tid som krävs för bakgrund, motargument och konsekvenser.”</blockquote>
   </section>
 
   <section className="weekend-magazine-grid" aria-label="Helgens långa artiklar">
@@ -41,6 +40,6 @@ export default function WeekendPage() {
    </article>)}
   </section>
 
-  <section className="weekend-promise"><div className="kicker">Helgs fasta innehåll</div><h2>18 avdelningar i varje utgåva</h2><p>Böcker, EU, filosofi, forskning och framsteg, historisk långläsning, kultur, kulturdebatt, makroekonomi, mat, miljö, nya trender, politisk debatt, psykologi, resor, Stockholm, Stockholmskrogar, USA och vin ska alltid finnas med. Ordningen bland avdelningarna slumpas vid varje besök. Varje artikel följer samma ordning: artikel, analys och konsekvenser, längre fördjupning och klickbara källor sist.</p></section>
+  <section className="weekend-promise"><div className="kicker">Helgs fasta innehåll</div><h2>18 avdelningar i varje utgåva</h2><p>Böcker, EU, filosofi, forskning och framsteg, historisk långläsning, kultur, kulturdebatt, makroekonomi, mat, miljö, nya trender, politisk debatt, psykologi, resor, Stockholm, Stockholmskrogar, USA och vin ska alltid finnas med.</p></section>
  </div><DailyDeskUpdate desk="helg"/></main>;
 }
