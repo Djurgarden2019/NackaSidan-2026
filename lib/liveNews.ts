@@ -143,15 +143,15 @@ export async function getLiveNews() {
   }));
 
   const now = Date.now();
-  const defaultMaxAgeMs = 10 * 24 * 60 * 60 * 1000;
-  const sportMaxAgeMs = 48 * 60 * 60 * 1000;
+  const defaultMaxAgeMs = 72 * 60 * 60 * 1000;
+  const sportMaxAgeMs = 72 * 60 * 60 * 1000;
   const fresh = settled.flatMap(x => x.items).filter(item => {
     const time = Date.parse(item.published);
     const age = now - time;
     if (item.section === 'Sport') {
       return Number.isFinite(time) && age >= 0 && age <= sportMaxAgeMs;
     }
-    return !Number.isFinite(time) || (age >= 0 && age <= defaultMaxAgeMs);
+    return Number.isFinite(time) && age >= 0 && age <= defaultMaxAgeMs;
   }).sort((a,b) => {
     const scoreDiff = editorialScore(b, now) - editorialScore(a, now);
     if (scoreDiff !== 0) return scoreDiff;
