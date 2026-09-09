@@ -3,7 +3,7 @@ export type SportArticle = {
   facts:string[];body:{heading:string;paragraphs:string[]}[];analysis:string;watch:string[];
   sources:{label:string;url:string}[];
 };
-export const SPORT_ARTICLE_MAX_AGE_HOURS=48;
+export const SPORT_ARTICLE_MAX_AGE_HOURS=72;
 const SPORT_ARTICLE_MAX_AGE_MS=SPORT_ARTICLE_MAX_AGE_HOURS*60*60*1000;
 
 export const latestResults=[

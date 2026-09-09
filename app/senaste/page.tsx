@@ -1,7 +1,8 @@
 import DailyDeskUpdate from '../../components/DailyDeskUpdate';
 import Link from 'next/link';
 import { LatestNewsFeed } from '../../components/Newsroom';
-import { latestNews, type NewsFeedItem } from '../../content/news';
+import { type NewsFeedItem } from '../../content/news';
+import { getLiveNews } from '../../lib/liveNews';
 import { readArticles } from '../../lib/autoPublisher';
 
 export const dynamic = 'force-dynamic';
@@ -21,6 +22,8 @@ function formatTime(value: string) {
   }).format(date).replace(',', ' ·');
 }
 
+function within72Hours(value: string) { const time=Date.parse(value); const age=Date.now()-time; return Number.isFinite(time)&&age>=0&&age<=72*60*60*1000; }
+
 function isLocalNews(item: NewsFeedItem) {
   const section = item.section.toLocaleLowerCase('sv-SE');
   return section === 'nacka'
@@ -35,8 +38,8 @@ function isLocalNews(item: NewsFeedItem) {
 }
 
 export default async function LatestPage(){
-  const automatic = await readArticles();
-  const automaticItems: NewsFeedItem[] = automatic.map((article) => ({
+  const [automatic, live] = await Promise.all([readArticles(), getLiveNews()]);
+  const automaticItems: NewsFeedItem[] = automatic.filter(article => within72Hours(article.publishedAt)).map((article) => ({
     time: formatTime(article.publishedAt),
     section: article.section,
     title: article.title,
@@ -44,8 +47,9 @@ export default async function LatestPage(){
     href: article.sourceUrl,
     type: 'Briefing'
   }));
+  const liveItems: NewsFeedItem[] = live.items.filter(item => within72Hours(item.published)&&!item.local&&!['Stockholm','Nacka/Lokalt'].includes(item.sourceSection)).map(item => ({time:formatTime(item.published),section:item.section,title:item.title,summary:item.summary,href:item.link,type:'Briefing'}));
   const seen = new Set<string>();
-  const items = [...automaticItems, ...latestNews]
+  const items = [...automaticItems, ...liveItems]
     .filter((item) => !isLocalNews(item))
     .filter((item) => {
       const key = item.href.replace(/[?#].*$/, '');
@@ -55,5 +59,5 @@ export default async function LatestPage(){
     })
     .slice(0, 50);
 
-  return <main><div className="shell"><LatestNewsFeed items={items} showKicker={false}/><aside className="latest-note"><strong>Om flödet</strong><p>Senaste Nytt visar nationella och internationella publiceringar och uppdateringar. Lokala nyheter från Nacka och Stockholm visas på sina egna avdelningssidor.</p><Link className="text-link" href="/principer">Så arbetar vi redaktionellt →</Link></aside><section className="section"><div className="kicker">Välj nästa steg</div><h2>Från kronologi till sammanhang</h2><p className="lead">Senaste Nytt berättar vad som är nytt. De här ingångarna hjälper dig förstå vad som är viktigast.</p><div style={{display:'grid',gridTemplateColumns:'repeat(auto-fit,minmax(220px,1fr))',gap:12,marginTop:18}}>{paths.map(([href,label,text])=><Link key={href} href={href} style={{display:'block',padding:18,border:'1px solid #d4d4d4',borderRadius:10,textDecoration:'none',color:'inherit'}}><strong style={{display:'block',fontSize:20}}>{label} →</strong><span style={{display:'block',marginTop:6,fontSize:14,lineHeight:1.5,color:'#666'}}>{text}</span></Link>)}</div></section><section className="section" style={{borderTop:'1px solid #d4d4d4',paddingTop:24}}><div className="kicker">Transparens</div><h2>Ser något fel ut?</h2><p className="lead">Vi vill att rättelser och betydelsefulla uppdateringar ska gå att följa.</p><div style={{display:'flex',gap:14,flexWrap:'wrap'}}><Link className="button" href="/rattelser">Rättelser & transparens</Link><Link className="text-link" href="/kontakt">Kontakta redaktionen →</Link></div></section></div><DailyDeskUpdate desk="senaste"/></main>
+  return <main><div className="shell"><LatestNewsFeed items={items} showKicker={false}/><aside className="latest-note"><strong>Om flödet</strong><p>Senaste Nytt visar nationella och internationella publiceringar från de senaste 72 timmarna. Lokala nyheter från Nacka och Stockholm visas på sina egna avdelningssidor.</p><Link className="text-link" href="/principer">Så arbetar vi redaktionellt →</Link></aside><section className="section"><div className="kicker">Välj nästa steg</div><h2>Från kronologi till sammanhang</h2><p className="lead">Senaste Nytt berättar vad som är nytt. De här ingångarna hjälper dig förstå vad som är viktigast.</p><div style={{display:'grid',gridTemplateColumns:'repeat(auto-fit,minmax(220px,1fr))',gap:12,marginTop:18}}>{paths.map(([href,label,text])=><Link key={href} href={href} style={{display:'block',padding:18,border:'1px solid #d4d4d4',borderRadius:10,textDecoration:'none',color:'inherit'}}><strong style={{display:'block',fontSize:20}}>{label} →</strong><span style={{display:'block',marginTop:6,fontSize:14,lineHeight:1.5,color:'#666'}}>{text}</span></Link>)}</div></section><section className="section" style={{borderTop:'1px solid #d4d4d4',paddingTop:24}}><div className="kicker">Transparens</div><h2>Ser något fel ut?</h2><p className="lead">Vi vill att rättelser och betydelsefulla uppdateringar ska gå att följa.</p><div style={{display:'flex',gap:14,flexWrap:'wrap'}}><Link className="button" href="/rattelser">Rättelser & transparens</Link><Link className="text-link" href="/kontakt">Kontakta redaktionen →</Link></div></section></div><DailyDeskUpdate desk="senaste"/></main>
 }
