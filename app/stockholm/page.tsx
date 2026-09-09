@@ -25,7 +25,7 @@ export default async function StockholmPage(){
  const lead=published.find(article=>article.homepage?.role==='lead')??published[0];
  const latest=[...published].filter(article=>article.slug!==lead?.slug).sort((a,b)=>Date.parse(b.publishedAt)-Date.parse(a.publishedAt));
 
- return <main className="mx-auto max-w-6xl px-4 py-8 font-sans text-neutral-950 sm:px-6 lg:px-8">
+ return <main className="standard-section-page">
   <header className="border-b-4 border-neutral-950 pb-7">
    <p className="text-sm font-bold uppercase tracking-[.18em] text-red-800">Uppdaterad {todayLabel()}</p>
    <h1 className="mt-2 text-5xl font-black tracking-tight sm:text-7xl">Stockholm</h1>
