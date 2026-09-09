@@ -8,6 +8,7 @@ export type LiveNewsItem = {
   priority: 'Hög' | 'Medel' | 'Låg';
   local: boolean;
   summary: string;
+  image?: string;
 };
 
 type Feed = { name: string; url: string; section: string; homepage: string; note?: string };
@@ -36,6 +37,12 @@ function tag(block: string, names: string[]) {
     if (m) return decodeXml(m[1]);
   }
   return '';
+}
+
+function imageFrom(block: string) {
+  const media = block.match(/<media:(?:content|thumbnail)[^>]+url=["']([^"']+)["']/i);
+  const enclosure = block.match(/<enclosure[^>]+url=["']([^"']+)["'][^>]+type=["']image\//i);
+  return (media?.[1] || enclosure?.[1] || '').replace(/&amp;/g, '&');
 }
 
 function linkFrom(block: string) {
@@ -93,7 +100,7 @@ function parse(xml: string, feed: Feed): LiveNewsItem[] {
     const title = tag(block, ['title']);
     const link = linkFrom(block);
     const section = classify(title, link, feed.section);
-    return { title, link, published: tag(block, ['pubDate', 'published', 'updated']), source: feed.name, sourceSection: feed.section, section, priority: priorityFor(title, section), local: section === 'Nacka/Lokalt', summary: tag(block, ['description', 'summary', 'content:encoded', 'content']) };
+    return { title, link, published: tag(block, ['pubDate', 'published', 'updated']), source: feed.name, sourceSection: feed.section, section, priority: priorityFor(title, section), local: section === 'Nacka/Lokalt', summary: tag(block, ['description', 'summary', 'content:encoded', 'content']), image: imageFrom(block) || undefined };
   }).filter(x => x.title && x.link);
 }
 
