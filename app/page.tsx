@@ -9,11 +9,12 @@ export const dynamic='force-dynamic';
 function dateLabel(value:string){const date=new Date(value);return Number.isNaN(date.getTime())?'Senaste nytt':new Intl.DateTimeFormat('sv-SE',{hour:'2-digit',minute:'2-digit',day:'numeric',month:'short',timeZone:'Europe/Stockholm'}).format(date)}
 function todayLabel(){return new Intl.DateTimeFormat('sv-SE',{weekday:'long',day:'numeric',month:'long',year:'numeric',timeZone:'Europe/Stockholm'}).format(new Date())}
 function within24Hours(value:string){const time=Date.parse(value);const age=Date.now()-time;return Number.isFinite(time)&&age>=0&&age<=24*60*60*1000}
+function isLocalNews(item:{local:boolean;section:string;sourceSection:string}){const section=item.section.toLocaleLowerCase('sv-SE');const sourceSection=item.sourceSection.toLocaleLowerCase('sv-SE');return item.local||section.includes('nacka')||section.includes('stockholm')||section.includes('lokalt')||sourceSection.includes('nacka')||sourceSection.includes('stockholm')||sourceSection.includes('lokalt')}
 
 export default async function Home(){
  const live=await getLiveNews();
  const updatedToday=todayLabel();
- const freshNews=live.items.filter(item=>within24Hours(item.published));
+ const freshNews=live.items.filter(item=>within24Hours(item.published)&&!isLocalNews(item));
  const topNews=freshNews.slice(0,6);
  const lead=topNews[0];
  const worldLive=freshNews.filter(item=>item.section==='Världen'||item.sourceSection==='Världen').slice(0,12);
