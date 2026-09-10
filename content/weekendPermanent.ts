@@ -18,32 +18,19 @@ export const weekendPermanentArticles: WeekendArticle[] = [
     sources:[{label:'Guide Michelin: Restauranger i Stockholm',url:'https://guide.michelin.com/se/en/stockholm-region/stockholm/restaurants'},{label:'Visit Stockholm: Nya och aktuella restauranger',url:'https://www.visitstockholm.com/eat-drink/restaurants/new-and-trendy-restaurants/'}]
   },
   {
-    slug:'helg-mat-smak-forst-mindre-svinn', section:'Mat',
-    title:'Smak först, mindre svinn – så förändras helgens matlagning',
-    intro:'Restmat, baljväxter och säsongsråvaror flyttar från plikt till gastronomi. Den nya vardagsmaten handlar mindre om förbud och mer om teknik.',
-    published, readingTime:'13 min',
+    slug:'helg-mat-vin-champagne-skord-2026', section:'Mat & vin',
+    title:'Extremvärmen krymper champagneskörden – reservvinerna räddar årets blandningar',
+    intro:'Vårfrost och sommarhetta har gjort 2026 års skörd ovanligt liten. I Champagne möter odlarna ett dubbelt problem: färre druvor med hög kvalitet och en marknad där efterfrågan har bromsat.',
+    published:'10 september 2026', readingTime:'16 min',
     news:[
-      {heading:'Teknik slår trendord',paragraphs:['Bra vardagsmat börjar med temperatur, sälta, syra och konsistens. Rostning ger djup åt rotfrukter, en syrlig komponent lyfter feta rätter och rätt mängd salt gör större skillnad än en lång ingredienslista.','Baljväxter blir mer användbara när de behandlas som huvudråvara och inte som ersättning. Bönor kan bli kräm, gryta eller rostad topping beroende på metod.']},
-      {heading:'Resten som råvara',paragraphs:['Kokt potatis kan stekas, bröd kan bli krutonger och grönsaksrester kan byggas in i buljong. Planerad återanvändning minskar både kostnad och svinn utan att middagen behöver kännas repetitiv.','Den bästa strategin är att laga komponenter som kan byta roll: en rostad grönsak fungerar i sallad, pasta och soppa.']},
-      {heading:'En praktisk helgmodell',paragraphs:['Välj en huvudråvara, en syra, något krispigt och en sås. Den enkla modellen gör improvisationen lättare och hjälper hushållet att använda det som redan finns.','Helg följer mat som hantverk, ekonomi och kultur. Recept ska ange varför metoden fungerar, inte bara vad läsaren ska göra.']}
+      {heading:'En av de tidigaste skördarna',paragraphs:['Druvplockarna kallades ut ovanligt tidigt efter en sommar med extrem värme. Reuters rapporterar att vårfrost och värmeböljor väntas minska den franska vinproduktionen kraftigt, med ett särskilt stort tapp i Champagne.','Det varma vädret har koncentrerat druvornas smak och gett lovande kvalitet, men också högre sockerhalt. För vinmakarna gäller det nu att bevara frisk syra och undvika att alkoholhalten blir för hög.']},
+      {heading:'Reservvinerna är champagnens försäkring',paragraphs:['Champagne blandas ofta av vin från flera år. Producenterna sparar därför delar av goda skördar som reservvin och kan använda dem när årets volym eller balans inte räcker. Systemet gör smaken jämnare trots vädrets växlingar.','Efter flera mindre skördar blir beslutet svårare. Den som använder mycket av lagret nu får större volym att sälja men mindre skydd om även nästa år blir besvärligt. Mindre producenter har inte alltid samma reserver som de stora husen.']},
+      {heading:'Klimatet förändrar smaken och arbetet',paragraphs:['Tidigare skörd påverkar hela arbetsåret. Plockare måste finnas på plats med kort varsel och druvorna behöver snabbt till pressarna när dagarna är heta. Samtidigt flyttar den avgörande balansen mellan mognad och syra tidigare i kalendern.','För konsumenten märks förändringen inte omedelbart. Champagne lagras före försäljning och reservviner jämnar ut skillnaderna. På längre sikt kan däremot lägre skördar, större odlingsrisk och mer komplicerad vinifiering påverka både utbud och pris.']},
+      {heading:'Vad passar till ett stramare mousserande vin?',paragraphs:['Hög syra och bubblor fungerar särskilt bra med sälta och fett. Skaldjur, friterad mat, lagrad ost och svamprätter kan därför vara bättre följeslagare än söta desserter. Till söt mat behövs ett vin med tydligare egen sötma.','Poängen är samspelet vid bordet, inte etikettens prestige. Även alkoholfria mousserande alternativ bör bedömas efter syra, balans och hur väl de möter maten.']}
     ],
-    analysis:['Matsvinn minskar bäst när rester planeras in före tillagningen.','Smakkompetens gör klimatsmartare råvaror mer attraktiva än moraliserande budskap.','Dyrare råvaror kan användas som smakgivare i stället för att dominera hela portionen.'],
-    consequences:['Lägre matkostnad per måltid.','Mindre hushållssvinn.','Större fokus på teknik och säsong.'],
-    sources:[{label:'Livsmedelsverket: Matsvinn',url:'https://www.livsmedelsverket.se/matvanor-halsa--miljo/matsvinn'},{label:'WWF: One Planet Plate',url:'https://www.wwf.se/mat-och-jordbruk/one-planet-plate/'}]
-  },
-  {
-    slug:'helg-vin-syra-struktur-mat', section:'Vin',
-    title:'Välj vin efter syra och struktur – inte efter etikettens prestige',
-    intro:'En matvänlig flaska behöver inte vara dyr. När sås, sälta, sötma och hetta styr valet blir resultatet säkrare.',
-    published, readingTime:'12 min',
-    news:[
-      {heading:'Maten bestämmer',paragraphs:['Syrlig mat behöver ett vin med tydlig syra. Sötma i rätten får ett helt torrt vin att kännas stramare, medan chili förstärker alkoholens hetta. Därför fungerar måttlig alkohol och ibland liten restsötma ofta bättre än ett kraftigt prestigevin.','Till fet mat skapar syra balans. Till grillat kan rökighet och struktur vara viktigare än druvsorten.']},
-      {heading:'Fyra användbara stilar',paragraphs:['Torr riesling passar fisk, skaldjur och kryddhetta. Grüner veltliner fungerar med gröna smaker. Barbera möter tomat och svamp, medan ett balanserat Rhônevin passar lamm och grillade grönsaker.','Årgång och producent varierar, så stilråd håller längre än exakta flasklistor.']},
-      {heading:'Alkoholfritt vid bordet',paragraphs:['Ett torrt alkoholfritt mousserande med hög syra fungerar ofta bättre till mat än en söt stilla dryck. Alkohol är inte nödvändigt för en fullständig måltid.','Rekommendationerna gäller smak, inte konsumtionsmängd. Sortiment och pris ska alltid kontrolleras på nytt.']}
-    ],
-    analysis:['Rätt stil betyder oftast mer än hög prislapp.','Exakta flaskråd åldras snabbt och ska kompletteras med hållbara smakprinciper.','Alkoholfria alternativ bör bedömas efter samma krav på syra, balans och sötma.'],
-    consequences:['Lättare att ersätta en slutsåld flaska.','Mindre fokus på prestige och mer på måltiden.','Alkoholfritt får en likvärdig plats.'],
-    sources:[{label:'Systembolaget: Vin och mat',url:'https://www.systembolaget.se/vin-och-mat/'},{label:'Systembolaget: Alkohol och hälsa',url:'https://www.systembolaget.se/alkohol-och-halsa/'}]
+    analysis:['Reservvinerna gör Champagne mindre känsligt för ett enskilt dåligt år, men de kan inte kompensera för en lång följd av små skördar.','Extremväder påverkar både mängden vin och den stil producenterna kan skapa. Hög mognad är inte automatiskt samma sak som bättre balans.','Svagare efterfrågan kan kortsiktigt dämpa prispressen, men odlingskostnader och klimatrisk fortsätter att öka.'],
+    consequences:['Mindre skörd av druvor i Champagne 2026.','Större användning av äldre reservviner.','Ökad osäkerhet om framtida volymer och priser.'],
+    sources:[{label:'Reuters: Champagne makers draw on reserves after heatwaves shrink harvest',url:'https://www.reuters.com/business/champagne-makers-draw-reserves-after-heatwaves-shrink-harvest-2026-09-09/'},{label:'Comité Champagne: Från druva till vin',url:'https://www.champagne.fr/en/about-champagne/how-champagne-is-made'}]
   },
   {
     slug:'helg-stockholm-staden-mellan-barn-och-aldre', section:'Stockholm',
