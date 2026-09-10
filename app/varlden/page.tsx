@@ -8,9 +8,9 @@ import { worldLongReads } from '../../content/worldLongReads';
 export const metadata={title:'Världen | NackaSidan 2026',description:'Internationella nyheter och långa analyser om säkerhet, ekonomi, handel, demokrati och geopolitik.'};
 
 export default function WorldPage(){return <main><div className="shell">
- <div className="page-hero"><div className="kicker">Världen · Uppdaterad 5 september 2026</div><h1>Världen hänger ihop mer än rubrikerna visar</h1><p>Aktuella internationella nyheter med längre analys av drivkrafter, konsekvenser, osäkerheter och betydelsen för Sverige.</p></div>
+ <div className="page-hero"><div className="kicker">Världen · Uppdaterad 10 september 2026</div><h1>Världen hänger ihop mer än rubrikerna visar</h1><p>Aktuella internationella nyheter med längre analys av drivkrafter, konsekvenser, osäkerheter och betydelsen för Sverige.</p></div>
  <section className="section no-top"><div className="feature-grid world-grid">{worldFeatures.map((item,index)=><FeatureCard key={item.title} item={item} large={index===0}/>)}</div></section>
- <section className="section" id="fordjupningar"><SectionIntro eyebrow="Långläsning" title="Nyheter, analyser och konsekvenser" text="Fem fördjupningar om de internationella skeenden som just nu förändrar säkerhet, ekonomi och teknisk makt."/>{worldLongReads.map((article,index)=><article key={article.title} id={`analys-${index+1}`} style={{borderTop:'1px solid #aaa',paddingTop:32,marginTop:38,maxWidth:900}}>
+ <section className="section" id="fordjupningar"><SectionIntro eyebrow="Långläsning" title="Nyheter, analyser och konsekvenser" text="Fem fördjupningar om de internationella skeenden som just nu förändrar säkerhet, ekonomi, klimat och handel."/>{worldLongReads.map((article,index)=><article key={article.title} id={`analys-${index+1}`} style={{borderTop:'1px solid #aaa',paddingTop:32,marginTop:38,maxWidth:900}}>
    <div className="kicker">{article.eyebrow}</div><h2 style={{fontSize:'clamp(32px,5vw,52px)',lineHeight:1.03,margin:'10px 0 14px'}}>{article.title}</h2><p className="lead">{article.lead}</p>
    <h3 style={{marginTop:30}}>Själva nyheten</h3>{article.news.map((p,i)=><p key={i}>{p}</p>)}
    <h3 style={{marginTop:30}}>Analys och konsekvenser</h3>{article.analysis.map((p,i)=><p key={i}>{p}</p>)}
