@@ -12,7 +12,7 @@ export async function generateMetadata({params}:{params:Promise<{slug:string}>})
 export default async function Page({params}:{params:Promise<{slug:string}>}){
  const {slug}=await params;const article=getTopWorldArticle(slug);if(!article)notFound();
  return <main><article className="shell article-page">
-  <div className="kicker">{article.section} · Uppdaterad 5 september 2026</div>
+  <div className="kicker">{article.section} · Uppdaterad 10 september 2026</div>
   <p><Link className="text-link" href="/">← Till startsidan</Link></p>
   <header><h1>{article.title}</h1><p className="lead">{article.summary}</p></header>
   <figure style={{margin:'28px 0'}}><img src={article.image} alt="" style={{width:'100%',maxHeight:520,objectFit:'cover'}}/><figcaption className="meta">{article.imageCredit}</figcaption></figure>
