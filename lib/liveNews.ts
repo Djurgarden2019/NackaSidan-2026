@@ -22,6 +22,9 @@ export const liveFeeds: Feed[] = [
   { name: 'Sveriges Radio · P4 Stockholm', url: 'https://api.sr.se/api/rss/program/701', section: 'Stockholm', homepage: 'https://www.sverigesradio.se/p4stockholm', note: 'Lokal RSS från Sveriges Radio' },
   { name: 'Sveriges Riksbank · Nyheter', url: 'https://www.riksbank.se/sv/rss/nyheter/', section: 'Ekonomi', homepage: 'https://www.riksbank.se/sv/press-och-publicerat/' },
   { name: 'Sveriges Riksbank · Pressmeddelanden', url: 'https://www.riksbank.se/sv/rss/pressmeddelanden/', section: 'Ekonomi', homepage: 'https://www.riksbank.se/sv/press-och-publicerat/' },
+  { name: 'BBC Business', url: 'https://feeds.bbci.co.uk/news/business/rss.xml', section: 'Ekonomi', homepage: 'https://www.bbc.com/news/business' },
+  { name: 'The Guardian Business', url: 'https://www.theguardian.com/uk/business/rss', section: 'Ekonomi', homepage: 'https://www.theguardian.com/uk/business' },
+  { name: 'New York Times Business', url: 'https://rss.nytimes.com/services/xml/rss/nyt/Business.xml', section: 'Ekonomi', homepage: 'https://www.nytimes.com/section/business' },
   { name: 'BBC World', url: 'https://feeds.bbci.co.uk/news/world/rss.xml', section: 'Världen', homepage: 'https://www.bbc.com/news/world' },
   { name: 'BBC Europe', url: 'https://feeds.bbci.co.uk/news/world/europe/rss.xml', section: 'Internationella medier', homepage: 'https://www.bbc.com/news/world/europe' },
   { name: 'Deutsche Welle', url: 'https://rss.dw.com/rdf/rss-en-all', section: 'Internationella medier', homepage: 'https://www.dw.com/' },
@@ -119,6 +122,7 @@ function sourceWeight(source: string) {
   if (source.startsWith('Nacka kommun')) return 4;
   if (source.startsWith('SVT') || source.startsWith('Sveriges Radio')) return 3;
   if (source.startsWith('Sveriges Riksbank')) return 2;
+  if (source.includes('Business')) return 2;
   return 1;
 }
 
