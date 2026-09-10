@@ -6,10 +6,10 @@ import './helg.css';
 
 export const dynamic = 'force-dynamic';
 
-export const metadata: Metadata = { title: 'Helg', description: 'NackaSidans helgmagasin med längre artiklar om mat, vin, Stockholm, politik, kultur, ekonomi, psykologi, filosofi och historia.' };
+export const metadata: Metadata = { title: 'Helg', description: 'NackaSidans helgmagasin med längre artiklar om mat och vin, Stockholm, politik, kultur, ekonomi, psykologi, filosofi och historia.' };
 
 const sectionIds: Record<string,string> = {
- 'Stockholmskrogar':'stockholmskrogar','Mat':'mat','Vin':'vin','Stockholm':'stockholm','Kulturdebatt':'kulturdebatt','USA':'usa','EU':'eu','Nya trender':'nya-trender','Politisk debatt':'politisk-debatt','Makroekonomi':'makroekonomi','Böcker':'bocker','Psykologi':'psykologi','Filosofi':'filosofi','Historisk långläsning':'historisk-handelser','Miljö':'miljo','Forskning och framsteg':'forskning-och-framsteg','Resor':'resor','Kultur':'kultur'
+ 'Stockholmskrogar':'stockholmskrogar','Mat & vin':'mat-och-vin','Veckans reportage':'veckans-reportage','Stockholm':'stockholm','Kulturdebatt':'kulturdebatt','USA':'usa','EU':'eu','Nya trender':'nya-trender','Politisk debatt':'politisk-debatt','Makroekonomi':'makroekonomi','Böcker':'bocker','Psykologi':'psykologi','Filosofi':'filosofi','Historisk långläsning':'historisk-handelser','Miljö':'miljo','Forskning och framsteg':'forskning-och-framsteg','Resor':'resor','Kultur':'kultur'
 };
 
 function expandedReadingTime(value:string){return Math.round((Number.parseInt(value,10)||12)*2);}
@@ -40,6 +40,6 @@ export default function WeekendPage() {
    </article>)}
   </section>
 
-  <section className="weekend-promise"><div className="kicker">Helgs fasta innehåll</div><h2>18 avdelningar i varje utgåva</h2><p>Böcker, EU, filosofi, forskning och framsteg, historisk långläsning, kultur, kulturdebatt, makroekonomi, mat, miljö, nya trender, politisk debatt, psykologi, resor, Stockholm, Stockholmskrogar, USA och vin ska alltid finnas med.</p></section>
+  <section className="weekend-promise"><div className="kicker">Helgs fasta innehåll</div><h2>18 avdelningar i varje utgåva</h2><p>Böcker, EU, filosofi, forskning och framsteg, historisk långläsning, kultur, kulturdebatt, makroekonomi, mat och vin, miljö, nya trender, politisk debatt, psykologi, resor, Stockholm, Stockholmskrogar, USA och Veckans reportage ska alltid finnas med.</p></section>
  </div><DailyDeskUpdate desk="helg"/></main>;
 }
