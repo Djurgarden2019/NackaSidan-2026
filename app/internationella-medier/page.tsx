@@ -1,6 +1,8 @@
 import type { Metadata } from 'next';
 import { getLiveNews } from '../../lib/liveNews';
 import DailyDeskUpdate from '../../components/DailyDeskUpdate';
+import Link from 'next/link';
+import {internationalFeatures} from '../../content/internationalFeatures';
 
 export const dynamic='force-dynamic';
 export const metadata:Metadata={title:'Internationella medier',description:'Dagsaktuella nyheter från utvalda europeiska och amerikanska medier.'};
@@ -25,6 +27,7 @@ export default async function InternationalMediaPage(){
  return <main className="standard-section-page">
   <header className="border-b-4 border-neutral-950 pb-7"><p className="text-sm font-bold uppercase tracking-[.18em] text-red-800">Uppdaterad {today()}</p><h1 className="mt-2 text-5xl font-black tracking-tight sm:text-7xl">Internationella medier</h1></header>
   <nav aria-label="Innehåll" className="flex gap-6 overflow-x-auto border-b border-neutral-300 py-4 text-sm font-bold"><a href="#europa" className="hover:underline">Europeiska medier</a><a href="#usa" className="hover:underline">Amerikanska medier</a><a href="#globalt" className="hover:underline">Globala medier</a></nav>
+  <section className="border-b border-neutral-300 py-10"><p className="text-xs font-bold uppercase tracking-widest text-red-800">NackaSidans svenska artiklar</p><h2 className="mt-1 text-3xl font-black sm:text-4xl">Tre internationella fördjupningar</h2><div className="mt-6 grid gap-7 border-t-4 border-neutral-950 pt-6 md:grid-cols-3">{internationalFeatures.map(article=><article key={article.slug}><p className="text-xs font-bold uppercase tracking-wide text-red-800">{article.section} · {article.published}</p><h3 className="mt-2 text-2xl font-black leading-tight"><Link href={`/internationella-medier/${article.slug}`} className="hover:underline">{article.title}</Link></h3><p className="mt-3 leading-7 text-neutral-600">{article.intro}</p><Link href={`/internationella-medier/${article.slug}`} className="mt-4 inline-block text-sm font-bold underline">Läs den svenska artikeln →</Link></article>)}</div></section>
   <div id="europa"><NewsList title="Europeiska medier" items={european}/></div>
   <div id="usa"><NewsList title="Amerikanska medier" items={american}/></div>
   <div id="globalt"><NewsList title="Globala medier" items={globalNews}/></div>
