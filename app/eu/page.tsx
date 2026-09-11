@@ -2,11 +2,26 @@ import DailyDeskUpdate from '../../components/DailyDeskUpdate';
 import type { Metadata } from 'next';
 import { euCountries } from '../../content/euCountries';
 
-export const metadata: Metadata = {title:'EU:s 27 medlemsländer',description:'Fakta om EU-ländernas huvudstäder, befolkning, yta, ledare, val, ekonomi och industrier.'};
+export const metadata: Metadata = {title:'EU:s 27 medlemsländer',description:'Dagsaktuella EU-nyheter och fakta om medlemsländernas politik, ekonomi och industrier.'};
+const euLatest = [
+ {section:'Ekonomi · 11 september',title:'ECB kan behöva strama åt mer om energipriserna fortsätter upp',summary:'Bundesbankschefen Joachim Nagel säger att penningpolitiken kan behöva bli måttligt åtstramande. ECB höjde på torsdagen styrräntan till 2,50 procent.',image:'https://commons.wikimedia.org/wiki/Special:FilePath/European%20Central%20Bank%20-%20Frankfurt.jpg?width=1200',credit:'Europeiska centralbanken i Frankfurt · Wikimedia Commons',href:'https://www.reuters.com/business/finance/ecb-might-need-mildly-restrictive-policy-nagel-says-2026-09-11/',source:'Reuters'},
+ {section:'Handel · 10 september',title:'EU-länder vill begränsa importen av kemi och plast',summary:'Frankrike, Italien och sannolikt Tyskland väntas begära kvoter eller tullar för att skydda en pressad europeisk kemiindustri mot snabbt växande import.',image:'https://commons.wikimedia.org/wiki/Special:FilePath/Chemical%20factory.jpg?width=1200',credit:'Europeisk kemiindustri · Wikimedia Commons',href:'https://www.reuters.com/world/china/eu-countries-seek-import-curbs-chemicals-plastics-sources-say-2026-09-10/',source:'Reuters'},
+ {section:'Finansmarknad · 10 september',title:'EU:s marknadsvakt varnar för plötsligt börsfall',summary:'ESMA ser en växande klyfta mellan svagare ekonomiska utsikter och höga värderingar. Geopolitik, cyberrisker, AI och krypto kan förstärka en korrigering.',image:'https://commons.wikimedia.org/wiki/Special:FilePath/European%20Union%20flag%20in%20Brussels.jpg?width=1200',credit:'EU-flagga i Bryssel · Wikimedia Commons',href:'https://www.reuters.com/legal/government/eu-watchdog-flags-risk-abrupt-market-correction-2026-09-10/',source:'Reuters'}
+];
+
 
 export default function EuPage(){
  return <main id="main-content"><div className="shell">
-  <header className="page-hero"><div className="kicker">EU · 27 medlemsländer · Uppdaterad 5 september 2026</div><h1>Europeiska unionen – land för land</h1><p>En samlad översikt över unionens länder, politiska ledning, kommande val, ekonomi och viktigaste näringar.</p></header>
+  <header className="page-hero"><div className="kicker">EU · 27 medlemsländer · Uppdaterad 11 september 2026</div><h1>Europeiska unionen – land för land</h1><p>En samlad översikt över unionens länder, politiska ledning, kommande val, ekonomi och viktigaste näringar.</p></header>
+  <section className="section no-top" aria-labelledby="eu-latest-title">
+   <div className="kicker">Dagsaktuellt från unionen</div><h2 id="eu-latest-title">Tre nyheter om EU</h2>
+   <div style={{display:'grid',gridTemplateColumns:'repeat(auto-fit,minmax(260px,1fr))',gap:18,marginTop:24}}>
+    {euLatest.map(item=><article key={item.href} style={{borderTop:'4px solid #173b78',background:'#fff'}}>
+     <img src={item.image} alt="" loading="lazy" style={{width:'100%',height:190,objectFit:'cover'}}/>
+     <div style={{padding:'18px 0'}}><div className="kicker">{item.section}</div><h3 style={{fontSize:25,lineHeight:1.08,margin:'8px 0 12px'}}><a href={item.href} target="_blank" rel="noreferrer">{item.title}</a></h3><p>{item.summary}</p><p className="meta">Bild: {item.credit}</p><a className="text-link" href={item.href} target="_blank" rel="noreferrer">Läs hos {item.source} →</a></div>
+    </article>)}
+   </div>
+  </section>
   <section className="section no-top" style={{display:'grid',gridTemplateColumns:'repeat(auto-fit,minmax(180px,1fr))',gap:16}}>
    <div style={{borderTop:'3px solid #111',paddingTop:12}}><strong style={{fontSize:28}}>27</strong><p>medlemsländer</p></div>
    <div style={{borderTop:'3px solid #111',paddingTop:12}}><strong style={{fontSize:28}}>452 miljoner</strong><p>invånare i EU den 1 januari 2026</p></div>
