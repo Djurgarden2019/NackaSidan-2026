@@ -13,12 +13,12 @@ export const topWorldNews5Sep:TopWorldArticle[]=[
  sources:[{label:'Reuters – Huthierna närmar sig Bab al-Mandab',url:'https://www.reuters.com/world/middle-east/saudi-says-no-danger-after-khamis-mushait-alert-amid-clashes-with-houthis-2026-09-10/'},{label:'AP – Huthierna tar den strategiska hamnstaden Mocka',url:'https://apnews.com/article/e4e799701b382799a955969c212800ea'}]
 },
 {
- slug:'ryssland-slar-mot-ukrainsk-ekonomi',section:'Ukraina · Kriget',title:'Ryska drönare slår mot Ukrainas bränsle- och livsmedelsinfrastruktur',summary:'En bensinstation i Kyiv och en stor solrosoljefabrik i Dnipro har träffats när angreppen mot logistik och företag intensifieras.',
+ slug:'ryssland-slar-mot-ukrainsk-ekonomi',section:'Ukraina · Kriget',title:'Kanada förstärker Ukrainas luftförsvar när drönarkriget trappas upp',summary:'Kanada lovar nytt luftförsvar, energistöd och miljontals drönare när Ryssland intensifierar angreppen mot ukrainsk infrastruktur.',
  image:'https://commons.wikimedia.org/wiki/Special:FilePath/Flag%20of%20Ukraine.svg?width=1200',imageCredit:'Ukrainas flagga · Wikimedia Commons',
- news:['En rysk drönare träffade en Ukrnafta-station i Kyiv och skadade fyra personer. I Dnipro dödades två personer och fem skadades när en anläggning som drivs av jordbruksföretaget Bunge träffades.','Även lager, butiker och transportleder har angripits de senaste veckorna. Ryssland förnekar att civila mål avsiktligt attackeras.'],
- analysis:['Angreppen riktar pressen mot ekonomins vardagsfunktioner: drivmedel, matproduktion och transporter. Skadorna kan påverka arbete och export långt efter räddningsinsatsen.','Ukraina måste fördela ett begränsat luftförsvar mellan fronten, städerna och ekonomisk infrastruktur. Det gör varje ny måltyp till ett strategiskt problem.'],
- depth:['Solrosolja är en viktig ukrainsk exportvara. Angrepp mot produktion och logistik kan påverka både Ukrainas statsinkomster och internationella livsmedelsflöden.','Det centrala framåt är om angreppen blir ett systematiskt försök att slå ut försörjningen inför vintern och om partnerländer kan förstärka luftförsvaret.'],
- sources:[{label:'Reuters – Angrepp mot bensinstation i Kyiv och fabrik i Dnipro',url:'https://www.reuters.com/world/europe/russian-forces-hit-kyiv-petrol-station-injuring-four-2026-09-10/'}]
+ news:['Under Volodymyr Zelenskyjs besök lovade Kanada 350 miljoner kanadensiska dollar till luftförsvar och 430 miljoner i lånegarantier för naturgas och energisäkerhet.','Kanada planerar också en kraftig ökning av sin drönarproduktion och avser att avsätta en tredjedel till Ukraina. Samtidigt fortsätter ryska angrepp mot bränsle, livsmedel och logistik.'],
+ analysis:['Stödet riktas mot två av Ukrainas mest akuta behov inför vintern: att stoppa luftangrepp och att säkra energi när civil infrastruktur träffas.','Gemensam drönarproduktion kan ge större uthållighet än enstaka leveranser, men effekten beror på hur snabbt produktionen når skala.'],
+ depth:['Drönarkriget utvecklas snabbt och båda sidor slår allt längre från fronten. Billigare farkoster tvingar samtidigt fram dyr och begränsad luftvärnsanvändning.','Följ leveranstiderna, Ukrainas tillgång till robotar för luftförsvaret och om energistödet hinner stärka vinterberedskapen.'],
+ sources:[{label:'AP – Kanada lovar nytt militärt stöd till Ukraina',url:'https://apnews.com/article/2a74de6552061bda57a1c5aa4464db52'},{label:'Reuters – Angrepp mot bensinstation i Kyiv och fabrik i Dnipro',url:'https://www.reuters.com/world/europe/russian-forces-hit-kyiv-petrol-station-injuring-four-2026-09-10/'}]
 },
 {
  slug:'augusti-delat-varmerekord',section:'Klimat · Värme',title:'Augusti tangerade det globala värmerekordet',summary:'Den globala medeltemperaturen nådde 16,96 grader. Europas sommar blev den varmaste som hittills har uppmätts.',
@@ -45,12 +45,12 @@ export const topWorldNews5Sep:TopWorldArticle[]=[
  sources:[{label:'Reuters – Iran-kriget prövar BRICS enighet',url:'https://www.reuters.com/world/china/india-hosts-brics-summit-iran-war-tests-bloc-unity-2026-09-10/'}]
 },
 {
- slug:'skolbrand-bukavu-kongo',section:'Kongo-Kinshasa · Olycka',title:'Minst 17 döda i skolbrand i Bukavu',summary:'Barn finns bland offren efter branden i den rebellkontrollerade staden. Orsaken var ännu inte fastställd när de första uppgifterna publicerades.',
- image:'https://commons.wikimedia.org/wiki/Special:FilePath/Bukavu%20view.jpg?width=1200',imageCredit:'Bukavu i östra Kongo-Kinshasa · Wikimedia Commons',
- news:['Minst 17 människor har dött i en brand på en skola i Bukavu, enligt medicinska källor som Reuters talat med. Bland de döda finns barn.','Bukavu kontrolleras av rebellstyrkor och tillgången till tillförlitlig myndighetsinformation är begränsad. Uppgifter om dödstal och brandorsak kan därför förändras.'],
- analysis:['Katastrofen riktar ljuset mot civila institutioner i ett konfliktområde där räddningstjänst, sjukvård och säkerhet redan är hårt pressade.','När den offentliga kontrollen är splittrad blir det svårare att utreda ansvar, upprätthålla brandskydd och ge drabbade familjer stöd.'],
- depth:['Östra Kongo-Kinshasa präglas av väpnade grupper, omfattande fördrivning och konkurrens om resurser. En lokal olycka får därför konsekvenser i ett redan utsatt samhälle.','Det viktigaste närmast är en verifierad olycksutredning, identifiering av offren och besked om skolans säkerhet och evakuering.'],
- sources:[{label:'Reuters – Minst 17 döda i skolbrand i Bukavu',url:'https://www.reuters.com/world/africa/school-fire-congos-rebel-controlled-city-bukavu-kills-least-17-sources-say-2026-09-10/'}]
+ slug:'iran-pickaxe-mountain',section:'Iran · Kärnteknik',title:'Trump hotar Iran efter aktivitet vid befäst kärnteknisk anläggning',summary:'USA uppger sig se aktivitet vid tunnelsystemet Pickaxe Mountain nära Natanz. Nya angrepp kan fördjupa kriget och pressa energimarknaden.',
+ image:'https://commons.wikimedia.org/wiki/Special:FilePath/Natanz%20Nuclear%20Facility.JPG?width=1200',imageCredit:'Kärnteknisk anläggning vid Natanz i Iran · Wikimedia Commons',
+ news:['USA:s president Donald Trump varnade Iran efter uppgifter om aktivitet vid Pickaxe Mountain, ett befäst tunnelsystem nära den skadade anrikningsanläggningen Natanz.','Trump öppnade för nya amerikanska angrepp om verksamheten fortsätter. Iran säger att landets kärntekniska program har fredliga syften.'],
+ analysis:['Tunnelsystemet har blivit en symbol för den centrala osäkerheten i konflikten: hur mycket av Irans kärntekniska kapacitet som finns kvar och vad som kan byggas upp under jord.','Ett nytt angrepp kan utlösa iranska motattacker och ytterligare störa olje- och gasflöden. Militär press och energipriser är därmed direkt sammankopplade.'],
+ depth:['Satellitbilder kan visa transporter och byggaktivitet men ger inte ensamma säkra besked om vad som sker inne i ett tunnelsystem. Oberoende inspektioner är därför avgörande.','Följ om IAEA får tillträde, om USA preciserar sina underrättelseuppgifter och hur Iran svarar diplomatiskt eller militärt.'],
+ sources:[{label:'Reuters – Trump varnar Iran efter aktivitet vid Pickaxe Mountain',url:'https://www.reuters.com/world/trump-says-activity-seen-irans-pickaxe-mountain-urges-tehran-not-get-cute-2026-09-10/'}]
 }
 ];
 
