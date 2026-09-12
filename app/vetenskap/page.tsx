@@ -12,10 +12,12 @@ const stories=[
  {area:'Klimat & AI',date:'2026',title:'AI börjar förena väderprognoser och långsiktiga klimatmodeller',news:'En översikt i Nature Communications beskriver hur modeller tränade på stora mängder jordobservationer kan bidra både till kortsiktiga väderprognoser och långsiktig klimatanalys.',analysis:'En gemensam modellvärld kan ge snabbare beräkningar och bättre regional information. Men transparens, energianvändning och ojämn tillgång till beräkningskraft riskerar att skapa nya vetenskapliga och globala klyftor.',source:'Nature Communications',url:'https://www.nature.com/articles/s41467-026-75787-y'},
 ];
 
+const todayLabel=()=>new Intl.DateTimeFormat('sv-SE',{day:'numeric',month:'long',year:'numeric',timeZone:'Europe/Stockholm'}).format(new Date());
+
 export const metadata={title:'Vetenskap & AI | NackaSidan 2026',description:'Dagens AI-, medicin-, klimat- och forskningsnyheter med analys och spårbara källor.'};
 
 export default function Page(){return <main><div className="shell science-desk">
- <header className="science-head"><div className="kicker">Vetenskap & AI · Uppdaterad 29 augusti 2026</div><h1>Vetenskap & AI</h1><nav aria-label="Vetenskapsområden"><a href="#senaste">Senaste</a><a href="#analys">Analys</a><Link href="/tema/ai">AI-temat</Link></nav></header>
+ <header className="science-head"><div className="kicker">Vetenskap & AI · Uppdaterad {todayLabel()}</div><h1>Vetenskap & AI</h1><nav aria-label="Vetenskapsområden"><a href="#senaste">Senaste</a><a href="#analys">Analys</a><Link href="/tema/ai">AI-temat</Link></nav></header>
 
  <section className="science-lead" id="senaste"><article><div className="kicker">Huvudnyhet · {stories[0].area}</div><h2>{stories[0].title}</h2><div className="science-part"><strong>Nyheten</strong><p>{stories[0].news}</p></div><div className="science-part science-part-analysis"><strong>Analys</strong><p>{stories[0].analysis}</p></div><a className="button" href={stories[0].url} target="_blank" rel="noopener noreferrer">Källa: {stories[0].source} ↗</a></article><aside><div className="kicker">Dagens bevakning</div><strong>6</strong><span>verifierade forskningsspår</span><hr/><p>Reglering, klinisk AI, bioteknik, neuroteknik och klimatmodeller.</p></aside></section>
 
