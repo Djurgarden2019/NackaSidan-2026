@@ -92,11 +92,13 @@ export default async function SportPage(){
 
   {compactStories.length>0&&<section className="sport-results sport-panel" id="kort">
    <div className="sport-section-title"><div><div className="kicker">Senaste 48 timmarna</div><h2>Kort om sport</h2></div></div>
-   <div className="sport-score-grid">{compactStories.map(article=><article key={article.link}>
-    <span>{topic(article.title)} · {article.source}</span>
-    <h3><a href={article.link} target="_blank" rel="noopener noreferrer">{article.title}</a></h3>
-    <p>{article.summary?cleanSummary(article.summary):'Öppna originalartikeln för hela rapporteringen.'}</p>
-    <a className="text-link" href={article.link} target="_blank" rel="noopener noreferrer">{dateLabel(article.published)} →</a>
+   <div className="sport-score-grid">{compactStories.map(article=><article key={article.link} style={{position:'relative'}}>
+    <a className="sport-notice-link" href={article.link} aria-label={`Öppna: ${article.title}`}>
+     <span>{topic(article.title)} · {article.source}</span>
+     <h3>{article.title}</h3>
+     <p>{article.summary?cleanSummary(article.summary):'Öppna originalartikeln för hela rapporteringen.'}</p>
+     <strong className="text-link">{dateLabel(article.published)} →</strong>
+    </a>
    </article>)}</div>
   </section>}
 
