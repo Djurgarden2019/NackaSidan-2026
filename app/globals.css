@@ -484,3 +484,13 @@ html,body{max-width:100%;overflow-x:hidden}
 .sport-notice-link h3{transition:color .15s ease}
 .sport-notice-link:hover h3,.sport-notice-link:focus-visible h3{color:var(--red)}
 .sport-notice-link:focus-visible{outline:3px solid var(--red);outline-offset:6px}
+
+
+/* Readable sport briefs */
+.sport-results .sport-score-grid article{background:#17232d!important;color:#fff}
+.sport-results .sport-notice-link{padding:4px;color:#fff!important}
+.sport-results .sport-notice-link span{color:#c8d2d9;font-size:.82rem;font-weight:700}
+.sport-results .sport-notice-link h3{margin:10px 0;font-family:Georgia,serif;font-size:1.4rem;line-height:1.18;font-weight:700;color:#fff!important}
+.sport-results .sport-notice-link p{margin:0;color:#f0f3f5!important;font-size:1rem;line-height:1.6}
+.sport-results .sport-notice-link .text-link{position:static!important;display:inline-block;margin-top:14px;color:#f2cc70!important;font-size:.9rem;line-height:1.4}
+.sport-results .sport-notice-link:hover h3,.sport-results .sport-notice-link:focus-visible h3{text-decoration:underline;text-decoration-thickness:2px;text-underline-offset:4px}
