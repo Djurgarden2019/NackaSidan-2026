@@ -1,35 +1,108 @@
 import type {Metadata} from 'next';
-import Link from 'next/link';
-import DailyDeskUpdate from '../../components/DailyDeskUpdate';
-import {readArticles} from '../../lib/autoPublisher';
-import {getLiveNews} from '../../lib/liveNews';
-import {getFreshSportArticles,latestResults,sportAgenda} from '../../content/sportArticles';
+import {getLiveNews, type LiveNewsItem} from '../../lib/liveNews';
 
-export const metadata:Metadata={title:'Sport',description:'Aktuella sportnyheter, resultat, analyser och spelscheman från de senaste 48 timmarna.'};
+export const metadata:Metadata={
+ title:'Sport – aktuellt just nu',
+ description:'Dagens mest relevanta sportnyheter från svenska och internationella redaktioner, uppdaterade inom 48 timmar.'
+};
 export const dynamic='force-dynamic';
 export const revalidate=0;
+
 const MAX_AGE=48*60*60*1000;
-function updatedLabel(now:Date){return new Intl.DateTimeFormat('sv-SE',{dateStyle:'long',timeStyle:'short',timeZone:'Europe/Stockholm'}).format(now)}
-function dateLabel(value:string){return new Intl.DateTimeFormat('sv-SE',{dateStyle:'long',timeStyle:'short',timeZone:'Europe/Stockholm'}).format(new Date(value))}
-function fresh(value:string,now:number){const time=Date.parse(value);const age=now-time;return Number.isFinite(time)&&age>=0&&age<=MAX_AGE}
+const trustedOrder=['SVT Sport','SVT Nyheter','Sveriges Radio','BBC Sport','The Guardian Sport'];
+
+function updatedLabel(now:Date){
+ return new Intl.DateTimeFormat('sv-SE',{dateStyle:'long',timeStyle:'short',timeZone:'Europe/Stockholm'}).format(now);
+}
+function dateLabel(value:string){
+ return new Intl.DateTimeFormat('sv-SE',{day:'numeric',month:'short',hour:'2-digit',minute:'2-digit',timeZone:'Europe/Stockholm'}).format(new Date(value));
+}
+function isFresh(value:string,now:number){
+ const time=Date.parse(value);
+ const age=now-time;
+ return Number.isFinite(time)&&age>=0&&age<=MAX_AGE;
+}
+function sourceWeight(source:string){
+ const index=trustedOrder.findIndex(name=>source.startsWith(name));
+ return index<0?0:(trustedOrder.length-index)*12;
+}
+function relevance(item:LiveNewsItem,now:number){
+ const ageHours=Math.max(0,(now-Date.parse(item.published))/3600000);
+ const freshness=Math.max(0,48-ageHours);
+ const imageBoost=item.image?16:0;
+ const swedishBoost=item.source.startsWith('SVT')||item.source.startsWith('Sveriges Radio')?30:0;
+ const priorityBoost=item.priority==='Hög'?24:item.priority==='Medel'?12:0;
+ return freshness+imageBoost+swedishBoost+priorityBoost+sourceWeight(item.source);
+}
+function topic(title:string){
+ const text=title.toLocaleLowerCase('sv-SE');
+ if(/fotboll|premier league|champions league|allsvensk|landslag/.test(text))return 'Fotboll';
+ if(/tennis|us open|wimbledon/.test(text))return 'Tennis';
+ if(/friidrott|diamond league|stav|diskus/.test(text))return 'Friidrott';
+ if(/hockey|nhl|shl/.test(text))return 'Ishockey';
+ if(/golf|solheim|ryder/.test(text))return 'Golf';
+ if(/formel 1|formula 1|f1/.test(text))return 'Motorsport';
+ return 'Sport';
+}
+function cleanSummary(value:string){
+ return value.replace(/\s+/g,' ').trim().slice(0,320);
+}
 
 export default async function SportPage(){
  const now=new Date();
- const [automaticArticles,live]=await Promise.all([readArticles(),getLiveNews()]);
- const editorial=getFreshSportArticles(now.getTime()).map(article=>({id:article.slug,sport:article.sport,title:article.title,dek:article.dek,href:`/sport/artikel/${article.slug}`,date:dateLabel(article.publishedAt),fact:article.facts.join(' '),source:'NackaSidan',priority:'Fördjupning',publishedAt:article.publishedAt,internal:true}));
- const automatic=automaticArticles.filter(article=>article.section.toLocaleLowerCase('sv-SE').includes('sport')&&fresh(article.publishedAt,now.getTime())).map(article=>({id:article.id,sport:article.section,title:article.title,dek:article.lead,href:article.sourceUrl,date:dateLabel(article.publishedAt),fact:'Artikeln är automatiskt kontrollerad mot den länkade originalkällan.',source:article.source,priority:article.score>=80?'Hög prioritet':'Aktuell',publishedAt:article.publishedAt,internal:false}));
- const liveSport=live.items.filter(item=>item.section==='Sport'&&fresh(item.published,now.getTime())).map(item=>({id:item.link,sport:item.section,title:item.title,dek:item.summary||'Källan har publicerat en ny sportuppgift. Öppna originalartikeln för hela rapporteringen.',href:item.link,date:dateLabel(item.published),fact:`Publicerad av ${item.source}. Redaktionell prioritet: ${item.priority.toLowerCase()}.`,source:item.source,priority:item.priority==='Hög'?'Hög prioritet':'Aktuell',publishedAt:item.published,internal:false}));
+ const live=await getLiveNews();
  const seen=new Set<string>();
- const articles=[...liveSport,...automatic,...editorial].sort((a,b)=>Date.parse(b.publishedAt)-Date.parse(a.publishedAt)).filter(article=>{const key=article.href.replace(/[?#].*$/,'');if(seen.has(key))return false;seen.add(key);return true}).slice(0,8);
+ const articles=live.items
+  .filter(item=>(item.section==='Sport'||item.sourceSection==='Sport')&&isFresh(item.published,now.getTime()))
+  .sort((a,b)=>relevance(b,now.getTime())-relevance(a,now.getTime()))
+  .filter(item=>{const key=item.link.replace(/[?#].*$/,'');if(seen.has(key))return false;seen.add(key);return true;})
+  .slice(0,10);
  const [lead,...rest]=articles;
+ const imageStories=rest.filter(item=>item.image);
+ const compactStories=rest.filter(item=>!item.image);
+
  return <main><div className="shell sport-desk">
-  <header className="sport-desk-head"><div><div className="kicker">Uppdaterad {updatedLabel(now)}</div><h1>Sport</h1></div><nav aria-label="Sportområden"><a href="#huvudnyhet">Huvudnyhet</a><a href="#senaste">Senaste</a><a href="#resultat">Resultat</a><a href="#kalender">Kalender</a><Link href="/sport/champions-league">Champions League</Link></nav></header>
+  <header className="sport-desk-head">
+   <div><div className="kicker">Uppdaterad {updatedLabel(now)}</div><h1>Sport</h1></div>
+   <nav aria-label="Sportområden"><a href="#toppnyhet">Toppnyhet</a><a href="#senaste">Senaste</a><a href="#kort">Kort om sport</a><a href="#kallor">Källor</a></nav>
+  </header>
 
-  {lead?<section className="sport-lead" id="huvudnyhet"><article><div className="kicker">Huvudnyhet · {lead.sport}</div><h2><Link href={lead.href}>{lead.title}</Link></h2><p className="lead">{lead.dek}</p><div className="sport-lead-facts"><p><strong>Källa:</strong> {lead.source}</p><p><strong>Publicerad:</strong> {lead.date}</p><p>{lead.fact}</p></div><Link className="button" href={lead.href}>{lead.internal?'Läs hela artikeln':'Öppna originalkällan'}</Link></article><aside><div className="kicker">Bevakningen just nu</div><strong>{articles.length}</strong><span>aktuella artiklar</span></aside></section>:<section className="sport-empty"><div className="kicker">Huvudnyhet</div><h2>Nästa verifierade sportartikel förbereds</h2><p>Flödet fylls på när anslutna källor publicerar nya uppgifter.</p></section>}
+  {lead?<section className="sport-lead" id="toppnyhet">
+   <article>
+    {lead.image&&<a href={lead.link} target="_blank" rel="noopener noreferrer" style={{display:'block',aspectRatio:'16/9',overflow:'hidden',marginBottom:22}}><img src={lead.image} alt="" style={{width:'100%',height:'100%',objectFit:'cover'}}/></a>}
+    <div className="kicker">Toppnyhet · {topic(lead.title)}</div>
+    <h2><a href={lead.link} target="_blank" rel="noopener noreferrer">{lead.title}</a></h2>
+    {lead.summary&&<p className="lead">{cleanSummary(lead.summary)}</p>}
+    <div className="sport-lead-facts"><p><strong>{lead.source}</strong></p><p>{dateLabel(lead.published)}</p></div>
+    <a className="button" href={lead.link} target="_blank" rel="noopener noreferrer">Läs hos källan</a>
+   </article>
+   <aside><div className="kicker">Bevakningen nu</div><strong>{articles.length}</strong><span>relevanta nyheter från de senaste 48 timmarna</span></aside>
+  </section>:<section className="sport-empty" id="toppnyhet"><div className="kicker">Sport just nu</div><h2>Inga verifierade artiklar inom 48 timmar</h2><p>Sportflödet fylls på automatiskt när anslutna redaktioner publicerar nya uppgifter.</p></section>}
 
-  <section className="sport-news sport-panel" id="senaste"><div className="sport-section-title"><div><div className="kicker">Senaste 48 timmarna</div><h2>Nyheter och analyser</h2></div><span>{rest.length} artiklar</span></div><div className="sport-news-grid">{rest.map(article=><article key={article.id} className="sport-card"><div className="kicker">{article.sport} · {article.priority}</div><h3><Link href={article.href}>{article.title}</Link></h3><p>{article.dek}</p><p className="sport-card-fact"><strong>Fakta och sammanhang:</strong> {article.fact}</p><div className="sport-card-footer"><time>{article.date} · {article.source}</time><Link className="text-link" href={article.href}>{article.internal?'Läs artikeln →':'Originalkälla →'}</Link></div></article>)}</div></section>
+  <section className="sport-news sport-panel" id="senaste">
+   <div className="sport-section-title"><div><div className="kicker">Prioriterat</div><h2>Senaste sportnytt</h2></div><span>{imageStories.length} bildsatta nyheter</span></div>
+   <div className="sport-news-grid">{imageStories.map(article=><article key={article.link} className="sport-card">
+    <a href={article.link} target="_blank" rel="noopener noreferrer" style={{display:'block',aspectRatio:'16/9',overflow:'hidden',marginBottom:16}}><img src={article.image} alt="" loading="lazy" style={{width:'100%',height:'100%',objectFit:'cover'}}/></a>
+    <div className="kicker">{topic(article.title)} · {article.source}</div>
+    <h3><a href={article.link} target="_blank" rel="noopener noreferrer">{article.title}</a></h3>
+    {article.summary&&<p>{cleanSummary(article.summary)}</p>}
+    <div className="sport-card-footer"><time>{dateLabel(article.published)}</time><a className="text-link" href={article.link} target="_blank" rel="noopener noreferrer">Läs hos källan →</a></div>
+   </article>)}</div>
+  </section>
 
-  <section className="sport-results sport-panel" id="resultat"><div className="sport-section-title"><div><div className="kicker">Senast avgjort</div><h2>Resultat och matchbild</h2></div></div><div className="sport-score-grid">{latestResults.map(result=><article key={result.match}><span>{result.competition}</span><h3>{result.match}</h3><strong>{result.score}</strong><p>{result.note}</p></article>)}</div></section>
-  <section className="sport-agenda sport-panel" id="kalender"><div><div className="kicker">Kommande</div><h2>Sportkalender</h2><p>Tider, matcher och tävlingar att följa.</p><Link className="text-link" href="/sport/champions-league">Öppna hela Champions League-schemat →</Link></div><ul>{sportAgenda.map(item=><li key={item.event}><strong>{item.time}</strong><span>{item.event}</span></li>)}</ul></section>
- </div><DailyDeskUpdate desk="sport"/></main>
+  {compactStories.length>0&&<section className="sport-results sport-panel" id="kort">
+   <div className="sport-section-title"><div><div className="kicker">Senaste 48 timmarna</div><h2>Kort om sport</h2></div></div>
+   <div className="sport-score-grid">{compactStories.map(article=><article key={article.link}>
+    <span>{topic(article.title)} · {article.source}</span>
+    <h3><a href={article.link} target="_blank" rel="noopener noreferrer">{article.title}</a></h3>
+    <p>{article.summary?cleanSummary(article.summary):'Öppna originalartikeln för hela rapporteringen.'}</p>
+    <a className="text-link" href={article.link} target="_blank" rel="noopener noreferrer">{dateLabel(article.published)} →</a>
+   </article>)}</div>
+  </section>}
+
+  <section className="sport-agenda sport-panel" id="kallor">
+   <div><div className="kicker">Direkt från redaktionerna</div><h2>Källor som uppdaterar Sport</h2><p>Nyheterna rangordnas efter aktualitet, svensk relevans, redaktionell prioritet och tillgänglig bild.</p></div>
+   <ul><li><strong>Sverige</strong><span><a href="https://www.svt.se/sport" target="_blank" rel="noopener noreferrer">SVT Sport</a></span></li><li><strong>Världen</strong><span><a href="https://www.bbc.com/sport" target="_blank" rel="noopener noreferrer">BBC Sport</a></span></li><li><strong>Fördjupning</strong><span><a href="https://www.theguardian.com/sport" target="_blank" rel="noopener noreferrer">The Guardian Sport</a></span></li></ul>
+  </section>
+ </div></main>;
 }
