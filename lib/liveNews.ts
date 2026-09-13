@@ -37,6 +37,9 @@ export const liveFeeds: Feed[] = [
   { name: 'Washington Post World', url: 'https://feeds.washingtonpost.com/rss/world', section: 'Internationella medier', homepage: 'https://www.washingtonpost.com/world/' },
   { name: 'CBS News World', url: 'https://www.cbsnews.com/latest/rss/world', section: 'Internationella medier', homepage: 'https://www.cbsnews.com/world/' },
   { name: 'Al Jazeera', url: 'https://www.aljazeera.com/xml/rss/all.xml', section: 'Internationella medier', homepage: 'https://www.aljazeera.com/' },
+  { name: 'SVT Sport', url: 'https://www.svt.se/sport/rss.xml', section: 'Sport', homepage: 'https://www.svt.se/sport', note: 'Svenskt sportflöde från SVT' },
+  { name: 'BBC Sport', url: 'https://feeds.bbci.co.uk/sport/rss.xml', section: 'Sport', homepage: 'https://www.bbc.com/sport' },
+  { name: 'The Guardian Sport', url: 'https://www.theguardian.com/uk/sport/rss', section: 'Sport', homepage: 'https://www.theguardian.com/sport' },
   { name: 'BBC Science', url: 'https://feeds.bbci.co.uk/news/science_and_environment/rss.xml', section: 'Vetenskap', homepage: 'https://www.bbc.com/news/science_and_environment' },
   { name: 'NASA', url: 'https://www.nasa.gov/rss/dyn/breaking_news.rss', section: 'Vetenskap', homepage: 'https://www.nasa.gov/' },
 ];
@@ -153,7 +156,7 @@ export async function getLiveNews() {
 
   const now = Date.now();
   const defaultMaxAgeMs = 72 * 60 * 60 * 1000;
-  const sportMaxAgeMs = 72 * 60 * 60 * 1000;
+  const sportMaxAgeMs = 48 * 60 * 60 * 1000;
   const fresh = settled.flatMap(x => x.items).filter(item => {
     const time = Date.parse(item.published);
     const age = now - time;
