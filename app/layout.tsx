@@ -7,8 +7,8 @@ import './accessibility.css';
 import './unified-layout.css';
 import { Header } from '../components/Header';
 import { Footer } from '../components/Footer';
-import CurrentDeskUpdate from '../components/CurrentDeskUpdate';
 import CurrentSectionImage from '../components/CurrentSectionImage';
+import ElectionDayBanner from '../components/ElectionDayBanner';
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://nacka-sidan-2026-delta.vercel.app'),
@@ -23,5 +23,5 @@ export const metadata: Metadata = {
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
-  return <html lang="sv"><body><Header /><div id="main-content" tabIndex={-1}><CurrentSectionImage />{children}<CurrentDeskUpdate /></div><Footer /></body></html>;
+  return <html lang="sv"><body><Header /><ElectionDayBanner/><div id="main-content" tabIndex={-1}><CurrentSectionImage />{children}</div><Footer /></body></html>;
 }
