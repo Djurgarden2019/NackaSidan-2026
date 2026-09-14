@@ -98,7 +98,7 @@ function classify(title: string, link: string, fallback: string) {
   for (const rule of rules) if (rule.words.some(word => hasWord(text, word))) return rule.section;
   if (fallback === 'Nacka/Lokalt') return 'Nacka/Lokalt';
   if (fallback === 'Ekonomi') return 'Ekonomi';
-  if (fallback === 'Stockholm') return 'Sverige';
+  if (fallback === 'Stockholm') return 'Stockholm';
   if (['Världen','EU','Vetenskap','Kultur','Sport'].includes(fallback)) return fallback;
   return 'Sverige';
 }
