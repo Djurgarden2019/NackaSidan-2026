@@ -38,9 +38,9 @@ export default async function WeekendPage() {
   .filter(item=>item.section!=='Sport')
   .filter(item=>{
    const age=now-Date.parse(item.published);
-   return Number.isFinite(age)&&age>=0&&age<=72*60*60*1000;
+   return Number.isFinite(age)&&age>=0&&age<=7*24*60*60*1000;
   })
-  .slice(0,8);
+  .slice(0,16);
 
  return <main><div className="shell weekend-desk">
   <header className="weekend-head">
@@ -49,8 +49,8 @@ export default async function WeekendPage() {
   </header>
 
   <nav className="weekend-index" aria-label="Helgens innehåll">
-   <a href="#nya-artiklar"><span>01</span>Nya artiklar</a>
-   <a href="#arkiv"><span>02</span>Arkiv</a>
+   <a href="#nya-artiklar"><span>01</span>{newest.length} nya artiklar</a>
+   <a href="#arkiv"><span>02</span>{weekendPermanentArticles.length} i arkivet</a>
   </nav>
 
   <div className="weekend-with-archive">
@@ -69,7 +69,7 @@ export default async function WeekendPage() {
    </aside>
 
    <section id="nya-artiklar" className="weekend-current" aria-labelledby="helg-new-title">
-    <div className="kicker">Nytt denna helg · Senaste 72 timmarna</div>
+    <div className="kicker">Nytt denna helg · Senaste 7 dagarna</div>
     <h2 id="helg-new-title">Nya svenska artiklar</h2>
     {newest.length>0?<div className="weekend-magazine-grid">
      {newest.map((item,index)=><article className={index===0?'weekend-feature-card weekend-feature-card-wide':'weekend-feature-card'} key={item.link}>
@@ -79,7 +79,7 @@ export default async function WeekendPage() {
       {item.summary&&<p>{item.summary}</p>}
       <a className="text-link" href={item.link}>Läs hela artikeln →</a>
      </article>)}
-    </div>:<p className="weekend-empty">Inga nya svenska artiklar har publicerats under de senaste 72 timmarna.</p>}
+    </div>:<p className="weekend-empty">Inga nya svenska artiklar har publicerats under den senaste veckan.</p>}
    </section>
   </div>
  </div></main>;
