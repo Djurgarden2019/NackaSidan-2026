@@ -2,7 +2,11 @@ import type {DailyDeskKey} from '../content/dailyDeskUpdates';
 import {getLiveNews} from '../lib/liveNews';
 
 const deskSections:Partial<Record<DailyDeskKey,string[]>>={
- start:['Världen','Internationella medier','Sverige','Ekonomi','Kultur','Vetenskap','Sport'],senaste:['Världen','Internationella medier','Sverige','Stockholm','Ekonomi','Kultur','Vetenskap','Sport'],varlden:['Världen','Internationella medier'],sverige:['Sverige'],stockholm:['Stockholm'],eu:['EU'],ekonomi:['Ekonomi'],kultur:['Kultur'],vetenskap:['Vetenskap'],ai:['Vetenskap'],sport:['Sport'],analys:['Världen','EU','Sverige','Ekonomi','Vetenskap'],helg:['Kultur','Vetenskap']
+ start:['Världen','Internationella medier','Sverige','Ekonomi','Kultur','Vetenskap','Sport'],
+ senaste:['Världen','Internationella medier','Sverige','Ekonomi','Kultur','Vetenskap','Sport'],
+ varlden:['Världen','Internationella medier'],sverige:['Sverige'],stockholm:['Stockholm'],
+ eu:['EU'],ekonomi:['Ekonomi'],kultur:['Kultur'],vetenskap:['Vetenskap'],ai:['Vetenskap'],
+ sport:['Sport'],analys:['Världen','EU','Sverige','Ekonomi','Vetenskap'],helg:['Kultur','Vetenskap']
 };
 function updatedLabel(){return new Intl.DateTimeFormat('sv-SE',{day:'numeric',month:'long',year:'numeric',timeZone:'Europe/Stockholm'}).format(new Date())}
 function timeLabel(value:string){return new Intl.DateTimeFormat('sv-SE',{day:'numeric',month:'short',hour:'2-digit',minute:'2-digit',timeZone:'Europe/Stockholm'}).format(new Date(value))}
@@ -12,5 +16,16 @@ export default async function DailyDeskUpdate({desk}:{desk:DailyDeskKey}){
  const live=await getLiveNews();const allowed=deskSections[desk]??[];const maxAge=ageLimit(desk)*60*60*1000;const now=Date.now();
  const stories=live.items.filter(item=>allowed.includes(item.section)||allowed.includes(item.sourceSection)).filter(item=>{const published=Date.parse(item.published);const age=now-published;return Number.isFinite(published)&&age>=0&&age<=maxAge}).sort((a,b)=>Date.parse(b.published)-Date.parse(a.published));
  const withImages=stories.filter(item=>Boolean(item.image));const selected=[...withImages,...stories.filter(item=>!item.image)].filter((item,index,array)=>array.findIndex(candidate=>candidate.link===item.link)===index).slice(0,6);if(!selected.length)return null;
- return <div className="shell"><section className="section daily-desk-update" aria-labelledby={`daily-${desk}`} style={{borderTop:'4px solid #a61919',marginTop:28,paddingTop:22}}><div className="kicker">Senaste {ageLimit(desk)} timmarna · Uppdaterad {updatedLabel()}</div><h2 id={`daily-${desk}`} style={{fontFamily:'Georgia,serif',fontSize:'clamp(30px,4vw,46px)',margin:'8px 0 22px'}}>Dagens viktigaste</h2><div style={{display:'grid',gridTemplateColumns:'repeat(auto-fit,minmax(280px,1fr))',gap:24}}>{selected.map(story=><article key={story.link} style={{borderTop:'1px solid #222',paddingTop:16}}>{story.image&&<a href={story.link} target="_blank" rel="noopener noreferrer" style={{display:'block',aspectRatio:'16/9',overflow:'hidden',marginBottom:14}}><img src={story.image} alt="" loading="lazy" style={{width:'100%',height:'100%',objectFit:'cover'}}/></a>}<div className="kicker">{story.source} · {timeLabel(story.published)}</div><h3 style={{fontFamily:'Georgia,serif',fontSize:26,lineHeight:1.1}}><a href={story.link} target="_blank" rel="noopener noreferrer">{story.title}</a></h3>{story.summary&&<p>{story.summary}</p>}<a className="text-link" href={story.link} target="_blank" rel="noopener noreferrer">Läs hos källan →</a></article>)}</div></section></div>
+ return <div className="shell"><section className="section daily-desk-update" aria-labelledby={`daily-${desk}`} style={{borderTop:'4px solid #a61919',marginTop:28,paddingTop:22}}>
+  <div className="kicker">Uppdaterad {updatedLabel()}</div><h2 id={`daily-${desk}`} style={{fontFamily:'Georgia,serif',fontSize:'clamp(30px,4vw,46px)',margin:'8px 0 22px'}}>Senaste i avdelningen</h2>
+  <div style={{display:'grid',gridTemplateColumns:'repeat(auto-fit,minmax(280px,1fr))',gap:24}}>{selected.map(story=><article key={story.link} style={{borderTop:'1px solid #222'}}>
+   <a href={story.link} aria-label={`Öppna: ${story.title}`} style={{display:'block',height:'100%',paddingTop:16,color:'inherit'}}>
+    {story.image&&<span style={{display:'block',aspectRatio:'16/9',overflow:'hidden',marginBottom:14}}><img src={story.image} alt="" loading="lazy" style={{width:'100%',height:'100%',objectFit:'cover'}}/></span>}
+    <span className="kicker">{story.source} · {timeLabel(story.published)}</span>
+    <strong style={{display:'block',fontFamily:'Georgia,serif',fontSize:26,lineHeight:1.1,margin:'10px 0'}}>{story.title}</strong>
+    {story.summary&&<span style={{display:'block',fontSize:16,lineHeight:1.55}}>{story.summary}</span>}
+    <span className="text-link" style={{display:'inline-block',marginTop:12}}>Läs hos källan →</span>
+   </a>
+  </article>)}</div>
+ </section></div>
 }
