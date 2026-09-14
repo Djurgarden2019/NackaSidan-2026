@@ -13,14 +13,16 @@ const sectionIds: Record<string,string> = {
 };
 
 function expandedReadingTime(value:string){return Math.round((Number.parseInt(value,10)||12)*2);}
+function weekendDate(){const now=new Date();return {full:new Intl.DateTimeFormat('sv-SE',{day:'numeric',month:'long',year:'numeric',timeZone:'Europe/Stockholm'}).format(now),weekday:new Intl.DateTimeFormat('sv-SE',{weekday:'long',timeZone:'Europe/Stockholm'}).format(now),day:new Intl.DateTimeFormat('sv-SE',{day:'numeric',timeZone:'Europe/Stockholm'}).format(now),monthYear:new Intl.DateTimeFormat('sv-SE',{month:'long',year:'numeric',timeZone:'Europe/Stockholm'}).format(now)}}
 
 export default function WeekendPage() {
+ const issue=weekendDate();
  const shuffledArticles=[...weekendPermanentArticles].sort(()=>Math.random()-0.5);
  const [lead, ...articles] = shuffledArticles;
  return <main><div className="shell weekend-desk">
   <header className="weekend-head">
-   <div><div className="kicker">Uppdaterad 9 september 2026</div><h1>Helg</h1><p className="lead">NackaSidans stora helgmagasin. Längre artiklar, tydliga analyser och öppna källor om samhället, maten, kulturen och idéerna som formar vår tid.</p></div>
-   <div className="weekend-date"><span>Onsdag</span><strong>9</strong><span>september 2026</span></div>
+   <div><div className="kicker">Uppdaterad {issue.full}</div><h1>Helg</h1><p className="lead">NackaSidans stora helgmagasin. Längre artiklar, tydliga analyser och öppna källor om samhället, maten, kulturen och idéerna som formar vår tid.</p></div>
+   <div className="weekend-date"><span>{issue.weekday}</span><strong>{issue.day}</strong><span>{issue.monthYear}</span></div>
   </header>
 
   <nav className="weekend-index" aria-label="Helgs fasta avdelningar">
