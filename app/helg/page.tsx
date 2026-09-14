@@ -1,7 +1,7 @@
-import DailyDeskUpdate from '../../components/DailyDeskUpdate';
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import { weekendPermanentArticles } from '../../content/weekendPermanent';
+import { getLiveNews } from '../../lib/liveNews';
 import './helg.css';
 
 export const dynamic = 'force-dynamic';
@@ -13,10 +13,14 @@ const sectionIds: Record<string,string> = {
 };
 
 function expandedReadingTime(value:string){return Math.round((Number.parseInt(value,10)||12)*2);}
+function timeLabel(value:string){return new Intl.DateTimeFormat('sv-SE',{day:'numeric',month:'short',hour:'2-digit',minute:'2-digit',timeZone:'Europe/Stockholm'}).format(new Date(value))}
 function weekendDate(){const now=new Date();return {full:new Intl.DateTimeFormat('sv-SE',{day:'numeric',month:'long',year:'numeric',timeZone:'Europe/Stockholm'}).format(now),weekday:new Intl.DateTimeFormat('sv-SE',{weekday:'long',timeZone:'Europe/Stockholm'}).format(now),day:new Intl.DateTimeFormat('sv-SE',{day:'numeric',timeZone:'Europe/Stockholm'}).format(now),monthYear:new Intl.DateTimeFormat('sv-SE',{month:'long',year:'numeric',timeZone:'Europe/Stockholm'}).format(now)}}
 
-export default function WeekendPage() {
+export default async function WeekendPage() {
  const issue=weekendDate();
+ const live=await getLiveNews();
+ const now=Date.now();
+ const newest=live.items.filter(item=>['Kultur','Vetenskap','Ekonomi','Internationella medier'].includes(item.section)||['Kultur','Vetenskap'].includes(item.sourceSection)).filter(item=>{const age=now-Date.parse(item.published);return Number.isFinite(age)&&age>=0&&age<=72*60*60*1000}).slice(0,6);
  const shuffledArticles=[...weekendPermanentArticles].sort(()=>Math.random()-0.5);
  const [lead, ...articles] = shuffledArticles;
  return <main><div className="shell weekend-desk">
@@ -28,6 +32,17 @@ export default function WeekendPage() {
   <nav className="weekend-index" aria-label="Helgs fasta avdelningar">
    {shuffledArticles.map((article,index)=><a key={article.section} href={`#${sectionIds[article.section]}`}><span>{index+1}</span>{article.section}</a>)}
   </nav>
+
+  {newest.length>0&&<section className="weekend-new" aria-labelledby="helg-new-title" style={{padding:'42px 0',borderBottom:'1px solid #b9aa96'}}>
+   <div className="kicker">Nytt denna helg · Senaste 72 timmarna</div><h2 id="helg-new-title" style={{fontFamily:'Georgia,serif',fontSize:'clamp(36px,5vw,62px)',lineHeight:1,margin:'10px 0 28px'}}>Nya artiklar att läsa nu</h2>
+   <div className="weekend-magazine-grid">{newest.map((item,index)=><article className={index===0?'weekend-feature-card weekend-feature-card-wide':'weekend-feature-card'} key={item.link}>
+    {item.image&&<a href={item.link} style={{display:'block',aspectRatio:'16/9',overflow:'hidden',marginBottom:18}}><img src={item.image} alt="" style={{width:'100%',height:'100%',objectFit:'cover'}}/></a>}
+    <div className="kicker">{item.section} · {item.source} · {timeLabel(item.published)}</div>
+    <h2><a href={item.link}>{item.title}</a></h2>
+    {item.summary&&<p>{item.summary}</p>}
+    <a className="text-link" href={item.link}>Läs hela artikeln →</a>
+   </article>)}</div>
+  </section>}
 
   <section id={sectionIds[lead.section]} className="weekend-cover">
    <div><div className="kicker">{lead.section} · {expandedReadingTime(lead.readingTime)} min läsning</div><h2><Link href={`/helg/${lead.slug}`}>{lead.title}</Link></h2><p className="lead">{lead.intro}</p><Link className="button" href={`/helg/${lead.slug}`}>Läs hela artikeln</Link></div>
@@ -43,5 +58,5 @@ export default function WeekendPage() {
   </section>
 
   <section className="weekend-promise"><div className="kicker">Helgs fasta innehåll</div><h2>18 avdelningar i varje utgåva</h2><p>Böcker, EU, filosofi, forskning och framsteg, historisk långläsning, kultur, kulturdebatt, makroekonomi, mat och vin, miljö, nya trender, politisk debatt, psykologi, resor, Stockholm, Stockholmskrogar, USA och Veckans reportage ska alltid finnas med.</p></section>
- </div><DailyDeskUpdate desk="helg"/></main>;
+ </div></main>;
 }
