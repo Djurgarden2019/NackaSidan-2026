@@ -75,7 +75,8 @@ const rules: { section: string; words: string[] }[] = [
   { section: 'Vetenskap', words: ['forskning','forskare','vetenskap','rymd','klimat','studie','universitet','karolinska','kth','nasa','space','science','climate','ai','artificiell intelligens'] },
   { section: 'Kultur', words: ['kultur','bok','böcker','musik','teater','konst','museum','författare','artist','album','festival'] },
   { section: 'Sport', words: ['sport','fotboll','hockey','allsvenskan','landslaget','os','vm','em','match','mål','simning','skidor','skidåkning'] },
-  { section: 'Världen', words: ['usa','ukraina','ryssland','iran','israel','gaza','kina','eu','nato','trump','världen','utrikes','war','world','zelenskyj'] },
+  { section: 'EU', words: ['europeiska unionen','eu kommissionen','eu-kommissionen','european commission','eu parlamentet','eu-parlamentet','european parliament','euroområdet','eurozone','bryssel','brussels'] },
+  { section: 'Världen', words: ['usa','ukraina','ryssland','iran','israel','gaza','kina','nato','trump','världen','utrikes','war','world','zelenskyj'] },
 ];
 
 function normalizedWords(value: string) {
@@ -98,7 +99,7 @@ function classify(title: string, link: string, fallback: string) {
   if (fallback === 'Nacka/Lokalt') return 'Nacka/Lokalt';
   if (fallback === 'Ekonomi') return 'Ekonomi';
   if (fallback === 'Stockholm') return 'Sverige';
-  if (['Världen','Vetenskap','Kultur','Sport'].includes(fallback)) return fallback;
+  if (['Världen','EU','Vetenskap','Kultur','Sport'].includes(fallback)) return fallback;
   return 'Sverige';
 }
 
@@ -155,7 +156,7 @@ export async function getLiveNews() {
   }));
 
   const now = Date.now();
-  const defaultMaxAgeMs = 72 * 60 * 60 * 1000;
+  const defaultMaxAgeMs = 48 * 60 * 60 * 1000;
   const sportMaxAgeMs = 48 * 60 * 60 * 1000;
   const fresh = settled.flatMap(x => x.items).filter(item => {
     const time = Date.parse(item.published);
