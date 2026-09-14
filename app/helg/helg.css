@@ -1,15 +1,28 @@
-.weekend-index{display:grid;grid-template-columns:repeat(7,minmax(0,1fr));gap:1px;margin:1.5rem 0 3rem;background:var(--line);border:1px solid var(--line)}
-.weekend-index a{display:flex;align-items:center;gap:.55rem;min-height:3.5rem;padding:.8rem;background:var(--surface);font-size:.8rem;font-weight:800;line-height:1.15}
+.weekend-index{display:grid;grid-template-columns:repeat(2,minmax(0,15rem));gap:1px;margin:1.5rem 0 3rem;background:var(--line);border:1px solid var(--line);width:max-content;max-width:100%}
+.weekend-index a{display:flex;align-items:center;gap:.55rem;min-height:3.5rem;padding:.8rem 1rem;background:var(--surface);font-size:.8rem;font-weight:800;line-height:1.15}
 .weekend-index a:hover,.weekend-index a:focus-visible{color:var(--red);background:#fff}
 .weekend-index span{color:var(--red);font-variant-numeric:tabular-nums}
-.weekend-magazine-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:0 2.5rem;margin:var(--space-section) 0}
+.weekend-with-archive{display:grid;grid-template-columns:minmax(15rem,19rem) minmax(0,1fr);gap:clamp(2rem,5vw,4.5rem);align-items:start;padding:1rem 0 var(--space-section)}
+.weekend-archive{position:sticky;top:1.5rem;border-top:5px solid var(--ink);padding-top:1rem}
+.weekend-archive h2{margin:.35rem 0 1.2rem;font-family:Georgia,serif;font-size:clamp(2.4rem,4vw,3.5rem);line-height:1}
+.weekend-archive-list{margin:0;padding:0;list-style:none;border-bottom:1px solid var(--line)}
+.weekend-archive-list li{border-top:1px solid var(--line)}
+.weekend-archive-list a{display:grid;gap:.28rem;padding:1rem .25rem;color:var(--ink)}
+.weekend-archive-list a:hover,.weekend-archive-list a:focus-visible{color:var(--red);background:rgba(255,255,255,.45)}
+.weekend-archive-list span{font-size:.75rem;font-weight:900;letter-spacing:.08em;text-transform:uppercase;color:var(--red)}
+.weekend-archive-list strong{font-family:Georgia,serif;font-size:1.02rem;line-height:1.28}
+.weekend-archive-list small{font-size:.78rem;color:var(--muted)}
+.weekend-current>h2{margin:.5rem 0 2rem;font-family:Georgia,serif;font-size:clamp(2.8rem,5vw,5rem);line-height:.98;letter-spacing:-.035em;text-wrap:balance}
+.weekend-magazine-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:0 2.5rem;margin:0}
 .weekend-feature-card{display:flex;flex-direction:column;min-height:20rem;padding:2rem 0;border-top:4px solid var(--ink)}
 .weekend-feature-card-wide{grid-column:1/-1;min-height:auto}
-.weekend-feature-card h2{margin:.55rem 0 1rem;font-family:Georgia,serif;font-size:clamp(2rem,3.5vw,3.2rem);line-height:1.05;letter-spacing:-.025em;text-wrap:balance}
-.weekend-feature-card-wide h2{max-width:950px;font-size:clamp(2.6rem,5vw,4.6rem)}
+.weekend-feature-card h3{margin:.55rem 0 1rem;font-family:Georgia,serif;font-size:clamp(2rem,3.5vw,3.2rem);line-height:1.05;letter-spacing:-.025em;text-wrap:balance}
+.weekend-feature-card-wide h3{max-width:950px;font-size:clamp(2.6rem,5vw,4.6rem)}
 .weekend-feature-card>p{max-width:760px;font-size:1.08rem;line-height:1.75;color:var(--muted)}
-.weekend-card-footer{display:flex;align-items:center;justify-content:space-between;gap:1rem;margin-top:auto;padding-top:1.5rem;border-top:1px solid var(--line);font-size:.88rem;color:var(--muted)}
-.weekend-card-footer .text-link{color:var(--ink);font-weight:800}
-.weekend-promise{margin-top:var(--space-section)}
-@media(max-width:1000px){.weekend-index{grid-template-columns:repeat(4,minmax(0,1fr))}}
-@media(max-width:700px){.weekend-index{grid-template-columns:repeat(2,minmax(0,1fr))}.weekend-magazine-grid{grid-template-columns:1fr}.weekend-feature-card-wide{grid-column:auto}.weekend-feature-card{min-height:0}.weekend-card-footer{align-items:flex-start;flex-direction:column}}
+.weekend-card-image{display:block;aspect-ratio:16/9;overflow:hidden;margin-bottom:1.15rem;background:var(--line)}
+.weekend-card-image img{width:100%;height:100%;object-fit:cover;transition:transform .25s ease}
+.weekend-card-image:hover img{transform:scale(1.02)}
+.weekend-feature-card>.text-link{margin-top:auto;padding-top:1rem;font-weight:800}
+.weekend-empty{padding:2rem 0;border-top:4px solid var(--ink);font-size:1.08rem;color:var(--muted)}
+@media(max-width:900px){.weekend-with-archive{grid-template-columns:1fr}.weekend-archive{position:static}.weekend-current{min-width:0}}
+@media(max-width:700px){.weekend-index{width:100%;grid-template-columns:repeat(2,minmax(0,1fr))}.weekend-magazine-grid{grid-template-columns:1fr}.weekend-feature-card-wide{grid-column:auto}.weekend-feature-card{min-height:0}}
