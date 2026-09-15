@@ -3,12 +3,13 @@ import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import { weekendArticles } from '../../../content/weekend';
 import { weekendPermanentArticles } from '../../../content/weekendPermanent';
+import { weekendCurrentArticles } from '../../../content/weekendCurrent';
 import { weekendDeepDives } from '../../../content/weekendDeepDives';
 import { weekendDoubleExtensions } from '../../../content/weekendDoubleExtensions';
 import { weekendFinalExtensions } from '../../../content/weekendFinalExtensions';
 
 type PageProps = { params: Promise<{ slug: string }> };
-const allWeekendArticles = [...weekendPermanentArticles, ...weekendArticles];
+const allWeekendArticles = [...weekendCurrentArticles, ...weekendPermanentArticles, ...weekendArticles];
 const allBySlug = Object.fromEntries(allWeekendArticles.map(article => [article.slug, article]));
 
 export function generateStaticParams() { return allWeekendArticles.map(({ slug }) => ({ slug })); }
@@ -16,7 +17,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
 
 export default async function WeekendArticlePage({ params }: PageProps) {
  const { slug } = await params; const article = allBySlug[slug]; if (!article) notFound();
- const related = weekendPermanentArticles.filter(item => item.slug !== slug).slice(0, 3);
+ const related = weekendCurrentArticles.filter(item => item.slug !== slug).slice(0, 3);
  const deepDive = weekendDeepDives[slug];
  const doubleExtension = weekendDoubleExtensions[slug];
  const finalExtension = weekendFinalExtensions[slug];
