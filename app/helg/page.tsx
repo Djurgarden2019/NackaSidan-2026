@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 import { weekendArticles } from '../../content/weekend';
 import { weekendPermanentArticles } from '../../content/weekendPermanent';
+import { weekendCurrentArticles } from '../../content/weekendCurrent';
 import './helg.css';
 
 export const dynamic = 'force-dynamic';
@@ -27,9 +28,9 @@ function expandedReadingTime(value:string){
 
 export default function WeekendPage() {
  const issue=weekendDate();
- const currentArticles=[...weekendPermanentArticles].sort(()=>Math.random()-.5);
+ const currentArticles=[...weekendCurrentArticles].sort(()=>Math.random()-.5);
  const [lead,...articles]=currentArticles;
- const archive=[...weekendArticles].sort((a,b)=>b.published.localeCompare(a.published,'sv'));
+ const archive=[...weekendPermanentArticles,...weekendArticles];
 
  return <main><div className="shell weekend-desk">
   <header className="weekend-head">
