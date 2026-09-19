@@ -22,6 +22,11 @@ export const liveFeeds: Feed[] = [
   { name: 'Sveriges Radio · P4 Stockholm', url: 'https://api.sr.se/api/rss/program/701', section: 'Stockholm', homepage: 'https://www.sverigesradio.se/p4stockholm', note: 'Lokal RSS från Sveriges Radio' },
   { name: 'Sveriges Riksbank · Nyheter', url: 'https://www.riksbank.se/sv/rss/nyheter/', section: 'Ekonomi', homepage: 'https://www.riksbank.se/sv/press-och-publicerat/' },
   { name: 'Sveriges Riksbank · Pressmeddelanden', url: 'https://www.riksbank.se/sv/rss/pressmeddelanden/', section: 'Ekonomi', homepage: 'https://www.riksbank.se/sv/press-och-publicerat/' },
+  { name: 'Aftonbladet Ledare', url: 'https://rss.aftonbladet.se/rss2/small/pages/sections/ledare/', section: 'Politisk debatt', homepage: 'https://www.aftonbladet.se/ledare', note: 'Oberoende socialdemokratisk ledarsida' },
+  { name: 'Dagens Arena', url: 'https://www.dagensarena.se/feed/', section: 'Politisk debatt', homepage: 'https://www.dagensarena.se/', note: 'Ledare och politisk opinionsjournalistik' },
+  { name: 'Dagens Nyheter Ledare', url: 'https://www.dn.se/rss/', section: 'Politisk debatt', homepage: 'https://www.dn.se/ledare/', note: 'Oberoende liberal ledarsida' },
+  { name: 'Svenska Dagbladet Ledare', url: 'https://www.svd.se/feed/articles.rss', section: 'Politisk debatt', homepage: 'https://www.svd.se/ledare', note: 'Obunden moderat ledarsida' },
+  { name: 'Expressen Ledare', url: 'https://www.expressen.se/rss/ledare/', section: 'Politisk debatt', homepage: 'https://www.expressen.se/ledare/', note: 'Liberal ledarsida' },
   { name: 'BBC Business', url: 'https://feeds.bbci.co.uk/news/business/rss.xml', section: 'Ekonomi', homepage: 'https://www.bbc.com/news/business' },
   { name: 'The Guardian Business', url: 'https://www.theguardian.com/uk/business/rss', section: 'Ekonomi', homepage: 'https://www.theguardian.com/uk/business' },
   { name: 'New York Times Business', url: 'https://rss.nytimes.com/services/xml/rss/nyt/Business.xml', section: 'Ekonomi', homepage: 'https://www.nytimes.com/section/business' },
@@ -99,7 +104,7 @@ function classify(title: string, link: string, fallback: string) {
   if (fallback === 'Nacka/Lokalt') return 'Nacka/Lokalt';
   if (fallback === 'Ekonomi') return 'Ekonomi';
   if (fallback === 'Stockholm') return 'Stockholm';
-  if (['Världen','EU','Vetenskap','Kultur','Sport'].includes(fallback)) return fallback;
+  if (['Världen','EU','Politisk debatt','Vetenskap','Kultur','Sport'].includes(fallback)) return fallback;
   return 'Sverige';
 }
 
@@ -182,7 +187,7 @@ export async function getLiveNews() {
     return true;
   });
 
-  const sections = ['Alla','Nacka/Lokalt','Sverige','Världen','Internationella medier','Ekonomi','Kultur','Vetenskap','Sport'];
+  const sections = ['Alla','Nacka/Lokalt','Sverige','Världen','Internationella medier','EU','Ekonomi','Politisk debatt','Kultur','Vetenskap','Sport'];
   const sectionCounts = Object.fromEntries(sections.map(section => [section, section === 'Alla' ? items.length : items.filter(i => i.section === section).length]));
   return { items, sections, sectionCounts, highPriority: items.filter(i => i.priority === 'Hög').length, localCount: items.filter(i => i.local).length, feeds: settled.map(x => ({ name: x.feed.name, homepage: x.feed.homepage, section: x.feed.section, note: x.feed.note, status: x.ok ? 'Ansluten' : 'Tillfälligt otillgänglig', count: x.items.length })), fetchedAt: new Date().toISOString() };
 }
