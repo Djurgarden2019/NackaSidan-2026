@@ -159,6 +159,26 @@ html,body{max-width:100%;overflow-x:hidden}
 @media(max-width:900px){.source-grid{grid-template-columns:1fr 1fr}.intake-list article{grid-template-columns:55px 1fr}.intake-state{grid-column:2;align-items:flex-start;flex-direction:row;gap:14px}}
 @media(max-width:600px){.source-grid{grid-template-columns:1fr}.intake-head{align-items:start;flex-direction:column}.intake-list article{grid-template-columns:45px 1fr;gap:12px}}
 
+/* Luftigare redaktionell rytm och färre, tydligare nyheter */
+.world-front>section{margin-bottom:clamp(54px,8vw,104px)}
+.world-grid-section,.world-analysis,.world-live{padding-top:clamp(28px,4vw,52px);padding-bottom:clamp(28px,4vw,52px)}
+.world-story-grid,.world-analysis-grid{gap:clamp(28px,4vw,52px)}
+.world-story-copy p,.world-analysis-card p,.world-live-row p{line-height:1.72}
+.daily-desk-update{margin-bottom:72px}
+.daily-desk-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:42px 48px}
+.political-debate-teaser{display:flex;justify-content:space-between;align-items:end;gap:48px;padding:48px 0;border-top:5px solid var(--red);border-bottom:1px solid var(--line)}
+.political-debate-teaser h2{font-family:Georgia,serif;font-size:clamp(2.6rem,5vw,5rem);line-height:.95;margin:10px 0 18px}
+.political-debate-teaser p{max-width:720px;font-size:1.08rem;line-height:1.7;color:var(--muted);margin:0}
+.political-debate-hero{max-width:980px;padding-bottom:64px}.political-debate-hero h1{font-size:clamp(4rem,9vw,8rem);line-height:.9;margin:14px 0 24px}.political-debate-hero p{font-family:Georgia,serif;font-size:1.3rem;line-height:1.65;max-width:820px}
+.political-debate-list{padding:52px 0 72px;border-top:1px solid var(--line)}
+.political-debate-card{display:grid;grid-template-columns:80px minmax(0,1fr);gap:26px;padding:38px 0;border-bottom:1px solid var(--line)}
+.political-debate-number{font-family:Georgia,serif;font-size:2.4rem;color:var(--red)}
+.political-debate-card h3{font-family:Georgia,serif;font-size:clamp(1.8rem,3vw,3rem);line-height:1.08;margin:10px 0 18px;max-width:900px}
+.political-debate-card p{max-width:850px;font-size:1rem;line-height:1.7}.debate-perspective{color:var(--muted)}
+.debate-principle{margin:0 0 80px;padding:30px 34px;border-left:5px solid var(--red);background:var(--soft);max-width:900px}.debate-principle strong{font-family:Georgia,serif;font-size:1.5rem}.debate-principle p{margin:10px 0 0;line-height:1.65}
+@media(max-width:760px){.daily-desk-grid{grid-template-columns:1fr}.political-debate-teaser{align-items:flex-start;flex-direction:column}}
+@media(max-width:600px){.political-debate-card{grid-template-columns:1fr;gap:8px}.political-debate-hero{padding-bottom:40px}}
+
 
 /* Sprint 10 — live source layer */
 .live-hero{padding:72px 0 44px;border-bottom:1px solid var(--line)}

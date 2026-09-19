@@ -2,7 +2,7 @@ import type {DailyDeskKey} from '../content/dailyDeskUpdates';
 import {getLiveNews} from '../lib/liveNews';
 
 const deskSections:Partial<Record<DailyDeskKey,string[]>>={
- start:['Världen','Internationella medier','Sverige','Ekonomi','Kultur','Vetenskap','Sport'],
+ start:['Världen','Internationella medier','Sverige','Ekonomi','Politisk debatt','Kultur','Vetenskap','Sport'],
  senaste:['Världen','Internationella medier','Sverige','Ekonomi','Kultur','Vetenskap','Sport'],
  varlden:['Världen','Internationella medier'],sverige:['Sverige'],stockholm:['Stockholm'],
  eu:['EU'],ekonomi:['Ekonomi'],kultur:['Kultur'],vetenskap:['Vetenskap'],ai:['Vetenskap'],
@@ -17,10 +17,10 @@ function swedishAnalysis(section:string){const map:Record<string,string>={Värld
 export default async function DailyDeskUpdate({desk}:{desk:DailyDeskKey}){
  const live=await getLiveNews();const allowed=deskSections[desk]??[];const maxAge=ageLimit(desk)*60*60*1000;const now=Date.now();
  const stories=live.items.filter(item=>(allowed.includes(item.section)||allowed.includes(item.sourceSection))&&(desk!=='start'||isSwedishSource(item.source))).filter(item=>{const published=Date.parse(item.published);const age=now-published;return Number.isFinite(published)&&age>=0&&age<=maxAge}).sort((a,b)=>Date.parse(b.published)-Date.parse(a.published));
- const withImages=stories.filter(item=>Boolean(item.image));const selected=[...withImages,...stories.filter(item=>!item.image)].filter((item,index,array)=>array.findIndex(candidate=>candidate.link===item.link)===index).slice(0,6);if(!selected.length)return null;
+ const withImages=stories.filter(item=>Boolean(item.image));const selected=[...withImages,...stories.filter(item=>!item.image)].filter((item,index,array)=>array.findIndex(candidate=>candidate.link===item.link)===index).slice(0,4);if(!selected.length)return null;
  return <div className="shell"><section className="section daily-desk-update" aria-labelledby={`daily-${desk}`} style={{borderTop:'4px solid #a61919',marginTop:28,paddingTop:22}}>
   <div className="kicker">Uppdaterad {updatedLabel()}</div><h2 id={`daily-${desk}`} style={{fontFamily:'Georgia,serif',fontSize:'clamp(30px,4vw,46px)',margin:'8px 0 22px'}}>Senaste i avdelningen</h2>
-  <div style={{display:'grid',gridTemplateColumns:'repeat(auto-fit,minmax(280px,1fr))',gap:24}}>{selected.map(story=><article key={story.link} style={{borderTop:'1px solid #222'}}>
+  <div className="daily-desk-grid">{selected.map(story=><article key={story.link} style={{borderTop:'1px solid #222'}}>
    <a href={story.link} aria-label={`Öppna: ${story.title}`} style={{display:'block',height:'100%',paddingTop:16,color:'inherit'}}>
     {story.image&&<span style={{display:'block',aspectRatio:'16/9',overflow:'hidden',marginBottom:14}}><img src={story.image} alt="" loading="lazy" style={{width:'100%',height:'100%',objectFit:'cover'}}/></span>}
     <span className="kicker">{story.source} · {timeLabel(story.published)}</span>

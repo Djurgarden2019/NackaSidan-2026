@@ -23,8 +23,8 @@ export default async function Home(){
  const selected=new Set(preferred.map(item=>item.link));
  const topNews=[...preferred,...freshNews.filter(item=>!selected.has(item.link))].slice(0,6);
  const lead=topNews[0];
- const worldLive=foreignNews.slice(0,18);
- const worldAnalyses=analyses.filter(item=>['Världen','Europa'].includes(item.section));
+ const worldLive=foreignNews.slice(0,8);
+ const worldAnalyses=analyses.filter(item=>['Världen','Europa'].includes(item.section)).slice(0,3);
 
  return <main><div className="shell world-front">
   <section className="world-front-heading"><div><div className="breaking-line"><span>Senaste nytt</span> Uppdaterad {updatedToday}</div></div><Link className="text-link" href="/senaste">Öppna Senaste nytt →</Link></section>
@@ -35,6 +35,8 @@ export default async function Home(){
   </section>:<section className="world-empty"><h2>Nyhetsflödet uppdateras</h2><p>Inga verifierade nyheter yngre än 24 timmar är tillgängliga just nu.</p></section>}
 
   {topNews.length>1&&<section className="world-grid-section" aria-labelledby="world-latest-title"><div className="world-section-head"><div><div className="kicker">Plats 2–6</div><h2 id="world-latest-title">Dagens viktigaste nyheter</h2></div><span className="meta">Alla publicerade inom 24 timmar</span></div><div className="world-story-grid">{topNews.slice(1,6).map((story,index)=><article className={index===0?'world-story world-story-major':'world-story'} key={story.link}>{story.image&&<div className="world-story-image"><img src={story.image} alt="" loading="lazy"/><span>Bildkälla: {story.source}</span></div>}<div className="world-story-copy"><div className="top-six-number">{String(index+2).padStart(2,'0')}</div><div className="kicker">{story.section}</div><h3><a href={story.link} target="_blank" rel="noreferrer">{story.title}</a></h3>{story.summary&&<p>{story.summary}</p>}<p className="analysis-thesis"><strong>Svensk analys:</strong> {swedishAnalysis(story.section)}</p><div className="story-update">{dateLabel(story.published)} · {story.source}</div><a className="text-link" href={story.link} target="_blank" rel="noreferrer">Läs hos källan →</a></div></article>)}</div></section>}
+
+  <section className="political-debate-teaser" aria-labelledby="political-debate-title"><div><div className="kicker">Ny avdelning</div><h2 id="political-debate-title">Politisk debatt</h2><p>De viktigaste resonemangen från dagens svenska ledarsidor, sammanfattade och satta i ett bredare politiskt sammanhang.</p></div><Link className="button" href="/politisk-debatt">Läs dagens ledarsidor</Link></section>
 
   <section className="world-analysis" aria-labelledby="world-analysis-title"><div className="world-section-head"><div><div className="kicker">NackaSidan Analys</div><h2 id="world-analysis-title">Förstå vad som driver utvecklingen</h2></div><Link className="text-link" href="/analys">Alla analyser →</Link></div><div className="world-analysis-grid">{worldAnalyses.map((item,index)=><article key={item.slug} className={index===0?'world-analysis-card world-analysis-lead':'world-analysis-card'}><div className="kicker">{item.section} · Analys</div><h3><Link href={`/analys/${item.slug}`}>{item.title}</Link></h3><p>{item.dek}</p><p className="analysis-thesis"><strong>Huvudtes:</strong> {item.thesis}</p><Link className="text-link" href={`/analys/${item.slug}`}>Läs hela analysen →</Link></article>)}</div></section>
 
