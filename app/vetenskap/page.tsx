@@ -2,6 +2,7 @@ import DailyDeskUpdate from '../../components/DailyDeskUpdate';
 import Link from 'next/link';
 import DeskDepth from '../../components/DeskDepth';
 import {scienceDepth} from '../../content/deskDepth';
+import {getLiveNews} from '../../lib/liveNews';
 
 const stories=[
  {area:'AI & reglering',date:'28 augusti 2026',title:'EU kräver märkning av AI-innehåll och tydligare besked till användare',news:'Sedan den 2 augusti gäller AI-förordningens transparensregler. Användare ska informeras när de möter vissa AI-system, och genererat eller manipulerat innehåll ska i relevanta fall kunna identifieras och märkas.',analysis:'Reglerna flyttar ansvaret från den enskilda användarens källkritik till hela kedjan av modellföretag, plattformar och publicister. Den avgörande frågan blir om märkningen fungerar tekniskt även när innehåll kopieras, redigeras och sprids mellan tjänster.',source:'EU-kommissionen',url:'https://digital-strategy.ec.europa.eu/en/policies/guidelines-ai-transparency-obligations'},
@@ -15,11 +16,19 @@ const stories=[
 const todayLabel=()=>new Intl.DateTimeFormat('sv-SE',{day:'numeric',month:'long',year:'numeric',timeZone:'Europe/Stockholm'}).format(new Date());
 
 export const metadata={title:'Vetenskap & AI | NackaSidan 2026',description:'Dagens AI-, medicin-, klimat- och forskningsnyheter med analys och spårbara källor.'};
+export const dynamic='force-dynamic';
 
-export default function Page(){return <main><div className="shell science-desk">
+function timeLabel(value:string){return new Intl.DateTimeFormat('sv-SE',{day:'numeric',month:'short',hour:'2-digit',minute:'2-digit',timeZone:'Europe/Stockholm'}).format(new Date(value))}
+
+export default async function Page(){
+ const live=await getLiveNews();
+ const latest=live.items.filter(item=>(item.section==='Vetenskap'||item.sourceSection==='Vetenskap')&&item.source.startsWith('SVT')).sort((a,b)=>Date.parse(b.published)-Date.parse(a.published)).slice(0,8);
+ return <main><div className="shell science-desk">
  <header className="science-head"><div className="kicker">Vetenskap & AI · Uppdaterad {todayLabel()}</div><h1>Vetenskap & AI</h1><nav aria-label="Vetenskapsområden"><a href="#senaste">Senaste</a><a href="#analys">Analys</a><Link href="/tema/ai">AI-temat</Link></nav></header>
 
- <section className="science-lead" id="senaste"><article><div className="kicker">Huvudnyhet · {stories[0].area}</div><h2>{stories[0].title}</h2><div className="science-part"><strong>Nyheten</strong><p>{stories[0].news}</p></div><div className="science-part science-part-analysis"><strong>Analys</strong><p>{stories[0].analysis}</p></div><a className="button" href={stories[0].url} target="_blank" rel="noopener noreferrer">Källa: {stories[0].source} ↗</a></article><aside><div className="kicker">Dagens bevakning</div><strong>6</strong><span>verifierade forskningsspår</span><hr/><p>Reglering, klinisk AI, bioteknik, neuroteknik och klimatmodeller.</p></aside></section>
+ {latest.length>0&&<section className="science-grid-section" id="senaste"><div className="science-title"><div><div className="kicker">Svenska vetenskapsnyheter · Senaste 48 timmarna</div><h2>Vetenskap just nu</h2></div><span className="meta">Uppdateras automatiskt</span></div><div className="science-grid">{latest.map((item,index)=><article key={item.link} className={index===0?'science-card science-card-wide':'science-card'}>{item.image&&<a href={item.link} target="_blank" rel="noopener noreferrer" style={{display:'block',aspectRatio:'16/9',overflow:'hidden',marginBottom:14}}><img src={item.image} alt="" loading={index===0?'eager':'lazy'} style={{width:'100%',height:'100%',objectFit:'cover'}}/></a>}<div className="kicker">{item.source} · {timeLabel(item.published)}</div><h3><a href={item.link} target="_blank" rel="noopener noreferrer">{item.title}</a></h3>{item.summary&&<p>{item.summary}</p>}<a className="text-link" href={item.link} target="_blank" rel="noopener noreferrer">Läs hos källan →</a></article>)}</div></section>}
+
+ <section className="science-lead"><article><div className="kicker">Fördjupning · {stories[0].area}</div><h2>{stories[0].title}</h2><div className="science-part"><strong>Nyheten</strong><p>{stories[0].news}</p></div><div className="science-part science-part-analysis"><strong>Analys</strong><p>{stories[0].analysis}</p></div><a className="button" href={stories[0].url} target="_blank" rel="noopener noreferrer">Källa: {stories[0].source} ↗</a></article><aside><div className="kicker">Fördjupningar</div><strong>6</strong><span>verifierade forskningsspår</span><hr/><p>Reglering, klinisk AI, bioteknik, neuroteknik och klimatmodeller.</p></aside></section>
 
  <section className="science-grid-section"><div className="science-title"><div><div className="kicker">Senaste nytt</div><h2>Forskningen vi följer</h2></div><span className="meta">Nyhet · Analys · Källa</span></div><div className="science-grid">{stories.slice(1).map((story,index)=><article key={story.title} className={index===0?'science-card science-card-wide':'science-card'}><div className="kicker">{story.area} · {story.date}</div><h3>{story.title}</h3><div className="science-part"><strong>Nyheten</strong><p>{story.news}</p></div><div className="science-part science-part-analysis"><strong>Analys</strong><p>{story.analysis}</p></div><a className="text-link" href={story.url} target="_blank" rel="noopener noreferrer">Källa: {story.source} ↗</a></article>)}</div></section>
 

@@ -20,8 +20,10 @@ export const liveFeeds: Feed[] = [
   { name: 'SVT Nyheter', url: 'https://www.svt.se/nyheter/rss.xml', section: 'Sverige', homepage: 'https://www.svt.se/nyheter' },
   { name: 'Sveriges Radio · Ekot', url: 'https://api.sr.se/api/rss/program/83', section: 'Sverige', homepage: 'https://www.sverigesradio.se/ekot', note: 'Text-RSS från Sveriges Radio' },
   { name: 'Sveriges Radio · P4 Stockholm', url: 'https://api.sr.se/api/rss/program/701', section: 'Stockholm', homepage: 'https://www.sverigesradio.se/p4stockholm', note: 'Lokal RSS från Sveriges Radio' },
+  { name: 'SVT Ekonomi', url: 'https://www.svt.se/nyheter/ekonomi/rss.xml', section: 'Ekonomi', homepage: 'https://www.svt.se/nyheter/ekonomi', note: 'Svenskspråkiga ekonominyheter från SVT' },
   { name: 'Sveriges Riksbank · Nyheter', url: 'https://www.riksbank.se/sv/rss/nyheter/', section: 'Ekonomi', homepage: 'https://www.riksbank.se/sv/press-och-publicerat/' },
   { name: 'Sveriges Riksbank · Pressmeddelanden', url: 'https://www.riksbank.se/sv/rss/pressmeddelanden/', section: 'Ekonomi', homepage: 'https://www.riksbank.se/sv/press-och-publicerat/' },
+  { name: 'SCB · Statistiknyheter', url: 'https://www.scb.se/Feed/statistiknyheter/', section: 'Ekonomi', homepage: 'https://www.scb.se/hitta-statistik/aktuellt/', note: 'Svensk officiell ekonomisk statistik' },
   { name: 'Aftonbladet Ledare', url: 'https://rss.aftonbladet.se/rss2/small/pages/sections/ledare/', section: 'Politisk debatt', homepage: 'https://www.aftonbladet.se/ledare', note: 'Oberoende socialdemokratisk ledarsida' },
   { name: 'Dagens Arena', url: 'https://www.dagensarena.se/feed/', section: 'Politisk debatt', homepage: 'https://www.dagensarena.se/', note: 'Ledare och politisk opinionsjournalistik' },
   { name: 'Dagens Nyheter Ledare', url: 'https://www.dn.se/rss/', section: 'Politisk debatt', homepage: 'https://www.dn.se/ledare/', note: 'Oberoende liberal ledarsida' },
@@ -46,6 +48,8 @@ export const liveFeeds: Feed[] = [
   { name: 'BBC Sport', url: 'https://feeds.bbci.co.uk/sport/rss.xml', section: 'Sport', homepage: 'https://www.bbc.com/sport' },
   { name: 'The Guardian Sport', url: 'https://www.theguardian.com/uk/sport/rss', section: 'Sport', homepage: 'https://www.theguardian.com/sport' },
   { name: 'BBC Science', url: 'https://feeds.bbci.co.uk/news/science_and_environment/rss.xml', section: 'Vetenskap', homepage: 'https://www.bbc.com/news/science_and_environment' },
+  { name: 'SVT Vetenskap', url: 'https://www.svt.se/nyheter/vetenskap/rss.xml', section: 'Vetenskap', homepage: 'https://www.svt.se/nyheter/vetenskap', note: 'Svenskspråkiga vetenskapsnyheter från SVT' },
+  { name: 'SVT Kultur', url: 'https://www.svt.se/kultur/rss.xml', section: 'Kultur', homepage: 'https://www.svt.se/kultur', note: 'Svenskspråkiga kulturnyheter från SVT' },
   { name: 'NASA', url: 'https://www.nasa.gov/rss/dyn/breaking_news.rss', section: 'Vetenskap', homepage: 'https://www.nasa.gov/' },
 ];
 
@@ -130,6 +134,7 @@ function parse(xml: string, feed: Feed): LiveNewsItem[] {
 function sourceWeight(source: string) {
   if (source.startsWith('Nacka kommun')) return 4;
   if (source.startsWith('SVT') || source.startsWith('Sveriges Radio')) return 3;
+  if (source.startsWith('SCB')) return 3;
   if (source.startsWith('Sveriges Riksbank')) return 2;
   if (source.includes('Business')) return 2;
   return 1;
