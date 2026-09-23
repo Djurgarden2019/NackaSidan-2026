@@ -6,7 +6,7 @@ type Draft = {
  sources:{label:string;url:string}[];
 };
 
-const published='15 september 2026';
+const published='23 september 2026';
 
 function article(d:Draft):WeekendArticle {
  return {
