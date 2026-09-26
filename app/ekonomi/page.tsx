@@ -14,7 +14,7 @@ function clean(value:string){return value.replace(/\s+/g,' ').trim()}
 function summary(item:LiveNewsItem){const text=clean(item.summary);if(!text)return 'Läs den senaste rapporteringen och bakgrunden hos originalkällan.';return text.length>260?`${text.slice(0,257).replace(/\s+\S*$/,'')}…`:text}
 function timeLabel(value:string){return new Intl.DateTimeFormat('sv-SE',{day:'numeric',month:'short',hour:'2-digit',minute:'2-digit',timeZone:'Europe/Stockholm'}).format(new Date(value))}
 function today(){return new Intl.DateTimeFormat('sv-SE',{day:'numeric',month:'long',year:'numeric',timeZone:'Europe/Stockholm'}).format(new Date())}
-function isSwedishEconomicSource(source:string){return source.startsWith('SVT Ekonomi')||source.startsWith('Sveriges Riksbank')||source.startsWith('SCB')}
+function isSwedishEconomicSource(source:string){return source.startsWith('SVT')||source.startsWith('Sveriges Riksbank')||source.startsWith('Riksbanken')||source.startsWith('SCB')}
 function NewsCard({item,lead=false}:{item:LiveNewsItem;lead?:boolean}){return <article className={lead?'economy-news-lead economy-live-card':'economy-live-card'}>
  {item.image&&<a className="economy-news-image" href={item.link} target="_blank" rel="noopener noreferrer"><img src={item.image} alt="" loading={lead?'eager':'lazy'}/></a>}
  <div className="kicker">{item.source} · <time dateTime={item.published}>{timeLabel(item.published)}</time></div>
@@ -26,8 +26,8 @@ export default async function Page(){
  const {items,feeds}=await getLiveNews();
  const liveEconomy=items.filter(item=>(item.section==='Ekonomi'||item.sourceSection==='Ekonomi')&&isSwedishEconomicSource(item.source));
  const economy=[...editorialEconomyNews,...liveEconomy].filter((item,index,array)=>array.findIndex(candidate=>candidate.link===item.link)===index).sort((a,b)=>Date.parse(b.published)-Date.parse(a.published)).slice(0,20);
- const sweden=economy.filter(item=>!item.source.startsWith('Reuters')).slice(0,8);
- const world=economy.filter(item=>item.source.startsWith('Reuters')).slice(0,8);
+ const sweden=economy.filter(item=>isSwedishEconomicSource(item.source)).slice(0,8);
+ const world=economy.filter(item=>!isSwedishEconomicSource(item.source)).slice(0,8);
  const lead=economy[0];const latest=economy.filter(item=>item.link!==lead?.link).slice(0,8);
  const activeFeeds=feeds.filter(feed=>feed.section==='Ekonomi'&&feed.status==='Ansluten'&&isSwedishEconomicSource(feed.name)).length;
  return <main><div className="shell economy-desk">
