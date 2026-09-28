@@ -1,4 +1,4 @@
-import DailyDeskUpdate from '../components/DailyDeskUpdate';
+import SafeImage from '../components/SafeImage';
 import Link from 'next/link';
 import { analyses } from '../content/analyses';
 import { getLiveNews } from '../lib/liveNews';
@@ -24,18 +24,19 @@ export default async function Home(){
  const selected=new Set(preferred.map(item=>item.link));
  const topNews=[...preferred,...freshNews.filter(item=>!selected.has(item.link))].slice(0,6);
  const lead=topNews[0];
- const worldLive=foreignNews.slice(0,8);
+ const topLinks=new Set(topNews.map(item=>item.link.replace(/[?#].*$/,'')));
+ const worldLive=foreignNews.filter(item=>!topLinks.has(item.link.replace(/[?#].*$/,''))).slice(0,8);
  const worldAnalyses=analyses.filter(item=>['Världen','Europa'].includes(item.section)).slice(0,3);
 
  return <main><div className="shell world-front">
   <section className="world-front-heading"><div><div className="breaking-line"><span>Senaste nytt</span> Uppdaterad {updatedToday}</div></div><Link className="text-link" href="/senaste">Öppna Senaste nytt →</Link></section>
 
   {lead?<section className="world-lead" aria-labelledby="world-lead-title">
-   <div className="world-lead-media"><span className="top-six-number">01</span><img src={lead.image||frontFallbackImage} alt="" loading="eager" fetchPriority="high"/><span>Bildkälla: {lead.image?lead.source:'BBC'}</span></div>
+   <div className="world-lead-media"><span className="top-six-number">01</span><SafeImage src={lead.image||frontFallbackImage} alt="" loading="eager" fetchPriority="high"/><span>Bildkälla: {lead.image?lead.source:'NackaSidan'}</span></div>
    <article><div className="kicker">Huvudnyhet · {lead.section}</div><h2 id="world-lead-title"><a href={lead.link} target="_blank" rel="noreferrer">{lead.title}</a></h2>{lead.summary&&<p className="lead">{lead.summary}</p>}<p className="analysis-thesis"><strong>Svensk analys:</strong> {swedishAnalysis(lead.section)}</p><div className="story-update">{dateLabel(lead.published)} · {lead.source}</div><div className="world-lead-actions"><a className="button" href={lead.link} target="_blank" rel="noreferrer">Läs originalartikeln</a><Link className="text-link" href="/analys">NackaSidans analyser →</Link></div></article>
   </section>:<section className="world-empty"><h2>Nyhetsflödet uppdateras</h2><p>Inga verifierade nyheter yngre än 24 timmar är tillgängliga just nu.</p></section>}
 
-  {topNews.length>1&&<section className="world-grid-section" aria-labelledby="world-latest-title"><div className="world-section-head"><div><div className="kicker">Plats 2–6</div><h2 id="world-latest-title">Dagens viktigaste nyheter</h2></div><span className="meta">Alla publicerade inom 24 timmar</span></div><div className="world-story-grid">{topNews.slice(1,6).map((story,index)=><article className={index===0?'world-story world-story-major':'world-story'} key={story.link}><div className="world-story-image"><img src={story.image||frontFallbackImage} alt="" loading="lazy"/><span>Bildkälla: {story.image?story.source:'BBC'}</span></div><div className="world-story-copy"><div className="top-six-number">{String(index+2).padStart(2,'0')}</div><div className="kicker">{story.section}</div><h3><a href={story.link} target="_blank" rel="noreferrer">{story.title}</a></h3>{story.summary&&<p>{story.summary}</p>}<p className="analysis-thesis"><strong>Svensk analys:</strong> {swedishAnalysis(story.section)}</p><div className="story-update">{dateLabel(story.published)} · {story.source}</div><a className="text-link" href={story.link} target="_blank" rel="noreferrer">Läs hos källan →</a></div></article>)}</div></section>}
+  {topNews.length>1&&<section className="world-grid-section" aria-labelledby="world-latest-title"><div className="world-section-head"><div><div className="kicker">Plats 2–6</div><h2 id="world-latest-title">Dagens viktigaste nyheter</h2></div><span className="meta">Alla publicerade inom 72 timmar</span></div><div className="world-story-grid">{topNews.slice(1,6).map((story,index)=><article className={index===0?'world-story world-story-major':'world-story'} key={story.link}><div className="world-story-image"><SafeImage src={story.image||frontFallbackImage} alt="" loading="lazy"/><span>Bildkälla: {story.image?story.source:'NackaSidan'}</span></div><div className="world-story-copy"><div className="top-six-number">{String(index+2).padStart(2,'0')}</div><div className="kicker">{story.section}</div><h3><a href={story.link} target="_blank" rel="noreferrer">{story.title}</a></h3>{story.summary&&<p>{story.summary}</p>}<p className="analysis-thesis"><strong>Svensk analys:</strong> {swedishAnalysis(story.section)}</p><div className="story-update">{dateLabel(story.published)} · {story.source}</div><a className="text-link" href={story.link} target="_blank" rel="noreferrer">Läs hos källan →</a></div></article>)}</div></section>}
 
   <section className="political-debate-teaser" aria-labelledby="political-debate-title"><div><div className="kicker">Ny avdelning</div><h2 id="political-debate-title">Politisk debatt</h2><p>De viktigaste resonemangen från dagens svenska ledarsidor, sammanfattade och satta i ett bredare politiskt sammanhang.</p></div><Link className="button" href="/politisk-debatt">Läs dagens ledarsidor</Link></section>
 
@@ -44,5 +45,5 @@ export default async function Home(){
   <section className="world-live" aria-labelledby="world-live-title"><div className="world-section-head"><div><div className="kicker">Direkt från redaktionerna</div><h2 id="world-live-title">Senaste utrikesnyheterna</h2></div><span className="meta">Endast de senaste 24 timmarna</span></div>{worldLive.length?<div className="world-live-list">{worldLive.map((item,index)=><a href={item.link} target="_blank" rel="noreferrer" className="world-live-row" key={`${item.link}-${index}`}><time>{dateLabel(item.published)}</time><div><span className="kicker">{item.source}</span><h3>{item.title}</h3><p><strong>Svensk analys:</strong> {swedishAnalysis(item.section)}</p></div><span aria-hidden="true">→</span></a>)}</div>:<div className="world-empty"><h3>Liveflödet uppdateras</h3><p>Inga verifierade utrikesnyheter yngre än 24 timmar är tillgängliga just nu.</p></div>}</section>
 
   <section className="world-focus" aria-label="Bevakningsområden"><div><div className="kicker">Detta följer vi</div><h2>Fem frågor som kan flytta världsläget</h2></div><ol>{['Utredningen efter masskjutningarna i Sydafrika','USA:s och Kinas fortsatta beslut om tullsänkningar','Nationell samlings framgång och Frankrikes politiska vägval','Irans dubbla budskap om diplomati och krig kring Hormuz','Sveriges regeringsbildning efter valet och valet av talman'].map((item,index)=><li key={item}><span>{String(index+1).padStart(2,'0')}</span>{item}</li>)}</ol></section>
- </div><DailyDeskUpdate desk="start"/></main>
+ </div></main>
 }

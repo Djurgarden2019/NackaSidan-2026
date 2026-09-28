@@ -1,4 +1,3 @@
-import DailyDeskUpdate from '../../components/DailyDeskUpdate';
 import type { Metadata } from 'next';
 import { euCountries } from '../../content/euCountries';
 
@@ -52,5 +51,5 @@ export default function EuPage(){
    <li><a className="text-link" href="https://european-union.europa.eu/principles-countries-history/country-profiles_en" target="_blank" rel="noreferrer">Europeiska unionen: officiella landprofiler →</a></li>
    <li><a className="text-link" href="https://data.worldbank.org/indicator/NY.GDP.PCAP.CD" target="_blank" rel="noreferrer">Världsbanken: BNP per capita →</a></li>
   </ul></section>
- </div><DailyDeskUpdate desk="eu"/></main>
+ </div></main>
 }

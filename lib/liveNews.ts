@@ -154,6 +154,21 @@ function editorialScore(item: LiveNewsItem, now: number) {
   return freshness + localBoost + swedishBoost + priorityBoost;
 }
 
+const MAX_NEWS_AGE_MS = 72 * 60 * 60 * 1000;
+const titleStopWords = new Set(['och','att','det','den','ett','en','som','för','med','från','till','på','i','av','om','efter','the','a','an','to','of','in','on','for','and','with','from']);
+
+function titleTokens(title: string) {
+  return new Set(title.toLowerCase().normalize('NFKD').replace(/[\u0300-\u036f]/g, '').replace(/[^a-z0-9åäö ]/g, ' ').split(/\s+/).filter(word => word.length > 2 && !titleStopWords.has(word)));
+}
+
+function isSameStory(a: Set<string>, b: Set<string>) {
+  const smaller = Math.min(a.size, b.size);
+  if (smaller < 4) return false;
+  let shared = 0;
+  for (const word of a) if (b.has(word)) shared += 1;
+  return shared >= 4 && shared / smaller >= 0.72;
+}
+
 export async function getLiveNews() {
   const settled = await Promise.all(liveFeeds.map(async feed => {
     try {
@@ -166,15 +181,10 @@ export async function getLiveNews() {
   }));
 
   const now = Date.now();
-  const defaultMaxAgeMs = 48 * 60 * 60 * 1000;
-  const sportMaxAgeMs = 48 * 60 * 60 * 1000;
   const fresh = settled.flatMap(x => x.items).filter(item => {
     const time = Date.parse(item.published);
     const age = now - time;
-    if (item.section === 'Sport') {
-      return Number.isFinite(time) && age >= 0 && age <= sportMaxAgeMs;
-    }
-    return Number.isFinite(time) && age >= 0 && age <= defaultMaxAgeMs;
+    return Number.isFinite(time) && age >= 0 && age <= MAX_NEWS_AGE_MS;
   }).sort((a,b) => {
     const scoreDiff = editorialScore(b, now) - editorialScore(a, now);
     if (scoreDiff !== 0) return scoreDiff;
@@ -183,12 +193,15 @@ export async function getLiveNews() {
 
   const seen = new Set<string>();
   const seenTitles = new Set<string>();
+  const acceptedTitles: Set<string>[] = [];
   const items = fresh.filter(item => {
     const key = item.link.replace(/[?#].*$/, '') || item.title.toLowerCase();
     const titleKey = item.title.toLowerCase().replace(/[^a-zåäö0-9 ]/g, '').replace(/\s+/g, ' ').trim();
-    if (seen.has(key) || seenTitles.has(titleKey)) return false;
+    const tokens = titleTokens(item.title);
+    if (seen.has(key) || seenTitles.has(titleKey) || acceptedTitles.some(previous => isSameStory(tokens, previous))) return false;
     seen.add(key);
     seenTitles.add(titleKey);
+    acceptedTitles.push(tokens);
     return true;
   });
 

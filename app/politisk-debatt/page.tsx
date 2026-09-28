@@ -1,4 +1,3 @@
-import DailyDeskUpdate from '../../components/DailyDeskUpdate';
 import {getLiveNews} from '../../lib/liveNews';
 
 export const dynamic='force-dynamic';
@@ -19,5 +18,5 @@ export default async function PoliticalDebatePage(){
    {selected.length?<div>{selected.map((item,index)=><article key={item.link} className="political-debate-card"><div className="political-debate-number">{String(index+1).padStart(2,'0')}</div><div><div className="kicker">{item.source} · {dateLabel(item.published)}</div><h3><a href={item.link} target="_blank" rel="noreferrer">{item.title}</a></h3>{item.summary&&<p>{item.summary}</p>}<p className="debate-perspective"><strong>Politisk utgångspunkt:</strong> {perspective(item.source)}</p><p className="analysis-thesis"><strong>NackaSidans analys:</strong> {analysis(item.title)}</p><a className="text-link" href={item.link} target="_blank" rel="noreferrer">Läs ledartexten hos källan →</a></div></article>)}</div>:<div className="world-empty"><h3>Ledarsidorna uppdateras</h3><p>Nya texter hämtas och publiceras här så snart de är tillgängliga.</p></div>}
   </section>
   <aside className="debate-principle"><strong>Redaktionell princip</strong><p>Urvalet ska spegla flera politiska riktningar. En ledartext återges som argument och värdering, aldrig som obestridd fakta.</p></aside>
- </div><DailyDeskUpdate desk="analys"/></main>
+ </div></main>
 }
