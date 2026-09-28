@@ -1,4 +1,3 @@
-import DailyDeskUpdate from '../../components/DailyDeskUpdate';
 import Link from 'next/link';
 import DeskDepth from '../../components/DeskDepth';
 import {scienceDepth} from '../../content/deskDepth';
@@ -22,7 +21,7 @@ function timeLabel(value:string){return new Intl.DateTimeFormat('sv-SE',{day:'nu
 
 export default async function Page(){
  const live=await getLiveNews();
- const latest=live.items.filter(item=>(item.section==='Vetenskap'||item.sourceSection==='Vetenskap')&&item.source.startsWith('SVT')).sort((a,b)=>Date.parse(b.published)-Date.parse(a.published)).slice(0,8);
+ const latest=live.items.filter(item=>item.section==='Vetenskap').sort((a,b)=>Date.parse(b.published)-Date.parse(a.published)).slice(0,8);
  return <main><div className="shell science-desk">
  <header className="science-head"><div className="kicker">Vetenskap & AI · Uppdaterad {todayLabel()}</div><h1>Vetenskap & AI</h1><nav aria-label="Vetenskapsområden"><a href="#senaste">Senaste</a><a href="#analys">Analys</a><Link href="/tema/ai">AI-temat</Link></nav></header>
 
@@ -38,4 +37,4 @@ export default async function Page(){
  <section className="science-sources"><div className="kicker">Källor</div><h2>Primärkällor och forskningspubliceringar</h2><div><a href="https://digital-strategy.ec.europa.eu/en/policies/regulatory-framework-ai" target="_blank" rel="noopener noreferrer">EU-kommissionen: AI-förordningen ↗</a><a href="https://www.nih.gov/" target="_blank" rel="noopener noreferrer">NIH: medicinsk forskning ↗</a><a href="https://science.nasa.gov/" target="_blank" rel="noopener noreferrer">NASA Science ↗</a><a href="https://www.nature.com/natmachintell/" target="_blank" rel="noopener noreferrer">Nature Machine Intelligence ↗</a></div></section>
  <section className="science-next"><Link className="button" href="/tema/ai">Fördjupa dig i AI-temat</Link><Link className="text-link" href="/senaste">Se dagens uppdateringar →</Link></section>
  <DeskDepth eyebrow="Vetenskaplig fördjupning" title="Vad som krävs innan ett resultat förändrar samhället" {...scienceDepth}/>
- </div><DailyDeskUpdate desk="vetenskap"/></main>}
+ </div></main>}

@@ -1,4 +1,3 @@
-import DailyDeskUpdate from '../../components/DailyDeskUpdate';
 import Link from 'next/link';
 import { swedenDesk207 } from '../../content/swedenDesk207';
 import { swedenElectionCalendar224, swedenElectionCalendarRules224 } from '../../content/swedenElectionCalendar224';
@@ -20,8 +19,9 @@ const formatArticleDate=(iso:string)=>new Intl.DateTimeFormat('sv-SE',{day:'nume
 
 export default async function SverigePage(){
  const live=await getLiveNews();
- const dailyNews=live.items.filter(item=>item.sourceSection==='Sverige').slice(0,6);
- const articles=swedenArticleFeed239();
+ const dailyNews=live.items.filter(item=>item.section==='Sverige').slice(0,6);
+ const cutoff=Date.now()-72*60*60*1000;
+ const articles=swedenArticleFeed239().filter(article=>Date.parse(article.updatedAt)>=cutoff);
  const lead=articles[0];
  const latest=articles.slice(1,7);
 
@@ -85,7 +85,6 @@ export default async function SverigePage(){
   </section>
 
   <div id="fordjupning"><DeskDepth eyebrow="Sverige · Fördjupning" title="Valet, ekonomin och säkerheten bakom rubrikerna" {...swedenDepth}/></div>
-  <DailyDeskUpdate desk="sverige"/>
   <footer className="border-t border-neutral-300 py-6 text-sm text-neutral-500"><Link href="/stockholm" className="font-bold underline">Till Stockholm →</Link></footer>
  </main>
 }

@@ -1,4 +1,3 @@
-import DailyDeskUpdate from '../../components/DailyDeskUpdate';
 import Link from 'next/link';
 import StockholmToday from './StockholmToday';
 import { stockholmArticles163 } from '../../content/stockholmArticles163';
@@ -12,7 +11,7 @@ export const dynamic='force-dynamic';
 export const metadata={title:'Stockholm | NackaSidan 2026',description:'Aktuella nyheter, trafik och fördjupning om Stockholm och regionen.'};
 
 const todayLabel=()=>new Intl.DateTimeFormat('sv-SE',{weekday:'long',day:'numeric',month:'long',year:'numeric',timeZone:'Europe/Stockholm'}).format(new Date());
-const stockholmFallbackImage='https://commons.wikimedia.org/wiki/Special:FilePath/Stockholm%20skyline.jpg?width=1200';
+const stockholmFallbackImage='/images/news-fallback.svg';
 const liveDate=(value:string)=>{const date=new Date(value);return Number.isNaN(date.getTime())?'Senaste nytt':new Intl.DateTimeFormat('sv-SE',{day:'numeric',month:'short',hour:'2-digit',minute:'2-digit',timeZone:'Europe/Stockholm'}).format(date)};
 
 const districtNames=['Södermalm','Vasastan','Norrmalm','Östermalm','Kungsholmen','Bromma','Järva','Farsta','Älvsjö','Skärholmen','Hägersten','Årsta','Enskede','Vantör'];
@@ -21,8 +20,9 @@ function EmptyState({text}:{text:string}){return <p className="mt-4 border borde
 
 export default async function StockholmPage(){
  const live=await getLiveNews();
- const dailyNews=live.items.filter(item=>item.sourceSection==='Stockholm').slice(0,6);
- const published=stockholmArticles163.filter(article=>article.status==='published'&&!isDistrictStory(article.section));
+ const dailyNews=live.items.filter(item=>item.section==='Stockholm').slice(0,6);
+ const cutoff=Date.now()-72*60*60*1000;
+ const published=stockholmArticles163.filter(article=>article.status==='published'&&!isDistrictStory(article.section)&&Date.parse(article.publishedAt)>=cutoff);
  const lead=published.find(article=>article.homepage?.role==='lead')??published[0];
  const latest=[...published].filter(article=>article.slug!==lead?.slug).sort((a,b)=>Date.parse(b.publishedAt)-Date.parse(a.publishedAt));
 
@@ -78,7 +78,6 @@ export default async function StockholmPage(){
 
   <div id="fordjupning"><DeskDepth eyebrow="Stockholm · Fördjupning" title="Besluten som formar hela regionens vardag" {...stockholmDepth}/></div>
   <StockholmToday/>
-  <DailyDeskUpdate desk="stockholm"/>
   <footer className="border-t border-neutral-300 py-6 text-sm"><Link href="/sverige" className="font-bold underline">Till Sverige →</Link></footer>
  </main>
 }

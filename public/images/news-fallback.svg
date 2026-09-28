@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 720" role="img" aria-labelledby="title desc">
+  <title id="title">NackaSidan</title>
+  <desc id="desc">Neutral reservbild för en nyhetsartikel.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0" stop-color="#e9eef2"/>
+      <stop offset="1" stop-color="#cbd7df"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="720" fill="url(#bg)"/>
+  <circle cx="960" cy="120" r="240" fill="#bf1e2e" opacity=".13"/>
+  <path d="M0 540 310 310l188 147 203-190 499 380v73H0Z" fill="#365061" opacity=".22"/>
+  <rect x="82" y="82" width="9" height="182" fill="#bf1e2e"/>
+  <text x="126" y="170" fill="#17242c" font-family="Georgia,serif" font-size="78" font-weight="700">NackaSidan</text>
+  <text x="130" y="225" fill="#4d626e" font-family="Arial,sans-serif" font-size="24" letter-spacing="5">NYHETER · ANALYS · DEBATT</text>
+</svg>

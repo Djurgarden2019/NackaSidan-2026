@@ -1,6 +1,6 @@
 import type { Metadata } from 'next';
 import { getLiveNews } from '../../lib/liveNews';
-import DailyDeskUpdate from '../../components/DailyDeskUpdate';
+import SafeImage from '../../components/SafeImage';
 import Link from 'next/link';
 import {internationalFeatures} from '../../content/internationalFeatures';
 
@@ -31,6 +31,5 @@ export default async function InternationalMediaPage(){
   <div id="europa"><NewsList title="Europeiska medier" items={european}/></div>
   <div id="usa"><NewsList title="Amerikanska medier" items={american}/></div>
   <div id="globalt"><NewsList title="Globala medier" items={globalNews}/></div>
-  <DailyDeskUpdate desk="varlden"/>
  </main>
 }
