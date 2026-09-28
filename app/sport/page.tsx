@@ -10,6 +10,7 @@ export const revalidate=0;
 
 const MAX_AGE=48*60*60*1000;
 const trustedOrder=['SVT Sport','SVT Nyheter','Sveriges Radio','BBC Sport','The Guardian Sport'];
+const sportFallbackImage='https://commons.wikimedia.org/wiki/Special:FilePath/Association%20football.jpg?width=1200';
 
 function updatedLabel(now:Date){
  return new Intl.DateTimeFormat('sv-SE',{dateStyle:'long',timeStyle:'short',timeZone:'Europe/Stockholm'}).format(now);
@@ -58,8 +59,8 @@ export default async function SportPage(){
   .filter(item=>{const key=item.link.replace(/[?#].*$/,'');if(seen.has(key))return false;seen.add(key);return true;})
   .slice(0,10);
  const [lead,...rest]=articles;
- const imageStories=rest.filter(item=>item.image);
- const compactStories=rest.filter(item=>!item.image);
+ const imageStories=rest;
+ const compactStories:LiveNewsItem[]=[];
 
  return <main><div className="shell sport-desk">
   <header className="sport-desk-head">
@@ -69,7 +70,7 @@ export default async function SportPage(){
 
   {lead?<section className="sport-lead" id="toppnyhet">
    <article>
-    {lead.image&&<a href={lead.link} target="_blank" rel="noopener noreferrer" style={{display:'block',aspectRatio:'16/9',overflow:'hidden',marginBottom:22}}><img src={lead.image} alt="" style={{width:'100%',height:'100%',objectFit:'cover'}}/></a>}
+    <a href={lead.link} target="_blank" rel="noopener noreferrer" style={{display:'block',aspectRatio:'16/9',overflow:'hidden',marginBottom:22}}><img src={lead.image||sportFallbackImage} alt="" style={{width:'100%',height:'100%',objectFit:'cover'}}/></a>
     <div className="kicker">Toppnyhet · {topic(lead.title)}</div>
     <h2><a href={lead.link} target="_blank" rel="noopener noreferrer">{lead.title}</a></h2>
     {lead.summary&&<p className="lead">{cleanSummary(lead.summary)}</p>}
@@ -82,7 +83,7 @@ export default async function SportPage(){
   <section className="sport-news sport-panel" id="senaste">
    <div className="sport-section-title"><div><div className="kicker">Prioriterat</div><h2>Senaste sportnytt</h2></div><span>{imageStories.length} bildsatta nyheter</span></div>
    <div className="sport-news-grid">{imageStories.map(article=><article key={article.link} className="sport-card">
-    <a href={article.link} target="_blank" rel="noopener noreferrer" style={{display:'block',aspectRatio:'16/9',overflow:'hidden',marginBottom:16}}><img src={article.image} alt="" loading="lazy" style={{width:'100%',height:'100%',objectFit:'cover'}}/></a>
+    <a href={article.link} target="_blank" rel="noopener noreferrer" style={{display:'block',aspectRatio:'16/9',overflow:'hidden',marginBottom:16}}><img src={article.image||sportFallbackImage} alt="" loading="lazy" style={{width:'100%',height:'100%',objectFit:'cover'}}/></a>
     <div className="kicker">{topic(article.title)} · {article.source}</div>
     <h3><a href={article.link} target="_blank" rel="noopener noreferrer">{article.title}</a></h3>
     {article.summary&&<p>{cleanSummary(article.summary)}</p>}

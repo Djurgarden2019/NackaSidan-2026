@@ -11,6 +11,7 @@ export const metadata: Metadata = {
  title: 'Helg',
  description: 'NackaSidans svenska helgmagasin med 18 längre artiklar, analyser, fördjupningar och ett arkiv med tidigare publiceringar.'
 };
+const weekendImages=['https://commons.wikimedia.org/wiki/Special:FilePath/Stockholm%20skyline.jpg?width=1200','https://commons.wikimedia.org/wiki/Special:FilePath/Swedish%20cuisine.jpg?width=1200','https://commons.wikimedia.org/wiki/Special:FilePath/Reading%20a%20book.jpg?width=1200'];
 
 function weekendDate(){
  const now=new Date();
@@ -63,6 +64,7 @@ export default function WeekendPage() {
 
    <div className="weekend-current">
     <section id={`artikel-${lead.slug}`} className="weekend-cover">
+     <img src={weekendImages[0]} alt="" loading="eager"/>
      <div>
       <div className="kicker">{lead.section} · {expandedReadingTime(lead.readingTime)} min läsning</div>
       <h2><Link href={`/helg/${lead.slug}`}>{lead.title}</Link></h2>
@@ -73,7 +75,8 @@ export default function WeekendPage() {
 
     <section className="weekend-magazine-grid" aria-label="Veckans 18 långa artiklar">
      {articles.map((article,index)=><article id={`artikel-${article.slug}`} key={article.slug} className={index===0?'weekend-feature-card weekend-feature-card-wide':'weekend-feature-card'}>
-      <div className="kicker">{String(index+2).padStart(2,'0')} · {article.section}</div>
+     <div className="kicker">{String(index+2).padStart(2,'0')} · {article.section}</div>
+      <img src={weekendImages[index%weekendImages.length]} alt="" loading="lazy"/>
       <h3><Link href={`/helg/${article.slug}`}>{article.title}</Link></h3>
       <p>{article.intro}</p>
       <div className="weekend-card-footer">
